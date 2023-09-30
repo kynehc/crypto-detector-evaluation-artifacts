@@ -1,0 +1,187 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3558)
+		Method: <org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper: byte[] rsaDecrypt(byte[])>
+		SHA-256: 74148c60f5667eb24e519cfcf276cefbb3412517426ad9482ac1c336de494d0a
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer4935)
+		Method: <org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper: byte[] rsaEncrypt(byte[])>
+		SHA-256: 295681dcb9519659c093f712b84ccf1fb35cad7eac9ccc46544da4c958a92774
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.CipherOutputStream
+		Statement: specialinvoke $r7.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>($r6, $r2)
+		Method: <org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper: byte[] rsaEncrypt(byte[])>
+		SHA-256: b58b33149098b71a27ccdb64f7c6461138392f4191a13f0cc1134bce9dd3bd5f
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r5.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r6, $r2)
+		Method: <org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper: byte[] rsaDecrypt(byte[])>
+		SHA-256: ab8055465b233162c7fd4ae560484cea39f670136ebf30f9c6944fb9a3f8f5e9
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.KeyPairGenerator
+		Statement: $r11 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(varReplacer3555)
+		Method: <org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper: void generateKey(android.content.Context)>
+		SHA-256: efc50b2dcbcdd14b40e82172c36e443b4134c4121f08e373796ddf68050464fa
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.KeyPairGenerator
+		Statement: $r11 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer3548, varReplacer3549)
+		Method: <org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper: void generateKey(android.content.Context)>
+		SHA-256: 9cf09af2a9883143105a12a5e459697e356fa195702afadc3058b8d98ae8e695
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper: java.lang.String pickRandomPassphraseAndEncryptRSA()>
+		SHA-256: 159a81ce7f28662a9d25aea20a1c945df761fc39b1ac3a01bffd884a4206d056
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer346)
+		Method: <org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper: void <init>(java.lang.String)>
+		SHA-256: 790383a7e6ec2f9fd354ad3e8e505c445812bb90317a4c27d7ebf15c7ecfc9c7
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper: java.lang.String pickRandomPassphraseAndEncryptRSA()>
+		SHA-256: bd97d8650f7c72a6a98ae77be2a1f60508145a18c7613c21e6d35b9992a018b8
+		Secure: true
+
+Findings in Java Class: org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper
+
+	 in Method: void <init>(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #790383a7e6ec2f9fd354ad3e8e505c445812bb90317a4c27d7ebf15c7ecfc9c7)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer346)
+
+
+	 in Method: java.security.KeyStore$PrivateKeyEntry getKey(int)
+		TypestateError violating CrySL rule for java.security.KeyStore (on Object #790383a7e6ec2f9fd354ad3e8e505c445812bb90317a4c27d7ebf15c7ecfc9c7)
+			Unexpected call to method getEntry on object of type java.security.KeyStore. Expect a call to one of the following methods getKey
+			at statement: $r3 = virtualinvoke $r2.<java.security.KeyStore: java.security.KeyStore$Entry getEntry(java.lang.String,java.security.KeyStore$ProtectionParameter)>($r1, varReplacer1334)
+
+
+	 in Method: byte[] rsaDecrypt(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer3557, $r4)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #ab8055465b233162c7fd4ae560484cea39f670136ebf30f9c6944fb9a3f8f5e9)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to close
+			at statement: $i0 = virtualinvoke $r5.<javax.crypto.CipherInputStream: int read()>()
+
+
+	 in Method: byte[] rsaEncrypt(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.CipherOutputStream
+			Second parameter was not properly generated as generatedCipher
+			at statement: specialinvoke $r7.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>($r6, $r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer4936, $r5)
+
+
+	 in Method: void generateKey(android.content.Context)
+		RequiredPredicateError violating CrySL rule for java.security.KeyPairGenerator
+			First parameter was not properly generated as preparedRSA
+			at statement: virtualinvoke $r11.<java.security.KeyPairGenerator: void initialize(java.security.spec.AlgorithmParameterSpec)>($r10)
+
+
+Findings in Java Class: org.secuso.privacyfriendlyfinance.domain.FinanceDatabase$InitDatabaseTask
+
+	 in Method: org.secuso.privacyfriendlyfinance.domain.FinanceDatabase doInBackground(java.lang.Void[])
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #790383a7e6ec2f9fd354ad3e8e505c445812bb90317a4c27d7ebf15c7ecfc9c7)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])
+			at statement: $r8 = virtualinvoke $r7.<org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper: char[] getKey(android.content.Context)>($r5)
+
+
+Findings in Java Class: org.secuso.privacyfriendlyfinance.activities.StartupActivity
+
+	 in Method: void onPostCreate(android.os.Bundle)
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #790383a7e6ec2f9fd354ad3e8e505c445812bb90317a4c27d7ebf15c7ecfc9c7)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to getKey
+			at statement: $z0 = virtualinvoke $r6.<org.secuso.privacyfriendlyfinance.helpers.KeyStoreHelper: boolean keyExists()>()
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 9
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 4
+	IncompleteOperationError: 3
+	ConstraintError: 1
+	TypestateError: 1
+=====================================================================

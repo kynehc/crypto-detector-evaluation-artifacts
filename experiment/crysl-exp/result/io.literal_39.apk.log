@@ -1,0 +1,2091 @@
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: b189e83daa1cae39dacb5d56f8d20e560b21d5b6f8f0c6a35bc1a551d3d1c123
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r1)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.Hkdf: void init(byte[],byte[])>
+		SHA-256: cd74880b68f2c82df7b47ee0c854c34fee17f84f6e8d7d1ccd46164f7733a136
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 316cbc86e080130334eaabd60025d96084375d0058312a103cd3255ba6f0aeb
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r15.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer30291)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser: com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeRequest deviceSrpAuthRequest(java.util.Map,com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeResult,java.lang.String,java.lang.String,com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser$AuthenticationHelper)>
+		SHA-256: c34c2e48cb7b0a7519bf509a5ce14b6147eb7ae3f97bed0083dfc9cb60dad02
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r16.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r18, $r11)
+		Method: <com.amazonaws.services.s3.internal.crypto.S3CryptoModuleBase: com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial buildContentCryptoMaterial(com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider,com.amazonaws.AmazonWebServiceRequest)>
+		SHA-256: 226583e55f9858646e869ea4f6e4ee8c25ca6cbf81fb76870b7215b5f0af00ef
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer20259)
+		Method: <com.amazonaws.mobileconnectors.cognitoauth.util.Pkce: java.lang.String generateHash(java.lang.String)>
+		SHA-256: a8ce034a43c081f13639cec905817ef0c1359ac2f840e22ebe0e465dc83333c1
+		Secure: true
+	Object:
+		Variable: varReplacer28192
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer28192)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider10: java.security.Key retrieveKey(java.lang.String)>
+		SHA-256: 68a14970c790e934a66e85db11419da8d2a8615991899b2c5ec4c1b5e51f5f57
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: d4bf5cc88c644b9a20ac4aef1746c1f0c9ae862102406e7436b8866c875859ff
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Mac
+		Statement: $r6 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r1)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.Hkdf: void init(byte[],byte[])>
+		SHA-256: 35545c3cdad763453058e0f8703e950a641338efda31172ebe551ae3296d8ac
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer28192)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider10: java.security.Key retrieveKey(java.lang.String)>
+		SHA-256: f2592642c3e2b1f2935958dfe7398f6a358fc633b49c53d12e48b389a0abf2a
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: ae39b036c5eeeba58d380660f68e23806935f12d2f5c9cefe65440425aa34f4a
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8539)
+		Method: <io.literal.lib.Crypto: java.lang.String sha256Hex(java.lang.String)>
+		SHA-256: a1c142053895068ad9a00a8a508bf5cc71dd97d20890cd348e16a22674f8d76b
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer33151, varReplacer33152)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: byte[] rsaDecrypt(java.lang.String,byte[])>
+		SHA-256: 9de6246e0190c552581ab0265a166d2e753b8a0c535adc3c0f51fdb74c23b68c
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r4 = virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: a729cfd5669df603070b7ba7d05b524b10a048ab1da974a5ccb1df973521b7d3
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.SecretKey
+		Statement: $r7 = virtualinvoke $r3.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider23: java.security.Key generateKey(java.lang.String)>
+		SHA-256: a97876a024a77c4a2603dd2691342d8bbde5eac2f3f691fcc9571560794f299
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r6.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+		Method: <com.amazonaws.auth.AbstractAWSSigner: byte[] sign(byte[],byte[],com.amazonaws.auth.SigningAlgorithm)>
+		SHA-256: b8674efd05bea42439cf6b7b699e6ec99c14ff002a237231cda00c5844ba88d6
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyStore
+		Statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28209)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: java.security.Key retrieveKey(java.lang.String)>
+		SHA-256: 202fecf49adc681b106a84b47b9bc9559aaf8c71e5506a2fdb13417ac720db3
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: java.security.KeyPairGenerator
+		Statement: $r13 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer28269, varReplacer28270)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: java.security.Key generateKey(java.lang.String)>
+		SHA-256: d24e1e8222556eeed30d754cdf609ad502c62642b49f688948eb8426dcdb74aa
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: c3dcfb07eabeaead2afa7b41e33d56187e303e14a7184c21b7bac99836f2c278
+		Secure: false
+	Object:
+		Variable: varReplacer38436
+		Type: java.lang.String
+		Statement: specialinvoke $r14.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer38436)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: javax.crypto.SecretKey cek(byte[],java.lang.String,com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider,com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme,com.amazonaws.services.kms.AWSKMSClient)>
+		SHA-256: de89146533a96c1f68aea25f261d25639bf3525e63a8c36329684e0567278208
+		Secure: false
+	Object:
+		Variable: $r22
+		Type: javax.crypto.Mac
+		Statement: $r22 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer21134)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser: com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeRequest userSrpAuthRequest(java.util.Map,java.util.Map,java.lang.String,java.lang.String,java.lang.String,com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser$AuthenticationHelper)>
+		SHA-256: bad753a9e649ca5796eafe6704534753d4e06e7132c308d378884bb5c2f3873f
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r14.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer38436)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: javax.crypto.SecretKey cek(byte[],java.lang.String,com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider,com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme,com.amazonaws.services.kms.AWSKMSClient)>
+		SHA-256: 15c7a1973018e19765b115302c20a9c6f2e1eed20aa0ac3ffef3c5e0bd6bf6d3
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer20036)
+		Method: <com.amazonaws.util.Md5Utils: byte[] computeMD5Hash(java.io.InputStream)>
+		SHA-256: d3870874f62f8be1a871234970325d4ec227e02c2e64dd28386c099b12351733
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Mac
+		Statement: $r6 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer33187)
+		Method: <com.amazonaws.cognito.clientcontext.util.SignatureGenerator: java.lang.String getSignature(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: adb438e24fc1d93cd04f715d22df63a4bca88f0036cd9f13cc13eb3fa58d8ed1
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer38485, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 2acf4e4fc5c2b304926abbb2e5fd6114a5d90863add32a014acb1e51a2ecebba
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer24209, $r1)
+		Method: <com.amazonaws.internal.keyvaluestore.AWSKeyValueStore: java.security.spec.AlgorithmParameterSpec getAlgorithmParameterSpecForIV(byte[])>
+		SHA-256: 85e2dc427e348d7353eabab33766b1bc6cb2de8f684f5ddfaafbbc5663212b13
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: javax.crypto.SecretKey
+		Statement: $r12 = virtualinvoke $r5.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.amazonaws.services.s3.internal.crypto.S3CryptoModuleBase: javax.crypto.SecretKey generateCEK(com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider)>
+		SHA-256: 594e1ca9205370a90c482ee8e3c85d9443e229ec9bcfeb53a1996cc9eff80e29
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 15a76129680a3cd57380001c355c828c5afc3ba9ce32fff65b352ff3390bbd6
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer42960)
+		Method: <com.amazonaws.mobileconnectors.appsync.AWSAppSyncClient: java.lang.String getClientSubscriptionUUID(java.lang.String)>
+		SHA-256: 6a9fb97eb5076212c22335adbba3cab873061a966e7abd45e83b79a1980348a7
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer38488, $r2)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 6f64063f7e0e023e52944011b3f54a9fa3294c436f6931c674da6d8458e88c01
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <com.amazonaws.internal.keyvaluestore.AWSKeyValueStore: void <init>(android.content.Context,java.lang.String,boolean)>
+		SHA-256: 20bc9fdee9dd8ed47518c3a1f562b50678b856e856a6acc6ee499f45af1dab7e
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.KeyGenerator
+		Statement: $r5 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.security.Provider)>($r4, $r2)
+		Method: <com.amazonaws.services.s3.internal.crypto.S3CryptoModuleBase: javax.crypto.SecretKey generateCEK(com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider)>
+		SHA-256: 4bf31f25306f4a9d35a492be4f612befc8b544833b01557fa389701c0c907ffb
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: javax.crypto.KeyGenerator
+		Statement: $r15 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer28277)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: java.security.Key generateKey(java.lang.String)>
+		SHA-256: 26e030b0718d4f364791976848ac9687d5aa3550fbe66d1662a961d9ccdc6c8c
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.Cipher
+		Statement: $r10 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r1)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: javax.crypto.SecretKey cek(byte[],java.lang.String,com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider,com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme,com.amazonaws.services.kms.AWSKMSClient)>
+		SHA-256: 679f783bc6d53b96d26dae3124229bb9d6185ed77bc4ff15f75bd36c53f9cf3
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: javax.crypto.SecretKey
+		Statement: $r16 = virtualinvoke $r15.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: java.security.Key generateKey(java.lang.String)>
+		SHA-256: 1001cfb2668342b64c867735c5a0dbd0511f9070f50060202c220c53f248717f
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.Mac
+		Statement: $r1 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.Hkdf: javax.crypto.Mac createMac()>
+		SHA-256: 3aa4f261f47a54b8126a1a63d07218ec6ad5507e0cc4c18eea0785033cb93b4f
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer38487)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 14851cf0c60183005da66e5330d7ebb5c052fe20d10cd929a6e902873d9bbc09
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>(varReplacer29515, $r1)
+		Method: <com.amazonaws.services.s3.internal.crypto.EncryptionUtils: javax.crypto.Cipher createSymmetricCipher(javax.crypto.SecretKey,int,java.security.Provider,byte[])>
+		SHA-256: e21fcf9c7c33cd205143193184f35ec72e35e3cdc26b77baeb30c845d81cd10c
+		Secure: false
+	Object:
+		Variable: $r18
+		Type: javax.crypto.Cipher
+		Statement: $r18 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r9)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: com.amazonaws.services.s3.internal.crypto.SecuredCEK secureCEK(javax.crypto.SecretKey,com.amazonaws.services.s3.model.EncryptionMaterials,com.amazonaws.services.s3.internal.crypto.S3KeyWrapScheme,java.security.SecureRandom,java.security.Provider,com.amazonaws.services.kms.AWSKMSClient,com.amazonaws.AmazonWebServiceRequest)>
+		SHA-256: cf026897d135095cd087e16ee2a70e66bea9c43fcf1138ed56656ec69d758c3c
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Mac
+		Statement: $r6 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r5)
+		Method: <com.amazonaws.auth.AbstractAWSSigner: byte[] sign(byte[],byte[],com.amazonaws.auth.SigningAlgorithm)>
+		SHA-256: 13e7ed320837264340b1c5899ecaf6f2a8a94354dfa1852b00167b9a72933d17
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.cert.CertificateFactory
+		Statement: $r6 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer41233)
+		Method: <okhttp3.Cache$Entry: java.util.List readCertificateList(okio.BufferedSource)>
+		SHA-256: 514a30908b890e6066145afc30f17d43dbe4395c1dbd8233aaa0a864e04b0cc8
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>($r7, $r4)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme: com.amazonaws.services.s3.internal.crypto.CipherLite createCipherLite(javax.crypto.SecretKey,byte[],int,java.security.Provider)>
+		SHA-256: 670dea60663c81271177d5094f964bb3d7ee0eec87ab4aa70cf8a86326667628
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r4)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme: com.amazonaws.services.s3.internal.crypto.CipherLite createCipherLite(javax.crypto.SecretKey,byte[],int,java.security.Provider)>
+		SHA-256: 449cd5ffd37504d59f033d9dbacc548ea07164ffbe2233b80629bc8654ac8fca
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r1)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.Hkdf: void init(byte[],byte[])>
+		SHA-256: 79c7380697fbb900d9b78b17a46c82dcb9d175e6f9c724de13a23c646a3ea5a0
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyStore
+		Statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28202)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider23: java.security.Key retrieveKey(java.lang.String)>
+		SHA-256: 215ab0baf8c485e9d2310602a1861dfd5797023415fe052a77614650fc17bf06
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.lang.String)>(varReplacer35042, varReplacer35043)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: ebc3e3037fadc7d91327ffd9b27d634f93319877db22cc4f032b13c530478d02
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.security.Provider)>($r1, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 1027fce20723454b26980f38c5edb26bcec19bffa5b6443c75459b577c51d460
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r1)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.Hkdf: void init(byte[],byte[])>
+		SHA-256: 99716c7e542330c4abf4f6bd91f047ee26b73d651ada8108053d734acd87bd92
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer24211)
+		Method: <com.amazonaws.internal.keyvaluestore.AWSKeyValueStore: java.lang.String encrypt(java.security.Key,java.security.spec.AlgorithmParameterSpec,java.lang.String)>
+		SHA-256: 69fb985200aec7e7d55d2fd5f48a5237e72df59b3d7dc6ed7223f97ff26e12e9
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r3)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: javax.crypto.SecretKey cekByKMS(byte[],java.lang.String,com.amazonaws.services.s3.model.EncryptionMaterials,com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme,com.amazonaws.services.kms.AWSKMSClient)>
+		SHA-256: c75f74593b3bf6cf81e6aa40ee9994e7e01e1579aa9a29abe206038c548d3561
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <com.amazonaws.services.s3.internal.crypto.S3CryptoScheme: void <clinit>()>
+		SHA-256: 6fa4d8a3b8929b92c8516c0152f9497fab94ad31ef34c8ab3e6be9e5ee2df174
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r6.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.Hkdf: void init(byte[],byte[])>
+		SHA-256: e1e9047d334a90988e8e96eccd128ae668e0823c4578a649c81c78311b3cf119
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r6.<javax.crypto.Mac: byte[] doFinal(byte[])>($r7)
+		Method: <com.amazonaws.cognito.clientcontext.util.SignatureGenerator: java.lang.String getSignature(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 5265141407b818ce5df7a608638f83726118e8e1525e764a2bb285c47c5a594f
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.amazonaws.util.Md5Utils: byte[] computeMD5Hash(java.io.InputStream)>
+		SHA-256: e933829eb5404ed3ac01e1a140ff56e65382a64dd0cd17ae95513909c44329c8
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.SecretKey
+		Statement: $r4 = virtualinvoke $r3.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider10: java.security.Key generateKey(java.lang.String)>
+		SHA-256: 635b876ae0f60d96cd6ea6f8811a608209bcd46d4ca0934550b5f909dc054e0a
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r5)
+		Method: <com.amazonaws.auth.AbstractAWSSigner: byte[] sign(byte[],byte[],com.amazonaws.auth.SigningAlgorithm)>
+		SHA-256: b8c6f56ac244bcc45f322d5a657da70cfae9db6730771b1aed077914a64a8f9a
+		Secure: false
+	Object:
+		Variable: $r23
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r23.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r20, varReplacer21135)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser: com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeRequest userSrpAuthRequest(java.util.Map,java.util.Map,java.lang.String,java.lang.String,java.lang.String,com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser$AuthenticationHelper)>
+		SHA-256: bfe3443916b7f513bab6c1a3d906fe4f9ce6be767de514bb5f67034079723049
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <com.amazonaws.util.Md5Utils: byte[] computeMD5Hash(byte[])>
+		SHA-256: 910b03c63b1f2cc2df77810bece666dc4d0854de24fad0fe3f568bcb179635e5
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.amazonaws.auth.AbstractAWSSigner: byte[] hash(byte[])>
+		SHA-256: 7322bf7a23411b9bd0c41c784d265ac1090e72c12733f580a335adf21a2fff44
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r1)
+		Method: <com.amazonaws.internal.keyvaluestore.AWSKeyValueStore: java.security.spec.AlgorithmParameterSpec getAlgorithmParameterSpecForIV(byte[])>
+		SHA-256: c7cdf5407676ed98a003ed121f2e7aa3818c9459074425aa348b37d7d63ab0db
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r1.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r0, $r2)
+		Method: <com.amazonaws.services.s3.internal.RepeatableCipherInputStream: java.io.FilterInputStream newCipherInputStream(java.io.InputStream,com.amazonaws.services.s3.internal.crypto.CipherFactory)>
+		SHA-256: dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer38483, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 8a8dda71ac4065513f39cf1bf1b9ce186ce1de2d2ee1173bed8e61037eaf2856
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 5fb6984969c8c0f60ee84399ef18a49aa63648c889757c4080685ad119ecd903
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer24481)
+		Method: <com.amazonaws.internal.keyvaluestore.AWSKeyValueStore: java.lang.String decrypt(java.security.Key,java.security.spec.AlgorithmParameterSpec,java.lang.String)>
+		SHA-256: 19e7d4e4bada847b620bd3247aa6bbe5242f362cda28003bbf60c2ae640473d6
+		Secure: false
+	Object:
+		Variable: $r23
+		Type: java.security.MessageDigest
+		Statement: $r23 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer26375)
+		Method: <com.amazonaws.services.s3.AmazonS3Client: com.amazonaws.services.s3.model.S3Object getObject(com.amazonaws.services.s3.model.GetObjectRequest)>
+		SHA-256: c8f30567298711b9b43f02185b8deb0e37a0941a8fe2ad7b5d7f5ff80ea21105
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r5)
+		Method: <com.amazonaws.auth.AbstractAWSSigner: byte[] sign(byte[],byte[],com.amazonaws.auth.SigningAlgorithm)>
+		SHA-256: 6b3c87f68fd523caaa8a9607dfd4dc12c93d40c54f1dc4cbcf8b597ac93eef4b
+		Secure: false
+	Object:
+		Variable: varReplacer19752
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer19752)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoSecretHash: java.lang.String getSecretHash(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: ab6fc98851a0e1421d0eac08b76dd97eabb818bbd8bc0a2c76746e04e03d2aab
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28225)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider23: void deleteKey(java.lang.String)>
+		SHA-256: ffb8ef9c1dd63e503641b90807c1a07fe9c93db7de7d9111f1d231daece92b13
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.Cipher
+		Statement: $r10 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r1)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: javax.crypto.SecretKey cek(byte[],java.lang.String,com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider,com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme,com.amazonaws.services.kms.AWSKMSClient)>
+		SHA-256: 679f783bc6d53b96d26dae3124229bb9d6185ed77bc4ff15f75bd36c53f9cf3
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyStore
+		Statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28247)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider23: java.security.Key generateKey(java.lang.String)>
+		SHA-256: 855760093d4502557b333e7ad90cb10ddbb080932868a6655e5feeafc64ae18a
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer33190)
+		Method: <com.amazonaws.cognito.clientcontext.util.SignatureGenerator: java.lang.String getSignature(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 115bfcf7645909158b60cfde2b22010a7855b7fd6a3f75f85299ea23f7b68d18
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.Key
+		Statement: $r6 = virtualinvoke $r2.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>($r1, varReplacer28201)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider23: java.security.Key retrieveKey(java.lang.String)>
+		SHA-256: 5f3f8bb743236c1a7c2f8eef03537440303640f5eed93fc01fec377dbdb8c7d
+		Secure: false
+	Object:
+		Variable: varReplacer21135
+		Type: java.lang.String
+		Statement: specialinvoke $r23.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r20, varReplacer21135)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser: com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeRequest userSrpAuthRequest(java.util.Map,java.util.Map,java.lang.String,java.lang.String,java.lang.String,com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser$AuthenticationHelper)>
+		SHA-256: 900274d873f227b44e6c3b0a4f25d6800af2c831a78f9e102dd98c84da750dc2
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: byte[]
+		Statement: $r12 = virtualinvoke $r14.<javax.crypto.Mac: byte[] doFinal(byte[])>($r12)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser: com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeRequest deviceSrpAuthRequest(java.util.Map,com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeResult,java.lang.String,java.lang.String,com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser$AuthenticationHelper)>
+		SHA-256: 7ddacfd202143b93d9fd8780868d1de0ed1035e9f111574cb2f13cdc8301e925
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.crypto.Mac
+		Statement: $r14 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer30273)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser: com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeRequest deviceSrpAuthRequest(java.util.Map,com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeResult,java.lang.String,java.lang.String,com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser$AuthenticationHelper)>
+		SHA-256: 47bb08448013d2e77a8f00010bc2ea7d649a6e63aac8b943d57c67cc2262fd3a
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer21958)
+		Method: <com.amazonaws.services.s3.internal.MD5DigestCalculatingInputStream: java.security.MessageDigest newMD5()>
+		SHA-256: 5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: $r2 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer25927)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoDeviceHelper$deviceSRP: void <clinit>()>
+		SHA-256: 47578a81c4f7f00ec31c76ebba8ab6f22fe31f5d6be1b369f3bec1ce9a9fce9f
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <com.amazonaws.mobileconnectors.cognitoauth.util.Pkce: java.lang.String generateRandom()>
+		SHA-256: 46e81e38965022ab9475424536c777f43b275126163b0a4f21172202a8f1b897
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r1)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.Hkdf: void init(byte[],byte[])>
+		SHA-256: 1af68ecc96dfb1321d2f24fec28cd2be2e3f2e18c84ce854c612a9de86667a04
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r2 = virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 84f17b7e3930c76e2b174d27b9668ee8d3209ae5512e2c539d541e6ef4265515
+		Secure: false
+	Object:
+		Variable: r0
+		Type: com.amazonaws.internal.SdkDigestInputStream
+		Statement: specialinvoke r0.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r1, $r2)
+		Method: <com.amazonaws.internal.SdkDigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>
+		SHA-256: 9a42f5fce6ab5e869256ff69a376ac48773f99a18c8536697b6a39dd63ec220e
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.lang.String
+		Statement: specialinvoke $r16.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r18, $r11)
+		Method: <com.amazonaws.services.s3.internal.crypto.S3CryptoModuleBase: com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial buildContentCryptoMaterial(com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider,com.amazonaws.AmazonWebServiceRequest)>
+		SHA-256: dead012aae08362069507a489849e85e27720080e0e95e1101959bd701d8c082
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.lang.String
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r3)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: javax.crypto.SecretKey cekByKMS(byte[],java.lang.String,com.amazonaws.services.s3.model.EncryptionMaterials,com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme,com.amazonaws.services.kms.AWSKMSClient)>
+		SHA-256: 426eb86a63fcedf4b7f07865d719c59cd792f3f4c648379b3f201e73594a8da4
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r3.<javax.crypto.Mac: byte[] doFinal()>()
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.Hkdf: void deriveKey(byte[],int,byte[],int)>
+		SHA-256: cecec156f1cca90bd67384b23aa713ab97ab03d55ce30527cd0a07342240ab3d
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Mac
+		Statement: $r7 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer19750)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoSecretHash: java.lang.String getSecretHash(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: c226cf3b7036a84b955c14714aa47f0567b927068636848ecde72ab55369fd72
+		Secure: false
+	Object:
+		Variable: varReplacer33190
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer33190)
+		Method: <com.amazonaws.cognito.clientcontext.util.SignatureGenerator: java.lang.String getSignature(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 51732a9c1603ec9ffff86926671b3251e6bfcb1236fd9e3eb2d490a747409640
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer33175)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: byte[] rsaEncrypt(java.lang.String,byte[])>
+		SHA-256: 9174f69d002b0bc6faea6ef849e1aaaf4e157c16773f0997181c7b72ca44ef62
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyStore
+		Statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28274)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: java.security.Key generateKey(java.lang.String)>
+		SHA-256: 4e3f5aa99cab2002450bf0b6cc1e92a632bb1cd739c7b01ee286d96e26926060
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer33150)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: byte[] rsaDecrypt(java.lang.String,byte[])>
+		SHA-256: 6a036351e476522dff182830816c49552b2a702375b65cb8066bc5e998496a91
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <com.amazonaws.services.s3.internal.crypto.EncryptionUtils: javax.crypto.Cipher createSymmetricCipher(javax.crypto.SecretKey,int,java.security.Provider,byte[])>
+		SHA-256: d4e983af0f21e6e747f4e24c1a6f95df6cbf3d93bb59ab39af4271aeba989d21
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer22014)
+		Method: <com.amazonaws.auth.AbstractAWSSigner: byte[] hash(byte[])>
+		SHA-256: a71bff397ecfa98a6a4005be2ce11e584c5a718eea5fe3f240e3c679f9131d95
+		Secure: true
+	Object:
+		Variable: $r18
+		Type: javax.crypto.Cipher
+		Statement: $r18 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r9)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: com.amazonaws.services.s3.internal.crypto.SecuredCEK secureCEK(javax.crypto.SecretKey,com.amazonaws.services.s3.model.EncryptionMaterials,com.amazonaws.services.s3.internal.crypto.S3KeyWrapScheme,java.security.SecureRandom,java.security.Provider,com.amazonaws.services.kms.AWSKMSClient,com.amazonaws.AmazonWebServiceRequest)>
+		SHA-256: cf026897d135095cd087e16ee2a70e66bea9c43fcf1138ed56656ec69d758c3c
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r7.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoSecretHash: java.lang.String getSecretHash(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 897be19ffafddd09cf7d7fea71933f90dcb247536e99578198bf4e185c6d7e40
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider10: java.security.Key generateKey(java.lang.String)>
+		SHA-256: fc0cd5c3f1420e69ad9a80a1aff5437357d147459da880338bd79b869bc71f45
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.KeyGenerator
+		Statement: $r3 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer28259)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider10: java.security.Key generateKey(java.lang.String)>
+		SHA-256: bb1872e7b6158cea939e3a6fa1b9b2817ac00f7a2c8385864c923cad54716c15
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme: com.amazonaws.services.s3.internal.crypto.CipherLite createCipherLite(javax.crypto.SecretKey,byte[],int,java.security.Provider)>
+		SHA-256: cf9275f35069e3618df95a0a9aad685de80789662a52dbe4648a46365d678999
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.KeyGenerator
+		Statement: $r5 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>($r4)
+		Method: <com.amazonaws.services.s3.internal.crypto.S3CryptoModuleBase: javax.crypto.SecretKey generateCEK(com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider)>
+		SHA-256: 2db08493f3d855d0c32dbe5ec6c105fb586a7e9a2a68ac592134e4e61c362f3a
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: $r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer17278)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser$AuthenticationHelper: void <clinit>()>
+		SHA-256: 1edd486e15bfef708289fe0851442fd8b693e13892ef1ddbd55892d2e841c6e9
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r14.<java.security.SecureRandom: void <init>()>()
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: java.security.Key generateKey(java.lang.String)>
+		SHA-256: e891ddceeaa74a46a2e62b5f5d8fb44ec88a577a6a4f6633bdec6607f3d07524
+		Secure: true
+	Object:
+		Variable: varReplacer30291
+		Type: java.lang.String
+		Statement: specialinvoke $r15.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer30291)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser: com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeRequest deviceSrpAuthRequest(java.util.Map,com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeResult,java.lang.String,java.lang.String,com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser$AuthenticationHelper)>
+		SHA-256: 58b669e192abfe821cf3039b369eb28fe3f1dbb9caf056b5d215e276649a0d29
+		Secure: false
+	Object:
+		Variable: varReplacer28211
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer28211)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: java.security.Key retrieveKey(java.lang.String)>
+		SHA-256: 713e284f76b68f680de7dfe37df269b1734a1a2e67ed52ff83744dabcd457892
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.KeyStore
+		Statement: $r7 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28235)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: void deleteKey(java.lang.String)>
+		SHA-256: 93bd84b6db63bfe010f712edfd48ca27f31248bd56d5d23722d48100fdc1fc93
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <io.literal.lib.Crypto: java.lang.String sha256Hex(java.lang.String)>
+		SHA-256: 99772b701984c0bd98785baae57a63bdb1ba1daf13619778bdb3727cbf307bc7
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: javax.crypto.Cipher
+		Statement: $r10 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r1, $r3)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: javax.crypto.SecretKey cek(byte[],java.lang.String,com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider,com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme,com.amazonaws.services.kms.AWSKMSClient)>
+		SHA-256: aa2f3b5c484542599a3f9f301f25d761210ad30ec1c3d8a8dfc0c8b118c52556
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer19752)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoSecretHash: java.lang.String getSecretHash(java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 4d6c055fa7a47844e950ed65952e94ab1043e664ec77a33b3be948348bb5d0b3
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.Cipher
+		Statement: $r10 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r1, $r3)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: javax.crypto.SecretKey cek(byte[],java.lang.String,com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider,com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme,com.amazonaws.services.kms.AWSKMSClient)>
+		SHA-256: aa2f3b5c484542599a3f9f301f25d761210ad30ec1c3d8a8dfc0c8b118c52556
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer33171, varReplacer33172)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: byte[] rsaEncrypt(java.lang.String,byte[])>
+		SHA-256: 1d9cd4fe8ac6bbbb58efce83c42df8ce43b81b7b5a7baaa4746faf9f007b2243
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer28211)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider18: java.security.Key retrieveKey(java.lang.String)>
+		SHA-256: 85d0efa3973272951c871da92cef93e317ef85ed7c2197374c7b5512103ddb21
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <com.amazonaws.mobileconnectors.appsync.AWSAppSyncClient: java.lang.String getClientSubscriptionUUID(java.lang.String)>
+		SHA-256: bd0d14bf75c5cd21464c4fea96b775e5c4010805f25c3361f693ca5c048a391
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: 6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer29516)
+		Method: <com.amazonaws.services.s3.internal.crypto.EncryptionUtils: javax.crypto.Cipher createSymmetricCipher(javax.crypto.SecretKey,int,java.security.Provider,byte[])>
+		SHA-256: 5b35823ba27ac75a7577e1b794f2459e34a9a1a9a6474b2a53d8cf3f7c9fae6a
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.amazonaws.mobileconnectors.cognitoauth.util.Pkce: java.lang.String generateHash(java.lang.String)>
+		SHA-256: a0acb278468e0d3cf61ab48c55956e48d15da0c54ced5ce07e1837be23a368ab
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.KeyGenerator
+		Statement: $r3 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer28251, varReplacer28252)
+		Method: <com.amazonaws.internal.keyvaluestore.KeyProvider23: java.security.Key generateKey(java.lang.String)>
+		SHA-256: 2cc1b3d49ee1cbf3a46906a1aa01948b0cfe9a31bf3cae0b35648018df955fc2
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLContext
+		Statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer43643)
+		Method: <com.amazonaws.http.UrlHttpClient: void enableCustomTrustManager(javax.net.ssl.HttpsURLConnection)>
+		SHA-256: db1c6ed2e803769afc1d6ee227161067e7e5fe5ab4d84bde9b88bca7912928b5
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer24043)
+		Method: <com.amazonaws.util.Md5Utils: byte[] computeMD5Hash(byte[])>
+		SHA-256: 3d4ef063f6a55722eebaab3c6ba8112e5921bf32121701fd791122141a69d8aa
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <io.literal.lib.Crypto: java.lang.String sha256Hex(java.lang.String)>
+		SHA-256: 99772b701984c0bd98785baae57a63bdb1ba1daf13619778bdb3727cbf307bc7
+		Secure: true
+	Object:
+		Variable: $r18
+		Type: javax.crypto.Cipher
+		Statement: $r18 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r9, $r4)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: com.amazonaws.services.s3.internal.crypto.SecuredCEK secureCEK(javax.crypto.SecretKey,com.amazonaws.services.s3.model.EncryptionMaterials,com.amazonaws.services.s3.internal.crypto.S3KeyWrapScheme,java.security.SecureRandom,java.security.Provider,com.amazonaws.services.kms.AWSKMSClient,com.amazonaws.AmazonWebServiceRequest)>
+		SHA-256: 1e03e7261807fdfa137ddce704402cff8d87ad1c15100260cf72b7db45b6bc97
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r4, $r3)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme: com.amazonaws.services.s3.internal.crypto.CipherLite createCipherLite(javax.crypto.SecretKey,byte[],int,java.security.Provider)>
+		SHA-256: 8f924d5f261ca972d09de2c7df6ffb6558cfb17c6500ef94d8acd8b2a606cc5e
+		Secure: false
+	Object:
+		Variable: $r18
+		Type: javax.crypto.Cipher
+		Statement: $r18 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r9, $r4)
+		Method: <com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial: com.amazonaws.services.s3.internal.crypto.SecuredCEK secureCEK(javax.crypto.SecretKey,com.amazonaws.services.s3.model.EncryptionMaterials,com.amazonaws.services.s3.internal.crypto.S3KeyWrapScheme,java.security.SecureRandom,java.security.Provider,com.amazonaws.services.kms.AWSKMSClient,com.amazonaws.AmazonWebServiceRequest)>
+		SHA-256: 1e03e7261807fdfa137ddce704402cff8d87ad1c15100260cf72b7db45b6bc97
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.security.SecureRandom: void nextBytes(byte[])>($r2)
+		Method: <com.amazonaws.mobileconnectors.cognitoauth.util.Pkce: java.lang.String generateRandom()>
+		SHA-256: 6b330f0ca5251b074d61c8c4b0251085de49e4ac2349272a65750760b86bbecd
+		Secure: true
+	Object:
+		Variable: $r20
+		Type: byte[]
+		Statement: $r20 = virtualinvoke $r22.<javax.crypto.Mac: byte[] doFinal(byte[])>($r20)
+		Method: <com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser: com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeRequest userSrpAuthRequest(java.util.Map,java.util.Map,java.lang.String,java.lang.String,java.lang.String,com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser$AuthenticationHelper)>
+		SHA-256: 719de31d29f3a66282f592ba453d0fdca3a758c15b35acedab02407da31eccf3
+		Secure: false
+
+Findings in Java Class: com.amazonaws.util.Md5Utils
+
+	 in Method: byte[] computeMD5Hash(java.io.InputStream)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #d3870874f62f8be1a871234970325d4ec227e02c2e64dd28386c099b12351733)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer20036)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #d3870874f62f8be1a871234970325d4ec227e02c2e64dd28386c099b12351733)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r0 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: byte[] computeMD5Hash(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #3d4ef063f6a55722eebaab3c6ba8112e5921bf32121701fd791122141a69d8aa)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer24043)
+
+
+Findings in Java Class: com.amazonaws.services.s3.internal.MD5DigestCalculatingInputStream
+
+	 in Method: java.security.MessageDigest newMD5()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer21958)
+
+
+	 in Method: int read(byte[],int,int)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Unexpected call to method update on object of type java.security.MessageDigest. Expect a call to one of the following methods getInstance
+			at statement: virtualinvoke $r2.<java.security.MessageDigest: void update(byte[],int,int)>($r1, $i0, $i1)
+
+
+	 in Method: int read()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Unexpected call to method update on object of type java.security.MessageDigest. Expect a call to one of the following methods getInstance
+			at statement: virtualinvoke $r1.<java.security.MessageDigest: void update(byte)>($b0)
+
+
+Findings in Java Class: com.amazonaws.http.AmazonHttpClient
+
+	 in Method: com.amazonaws.Response executeHelper(com.amazonaws.Request,com.amazonaws.http.HttpResponseHandler,com.amazonaws.http.HttpResponseHandler,com.amazonaws.http.ExecutionContext)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r26.<java.io.InputStream: void reset()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r26 = virtualinvoke $r20.<com.amazonaws.http.HttpResponse: java.io.InputStream getRawContent()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r26 = virtualinvoke $r20.<com.amazonaws.http.HttpResponse: java.io.InputStream getRawContent()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r14 = virtualinvoke $r18.<com.amazonaws.http.HttpResponse: java.io.InputStream getRawContent()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r26 = interfaceinvoke $r1.<com.amazonaws.Request: java.io.InputStream getContent()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r14 = interfaceinvoke $r1.<com.amazonaws.Request: java.io.InputStream getContent()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $r26 = virtualinvoke $r20.<com.amazonaws.http.HttpResponse: java.io.InputStream getRawContent()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r26.<java.io.InputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $r26 = virtualinvoke $r20.<com.amazonaws.http.HttpResponse: java.io.InputStream getRawContent()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r26.<java.io.InputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: interfaceinvoke $r1.<com.amazonaws.Request: void setContent(java.io.InputStream)>($r14)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z1 = virtualinvoke $r26.<java.io.InputStream: boolean markSupported()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z0 = virtualinvoke $r14.<java.io.InputStream: boolean markSupported()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r14.<java.io.InputStream: void mark(int)>(varReplacer31477)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z1 = specialinvoke r0.<com.amazonaws.http.AmazonHttpClient: boolean shouldRetry(com.amazonaws.AmazonWebServiceRequest,java.io.InputStream,com.amazonaws.AmazonClientException,int,com.amazonaws.retry.RetryPolicy)>($r23, $r26, $r16, $i3, $r25)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z0 = specialinvoke r0.<com.amazonaws.http.AmazonHttpClient: boolean shouldRetry(com.amazonaws.AmazonWebServiceRequest,java.io.InputStream,com.amazonaws.AmazonClientException,int,com.amazonaws.retry.RetryPolicy)>($r23, $r26, $r47, $i0, $r25)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r26.<java.io.InputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r26.<java.io.InputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $r26 = interfaceinvoke $r1.<com.amazonaws.Request: java.io.InputStream getContent()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $z1 = specialinvoke r0.<com.amazonaws.http.AmazonHttpClient: boolean shouldRetry(com.amazonaws.AmazonWebServiceRequest,java.io.InputStream,com.amazonaws.AmazonClientException,int,com.amazonaws.retry.RetryPolicy)>($r23, $r26, $r16, $i3, $r25)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $z0 = specialinvoke r0.<com.amazonaws.http.AmazonHttpClient: boolean shouldRetry(com.amazonaws.AmazonWebServiceRequest,java.io.InputStream,com.amazonaws.AmazonClientException,int,com.amazonaws.retry.RetryPolicy)>($r23, $r26, $r47, $i0, $r25)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $z1 = virtualinvoke $r26.<java.io.InputStream: boolean markSupported()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r26.<java.io.InputStream: void reset()>()
+
+
+	 in Method: void resetRequestAfterError(com.amazonaws.Request,java.lang.Exception)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r4.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: org.apache.james.mime4j.message.BodyPartBuilder
+
+	 in Method: org.apache.james.mime4j.message.BodyPartBuilder setBody(java.lang.String,java.lang.String,java.nio.charset.Charset)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r11 = interfaceinvoke $r9.<org.apache.james.mime4j.message.BodyFactory: org.apache.james.mime4j.dom.TextBody textBody(java.io.InputStream,java.lang.String)>($r10, $r2)
+
+
+Findings in Java Class: com.amazonaws.services.s3.AmazonS3Client
+
+	 in Method: java.io.ByteArrayInputStream toByteArray(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = virtualinvoke $r1.<java.io.InputStream: int read()>()
+
+
+	 in Method: com.amazonaws.services.s3.model.UploadPartResult uploadPart(com.amazonaws.services.s3.model.UploadPartRequest)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r33.<com.amazonaws.services.s3.internal.MD5DigestCalculatingInputStream: void <init>(java.io.InputStream)>($r13)
+
+
+	 in Method: com.amazonaws.services.s3.model.PutObjectResult putObject(com.amazonaws.services.s3.model.PutObjectRequest)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r46.<com.amazonaws.services.s3.internal.MD5DigestCalculatingInputStream: void <init>(java.io.InputStream)>($r8)
+
+
+	 in Method: com.amazonaws.services.s3.model.S3Object getObject(com.amazonaws.services.s3.model.GetObjectRequest)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c8f30567298711b9b43f02185b8deb0e37a0941a8fe2ad7b5d7f5ff80ea21105)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r23 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer26375)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #9a42f5fce6ab5e869256ff69a376ac48773f99a18c8536697b6a39dd63ec220e)
+			Operation on object of type com.amazonaws.internal.SdkDigestInputStream object not completed. Expected call to read
+			at statement: specialinvoke $r33.<com.amazonaws.services.s3.model.S3ObjectInputStream: void <init>(java.io.InputStream)>($r34)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #c8f30567298711b9b43f02185b8deb0e37a0941a8fe2ad7b5d7f5ff80ea21105)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r31.<com.amazonaws.services.s3.internal.DigestValidationInputStream: void <init>(java.io.InputStream,java.security.MessageDigest,byte[])>($r34, $r23, $r22)
+
+
+Findings in Java Class: io.literal.factory.AWSMobileClientFactory
+
+	 in Method: com.amazonaws.mobile.config.AWSConfiguration getConfiguration(android.content.Context)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r3 = staticinvoke <io.literal.factory.AWSMobileClientFactory: org.json.JSONObject parseInputStream(java.io.InputStream)>($r2)
+
+
+Findings in Java Class: com.amazonaws.services.s3.internal.crypto.CipherLiteInputStream
+
+	 in Method: int read()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = specialinvoke r0.<com.amazonaws.services.s3.internal.crypto.CipherLiteInputStream: int nextChunk()>()
+
+
+	 in Method: int read(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = specialinvoke r0.<com.amazonaws.services.s3.internal.crypto.CipherLiteInputStream: int nextChunk()>()
+
+
+	 in Method: void reset()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r1.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: okio.InputStreamSource
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = virtualinvoke $r4.<java.io.InputStream: int read(byte[],int,int)>($r5, $i4, $i2)
+
+
+Findings in Java Class: com.amazonaws.internal.SdkFilterInputStream
+
+	 in Method: void abortIfNeeded()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke r0.<com.amazonaws.internal.SdkFilterInputStream: void abort()>()
+
+
+	 in Method: void reset()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r1.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: org.apache.commons.io.input.CharSequenceInputStream
+
+	 in Method: void reset()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<org.apache.commons.io.input.CharSequenceInputStream: void fillBuffer()>()
+
+
+Findings in Java Class: com.amazonaws.http.DefaultErrorResponseHandler
+
+	 in Method: com.amazonaws.AmazonServiceException handle(com.amazonaws.http.HttpResponse)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r3 = staticinvoke <com.amazonaws.util.IOUtils: java.lang.String toString(java.io.InputStream)>($r2)
+
+
+Findings in Java Class: com.amazonaws.services.s3.internal.S3StringResponseHandler
+
+	 in Method: com.amazonaws.AmazonWebServiceResponse handle(com.amazonaws.http.HttpResponse)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = virtualinvoke $r7.<java.io.InputStream: int read(byte[])>($r6)
+
+
+Findings in Java Class: com.amazonaws.services.s3.internal.S3ErrorResponseHandler
+
+	 in Method: com.amazonaws.AmazonServiceException handle(com.amazonaws.http.HttpResponse)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r3 = staticinvoke <com.amazonaws.util.IOUtils: java.lang.String toString(java.io.InputStream)>($r2)
+
+
+Findings in Java Class: okio.InflaterSource
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $l1 = virtualinvoke r0.<okio.InflaterSource: long readOrInflate(okio.Buffer,long)>($r1, $l0)
+
+
+Findings in Java Class: org.apache.james.mime4j.codec.QuotedPrintableInputStream
+
+	 in Method: int read0(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i3 = specialinvoke r0.<org.apache.james.mime4j.codec.QuotedPrintableInputStream: int fillBuffer()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i6 = specialinvoke r0.<org.apache.james.mime4j.codec.QuotedPrintableInputStream: int peek(int)>(varReplacer15299)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i6 = specialinvoke r0.<org.apache.james.mime4j.codec.QuotedPrintableInputStream: int peek(int)>(varReplacer15279)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = specialinvoke r0.<org.apache.james.mime4j.codec.QuotedPrintableInputStream: int transfer(int,byte[],int,int,boolean)>($i3, $r1, $i2, $i1, varReplacer15294)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = specialinvoke r0.<org.apache.james.mime4j.codec.QuotedPrintableInputStream: int transfer(int,byte[],int,int,boolean)>(varReplacer15292, $r1, $i2, $i1, varReplacer15293)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = specialinvoke r0.<org.apache.james.mime4j.codec.QuotedPrintableInputStream: int transfer(int,byte[],int,int,boolean)>($i3, $r1, $i2, $i1, varReplacer15322)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = specialinvoke r0.<org.apache.james.mime4j.codec.QuotedPrintableInputStream: int transfer(int,byte[],int,int,boolean)>($i4, $r1, $i2, $i1, varReplacer15290)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = specialinvoke r0.<org.apache.james.mime4j.codec.QuotedPrintableInputStream: int transfer(int,byte[],int,int,boolean)>(varReplacer15282, $r1, $i2, $i1, varReplacer15283)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = specialinvoke r0.<org.apache.james.mime4j.codec.QuotedPrintableInputStream: int transfer(int,byte[],int,int,boolean)>(varReplacer15296, $r1, $i2, $i1, varReplacer15297)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = specialinvoke r0.<org.apache.james.mime4j.codec.QuotedPrintableInputStream: int transfer(int,byte[],int,int,boolean)>(varReplacer15313, $r1, $i2, $i1, varReplacer15314)
+
+
+Findings in Java Class: org.apache.james.mime4j.codec.Base64InputStream
+
+	 in Method: int read0(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i5 = virtualinvoke $r4.<java.io.InputStream: int read(byte[],int,int)>($r3, varReplacer15500, $i5)
+
+
+Findings in Java Class: com.amazonaws.http.UrlHttpClient
+
+	 in Method: void writeContentToConnection(com.amazonaws.http.HttpRequest,java.net.HttpURLConnection,com.amazonaws.http.UrlHttpClient$CurlBuilder)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r4 = virtualinvoke $r2.<com.amazonaws.http.HttpRequest: java.io.InputStream getContent()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<com.amazonaws.http.UrlHttpClient: void write(java.io.InputStream,java.io.OutputStream,com.amazonaws.http.UrlHttpClient$CurlBuilder,java.nio.ByteBuffer)>($r4, $r5, $r1, $r6)
+
+
+	 in Method: void enableCustomTrustManager(javax.net.ssl.HttpsURLConnection)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #db1c6ed2e803769afc1d6ee227161067e7e5fe5ab4d84bde9b88bca7912928b5)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer43643)
+
+
+Findings in Java Class: androidx.core.graphics.TypefaceCompatApi21Impl
+
+	 in Method: android.graphics.Typeface createFromFontInfo(android.content.Context,android.os.CancellationSignal,androidx.core.provider.FontsContractCompat$FontInfo[],int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r14.<java.io.FileInputStream: void close()>()
+
+
+Findings in Java Class: com.amazonaws.auth.AwsChunkedEncodingInputStream
+
+	 in Method: void reset()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r2.<java.io.InputStream: void reset()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z0 = virtualinvoke $r2.<java.io.InputStream: boolean markSupported()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $z0 = virtualinvoke $r2.<java.io.InputStream: boolean markSupported()>()
+
+
+	 in Method: void <init>(java.io.InputStream,int,byte[],java.lang.String,java.lang.String,java.lang.String,com.amazonaws.auth.AWS4Signer)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r6 = $r7.<com.amazonaws.auth.AwsChunkedEncodingInputStream: java.io.InputStream is>
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<com.amazonaws.internal.SdkInputStream: void <init>()>()
+
+
+	 in Method: boolean setUpNextChunk()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i1 = virtualinvoke $r3.<java.io.InputStream: int read(byte[],int,int)>($r1, $i0, $i1)
+
+
+Findings in Java Class: org.apache.james.mime4j.io.LineReaderInputStreamAdaptor
+
+	 in Method: int doReadLine(org.apache.james.mime4j.util.ByteArrayBuffer)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = virtualinvoke $r2.<java.io.InputStream: int read()>()
+
+
+Findings in Java Class: okhttp3.internal.http1.Http1ExchangeCodec$AbstractSource
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke r0.<okhttp3.internal.http1.Http1ExchangeCodec$AbstractSource: void responseBodyComplete()>()
+
+
+Findings in Java Class: kotlin.collections.builders.MapBuilder
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z0 = specialinvoke r0.<kotlin.collections.builders.MapBuilder: boolean contentEquals(java.util.Map)>($r3)
+
+
+Findings in Java Class: com.amazonaws.services.s3.internal.crypto.AdjustedRangeInputStream
+
+	 in Method: int read(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = virtualinvoke $r2.<java.io.InputStream: int read(byte[],int,int)>($r1, $i0, $i1)
+
+
+	 in Method: int read()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = virtualinvoke $r1.<java.io.InputStream: int read()>()
+
+
+	 in Method: void initializeForRead(long,long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r1.<java.io.InputStream: int read()>()
+
+
+Findings in Java Class: okio.Buffer
+
+	 in Method: void write(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: staticinvoke <kotlin.jvm.internal.Intrinsics: void checkNotNullParameter(java.lang.Object,java.lang.String)>($r1, varReplacer18101)
+
+
+Findings in Java Class: com.amazonaws.mobileconnectors.s3.transferutility.DownloadTask
+
+	 in Method: java.lang.Boolean call()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<com.amazonaws.mobileconnectors.s3.transferutility.DownloadTask: void saveToFile(java.io.InputStream,java.io.File)>($r22, $r14)
+
+
+Findings in Java Class: org.apache.james.mime4j.parser.MimeStreamParser
+
+	 in Method: void parse(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: interfaceinvoke $r6.<org.apache.james.mime4j.parser.ContentHandler: void body(org.apache.james.mime4j.stream.BodyDescriptor,java.io.InputStream)>($r11, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r5 = virtualinvoke $r2.<org.apache.james.mime4j.stream.MimeTokenStream: org.apache.james.mime4j.stream.Field parseHeadless(java.io.InputStream,java.lang.String)>($r1, $r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: interfaceinvoke $r6.<org.apache.james.mime4j.parser.ContentHandler: void preamble(java.io.InputStream)>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: interfaceinvoke $r6.<org.apache.james.mime4j.parser.ContentHandler: void epilogue(java.io.InputStream)>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r2.<org.apache.james.mime4j.stream.MimeTokenStream: void parse(java.io.InputStream)>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: interfaceinvoke $r6.<org.apache.james.mime4j.parser.ContentHandler: void raw(java.io.InputStream)>($r1)
+
+
+Findings in Java Class: okhttp3.internal.http1.Http1ExchangeCodec$ChunkedSource
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z0 = virtualinvoke r0.<okhttp3.internal.http1.Http1ExchangeCodec$ChunkedSource: boolean getClosed()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke r0.<okhttp3.internal.http1.Http1ExchangeCodec$ChunkedSource: void responseBodyComplete()>()
+
+
+Findings in Java Class: io.literal.model.WebArchive
+
+	 in Method: java.util.concurrent.CompletionStage lambda$open$0$WebArchive(android.content.Context,io.literal.model.User,java.lang.Void)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r1.<java.io.FileInputStream: void close()>()
+
+
+Findings in Java Class: okio.GzipSource
+
+	 in Method: void consumeHeader()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<okio.GzipSource: void checkEqual(java.lang.String,int,int)>(varReplacer18469, varReplacer18470, $s2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<okio.GzipSource: void updateCrc(okio.Buffer,long,long)>($r2, varReplacer18479, $l3)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<okio.GzipSource: void updateCrc(okio.Buffer,long,long)>($r2, varReplacer18472, varReplacer18473)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<okio.GzipSource: void updateCrc(okio.Buffer,long,long)>($r2, varReplacer18478, $l5)
+
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<okio.GzipSource: void consumeTrailer()>()
+
+
+Findings in Java Class: com.amazonaws.mobileconnectors.appsync.SubscriptionAuthorizer
+
+	 in Method: org.json.JSONObject getAuthorizationDetailsForIAM(boolean,com.apollographql.apollo.api.Subscription)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r15 = virtualinvoke $r2.<com.amazonaws.DefaultRequest: java.util.Map getHeaders()>()
+
+
+Findings in Java Class: io.literal.repository.WebArchiveRepository
+
+	 in Method: java.util.Optional createBodyPart(android.webkit.WebResourceRequest,okhttp3.ResponseBody)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r20 = virtualinvoke $r20.<org.apache.james.mime4j.message.SingleBodyBuilder: org.apache.james.mime4j.message.SingleBodyBuilder readFrom(java.io.InputStream)>($r21)
+
+
+Findings in Java Class: org.apache.james.mime4j.message.SingleBodyBuilder
+
+	 in Method: org.apache.james.mime4j.dom.TextBody buildText()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r5 = interfaceinvoke $r2.<org.apache.james.mime4j.message.BodyFactory: org.apache.james.mime4j.dom.TextBody textBody(java.io.InputStream,java.lang.String)>($r4, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r5 = interfaceinvoke $r2.<org.apache.james.mime4j.message.BodyFactory: org.apache.james.mime4j.dom.TextBody textBody(java.io.InputStream,java.lang.String)>($r4, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r5 = interfaceinvoke $r2.<org.apache.james.mime4j.message.BodyFactory: org.apache.james.mime4j.dom.TextBody textBody(java.io.InputStream,java.lang.String)>($r4, $r3)
+
+
+	 in Method: org.apache.james.mime4j.dom.BinaryBody buildBinary()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r5 = interfaceinvoke $r3.<org.apache.james.mime4j.message.BodyFactory: org.apache.james.mime4j.dom.BinaryBody binaryBody(java.io.InputStream)>($r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r5 = interfaceinvoke $r3.<org.apache.james.mime4j.message.BodyFactory: org.apache.james.mime4j.dom.BinaryBody binaryBody(java.io.InputStream)>($r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r5 = interfaceinvoke $r3.<org.apache.james.mime4j.message.BodyFactory: org.apache.james.mime4j.dom.BinaryBody binaryBody(java.io.InputStream)>($r4)
+
+
+Findings in Java Class: okhttp3.MultipartReader$PartSource
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z0 = staticinvoke <kotlin.jvm.internal.Intrinsics: boolean areEqual(java.lang.Object,java.lang.Object)>($r4, $r5)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z0 = staticinvoke <kotlin.jvm.internal.Intrinsics: boolean areEqual(java.lang.Object,java.lang.Object)>($r4, $r5)
+
+
+Findings in Java Class: org.apache.james.mime4j.stream.MimeEntity
+
+	 in Method: void advanceToBoundary()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = virtualinvoke $r3.<java.io.InputStream: int read(byte[])>($r2)
+
+
+Findings in Java Class: androidx.core.graphics.TypefaceCompatBaseImpl
+
+	 in Method: android.graphics.Typeface createFromFontInfo(android.content.Context,android.os.CancellationSignal,androidx.core.provider.FontsContractCompat$FontInfo[],int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: staticinvoke <androidx.core.graphics.TypefaceCompatUtil: void closeQuietly(java.io.Closeable)>($r10)
+
+
+Findings in Java Class: io.literal.lib.ContentResolverLib
+
+	 in Method: java.io.File toFile(android.content.Context,java.io.File,android.net.Uri,java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5507942d1798865d04e2bc7e620d73d63bc4d275ef53d84c1af4669825a733b1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: staticinvoke <org.apache.commons.io.FileUtils: void copyInputStreamToFile(java.io.InputStream,java.io.File)>($r5, $r6)
+
+
+Findings in Java Class: com.amazonaws.internal.keyvaluestore.AWSKeyValueStore
+
+	 in Method: java.lang.String encrypt(java.security.Key,java.security.spec.AlgorithmParameterSpec,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer24212, $r1, $r2)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #69fb985200aec7e7d55d2fd5f48a5237e72df59b3d7dc6ed7223f97ff26e12e9)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+
+
+	 in Method: java.lang.String decrypt(java.security.Key,java.security.spec.AlgorithmParameterSpec,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer24485, $r1, $r2)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #19e7d4e4bada847b620bd3247aa6bbe5242f362cda28003bbf60c2ae640473d6)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r4 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer24485, $r1, $r2)
+
+
+	 in Method: java.security.spec.AlgorithmParameterSpec getAlgorithmParameterSpecForIV(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r2.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer24209, $r1)
+
+
+Findings in Java Class: com.amazonaws.services.s3.internal.AWSS3V4Signer
+
+	 in Method: long getContentLength(com.amazonaws.Request)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r1.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: org.apache.james.mime4j.io.PositionInputStream
+
+	 in Method: void reset()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r1.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: org.apache.commons.io.input.BOMInputStream
+
+	 in Method: void reset()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r1.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: org.apache.commons.io.input.ProxyInputStream
+
+	 in Method: void reset()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r1.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: com.amazonaws.services.s3.internal.crypto.RenewableCipherLiteInputStream
+
+	 in Method: void reset()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r1.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: org.apache.commons.io.input.BoundedInputStream
+
+	 in Method: void reset()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r1.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: com.amazonaws.auth.AWS4Signer
+
+	 in Method: java.lang.String calculateContentHash(com.amazonaws.Request)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r2.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: com.amazonaws.util.CRC32ChecksumCalculatingInputStream
+
+	 in Method: void reset()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r2.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: com.amazonaws.util.NamespaceRemovingInputStream
+
+	 in Method: int read()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to java.io.InputStream: int read(byte[],int,int), javax.crypto.CipherInputStream: int read(), java.io.InputStream: int read(byte[]), java.io.FilterInputStream: int read(byte[],int,int), javax.crypto.CipherInputStream: int read(byte[]), java.io.InputStream: int read(), java.io.FilterInputStream: int read(byte[]), java.io.FilterInputStream: int read(), javax.crypto.CipherInputStream: int read(byte[],int,int)
+			at statement: $i0 = virtualinvoke $r2.<java.io.InputStream: int read()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r2.<java.io.InputStream: void reset()>()
+
+
+Findings in Java Class: com.amazonaws.auth.AbstractAWSSigner
+
+	 in Method: byte[] getBinaryRequestPayloadWithoutQueryParams(com.amazonaws.Request)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dd93ac7b5f6405010ba7f19507b18447c394a4a794455f5cb64b0e82a345ea82)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r2.<java.io.InputStream: void reset()>()
+
+
+	 in Method: byte[] hash(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #9a42f5fce6ab5e869256ff69a376ac48773f99a18c8536697b6a39dd63ec220e)
+			Operation on object of type com.amazonaws.internal.SdkDigestInputStream object not completed. Expected call to read
+			at statement: $r2 = virtualinvoke $r3.<java.security.DigestInputStream: java.security.MessageDigest getMessageDigest()>()
+
+
+	 in Method: byte[] sign(byte[],byte[],com.amazonaws.auth.SigningAlgorithm)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r5)
+
+
+Findings in Java Class: com.amazonaws.internal.keyvaluestore.KeyProvider23
+
+	 in Method: java.security.Key retrieveKey(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #215ab0baf8c485e9d2310602a1861dfd5797023415fe052a77614650fc17bf06)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28202)
+
+
+	 in Method: void deleteKey(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #ffb8ef9c1dd63e503641b90807c1a07fe9c93db7de7d9111f1d231daece92b13)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28225)
+
+
+	 in Method: java.security.Key generateKey(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #855760093d4502557b333e7ad90cb10ddbb080932868a6655e5feeafc64ae18a)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28247)
+
+
+Findings in Java Class: com.amazonaws.internal.keyvaluestore.KeyProvider18
+
+	 in Method: java.security.Key retrieveKey(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #202fecf49adc681b106a84b47b9bc9559aaf8c71e5506a2fdb13417ac720db3)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28209)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer28211)
+
+
+	 in Method: void deleteKey(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #93bd84b6db63bfe010f712edfd48ca27f31248bd56d5d23722d48100fdc1fc93)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r7 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28235)
+
+
+	 in Method: java.security.Key generateKey(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyGenerator
+			Second parameter was not properly generated as randomized
+			at statement: virtualinvoke $r15.<javax.crypto.KeyGenerator: void init(int,java.security.SecureRandom)>(varReplacer28271, $r14)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPairGenerator
+			First parameter was not properly generated as preparedRSA
+			at statement: virtualinvoke $r13.<java.security.KeyPairGenerator: void initialize(java.security.spec.AlgorithmParameterSpec)>($r12)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #4e3f5aa99cab2002450bf0b6cc1e92a632bb1cd739c7b01ee286d96e26926060)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer28274)
+
+
+	 in Method: byte[] rsaDecrypt(java.lang.String,byte[])
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #6a036351e476522dff182830816c49552b2a702375b65cb8066bc5e998496a91)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer33150)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #6a036351e476522dff182830816c49552b2a702375b65cb8066bc5e998496a91)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to getKey
+			at statement: $r4 = virtualinvoke $r3.<java.security.KeyStore: java.security.KeyStore$Entry getEntry(java.lang.String,java.security.KeyStore$ProtectionParameter)>($r1, varReplacer33154)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #9de6246e0190c552581ab0265a166d2e753b8a0c535adc3c0f51fdb74c23b68c)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer33153, $r7)
+
+
+	 in Method: byte[] rsaEncrypt(java.lang.String,byte[])
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #9174f69d002b0bc6faea6ef849e1aaaf4e157c16773f0997181c7b72ca44ef62)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to getKey
+			at statement: $r4 = virtualinvoke $r3.<java.security.KeyStore: java.security.KeyStore$Entry getEntry(java.lang.String,java.security.KeyStore$ProtectionParameter)>($r1, varReplacer33173)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #9174f69d002b0bc6faea6ef849e1aaaf4e157c16773f0997181c7b72ca44ef62)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer33175)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer33170, $r8)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #1d9cd4fe8ac6bbbb58efce83c42df8ce43b81b7b5a7baaa4746faf9f007b2243)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+
+Findings in Java Class: com.amazonaws.internal.keyvaluestore.KeyProvider10
+
+	 in Method: java.security.Key generateKey(java.lang.String)
+		TypestateError violating CrySL rule for javax.crypto.KeyGenerator (on Object #bb1872e7b6158cea939e3a6fa1b9b2817ac00f7a2c8385864c923cad54716c15)
+			Unexpected call to method generateKey on object of type javax.crypto.KeyGenerator.
+			at statement: $r5 = virtualinvoke $r3.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+
+
+	 in Method: java.security.Key retrieveKey(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer28192)
+
+
+Findings in Java Class: com.amazonaws.mobileconnectors.cognitoidentityprovider.util.Hkdf
+
+	 in Method: void init(byte[],byte[])
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #1af68ecc96dfb1321d2f24fec28cd2be2e3f2e18c84ce854c612a9de86667a04)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r1)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #1af68ecc96dfb1321d2f24fec28cd2be2e3f2e18c84ce854c612a9de86667a04)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Mac: void init(java.security.Key)>($r7)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r1)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #1af68ecc96dfb1321d2f24fec28cd2be2e3f2e18c84ce854c612a9de86667a04)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r1)
+
+
+	 in Method: void deriveKey(byte[],int,byte[],int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #3aa4f261f47a54b8126a1a63d07218ec6ad5507e0cc4c18eea0785033cb93b4f)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to javax.crypto.Mac: byte[] doFinal(byte[]), update
+			at statement: $r5 = virtualinvoke $r3.<javax.crypto.Mac: byte[] doFinal()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #3aa4f261f47a54b8126a1a63d07218ec6ad5507e0cc4c18eea0785033cb93b4f)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $i1 = virtualinvoke $r3.<javax.crypto.Mac: int getMacLength()>()
+
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #3aa4f261f47a54b8126a1a63d07218ec6ad5507e0cc4c18eea0785033cb93b4f)
+			Unexpected call to method update on object of type javax.crypto.Mac.
+			at statement: virtualinvoke $r3.<javax.crypto.Mac: void update(byte[])>($r4)
+
+
+	 in Method: javax.crypto.Mac createMac()
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r1.<javax.crypto.Mac: void init(java.security.Key)>($r3)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest$okio(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ae39b036c5eeeba58d380660f68e23806935f12d2f5c9cefe65440425aa34f4a)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ae39b036c5eeeba58d380660f68e23806935f12d2f5c9cefe65440425aa34f4a)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: okio.SegmentedByteString
+
+	 in Method: okio.ByteString digest$okio(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r6 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: com.amazonaws.services.s3.internal.crypto.EncryptionUtils
+
+	 in Method: javax.crypto.Cipher createSymmetricCipher(javax.crypto.SecretKey,int,java.security.Provider,byte[])
+		ForbiddenMethodError violating CrySL rule for javax.crypto.Cipher
+			Detected call to forbidden method void init(int,java.security.Key) of class javax.crypto.Cipher. Instead, call method <javax.crypto.Cipher: void init(int,java.security.Key)>.
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key)>($i0, $r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r0, $r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key)>($i0, $r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+
+
+Findings in Java Class: com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial
+
+	 in Method: javax.crypto.SecretKey cek(byte[],java.lang.String,com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider,com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme,com.amazonaws.services.kms.AWSKMSClient)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r14.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer38436)
+
+		ForbiddenMethodError violating CrySL rule for javax.crypto.Cipher
+			Detected call to forbidden method void init(int,java.security.Key) of class javax.crypto.Cipher. Instead, call method <javax.crypto.Cipher: void init(int,java.security.Key)>.
+			at statement: virtualinvoke $r10.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer38439, $r11)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r10.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer38435, $r11)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #679f783bc6d53b96d26dae3124229bb9d6185ed77bc4ff15f75bd36c53f9cf3)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r10.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r0)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #aa2f3b5c484542599a3f9f301f25d761210ad30ec1c3d8a8dfc0c8b118c52556)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r10.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r0)
+
+
+	 in Method: com.amazonaws.services.s3.internal.crypto.SecuredCEK secureCEK(javax.crypto.SecretKey,com.amazonaws.services.s3.model.EncryptionMaterials,com.amazonaws.services.s3.internal.crypto.S3KeyWrapScheme,java.security.SecureRandom,java.security.Provider,com.amazonaws.services.kms.AWSKMSClient,com.amazonaws.AmazonWebServiceRequest)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r18.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.SecureRandom)>(varReplacer42337, $r24, $r3)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #1e03e7261807fdfa137ddce704402cff8d87ad1c15100260cf72b7db45b6bc97)
+			First parameter (with value "AESWrap") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r18 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r9, $r4)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #1e03e7261807fdfa137ddce704402cff8d87ad1c15100260cf72b7db45b6bc97)
+			Unexpected call to method wrap on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r10 = virtualinvoke $r18.<javax.crypto.Cipher: byte[] wrap(java.security.Key)>($r0)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #cf026897d135095cd087e16ee2a70e66bea9c43fcf1138ed56656ec69d758c3c)
+			Unexpected call to method wrap on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r10 = virtualinvoke $r18.<javax.crypto.Cipher: byte[] wrap(java.security.Key)>($r0)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #cf026897d135095cd087e16ee2a70e66bea9c43fcf1138ed56656ec69d758c3c)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r10 = virtualinvoke $r18.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r10)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #1e03e7261807fdfa137ddce704402cff8d87ad1c15100260cf72b7db45b6bc97)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r10 = virtualinvoke $r18.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r10)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r18.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.SecureRandom)>(varReplacer42337, $r24, $r3)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #cf026897d135095cd087e16ee2a70e66bea9c43fcf1138ed56656ec69d758c3c)
+			First parameter (with value "AESWrap") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r18 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r18.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer42336, $r24)
+
+
+	 in Method: javax.crypto.SecretKey cekByKMS(byte[],java.lang.String,com.amazonaws.services.s3.model.EncryptionMaterials,com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme,com.amazonaws.services.kms.AWSKMSClient)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r3)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #2acf4e4fc5c2b304926abbb2e5fd6114a5d90863add32a014acb1e51a2ecebba)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer38485, $r2)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer35031)
+
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer35054, $r3, varReplacer35054)
+
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #14851cf0c60183005da66e5330d7ebb5c052fe20d10cd929a6e902873d9bbc09)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer38487)
+
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer35050, $r3, varReplacer35050)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer35050, $r3, varReplacer35050)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer35050, $r3, varReplacer35050)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer35035)
+
+
+Findings in Java Class: okhttp3.internal.platform.BouncyCastlePlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #6f64063f7e0e023e52944011b3f54a9fa3294c436f6931c674da6d8458e88c01)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer38488, $r2)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer35044)
+
+
+Findings in Java Class: okhttp3.Cache$Entry
+
+	 in Method: java.util.List readCertificateList(okio.BufferedSource)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #514a30908b890e6066145afc30f17d43dbe4395c1dbd8233aaa0a864e04b0cc8)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertificate, generateCertPath, generateCRL
+			at statement: $r6 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer41233)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #514a30908b890e6066145afc30f17d43dbe4395c1dbd8233aaa0a864e04b0cc8)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r11 = virtualinvoke $r6.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r10)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #514a30908b890e6066145afc30f17d43dbe4395c1dbd8233aaa0a864e04b0cc8)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r11 = virtualinvoke $r6.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r10)
+
+
+Findings in Java Class: com.amazonaws.services.s3.internal.crypto.S3CryptoModuleBase
+
+	 in Method: javax.crypto.SecretKey generateCEK(com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider)
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyGenerator
+			Second parameter was not properly generated as randomized
+			at statement: virtualinvoke $r5.<javax.crypto.KeyGenerator: void init(int,java.security.SecureRandom)>($i0, $r7)
+
+		TypestateError violating CrySL rule for javax.crypto.KeyGenerator (on Object #4bf31f25306f4a9d35a492be4f612befc8b544833b01557fa389701c0c907ffb)
+			Unexpected call to method generateKey on object of type javax.crypto.KeyGenerator.
+			at statement: $r12 = virtualinvoke $r5.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+
+		TypestateError violating CrySL rule for javax.crypto.KeyGenerator (on Object #2db08493f3d855d0c32dbe5ec6c105fb586a7e9a2a68ac592134e4e61c362f3a)
+			Unexpected call to method generateKey on object of type javax.crypto.KeyGenerator.
+			at statement: $r12 = virtualinvoke $r5.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+
+
+	 in Method: com.amazonaws.services.s3.internal.crypto.ContentCryptoMaterial buildContentCryptoMaterial(com.amazonaws.services.s3.model.EncryptionMaterials,java.security.Provider,com.amazonaws.AmazonWebServiceRequest)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r16.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r18, $r11)
+
+
+Findings in Java Class: com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser
+
+	 in Method: com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeRequest deviceSrpAuthRequest(java.util.Map,com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeResult,java.lang.String,java.lang.String,com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser$AuthenticationHelper)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r14.<javax.crypto.Mac: void init(java.security.Key)>($r15)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r15.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer30291)
+
+
+	 in Method: com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeRequest userSrpAuthRequest(java.util.Map,java.util.Map,java.lang.String,java.lang.String,java.lang.String,com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser$AuthenticationHelper)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r22.<javax.crypto.Mac: void init(java.security.Key)>($r23)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r23.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r20, varReplacer21135)
+
+
+Findings in Java Class: com.amazonaws.cognito.clientcontext.util.SignatureGenerator
+
+	 in Method: java.lang.String getSignature(java.lang.String,java.lang.String,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer33190)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Mac: void init(java.security.Key)>($r2)
+
+
+Findings in Java Class: com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoSecretHash
+
+	 in Method: java.lang.String getSecretHash(java.lang.String,java.lang.String,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer19752)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r7.<javax.crypto.Mac: void init(java.security.Key)>($r4)
+
+
+Findings in Java Class: com.amazonaws.services.s3.internal.crypto.ContentCryptoScheme
+
+	 in Method: com.amazonaws.services.s3.internal.crypto.CipherLite createCipherLite(javax.crypto.SecretKey,byte[],int,java.security.Provider)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r8.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r8)
+
+
+Findings in Java Class: okhttp3.internal.platform.OpenJSSEPlatform
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer35029)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 121
+
+	CryptoAnalysis found the following violations. For details see description above.
+	NeverTypeOfError: 3
+	ConstraintError: 22
+	ForbiddenMethodError: 2
+	RequiredPredicateError: 48
+	TypestateError: 19
+	IncompleteOperationError: 115
+=====================================================================

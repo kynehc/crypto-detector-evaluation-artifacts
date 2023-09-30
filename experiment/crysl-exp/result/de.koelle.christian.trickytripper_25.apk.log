@@ -1,0 +1,131 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r9 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <okio.Buffer: java.lang.String toString()>
+		SHA-256: fb004f05b5388edcc7c3df84964af3a7d6e354e96694836f8caba5bdeca881c5
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer13377)
+		Method: <c.d0.h: okio.ByteString a(okio.ByteString)>
+		SHA-256: fff0546483c4c64c917e8e690f608c0b2faf571bf2f12da38659aa40f59da9a5
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <c.d0.h: okio.ByteString a(okio.ByteString)>
+		SHA-256: c08429b33951eebedb7ed411c2381f7a1c309441601cdcba469575556a92c86b
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString a(java.lang.String)>
+		SHA-256: cbf37e64fad8b6e08d4edd54eaa57c9d0e1cb76861f0b0ae88175f2451ca23e7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <okio.ByteString: okio.ByteString a(java.lang.String)>
+		SHA-256: be4fb70e74f100f010e87983e6a6531905dd79eade4774d00097d0cbeaad68b1
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8082)
+		Method: <okio.Buffer: java.lang.String toString()>
+		SHA-256: 6eaf8e1acf532c129c4aa4a21edd1a5fc094d18608d11bee6178f843ead93d8e
+		Secure: false
+
+Findings in Java Class: okio.Buffer
+
+	 in Method: java.lang.String toString()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6eaf8e1acf532c129c4aa4a21edd1a5fc094d18608d11bee6178f843ead93d8e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8082)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString a(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #cbf37e64fad8b6e08d4edd54eaa57c9d0e1cb76861f0b0ae88175f2451ca23e7)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: c.d0.h
+
+	 in Method: okio.ByteString a(okio.ByteString)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #fff0546483c4c64c917e8e690f608c0b2faf571bf2f12da38659aa40f59da9a5)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer13377)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 6
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 3
+=====================================================================

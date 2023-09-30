@@ -1,0 +1,122 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer997)
+		Method: <com.phonegap.urlcache.URLCache: java.lang.String md5(java.lang.String)>
+		SHA-256: 212d805f1bcddffade66f749717a24f84a3ecaf7a74addb436a1497b227a7908
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.phonegap.urlcache.URLCache: java.lang.String md5(java.lang.String)>
+		SHA-256: 3f620927814ef8c208be05698add1e1e47718a64e71814827b2254efdb4bd86a
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r8.<java.security.SecureRandom: void <init>()>()
+		Method: <com.phonegap.FileTransfer: void trustAllHosts()>
+		SHA-256: a06334ca45c3ff7307adb668c051182fe683a6afce347bff5d47b5f32f553237
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2348)
+		Method: <com.phonegap.FileTransfer: void trustAllHosts()>
+		SHA-256: 1d956f8fab6bfcc9a75153f31ed88207ee628a2e35a3190a256666e99bacaa2b
+		Secure: false
+
+Findings in Java Class: com.phonegap.urlcache.URLCache
+
+	 in Method: java.lang.String md5(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #212d805f1bcddffade66f749717a24f84a3ecaf7a74addb436a1497b227a7908)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer997)
+
+
+Findings in Java Class: com.phonegap.FileTransfer
+
+	 in Method: void trustAllHosts()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2347, $r9, $r5)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #1d956f8fab6bfcc9a75153f31ed88207ee628a2e35a3190a256666e99bacaa2b)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2348)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2347, $r9, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2347, $r9, $r5)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 4
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 2
+	RequiredPredicateError: 3
+=====================================================================

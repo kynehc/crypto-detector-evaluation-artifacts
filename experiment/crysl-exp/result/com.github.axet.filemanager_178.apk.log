@@ -1,0 +1,158 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer924)
+		Method: <com.github.axet.filemanager.fragments.FilesFragment$PropertiesBuilder$8: void run()>
+		SHA-256: bd99b9a83fc7c3ff4fbba1fed226e3c559d00d0dc3e9fa6c362a8b8c95fbdf32
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <com.github.axet.androidlibrary.crypto.MD5: byte[] digest(byte[])>
+		SHA-256: 5e97372c6b896a9ed8554ee619c1d230f0a22c4aac16da71146c7c70d64a8e79
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1071)
+		Method: <com.github.axet.androidlibrary.crypto.MD5: byte[] digest(byte[])>
+		SHA-256: 24fa4f9d9ac71a03433d1396c301c488476cb6472914aa8aaeeb0da5b71c09e1
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer923)
+		Method: <com.github.axet.filemanager.fragments.FilesFragment$PropertiesBuilder$8: void run()>
+		SHA-256: 58448eb54241853fb1ba4bb85dd5b04cf7b366f82f61aa57ee00a50f7cd7cece
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r2)
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: void init(byte[])>
+		SHA-256: 1af3e375106d10b26ea6034ef73b9c61e751ef18cab8bd19d427ede96b1bf3f8
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Mac
+		Statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: void <init>(java.lang.String)>
+		SHA-256: fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r2)
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: void init(byte[])>
+		SHA-256: 2c8b6542a35e929698f4560c93b5cf68fb53e0b3268e298dc399955f0bfa617b
+		Secure: false
+
+Findings in Java Class: com.github.axet.filemanager.fragments.FilesFragment$PropertiesBuilder$8
+
+	 in Method: void run()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #58448eb54241853fb1ba4bb85dd5b04cf7b366f82f61aa57ee00a50f7cd7cece)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r7.<com.github.axet.filemanager.fragments.FilesFragment$PropertiesBuilder$8$2: void <init>(com.github.axet.filemanager.fragments.FilesFragment$PropertiesBuilder$8,java.security.MessageDigest,java.security.MessageDigest)>(r0, $r1, $r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #bd99b9a83fc7c3ff4fbba1fed226e3c559d00d0dc3e9fa6c362a8b8c95fbdf32)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r7.<com.github.axet.filemanager.fragments.FilesFragment$PropertiesBuilder$8$2: void <init>(com.github.axet.filemanager.fragments.FilesFragment$PropertiesBuilder$8,java.security.MessageDigest,java.security.MessageDigest)>(r0, $r1, $r2)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #58448eb54241853fb1ba4bb85dd5b04cf7b366f82f61aa57ee00a50f7cd7cece)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer923)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #bd99b9a83fc7c3ff4fbba1fed226e3c559d00d0dc3e9fa6c362a8b8c95fbdf32)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer924)
+
+
+Findings in Java Class: com.github.axet.androidlibrary.crypto.MD5
+
+	 in Method: byte[] digest(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #24fa4f9d9ac71a03433d1396c301c488476cb6472914aa8aaeeb0da5b71c09e1)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1071)
+
+
+Findings in Java Class: net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF
+
+	 in Method: void <init>(java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			First parameter (with value "HmacSHA1") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+
+
+	 in Method: void init(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r2)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 7
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 4
+	RequiredPredicateError: 1
+	IncompleteOperationError: 2
+=====================================================================

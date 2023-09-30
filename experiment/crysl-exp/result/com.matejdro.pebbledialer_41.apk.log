@@ -1,0 +1,116 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6683)
+		Method: <org.java_websocket.drafts.Draft_10: java.lang.String generateFinalKey(java.lang.String)>
+		SHA-256: fd71aec43f0db1370f4b88e94a27859d8f73c92a3118804360daee21bbc8f8fa
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <org.java_websocket.drafts.Draft_76: byte[] createChallenge(java.lang.String,java.lang.String,byte[])>
+		SHA-256: 16e619ea7c854d11cc270eb86e829bea4bc898fa31dd1105d925d1d093de6373
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5179)
+		Method: <org.java_websocket.drafts.Draft_76: byte[] createChallenge(java.lang.String,java.lang.String,byte[])>
+		SHA-256: 4f791dd4433097d869d5a6584fbc1636366718ce751639441d00296ca44a6e08
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.java_websocket.drafts.Draft_10: java.lang.String generateFinalKey(java.lang.String)>
+		SHA-256: 6f7e0d009fe843781c6583c4c2d94575a8e4890331abe5d479f088ab2467a31e
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <org.java_websocket.drafts.Draft_76: byte[] createChallenge(java.lang.String,java.lang.String,byte[])>
+		SHA-256: 80c037d133dfae34ddb8b3ebdc23c7e665cf0a31b614905c01e06ab69198cacc
+		Secure: false
+
+Findings in Java Class: org.java_websocket.drafts.Draft_76
+
+	 in Method: byte[] createChallenge(java.lang.String,java.lang.String,byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4f791dd4433097d869d5a6584fbc1636366718ce751639441d00296ca44a6e08)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5179)
+
+
+Findings in Java Class: org.java_websocket.drafts.Draft_10
+
+	 in Method: java.lang.String generateFinalKey(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #fd71aec43f0db1370f4b88e94a27859d8f73c92a3118804360daee21bbc8f8fa)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6683)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 5
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 2
+=====================================================================

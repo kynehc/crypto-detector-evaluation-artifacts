@@ -1,0 +1,188 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLContext
+		Statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer41269, $r1)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 2df00b6da539fec6d41c4c0cdb1c42399756e912d4203ab89284e109ecd10e4e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: c3dcfb07eabeaead2afa7b41e33d56187e303e14a7184c21b7bac99836f2c278
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest$jvm(java.lang.String)>
+		SHA-256: 4fff7c5d15f021d956e87c05e0dc87688a11eec9c61bcdc27645605a965776c9
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer49663)
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator$1: com.bumptech.glide.load.engine.cache.SafeKeyGenerator$PoolableDigestContainer create()>
+		SHA-256: cc2c64c1fb371d43530c76a3c3e3189b61726c3b62548f339e7d410b1cdb8f1
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.SegmentedByteString: okio.ByteString digest$jvm(java.lang.String)>
+		SHA-256: ea9bd02bb32dbb2be26eca134efdb9d94c1e5921cb9abf4599d98facf22c83d6
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <okio.ByteString: okio.ByteString digest$jvm(java.lang.String)>
+		SHA-256: 8ce052ed6c630e0078d05e19ab4bff46430fe8453e4fc121d3b9ee58a22dc10e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer41266)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: fab246d1d8af29f689fd2631f6db456d61a606d1e4fbeca74098ad291bf488fa
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 5fb6984969c8c0f60ee84399ef18a49aa63648c889757c4080685ad119ecd903
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <okio.SegmentedByteString: okio.ByteString digest$jvm(java.lang.String)>
+		SHA-256: 4a4a686915c63a2d6b53b526049e6c3fe85e0674c3914723edbdc55a1e843a38
+		Secure: false
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #fab246d1d8af29f689fd2631f6db456d61a606d1e4fbeca74098ad291bf488fa)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer41266)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer34800)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #2df00b6da539fec6d41c4c0cdb1c42399756e912d4203ab89284e109ecd10e4e)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer41269, $r1)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest$jvm(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4fff7c5d15f021d956e87c05e0dc87688a11eec9c61bcdc27645605a965776c9)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: okio.SegmentedByteString
+
+	 in Method: okio.ByteString digest$jvm(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ea9bd02bb32dbb2be26eca134efdb9d94c1e5921cb9abf4599d98facf22c83d6)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #ea9bd02bb32dbb2be26eca134efdb9d94c1e5921cb9abf4599d98facf22c83d6)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: okhttp3.OkHttpClient$Companion
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer34812, $r9, varReplacer34812)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer34812, $r9, varReplacer34812)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer34812, $r9, varReplacer34812)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 9
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 4
+	RequiredPredicateError: 4
+	TypestateError: 1
+=====================================================================

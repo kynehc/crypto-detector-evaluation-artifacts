@@ -1,0 +1,1025 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <io.ktor.network.tls.TLSConfigBuilderKt: javax.net.ssl.X509TrustManager findTrustManager()>
+		SHA-256: ae3538cc32e3a3051b5a8d1fbd1357b9a4f353726df3ce51023af6771e95a0f1
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <io.ktor.util.CryptoKt__CryptoJvmKt: byte[] getDigest$CryptoKt__CryptoJvmKt(java.lang.String,java.lang.String,kotlin.jvm.functions.Function1)>
+		SHA-256: 4844fc1458a119720f640b584b124ee839bd5b95be39e60ce9c7d1dca4a0aa2b
+		Secure: true
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r3.<java.security.Signature: boolean verify(byte[])>($r5)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: d02affd279e8743b6fd64cdf0e2dd47c30a5603be2e61d5718cf63d25b2d1a15
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r1.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r9)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: 7ac05a324707752a8fcdd9787a5fcda4e6af85c295ea6bb9f2ffcf779c41a30d
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r2)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: f325059ee6f08c9776202e677308b0f19ca0767a6821e36b4f64a531d072fa45
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: java.security.PrivateKey
+		Statement: $r15 = virtualinvoke $r6.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <io.ktor.network.tls.TLSClientHandshakeKt: io.ktor.network.tls.EncryptionInfo generateECKeys(io.ktor.network.tls.extensions.NamedCurve,java.security.spec.ECPoint)>
+		SHA-256: 14c234836332d0c55528354d9e032eeacdf2c42c9b740e3c62afff7bf8426918
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>($i3, $r1)
+		Method: <io.ktor.network.tls.cipher.GCMCipherKt: javax.crypto.Cipher gcmEncryptCipher(io.ktor.network.tls.CipherSuite,byte[],io.ktor.network.tls.TLSRecordType,int,long,long)>
+		SHA-256: b7d8d0ad53e20559cdd05f6045e1b86a120a5120ae449401216b5a5770eaac5
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Mac
+		Statement: $r6 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r3)
+		Method: <io.ktor.network.tls.cipher.CBCCipher: void <init>(io.ktor.network.tls.CipherSuite,byte[])>
+		SHA-256: 92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r10.<java.security.Signature: boolean verify(byte[])>($r6)
+		Method: <org.conscrypt.ct.CTLogInfo: org.conscrypt.ct.VerifiedSCT$Status verifySingleSCT(org.conscrypt.ct.SignedCertificateTimestamp,org.conscrypt.ct.CertificateEntry)>
+		SHA-256: 364a0f9b2a164d6ed5f9fe3601603c1763c816cf1e8f96465873eaf08c0e8e11
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.lang.String)>($r4, $r2)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: 4b73d9ea47b70e095beb17e2b4e8c62bcb1a3b70cdd913b654094befd6fbd016
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r10.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r11, $r12)
+		Method: <org.conscrypt.OpenSSLECKeyPairGenerator: java.security.KeyPair generateKeyPair()>
+		SHA-256: aef20e7032630e11deed3f628a08d19dda84b6e7e544aa0bf3edd4943ce413d3
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <io.ktor.network.tls.Digest: byte[] doHash-impl(io.ktor.utils.io.core.BytePacketBuilder,java.lang.String)>
+		SHA-256: 9dd8853e68d804405fb27342260cebfbd36792766a4e6f1c8e4971555946bb61
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, varReplacer44794, $i0, $r4)
+		Method: <io.ktor.network.tls.KeysKt: javax.crypto.spec.SecretKeySpec clientMacKey(byte[],io.ktor.network.tls.CipherSuite)>
+		SHA-256: aeec469378188904f530477cf3843c512238680ac1e744410d3806ca2a90fe44
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, $i0, $i1, $r3)
+		Method: <io.ktor.network.tls.KeysKt: javax.crypto.spec.SecretKeySpec serverKey(byte[],io.ktor.network.tls.CipherSuite)>
+		SHA-256: 326c45dbbfbbe180806b239bf20dd6b59c6c6887c7e92780c55205b2975437d9
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r10.<javax.crypto.KeyAgreement: byte[] generateSecret()>()
+		Method: <io.ktor.network.tls.TLSClientHandshake: byte[] generatePreSecret(io.ktor.network.tls.EncryptionInfo)>
+		SHA-256: a8055b2f5e22e083d4902c3c33a17c3a8bf6737afbc46c1be4f00f7de38fdc42
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.facebook.stetho.websocket.WebSocketHandler: java.lang.String generateServerKey(java.lang.String)>
+		SHA-256: 3a839c53a2e73deca07bbaf6104910cef5aa9fd6a0877ab2fecd0b969b6bc376
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r3)
+		Method: <io.ktor.network.tls.cipher.GCMCipherKt: javax.crypto.Cipher gcmDecryptCipher(io.ktor.network.tls.CipherSuite,byte[],io.ktor.network.tls.TLSRecordType,int,long,long)>
+		SHA-256: dc9ba110fbeacf949af2e8845acf11c2d1abcfa33ec3e271f1741386a4eb709e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer69584)
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator$1: com.bumptech.glide.load.engine.cache.SafeKeyGenerator$PoolableDigestContainer create()>
+		SHA-256: 7a3836f46eb5e1a2ffd089588780c5d84705386923ce664db6d60018d1e28e99
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+		Method: <io.ktor.network.tls.cipher.CBCCipher: io.ktor.network.tls.TLSRecord encrypt(io.ktor.network.tls.TLSRecord)>
+		SHA-256: 3b2cf3b421ba8eeb433f456dd1d3b47d3d1affddf71e67a6ee814e3f2947f3c6
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, $i0, $i1, $r4)
+		Method: <io.ktor.network.tls.KeysKt: javax.crypto.spec.SecretKeySpec serverMacKey(byte[],io.ktor.network.tls.CipherSuite)>
+		SHA-256: a67457ab4d768db41c5fd79deb969afae45dd83f48d8013a6a0e66de0375eb8d
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.Signature
+		Statement: $r10 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r9)
+		Method: <org.conscrypt.ct.CTLogInfo: org.conscrypt.ct.VerifiedSCT$Status verifySingleSCT(org.conscrypt.ct.SignedCertificateTimestamp,org.conscrypt.ct.CertificateEntry)>
+		SHA-256: 4867510c33565cbf7503d38506e7d164c604c516c0e341aa908e97f733133e73
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: java.security.PublicKey
+		Statement: $r14 = virtualinvoke $r6.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <io.ktor.network.tls.TLSClientHandshakeKt: io.ktor.network.tls.EncryptionInfo generateECKeys(io.ktor.network.tls.extensions.NamedCurve,java.security.spec.ECPoint)>
+		SHA-256: 57e9bc07717c5a1551ecfc72db91884d066a67deaa296f4ba928651402079dec
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.KeyPair
+		Statement: $r6 = virtualinvoke $r2.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <io.ktor.network.tls.TLSClientHandshakeKt: io.ktor.network.tls.EncryptionInfo generateECKeys(io.ktor.network.tls.extensions.NamedCurve,java.security.spec.ECPoint)>
+		SHA-256: 28eae48c643fc3dcdf76068c1bf09201e5d7bb31a434995f194a80c65741179c
+		Secure: false
+	Object:
+		Variable: $r21
+		Type: java.lang.String
+		Statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, $r21)
+		Method: <io.ktor.network.tls.TLSClientHandshake: java.lang.Object handleServerDone(io.ktor.network.tls.SecretExchangeType,java.security.cert.Certificate,io.ktor.network.tls.CertificateInfo,io.ktor.network.tls.EncryptionInfo,kotlin.coroutines.Continuation)>
+		SHA-256: 496c4b88347020b8b47a97e23d6ca61e8b89b5cc36b8e3da253bf81b7b352170
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: $r0 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>($r2)
+		Method: <io.ktor.util.NonceKt: java.security.SecureRandom getInstanceOrNull(java.lang.String)>
+		SHA-256: 5bdf8abef70c6ddc19b5ee2780cd50ea79ba22c1f145924031bae0da8337c2bf
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, $i0, $i1, $r3)
+		Method: <io.ktor.network.tls.KeysKt: javax.crypto.spec.SecretKeySpec serverKey(byte[],io.ktor.network.tls.CipherSuite)>
+		SHA-256: 7aa718443a47b021b81d11ac751b40182ea24d9cec9ac560fa3b2dbc90ad7678
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.KeyPair
+		Statement: $r6 = virtualinvoke $r2.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <io.ktor.network.tls.TLSClientHandshakeKt: io.ktor.network.tls.EncryptionInfo generateECKeys(io.ktor.network.tls.extensions.NamedCurve,java.security.spec.ECPoint)>
+		SHA-256: 3169a119f90e142ca869091a9426337c434416fce56147e0d9c935de53570a95
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: virtualinvoke $r7.<java.security.SecureRandom: void nextBytes(byte[])>($r5)
+		Method: <io.ktor.util.NonceKt$nonceGeneratorJob$1: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: 76b8174e2edd3c314a3e67902e6093b3a192ba78e52c4d4158db89ad9385ad5a
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r3)
+		Method: <io.ktor.network.tls.cipher.CBCCipher: void <init>(io.ktor.network.tls.CipherSuite,byte[])>
+		SHA-256: b843daa3cf53713dd6752d74cacf467e12c58ee478abb07b20444accd58a5bb9
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer14097)
+		Method: <de.taz.app.android.singletons.StorageService$getSHA256$2: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: ca77644ad9f954b5259dfec3119fe4d8e5a18961539f93f6c1225824dc01f757
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r9.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r12)
+		Method: <io.ktor.network.tls.TLSClientHandshakeKt: io.ktor.network.tls.EncryptionInfo generateECKeys(io.ktor.network.tls.extensions.NamedCurve,java.security.spec.ECPoint)>
+		SHA-256: ffac0165515ba71bf5861347e981c20ac425397bf1b52cb932185666a4dff3cb
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r3)
+		Method: <io.ktor.network.tls.HashesKt: byte[] PRF(javax.crypto.SecretKey,byte[],byte[],int)>
+		SHA-256: b7163f974b56f4fe91d2f9a93a4ee1f80759724117ab8689ccba130ff19157cc
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: java.security.Signature
+		Statement: $r14 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r9)
+		Method: <io.ktor.network.tls.TLSClientHandshake: java.lang.Object sendClientCertificateVerify(io.ktor.network.tls.CertificateInfo,io.ktor.network.tls.CertificateAndKey,kotlin.coroutines.Continuation)>
+		SHA-256: 2d17e7cf466f2d85c595c0cc0bf03ff3ed6d81d8cb3e5f321edfd945e92ba624
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyPairGenerator
+		Statement: $r2 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(varReplacer34972)
+		Method: <io.ktor.network.tls.TLSClientHandshakeKt: io.ktor.network.tls.EncryptionInfo generateECKeys(io.ktor.network.tls.extensions.NamedCurve,java.security.spec.ECPoint)>
+		SHA-256: 21fa9a5269e7260949ff60aa243ae2475ffd456031a1b83f40fa30b9d806f510
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.KeyAgreement
+		Statement: $r10 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String)>(varReplacer45632)
+		Method: <io.ktor.network.tls.TLSClientHandshake: byte[] generatePreSecret(io.ktor.network.tls.EncryptionInfo)>
+		SHA-256: 6b997dcbbc4cc556b199fa0dfe358ffaeeeab6177b571b531eaa794faddc96f8
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.lang.String
+		Statement: $r10 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r8)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: fb24971f565cb4681c3c1e192adc31a35b4a987353817f6def6d3d265ac75389
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: $r2 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>($r5)
+		Method: <io.ktor.network.tls.TLSKt$tls$3: void invoke(io.ktor.network.tls.TLSConfigBuilder)>
+		SHA-256: fa9583312e38e6b3b41c325abb1df6baf6ad3f002dad84df7501b754c99d74ec
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.cert.CertificateFactory
+		Statement: $r2 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer34918)
+		Method: <io.ktor.network.tls.ParserKt: java.util.List readTLSCertificate(io.ktor.utils.io.core.ByteReadPacket)>
+		SHA-256: 4479addf8bac10526dda4d8dbae0cd4b615ce611cb0dfa3f1c862137dc8cc504
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r3)
+		Method: <io.ktor.network.tls.cipher.CBCCipher: void <init>(io.ktor.network.tls.CipherSuite,byte[])>
+		SHA-256: b843daa3cf53713dd6752d74cacf467e12c58ee478abb07b20444accd58a5bb9
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r0)
+		Method: <io.ktor.util.CryptoKt__CryptoJvmKt: io.ktor.util.Digest Digest(java.lang.String)>
+		SHA-256: 42ca34c85e7d7e7659a10e0214b35b4d5fe369318b2c1780c167ea15509a33b7
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>($i3, $r1)
+		Method: <io.ktor.network.tls.cipher.GCMCipherKt: javax.crypto.Cipher gcmDecryptCipher(io.ktor.network.tls.CipherSuite,byte[],io.ktor.network.tls.TLSRecordType,int,long,long)>
+		SHA-256: 9177032d8964c783e860767e3cd94cb4ad10d874e2718991073468e9ce4d49fd
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <io.ktor.network.tls.TLSConfigBuilder: io.ktor.network.tls.TLSConfig build()>
+		SHA-256: c116551a8486c36d64215499f2647251b2da99657e9c202053370c641cf1f25a
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: java.security.SecureRandom
+		Statement: $r14 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer15548)
+		Method: <io.ktor.util.NonceKt$nonceGeneratorJob$1: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: 98063c44429ed5bedae0b666a678b5ba284f7812852aeb4632d3555de2b479b2
+		Secure: true
+	Object:
+		Variable: $r35
+		Type: java.security.Signature
+		Statement: $r35 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r26)
+		Method: <io.ktor.network.tls.TLSClientHandshake: java.lang.Object handleCertificatesAndKeys(kotlin.coroutines.Continuation)>
+		SHA-256: 708a722b671d1ae9f928a2858629c51020bd53ef691711787de51509fae2e6bb
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer73997)
+		Method: <com.facebook.stetho.websocket.WebSocketHandler: java.lang.String generateServerKey(java.lang.String)>
+		SHA-256: 5c31878d475e3a9cb7b687690caedd28794b6f27174280b649d27a216b37e44c
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r3)
+		Method: <io.ktor.network.tls.cipher.GCMCipherKt: javax.crypto.Cipher gcmEncryptCipher(io.ktor.network.tls.CipherSuite,byte[],io.ktor.network.tls.TLSRecordType,int,long,long)>
+		SHA-256: 562ac0085ffc34012ecc2bb1b4390e7c7865c2d986c02429ecce24dd370df10e
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r5)
+		Method: <io.ktor.network.tls.KeysKt: javax.crypto.spec.SecretKeySpec masterSecret(javax.crypto.SecretKey,byte[],byte[])>
+		SHA-256: 4f702dc86b685e55346700ffcc84ad4d4e72b9d96f402ef36c9a89f97d5ca6a8
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r3.<java.security.Signature: boolean verify(byte[])>($r5)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: e75571d33abb1b5e330ac5b78fcc009ac5fa3b4053acda20dad8234c0598d879
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.spec.ECGenParameterSpec
+		Statement: specialinvoke $r3.<java.security.spec.ECGenParameterSpec: void <init>(java.lang.String)>($r4)
+		Method: <io.ktor.network.tls.TLSClientHandshakeKt: io.ktor.network.tls.EncryptionInfo generateECKeys(io.ktor.network.tls.extensions.NamedCurve,java.security.spec.ECPoint)>
+		SHA-256: a543cf98c6b17bb2ccc4bede0b2e0957a69e7baa8c0f1b2ddb7eb9dc0298e634
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <io.ktor.network.tls.TLSConfigBuilderKt: javax.net.ssl.X509TrustManager findTrustManager()>
+		SHA-256: bc745df6665e8a8bd241d657cd469e2d22474501700843edd86193b102fa9a8
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r10.<java.security.Signature: boolean verify(byte[])>($r6)
+		Method: <org.conscrypt.ct.CTLogInfo: org.conscrypt.ct.VerifiedSCT$Status verifySingleSCT(org.conscrypt.ct.SignedCertificateTimestamp,org.conscrypt.ct.CertificateEntry)>
+		SHA-256: aab90aed2436cb82f786fedcbd27d0760f98b44acc28f6538b68a70b6e4bf50c
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r2.<javax.crypto.Mac: byte[] doFinal()>()
+		Method: <io.ktor.network.tls.HashesKt: byte[] P_hash(byte[],javax.crypto.Mac,javax.crypto.SecretKey,int)>
+		SHA-256: 7a07131c47c27a9967768a448571c6ae382f8a79e7176e535d0ef539af88062c
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, $i0, $i1, $r4)
+		Method: <io.ktor.network.tls.KeysKt: javax.crypto.spec.SecretKeySpec serverMacKey(byte[],io.ktor.network.tls.CipherSuite)>
+		SHA-256: c5b5248499db2dbf5ab573a1e55f8e4e5446afb2b96e9d94527dc0ca2e92448f
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <io.ktor.network.tls.Digest: byte[] doHash-impl(io.ktor.utils.io.core.BytePacketBuilder,java.lang.String)>
+		SHA-256: 46a1e4106353df052cefce65f2b5469c9a80e7a39b1ced42ad5c8b77f4a97743
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r5)
+		Method: <io.ktor.network.tls.KeysKt: javax.crypto.spec.SecretKeySpec masterSecret(javax.crypto.SecretKey,byte[],byte[])>
+		SHA-256: ee0e3e52335d3710eedea7d59ec4c4a113447075dd6308733f5a3a2c8fd2517b
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <de.taz.app.android.singletons.StorageService$getSHA256$2: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: 99e463fff1e41e5ac832b2d82ee04c9218734413886843ef0f0ceebe0adb79c2
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer45664)
+		Method: <io.ktor.network.tls.RenderKt: void writeEncryptedPreMasterSecret(io.ktor.utils.io.core.BytePacketBuilder,byte[],java.security.PublicKey,java.security.SecureRandom)>
+		SHA-256: 1d175db001dfc3aa967a090887846ae2b6e791523facc6536a174e5372777ec6
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, $i0, $i1, $r3)
+		Method: <io.ktor.network.tls.KeysKt: javax.crypto.spec.SecretKeySpec clientKey(byte[],io.ktor.network.tls.CipherSuite)>
+		SHA-256: d8887484c638615482fbd14231ece4a67a11d2b5910498142e8a6f35fbf9b67a
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer79519)
+		Method: <org.conscrypt.ct.CertificateEntry: org.conscrypt.ct.CertificateEntry createForPrecertificate(org.conscrypt.OpenSSLX509Certificate,org.conscrypt.OpenSSLX509Certificate)>
+		SHA-256: 373b0934e959ce1dec22723961967db902298f2a142eb988248954b3099b10bb
+		Secure: true
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r35.<java.security.Signature: boolean verify(byte[])>($r36)
+		Method: <io.ktor.network.tls.TLSClientHandshake: java.lang.Object handleCertificatesAndKeys(kotlin.coroutines.Continuation)>
+		SHA-256: fdfedeb33ff4980c62461acbc6474479401249011665951bb53c0733a1c61ae
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Mac
+		Statement: $r6 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r3)
+		Method: <io.ktor.network.tls.cipher.CBCCipher: void <init>(io.ktor.network.tls.CipherSuite,byte[])>
+		SHA-256: 92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, varReplacer44794, $i0, $r4)
+		Method: <io.ktor.network.tls.KeysKt: javax.crypto.spec.SecretKeySpec clientMacKey(byte[],io.ktor.network.tls.CipherSuite)>
+		SHA-256: 23a6f87ab1e78951bbdcf39744cea6f287c9f2ea17548183a83dc3a8be5d184b
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+		Method: <io.ktor.network.tls.cipher.CBCCipher: io.ktor.network.tls.TLSRecord decrypt(io.ktor.network.tls.TLSRecord)>
+		SHA-256: 857307843f1aafd0e387213969a7e2d243704832226be6b36b4a0f8f75b8676d
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, $i0, $i1, $r3)
+		Method: <io.ktor.network.tls.KeysKt: javax.crypto.spec.SecretKeySpec clientKey(byte[],io.ktor.network.tls.CipherSuite)>
+		SHA-256: c0d654d05e0f5631d90f10940a2c6448f0cef3ab6b1a2339f3161be3ddb58e2e
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r13.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r9, $r12, $r4, $i1)
+		Method: <org.conscrypt.OpenSSLECGroupContext: java.security.spec.ECParameterSpec getECParameterSpec()>
+		SHA-256: 7223ae8f08ed0dba3dafb06f8e07e30310aca7c9be856d88494b5d1bd531fdf8
+		Secure: true
+	Object:
+		Variable: $r12
+		Type: java.security.MessageDigest
+		Statement: $r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17058)
+		Method: <de.taz.app.android.singletons.StorageService: java.lang.Object writeFile$suspendImpl(de.taz.app.android.singletons.StorageService,de.taz.app.android.api.interfaces.FileEntryOperations,io.ktor.utils.io.ByteReadChannel,kotlin.coroutines.Continuation)>
+		SHA-256: a8ce7f89037f6049fcd3abeee393b49492bb5ffaacc417597e59474305cf677d
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: java.security.KeyFactory
+		Statement: $r9 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer34973)
+		Method: <io.ktor.network.tls.TLSClientHandshakeKt: io.ktor.network.tls.EncryptionInfo generateECKeys(io.ktor.network.tls.extensions.NamedCurve,java.security.spec.ECPoint)>
+		SHA-256: 7066ff6fcc28b3ec91414bb895893a403f8d2019593833a939c95f595cb4d6cf
+		Secure: false
+	Object:
+		Variable: $r28
+		Type: java.security.cert.PKIXParameters
+		Statement: specialinvoke $r28.<java.security.cert.PKIXParameters: void <init>(java.util.Set)>($r14)
+		Method: <org.conscrypt.TrustManagerImpl: java.util.List verifyChain(java.util.List,java.util.List,java.lang.String,boolean,byte[],byte[])>
+		SHA-256: 29e528ae7be0d7a995cb106994ad6f6666437ec8d286db5205a2265c45743387
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.security.cert.CertificateFactory
+		Statement: $r0 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer74945)
+		Method: <org.conscrypt.SSLUtils: java.security.cert.CertificateFactory getCertificateFactory()>
+		SHA-256: e5ede02744c8e6c5283cd0727b1632d7df5f5a0d2577005aafe67ed16f6ed0eb
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r6.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <io.ktor.network.tls.TLSClientHandshakeKt: io.ktor.network.tls.EncryptionInfo generateECKeys(io.ktor.network.tls.extensions.NamedCurve,java.security.spec.ECPoint)>
+		SHA-256: 648adda8a2ea63fc292c403e9a71f54fb6fac6b7684f3707d7ca4014027e7c31
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r10.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: 9d110d3f3943f5f1538d33e3d18932b71ca7accf2f86c174ab417a2b10712fb0
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.KeyFactory
+		Statement: $r10 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r8)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: 6635af12fb8498a7bf018ada279831a6e3024bb07fe12c7daed2b6fbc372e6bb
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.cert.TrustAnchor
+		Statement: specialinvoke $r3.<java.security.cert.TrustAnchor: void <init>(java.security.cert.X509Certificate,byte[])>($r1, varReplacer67623)
+		Method: <org.conscrypt.TrustManagerImpl: java.security.cert.TrustAnchor findTrustAnchorBySubjectAndPublicKey(java.security.cert.X509Certificate)>
+		SHA-256: 16aa568492fb1473e6e93944730562ed73dfc7d72850889cd4821e588b042be2
+		Secure: true
+	Object:
+		Variable: $r17
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, $r21)
+		Method: <io.ktor.network.tls.TLSClientHandshake: java.lang.Object handleServerDone(io.ktor.network.tls.SecretExchangeType,java.security.cert.Certificate,io.ktor.network.tls.CertificateInfo,io.ktor.network.tls.EncryptionInfo,kotlin.coroutines.Continuation)>
+		SHA-256: 31b059b1ae8193b811c72067b750b8336bee5875b5a542a1c934531edaeb1d82
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.cert.TrustAnchor
+		Statement: specialinvoke $r2.<java.security.cert.TrustAnchor: void <init>(java.security.cert.X509Certificate,byte[])>($r1, varReplacer75384)
+		Method: <org.conscrypt.TrustedCertificateIndex: java.security.cert.TrustAnchor index(java.security.cert.X509Certificate)>
+		SHA-256: beda9d9f19a42e2aa11e53b515cb4107d02162fa1482856380bf7a295e99f087
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <io.ktor.util.CryptoKt__CryptoJvmKt: byte[] getDigest$CryptoKt__CryptoJvmKt(java.lang.String,java.lang.String,kotlin.jvm.functions.Function1)>
+		SHA-256: 9e23a4948c6140fe430adf4e8025f4f4752cecc0f97e1b6efc6b738fad2a2f2e
+		Secure: true
+	Object:
+		Variable: $r36
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r35.<java.security.Signature: boolean verify(byte[])>($r36)
+		Method: <io.ktor.network.tls.TLSClientHandshake: java.lang.Object handleCertificatesAndKeys(kotlin.coroutines.Continuation)>
+		SHA-256: 39b4ef5865d1334bb2128647c6e4ca8623d333e825e832ff68b88eec86ff2cd0
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: virtualinvoke $r8.<java.security.SecureRandom: void nextBytes(byte[])>($r6)
+		Method: <io.ktor.util.NonceKt$nonceGeneratorJob$1: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: d9d393bbbcbbe94520f8271f092d07711f8d49d5e746d7d08512dc0154eaa23a
+		Secure: true
+	Object:
+		Variable: varReplacer34973
+		Type: java.lang.String
+		Statement: $r9 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer34973)
+		Method: <io.ktor.network.tls.TLSClientHandshakeKt: io.ktor.network.tls.EncryptionInfo generateECKeys(io.ktor.network.tls.extensions.NamedCurve,java.security.spec.ECPoint)>
+		SHA-256: 2cadbd946a1aa1e056cd52706f5eb55e1b398185b3310f7a2d70d9af3db1299b
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.conscrypt.ct.CertificateEntry: org.conscrypt.ct.CertificateEntry createForPrecertificate(org.conscrypt.OpenSSLX509Certificate,org.conscrypt.OpenSSLX509Certificate)>
+		SHA-256: fdac5cbc341df046ae5d42e6caf0c99f1cebf641f4ed79e4bb74dffd155ddf2c
+		Secure: true
+	Object:
+		Variable: $r15
+		Type: byte[]
+		Statement: $r15 = virtualinvoke $r8.<java.security.SecureRandom: byte[] generateSeed(int)>($i0)
+		Method: <io.ktor.util.NonceKt$nonceGeneratorJob$1: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: 42ef720148f3fefa465de7553d748694c2e66569614ec731a7efb48d9fb75125
+		Secure: true
+
+Findings in Java Class: io.ktor.util.NonceKt$nonceGeneratorJob$1
+
+	 in Method: java.lang.Object invokeSuspend(java.lang.Object)
+		TypestateError violating CrySL rule for java.security.SecureRandom (on Object #98063c44429ed5bedae0b666a678b5ba284f7812852aeb4632d3555de2b479b2)
+			Unexpected call to method setSeed on object of type java.security.SecureRandom. Expect a call to one of the following methods generateSeed,nextInt,nextBytes
+			at statement: virtualinvoke $r7.<java.security.SecureRandom: void setSeed(byte[])>($r15)
+
+
+Findings in Java Class: io.ktor.util.CryptoKt__CryptoJvmKt$sha1$1
+
+	 in Method: java.lang.Object invokeSuspend(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #42ca34c85e7d7e7659a10e0214b35b4d5fe369318b2c1780c167ea15509a33b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = interfaceinvoke $r4.<io.ktor.util.Digest: java.lang.Object build(kotlin.coroutines.Continuation)>($r6)
+
+
+Findings in Java Class: io.ktor.network.tls.HashesKt
+
+	 in Method: byte[] P_hash(byte[],javax.crypto.Mac,javax.crypto.SecretKey,int)
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #b7163f974b56f4fe91d2f9a93a4ee1f80759724117ab8689ccba130ff19157cc)
+			Unexpected call to method init on object of type javax.crypto.Mac.
+			at statement: virtualinvoke $r2.<javax.crypto.Mac: void init(java.security.Key)>($r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Mac: void init(java.security.Key)>($r5)
+
+
+Findings in Java Class: io.ktor.network.tls.cipher.GCMCipherKt
+
+	 in Method: javax.crypto.Cipher gcmEncryptCipher(io.ktor.network.tls.CipherSuite,byte[],io.ktor.network.tls.TLSRecordType,int,long,long)
+		ForbiddenMethodError violating CrySL rule for javax.crypto.Cipher
+			Detected call to forbidden method void updateAAD(byte[]) of class javax.crypto.Cipher. Instead, call method <javax.crypto.Cipher: void updateAAD(byte[])>.
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void updateAAD(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer32733, $r7, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer32733, $r7, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer32733, $r7, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r6.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>($i3, $r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer32733, $r7, $r8)
+
+
+	 in Method: javax.crypto.Cipher gcmDecryptCipher(io.ktor.network.tls.CipherSuite,byte[],io.ktor.network.tls.TLSRecordType,int,long,long)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer32775, $r7, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer32775, $r7, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r6.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>($i3, $r1)
+
+		ForbiddenMethodError violating CrySL rule for javax.crypto.Cipher
+			Detected call to forbidden method void updateAAD(byte[]) of class javax.crypto.Cipher. Instead, call method <javax.crypto.Cipher: void updateAAD(byte[])>.
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void updateAAD(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer32775, $r7, $r8)
+
+
+Findings in Java Class: io.ktor.network.tls.cipher.GCMCipher
+
+	 in Method: io.ktor.network.tls.TLSRecord encrypt(io.ktor.network.tls.TLSRecord)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #562ac0085ffc34012ecc2bb1b4390e7c7865c2d986c02429ecce24dd370df10e)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: $r5 = staticinvoke <io.ktor.network.tls.cipher.CipherUtilsKt: io.ktor.utils.io.core.ByteReadPacket cipherLoop(io.ktor.utils.io.core.ByteReadPacket,javax.crypto.Cipher,kotlin.jvm.functions.Function1)>($r5, $r6, $r8)
+
+
+	 in Method: io.ktor.network.tls.TLSRecord decrypt(io.ktor.network.tls.TLSRecord)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #dc9ba110fbeacf949af2e8845acf11c2d1abcfa33ec3e271f1741386a4eb709e)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to update, wrap, doFinal
+			at statement: $r3 = staticinvoke <io.ktor.network.tls.cipher.CipherUtilsKt: io.ktor.utils.io.core.ByteReadPacket cipherLoop$default(io.ktor.utils.io.core.ByteReadPacket,javax.crypto.Cipher,kotlin.jvm.functions.Function1,int,java.lang.Object)>($r3, $r8, varReplacer32764, varReplacer32765, varReplacer32764)
+
+
+Findings in Java Class: io.ktor.network.tls.KeysKt
+
+	 in Method: javax.crypto.spec.SecretKeySpec masterSecret(javax.crypto.SecretKey,byte[],byte[])
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #ee0e3e52335d3710eedea7d59ec4c4a113447075dd6308733f5a3a2c8fd2517b)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r5)
+
+
+	 in Method: javax.crypto.spec.SecretKeySpec clientMacKey(byte[],io.ktor.network.tls.CipherSuite)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, varReplacer44794, $i0, $r4)
+
+
+	 in Method: javax.crypto.spec.SecretKeySpec serverKey(byte[],io.ktor.network.tls.CipherSuite)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, $i0, $i1, $r3)
+
+
+	 in Method: javax.crypto.spec.SecretKeySpec serverMacKey(byte[],io.ktor.network.tls.CipherSuite)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, $i0, $i1, $r4)
+
+
+	 in Method: javax.crypto.spec.SecretKeySpec clientKey(byte[],io.ktor.network.tls.CipherSuite)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, $i0, $i1, $r3)
+
+
+Findings in Java Class: io.ktor.network.tls.TLSClientHandshake
+
+	 in Method: java.lang.Object handleCertificatesAndKeys(kotlin.coroutines.Continuation)
+		IncompleteOperationError violating CrySL rule for java.security.Signature (on Object #708a722b671d1ae9f928a2858629c51020bd53ef691711787de51509fae2e6bb)
+			Operation on object of type java.security.Signature object not completed. Expected call to update, verify
+			at statement: virtualinvoke $r35.<java.security.Signature: void initVerify(java.security.cert.Certificate)>($r24)
+
+
+	 in Method: byte[] generatePreSecret(io.ktor.network.tls.EncryptionInfo)
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #6b997dcbbc4cc556b199fa0dfe358ffaeeeab6177b571b531eaa794faddc96f8)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to init
+			at statement: staticinvoke <kotlin.jvm.internal.Intrinsics: void checkNotNull(java.lang.Object)>($r10)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyAgreement
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r10.<javax.crypto.KeyAgreement: java.security.Key doPhase(java.security.Key,boolean)>($r12, varReplacer45631)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyAgreement
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r10.<javax.crypto.KeyAgreement: void init(java.security.Key)>($r12)
+
+
+	 in Method: java.lang.Object sendClientCertificateVerify(io.ktor.network.tls.CertificateInfo,io.ktor.network.tls.CertificateAndKey,kotlin.coroutines.Continuation)
+		IncompleteOperationError violating CrySL rule for java.security.Signature (on Object #2d17e7cf466f2d85c595c0cc0bf03ff3ed6d81d8cb3e5f321edfd945e92ba624)
+			Operation on object of type java.security.Signature object not completed. Expected call to update
+			at statement: specialinvoke $r17.<io.ktor.network.tls.TLSClientHandshake$sendClientCertificateVerify$2: void <init>(io.ktor.network.tls.extensions.HashAndSign,io.ktor.network.tls.TLSClientHandshake,java.security.Signature)>($r8, r0, $r14)
+
+
+	 in Method: java.lang.Object handleServerDone(io.ktor.network.tls.SecretExchangeType,java.security.cert.Certificate,io.ktor.network.tls.CertificateInfo,io.ktor.network.tls.EncryptionInfo,kotlin.coroutines.Continuation)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, $r21)
+
+
+Findings in Java Class: io.ktor.network.tls.ParserKt
+
+	 in Method: java.util.List readTLSCertificate(io.ktor.utils.io.core.ByteReadPacket)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #4479addf8bac10526dda4d8dbae0cd4b615ce611cb0dfa3f1c862137dc8cc504)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r7 = virtualinvoke $r2.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r6)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #4479addf8bac10526dda4d8dbae0cd4b615ce611cb0dfa3f1c862137dc8cc504)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: staticinvoke <kotlin.jvm.internal.Intrinsics: void checkNotNull(java.lang.Object)>($r2)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #4479addf8bac10526dda4d8dbae0cd4b615ce611cb0dfa3f1c862137dc8cc504)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r7 = virtualinvoke $r2.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r6)
+
+
+Findings in Java Class: io.ktor.network.tls.TLSClientHandshakeKt
+
+	 in Method: io.ktor.network.tls.EncryptionInfo generateECKeys(io.ktor.network.tls.extensions.NamedCurve,java.security.spec.ECPoint)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r7 = virtualinvoke $r9.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r12)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyPairGenerator (on Object #21fa9a5269e7260949ff60aa243ae2475ffd456031a1b83f40fa30b9d806f510)
+			Operation on object of type java.security.KeyPairGenerator object not completed. Expected call to java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair(), genKeyPair, java.security.KeyPairGeneratorSpi: java.security.KeyPair generateKeyPair()
+			at statement: $r6 = virtualinvoke $r2.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+
+
+Findings in Java Class: io.ktor.network.tls.Digest
+
+	 in Method: byte[] doHash-impl(io.ktor.utils.io.core.BytePacketBuilder,java.lang.String)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #9dd8853e68d804405fb27342260cebfbd36792766a4e6f1c8e4971555946bb61)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r8 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: io.ktor.network.tls.RenderKt
+
+	 in Method: void writeEncryptedPreMasterSecret(io.ktor.utils.io.core.BytePacketBuilder,byte[],java.security.PublicKey,java.security.SecureRandom)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.SecureRandom)>(varReplacer45661, $r5, $r3)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #1d175db001dfc3aa967a090887846ae2b6e791523facc6536a174e5372777ec6)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.SecureRandom)>(varReplacer45661, $r5, $r3)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #1d175db001dfc3aa967a090887846ae2b6e791523facc6536a174e5372777ec6)
+			First parameter (with value "RSA/ECB/PKCS1Padding") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer45664)
+
+
+Findings in Java Class: kotlinx.coroutines.intrinsics.UndispatchedKt
+
+	 in Method: void startCoroutineUnintercepted(kotlin.jvm.functions.Function1,kotlin.coroutines.Continuation)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r2 = interfaceinvoke $r0.<kotlin.jvm.functions.Function1: java.lang.Object invoke(java.lang.Object)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r2 = interfaceinvoke $r0.<kotlin.jvm.functions.Function1: java.lang.Object invoke(java.lang.Object)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<kotlin.coroutines.Continuation: void resumeWith(java.lang.Object)>($r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<kotlin.coroutines.Continuation: void resumeWith(java.lang.Object)>($r2)
+
+
+Findings in Java Class: kotlinx.coroutines.flow.StateFlowSlot
+
+	 in Method: void makePending()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: interfaceinvoke $r5.<kotlin.coroutines.Continuation: void resumeWith(java.lang.Object)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: interfaceinvoke $r5.<kotlin.coroutines.Continuation: void resumeWith(java.lang.Object)>($r1)
+
+
+Findings in Java Class: kotlinx.coroutines.AwaitAll$AwaitAllNode
+
+	 in Method: void invoke(java.lang.Throwable)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r3 = interfaceinvoke $r2.<kotlinx.coroutines.CancellableContinuation: java.lang.Object tryResumeWithException(java.lang.Throwable)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r3 = interfaceinvoke $r2.<kotlinx.coroutines.CancellableContinuation: java.lang.Object tryResumeWithException(java.lang.Throwable)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: interfaceinvoke $r7.<kotlin.coroutines.Continuation: void resumeWith(java.lang.Object)>($r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: interfaceinvoke $r7.<kotlin.coroutines.Continuation: void resumeWith(java.lang.Object)>($r3)
+
+
+Findings in Java Class: io.ktor.utils.io.ByteBufferChannel
+
+	 in Method: void resumeClosed(java.lang.Throwable)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: interfaceinvoke $r5.<kotlin.coroutines.Continuation: void resumeWith(java.lang.Object)>($r4)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #92e588dc258351f7b23b885ef38d75887fd5ca1a973a61e1c063b468f6cfbb89)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: interfaceinvoke $r5.<kotlin.coroutines.Continuation: void resumeWith(java.lang.Object)>($r4)
+
+
+Findings in Java Class: com.google.android.material.navigation.NavigationBarMenuView
+
+	 in Method: void buildMenuView()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7a3836f46eb5e1a2ffd089588780c5d84705386923ce664db6d60018d1e28e99)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = newarray (com.google.android.material.navigation.NavigationBarItemView)[$i0]
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7a3836f46eb5e1a2ffd089588780c5d84705386923ce664db6d60018d1e28e99)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = r0.<com.google.android.material.navigation.NavigationBarMenuView: com.google.android.material.navigation.NavigationBarItemView[] buttons>
+
+
+Findings in Java Class: com.google.android.material.tabs.TabLayout
+
+	 in Method: com.google.android.material.tabs.TabLayout$TabView createTabView(com.google.android.material.tabs.TabLayout$Tab)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7a3836f46eb5e1a2ffd089588780c5d84705386923ce664db6d60018d1e28e99)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r3 = interfaceinvoke $r2.<androidx.core.util.Pools$Pool: java.lang.Object acquire()>()
+
+
+Findings in Java Class: com.facebook.stetho.websocket.WebSocketHandler
+
+	 in Method: java.lang.String generateServerKey(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #5c31878d475e3a9cb7b687690caedd28794b6f27174280b649d27a216b37e44c)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer73997)
+
+
+Findings in Java Class: org.conscrypt.SSLUtils
+
+	 in Method: java.security.cert.X509Certificate decodeX509Certificate(java.security.cert.CertificateFactory,byte[])
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #e5ede02744c8e6c5283cd0727b1632d7df5f5a0d2577005aafe67ed16f6ed0eb)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r3 = virtualinvoke $r2.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r1)
+
+
+	 in Method: java.security.cert.X509Certificate[] decodeX509CertificateChain(byte[][])
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #e5ede02744c8e6c5283cd0727b1632d7df5f5a0d2577005aafe67ed16f6ed0eb)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r4 = staticinvoke <org.conscrypt.SSLUtils: java.security.cert.X509Certificate decodeX509Certificate(java.security.cert.CertificateFactory,byte[])>($r2, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #e5ede02744c8e6c5283cd0727b1632d7df5f5a0d2577005aafe67ed16f6ed0eb)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r2 = staticinvoke <org.conscrypt.SSLUtils: java.security.cert.CertificateFactory getCertificateFactory()>()
+
+
+Findings in Java Class: org.conscrypt.OpenSSLX509Certificate
+
+	 in Method: java.security.PublicKey getPublicKey()
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r7 = virtualinvoke $r10.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r9)
+
+
+	 in Method: void verifyInternal(java.security.PublicKey,java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r3.<java.security.Signature: void initVerify(java.security.PublicKey)>($r1)
+
+
+Findings in Java Class: org.conscrypt.OpenSSLECKeyPairGenerator
+
+	 in Method: java.security.KeyPair generateKeyPair()
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r10.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r11, $r12)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r10.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r11, $r12)
+
+
+Findings in Java Class: io.ktor.network.tls.cipher.CBCCipher
+
+	 in Method: io.ktor.network.tls.TLSRecord encrypt(io.ktor.network.tls.TLSRecord)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r5.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+
+
+	 in Method: io.ktor.network.tls.TLSRecord decrypt(io.ktor.network.tls.TLSRecord)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r8.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+
+
+Findings in Java Class: org.conscrypt.ct.CTLogInfo
+
+	 in Method: org.conscrypt.ct.VerifiedSCT$Status verifySingleSCT(org.conscrypt.ct.SignedCertificateTimestamp,org.conscrypt.ct.CertificateEntry)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r10.<java.security.Signature: void initVerify(java.security.PublicKey)>($r11)
+
+
+Findings in Java Class: io.ktor.network.tls.TLSConfigBuilderKt
+
+	 in Method: javax.net.ssl.X509TrustManager findTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer45476)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 81
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 26
+	RequiredPredicateError: 30
+	NeverTypeOfError: 1
+	TypestateError: 6
+	ConstraintError: 2
+	ForbiddenMethodError: 2
+=====================================================================

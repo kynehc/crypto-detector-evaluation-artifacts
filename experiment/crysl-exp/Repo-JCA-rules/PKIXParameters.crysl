@@ -1,0 +1,18 @@
+SPEC java.security.cert.PKIXParameters
+
+OBJECTS
+	java.security.KeyStore keyStore;
+	
+EVENTS
+	c1: PKIXParameters(keyStore);
+	c2: PKIXParameters(_);
+	Con := c1 | c2;
+	
+ORDER
+	Con
+
+REQUIRES
+	generatedKeyStore[keyStore];		
+
+ENSURES
+	generatedCertPathParameters[this];

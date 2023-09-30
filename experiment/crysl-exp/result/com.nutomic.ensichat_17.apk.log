@@ -1,0 +1,559 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r8
+		Type: java.security.PublicKey
+		Statement: $r8 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r7)
+		Method: <com.nutomic.ensichat.core.messages.body.ConnectionInfo$: com.nutomic.ensichat.core.messages.body.ConnectionInfo read(byte[])>
+		SHA-256: 202773189757cc712c84e233c9fe4acd14f34d7fe28c8f9ec4d2470d73900a4a
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r2)
+		Method: <org.h2.security.CipherFactory: java.security.KeyStore getKeyStore(java.lang.String)>
+		SHA-256: ce0707c76be59a3c4770b9e9643f9d4a7c415a8d662b2e9c306dd6956abd931
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.PublicKey
+		Statement: $r8 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r7)
+		Method: <com.nutomic.ensichat.core.messages.body.PublicKeyReply$: com.nutomic.ensichat.core.messages.body.PublicKeyReply read(byte[])>
+		SHA-256: 17e17ab2381d016c16034a8df4124bee61e52d7827c1226a0a7be768a8268618
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.PublicKey
+		Statement: $r5 = virtualinvoke $r4.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <com.nutomic.ensichat.core.util.Crypto: void generateLocalKeys()>
+		SHA-256: cc8ab3955339b9eac5e277bb1868624d117ae71d15b61330395da100690f43d3
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.SecureRandom: byte[] generateSeed(int)>(varReplacer4091)
+		Method: <org.h2.util.MathUtils$1: void run()>
+		SHA-256: e740eea768d85e90debcf2d0a19ba1c8d993ca97a822f63ae50809935a65c6ee
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.KeyGenerator
+		Statement: $r3 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>($r2)
+		Method: <com.nutomic.ensichat.core.util.Crypto: javax.crypto.SecretKey makeSecretKey()>
+		SHA-256: ce392e201f85ddecf9238adbd9ef79985e9435f2aa47f012268a70b8548c0bb5
+		Secure: true
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r11)
+		Method: <com.nutomic.ensichat.core.util.Crypto: boolean verify(com.nutomic.ensichat.core.messages.Message,scala.Option)>
+		SHA-256: 4f170de1c0a97d8718be9c6e13ff230017b13a9d75d71e45dcca73643befc72d
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r7.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+		Method: <com.nutomic.ensichat.core.messages.body.ConnectionInfo$: com.nutomic.ensichat.core.messages.body.ConnectionInfo read(byte[])>
+		SHA-256: 7976fc1aed7ea2123b89245e0c0b588adf15283f32d15b472552c1416be5f965
+		Secure: false
+	Object:
+		Variable: r5
+		Type: javax.crypto.CipherOutputStream
+		Statement: specialinvoke r5.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>(r4, $r1)
+		Method: <com.nutomic.ensichat.core.util.Crypto: byte[] copyThroughCipher(javax.crypto.Cipher,byte[])>
+		SHA-256: 9aec74a4d764200bcd4cee1abf2c77fc566948a5469dbade94c1a66ec57ceb26
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.KeyFactory
+		Statement: $r6 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r5)
+		Method: <com.nutomic.ensichat.core.messages.body.PublicKeyReply$: com.nutomic.ensichat.core.messages.body.PublicKeyReply read(byte[])>
+		SHA-256: fdfcfe99c0b29a2b9b30ed2fc6ab3140e7b528177e7f91d8c3d49027a896057b
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = interfaceinvoke $r3.<java.security.Key: byte[] getEncoded()>()
+		Method: <com.nutomic.ensichat.core.util.Crypto$$anonfun$saveKey$1: void apply(java.io.FileOutputStream)>
+		SHA-256: b7ddf1da13840fba087732c415bcfbbcb41ac647a6329623db6cc79bb76c6cf5
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.PublicKey
+		Statement: $r5 = virtualinvoke $r4.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <com.nutomic.ensichat.core.util.Crypto: void generateLocalKeys()>
+		SHA-256: cc8ab3955339b9eac5e277bb1868624d117ae71d15b61330395da100690f43d3
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.lang.String
+		Statement: $r15 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r1)
+		Method: <com.nutomic.ensichat.core.util.Crypto: java.lang.Object loadKey(java.lang.String,java.lang.Class)>
+		SHA-256: 2f1cb7fb68a3f2a31eaf8ce27d5009062d4db807a4a511aa4e4164ec9dd421f5
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.PrivateKey
+		Statement: $r8 = virtualinvoke $r5.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r6)
+		Method: <org.h2.security.CipherFactory: java.security.KeyStore getKeyStore(java.lang.String)>
+		SHA-256: 2c8b873b788ce7751236cd35b37a2c0bd387db2a5a32662bc64903d9439405e9
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, $r2)
+		Method: <com.nutomic.ensichat.core.util.Crypto: javax.crypto.SecretKey makeSecretKey()>
+		SHA-256: b518938c7e887c11c44596c8969655f6601f65fd13ad9f56121e607188fbb2d7
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r7.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+		Method: <com.nutomic.ensichat.core.messages.body.PublicKeyReply$: com.nutomic.ensichat.core.messages.body.PublicKeyReply read(byte[])>
+		SHA-256: 6b87e71f07d3fe1a656b36ca485dc7b1b59ff62033bd1d0f0f932897bbb5bc48
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.cert.CertificateFactory
+		Statement: $r10 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer31424)
+		Method: <org.h2.security.CipherFactory: java.security.KeyStore getKeyStore(java.lang.String)>
+		SHA-256: f05367c72f5ed92aed20b56b0ba76c28e69f5164230d687a38692ba4c7a1cdcc
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.Signature
+		Statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r6)
+		Method: <com.nutomic.ensichat.core.util.Crypto: boolean verify(com.nutomic.ensichat.core.messages.Message,scala.Option)>
+		SHA-256: fa2b34cd8217e558ef1ffa7bc59c98f5963e8aa43f92b61e40025a99841b45c5
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.lang.String
+		Statement: $r6 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r5)
+		Method: <com.nutomic.ensichat.core.messages.body.PublicKeyReply$: com.nutomic.ensichat.core.messages.body.PublicKeyReply read(byte[])>
+		SHA-256: 57c519ceda9d81b21f5107d785e3b8ae66f6888d4f76e521b513520cb00afffd
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r1.<java.security.SecureRandom: void <init>()>()
+		Method: <com.nutomic.ensichat.util.PRNGFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: 5a9473181c4b29a47db06af88a317e845cb17b53b7f6803df239f2a3b2a9fdf3
+		Secure: true
+	Object:
+		Variable: $r25
+		Type: java.security.PublicKey
+		Statement: $r25 = virtualinvoke $r15.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>(r23)
+		Method: <com.nutomic.ensichat.core.util.Crypto: java.lang.Object loadKey(java.lang.String,java.lang.Class)>
+		SHA-256: 134ff4a85ad436266d0c319f088a085f7173982041ee65438acc59f818976fd3
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.lang.String
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, $r2)
+		Method: <com.nutomic.ensichat.core.util.Crypto: javax.crypto.SecretKey makeSecretKey()>
+		SHA-256: 327b753f618ada6e504b4c83eae97d1fa3f27b6ce0d180351244dc1fa19a51e3
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: $r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer4089)
+		Method: <org.h2.util.MathUtils$1: void run()>
+		SHA-256: b9739fa3936ed977abc277ae95334234061e21e0e638a192bdb1b145ecebeb01
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.KeyFactory
+		Statement: $r5 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer31425)
+		Method: <org.h2.security.CipherFactory: java.security.KeyStore getKeyStore(java.lang.String)>
+		SHA-256: 9b1ac6c7b1d0f652a62ac1e8f0db3fb0399ebf87a3ca8d2de3e88f8326229ad1
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r3)
+		Method: <com.nutomic.ensichat.core.util.Crypto: com.nutomic.ensichat.core.routing.Address calculateAddress(java.security.PublicKey)>
+		SHA-256: abaac21e3c56939a10192c471d42f310d12fffd734a9d460c31e88c88fc32daa
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.KeyPair
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyPairGenerator: java.security.KeyPair genKeyPair()>()
+		Method: <com.nutomic.ensichat.core.util.Crypto: void generateLocalKeys()>
+		SHA-256: 782931a2c61c23b15def0576a8ba03172123d75f2a3674c9d6bc45c0cfef2ff5
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.KeyPairGenerator
+		Statement: $r3 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>($r2)
+		Method: <com.nutomic.ensichat.core.util.Crypto: void generateLocalKeys()>
+		SHA-256: 266703fa08888bdbaecfa6298c0cb56c861f36ff087a8d4a6b40b68acc989662
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.Signature
+		Statement: $r5 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r4)
+		Method: <com.nutomic.ensichat.core.util.Crypto: com.nutomic.ensichat.core.messages.Message sign(com.nutomic.ensichat.core.messages.Message)>
+		SHA-256: ed9c57a2dd1dbb3d2cd645d3a241f2e4cce54a38802f8890fc890205788a863e
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r11)
+		Method: <com.nutomic.ensichat.core.util.Crypto: boolean verify(com.nutomic.ensichat.core.messages.Message,scala.Option)>
+		SHA-256: 5665005eb810505dd376c3e1710515e96003097d491ecc9965c9fc014294477a
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r3)
+		Method: <com.nutomic.ensichat.core.util.Crypto: com.nutomic.ensichat.core.messages.Message decrypt(com.nutomic.ensichat.core.messages.Message)>
+		SHA-256: e41f68426a9df70c74fad7a6aafa1c2d8f7016d413d18a330f1bbbf34bba5fdb
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.PrivateKey
+		Statement: $r11 = virtualinvoke $r4.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <com.nutomic.ensichat.core.util.Crypto: void generateLocalKeys()>
+		SHA-256: 53abda76ba80d7c1cf4afc5ae777549531880b63fce3772cb3d88e5dc584c4f5
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.lang.String
+		Statement: $r6 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r5)
+		Method: <com.nutomic.ensichat.core.messages.body.ConnectionInfo$: com.nutomic.ensichat.core.messages.body.ConnectionInfo read(byte[])>
+		SHA-256: 9694ac6729ec87aa5116ca472aab76268f6e7c1ff96cfca81b01528a4267eff6
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29954)
+		Method: <scala.reflect.internal.StdNames$compactify$: void <init>(scala.reflect.internal.SymbolTable)>
+		SHA-256: ffa7c46278dea3bb7a34aafa8a95ce935589a6835c9ca8d87befc7f1fc421ffa
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <com.nutomic.ensichat.core.util.Crypto: com.nutomic.ensichat.core.routing.Address calculateAddress(java.security.PublicKey)>
+		SHA-256: 47948e9e847e6953736714d22ecc3beb95aac01af51576f261377f937aa2feb
+		Secure: true
+	Object:
+		Variable: r1
+		Type: java.security.SecureRandom
+		Statement: r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer25)
+		Method: <com.nutomic.ensichat.util.PRNGFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: 344842c1a0ae4f8691d275f940426db91d8369d51ba3f2aad8417d39f20d8f77
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.Key
+		Statement: $r2 = interfaceinvoke $r3.<java.security.Key: byte[] getEncoded()>()
+		Method: <com.nutomic.ensichat.core.util.Crypto$$anonfun$saveKey$1: void apply(java.io.FileOutputStream)>
+		SHA-256: ef4247332a366ebf846318c9f827990665cf333ce366980d70af1969233eeb61
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r3)
+		Method: <com.nutomic.ensichat.core.util.Crypto: com.nutomic.ensichat.core.messages.Message decrypt(com.nutomic.ensichat.core.messages.Message)>
+		SHA-256: e41f68426a9df70c74fad7a6aafa1c2d8f7016d413d18a330f1bbbf34bba5fdb
+		Secure: false
+	Object:
+		Variable: $r27
+		Type: java.security.PrivateKey
+		Statement: $r27 = virtualinvoke $r15.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>(r26)
+		Method: <com.nutomic.ensichat.core.util.Crypto: java.lang.Object loadKey(java.lang.String,java.lang.Class)>
+		SHA-256: 479c68fafa283188eb83abf34c909d7e3ed1145ace2b8cb4910312a4ec9472b2
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: javax.crypto.Cipher
+		Statement: $r11 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r10)
+		Method: <com.nutomic.ensichat.core.util.Crypto: com.nutomic.ensichat.core.messages.Message encrypt(com.nutomic.ensichat.core.messages.Message,scala.Option)>
+		SHA-256: f3b07eeeed19142844541a4aeb9f806fef5c09fdac5ce3ee8c6c474b65bee3af
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke $r5.<java.security.Signature: byte[] sign()>()
+		Method: <com.nutomic.ensichat.core.util.Crypto: com.nutomic.ensichat.core.messages.Message sign(com.nutomic.ensichat.core.messages.Message)>
+		SHA-256: e5753557b463941a3a45682b7d3734e4e5d32d7636270ef7f1308895a7ca2302
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.SecretKey
+		Statement: $r4 = virtualinvoke $r3.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.nutomic.ensichat.core.util.Crypto: javax.crypto.SecretKey makeSecretKey()>
+		SHA-256: 8ac4ffc90672e989afd9f6b158b73b51943e483d4dce5d4843a0dfb2bbef2de1
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: javax.crypto.Cipher
+		Statement: $r11 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r10)
+		Method: <com.nutomic.ensichat.core.util.Crypto: com.nutomic.ensichat.core.messages.Message encrypt(com.nutomic.ensichat.core.messages.Message,scala.Option)>
+		SHA-256: f3b07eeeed19142844541a4aeb9f806fef5c09fdac5ce3ee8c6c474b65bee3af
+		Secure: false
+	Object:
+		Variable: r23
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke r23.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r10)
+		Method: <com.nutomic.ensichat.core.util.Crypto: java.lang.Object loadKey(java.lang.String,java.lang.Class)>
+		SHA-256: 4e0735b7f758c270699a915f5352fc32b839849e939e7a3deaba26c2d4cf7b62
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: $r0 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer17896)
+		Method: <org.h2.util.MathUtils: java.security.SecureRandom getSecureRandom()>
+		SHA-256: b7e6b1802a3806613cce91c996ce3438571bc76fdc3f1894b1fffd12f5dcd43c
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <org.h2.util.MathUtils: java.security.SecureRandom getSecureRandom()>
+		SHA-256: d75550c9083472c7c43e6f5f5860285f0b52621e3cdc9ab4b5797d07c8c57724
+		Secure: true
+	Object:
+		Variable: $r15
+		Type: java.security.KeyFactory
+		Statement: $r15 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r1)
+		Method: <com.nutomic.ensichat.core.util.Crypto: java.lang.Object loadKey(java.lang.String,java.lang.Class)>
+		SHA-256: 720162a9c65c6aefad03a0dc92e9051b8a60bcc43238c7e8ed7dcad084c57d9f
+		Secure: false
+	Object:
+		Variable: varReplacer31425
+		Type: java.lang.String
+		Statement: $r5 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer31425)
+		Method: <org.h2.security.CipherFactory: java.security.KeyStore getKeyStore(java.lang.String)>
+		SHA-256: 1bcf66a3d74db40be820942926063fbde50cd66ea844afc18ad085af7d2acc97
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.KeyFactory
+		Statement: $r6 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r5)
+		Method: <com.nutomic.ensichat.core.messages.body.ConnectionInfo$: com.nutomic.ensichat.core.messages.body.ConnectionInfo read(byte[])>
+		SHA-256: a5bdf8e7503ce8966a715abfc218028ed23bd52660268472a46066921949045
+		Secure: false
+
+Findings in Java Class: com.nutomic.ensichat.core.util.Crypto
+
+	 in Method: byte[] copyThroughCipher(javax.crypto.Cipher,byte[])
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherOutputStream (on Object #9aec74a4d764200bcd4cee1abf2c77fc566948a5469dbade94c1a66ec57ceb26)
+			Operation on object of type javax.crypto.CipherOutputStream object not completed. Expected call to write, close
+			at statement: specialinvoke r5.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>(r4, $r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherOutputStream (on Object #9aec74a4d764200bcd4cee1abf2c77fc566948a5469dbade94c1a66ec57ceb26)
+			Operation on object of type javax.crypto.CipherOutputStream object not completed. Expected call to java.io.FilterOutputStream: void write(byte[],int,int), java.io.FilterOutputStream: void write(int), javax.crypto.CipherOutputStream: void write(int), javax.crypto.CipherOutputStream: void write(byte[]), java.io.OutputStream: void write(byte[],int,int), java.io.OutputStream: void write(byte[]), javax.crypto.CipherOutputStream: void write(byte[],int,int), java.io.OutputStream: void write(int), close, java.io.FilterOutputStream: void write(byte[])
+			at statement: virtualinvoke r5.<javax.crypto.CipherOutputStream: void write(byte[],int,int)>($r2, varReplacer19095, $i0)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f3b07eeeed19142844541a4aeb9f806fef5c09fdac5ce3ee8c6c474b65bee3af)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal()>()
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #e41f68426a9df70c74fad7a6aafa1c2d8f7016d413d18a330f1bbbf34bba5fdb)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal()>()
+
+
+	 in Method: com.nutomic.ensichat.core.messages.Message encrypt(com.nutomic.ensichat.core.messages.Message,scala.Option)
+		ForbiddenMethodError violating CrySL rule for javax.crypto.Cipher
+			Detected call to forbidden method void init(int,java.security.Key) of class javax.crypto.Cipher. Instead, call method <javax.crypto.Cipher: void init(int,java.security.Key)>.
+			at statement: virtualinvoke $r11.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer12840, $r16)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r11.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer12840, $r16)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f3b07eeeed19142844541a4aeb9f806fef5c09fdac5ce3ee8c6c474b65bee3af)
+			Unexpected call to method wrap on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r13 = virtualinvoke $r11.<javax.crypto.Cipher: byte[] wrap(java.security.Key)>($r8)
+
+
+	 in Method: com.nutomic.ensichat.core.messages.Message decrypt(com.nutomic.ensichat.core.messages.Message)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer16130, $r6)
+
+		ForbiddenMethodError violating CrySL rule for javax.crypto.Cipher
+			Detected call to forbidden method void init(int,java.security.Key) of class javax.crypto.Cipher. Instead, call method <javax.crypto.Cipher: void init(int,java.security.Key)>.
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer16132, $r6)
+
+
+	 in Method: javax.crypto.SecretKey makeSecretKey()
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, $r2)
+
+
+	 in Method: boolean verify(com.nutomic.ensichat.core.messages.Message,scala.Option)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r7.<java.security.Signature: void initVerify(java.security.PublicKey)>($r10)
+
+
+	 in Method: com.nutomic.ensichat.core.messages.Message sign(com.nutomic.ensichat.core.messages.Message)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r5.<java.security.Signature: void initSign(java.security.PrivateKey)>(r7)
+
+
+	 in Method: java.lang.Object loadKey(java.lang.String,java.lang.Class)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r25 = virtualinvoke $r15.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>(r23)
+
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r23.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r10)
+
+
+Findings in Java Class: scala.reflect.internal.StdNames$compactify$
+
+	 in Method: void <init>(scala.reflect.internal.SymbolTable)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ffa7c46278dea3bb7a34aafa8a95ce935589a6835c9ca8d87befc7f1fc421ffa)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29954)
+
+
+Findings in Java Class: scala.reflect.runtime.JavaMirrors$JavaMirror$$anonfun$classToJava$1
+
+	 in Method: java.lang.Class apply()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ffa7c46278dea3bb7a34aafa8a95ce935589a6835c9ca8d87befc7f1fc421ffa)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r8 = interfaceinvoke $r25.<scala.reflect.internal.StdNames: java.lang.String compactifyName(java.lang.String)>($r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ffa7c46278dea3bb7a34aafa8a95ce935589a6835c9ca8d87befc7f1fc421ffa)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r8 = interfaceinvoke $r25.<scala.reflect.internal.StdNames: java.lang.String compactifyName(java.lang.String)>(r24)
+
+
+Findings in Java Class: scala.reflect.internal.StdNames$CommonNames
+
+	 in Method: scala.reflect.internal.Names$Name flattenedName(scala.collection.Seq)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ffa7c46278dea3bb7a34aafa8a95ce935589a6835c9ca8d87befc7f1fc421ffa)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r4 = virtualinvoke $r3.<scala.reflect.internal.StdNames$compactify$: java.lang.String apply(java.lang.String)>($r4)
+
+
+Findings in Java Class: org.h2.security.CipherFactory
+
+	 in Method: java.security.KeyStore getKeyStore(java.lang.String)
+		TypestateError violating CrySL rule for java.security.KeyStore (on Object #ce0707c76be59a3c4770b9e9643f9d4a7c415a8d662b2e9c306dd6956abd931)
+			Unexpected call to method load on object of type java.security.KeyStore. Expect a call to one of the following methods getKey,getEntry,setEntry
+			at statement: virtualinvoke $r3.<java.security.KeyStore: void load(java.io.InputStream,char[])>(varReplacer31421, $r4)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r8 = virtualinvoke $r5.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r6)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #ce0707c76be59a3c4770b9e9643f9d4a7c415a8d662b2e9c306dd6956abd931)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r3.<java.security.KeyStore: void load(java.io.InputStream,char[])>(varReplacer31423, $r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #f05367c72f5ed92aed20b56b0ba76c28e69f5164230d687a38692ba4c7a1cdcc)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r11 = virtualinvoke $r10.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r1)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #ce0707c76be59a3c4770b9e9643f9d4a7c415a8d662b2e9c306dd6956abd931)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r3.<java.security.KeyStore: void load(java.io.InputStream,char[])>(varReplacer31421, $r4)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #ce0707c76be59a3c4770b9e9643f9d4a7c415a8d662b2e9c306dd6956abd931)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r3.<java.security.KeyStore: void load(java.io.InputStream,char[])>(varReplacer31421, $r4)
+
+
+Findings in Java Class: com.nutomic.ensichat.core.messages.body.ConnectionInfo$
+
+	 in Method: com.nutomic.ensichat.core.messages.body.ConnectionInfo read(byte[])
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r8 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r7)
+
+
+Findings in Java Class: com.nutomic.ensichat.core.messages.body.PublicKeyReply$
+
+	 in Method: com.nutomic.ensichat.core.messages.body.PublicKeyReply read(byte[])
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r8 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r7)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 48
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 4
+	ForbiddenMethodError: 2
+	IncompleteOperationError: 6
+	ConstraintError: 1
+	HardCodedError: 2
+	NeverTypeOfError: 1
+	RequiredPredicateError: 12
+=====================================================================

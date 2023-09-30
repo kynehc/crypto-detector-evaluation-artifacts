@@ -1,0 +1,237 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: java.security.PrivateKey
+		Statement: $r3 = virtualinvoke $r1.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <org.apache.sshd.common.util.buffer.Buffer: void putKeyPair(java.security.KeyPair)>
+		SHA-256: d59bc594a6e9739226e6f57fa05420212d250d44cf717290aaf519a993e19bf5
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r3.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r4, $r8, $r6, varReplacer839)
+		Method: <org.apache.sshd.common.cipher.ECCurves: void <clinit>()>
+		SHA-256: c0835b18a75570755e0a96fda9266c750137acb902d6fbcd7794bc3a8c4e9b80
+		Secure: true
+	Object:
+		Variable: $r12
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r12.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r9, $r11)
+		Method: <org.apache.sshd.common.util.buffer.Buffer: java.security.KeyPair extractEC(java.lang.String,java.security.spec.ECParameterSpec)>
+		SHA-256: 495699a68b197dec92106ec88380d9f1dd5aa16c3d38e134c5a6d7bf59b0f5a
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.PublicKey
+		Statement: $r10 = virtualinvoke $r9.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r7)
+		Method: <c.b.c.e: java.security.interfaces.RSAPublicKey d(java.lang.String)>
+		SHA-256: 65c4074ff049173fe1ab2afae069b79ce5c678f6c57f0d37fe1afa854bd4c40c
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer541)
+		Method: <c.b.c.b: java.lang.String c(java.math.BigInteger,java.math.BigInteger)>
+		SHA-256: bf861bc8f20444e1c73d42a776e2cddeadf119a1189a4805e866ba551c529b78
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.PublicKey
+		Statement: $r2 = virtualinvoke $r1.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <org.apache.sshd.common.util.buffer.Buffer: void putKeyPair(java.security.KeyPair)>
+		SHA-256: dd8255620143199f3da59a51195ffe6fd9e546da65c29e3955d437662aaf50a
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r1, $r1)
+		Method: <org.apache.sshd.common.util.security.SecurityUtils: boolean isDHGroupExchangeSupported(int)>
+		SHA-256: 2a8586b7f75b97a3797955916f2e45e42b5f2c583b65f258b7c91fed69234393
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r1.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <org.apache.sshd.agent.common.AbstractAgentProxy: void addIdentity(java.security.KeyPair,java.lang.String)>
+		SHA-256: 7b969d1796f08f44e235b8bed9395d2c4e4a64eb799401157b34806a198b47d9
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <c.b.c.b: java.lang.String b(java.math.BigInteger,java.math.BigInteger)>
+		SHA-256: 68667a2e34f208317929a0d25bc0ed446b0a39c1d9bb616fea8086c6c543b088
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r3.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r4, $r8, $r6, varReplacer858)
+		Method: <org.apache.sshd.common.cipher.ECCurves: void <clinit>()>
+		SHA-256: 52af32207e43ee1ffb7ed3cbed4c487be8058834d73fe25640619218e3323332
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.sshd.common.random.JceRandom: void <init>()>
+		SHA-256: 467144ba17400fa24baa1f93c306729e3889011fbf34f2626d36888840b5ccd7
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer544)
+		Method: <c.b.c.b: java.lang.String b(java.math.BigInteger,java.math.BigInteger)>
+		SHA-256: b93045283d210e314c0088b1efd60929107901de7ee77cc149c8c773d6e4d588
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.KeyFactory
+		Statement: $r9 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer1941)
+		Method: <c.b.c.e: java.security.interfaces.RSAPublicKey d(java.lang.String)>
+		SHA-256: efa4a0e8ff88fa491d102bc4eccded4f30e51e9cc74084c1566e81bdcd280c9f
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r3.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r4, $r8, $r6, varReplacer836)
+		Method: <org.apache.sshd.common.cipher.ECCurves: void <clinit>()>
+		SHA-256: ad2bc143d826bc11e93c5a08b2df2e83021296b2af02f3dafa2f785bd1616e5b
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.sshd.common.util.security.bouncycastle.BouncyCastleRandom: void <init>()>
+		SHA-256: fc9dec23e31a0d96c9c98b2d583d1550546b70143c30f10058660b68be9d1892
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<java.security.SecureRandom: byte[] generateSeed(int)>(varReplacer14660)
+		Method: <org.apache.sshd.common.util.security.bouncycastle.BouncyCastleRandom: void <init>()>
+		SHA-256: 8d68ab50471b976c57c65143cabfa136fe643bbfb65d53112ff71a07d64a8fcc
+		Secure: true
+	Object:
+		Variable: $r18
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r18.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r14, $r15)
+		Method: <org.apache.sshd.common.util.buffer.Buffer: java.security.KeyPair getKeyPair()>
+		SHA-256: 936b08cdfe6d5390ed9deb456bc8a58451dbcb0db059a6b6f93162594b7ef507
+		Secure: false
+	Object:
+		Variable: varReplacer1941
+		Type: java.lang.String
+		Statement: $r9 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer1941)
+		Method: <c.b.c.e: java.security.interfaces.RSAPublicKey d(java.lang.String)>
+		SHA-256: 590932e4491a52d0aebc407a4f437cb520bcf91079411baee192a90f88bda366
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <c.b.c.b: java.lang.String c(java.math.BigInteger,java.math.BigInteger)>
+		SHA-256: 50b71cc1d9553345998e6ddd0c2e372ebd346238a5084dce4cc41be45f5368cb
+		Secure: true
+
+Findings in Java Class: c.b.c.b
+
+	 in Method: java.lang.String b(java.math.BigInteger,java.math.BigInteger)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b93045283d210e314c0088b1efd60929107901de7ee77cc149c8c773d6e4d588)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer544)
+
+
+Findings in Java Class: c.b.c.e
+
+	 in Method: java.security.interfaces.RSAPublicKey d(java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r10 = virtualinvoke $r9.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r7)
+
+
+Findings in Java Class: org.apache.sshd.common.util.buffer.Buffer
+
+	 in Method: java.security.KeyPair extractEC(java.lang.String,java.security.spec.ECParameterSpec)
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r12.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r9, $r11)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r12.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r9, $r11)
+
+
+	 in Method: java.security.KeyPair getKeyPair()
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r18.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r14, $r15)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r18.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r14, $r15)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 19
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 1
+	RequiredPredicateError: 5
+=====================================================================

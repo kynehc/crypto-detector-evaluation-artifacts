@@ -1,0 +1,197 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer13638)
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator$1: com.bumptech.glide.load.engine.cache.SafeKeyGenerator$PoolableDigestContainer create()>
+		SHA-256: 7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1
+		Secure: true
+
+Findings in Java Class: com.bumptech.glide.load.engine.cache.SafeKeyGenerator
+
+	 in Method: java.lang.String calculateHexStringDigest(com.bumptech.glide.load.Key)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r6 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: com.bumptech.glide.load.engine.EngineJob$CallLoadFailed
+
+	 in Method: void run()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r2.<com.bumptech.glide.load.engine.EngineJob: void callCallbackOnLoadFailed(com.bumptech.glide.request.ResourceCallback)>($r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = virtualinvoke $r3.<com.bumptech.glide.load.engine.EngineJob$ResourceCallbacksAndExecutors: boolean contains(com.bumptech.glide.request.ResourceCallback)>($r4)
+
+
+Findings in Java Class: com.bumptech.glide.load.engine.DecodePath
+
+	 in Method: com.bumptech.glide.load.engine.Resource decodeResourceWithList(com.bumptech.glide.load.data.DataRewinder,int,int,com.bumptech.glide.load.Options,java.util.List)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r13.<java.util.ArrayList: void <init>(java.util.Collection)>($r2)
+
+
+	 in Method: com.bumptech.glide.load.engine.Resource decodeResource(com.bumptech.glide.load.data.DataRewinder,int,int,com.bumptech.glide.load.Options)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r3.<android.support.v4.util.Pools$Pool: boolean release(java.lang.Object)>($r5)
+
+
+Findings in Java Class: com.bumptech.glide.request.ThumbnailRequestCoordinator
+
+	 in Method: void begin()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r1.<com.bumptech.glide.request.Request: void begin()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r1.<com.bumptech.glide.request.Request: void begin()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r1.<com.bumptech.glide.request.Request: boolean isRunning()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r1.<com.bumptech.glide.request.Request: boolean isRunning()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r1.<com.bumptech.glide.request.Request: boolean isComplete()>()
+
+
+Findings in Java Class: com.bumptech.glide.manager.RequestTracker
+
+	 in Method: void restartRequests()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r5.<com.bumptech.glide.request.Request: void begin()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r5.<com.bumptech.glide.request.Request: boolean isCleared()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>($r5)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r5.<com.bumptech.glide.request.Request: boolean isComplete()>()
+
+
+	 in Method: void resumeRequests()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r5.<com.bumptech.glide.request.Request: boolean isComplete()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r5.<com.bumptech.glide.request.Request: boolean isRunning()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r5.<com.bumptech.glide.request.Request: void begin()>()
+
+
+Findings in Java Class: com.bumptech.glide.RequestBuilder
+
+	 in Method: com.bumptech.glide.request.target.Target into(com.bumptech.glide.request.target.Target,com.bumptech.glide.request.RequestListener,com.bumptech.glide.request.BaseRequestOptions,java.util.concurrent.Executor)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r6.<com.bumptech.glide.request.Request: void begin()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r8.<com.bumptech.glide.RequestManager: void track(com.bumptech.glide.request.target.Target,com.bumptech.glide.request.Request)>($r1, $r5)
+
+
+Findings in Java Class: android.support.v4.util.Pools$SimplePool
+
+	 in Method: boolean release(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = specialinvoke r0.<android.support.v4.util.Pools$SimplePool: boolean isInPool(java.lang.Object)>($r2)
+
+
+Findings in Java Class: com.bumptech.glide.request.ErrorRequestCoordinator
+
+	 in Method: void begin()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r1.<com.bumptech.glide.request.Request: boolean isRunning()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f823c457b3c71edc0358e2ea05a342088f9ac76835169cc989503592066a9a1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r1.<com.bumptech.glide.request.Request: void begin()>()
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 1
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 1
+	IncompleteOperationError: 21
+=====================================================================

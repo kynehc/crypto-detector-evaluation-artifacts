@@ -1,0 +1,48 @@
+SPEC javax.net.ssl.SSLParameters
+
+OBJECTS
+	java.lang.String[] cipherSuites;
+	java.lang.String[] protocols;
+
+EVENTS
+	Con1: SSLParameters();
+	Con2: SSLParameters(cipherSuites);
+	Con3: SSLParameters(cipherSuites, protocols);
+	
+	CipherSuite: setCipherSuites(cipherSuites);
+	SetProtocol: setProtocols(protocols);
+		
+	
+ORDER
+	(Con1, ((CipherSuite , SetProtocol) | (SetProtocol , CipherSuite))) | (Con2, SetProtocol) | Con3
+		
+CONSTRAINTS
+	elements(protocols) in {"TLSv1.2", "TLSv1.3"};
+	elements(protocols) in {"TLSv1.2"} => elements(cipherSuites) in {"TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+    		"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    		"TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+    		"TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+    		"TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+    		"TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    		"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    		"TLS_DHE_DSS_WITH_AES_128_CBC_SHA256",
+    		"TLS_DHE_DSS_WITH_AES_256_CBC_SHA256",
+    		"TLS_DHE_DSS_WITH_AES_128_GCM_SHA256",
+    		"TLS_DHE_DSS_WITH_AES_256_GCM_SHA384",
+    		"TLS_DHE_RSA_WITH_AES_128_CBC_SHA256",
+    		"TLS_DHE_RSA_WITH_AES_256_CBC_SHA256",
+    		"TLS_DHE_RSA_WITH_AES_128_GCM_SHA256",
+    		"TLS_DHE_RSA_WITH_AES_256_GCM_SHA384",
+    		"TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256",
+    		"TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384",
+    		"TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256",
+    		"TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384",
+    		"TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256",
+    		"TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384",
+    		"TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256",
+    		"TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384"};
+    elements(protocols) in {"TLSv1.3"} => elements(cipherSuites) in {"TLS_AES_128_GCM_SHA256", 
+			"TLS_AES_256_GCM_SHA384"};
+				
+ENSURES
+	generatedSSLParameters[this];

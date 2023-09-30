@@ -1,0 +1,1121 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Alive 33276  5000
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r21
+		Type: java.security.Signature
+		Statement: $r21 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r5)
+		Method: <org.bitcoinj.protocols.payments.PaymentProtocol: org.bitcoinj.protocols.payments.PaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)>
+		SHA-256: e762a14e3506ec34c047e63e860f7fa82aa40ba8bf6934a5483a41f49935911
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer53771)
+		Method: <org.bitcoinj.core.bip47.BIP47PaymentAddress: byte[] hashSharedSecret()>
+		SHA-256: ee668c0b79f72ca7064e171e3dae02027468dce09b636d148a51fb69f08e8b48
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <org.bitcoinj.core.bip47.BIP47PaymentAddress: byte[] hashSharedSecret()>
+		SHA-256: 6ccefe195d0a4b3149d70e7be8318f401a5ce0106ea56f118894abbc7086728e
+		Secure: true
+	Object:
+		Variable: varReplacer37373
+		Type: java.lang.String
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>(varReplacer37373, varReplacer37374)
+		Method: <org.bitcoinj.crypto.BIP47SecretPoint: void <init>(byte[],byte[])>
+		SHA-256: e08716782c5ea4b467d9b52a26d1e60149edb2be1c8beef4505128e48d85ba7
+		Secure: false
+	Object:
+		Variable: $r24
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r21.<java.security.Signature: boolean verify(byte[])>($r24)
+		Method: <org.bitcoinj.protocols.payments.PaymentProtocol: org.bitcoinj.protocols.payments.PaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)>
+		SHA-256: 4ae315bfd418a00ab30f6feb467d46290fc6d109f844e59503ee5c23203157cc
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r7)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: 77058718c850bf09eb8d7d644e7de27558a93dabc3cc52eb0329a28ef246746e
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r2.<java.security.Signature: boolean verify(byte[])>($r8)
+		Method: <org.bouncycastle.jce.provider.X509CertificateObject: void checkSignature(java.security.PublicKey,java.security.Signature)>
+		SHA-256: cebe45f59ca6821eb5e75723e2592c61a7970e6687e96537a7fa5d2712864b7
+		Secure: false
+	Object:
+		Variable: $r36
+		Type: java.security.cert.PKIXParameters
+		Statement: specialinvoke $r36.<java.security.cert.PKIXParameters: void <init>(java.security.KeyStore)>($r3)
+		Method: <org.bitcoinj.protocols.payments.PaymentProtocol: org.bitcoinj.protocols.payments.PaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)>
+		SHA-256: 1a2c6c86d0d40513139388b55383725d0ff831a07c75d0d996252e7b5b8eba05
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.AlgorithmParameters
+		Statement: $r5 = staticinvoke <java.security.AlgorithmParameters: java.security.AlgorithmParameters getInstance(java.lang.String,java.security.Provider)>($r3, $r4)
+		Method: <org.bouncycastle.jce.provider.X509SignatureUtil: void setSignatureParameters(java.security.Signature,org.bouncycastle.asn1.ASN1Encodable)>
+		SHA-256: 5542b69dc5336cc3d00547288fa7f3d8d3237d121f2ce57576e26391c36e1a8d
+		Secure: false
+	Object:
+		Variable: $r21
+		Type: java.security.MessageDigest
+		Statement: $r21 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer36040)
+		Method: <org.bitcoinj.script.Script: void executeScript(org.bitcoinj.core.Transaction,long,org.bitcoinj.script.Script,java.util.LinkedList,org.bitcoinj.core.Coin,java.util.Set)>
+		SHA-256: fd231d8c89f461fb4d6931213ae2691a8bf20b8d39f0a507f2d85cbbc873e443
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer38439)
+		Method: <org.bitcoinj.crypto.HashHelper: java.lang.String SHA256_Hex(java.lang.String)>
+		SHA-256: 88afccd43ed1337160c79393b12d06a38bae3909a05f574e60e984c2f0cf2cdd
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.Signature
+		Statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r6)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateImpl: void verify(java.security.PublicKey)>
+		SHA-256: 2210039506d50c80f7fa2e6dc324667e7f09528c5425850102886ae20b9c012f
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r7)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: 175f99d6a0662ea0858332313de18bec787c03b6a640a6263832e775a0a9cca1
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: b6feb6391eaafb0063c8334df22b0508a717394d1cbca45d0349f23bae3071b4
+		Secure: false
+	Object:
+		Variable: $r36
+		Type: java.security.cert.PKIXParameters
+		Statement: specialinvoke $r36.<java.security.cert.PKIXParameters: void <init>(java.security.KeyStore)>($r3)
+		Method: <org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol: org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)>
+		SHA-256: d86addec1f5ce573e4a6ee3d0a4743fa1ad03dd3da6f2931b3414a1638575916
+		Secure: false
+	Object:
+		Variable: varReplacer56472
+		Type: java.lang.String
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer56472)
+		Method: <org.bitcoinj.crypto.BIP38PrivateKey: org.bitcoinj.core.ECKey decryptEC(java.lang.String)>
+		SHA-256: 6a983a5587359bf3516472243f5a8a70348aa7fc87d64507ff9966e5b7e7e94d
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: byte[]
+		Statement: $r13 = virtualinvoke $r21.<java.security.MessageDigest: byte[] digest(byte[])>($r13)
+		Method: <org.bitcoinj.script.Script: void executeScript(org.bitcoinj.core.Transaction,long,org.bitcoinj.script.Script,java.util.LinkedList,org.bitcoinj.core.Coin,java.util.Set)>
+		SHA-256: 37a1aa690fcb4e710710a0898b98cce05851ed691726f54f92b570675c29a743
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.Signature
+		Statement: $r2 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.lang.String)>($r3, $r1)
+		Method: <org.bouncycastle.jcajce.util.NamedJcaJceHelper: java.security.Signature createSignature(java.lang.String)>
+		SHA-256: cb6dbedb66709ff933343a7a19443259032632b9744c262530a2bb4dc73beae9
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher: com.google.common.hash.HashCode hash()>
+		SHA-256: 498aa274b0e0dc658a96e5b82797c2ef859caa8cc0a4a03329fbcf0be8023051
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r2.<java.security.Signature: boolean verify(byte[])>($r10)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateImpl: void checkSignature(java.security.PublicKey,java.security.Signature)>
+		SHA-256: 92d40a61ba5bccc1be720a48d15fd4a39a218475fe58973469cedf9025d005f2
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer56502)
+		Method: <org.bitcoinj.crypto.BIP38PrivateKey: org.bitcoinj.core.ECKey decryptNoEC(java.lang.String)>
+		SHA-256: 5cc0d7fa64b90052db93a089bb90bf484c50d4105c2c086cd7189f10939712bf
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.Signature
+		Statement: $r6 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r5)
+		Method: <org.bouncycastle.jce.provider.X509CertificateObject: void verify(java.security.PublicKey)>
+		SHA-256: 112e0b98b9789074d4ec3ee999f422c7c115607a7d5cddcfc5fefe2723a7aec7
+		Secure: false
+	Object:
+		Variable: $r27
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r27.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r6, $r15)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.dh.BCDHPublicKey: void <init>(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: 17ea506228f5dc57471137e0b695352a3774e9c7e597031eeeb9157ef0e2b937
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.bitcoinj.core.Sha256Hash: byte[] hashTwice(byte[],int,int)>
+		SHA-256: 632592033291c467ee0911d6f099f16c48ebd7364f50d28da6aa21e5ae603fe3
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r3.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r1, $r2)
+		Method: <org.bitcoinj.core.CheckpointManager: org.bitcoinj.core.Sha256Hash readBinary(java.io.InputStream)>
+		SHA-256: 46db3b20f5318542513811897ee5a7baaf5e8c8baa1e5ed91eeaff2905c9af71
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.bitcoinj.core.Sha256Hash: byte[] hash(byte[],int,int)>
+		SHA-256: 745d180ca1b1078784f0d4ae2cbfb88eb653caa50702ece66c28c8c157d7a000
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.bitcoinj.crypto.HashHelper: java.lang.String SHA256_Hex(java.lang.String)>
+		SHA-256: ac30acba2c8d37802d2173f4ab39e77fe095a64fe182c42cca8f392348afd347
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: java.security.MessageDigest
+		Statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r13, varReplacer27925)
+		Method: <org.bouncycastle.x509.AttributeCertificateHolder: boolean match(java.security.cert.Certificate)>
+		SHA-256: 8bf40a0c626ab43305e425080784387db4345332aa001d247f04e7800f27a852
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer39326)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: 1d6507d337ea68cd4779beb8fcad918f7c398d1b4cb6b17330cf329078aabe47
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r9 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.bitcoinj.crypto.MnemonicCode: void <init>(java.io.InputStream,java.lang.String)>
+		SHA-256: 8d2886e50b10141d8f278cf94f1a0674da8365c60608a333ad29b0ab2c8da82d
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Mac
+		Statement: $r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r1)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: b56086d6454bc264b66ede212c47f905a6ba7648c92770117554f441a17e33cd
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bitcoinj.crypto.HDKeyDerivation: void <clinit>()>
+		SHA-256: cb407491e28e0402fdc6ba8758a3ba9cac18f651ca407249f5438a8fb72cb819
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r10.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bitcoinj.core.ECKey: void <clinit>()>
+		SHA-256: de01faa934047049af11594a48dfbbec2615d939e1478a4c2b497c03706bf57f
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher: com.google.common.hash.HashCode hash()>
+		SHA-256: 498aa274b0e0dc658a96e5b82797c2ef859caa8cc0a4a03329fbcf0be8023051
+		Secure: true
+	Object:
+		Variable: $r27
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r27.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger,int)>($r6, $r15, $i0)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.dh.BCDHPublicKey: void <init>(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: c67a58db466f44792924e383c9800713831ce853e3ca81f3580a8d50f581e617
+		Secure: true
+	Object:
+		Variable: $r29
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r29.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r26, $r27, $r1, $i0)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.dstu.BCDSTU4145PublicKey: void populateFromPubKeyInfo(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: 69d36116f62acb406343ba2a4bd3c5dfb318c67056454f8adafd51a6e6f7e175
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: a79a1700ae9d8d44f13ea218f751e7024f8f1222b1b2ae17cdbab7b56d352181
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.bouncycastle.jce.provider.JCEElGamalPrivateKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: 6b8822e70d4604e23c0ea07692bf2c9c1daaa36d64fb48b6df14aae465189041
+		Secure: true
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r2.<java.security.Signature: boolean verify(byte[])>($r10)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateImpl: void checkSignature(java.security.PublicKey,java.security.Signature)>
+		SHA-256: 78d5c1639f24f942fc5d9e56d662eca081164ac3c5fe8751cfc072b7b63b5113
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.Signature
+		Statement: $r6 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.lang.String)>($r5, varReplacer62081)
+		Method: <org.bouncycastle.jce.provider.X509CertificateObject: void verify(java.security.PublicKey)>
+		SHA-256: 2d63a6e71f21d86360ac809e0f41cad178267854f1f6c17aadd1f7aec1603d9d
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyFactory
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>(varReplacer37373, varReplacer37374)
+		Method: <org.bitcoinj.crypto.BIP47SecretPoint: void <init>(byte[],byte[])>
+		SHA-256: 4b969de6171a3b02ac1a41e3a642ef2dd28c3d6892f0d0498266fc2841cbe93e
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r21.<java.security.Signature: boolean verify(byte[])>($r24)
+		Method: <org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol: org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)>
+		SHA-256: 2374fd8f9a0bf7ba7871b16bd106cbef10772d073565baae56fa30597e20429f
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer30335)
+		Method: <org.bitcoinj.core.bip47.BIP47PaymentCode: byte[] getMask(byte[],byte[])>
+		SHA-256: 6c090c6e23a64299e656533b516eec2ca298df2b3ad4235cb5aefefcbdffc4f3
+		Secure: false
+	Object:
+		Variable: r0
+		Type: org.bouncycastle.x509.ExtendedPKIXParameters
+		Statement: specialinvoke r0.<java.security.cert.PKIXParameters: void <init>(java.util.Set)>($r1)
+		Method: <org.bouncycastle.x509.ExtendedPKIXParameters: void <init>(java.util.Set)>
+		SHA-256: bc4db4edf85d5095c872f763083d4cdd57eaf413157a98ff957c0439448eaca6
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer19458)
+		Method: <com.github.kiulian.converter.b58.HashUtils: void <clinit>()>
+		SHA-256: c2030af97738b005153fe311347c14f29498acd05fca2ec3bc734cb991d5489c
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.security.SecureRandom: void nextBytes(byte[])>($r2)
+		Method: <app.crescentcash.src.manager.NetManager$Companion: byte[] getEntropy(java.security.SecureRandom)>
+		SHA-256: 39c526e858e4562fbb44169a810021d77e1f35c3b6f1543a844a0b599e6a82c
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <org.bitcoinj.core.Sha256Hash: byte[] hashTwice(byte[],byte[])>
+		SHA-256: 647504d57cf17b53a1eb9e4f93d5e98ad8c9057bf5f0fe04d98eec560b98aa93
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.KeyStore
+		Statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer51881)
+		Method: <org.bitcoinj.crypto.TrustStoreLoader$DefaultTrustStoreLoader: java.security.KeyStore loadIcsKeyStore()>
+		SHA-256: 58eb1ad3e726cffd5fa7e5ce0cef3b703b1facaa9fa161b85341f977d6ce0795
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.Signature
+		Statement: $r2 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.security.Provider)>($r3, $r1)
+		Method: <org.bouncycastle.jcajce.util.ProviderJcaJceHelper: java.security.Signature createSignature(java.lang.String)>
+		SHA-256: 14ead5b41e52dcc0971ab3bbf6947b9738bc0cfa14d4e782ddd7a129f6301c26
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.cert.CertificateFactory
+		Statement: $r5 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer61064)
+		Method: <okhttp3.Cache$Entry: java.util.List readCertificateList(okio.BufferedSource)>
+		SHA-256: bf16d13f26fa766b7779e3d59294b416938692382fd5edf512db7b18a87658f1
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.PrivateKey
+		Statement: $r3 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r1)
+		Method: <org.bitcoinj.crypto.BIP47SecretPoint: java.security.PrivateKey loadPrivateKey(byte[])>
+		SHA-256: 314a2b3921357e93f789b174766eeae1145f69739a6caa8b1b8a4a7cef2c66e0
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <app.crescentcash.src.hash.HashHelper$Companion: java.lang.String SHA256_Hex(java.lang.String)>
+		SHA-256: 2121039c154913c6554dd710ca037e392d4f6daee17311ac659174734e8b56d7
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bitcoinj.wallet.KeyChainGroup$Builder: org.bitcoinj.wallet.KeyChainGroup$Builder fromRandom(org.bitcoinj.script.Script$ScriptType)>
+		SHA-256: 5c00e7b3e6144c7009af06388125bb853e8fb3a8014e9c279c1ee8c677f8eb36
+		Secure: true
+	Object:
+		Variable: $r21
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r21.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r10, $r14, $r15, $i0)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.util.EC5Util: java.security.spec.ECParameterSpec convertToSpec(org.bouncycastle.asn1.x9.X962Parameters,org.bouncycastle.math.ec.ECCurve)>
+		SHA-256: 49063db5056501dc5b91a4e377b49a58eeeabe81598cccd9ccf90a92bea4339c
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer37728)
+		Method: <app.crescentcash.src.hash.HashHelper$Companion: java.lang.String SHA256_Hex(java.lang.String)>
+		SHA-256: 707d35ba304d4583939241c913109224fd4ab9bd3ddbed64e5446ce90c315498
+		Secure: true
+	Object:
+		Variable: $r15
+		Type: byte[]
+		Statement: $r15 = virtualinvoke $r14.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.bouncycastle.x509.AttributeCertificateHolder: boolean match(java.security.cert.Certificate)>
+		SHA-256: e7db0241527fc7f51059b6cf44875cdfb7ec12450eceba80c4767b3d6fe41b20
+		Secure: true
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r21.<java.security.Signature: boolean verify(byte[])>($r24)
+		Method: <org.bitcoinj.protocols.payments.PaymentProtocol: org.bitcoinj.protocols.payments.PaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)>
+		SHA-256: 812a0cc0bd7019609d4bd84e72737db7b1a3be5d43deed560d41953b5e32f58c
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<javax.crypto.Mac: byte[] doFinal()>()
+		Method: <com.google.common.hash.MacHashFunction$MacHasher: com.google.common.hash.HashCode hash()>
+		SHA-256: a89d37061ba0dac61e1b08aaf3eb3497c39726681770418d4469691a8e1f6dbc
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.bouncycastle.jce.provider.JCEElGamalPublicKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: 2f96be90287037dd5aa521a81412c6567fe97ad3bdc0a3e0dd37cb2855cfb876
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10138)
+		Method: <org.bitcoinj.core.Sha256Hash: java.security.MessageDigest newDigest()>
+		SHA-256: 783d65dbb3bc03ae7c3e6514fd54ee609a603a000beafd6d825ea11475f5b663
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.security.cert.CertificateFactory
+		Statement: $r8 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer40670)
+		Method: <org.bitcoinj.protocols.payments.PaymentProtocol: org.bitcoinj.protocols.payments.PaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)>
+		SHA-256: 824b25c0d0fcaed17015f6ff527634b9b001f9a9c8e7e22377308ee7e4e2e623
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e
+		Secure: false
+	Object:
+		Variable: varReplacer56502
+		Type: java.lang.String
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer56502)
+		Method: <org.bitcoinj.crypto.BIP38PrivateKey: org.bitcoinj.core.ECKey decryptNoEC(java.lang.String)>
+		SHA-256: 80679f5389b9ff36b474de720a55ffefdce6c1ebadf58686e1e0192db3d8364d
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Mac
+		Statement: $r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer30333)
+		Method: <org.bitcoinj.core.bip47.BIP47PaymentCode: byte[] getMask(byte[],byte[])>
+		SHA-256: 50631fbe5fd553cdb4696208c2f01cc490b8b1dd08cb0ff3aeb5af2643195c7d
+		Secure: false
+	Object:
+		Variable: r0
+		Type: org.bouncycastle.jcajce.spec.DHDomainParameterSpec
+		Statement: specialinvoke r0.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger,int)>($r1, $r3, $i1)
+		Method: <org.bouncycastle.jcajce.spec.DHDomainParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger,java.math.BigInteger,java.math.BigInteger,int,int)>
+		SHA-256: 9cdde17292729ed12e67e00ef32f20bc0ba0a50cc823d5bcab3268462fa45fcd
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.elgamal.BCElGamalPrivateKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: c908257ebef1e44e27421c3dc6127a4c79990e1515e273132ea2c2cb020fcdee
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.KeyStore
+		Statement: $r5 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r3)
+		Method: <org.bitcoinj.crypto.X509Utils: java.security.KeyStore loadKeyStore(java.lang.String,java.lang.String,java.io.InputStream)>
+		SHA-256: 37ad24deef0a9d4f0d9d34b049442a1c1fcc672d65c2a2e514acd9b0c8bc3749
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.spec.DSAParameterSpec
+		Statement: specialinvoke $r9.<java.security.spec.DSAParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger,java.math.BigInteger)>($r5, $r10, $r11)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.dsa.BCDSAPublicKey: void <init>(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: ca8c57f00e636666523b3803cf2d449c7668aea2653306a5d436a81914fd7df0
+		Secure: true
+	Object:
+		Variable: varReplacer30335
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer30335)
+		Method: <org.bitcoinj.core.bip47.BIP47PaymentCode: byte[] getMask(byte[],byte[])>
+		SHA-256: f1836f5f322a13107806cf261ae692a5bb255cb4d2e83a923d525bba96417358
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.Cipher
+		Statement: $r10 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer56494)
+		Method: <org.bitcoinj.crypto.BIP38PrivateKey: org.bitcoinj.core.ECKey decryptEC(java.lang.String)>
+		SHA-256: f17aedfca709a037712cf82bcce4177b0990530de7acc7a54b01ef01fa16589e
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+		Method: <org.bitcoinj.crypto.BIP47SecretPoint: java.security.PublicKey loadPublicKey(byte[])>
+		SHA-256: 8c3a3b0938b365bb55fdea447e0f51b7149cef667409c78893dedc35eb4bc694
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.KeyAgreement
+		Statement: $r1 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String,java.lang.String)>(varReplacer42240, varReplacer42241)
+		Method: <org.bitcoinj.crypto.BIP47SecretPoint: javax.crypto.SecretKey ECDHSecret()>
+		SHA-256: 3bdbc3706515270694522df59403dbbe8a2050340df2bbb2824d73e4928786cc
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r0.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r3, $r5, $r6, $i0)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.util.EC5Util: java.security.spec.ECParameterSpec convertToSpec(org.bouncycastle.asn1.x9.X9ECParameters)>
+		SHA-256: a4b7a5874d7ddc91e3fe1c6f80927286981244105f50c9286ac1b1cb27893d7d
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.AlgorithmParameters
+		Statement: $r5 = staticinvoke <java.security.AlgorithmParameters: java.security.AlgorithmParameters getInstance(java.lang.String,java.security.Provider)>($r3, $r4)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.x509.X509SignatureUtil: void setSignatureParameters(java.security.Signature,org.bouncycastle.asn1.ASN1Encodable)>
+		SHA-256: 5542b69dc5336cc3d00547288fa7f3d8d3237d121f2ce57576e26391c36e1a8d
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.Signature
+		Statement: $r1 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r2)
+		Method: <org.bouncycastle.jcajce.util.DefaultJcaJceHelper: java.security.Signature createSignature(java.lang.String)>
+		SHA-256: 66f26381b2b186fbed59de5f1091ee81e1ff14794fdb45154aac9feab8965356
+		Secure: false
+	Object:
+		Variable: $r21
+		Type: java.security.Signature
+		Statement: $r21 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r5)
+		Method: <org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol: org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)>
+		SHA-256: b316109458fda02d106f7759f9198598fda32b0f8dcb55b3a8c07c7b67c96a87
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r0.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <org.bitcoinj.wallet.DeterministicSeed: byte[] getEntropy(java.security.SecureRandom,int)>
+		SHA-256: 720f098a2275eae3a2d06090154d497782d8545cafc78accb5f7b82ddfc25877
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <app.crescentcash.src.manager.NetManager$Companion: byte[] getEntropy()>
+		SHA-256: 15456b029e25651385db1c68018c56730fb7ad7b63e32a17bad21e0a104118c0
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.security.cert.CertificateFactory
+		Statement: $r8 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer40464)
+		Method: <org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol: org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)>
+		SHA-256: 859b3923f08ba3a02fcc3b656f2f54afa310aaf681b209b94d20a7ce4704a3a2
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r2.<java.security.Signature: boolean verify(byte[])>($r8)
+		Method: <org.bouncycastle.jce.provider.X509CertificateObject: void checkSignature(java.security.PublicKey,java.security.Signature)>
+		SHA-256: 55c0ef59d2e8f2d9e7c3b9d886f8a0561a8e9e82e242551a90594b801b63073c
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bitcoinj.crypto.KeyCrypterScrypt: void <clinit>()>
+		SHA-256: f96786ebb476c37da32cbea0638dbf06f820d63282565ec677b84e7b235f97ed
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r4)
+		Method: <org.bitcoinj.core.bip47.BIP47PaymentCode: byte[] getMask(byte[],byte[])>
+		SHA-256: c2989916c8430a9bd8ee9da2bf5396e101b5cb101737fb2d8fed8d1dcad6355d
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <com.google.common.hash.MessageDigestHashFunction: java.security.MessageDigest getMessageDigest(java.lang.String)>
+		SHA-256: f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838
+		Secure: true
+	Object:
+		Variable: varReplacer39326
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer39326)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: 9a2a0d5d77c8b6536f2b007c5d833c56b557c18139f15c522835a780bdd4166f
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: javax.crypto.Mac
+		Statement: $r0 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r1)
+		Method: <com.google.common.hash.MacHashFunction: javax.crypto.Mac getMac(java.lang.String,java.security.Key)>
+		SHA-256: 6dfe92fb5526abc60bb706d9a02bc7267374c73eb4cfabeec75ce74a35a0603d
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer56472)
+		Method: <org.bitcoinj.crypto.BIP38PrivateKey: org.bitcoinj.core.ECKey decryptEC(java.lang.String)>
+		SHA-256: e8f0e8f142fe551968bf63b1033a6bd5b35eeaff56d1e63924ab2ea5346c54ea
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.bitcoinj.core.Sha256Hash: byte[] hashTwice(byte[],byte[])>
+		SHA-256: 6d788f1059c1478740158e448950f8bc22c44cbe9dc9493592f46a242597eeec
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: 628ec848d1a7f62d0dc08565116bba7d8f77652c16b090b07bf10e539ac9509d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.CryptoServicesRegistrar: java.security.SecureRandom getSecureRandom()>
+		SHA-256: 375867338a8d572664475cac25bcfa294db8f2af8faff8d50836d5d6dcf8ab15
+		Secure: true
+	Object:
+		Variable: $r24
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r21.<java.security.Signature: boolean verify(byte[])>($r24)
+		Method: <org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol: org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)>
+		SHA-256: 5afc64cdb8ebb7a0156dfe53de0cde6ddb9fe818266c49c7424218290e7efb
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer56499)
+		Method: <org.bitcoinj.crypto.BIP38PrivateKey: org.bitcoinj.core.ECKey decryptNoEC(java.lang.String)>
+		SHA-256: abe9649bc00e7a6e430ce13d92f66a66d56e809b67432572759421f4560d58e9
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.bitcoinj.core.Sha256Hash: byte[] hashTwice(byte[],int,int)>
+		SHA-256: cdd5149aa942778bd2c7bbbeb934e422ecb021663b4d8bd250a5febe3d81b7d9
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.elgamal.BCElGamalPublicKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: a9c19b12994234db6ec00ed5b541d5738b556e23d3870b731ea4245dbf932de7
+		Secure: true
+	Object:
+		Variable: $r21
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r21.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r10, $r14, $r15, varReplacer36412)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.util.EC5Util: java.security.spec.ECParameterSpec convertToSpec(org.bouncycastle.asn1.x9.X962Parameters,org.bouncycastle.math.ec.ECCurve)>
+		SHA-256: d6d968e94ae28c0a4559cf3e78ac80e9e0f6ec8d19ed4b3675cd656dd8da8da1
+		Secure: true
+	Object:
+		Variable: r0
+		Type: org.bouncycastle.jce.spec.ECNamedCurveSpec
+		Statement: specialinvoke r0.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r2, $r3, $r4, $i0)
+		Method: <org.bouncycastle.jce.spec.ECNamedCurveSpec: void <init>(java.lang.String,java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,java.math.BigInteger)>
+		SHA-256: b36d50207c12d926e435b859cb9848007d52f50b2e62c847e597de1f84f657c6
+		Secure: true
+
+Findings in Java Class: org.bitcoinj.core.CheckpointManager
+
+	 in Method: org.bitcoinj.core.Sha256Hash readBinary(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #783d65dbb3bc03ae7c3e6514fd54ee609a603a000beafd6d825ea11475f5b663)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r3.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r1, $r2)
+
+		ForbiddenMethodError violating CrySL rule for java.security.DigestInputStream
+			Detected call to forbidden method void on(boolean) of class java.security.DigestInputStream
+			at statement: virtualinvoke $r3.<java.security.DigestInputStream: void on(boolean)>(varReplacer42749)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #46db3b20f5318542513811897ee5a7baaf5e8c8baa1e5ed91eeaff2905c9af71)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r3.<java.security.DigestInputStream: void on(boolean)>(varReplacer42751)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #46db3b20f5318542513811897ee5a7baaf5e8c8baa1e5ed91eeaff2905c9af71)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r3.<java.security.DigestInputStream: void on(boolean)>(varReplacer42749)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #783d65dbb3bc03ae7c3e6514fd54ee609a603a000beafd6d825ea11475f5b663)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: org.bitcoinj.core.Sha256Hash readTextual(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r19 = interfaceinvoke $r4.<com.google.common.hash.Hasher: com.google.common.hash.HashCode hash()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r4 = interfaceinvoke $r3.<com.google.common.hash.HashFunction: com.google.common.hash.Hasher newHasher()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #6dfe92fb5526abc60bb706d9a02bc7267374c73eb4cfabeec75ce74a35a0603d)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r19 = interfaceinvoke $r4.<com.google.common.hash.Hasher: com.google.common.hash.HashCode hash()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #6dfe92fb5526abc60bb706d9a02bc7267374c73eb4cfabeec75ce74a35a0603d)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r4 = interfaceinvoke $r3.<com.google.common.hash.HashFunction: com.google.common.hash.Hasher newHasher()>()
+
+
+Findings in Java Class: org.bitcoinj.crypto.MnemonicCode
+
+	 in Method: void <init>(java.io.InputStream,java.lang.String)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #783d65dbb3bc03ae7c3e6514fd54ee609a603a000beafd6d825ea11475f5b663)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r9 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #783d65dbb3bc03ae7c3e6514fd54ee609a603a000beafd6d825ea11475f5b663)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to java.security.MessageDigest: void update(byte[],int,int), digest, java.security.MessageDigest: void update(java.nio.ByteBuffer), java.security.MessageDigest: void update(byte), java.security.MessageDigest: void update(byte[])
+			at statement: virtualinvoke $r7.<java.security.MessageDigest: void update(byte[])>($r9)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #783d65dbb3bc03ae7c3e6514fd54ee609a603a000beafd6d825ea11475f5b663)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r7 = staticinvoke <org.bitcoinj.core.Sha256Hash: java.security.MessageDigest newDigest()>()
+
+
+Findings in Java Class: dummyMainClass
+
+	 in Method: void dummyMainMethod(java.lang.String[])
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #c2030af97738b005153fe311347c14f29498acd05fca2ec3bc734cb991d5489c)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: return
+
+
+Findings in Java Class: org.bouncycastle.x509.AttributeCertificateHolder
+
+	 in Method: boolean match(java.security.cert.Certificate)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8bf40a0c626ab43305e425080784387db4345332aa001d247f04e7800f27a852)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r15 = virtualinvoke $r14.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: org.bitcoinj.script.Script
+
+	 in Method: void executeScript(org.bitcoinj.core.Transaction,long,org.bitcoinj.script.Script,java.util.LinkedList,org.bitcoinj.core.Coin,java.util.Set)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #fd231d8c89f461fb4d6931213ae2691a8bf20b8d39f0a507f2d85cbbc873e443)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r21 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer36040)
+
+
+Findings in Java Class: org.bitcoinj.crypto.BIP47SecretPoint
+
+	 in Method: void <init>(byte[],byte[])
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #4b969de6171a3b02ac1a41e3a642ef2dd28c3d6892f0d0498266fc2841cbe93e)
+			First parameter (with value "ECDH") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>(varReplacer37373, varReplacer37374)
+
+
+	 in Method: javax.crypto.SecretKey ECDHSecret()
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #3bdbc3706515270694522df59403dbbe8a2050340df2bbb2824d73e4928786cc)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to javax.crypto.KeyAgreement: byte[] generateSecret(), getInstance
+			at statement: $r4 = virtualinvoke $r1.<javax.crypto.KeyAgreement: javax.crypto.SecretKey generateSecret(java.lang.String)>(varReplacer42239)
+
+
+	 in Method: java.security.PublicKey loadPublicKey(byte[])
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r7 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+
+
+Findings in Java Class: app.crescentcash.src.hash.HashHelper$Companion
+
+	 in Method: java.lang.String SHA256_Hex(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #707d35ba304d4583939241c913109224fd4ab9bd3ddbed64e5446ce90c315498)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer37728)
+
+
+Findings in Java Class: org.bitcoinj.crypto.PBKDF2SHA512
+
+	 in Method: byte[] F(java.lang.String,java.lang.String,int,int)
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #b56086d6454bc264b66ede212c47f905a6ba7648c92770117554f441a17e33cd)
+			Unexpected call to method doFinal on object of type javax.crypto.Mac.
+			at statement: $r6 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r7)
+
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #b56086d6454bc264b66ede212c47f905a6ba7648c92770117554f441a17e33cd)
+			Unexpected call to method doFinal on object of type javax.crypto.Mac.
+			at statement: $r7 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #b56086d6454bc264b66ede212c47f905a6ba7648c92770117554f441a17e33cd)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r5.<javax.crypto.Mac: void init(java.security.Key)>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer39326)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #b56086d6454bc264b66ede212c47f905a6ba7648c92770117554f441a17e33cd)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r5.<javax.crypto.Mac: void reset()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #b56086d6454bc264b66ede212c47f905a6ba7648c92770117554f441a17e33cd)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r5.<javax.crypto.Mac: void reset()>()
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Mac: void init(java.security.Key)>($r2)
+
+
+Findings in Java Class: org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol
+
+	 in Method: org.bitcoinj.protocols.payments.slp.SlpPaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r21.<java.security.Signature: void initVerify(java.security.PublicKey)>($r20)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #859b3923f08ba3a02fcc3b656f2f54afa310aaf681b209b94d20a7ce4704a3a2)
+			Unexpected call to method generateCertPath on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r15 = virtualinvoke $r8.<java.security.cert.CertificateFactory: java.security.cert.CertPath generateCertPath(java.util.List)>($r0)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #859b3923f08ba3a02fcc3b656f2f54afa310aaf681b209b94d20a7ce4704a3a2)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r15 = virtualinvoke $r8.<java.security.cert.CertificateFactory: java.security.cert.CertPath generateCertPath(java.util.List)>($r0)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #859b3923f08ba3a02fcc3b656f2f54afa310aaf681b209b94d20a7ce4704a3a2)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r13 = virtualinvoke $r8.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r12)
+
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #b316109458fda02d106f7759f9198598fda32b0f8dcb55b3a8c07c7b67c96a87)
+			First parameter (with value "SHA1withRSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r21 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r5)
+
+		RequiredPredicateError violating CrySL rule for java.security.cert.PKIXParameters
+			First parameter was not properly generated as generatedKeyStore
+			at statement: specialinvoke $r36.<java.security.cert.PKIXParameters: void <init>(java.security.KeyStore)>($r3)
+
+
+Findings in Java Class: org.bitcoinj.protocols.payments.PaymentProtocol
+
+	 in Method: org.bitcoinj.protocols.payments.PaymentProtocol$PkiVerificationData verifyPaymentRequestPki(org.bitcoin.protocols.payments.Protos$PaymentRequest,java.security.KeyStore)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r21.<java.security.Signature: void initVerify(java.security.PublicKey)>($r20)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #824b25c0d0fcaed17015f6ff527634b9b001f9a9c8e7e22377308ee7e4e2e623)
+			Unexpected call to method generateCertPath on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r15 = virtualinvoke $r8.<java.security.cert.CertificateFactory: java.security.cert.CertPath generateCertPath(java.util.List)>($r0)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #824b25c0d0fcaed17015f6ff527634b9b001f9a9c8e7e22377308ee7e4e2e623)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r15 = virtualinvoke $r8.<java.security.cert.CertificateFactory: java.security.cert.CertPath generateCertPath(java.util.List)>($r0)
+
+		RequiredPredicateError violating CrySL rule for java.security.cert.PKIXParameters
+			First parameter was not properly generated as generatedKeyStore
+			at statement: specialinvoke $r36.<java.security.cert.PKIXParameters: void <init>(java.security.KeyStore)>($r3)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #824b25c0d0fcaed17015f6ff527634b9b001f9a9c8e7e22377308ee7e4e2e623)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r13 = virtualinvoke $r8.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r12)
+
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #e762a14e3506ec34c047e63e860f7fa82aa40ba8bf6934a5483a41f49935911)
+			First parameter (with value "SHA1withRSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r21 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r5)
+
+
+Findings in Java Class: com.google.common.hash.MacHashFunction$MacHasher
+
+	 in Method: com.google.common.hash.HashCode hash()
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #6dfe92fb5526abc60bb706d9a02bc7267374c73eb4cfabeec75ce74a35a0603d)
+			Unexpected call to method <javax.crypto.Mac: byte[] doFinal()> on object of type javax.crypto.Mac. Expect a call to one of the following methods javax.crypto.Mac: void update(byte[]),javax.crypto.Mac: byte[] doFinal(byte[]),javax.crypto.Mac: void update(java.nio.ByteBuffer),javax.crypto.Mac: void update(byte),javax.crypto.Mac: void update(byte[],int,int)
+			at statement: $r2 = virtualinvoke $r1.<javax.crypto.Mac: byte[] doFinal()>()
+
+
+Findings in Java Class: com.google.common.hash.AbstractHashFunction
+
+	 in Method: com.google.common.hash.HashCode hashObject(java.lang.Object,com.google.common.hash.Funnel)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #6dfe92fb5526abc60bb706d9a02bc7267374c73eb4cfabeec75ce74a35a0603d)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r4 = interfaceinvoke $r3.<com.google.common.hash.Hasher: com.google.common.hash.HashCode hash()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r4 = interfaceinvoke $r3.<com.google.common.hash.Hasher: com.google.common.hash.HashCode hash()>()
+
+
+Findings in Java Class: com.google.common.hash.AbstractCompositeHashFunction
+
+	 in Method: com.google.common.hash.Hasher newHasher()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #6dfe92fb5526abc60bb706d9a02bc7267374c73eb4cfabeec75ce74a35a0603d)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r4 = specialinvoke r0.<com.google.common.hash.AbstractCompositeHashFunction: com.google.common.hash.Hasher fromHashers(com.google.common.hash.Hasher[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r4 = specialinvoke r0.<com.google.common.hash.AbstractCompositeHashFunction: com.google.common.hash.Hasher fromHashers(com.google.common.hash.Hasher[])>($r1)
+
+
+Findings in Java Class: com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher
+
+	 in Method: com.google.common.hash.HashCode hash()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: org.bitcoinj.crypto.X509Utils
+
+	 in Method: java.security.KeyStore loadKeyStore(java.lang.String,java.lang.String,java.io.InputStream)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #37ad24deef0a9d4f0d9d34b049442a1c1fcc672d65c2a2e514acd9b0c8bc3749)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r5.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r0, $r6)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #37ad24deef0a9d4f0d9d34b049442a1c1fcc672d65c2a2e514acd9b0c8bc3749)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r5.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r0, $r6)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #37ad24deef0a9d4f0d9d34b049442a1c1fcc672d65c2a2e514acd9b0c8bc3749)
+			First parameter (with value "BKS") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r5 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r3)
+
+
+Findings in Java Class: org.bitcoinj.crypto.TrustStoreLoader$DefaultTrustStoreLoader
+
+	 in Method: java.security.KeyStore loadIcsKeyStore()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #58eb1ad3e726cffd5fa7e5ce0cef3b703b1facaa9fa161b85341f977d6ce0795)
+			First parameter (with value "AndroidCAStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer51881)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: org.bitcoinj.crypto.BIP38PrivateKey
+
+	 in Method: org.bitcoinj.core.ECKey decryptEC(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r10.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer56488, $r9)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f17aedfca709a037712cf82bcce4177b0990530de7acc7a54b01ef01fa16589e)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r10.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer56472)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #f17aedfca709a037712cf82bcce4177b0990530de7acc7a54b01ef01fa16589e)
+			First parameter (with value "AES/ECB/NoPadding") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: $r10 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer56494)
+
+
+	 in Method: org.bitcoinj.core.ECKey decryptNoEC(java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #abe9649bc00e7a6e430ce13d92f66a66d56e809b67432572759421f4560d58e9)
+			First parameter (with value "AES/ECB/NoPadding") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer56499)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer56502)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #abe9649bc00e7a6e430ce13d92f66a66d56e809b67432572759421f4560d58e9)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r4 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>($r4, varReplacer56500, varReplacer56501)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer56509, $r5)
+
+
+Findings in Java Class: okhttp3.Cache$Entry
+
+	 in Method: java.util.List readCertificateList(okio.BufferedSource)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #bf16d13f26fa766b7779e3d59294b416938692382fd5edf512db7b18a87658f1)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertificate, generateCertPath, generateCRL
+			at statement: $r5 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer61064)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #bf16d13f26fa766b7779e3d59294b416938692382fd5edf512db7b18a87658f1)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r9 = virtualinvoke $r5.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #bf16d13f26fa766b7779e3d59294b416938692382fd5edf512db7b18a87658f1)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r9 = virtualinvoke $r5.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r8)
+
+
+Findings in Java Class: org.bouncycastle.jce.provider.X509SignatureUtil
+
+	 in Method: void setSignatureParameters(java.security.Signature,org.bouncycastle.asn1.ASN1Encodable)
+		RequiredPredicateError violating CrySL rule for java.security.AlgorithmParameters
+			First parameter was not properly generated as preparedAlg
+			at statement: virtualinvoke $r5.<java.security.AlgorithmParameters: void init(byte[])>($r7)
+
+
+Findings in Java Class: org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateImpl
+
+	 in Method: void checkSignature(java.security.PublicKey,java.security.Signature)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r2.<java.security.Signature: void initVerify(java.security.PublicKey)>($r1)
+
+
+Findings in Java Class: org.bouncycastle.jce.provider.X509CertificateObject
+
+	 in Method: void checkSignature(java.security.PublicKey,java.security.Signature)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r2.<java.security.Signature: void initVerify(java.security.PublicKey)>($r1)
+
+
+Findings in Java Class: org.bitcoinj.core.bip47.BIP47PaymentCode
+
+	 in Method: byte[] getMask(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer30335)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+
+Findings in Java Class: org.bouncycastle.jcajce.provider.asymmetric.x509.X509SignatureUtil
+
+	 in Method: void setSignatureParameters(java.security.Signature,org.bouncycastle.asn1.ASN1Encodable)
+		RequiredPredicateError violating CrySL rule for java.security.AlgorithmParameters
+			First parameter was not properly generated as preparedAlg
+			at statement: virtualinvoke $r5.<java.security.AlgorithmParameters: void init(byte[])>($r7)
+
+
+Findings in Java Class: com.google.common.hash.MacHashFunction
+
+	 in Method: javax.crypto.Mac getMac(java.lang.String,java.security.Key)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r0.<javax.crypto.Mac: void init(java.security.Key)>($r2)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 95
+
+	CryptoAnalysis found the following violations. For details see description above.
+	NeverTypeOfError: 1
+	TypestateError: 15
+	HardCodedError: 1
+	ConstraintError: 10
+	RequiredPredicateError: 18
+	IncompleteOperationError: 23
+	ForbiddenMethodError: 1
+=====================================================================

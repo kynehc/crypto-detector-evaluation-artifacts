@@ -1,0 +1,93 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: java.security.KeyStore
+		Statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer3293)
+		Method: <com.gianlu.aria2lib.internal.Aria2: java.io.File storeAllCertificates(java.io.File)>
+		SHA-256: fa28f6bf2a9af3969c11353cdeac7be28b8abcedde2175a084d375b255e59e54
+		Secure: false
+
+Findings in Java Class: com.gianlu.aria2lib.internal.Aria2
+
+	 in Method: java.io.File storeAllCertificates(java.io.File)
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #fa28f6bf2a9af3969c11353cdeac7be28b8abcedde2175a084d375b255e59e54)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer3293)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #fa28f6bf2a9af3969c11353cdeac7be28b8abcedde2175a084d375b255e59e54)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: $r8 = virtualinvoke $r4.<java.security.KeyStore: java.security.cert.Certificate getCertificate(java.lang.String)>($r7)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #fa28f6bf2a9af3969c11353cdeac7be28b8abcedde2175a084d375b255e59e54)
+			First parameter (with value "AndroidCAStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer3293)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #fa28f6bf2a9af3969c11353cdeac7be28b8abcedde2175a084d375b255e59e54)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: $r5 = virtualinvoke $r4.<java.security.KeyStore: java.util.Enumeration aliases()>()
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 1
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 1
+	IncompleteOperationError: 3
+=====================================================================

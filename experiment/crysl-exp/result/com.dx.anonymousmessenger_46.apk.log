@@ -1,0 +1,771 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r6.<javax.crypto.Mac: byte[] doFinal()>()
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] expand(byte[],byte[],int)>
+		SHA-256: 3e233786151d239434b197b383e2e2f3502c681ec99902a2eeadf3d8d687d1b
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Mac
+		Statement: $r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer13431)
+		Method: <org.whispersystems.libsignal.protocol.SignalMessage: byte[] getMac(org.whispersystems.libsignal.IdentityKey,org.whispersystems.libsignal.IdentityKey,javax.crypto.spec.SecretKeySpec,byte[])>
+		SHA-256: 4671cbaf0946925ce99bb6b7b25c43e33151352cf3d90c917cc8d246c09722b4
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer13424)
+		Method: <org.whispersystems.libsignal.ratchet.ChainKey: byte[] getBaseMaterial(byte[])>
+		SHA-256: dba1f8f02d7fcf86b455c182fd864bfe7cb15437134292b0443f5ca7075aeb33
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r3)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] extract(byte[],byte[])>
+		SHA-256: 361eed9cd14e6ff84c1daa2451338ec5c4dd793da69a1733393b9a61bdf2d763
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4239)
+		Method: <com.dx.anonymousmessenger.DxApplication: byte[] getSha256()>
+		SHA-256: efa4b006c80694e0ab0da11266375160272da043f551517dd016a4b5159a9502
+		Secure: true
+	Object:
+		Variable: $r17
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r14, varReplacer3840)
+		Method: <com.dx.anonymousmessenger.tor.TorClient: boolean sendFile(java.lang.String,com.dx.anonymousmessenger.DxApplication,java.lang.String,java.io.FileInputStream,long)>
+		SHA-256: 6ca63a1964614da2ab17df39f42ed40c66c2251246c077535ea2957877b2ec69
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.dx.anonymousmessenger.DxApplication: byte[] getSha256()>
+		SHA-256: a7b050dbc54710e9fca83854bbfbbd09766bad19dea8f612944233e2cec613aa
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r3)
+		Method: <org.whispersystems.libsignal.ratchet.ChainKey: byte[] getBaseMaterial(byte[])>
+		SHA-256: 8fb4835c5bab5ec63a45e8872f59bf24a48f2f4c6d745dfc352aacb8be38f264
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer7228)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: java.lang.String saveFile(java.io.InputStream,com.dx.anonymousmessenger.DxApplication,java.lang.String,int)>
+		SHA-256: 56a135643fc3f7bbc9cdf6a598ffa988b11de760f14927c2a168eef822ef1bd4
+		Secure: false
+	Object:
+		Variable: $r18
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r18.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7165, $r16)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: java.io.File getTempFileWithProgress(java.lang.String,java.lang.String,com.dx.anonymousmessenger.DxApplication,android.os.RecoverySystem$ProgressListener)>
+		SHA-256: d58fc880f4308bce2695d72f77eb8eca80f6ec562b242bc5e7f9ac6fedbd4b5a
+		Secure: false
+	Object:
+		Variable: $r18
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r18.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer7428)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: void saveToStorageWithProgress(java.lang.String,java.lang.String,com.dx.anonymousmessenger.DxApplication,android.os.RecoverySystem$ProgressListener)>
+		SHA-256: cc7cb7c663c985f5fa600f89f9ae92cc6f5d4a59d0021b0ec6a37432f4706e28
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: javax.crypto.Cipher
+		Statement: $r15 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7162)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: java.io.File getTempFileWithProgress(java.lang.String,java.lang.String,com.dx.anonymousmessenger.DxApplication,android.os.RecoverySystem$ProgressListener)>
+		SHA-256: d500b48861d8769dc58447ec03c25bd204902542df1ca756fa8761ba1a471f4f
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer21321)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] extract(byte[],byte[])>
+		SHA-256: e2a7e4ba76a91e4c7c55253ce3450f24183a4905ce0e62404c51d37f3e157df8
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: javax.crypto.Cipher
+		Statement: $r16 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7433)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: void saveToStorageWithProgress(java.lang.String,java.lang.String,com.dx.anonymousmessenger.DxApplication,android.os.RecoverySystem$ProgressListener)>
+		SHA-256: 498de8d2ab7cce66eb264d19138f4314088f8af6c50b4cbea06bcf84830db203
+		Secure: false
+	Object:
+		Variable: varReplacer13424
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer13424)
+		Method: <org.whispersystems.libsignal.ratchet.ChainKey: byte[] getBaseMaterial(byte[])>
+		SHA-256: 3be1a2fa70520a55232b8e72755a4e51493a5b8a4ddcc5ce91e3f44c7d0f6d0
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: $r0 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer16296)
+		Method: <org.whispersystems.libsignal.util.KeyHelper: int generateRegistrationId(boolean)>
+		SHA-256: 9e5efd2b6808b6e14b9da285e53cd928d08dfb0131b56d1c3ac19bf1d73b7296
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.whispersystems.curve25519.JCESecureRandomProvider: void nextBytes(byte[])>
+		SHA-256: 3e784b8048702cdde6d69e3c7b8665ffab00a8ef9ca96f418078ed6997701f20
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer2867)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: byte[] decrypt(byte[],byte[])>
+		SHA-256: 6c715ff0176d8bb7998e6e66251e65fbeab45ef10d00a93ef4b9da8ad282f6ce
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer21320)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] extract(byte[],byte[])>
+		SHA-256: 284a6241e1bf5fa0edfcd740a84713771b1c0babb2cccd31cd131883b555bdb3
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer2837)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: byte[] encrypt(byte[],byte[])>
+		SHA-256: b1ef9db63e9576d93ffef59870e78cbaf75c94eee444baf2090e1d242e2b52c0
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r13.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer29231)
+		Method: <org.whispersystems.libsignal.state.SessionState: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)>
+		SHA-256: 3c15a320aa81f3252aaaf4d41a4e400e7845355d2273bf895628db70a8aa739b
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: javax.crypto.Cipher
+		Statement: $r15 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3849)
+		Method: <com.dx.anonymousmessenger.tor.TorClient: boolean sendFile(java.lang.String,com.dx.anonymousmessenger.DxApplication,java.lang.String,java.io.FileInputStream,long)>
+		SHA-256: 1be2a5e89b32bf229f15a33f06f176cadcf06ed7eba516899ad25b66ec06a1d5
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: $r0 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer8179)
+		Method: <org.whispersystems.libsignal.util.KeyHelper: int getRandomSequence(int)>
+		SHA-256: dab36361132e95d927caaccf6e35f1831b2b8dc4b309415bde12573e96a5ae4a
+		Secure: true
+	Object:
+		Variable: $r19
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r19.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7427, $r17)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: void saveToStorageWithProgress(java.lang.String,java.lang.String,com.dx.anonymousmessenger.DxApplication,android.os.RecoverySystem$ProgressListener)>
+		SHA-256: eb190e55f5a24bbb1c815ca7cd012042178aa0adc832014d841917f520d5d364
+		Secure: false
+	Object:
+		Variable: $r33
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r33.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer11737, $r25)
+		Method: <com.dx.anonymousmessenger.tor.ServerSocketViaTor$Server: void handleFile(java.io.DataOutputStream,java.io.DataInputStream,java.net.Socket,java.util.concurrent.atomic.AtomicInteger)>
+		SHA-256: 2f3ae1dffd9dd8c4670e32a409a230bc540049dc2d6bbfde73707140ab54ea99
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer13423)
+		Method: <org.whispersystems.libsignal.ratchet.ChainKey: byte[] getBaseMaterial(byte[])>
+		SHA-256: a05763b2f1015b9e990315bf1a92e2abe2249f34b733a2b8ed4da16abd20df08
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r14.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r12)
+		Method: <org.whispersystems.libsignal.state.SessionState: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)>
+		SHA-256: 9eb8c1899b93ac2d0bf6cc25d1b2b35e39990f05cf39ad468e749dd3f9e4253f
+		Secure: false
+	Object:
+		Variable: varReplacer13425
+		Type: java.lang.String
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer13425)
+		Method: <org.whispersystems.libsignal.kdf.DerivedMessageSecrets: void <init>(byte[])>
+		SHA-256: ddc3e7929278e8c7b233a595ea6bbb28b732eb3a5fe6f3fada43c64495ccf2a6
+		Secure: false
+	Object:
+		Variable: varReplacer21320
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer21320)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] extract(byte[],byte[])>
+		SHA-256: c6e8bd27c0c73280cbc8c380968b65d19afe744697719acb190945115e135b9c
+		Secure: false
+	Object:
+		Variable: varReplacer2840
+		Type: java.lang.String
+		Statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer2840)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: byte[] encrypt(byte[],byte[])>
+		SHA-256: f5802a02a9b9872cc875df96def1f4a05b155157a50cac58bb9fbfac8c30678b
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer13426)
+		Method: <org.whispersystems.libsignal.kdf.DerivedMessageSecrets: void <init>(byte[])>
+		SHA-256: 7a986c2c7bdf208646845005b9e6b5f5d17df18007f6f5682a7a8cc99a1f81ec
+		Secure: false
+	Object:
+		Variable: $i0
+		Type: int
+		Statement: $i0 = virtualinvoke $r0.<java.security.SecureRandom: int nextInt(int)>($i0)
+		Method: <org.whispersystems.libsignal.util.KeyHelper: int getRandomSequence(int)>
+		SHA-256: 206a61a9720bab9d71f6ba6857c92ed3f7fda7664b72fd3355e1f63ae04e8e27
+		Secure: true
+	Object:
+		Variable: varReplacer7228
+		Type: java.lang.String
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer7228)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: java.lang.String saveFile(java.io.InputStream,com.dx.anonymousmessenger.DxApplication,java.lang.String,int)>
+		SHA-256: bd2fde44828b751b5968bca576d5639ce2fa449227b178a6f730d0dbf0369db6
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7225, $r5)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: java.lang.String saveFile(java.io.InputStream,com.dx.anonymousmessenger.DxApplication,java.lang.String,int)>
+		SHA-256: 5dd1625257dfa1090e1cb9f2cbb4947d72e4f33829b38d5d17046768773e0c68
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r0.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <com.dx.anonymousmessenger.util.Utils: byte[] getSecretBytes(int)>
+		SHA-256: 6ef1c72b36c2a98fb3531e1d0716c94a5d22f69c055ce0c6b829f2cdd6f462b2
+		Secure: true
+	Object:
+		Variable: $r17
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer7160)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: java.io.File getTempFileWithProgress(java.lang.String,java.lang.String,com.dx.anonymousmessenger.DxApplication,android.os.RecoverySystem$ProgressListener)>
+		SHA-256: 6c57a983d05f72a7b2e625cf489a9bffae5bc239d2f9fe33319adcd4db60e404
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7234)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: java.lang.String saveFile(java.io.InputStream,com.dx.anonymousmessenger.DxApplication,java.lang.String,int)>
+		SHA-256: 2a916d0b0def39fa536f998da02167ebbe6a0558b79c941b1cd063ec22c44cc2
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer2868, $r2)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: byte[] decrypt(byte[],byte[])>
+		SHA-256: 75abad67b20d69ac6233d89482deacdc4a117e97dd38433a358b63ee3a4f7ef5
+		Secure: false
+	Object:
+		Variable: varReplacer21323
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer21323)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] expand(byte[],byte[],int)>
+		SHA-256: 4495a377ea90e824d84bac0cf09cc8072fd116abe430ba5dede91a5090be04e7
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.whispersystems.curve25519.JCESha512Provider: void calculateDigest(byte[],byte[],long)>
+		SHA-256: e672fc3788936ab7174dbb1b35b297edc3547513e55768aca9c3c93c8a3395d7
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer2838, $r4)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: byte[] encrypt(byte[],byte[])>
+		SHA-256: 3a49df5d182a7c3ecfb44c5548296bbbf1b2fc71f03c6d27988dd74df0225629
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer21323)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] expand(byte[],byte[],int)>
+		SHA-256: 7f3f119911af07d42836d291d40f8d183630dd267d0a58e0de6ad038e49bd9cb
+		Secure: false
+	Object:
+		Variable: $r32
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r32.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r15, varReplacer11774)
+		Method: <com.dx.anonymousmessenger.tor.ServerSocketViaTor$Server: void handleFile(java.io.DataOutputStream,java.io.DataInputStream,java.net.Socket,java.util.concurrent.atomic.AtomicInteger)>
+		SHA-256: 3e3d0ec2469422ecfa1d625d90692468e2cccbba7a364dbe51bb03fac1376002
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <org.whispersystems.libsignal.kdf.DerivedMessageSecrets: void <init>(byte[])>
+		SHA-256: 266602d7632e3c738b2dbca5b04568563deadca842aad0961eeb5315d5cef995
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <com.dx.anonymousmessenger.util.Utils: byte[] getSecretBytes(int)>
+		SHA-256: 65453e25f1b27ff3a0e0429a6d01ca9a967a817055ca84886cbbe21f81912dea
+		Secure: true
+	Object:
+		Variable: varReplacer2867
+		Type: java.lang.String
+		Statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer2867)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: byte[] decrypt(byte[],byte[])>
+		SHA-256: 58af04b61c2b31e08dee68acd827d7c6c80bc8f21cfe3f0a9276d3175bb2e004
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer2840)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: byte[] encrypt(byte[],byte[])>
+		SHA-256: 930dbb17e714b4a1fd33fd795de7eb559db4c6c25faa5d3c70ba2f3440bcb701
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <org.whispersystems.curve25519.JCESecureRandomProvider: void nextBytes(byte[])>
+		SHA-256: b6eaee850f63d2344fe0da86f260a4056da7ba2afa079fe8669a882d349c88ae
+		Secure: true
+	Object:
+		Variable: $r24
+		Type: javax.crypto.Cipher
+		Statement: $r24 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer11773)
+		Method: <com.dx.anonymousmessenger.tor.ServerSocketViaTor$Server: void handleFile(java.io.DataOutputStream,java.io.DataInputStream,java.net.Socket,java.util.concurrent.atomic.AtomicInteger)>
+		SHA-256: 37e4ce8f13e4507a5b9ee91e9bf84ca298b1f62dbf5927aaf9b8c66f79288690
+		Secure: false
+	Object:
+		Variable: $i0
+		Type: int
+		Statement: $i0 = virtualinvoke $r0.<java.security.SecureRandom: int nextInt(int)>(varReplacer16297)
+		Method: <org.whispersystems.libsignal.util.KeyHelper: int generateRegistrationId(boolean)>
+		SHA-256: 6be2de68458120f82cb4e01cb2187f40c11bb29163ff3cbe250c356bb0a80440
+		Secure: true
+	Object:
+		Variable: varReplacer7428
+		Type: java.lang.String
+		Statement: specialinvoke $r18.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer7428)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: void saveToStorageWithProgress(java.lang.String,java.lang.String,com.dx.anonymousmessenger.DxApplication,android.os.RecoverySystem$ProgressListener)>
+		SHA-256: 94af9570a23b78ff2c025db43daba3874cf6c424f712d0b7383f9ea2336af8f
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer24532)
+		Method: <org.whispersystems.curve25519.JCESha512Provider: void calculateDigest(byte[],byte[],long)>
+		SHA-256: 4e81036feb33e5372bddfbc2bd8a58e94eafba9106c6fc9fa67ffa207b314ce5
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer29229)
+		Method: <org.whispersystems.libsignal.state.SessionState: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)>
+		SHA-256: a7190ee3dbc72448a11dbee86df92d1e1e62999c0a6272e381da455c15d598f3
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r3)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] extract(byte[],byte[])>
+		SHA-256: 77738c0a376bd1be5b6a41999e448cb2557ed8c2bb6bfe91df3f0e78b78e87b1
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer13425)
+		Method: <org.whispersystems.libsignal.kdf.DerivedMessageSecrets: void <init>(byte[])>
+		SHA-256: c0b52150bffeb7f068cd2fd47b29f1b2c1bb98c65fd06a818d93330dee576167
+		Secure: false
+	Object:
+		Variable: varReplacer13426
+		Type: java.lang.String
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer13426)
+		Method: <org.whispersystems.libsignal.kdf.DerivedMessageSecrets: void <init>(byte[])>
+		SHA-256: aee5ead6f8c342802e7eafd8f89158d0f7ebe86d01733472788dbe2862c9514d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer13430)
+		Method: <org.whispersystems.libsignal.SessionCipher: javax.crypto.Cipher getCipher(int,javax.crypto.spec.SecretKeySpec,javax.crypto.spec.IvParameterSpec)>
+		SHA-256: e91e7f8843d1b624f72a7e5a56af2ea5330afd0f2978e44cad870fd03c90f3ba
+		Secure: false
+	Object:
+		Variable: varReplacer29231
+		Type: java.lang.String
+		Statement: specialinvoke $r13.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer29231)
+		Method: <org.whispersystems.libsignal.state.SessionState: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)>
+		SHA-256: 9b10e2e06270a84c1c3b0a9673bd7eb2f4da57be9221c449b0919402c64dbc9
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Mac
+		Statement: $r6 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer21322)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] expand(byte[],byte[],int)>
+		SHA-256: eab876b5cb5323694110445dfa41c5cfd554fd560b028a829e0bb9f5290e6a90
+		Secure: false
+	Object:
+		Variable: varReplacer7160
+		Type: java.lang.String
+		Statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer7160)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: java.io.File getTempFileWithProgress(java.lang.String,java.lang.String,com.dx.anonymousmessenger.DxApplication,android.os.RecoverySystem$ProgressListener)>
+		SHA-256: 5d512f1f844634155f5e2410df57183ccc9cd718970de3a08f55f75dfd677698
+		Secure: false
+	Object:
+		Variable: $i0
+		Type: int
+		Statement: $i0 = virtualinvoke $r0.<java.security.SecureRandom: int nextInt(int)>(varReplacer16298)
+		Method: <org.whispersystems.libsignal.util.KeyHelper: int generateRegistrationId(boolean)>
+		SHA-256: 6923d8a1aeaa4b2b5520917ab83f6c03d8e9ae4cd61952022ceedd8217332fcb
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer2871)
+		Method: <com.dx.anonymousmessenger.file.FileHelper: byte[] decrypt(byte[],byte[])>
+		SHA-256: 2dfcfa5988bfcc0f12bd1695c330a586fd22263edff34f5c4d9f6c3bb20fe22c
+		Secure: false
+	Object:
+		Variable: varReplacer29229
+		Type: java.lang.String
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer29229)
+		Method: <org.whispersystems.libsignal.state.SessionState: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)>
+		SHA-256: 781122f1d73a9acf0ead93e287a710939b456ec02350210e464afe57f7e60fd
+		Secure: false
+	Object:
+		Variable: varReplacer11774
+		Type: java.lang.String
+		Statement: specialinvoke $r32.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r15, varReplacer11774)
+		Method: <com.dx.anonymousmessenger.tor.ServerSocketViaTor$Server: void handleFile(java.io.DataOutputStream,java.io.DataInputStream,java.net.Socket,java.util.concurrent.atomic.AtomicInteger)>
+		SHA-256: 589d87113c220965b3aacfa736c6a60e864559a68337aeb25a736e2d05067ee
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+		Method: <org.whispersystems.libsignal.protocol.SignalMessage: byte[] getMac(org.whispersystems.libsignal.IdentityKey,org.whispersystems.libsignal.IdentityKey,javax.crypto.spec.SecretKeySpec,byte[])>
+		SHA-256: 5afcb2de494e113f2c3e8ca8d1193526f79296059cd74267f4045387b4e53bb1
+		Secure: false
+	Object:
+		Variable: $r18
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r18.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer3835, $r16)
+		Method: <com.dx.anonymousmessenger.tor.TorClient: boolean sendFile(java.lang.String,com.dx.anonymousmessenger.DxApplication,java.lang.String,java.io.FileInputStream,long)>
+		SHA-256: 137fcb9707b51f8271a91dda77ff8eab6028bb36a1eba64dde59492c0f25fb2b
+		Secure: false
+	Object:
+		Variable: varReplacer3840
+		Type: java.lang.String
+		Statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r14, varReplacer3840)
+		Method: <com.dx.anonymousmessenger.tor.TorClient: boolean sendFile(java.lang.String,com.dx.anonymousmessenger.DxApplication,java.lang.String,java.io.FileInputStream,long)>
+		SHA-256: f0f6028fb2fb7e5f250ffc0c03e8fecd777d3177b4e99cb5f5317f2e03d14c97
+		Secure: false
+
+Findings in Java Class: com.dx.anonymousmessenger.file.FileHelper
+
+	 in Method: byte[] encrypt(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer2839, $r0, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer2840)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #b1ef9db63e9576d93ffef59870e78cbaf75c94eee444baf2090e1d242e2b52c0)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r3.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+
+	 in Method: byte[] decrypt(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r6.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer2868, $r2)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #2dfcfa5988bfcc0f12bd1695c330a586fd22263edff34f5c4d9f6c3bb20fe22c)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r3.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer2870, $r0, $r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer2870, $r0, $r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer2867)
+
+
+	 in Method: java.io.File getTempFileWithProgress(java.lang.String,java.lang.String,com.dx.anonymousmessenger.DxApplication,android.os.RecoverySystem$ProgressListener)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r18.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7165, $r16)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #d500b48861d8769dc58447ec03c25bd204902542df1ca756fa8761ba1a471f4f)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r16 = virtualinvoke $r15.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>($r16, varReplacer7173, $i2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r15.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7163, $r17, $r18)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r15.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7163, $r17, $r18)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer7160)
+
+
+	 in Method: java.lang.String saveFile(java.io.InputStream,com.dx.anonymousmessenger.DxApplication,java.lang.String,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer7228)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7232, $r8, $r9)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #2a916d0b0def39fa536f998da02167ebbe6a0558b79c941b1cd063ec22c44cc2)
+			Third parameter (with value 0)Variable plainTextLenmust be  greater than 0
+			at statement: $r5 = virtualinvoke $r4.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>($r10, varReplacer7229, $i2)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #2a916d0b0def39fa536f998da02167ebbe6a0558b79c941b1cd063ec22c44cc2)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r4.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>($r10, varReplacer7229, $i2)
+
+
+	 in Method: void saveToStorageWithProgress(java.lang.String,java.lang.String,com.dx.anonymousmessenger.DxApplication,android.os.RecoverySystem$ProgressListener)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #498de8d2ab7cce66eb264d19138f4314088f8af6c50b4cbea06bcf84830db203)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r17 = virtualinvoke $r16.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>($r17, varReplacer7425, $i2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r18.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer7428)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r16.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7432, $r18, $r19)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r16.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7432, $r18, $r19)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r19.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7427, $r17)
+
+
+Findings in Java Class: com.dx.anonymousmessenger.tor.TorClient
+
+	 in Method: boolean sendFile(java.lang.String,com.dx.anonymousmessenger.DxApplication,java.lang.String,java.io.FileInputStream,long)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #1be2a5e89b32bf229f15a33f06f176cadcf06ed7eba516899ad25b66ec06a1d5)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r16 = virtualinvoke $r15.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>($r16, varReplacer3822, $i3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r14, varReplacer3840)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r15.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer3844, $r17, $r18)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r15.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer3844, $r17, $r18)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r18.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer3835, $r16)
+
+
+Findings in Java Class: com.dx.anonymousmessenger.tor.ServerSocketViaTor$Server
+
+	 in Method: void handleFile(java.io.DataOutputStream,java.io.DataInputStream,java.net.Socket,java.util.concurrent.atomic.AtomicInteger)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #37e4ce8f13e4507a5b9ee91e9bf84ca298b1f62dbf5927aaf9b8c66f79288690)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r23 = virtualinvoke $r24.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r23)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r24.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer11746, $r32, $r33)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r32.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r15, varReplacer11774)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #37e4ce8f13e4507a5b9ee91e9bf84ca298b1f62dbf5927aaf9b8c66f79288690)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r23 = virtualinvoke $r24.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r23)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #37e4ce8f13e4507a5b9ee91e9bf84ca298b1f62dbf5927aaf9b8c66f79288690)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r24 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer11773)
+
+
+Findings in Java Class: org.whispersystems.libsignal.SessionCipher
+
+	 in Method: byte[] getCiphertext(org.whispersystems.libsignal.ratchet.MessageKeys,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #e91e7f8843d1b624f72a7e5a56af2ea5330afd0f2978e44cad870fd03c90f3ba)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+
+	 in Method: byte[] getPlaintext(org.whispersystems.libsignal.ratchet.MessageKeys,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #e91e7f8843d1b624f72a7e5a56af2ea5330afd0f2978e44cad870fd03c90f3ba)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+
+	 in Method: javax.crypto.Cipher getCipher(int,javax.crypto.spec.SecretKeySpec,javax.crypto.spec.IvParameterSpec)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r3, $r1)
+
+
+Findings in Java Class: org.whispersystems.libsignal.protocol.SignalMessage
+
+	 in Method: byte[] getMac(org.whispersystems.libsignal.IdentityKey,org.whispersystems.libsignal.IdentityKey,javax.crypto.spec.SecretKeySpec,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+
+Findings in Java Class: org.whispersystems.libsignal.ratchet.ChainKey
+
+	 in Method: byte[] getBaseMaterial(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer13424)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+
+Findings in Java Class: org.whispersystems.libsignal.kdf.HKDF
+
+	 in Method: byte[] expand(byte[],byte[],int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer21323)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Mac: void init(java.security.Key)>($r2)
+
+
+	 in Method: byte[] extract(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer21320)
+
+
+Findings in Java Class: org.whispersystems.libsignal.kdf.DerivedMessageSecrets
+
+	 in Method: void <init>(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer13425)
+
+
+Findings in Java Class: org.whispersystems.libsignal.state.SessionState
+
+	 in Method: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer29229)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r14.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r12)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 67
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 1
+	IncompleteOperationError: 2
+	RequiredPredicateError: 34
+	TypestateError: 9
+=====================================================================

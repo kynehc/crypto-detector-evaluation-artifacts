@@ -1,0 +1,92 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r12
+		Type: byte[]
+		Statement: $r12 = virtualinvoke $r14.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.manuelramonlopez.cordova.plugins.md5chksum: boolean file(java.lang.String,org.apache.cordova.CallbackContext)>
+		SHA-256: 89fd0f0fe78d28cbe2e39a026c387287d24985bb967ff44739d56d86b3f9377b
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: java.security.MessageDigest
+		Statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1489)
+		Method: <com.manuelramonlopez.cordova.plugins.md5chksum: boolean file(java.lang.String,org.apache.cordova.CallbackContext)>
+		SHA-256: bc6e58ef98e951f7e997a6194ec6cf0d223a84930815687580353e10342abeaf
+		Secure: false
+
+Findings in Java Class: com.manuelramonlopez.cordova.plugins.md5chksum
+
+	 in Method: boolean file(java.lang.String,org.apache.cordova.CallbackContext)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #bc6e58ef98e951f7e997a6194ec6cf0d223a84930815687580353e10342abeaf)
+			First parameter (with value "md5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1489)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #bc6e58ef98e951f7e997a6194ec6cf0d223a84930815687580353e10342abeaf)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r12 = virtualinvoke $r14.<java.security.MessageDigest: byte[] digest()>()
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 2
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 1
+	TypestateError: 1
+=====================================================================

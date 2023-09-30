@@ -1,0 +1,783 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r11
+		Type: java.security.PublicKey
+		Statement: $r11 = virtualinvoke $r7.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r5)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] calcAesKey(byte[],byte[],byte[])>
+		SHA-256: 6e8a8df24d8c8f4b4d64ee02acdb21b024d0b618218b535afafd101cd8a11568
+		Secure: false
+	Object:
+		Variable: varReplacer3655
+		Type: java.lang.String
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3655)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: 68e76eac20303139a07c54ca36c1e94540dd19b2c6bfe689cd605b515415fda7
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r9 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r5)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: 62e14a05795b5d89a831477683ac3ea99a65baefadb15f877fed81d41383bca5
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r9.<java.security.Signature: boolean verify(byte[],int,int)>($r1, $i3, $i0)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: 7346053ba65e389839dbae2e2bad0e61246807731e9419485a536080ed6ab6be
+		Secure: false
+	Object:
+		Variable: varReplacer3662
+		Type: int
+		Statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, $r4, $i0, varReplacer3662)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: f5c18f4b51796e09cace723a41d97a0aa9d54a19321be08929f193c9a8b03c8d
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r9.<java.security.Signature: boolean verify(byte[],int,int)>($r1, $i3, $i0)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: f595c06cc923453378400eb5ad4b5bd8447a3fd8f947aa9c3ea062092e427fc9
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r9 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r5)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: 62e14a05795b5d89a831477683ac3ea99a65baefadb15f877fed81d41383bca5
+		Secure: false
+	Object:
+		Variable: varReplacer3675
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: 5c6f8a156ef9f953e950434a22ba1f2982ce6e8f1fbf6816d2fb032e6256a9e0
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r9.<java.security.Signature: byte[] sign()>()
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] encode(byte[],int,int,byte[],byte[],int,byte[],byte[])>
+		SHA-256: f69fa35fd2f937cad7d9a4a31aebf13c12e230eed457cad3f9507d3e78317bea
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r6.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r3)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] getPkSignatureEncoded(java.lang.String)>
+		SHA-256: 8fcf0201e0c7c2f72269e0c0ab47afcf39d80f2da988ef95f98676ff7b074a1d
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r5.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] calcAesKey(byte[],byte[],byte[])>
+		SHA-256: 841e18ff2b6d2cf8aba5dbd8c5049260bd12393fbf7480a2a58f6f000b43e459
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Cipher
+		Statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3843)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] encode(byte[],int,int,byte[],byte[],int,byte[],byte[])>
+		SHA-256: db8517c21afa5a5c17a2abce7509875df10c09fdd798f3bf034481171ec830c1
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, $r4, $i0, varReplacer3662)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: 8d2f5ea738c5a1d4dda717c1b556f51f1cc31fdc04e2d003417efb122b0bfdcb
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.IvParameterSpec: void <init>(byte[],int,int)>($r1, $i9, varReplacer3671)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: 1fee4462953de323685ca366cb0046149b7ef15c68b0311dc5a0ab6f1f7677ef
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r11.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: be66ac81ffceed9fa3648c52752d7df9f52b2cb9311659cd2987d94c9d3d55cf
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.security.KeyFactory
+		Statement: $r8 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer3823)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] calcAesKey(byte[],byte[],byte[])>
+		SHA-256: 169c693f163e2f6c16225355dba36979e2e91b56ca3903dace9b665d448ede64
+		Secure: false
+	Object:
+		Variable: varReplacer3653
+		Type: int
+		Statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r12, $r4, $i0, varReplacer3653)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: 473877b04a2214dc8bcc8874d3d357f4b96f7af8b4c92e9b14cbfe2fd6db0c35
+		Secure: false
+	Object:
+		Variable: varReplacer3826
+		Type: java.lang.String
+		Statement: $r10 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer3826)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] encode(byte[],int,int,byte[],byte[],int,byte[],byte[])>
+		SHA-256: 27f76fca9a6c60eb25cfe8d5026619ce342a85cffe1fcf2a287eb87ca156298b
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.Signature
+		Statement: $r9 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer3832)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] encode(byte[],int,int,byte[],byte[],int,byte[],byte[])>
+		SHA-256: 61ec5f634e5376ec44623fc531eb9a4c48ae5251fee49c68dde2d00da7e1f49
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.SecretKey
+		Statement: $r10 = virtualinvoke $r9.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r7)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: c87a92cb0e4a27d8078e678ce711b156d2225a5960e71f71f123b0bca88acec7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyPairGenerator
+		Statement: $r3 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(varReplacer2054)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: void init(com.gitlab.dibdib.dib2qm.ContextIf_OLD)>
+		SHA-256: f9a866664c326eba4f51add9de549871869c3a4f5dd9f5afa418b22c84e46cb6
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: java.security.PublicKey
+		Statement: $r11 = virtualinvoke $r10.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r8)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: fb02e1b72a531200a8f66abf4bfb959421638640f2da76679c77316e091310af
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r12.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] calcAesKey(byte[],byte[],byte[])>
+		SHA-256: 7106f453139bb850f254a69e7a06dfa43c18633e19b36a554f3a97994a7c6e93
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r2.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+		Method: <com.gitlab.dibdib.joined.CodecAlgoFunc: java.lang.String fingerprint(byte[],boolean)>
+		SHA-256: 7d09d40fbe87c7ed2092f88ced8cdcec382b7d3c8f2a64b71548d3e818bc5696
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r9 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r5)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: 62e14a05795b5d89a831477683ac3ea99a65baefadb15f877fed81d41383bca5
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <com.gitlab.dibdib.joined.CodecAlgoFunc: byte[] toPass32(byte[],byte[],boolean)>
+		SHA-256: bd566e2fc78cf48c3b12ac5c4e768a20871bc63464b3d6e25634c914f15f1af3
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: javax.crypto.SecretKey
+		Statement: $r10 = virtualinvoke $r9.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r7)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: c87a92cb0e4a27d8078e678ce711b156d2225a5960e71f71f123b0bca88acec7
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.Signature
+		Statement: $r9 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer3684)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: 7735cb813be0f34bad3a92b5a172b4c4d11255b9b4e2cc83002b8433afe23882
+		Secure: false
+	Object:
+		Variable: varReplacer3672
+		Type: java.lang.String
+		Statement: $r10 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer3672)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: de55f5d550e784380e79765c64824d323d0f4d03e9d4ac0957abc39f1e24b38f
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.PrivateKey
+		Statement: $r10 = virtualinvoke $r8.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r6)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] calcAesKey(byte[],byte[],byte[])>
+		SHA-256: 26fe9dd995edc97d7eb3b79c7519a937f34c630bc86490c24ce08e28d986924d
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.PrivateKey
+		Statement: $r6 = virtualinvoke $r4.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: void init(com.gitlab.dibdib.dib2qm.ContextIf_OLD)>
+		SHA-256: 6d02c8d04464afeaa8bb3757bb3ed359bc87154bad348c194cdc4e66a78972ba
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r8.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r3)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: 42bfc6e9573945b0d9032413178f58f62408b530841765243fa9db778936f6dd
+		Secure: false
+	Object:
+		Variable: varReplacer3660
+		Type: int
+		Statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, $r4, $i0, varReplacer3660)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: 726f2e14804512425c84e6c76f02ee249750992e7f6e0792112731400462eb58
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3655)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: bf2827003aaefc4f5dfef3d23c01488e027511ba3d489782dde9fd81b81a34eb
+		Secure: false
+	Object:
+		Variable: varReplacer3667
+		Type: java.lang.String
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3667)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: 62bcc460695791993d707462ea9a483b7e07644b661dba97e7f07240655c7998
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.PrivateKey
+		Statement: $r11 = virtualinvoke $r10.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r8)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] encode(byte[],int,int,byte[],byte[],int,byte[],byte[])>
+		SHA-256: f3a94874093b7ce7e45ea3d800aa05eedafee9067ba0df74ee866330c897c098
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.MessageDigest
+		Statement: $r11 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3654)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: 84afd7b78ff7900e6fd97c808f0613889466e94725cd786fcf7a6439f6bcd053
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer3840)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] encode(byte[],int,int,byte[],byte[],int,byte[],byte[])>
+		SHA-256: 6f5d142d2760d6fb60fa4e238b331141d5df8291d6a95d08b9227cf5ef2d527b
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3667)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: 42d69601303923b5e3c8a061bead8976139e290db4cb4c1c4a78a2902427b301
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.IvParameterSpec: void <init>(byte[],int,int)>($r1, $i9, varReplacer3686)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: b6f1f3736823644938f7a2ac1b3c275316deb7f6c40108e1c1bf88b6c1e9387f
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.MessageDigest
+		Statement: $r9 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2138)
+		Method: <net.sf.dibdib.thread_any.QValFunc: java.lang.String shash4Literal(java.lang.String,long[])>
+		SHA-256: ba24f4c51dbd10936bae0f958e8ee5defa7824ceb93ba3679b5d1cf474f5a830
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, $r4, $i0, varReplacer3660)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: c832bbad09cf1a9eb595d860d3267901863f78cb034d7f0762dc366a3d7726e3
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.KeyFactory
+		Statement: $r10 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer3672)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: 5474383fb809343a1818cd3513d3e562eedbba84e3acc8bfbc046d66dd6ba059
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getInitialValue(int)>
+		SHA-256: f088958109670aca855b416fe9aa7ce68f4e3eee4ff23dc47fa5f07436574ccf
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r11.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: feb86aedbb68f1ef4346de27a0bffd5e4a9ac67cbbc82b6a512583b2e7be44d0
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea
+		Secure: false
+	Object:
+		Variable: varReplacer3820
+		Type: java.lang.String
+		Statement: $r7 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer3820)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] calcAesKey(byte[],byte[],byte[])>
+		SHA-256: 3774799a01854f90fd089a3e625336270fc700a731d0a54f8408662582e7b956
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.PublicKey
+		Statement: $r5 = virtualinvoke $r4.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: void init(com.gitlab.dibdib.dib2qm.ContextIf_OLD)>
+		SHA-256: b12609f2cbd74c59d51bbc1a58b60b07f2f6c11b23d9f8739e168a62bc728aad
+		Secure: true
+	Object:
+		Variable: varReplacer3823
+		Type: java.lang.String
+		Statement: $r8 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer3823)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] calcAesKey(byte[],byte[],byte[])>
+		SHA-256: 9308db1740c8dd9a22559c6c426cc6039d22265748e215bb417939c075dd27c7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r9.<javax.crypto.KeyAgreement: byte[] generateSecret()>()
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] calcAesKey(byte[],byte[],byte[])>
+		SHA-256: 5390234c80cb00597ee8fd51e6ac772bf78647f988773d4af4d4212342ddf4bd
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r9 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r5)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: 62e14a05795b5d89a831477683ac3ea99a65baefadb15f877fed81d41383bca5
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r12, $r4, $i0, varReplacer3653)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: db47c349536748e81dc9acda5d19a33dc5468e045d5f78c0931d8416eb441bee
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.KeyAgreement
+		Statement: $r9 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String)>(varReplacer3819)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] calcAesKey(byte[],byte[],byte[])>
+		SHA-256: 4d4db132137c3aa44d444af6b3374b159cc6d917c17081e8601add9628d5216d
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getInitialValue(int)>
+		SHA-256: 8238e030dc36ca9c202946af5129628424f68b19bbe0c0a56bfff4ccb52e7152
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r9.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <net.sf.dibdib.thread_any.QValFunc: java.lang.String shash4Literal(java.lang.String,long[])>
+		SHA-256: 8691f3ea02a529307ca761a0da6f457f37d32b0da1846a004c0b7d6f861033bd
+		Secure: false
+	Object:
+		Variable: varReplacer3658
+		Type: int
+		Statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, $r4, $i0, varReplacer3658)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: d73ee4ae5304e21b070084dfac92b865efea52674aa5a8bf92859304daa1226c
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.SecretKey
+		Statement: $r10 = virtualinvoke $r9.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r7)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: c87a92cb0e4a27d8078e678ce711b156d2225a5960e71f71f123b0bca88acec7
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: virtualinvoke $r3.<java.security.SecureRandom: void nextBytes(byte[])>($r0)
+		Method: <com.gitlab.dibdib.joined.CodecAlgoFunc: byte[] toPass32(byte[],byte[],boolean)>
+		SHA-256: 5f2de0f95c3ac469106147966b57c557052deabb8076b6464f397284878a8144
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3674)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] decode(byte[],int,int,byte[],byte[])>
+		SHA-256: a1713c29cb3f7c6bc7fb097d5d385ae7895a98ab6fd65a3f1df076430ee4c737
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.gitlab.dibdib.joined.CodecAlgoFunc: java.lang.String fingerprint(byte[],boolean)>
+		SHA-256: 2d0395a0e0933c4b08232a0411f2862fb20801c79e839976ae7850a084b0a86f
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, $r4, $i0, varReplacer3658)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: e121a5c3dee4e941aa35c3228f7dad73dd9d1f7c809fa3c578a2fda455b48a74
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.KeyFactory
+		Statement: $r10 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer3826)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] encode(byte[],int,int,byte[],byte[],int,byte[],byte[])>
+		SHA-256: 7c00fa4653417467cf66e728af7ad9b46e6a0a82c13cfb7883b33049a5f07808
+		Secure: false
+	Object:
+		Variable: varReplacer3840
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer3840)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] encode(byte[],int,int,byte[],byte[],int,byte[],byte[])>
+		SHA-256: 52cf6ee60de473deb43bde9b1e9a9af0ea5daf4198f914a37369bd8670ed2c8c
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2890)
+		Method: <com.gitlab.dibdib.joined.CodecAlgoFunc: java.lang.String fingerprint(byte[],boolean)>
+		SHA-256: 7cb10f7455d33e96d53301047212093c694fb547a56f75c56661255cf5d3d3b4
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.PrivateKey
+		Statement: $r6 = virtualinvoke $r3.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: boolean createDhKey(java.lang.String,char)>
+		SHA-256: ee196af994eb7be98d578f6130a9c2a57fc7a1b71c9c6fa640d44011d713beb9
+		Secure: true
+	Object:
+		Variable: $r12
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r12.<javax.crypto.spec.IvParameterSpec: void <init>(byte[],int,int)>($r4, $i2, varReplacer3841)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] encode(byte[],int,int,byte[],byte[],int,byte[],byte[])>
+		SHA-256: b0d09a985f5246faf44d1fa90a8156a638af87ddd7ef8a99d1868d1673369b32
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.KeyPairGenerator
+		Statement: $r2 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(varReplacer2977)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: boolean createDhKey(java.lang.String,char)>
+		SHA-256: 21dc29f0fbb95fe0eca91811c469b9c1e9585372fb8386cf8c2deab8bbba0497
+		Secure: true
+	Object:
+		Variable: $r12
+		Type: java.security.MessageDigest
+		Statement: $r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3818)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] calcAesKey(byte[],byte[],byte[])>
+		SHA-256: c7842f722ee1267765f2ad47aef484f92b42a9ff1eadcdc35ae9909e405d1f45
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: javax.crypto.SecretKey
+		Statement: $r10 = virtualinvoke $r9.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r7)
+		Method: <com.gitlab.dibdib.common.TcvCodecAes: byte[] getKey(byte[],byte[],byte[],int)>
+		SHA-256: c87a92cb0e4a27d8078e678ce711b156d2225a5960e71f71f123b0bca88acec7
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.PublicKey
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: boolean createDhKey(java.lang.String,char)>
+		SHA-256: 230ac28d33f05cb83a80505b0cc77dc0c3d080d0c5b8896926014661641655cf
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.KeyPair
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: void init(com.gitlab.dibdib.dib2qm.ContextIf_OLD)>
+		SHA-256: 1e24c1cd95d69a57f4fea231b738d62d7a159110ae2033d73962f1d7478aaaf0
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.KeyFactory
+		Statement: $r7 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer3820)
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: byte[] calcAesKey(byte[],byte[],byte[])>
+		SHA-256: e47dccdefe048f84c98ce1374b614345a5bcec1e4603d0dcac1227f4898fcfc9
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyPair
+		Statement: $r3 = virtualinvoke $r2.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <com.gitlab.dibdib.dib2qm.EcDhQm: boolean createDhKey(java.lang.String,char)>
+		SHA-256: f2dfac18187151e27c5feaa7528bfe813d94f76587af2b6715c16a7b3af18f72
+		Secure: true
+
+Findings in Java Class: net.sf.dibdib.thread_any.QValFunc
+
+	 in Method: java.lang.String shash4Literal(java.lang.String,long[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ba24f4c51dbd10936bae0f958e8ee5defa7824ceb93ba3679b5d1cf474f5a830)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r9 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2138)
+
+
+Findings in Java Class: com.gitlab.dibdib.joined.CodecAlgoFunc
+
+	 in Method: java.lang.String fingerprint(byte[],boolean)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #7cb10f7455d33e96d53301047212093c694fb547a56f75c56661255cf5d3d3b4)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2890)
+
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+
+
+Findings in Java Class: com.gitlab.dibdib.common.TcvCodecAes
+
+	 in Method: byte[] getKey(byte[],byte[],byte[],int)
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #db47c349536748e81dc9acda5d19a33dc5468e045d5f78c0931d8416eb441bee)
+			Third parameter (with value 0)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r12, $r4, $i0, varReplacer3653)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #8d2f5ea738c5a1d4dda717c1b556f51f1cc31fdc04e2d003417efb122b0bfdcb)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, $r4, $i0, varReplacer3662)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #8d2f5ea738c5a1d4dda717c1b556f51f1cc31fdc04e2d003417efb122b0bfdcb)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, $r4, $i0, varReplacer3662)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #c832bbad09cf1a9eb595d860d3267901863f78cb034d7f0762dc366a3d7726e3)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, $r4, $i0, varReplacer3660)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #c832bbad09cf1a9eb595d860d3267901863f78cb034d7f0762dc366a3d7726e3)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, $r4, $i0, varReplacer3660)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r10 = virtualinvoke $r9.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r7)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #db47c349536748e81dc9acda5d19a33dc5468e045d5f78c0931d8416eb441bee)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r12, $r4, $i0, varReplacer3653)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #e121a5c3dee4e941aa35c3228f7dad73dd9d1f7c809fa3c578a2fda455b48a74)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r7.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r6, $r4, $i0, varReplacer3658)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3667)
+
+
+	 in Method: byte[] decode(byte[],int,int,byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer3680, $r4, $r7)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r11 = virtualinvoke $r10.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r8)
+
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r8.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r3)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #a1713c29cb3f7c6bc7fb097d5d385ae7895a98ab6fd65a3f1df076430ee4c737)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>($r1, $i8, $i4)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r9.<java.security.Signature: void initVerify(java.security.PublicKey)>($r11)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #a1713c29cb3f7c6bc7fb097d5d385ae7895a98ab6fd65a3f1df076430ee4c737)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3674)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r7.<javax.crypto.spec.IvParameterSpec: void <init>(byte[],int,int)>($r1, $i9, varReplacer3686)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #a872480ee1ed0bcfb60f2661ebd8028facd51507f6beedcf52605aae2546a8ea)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer3675)
+
+
+	 in Method: byte[] encode(byte[],int,int,byte[],byte[],int,byte[],byte[])
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r9.<java.security.Signature: void initSign(java.security.PrivateKey)>($r11)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer3840)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r7.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer3827, $r2, $r12)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r11 = virtualinvoke $r10.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r8)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #db8517c21afa5a5c17a2abce7509875df10c09fdd798f3bf034481171ec830c1)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r7.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>($r3, $i0, $i1)
+
+
+Findings in Java Class: com.gitlab.dibdib.dib2qm.EcDhQm
+
+	 in Method: byte[] getPkSignatureEncoded(java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r6.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r3)
+
+
+	 in Method: byte[] calcAesKey(byte[],byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyAgreement
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r9.<javax.crypto.KeyAgreement: java.security.Key doPhase(java.security.Key,boolean)>($r11, varReplacer3822)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r11 = virtualinvoke $r7.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r5)
+
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r5.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r10 = virtualinvoke $r8.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyAgreement
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r9.<javax.crypto.KeyAgreement: void init(java.security.Key)>($r10)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 73
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 3
+	RequiredPredicateError: 19
+	HardCodedError: 4
+	TypestateError: 2
+	IncompleteOperationError: 1
+	NeverTypeOfError: 16
+=====================================================================

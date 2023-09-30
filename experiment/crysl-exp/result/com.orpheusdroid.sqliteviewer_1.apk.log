@@ -1,0 +1,196 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <com.topjohnwu.superuser.ShellUtils: java.lang.CharSequence genRandomAlphaNumString(int)>
+		SHA-256: 2699031ab83d7bb04f387a58eb2745e5f9cfcfac291d7baa897164b273ce6076
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.security.cert.CertificateFactory
+		Statement: $r8 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer3695)
+		Method: <ly.count.android.sdk.CertificateTrustManager: void <init>(java.util.List,java.util.List)>
+		SHA-256: c958bd16f36de25550755f3c36920d9421dcdd51469b17da56d816f84158b8ca
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.MessageDigest
+		Statement: $r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r7)
+		Method: <com.topjohnwu.superuser.ShellUtils: boolean checkSum(java.lang.String,java.io.File,java.lang.String)>
+		SHA-256: c42e9469000a1036df46ee8ad52b08c35f85371c7cd2897d114f02bd69ba3262
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.cert.CertificateFactory
+		Statement: $r8 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer3696)
+		Method: <ly.count.android.sdk.CertificateTrustManager: void <init>(java.util.List,java.util.List)>
+		SHA-256: e3177ec77f2fac0b66ecc8df8c3456ea21729ce9df06870c4fe2c30069db5e63
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5070)
+		Method: <ly.count.android.sdk.ConnectionProcessor: java.lang.String sha1Hash(java.lang.String)>
+		SHA-256: ff8bc1dc14d52df8c385c8be10dc69da99944f85b5f904e5a308245b51215988
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke $r11.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>($r12, $r10)
+		Method: <com.topjohnwu.superuser.ShellUtils: boolean checkSum(java.lang.String,java.io.File,java.lang.String)>
+		SHA-256: 80c16cc248992ab0de3489249f7e209c38633a9d93e9cbd85b66512af328337
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2244)
+		Method: <ly.count.android.sdk.ConnectionQueue: void setServerURL(java.lang.String)>
+		SHA-256: d72a04d8b6650ace5506891459979668e4a62df9320fc013982eefcab5f4de9d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <ly.count.android.sdk.ConnectionProcessor: java.lang.String sha1Hash(java.lang.String)>
+		SHA-256: b904b934333d55dc47fa11a4297aaf9dccc18e95433cac93511232046343cd
+		Secure: false
+
+Findings in Java Class: ly.count.android.sdk.ConnectionQueue
+
+	 in Method: void setServerURL(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2242, $r10, varReplacer2242)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #d72a04d8b6650ace5506891459979668e4a62df9320fc013982eefcab5f4de9d)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2244)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2242, $r10, varReplacer2242)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2242, $r10, varReplacer2242)
+
+
+Findings in Java Class: ly.count.android.sdk.CertificateTrustManager
+
+	 in Method: void <init>(java.util.List,java.util.List)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #c958bd16f36de25550755f3c36920d9421dcdd51469b17da56d816f84158b8ca)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r10 = virtualinvoke $r8.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #c958bd16f36de25550755f3c36920d9421dcdd51469b17da56d816f84158b8ca)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r10 = virtualinvoke $r8.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #e3177ec77f2fac0b66ecc8df8c3456ea21729ce9df06870c4fe2c30069db5e63)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r10 = virtualinvoke $r8.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #e3177ec77f2fac0b66ecc8df8c3456ea21729ce9df06870c4fe2c30069db5e63)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r10 = virtualinvoke $r8.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r1)
+
+
+Findings in Java Class: ly.count.android.sdk.ConnectionProcessor
+
+	 in Method: java.lang.String sha1Hash(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ff8bc1dc14d52df8c385c8be10dc69da99944f85b5f904e5a308245b51215988)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5070)
+
+
+Findings in Java Class: com.topjohnwu.superuser.internal.ShellImpl$NoCloseOutputStream
+
+	 in Method: void write(byte[],int,int)
+		ConstraintError violating CrySL rule for java.security.DigestOutputStream (on Object #80c16cc248992ab0de3489249f7e209c38633a9d93e9cbd85b66512af328337)
+			Third parameter (with value 0)Variable lenmust be  greater than 0
+			at statement: virtualinvoke $r2.<java.io.OutputStream: void write(byte[],int,int)>($r1, $i0, $i1)
+
+
+Findings in Java Class: com.topjohnwu.superuser.ShellUtils
+
+	 in Method: boolean checkSum(java.lang.String,java.io.File,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c42e9469000a1036df46ee8ad52b08c35f85371c7cd2897d114f02bd69ba3262)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r7)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #c42e9469000a1036df46ee8ad52b08c35f85371c7cd2897d114f02bd69ba3262)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r13 = virtualinvoke $r10.<java.security.MessageDigest: byte[] digest()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #80c16cc248992ab0de3489249f7e209c38633a9d93e9cbd85b66512af328337)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to close, write
+			at statement: staticinvoke <com.topjohnwu.superuser.ShellUtils: long pump(java.io.InputStream,java.io.OutputStream)>($r0, $r11)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 8
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 5
+	TypestateError: 1
+	ConstraintError: 4
+	RequiredPredicateError: 3
+=====================================================================

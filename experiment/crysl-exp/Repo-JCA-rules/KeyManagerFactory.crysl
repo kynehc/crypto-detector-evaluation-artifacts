@@ -1,0 +1,36 @@
+SPEC javax.net.ssl.KeyManagerFactory
+
+OBJECTS
+	char[] password;
+	java.lang.String algorithm;
+	java.security.KeyStore keyStore;
+	javax.net.ssl.ManagerFactoryParameters params;
+	javax.net.ssl.KeyManager[] keyManager;
+	
+EVENTS 
+	g1: getInstance(algorithm);
+	g2: getInstance(algorithm, _);
+	Get := g1 | g2;
+
+	i1: init(keyStore, password);
+	i2: init(params);
+	Init := i1 | i2;
+	
+	gkm1: keyManager = getKeyManagers();
+	GetKeyMng := gkm1;
+			
+ORDER
+	Get, Init, GetKeyMng?
+
+CONSTRAINTS
+	neverTypeOf[password, java.lang.String];
+	notHardCoded[password];
+	algorithm in {"PKIX", "SunX509"};
+
+REQUIRES
+	generatedKeyStore[keyStore];
+	generatedManagerFactoryParameters[params];
+	
+ENSURES
+	generatedKeyManager[this] after Init;
+	generatedKeyManagers[keyManager] after GetKeyMng;

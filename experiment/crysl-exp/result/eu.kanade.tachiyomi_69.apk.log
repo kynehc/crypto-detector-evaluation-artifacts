@@ -1,0 +1,659 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <eu.kanade.tachiyomi.util.lang.Hash: java.lang.String md5(byte[])>
+		SHA-256: ea8dde1ce5cdcfda0ccc554d00eb6eb2b8a3a2f36ca493f64257be0b138b6fb2
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer65384, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 5c68a3677e679b6454678a6701410997af7107553600f47dbf6247b0e2c358ee
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: 9f3ba3dd35bfd88a8457060cd59e6e65af87cbea3e5170b1e5d11a5dc2171423
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 316cbc86e080130334eaabd60025d96084375d0058312a103cd3255ba6f0aeb
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: 9d21c3f9e3f612ea7264d21dc14a8967f32993fff60292ad252f8676282c7571
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.lang.String)>(varReplacer55613, varReplacer55614)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 952e5127eb2c6a57e2f1033aee5a04166805fd174606e43a0966573cc53b4d19
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r3.<java.security.Signature: boolean verify(byte[])>($r5)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: e75571d33abb1b5e330ac5b78fcc009ac5fa3b4053acda20dad8234c0598d879
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: ea0840b94e95f767ea25aa35611d3fdb379cdb84c49be399c4ff7525b48fb7fc
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer50205)
+		Method: <com.github.junrar.crypt.Rijndael: javax.crypto.Cipher buildDecipherer(java.lang.String,byte[])>
+		SHA-256: db2edb304f539db0a3dcd82fc1da16f865af7617be001bd252f60917e0860ee9
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer13182)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 24034349868dd320f04d26121c6a52e95fe1116c17ea0a653ea0c23130f0229e
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.cert.CertificateFactory
+		Statement: $r0 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer78418)
+		Method: <org.conscrypt.SSLUtils: java.security.cert.CertificateFactory getCertificateFactory()>
+		SHA-256: 3181592ae9cc5c254b8c8d599d54b672c66beb510d2af09127c26e86bbda1e47
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer65385, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 69e210bad7a6d6f6c4216537d1cd23ca82997862fd91ebd02845037798cd9cb
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.KeyStore
+		Statement: $r5 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r4)
+		Method: <org.acra.security.BaseKeyStoreFactory: java.security.KeyStore create(android.content.Context)>
+		SHA-256: 22a183d5116504e02ad96ba67561ecf0f83bf3a7f2bfba4ad5fe01efac8fa773
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r3.<java.security.SecureRandom: void nextBytes(byte[])>($r2)
+		Method: <eu.kanade.tachiyomi.util.PkceUtil: java.lang.String generateCodeVerifier()>
+		SHA-256: cc929cdb7c7634b5c0cf48b071cea49f1bcc4279a7bb1107d7c3d0dc4b3fc0f
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: 6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 15a76129680a3cd57380001c355c828c5afc3ba9ce32fff65b352ff3390bbd6
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: c3dcfb07eabeaead2afa7b41e33d56187e303e14a7184c21b7bac99836f2c278
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.KeyFactory
+		Statement: $r10 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r8)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: 6635af12fb8498a7bf018ada279831a6e3024bb07fe12c7daed2b6fbc372e6bb
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <eu.kanade.tachiyomi.util.lang.Hash: java.lang.String sha256(byte[])>
+		SHA-256: a5154de2b464f32c1a2b0f9ae754c0ab455958814eea3dcd231b386a90cf842e
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.KeyGenerator
+		Statement: $r2 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer13183, varReplacer13184)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 7cc4fc4b1e52dfc28d5958bd0208fca1459feca4afc7c02d6d54a1af49385068
+		Secure: true
+	Object:
+		Variable: $r18
+		Type: javax.net.ssl.SSLContext
+		Statement: $r18 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer78813)
+		Method: <org.acra.http.BaseHttpRequest: void configureHttps(javax.net.ssl.HttpsURLConnection)>
+		SHA-256: ecb575c707a5d9d52d507d862454c0ce692ca5fa45982eaba9022807daad31c3
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer65381)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 908d0e3356cb158ab86e6866b22b005d58d7b18015d90ba14ef975bc148caa7a
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r13.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r9, $r12, $r4, $i1)
+		Method: <org.conscrypt.OpenSSLECGroupContext: java.security.spec.ECParameterSpec getECParameterSpec()>
+		SHA-256: 7223ae8f08ed0dba3dafb06f8e07e30310aca7c9be856d88494b5d1bd531fdf8
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer67077)
+		Method: <eu.kanade.tachiyomi.util.lang.Hash: java.lang.String md5(byte[])>
+		SHA-256: ff744b3d7240d54e7092faae273481e2d59cff04d4c720eed3db0eb96a3617a2
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.cert.CertificateFactory
+		Statement: $r9 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>($r4)
+		Method: <org.acra.security.BaseKeyStoreFactory: java.security.KeyStore create(android.content.Context)>
+		SHA-256: 6354b454ea0efe5008579fe336bf54e0cb7951f0d65e24c27930d87a53ea0e7
+		Secure: false
+	Object:
+		Variable: $r19
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r19 = virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.acra.http.BaseHttpRequest: void configureHttps(javax.net.ssl.HttpsURLConnection)>
+		SHA-256: 7efe0c3e19e2384d75cde7d7456af0396f063ed7770cd33f7d2a1ea40d37b994
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.security.KeyStore
+		Statement: $r0 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer13179)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 2f071776af841fdcb2fbbe4031e814bfc1573fce4739ce185dcfd9a199b104f6
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.cert.CertificateFactory
+		Statement: $r7 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer74150)
+		Method: <okhttp3.Cache$Entry: java.util.List readCertificateList(okio.BufferedSource)>
+		SHA-256: 721080b97e4fe46360312b357416831deb203dfe0eac122f5008b6a3616210b8
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r2)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: f325059ee6f08c9776202e677308b0f19ca0767a6821e36b4f64a531d072fa45
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer50207)
+		Method: <com.github.junrar.crypt.Rijndael: javax.crypto.Cipher buildDecipherer(java.lang.String,byte[])>
+		SHA-256: 1d0477eaf741730f61282e59237bf98ce3bc52d4ddb2e34ea33f3077e38702b5
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r10.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: 9d110d3f3943f5f1538d33e3d18932b71ca7accf2f86c174ab417a2b10712fb0
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r2 = virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 84f17b7e3930c76e2b174d27b9668ee8d3209ae5512e2c539d541e6ef4265515
+		Secure: false
+	Object:
+		Variable: varReplacer50205
+		Type: java.lang.String
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer50205)
+		Method: <com.github.junrar.crypt.Rijndael: javax.crypto.Cipher buildDecipherer(java.lang.String,byte[])>
+		SHA-256: da4b525e4cd3492c7252742ede03fa485235365a996672291a39907d4354b883
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.github.junrar.crypt.Rijndael: javax.crypto.Cipher buildDecipherer(java.lang.String,byte[])>
+		SHA-256: bc26f7985122a688a5eb9a3b2860e40388885ac8ce761f255f698fe4d3c77aca
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r1.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r9)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: 7ac05a324707752a8fcdd9787a5fcda4e6af85c295ea6bb9f2ffcf779c41a30d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.github.junrar.crypt.Rijndael: javax.crypto.Cipher buildDecipherer(java.lang.String,byte[])>
+		SHA-256: bc26f7985122a688a5eb9a3b2860e40388885ac8ce761f255f698fe4d3c77aca
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r3.<java.security.Signature: boolean verify(byte[])>($r5)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: d02affd279e8743b6fd64cdf0e2dd47c30a5603be2e61d5718cf63d25b2d1a15
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.security.Provider)>($r1, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 1027fce20723454b26980f38c5edb26bcec19bffa5b6443c75459b577c51d460
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer65387, $r2)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 91684acfd338e1f658a0c25e4c9eeccd14b3f020797ab93c9615fd665d98b557
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r4 = virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: a729cfd5669df603070b7ba7d05b524b10a048ab1da974a5ccb1df973521b7d3
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer28265)
+		Method: <eu.kanade.tachiyomi.source.online.HttpSource$id$2: java.lang.Long invoke()>
+		SHA-256: e32d71c981785ed2736d3491cec29813fdab5a51e887b4e9cefcca1067e7fb2e
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer50208)
+		Method: <com.github.junrar.crypt.Rijndael: javax.crypto.Cipher buildDecipherer(java.lang.String,byte[])>
+		SHA-256: 673e78af648a92121ab595670132e3172300d5de86f7ac3bdb22396f9a6bc61f
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 5fb6984969c8c0f60ee84399ef18a49aa63648c889757c4080685ad119ecd903
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r2)
+		Method: <org.acra.http.BaseHttpRequest: void configureHttps(javax.net.ssl.HttpsURLConnection)>
+		SHA-256: 5317ec52cedeb59ce09103096b73de1396b6dab7b7e041f4d3f8653cefd6c32e
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+		Method: <com.github.junrar.crypt.Rijndael: javax.crypto.Cipher buildDecipherer(java.lang.String,byte[])>
+		SHA-256: b36f1c6e9bbc4db6a9e76d014dad531a8b80cda3194a77b8a7d2a7b8b5cf99bf
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.Key
+		Statement: $r4 = virtualinvoke $r0.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>(varReplacer13186, varReplacer13187)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 70017f1c8f16f15fce6b5d2a13314137dbb72b10c96229f70fa59372aec92ef0
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <eu.kanade.tachiyomi.util.PkceUtil: java.lang.String generateCodeVerifier()>
+		SHA-256: ee005f0bf26ed07895da2947e6849bdbffb37854c26f854fbcf6d92918e20dd9
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <eu.kanade.tachiyomi.source.online.HttpSource$id$2: java.lang.Long invoke()>
+		SHA-256: 8b79a330f30558b21ed489966c35c97713a5bcdb5d4ac3d03cd9be2e6206f432
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer53461)
+		Method: <eu.kanade.tachiyomi.util.lang.Hash: java.lang.String sha256(byte[])>
+		SHA-256: 2725969fec5b6f2b76fc292202f18c959dc8258e4b993ce98b5c1fcbd2d23392
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.lang.String
+		Statement: $r10 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r8)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: fb24971f565cb4681c3c1e192adc31a35b4a987353817f6def6d3d265ac75389
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.lang.String)>($r4, $r2)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: 4b73d9ea47b70e095beb17e2b4e8c62bcb1a3b70cdd913b654094befd6fbd016
+		Secure: false
+
+Findings in Java Class: androidx.biometric.CryptoObjectUtils
+
+	 in Method: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #2f071776af841fdcb2fbbe4031e814bfc1573fce4739ce185dcfd9a199b104f6)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r0 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer13179)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer13178, $r5)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #24034349868dd320f04d26121c6a52e95fe1116c17ea0a653ea0c23130f0229e)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer13182)
+
+
+Findings in Java Class: eu.kanade.tachiyomi.source.online.HttpSource$id$2
+
+	 in Method: java.lang.Long invoke()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e32d71c981785ed2736d3491cec29813fdab5a51e887b4e9cefcca1067e7fb2e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer28265)
+
+
+Findings in Java Class: com.github.junrar.crypt.Rijndael
+
+	 in Method: javax.crypto.Cipher buildDecipherer(java.lang.String,byte[])
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #673e78af648a92121ab595670132e3172300d5de86f7ac3bdb22396f9a6bc61f)
+			First parameter (with value "AES/CBC/NoPadding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer50208)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #1d0477eaf741730f61282e59237bf98ce3bc52d4ddb2e34ea33f3077e38702b5)
+			First parameter (with value "sha-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer50207)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r10.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer50209, $r9, $r10)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer50205)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest$okio(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ea0840b94e95f767ea25aa35611d3fdb379cdb84c49be399c4ff7525b48fb7fc)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: okio.SegmentedByteString
+
+	 in Method: okio.ByteString digest$okio(java.lang.String)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #908d0e3356cb158ab86e6866b22b005d58d7b18015d90ba14ef975bc148caa7a)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer65381)
+
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer55623, $r10, varReplacer55623)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer55623, $r10, varReplacer55623)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer55623, $r10, varReplacer55623)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer55602)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #69e210bad7a6d6f6c4216537d1cd23ca82997862fd91ebd02845037798cd9cb)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer65385, $r2)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer55611)
+
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer55625, $r5, varReplacer55625)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer55625, $r5, varReplacer55625)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer55625, $r5, varReplacer55625)
+
+
+Findings in Java Class: okhttp3.internal.platform.BouncyCastlePlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #91684acfd338e1f658a0c25e4c9eeccd14b3f020797ab93c9615fd665d98b557)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer65387, $r2)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer55615)
+
+
+Findings in Java Class: eu.kanade.tachiyomi.util.lang.Hash
+
+	 in Method: java.lang.String md5(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ff744b3d7240d54e7092faae273481e2d59cff04d4c720eed3db0eb96a3617a2)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer67077)
+
+
+Findings in Java Class: okhttp3.Cache$Entry
+
+	 in Method: java.util.List readCertificateList(okio.BufferedSource)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #721080b97e4fe46360312b357416831deb203dfe0eac122f5008b6a3616210b8)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r7 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer74150)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #721080b97e4fe46360312b357416831deb203dfe0eac122f5008b6a3616210b8)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r11 = virtualinvoke $r7.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r10)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #721080b97e4fe46360312b357416831deb203dfe0eac122f5008b6a3616210b8)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r11 = virtualinvoke $r7.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r10)
+
+
+Findings in Java Class: org.conscrypt.SSLUtils
+
+	 in Method: java.security.cert.X509Certificate decodeX509Certificate(java.security.cert.CertificateFactory,byte[])
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #3181592ae9cc5c254b8c8d599d54b672c66beb510d2af09127c26e86bbda1e47)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r3 = virtualinvoke $r2.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r1)
+
+
+	 in Method: java.security.cert.X509Certificate[] decodeX509CertificateChain(byte[][])
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #3181592ae9cc5c254b8c8d599d54b672c66beb510d2af09127c26e86bbda1e47)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r4 = staticinvoke <org.conscrypt.SSLUtils: java.security.cert.X509Certificate decodeX509Certificate(java.security.cert.CertificateFactory,byte[])>($r2, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #3181592ae9cc5c254b8c8d599d54b672c66beb510d2af09127c26e86bbda1e47)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r2 = staticinvoke <org.conscrypt.SSLUtils: java.security.cert.CertificateFactory getCertificateFactory()>()
+
+
+Findings in Java Class: org.acra.http.BaseHttpRequest
+
+	 in Method: void configureHttps(javax.net.ssl.HttpsURLConnection)
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #22a183d5116504e02ad96ba67561ecf0f83bf3a7f2bfba4ad5fe01efac8fa773)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r13)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r18.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer78810, $r19, varReplacer78810)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r18.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer78810, $r19, varReplacer78810)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #ecb575c707a5d9d52d507d862454c0ce692ca5fa45982eaba9022807daad31c3)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r18 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer78813)
+
+
+Findings in Java Class: org.acra.security.BaseKeyStoreFactory
+
+	 in Method: java.security.KeyStore create(android.content.Context)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #6354b454ea0efe5008579fe336bf54e0cb7951f0d65e24c27930d87a53ea0e7)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r10 = virtualinvoke $r9.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r1)
+
+
+Findings in Java Class: org.conscrypt.OpenSSLX509Certificate
+
+	 in Method: void verifyInternal(java.security.PublicKey,java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r3.<java.security.Signature: void initVerify(java.security.PublicKey)>($r1)
+
+
+	 in Method: java.security.PublicKey getPublicKey()
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r7 = virtualinvoke $r10.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r9)
+
+
+Findings in Java Class: okhttp3.internal.platform.OpenJSSEPlatform
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer55606)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 51
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 3
+	IncompleteOperationError: 6
+	ConstraintError: 12
+	RequiredPredicateError: 19
+=====================================================================

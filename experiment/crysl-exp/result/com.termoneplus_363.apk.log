@@ -1,0 +1,235 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <jackpal.androidterm.util.ShortcutEncryption: java.lang.String encrypt(java.lang.String,jackpal.androidterm.util.ShortcutEncryption$Keys)>
+		SHA-256: 1dd4c66770e75288e5739d3679d0f1afe4a2c0ea761c94135955b20df9441506
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.SecretKey
+		Statement: $r2 = virtualinvoke $r0.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <jackpal.androidterm.util.ShortcutEncryption: jackpal.androidterm.util.ShortcutEncryption$Keys generateKeys()>
+		SHA-256: 6360761b29a6f717001698959741e5620e6ad03d8f9dbce69d5fb4d82869f29d
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: javax.crypto.KeyGenerator
+		Statement: $r0 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer9528)
+		Method: <jackpal.androidterm.util.ShortcutEncryption: jackpal.androidterm.util.ShortcutEncryption$Keys generateKeys()>
+		SHA-256: aa0fd88b917ec0e341ec22880872a144710e0fec83ef26d6ee9bd23567c596e9
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <jackpal.androidterm.compat.PRNGFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: fbec00fe93d15517143af9e354e3e3fbfd9140a2563664ef8b53a88162c8254b
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer9539)
+		Method: <jackpal.androidterm.util.ShortcutEncryption$Keys: jackpal.androidterm.util.ShortcutEncryption$Keys decode(java.lang.String)>
+		SHA-256: 67cdcb03cc921d6801b4cf7db99b33b33b7e1a42c31febab61f328b5720ba606
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer16387)
+		Method: <jackpal.androidterm.util.ShortcutEncryption: java.lang.String decrypt(java.lang.String,jackpal.androidterm.util.ShortcutEncryption$Keys)>
+		SHA-256: 546b9a54cf8afd18665fdba58bcc6ced90b4d32f4541a571e3f2ee0d16520dd7
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: $r5 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer9544)
+		Method: <jackpal.androidterm.compat.PRNGFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: da23a92786f367f121b495692c63fb55b48d7eac66b9cbe6bfa17ddf806eb7da
+		Secure: true
+	Object:
+		Variable: varReplacer9539
+		Type: java.lang.String
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer9539)
+		Method: <jackpal.androidterm.util.ShortcutEncryption$Keys: jackpal.androidterm.util.ShortcutEncryption$Keys decode(java.lang.String)>
+		SHA-256: 2b199fd26d514905c0343477f1b38d812ca47d1fa2c64d9cbaafe445225e84e5
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r0.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
+		Method: <jackpal.androidterm.util.ShortcutEncryption: java.lang.String encrypt(java.lang.String,jackpal.androidterm.util.ShortcutEncryption$Keys)>
+		SHA-256: b120ccd9a4c7fe4b4b5672a497a7ac3bb0f4f3aa549408f35447ed71aa67f645
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Mac
+		Statement: $r2 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer9537)
+		Method: <jackpal.androidterm.util.ShortcutEncryption: java.lang.String computeMac(java.lang.String,javax.crypto.SecretKey)>
+		SHA-256: 466385dccefdee967de6fc612f40650a6081debea77b038142cb2bf0ad5c7dd9
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: javax.crypto.KeyGenerator
+		Statement: $r0 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer9526)
+		Method: <jackpal.androidterm.util.ShortcutEncryption: jackpal.androidterm.util.ShortcutEncryption$Keys generateKeys()>
+		SHA-256: eebacb51872d59d29f87237030651cb6cd238727d16e1e1981b276e39e87c7d1
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.SecretKey
+		Statement: $r1 = virtualinvoke $r0.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <jackpal.androidterm.util.ShortcutEncryption: jackpal.androidterm.util.ShortcutEncryption$Keys generateKeys()>
+		SHA-256: 109ed153f328224201e97d7082a3b5667c198cc56423bd8f53eaa9a822c36b81
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r5)
+		Method: <jackpal.androidterm.util.ShortcutEncryption: java.lang.String encrypt(java.lang.String,jackpal.androidterm.util.ShortcutEncryption$Keys)>
+		SHA-256: b0f81122229e1c250be16356d5bd56ccd9dedd94c7093c12b9e8cff065691a2a
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<javax.crypto.Mac: byte[] doFinal(byte[])>($r3)
+		Method: <jackpal.androidterm.util.ShortcutEncryption: java.lang.String computeMac(java.lang.String,javax.crypto.SecretKey)>
+		SHA-256: 60ae9131d8eb335a22fcef3dbe3feddf7581557eac7a7c8c56fb128de0d696c5
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer9520)
+		Method: <jackpal.androidterm.util.ShortcutEncryption: java.lang.String encrypt(java.lang.String,jackpal.androidterm.util.ShortcutEncryption$Keys)>
+		SHA-256: 5422366a648a438acefe3dd8ebed39acd6010273f01ceb687e2d6de9dd88b6a4
+		Secure: false
+	Object:
+		Variable: varReplacer9541
+		Type: java.lang.String
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer9541)
+		Method: <jackpal.androidterm.util.ShortcutEncryption$Keys: jackpal.androidterm.util.ShortcutEncryption$Keys decode(java.lang.String)>
+		SHA-256: e246ce9606473f5e0d78f6cbed5304094a4e20e2c0d3a3276674af987e33cbb2
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer9541)
+		Method: <jackpal.androidterm.util.ShortcutEncryption$Keys: jackpal.androidterm.util.ShortcutEncryption$Keys decode(java.lang.String)>
+		SHA-256: 1ac57d3df85276fa25f36e4e4e895d82e4c5cd287a6539d45843007a91136e30
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r11.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r10)
+		Method: <jackpal.androidterm.util.ShortcutEncryption: java.lang.String decrypt(java.lang.String,jackpal.androidterm.util.ShortcutEncryption$Keys)>
+		SHA-256: 86e777049910575f29a7ae36e04311264f78fffacf636f8a09e83693a4c3b048
+		Secure: false
+
+Findings in Java Class: jackpal.androidterm.util.ShortcutEncryption
+
+	 in Method: java.lang.String encrypt(java.lang.String,jackpal.androidterm.util.ShortcutEncryption$Keys)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #5422366a648a438acefe3dd8ebed39acd6010273f01ceb687e2d6de9dd88b6a4)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r3.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer9517, $r7, $r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r0.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
+
+
+	 in Method: java.lang.String decrypt(java.lang.String,jackpal.androidterm.util.ShortcutEncryption$Keys)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #546b9a54cf8afd18665fdba58bcc6ced90b4d32f4541a571e3f2ee0d16520dd7)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer16387)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer16384, $r9, $r11)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #546b9a54cf8afd18665fdba58bcc6ced90b4d32f4541a571e3f2ee0d16520dd7)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r10 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r10)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r11.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r10)
+
+
+Findings in Java Class: jackpal.androidterm.util.ShortcutEncryption$Keys
+
+	 in Method: jackpal.androidterm.util.ShortcutEncryption$Keys decode(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer9539)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 18
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 2
+	RequiredPredicateError: 5
+	IncompleteOperationError: 1
+=====================================================================

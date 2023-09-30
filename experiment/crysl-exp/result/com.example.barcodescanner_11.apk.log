@@ -1,0 +1,146 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <m.c.e.b: void <clinit>()>
+		SHA-256: bb9544943c1e949018f7623b45f6f0fea7211067693b4649bef84ab4d652ec10
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <l.a.a.d: void <init>()>
+		SHA-256: 62baf3973eb65b38c4be96074c1d2fd62e2db05d0283dd43692bfe10bb1af93b
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.security.MessageDigest
+		Statement: $r8 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1338)
+		Method: <m.c.e.b$a: void run()>
+		SHA-256: 5f26cc88a4bda981173b57f713c306956e8d4dff7db0d45f443012911f7e9a82
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer7895)
+		Method: <l.a.a.c: java.lang.String a(long)>
+		SHA-256: fad20e10bc565b34cc6d6902b40af2f74d04a9e827b52f530b626cb1d949fac1
+		Secure: false
+	Object:
+		Variable: varReplacer7895
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer7895)
+		Method: <l.a.a.c: java.lang.String a(long)>
+		SHA-256: e670747f30b23c028e6cf1a506f1a4a3b66242c89634fc26fa9779b342c3d373
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r7)
+		Method: <l.a.a.c: java.lang.String a(long)>
+		SHA-256: 1b27abb823cf7816c18fc43a551b9cc7f8a29367e5eda3df89e889c2bb4ff7d
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: byte[]
+		Statement: $r10 = virtualinvoke $r8.<java.security.MessageDigest: byte[] digest()>()
+		Method: <m.c.e.b$a: void run()>
+		SHA-256: d856ffc5e60a528378722881c9a7090617acf60cd0a8a941091973ec15f217c8
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Mac
+		Statement: $r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r4)
+		Method: <l.a.a.c: java.lang.String a(long)>
+		SHA-256: ef0cd8ef98e7b05534e7d75505817d9c091fe4c0bbd361f95cbdc0593c36b8d4
+		Secure: false
+
+Findings in Java Class: m.c.e.b$a
+
+	 in Method: void run()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #5f26cc88a4bda981173b57f713c306956e8d4dff7db0d45f443012911f7e9a82)
+			First parameter (with value "SHA") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r8 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1338)
+
+
+Findings in Java Class: l.a.a.c
+
+	 in Method: java.lang.String a(long)
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #fad20e10bc565b34cc6d6902b40af2f74d04a9e827b52f530b626cb1d949fac1)
+			Second parameter (with value "RAW") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer7895)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Mac: void init(java.security.Key)>($r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, varReplacer7895)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 8
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 2
+	ConstraintError: 2
+=====================================================================

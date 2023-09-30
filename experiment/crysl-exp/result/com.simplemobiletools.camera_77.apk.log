@@ -1,0 +1,185 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer18248)
+		Method: <com.bumptech.glide.load.engine.a0.j$a: com.bumptech.glide.load.engine.a0.j$b b()>
+		SHA-256: a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.andrognito.patternlockview.f.a: java.lang.String a(com.andrognito.patternlockview.PatternLockView,java.util.List)>
+		SHA-256: 5e168c09f8ee08fa3c0a10ab49cef9cfc2c9aa4193b884556bd94e9501f7cab8
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.simplemobiletools.commons.views.PinTab: java.lang.String getHashedPin()>
+		SHA-256: 40789e4ba1d2e58de40ffb3e941fa52c38265531d6a675bc1b1523f6573f7e0a
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17744)
+		Method: <com.simplemobiletools.commons.views.PinTab: java.lang.String getHashedPin()>
+		SHA-256: dd543915433ed495f6c3dbfbd7abf9730e2b652070e51c4bca575f06bb4da6c4
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17936)
+		Method: <com.andrognito.patternlockview.f.a: java.lang.String a(com.andrognito.patternlockview.PatternLockView,java.util.List)>
+		SHA-256: 8677df7891ac6544135274b83470ac71c320e0fc99a50faa9e9c8b7e7a3425d
+		Secure: false
+
+Findings in Java Class: com.simplemobiletools.commons.views.PinTab
+
+	 in Method: java.lang.String getHashedPin()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #dd543915433ed495f6c3dbfbd7abf9730e2b652070e51c4bca575f06bb4da6c4)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17744)
+
+
+Findings in Java Class: com.andrognito.patternlockview.f.a
+
+	 in Method: java.lang.String a(com.andrognito.patternlockview.PatternLockView,java.util.List)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #8677df7891ac6544135274b83470ac71c320e0fc99a50faa9e9c8b7e7a3425d)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17936)
+
+
+Findings in Java Class: com.bumptech.glide.p.i
+
+	 in Method: void d()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r4.<com.bumptech.glide.p.c: void d()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r4.<com.bumptech.glide.p.c: void d()>()
+
+
+Findings in Java Class: com.bumptech.glide.h
+
+	 in Method: com.bumptech.glide.p.j.i o0(com.bumptech.glide.p.j.i,com.bumptech.glide.p.e,com.bumptech.glide.p.a,java.util.concurrent.Executor)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r6.<com.bumptech.glide.p.c: void d()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r7.<com.bumptech.glide.i: void B(com.bumptech.glide.p.j.i,com.bumptech.glide.p.c)>($r1, $r5)
+
+
+Findings in Java Class: com.bumptech.glide.p.b
+
+	 in Method: void d()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r4.<com.bumptech.glide.p.c: void d()>()
+
+
+Findings in Java Class: com.bumptech.glide.load.engine.l$a
+
+	 in Method: void run()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r4.<com.bumptech.glide.load.engine.l: void f(com.bumptech.glide.p.g)>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = virtualinvoke $r5.<com.bumptech.glide.load.engine.l$e: boolean b(com.bumptech.glide.p.g)>($r1)
+
+
+Findings in Java Class: com.google.android.material.tabs.TabLayout
+
+	 in Method: com.google.android.material.tabs.TabLayout$i r(com.google.android.material.tabs.TabLayout$g)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r3 = interfaceinvoke $r2.<a.g.i.e: java.lang.Object b()>()
+
+
+Findings in Java Class: com.bumptech.glide.m.n
+
+	 in Method: void f()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r5.<com.bumptech.glide.p.c: boolean isRunning()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r5.<com.bumptech.glide.p.c: void d()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a966e78af52582c3d55ac2dc88651b1a031f6a27ac18b3672b3db9765bc56340)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r5.<com.bumptech.glide.p.c: boolean g()>()
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 5
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 11
+	ConstraintError: 2
+=====================================================================

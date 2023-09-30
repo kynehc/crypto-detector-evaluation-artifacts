@@ -1,0 +1,570 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer26866)
+		Method: <org.spongycastle.openpgp.operator.jcajce.JcaKeyFingerprintCalculator: byte[] calculateFingerprint(org.spongycastle.bcpg.PublicKeyPacket)>
+		SHA-256: 809fd1a27df9a99ae8a42777162f2e48b046cb97a288d69e4e8ffb2776b465dd
+		Secure: false
+	Object:
+		Variable: varReplacer16077
+		Type: java.lang.String
+		Statement: $r2 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer16077)
+		Method: <io.oversec.one.iab.Security: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: 447d0e500df1fa79cf43b92a719fc73308a9fa1b2b73225b3f665fe59a130cef
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.paddings.ISO10126d2Padding: void init(java.security.SecureRandom)>
+		SHA-256: 6db9bf5a3d5f9fa28eccec9396984113bbdc903a69715bf2daefa2626b696569
+		Secure: true
+	Object:
+		Variable: r0
+		Type: org.spongycastle.x509.ExtendedPKIXParameters
+		Statement: specialinvoke r0.<java.security.cert.PKIXParameters: void <init>(java.util.Set)>($r1)
+		Method: <org.spongycastle.x509.ExtendedPKIXParameters: void <init>(java.util.Set)>
+		SHA-256: bc4db4edf85d5095c872f763083d4cdd57eaf413157a98ff957c0439448eaca6
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r3)
+		Method: <net.rehacktive.waspdb.internals.cryptolayer.CipherManager: javax.crypto.Cipher getCipher(int)>
+		SHA-256: 82683dd73673d9c3c89e8bb6f17bc4be8ae4bfc10e6f5b2846fed49600b7b6b2
+		Secure: false
+	Object:
+		Variable: $i1
+		Type: int
+		Statement: specialinvoke $r1.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r2, $r3, $i0, $i1)
+		Method: <net.rehacktive.waspdb.internals.cryptolayer.CipherManager: void generateSK(char[],byte[])>
+		SHA-256: 706624ee901b04414ee46962edcf4e90be9376dd9980cca8e7b9deae7932466f
+		Secure: false
+	Object:
+		Variable: $r20
+		Type: byte[]
+		Statement: $r20 = virtualinvoke $r18.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.spongycastle.x509.AttributeCertificateHolder: boolean match(java.security.cert.Certificate)>
+		SHA-256: 1e39995a0e3ccbead6698de4473d6255ff76461dfef81a644d09e28d97fc1376
+		Secure: true
+	Object:
+		Variable: $r18
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r18.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r11, $r0, $r16, varReplacer27410)
+		Method: <org.spongycastle.jcajce.provider.asymmetric.util.EC5Util: java.security.spec.ECParameterSpec convertToSpec(org.spongycastle.asn1.x9.X962Parameters,org.spongycastle.math.ec.ECCurve)>
+		SHA-256: 2e91b8349f3ab581696937f1db211950e75cb68fb7d7c71475abaff279266825
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <io.oversec.one.crypto.symbase.KeyUtil: long calcKeyId(byte[],int)>
+		SHA-256: e742566ddbb6ee6b08426e4be7d307f11a0d85253042f19ab287b31005ddd885
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.spongycastle.openpgp.operator.jcajce.JcaKeyFingerprintCalculator: byte[] calculateFingerprint(org.spongycastle.bcpg.PublicKeyPacket)>
+		SHA-256: 953184e3a8663fb0526df6c3e701c9bcba07cff626444393145d5f5fa3298ee4
+		Secure: false
+	Object:
+		Variable: r0
+		Type: org.spongycastle.jce.spec.ECNamedCurveSpec
+		Statement: specialinvoke r0.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r2, $r3, $r4, $i0)
+		Method: <org.spongycastle.jce.spec.ECNamedCurveSpec: void <init>(java.lang.String,java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,java.math.BigInteger)>
+		SHA-256: b36d50207c12d926e435b859cb9848007d52f50b2e62c847e597de1f84f657c6
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.PublicKey
+		Statement: $r4 = virtualinvoke $r2.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r3)
+		Method: <io.oversec.one.iab.Security: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: 7ffcd25aa26a3a933694198f24c2dc310a72ab049bc17b4d0a88d58881786df
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <net.rehacktive.waspdb.internals.utils.Utils: net.rehacktive.waspdb.internals.utils.Salt generateSalt()>
+		SHA-256: 7930439e5699d6cba3547e0eace46dca4f6df7c672e54e557786b06bf8515ce6
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer967)
+		Method: <net.rehacktive.waspdb.internals.utils.Utils: java.lang.String md5(java.lang.String)>
+		SHA-256: f6c130fa8dbcac26c1ee00fe5ddde60b524b6d9b90eb41c3e54475309ffb3f18
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.CipherOutputStream
+		Statement: specialinvoke $r2.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>($r5, $r3)
+		Method: <com.esotericsoftware.kryo.serializers.BlowfishSerializer: void write(com.esotericsoftware.kryo.Kryo,com.esotericsoftware.kryo.io.Output,java.lang.Object)>
+		SHA-256: b97a781c50d46164c7e65c649bd0136b63410a31bd35022665f6184a87f024d6
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer26867)
+		Method: <org.spongycastle.openpgp.operator.jcajce.JcaKeyFingerprintCalculator: byte[] calculateFingerprint(org.spongycastle.bcpg.PublicKeyPacket)>
+		SHA-256: f89ca978585f1e452f3d2a81141e02ebdda4151f57b98359056ac7ebb4dc2734
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.Signature
+		Statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer16062)
+		Method: <io.oversec.one.iab.Security: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)>
+		SHA-256: a28f0dd76a1682e0e2b7e73fb71fed4a20deaa777bd131295bcb2bc4ee76023e
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyFactory
+		Statement: $r2 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer16077)
+		Method: <io.oversec.one.iab.Security: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: af070429cf5419663f55e515fd3f3390919ddfca541d5486896ca11ed97ad416
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer15145)
+		Method: <io.oversec.one.crypto.symbase.KeyUtil: long calcKeyId(byte[],int)>
+		SHA-256: bac0fb15974693cf42ba4e2a3e19c51945d78af6facbb16fe084fa3c8c69a960
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: java.security.spec.DSAParameterSpec
+		Statement: specialinvoke $r9.<java.security.spec.DSAParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger,java.math.BigInteger)>($r5, $r10, $r11)
+		Method: <org.spongycastle.jcajce.provider.asymmetric.dsa.BCDSAPublicKey: void <init>(org.spongycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: ca8c57f00e636666523b3803cf2d449c7668aea2653306a5d436a81914fd7df0
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r13.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger,int)>($r6, $r14, $i0)
+		Method: <org.spongycastle.jcajce.provider.asymmetric.dh.BCDHPublicKey: void <init>(org.spongycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: 9b0b38d08756ee57f2e1cc5afa33b90eb4de6e532c351db39bbc17a82a1ffc13
+		Secure: true
+	Object:
+		Variable: $r33
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r33.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r24, $r31, $r1, $i0)
+		Method: <org.spongycastle.jcajce.provider.asymmetric.dstu.BCDSTU4145PublicKey: void populateFromPubKeyInfo(org.spongycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: 6f936542f3b3dc5a75dd722d30c991549bb9e7a28966e874c705e8229e9203b
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r2, $r3, $i0, $i1)
+		Method: <net.rehacktive.waspdb.internals.cryptolayer.CipherManager: void generateSK(char[],byte[])>
+		SHA-256: 4f31031d3e9fcea237f215653482906b29abbeb101dc8677857838caab61a1f
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <io.oversec.one.crypto.symbase.KeyUtil: byte[] brcryptifyPassword(char[],byte[],int,int)>
+		SHA-256: 1ac9cc8a277de07ad127c5d106eeaacbd1cdf5e94b4aa0eadf144bd9955c1c64
+		Secure: true
+	Object:
+		Variable: $r18
+		Type: java.security.MessageDigest
+		Statement: $r18 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r17, varReplacer27644)
+		Method: <org.spongycastle.x509.AttributeCertificateHolder: boolean match(java.security.cert.Certificate)>
+		SHA-256: 46fc048d01f56cf04e474762e26ba86ebbe5e7d7707341e4626004fcf4cf8754
+		Secure: true
+	Object:
+		Variable: $r18
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r18.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r11, $r0, $r16, $i0)
+		Method: <org.spongycastle.jcajce.provider.asymmetric.util.EC5Util: java.security.spec.ECParameterSpec convertToSpec(org.spongycastle.asn1.x9.X962Parameters,org.spongycastle.math.ec.ECCurve)>
+		SHA-256: 3d674d7c8d93c70d10aec94fa2cbc4149966083ce3988ace552a9b39ec865719
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r13.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r6, $r14)
+		Method: <org.spongycastle.jcajce.provider.asymmetric.dh.BCDHPublicKey: void <init>(org.spongycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: 3451edf3dccf50176e144b7254eeb29d3cdc8d30009e3ba3c4cad7a8e560fa46
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <net.rehacktive.waspdb.internals.collision.CollisionHash: java.lang.String getSearchKey(java.lang.Object)>
+		SHA-256: eafce82060d9b99c34756018d1fb749cc49d549065b593949c8ee42986f01fa9
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <io.oversec.one.crypto.symbase.KeyUtil: void <clinit>()>
+		SHA-256: 25281fbfbcf1a1f92343d5f06c6f14c12e403bc1ae34427a712ed8f9ea7b85d
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r8)
+		Method: <io.oversec.one.iab.Security: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)>
+		SHA-256: 795f3b922f990eced499b39a67d303f0278faf48dfc5b6cf06f64dedb41728f1
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r13.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r6, $r14)
+		Method: <org.spongycastle.jcajce.provider.asymmetric.dh.BCDHPublicKey: void <init>(org.spongycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: 3451edf3dccf50176e144b7254eeb29d3cdc8d30009e3ba3c4cad7a8e560fa46
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.Cipher
+		Statement: $r1 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer8227)
+		Method: <com.esotericsoftware.kryo.serializers.BlowfishSerializer: javax.crypto.Cipher getCipher(int)>
+		SHA-256: 8df7663cf73088065c12b427971458bd6f9cfc468fec8729fd18e94e72837e52
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r4)
+		Method: <net.rehacktive.waspdb.internals.cryptolayer.CipherManager: void generateSK(char[],byte[])>
+		SHA-256: f73858d31b6d56f7d84194fa8cc389235a7e5a6361342c93cdc48cc2f72ee6d7
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r4)
+		Method: <net.rehacktive.waspdb.internals.cryptolayer.CipherManager: void generateSK(char[],byte[])>
+		SHA-256: 39b4e41e4d8ef52b1c47efc6e8ee179300931f0056278aff6ff302f0cac978f4
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <io.oversec.one.crypto.symbase.KeyUtil: byte[] getBaseKey(byte[])>
+		SHA-256: fd42a0d25f9e4742f4cd60620a4dee9f585a3f14d1fe1b5180f29b0e655fbf75
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <io.oversec.one.crypto.symbase.KeyUtil: long calcKeyId(byte[],int)>
+		SHA-256: 4e36d78480b007710b529506753349000f5c90db96d63537ac81e0e59d1adbb7
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer16159)
+		Method: <io.oversec.one.crypto.symbase.KeyUtil: byte[] brcryptifyPassword(char[],byte[],int,int)>
+		SHA-256: 1dc9edb85be3a22298af21b583202faad2fb7c7d879c9fda559147f71d0ff418
+		Secure: true
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r8)
+		Method: <io.oversec.one.iab.Security: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)>
+		SHA-256: 4df75725b501384de1102dd912622259b4aff045353709d894ef8802418002ab
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.spongycastle.jcajce.provider.asymmetric.elgamal.BCElGamalPublicKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: a9c19b12994234db6ec00ed5b541d5738b556e23d3870b731ea4245dbf932de7
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <io.oversec.one.crypto.symbase.KeyUtil: byte[] brcryptifyPassword(char[],byte[],int,int)>
+		SHA-256: e714364fde89c790cdb8a1d64faa7b9930b465e127b45aec8d7afc113011f775
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r2.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r4, $r5)
+		Method: <com.esotericsoftware.kryo.serializers.BlowfishSerializer: java.lang.Object read(com.esotericsoftware.kryo.Kryo,com.esotericsoftware.kryo.io.Input,java.lang.Class)>
+		SHA-256: c8523fc5ebc9a2f209d148bb6f6673cc6fbbbcb86b51ff98ae1e9b0049da1d37
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.spongycastle.jce.provider.JCEElGamalPublicKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: 2f96be90287037dd5aa521a81412c6567fe97ad3bdc0a3e0dd37cb2855cfb876
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11526)
+		Method: <net.rehacktive.waspdb.internals.collision.CollisionHash: java.lang.String getSearchKey(java.lang.Object)>
+		SHA-256: 64ee55559e31e1ecf5f70cab9fa1fc54d8c3a38da707b4d5decc0a132d22ced7
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer36579)
+		Method: <io.oversec.one.crypto.symbase.KeyUtil: byte[] getBaseKey(byte[])>
+		SHA-256: 27ad4b199a4046021255d643a69108e2a1455ea26fef0a52634c5dd0a0a6e6f5
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <uk.co.biddell.diceware.dictionaries.DiceWare: void <init>(android.content.Context)>
+		SHA-256: bccf01692d1dd92be0d4f379955f6f12063d873ad4db896d8f212a63fdd9cc47
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <io.oversec.one.crypto.symbase.KeyUtil: byte[] getBaseKey(byte[])>
+		SHA-256: dd7d1acc4cdcd2b47eaef43973242d45304f2a83479d3b4104caae961e4ba1e6
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.spongycastle.openpgp.operator.jcajce.JcaKeyFingerprintCalculator: byte[] calculateFingerprint(org.spongycastle.bcpg.PublicKeyPacket)>
+		SHA-256: 953184e3a8663fb0526df6c3e701c9bcba07cff626444393145d5f5fa3298ee4
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.spongycastle.jcajce.provider.asymmetric.elgamal.BCElGamalPrivateKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: c908257ebef1e44e27421c3dc6127a4c79990e1515e273132ea2c2cb020fcdee
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.SecretKey
+		Statement: $r6 = virtualinvoke $r5.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r1)
+		Method: <net.rehacktive.waspdb.internals.cryptolayer.CipherManager: void generateSK(char[],byte[])>
+		SHA-256: 18463a6f2f293483d6349463e08c3143f5bc876cdab04df9fe879fed1c5fda6e
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <net.rehacktive.waspdb.internals.utils.Utils: java.lang.String md5(java.lang.String)>
+		SHA-256: 90046206c6a3e2c27faa25fb0ac4386c2381d4d4e43d84e030c25d63235b0262
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r5 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r4)
+		Method: <net.rehacktive.waspdb.internals.cryptolayer.CipherManager: void generateSK(char[],byte[])>
+		SHA-256: b06a1e2150b5f77584e8ba679440e67e382134881acace9b00869e028bd38ef6
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r3.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+		Method: <io.oversec.one.iab.Security: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: c34d110a9ada0e5385616cc373adba247df7b1b41374ae05753e19b0ebba5d65
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.spongycastle.jce.provider.JCEElGamalPrivateKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: 6b8822e70d4604e23c0ea07692bf2c9c1daaa36d64fb48b6df14aae465189041
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.CipherOutputStream
+		Statement: specialinvoke $r2.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>($r5, $r3)
+		Method: <net.rehacktive.waspdb.internals.cryptolayer.AESSerializer: void write(com.esotericsoftware.kryo.Kryo,com.esotericsoftware.kryo.io.Output,java.lang.Object)>
+		SHA-256: f2637b0002d50433b9c6b47a112992c7afe63b7bcf38015900d073038e1d0c9
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r0.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <net.rehacktive.waspdb.internals.utils.Utils: net.rehacktive.waspdb.internals.utils.Salt generateSalt()>
+		SHA-256: 92c93e600e4cfd313f1e038c782a1a7a7bc1d5f153327af0d2f3d8e60f2e5745
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r4.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r3, $r6)
+		Method: <net.rehacktive.waspdb.internals.cryptolayer.AESSerializer: java.lang.Object read(com.esotericsoftware.kryo.Kryo,com.esotericsoftware.kryo.io.Input,java.lang.Class)>
+		SHA-256: db7f4929f311d617af33f6ab32ef5410c5dc94f08e78fda2cf582c4206cdfeed
+		Secure: true
+
+Findings in Java Class: net.rehacktive.waspdb.internals.utils.Utils
+
+	 in Method: java.lang.String md5(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #f6c130fa8dbcac26c1ee00fe5ddde60b524b6d9b90eb41c3e54475309ffb3f18)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer967)
+
+
+Findings in Java Class: net.rehacktive.waspdb.internals.cryptolayer.CipherManager
+
+	 in Method: void generateSK(char[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r4)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4f31031d3e9fcea237f215653482906b29abbeb101dc8677857838caab61a1f)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r1.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r2, $r3, $i0, $i1)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4f31031d3e9fcea237f215653482906b29abbeb101dc8677857838caab61a1f)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r1.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r2, $r3, $i0, $i1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4f31031d3e9fcea237f215653482906b29abbeb101dc8677857838caab61a1f)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: $r6 = virtualinvoke $r5.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r6 = virtualinvoke $r5.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r1)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4f31031d3e9fcea237f215653482906b29abbeb101dc8677857838caab61a1f)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r1.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r2, $r3, $i0, $i1)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4f31031d3e9fcea237f215653482906b29abbeb101dc8677857838caab61a1f)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r1.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r2, $r3, $i0, $i1)
+
+
+	 in Method: javax.crypto.Cipher getCipher(int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key)>($i0, $r1)
+
+
+Findings in Java Class: com.esotericsoftware.kryo.serializers.BlowfishSerializer
+
+	 in Method: javax.crypto.Cipher getCipher(int)
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #8df7663cf73088065c12b427971458bd6f9cfc468fec8729fd18e94e72837e52)
+			First parameter (with value "Blowfish") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r1 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer8227)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r1.<javax.crypto.Cipher: void init(int,java.security.Key)>($i0, $r0)
+
+
+Findings in Java Class: net.rehacktive.waspdb.internals.collision.CollisionHash
+
+	 in Method: java.lang.String getSearchKey(java.lang.Object)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #64ee55559e31e1ecf5f70cab9fa1fc54d8c3a38da707b4d5decc0a132d22ced7)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11526)
+
+
+Findings in Java Class: io.oversec.one.iab.Security
+
+	 in Method: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #a28f0dd76a1682e0e2b7e73fb71fed4a20deaa777bd131295bcb2bc4ee76023e)
+			First parameter (with value "SHA1withRSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer16062)
+
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r7.<java.security.Signature: void initVerify(java.security.PublicKey)>($r5)
+
+
+	 in Method: java.security.PublicKey generatePublicKey(java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r4 = virtualinvoke $r2.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r3)
+
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r3.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+
+
+Findings in Java Class: org.spongycastle.openpgp.operator.jcajce.JcaKeyFingerprintCalculator
+
+	 in Method: byte[] calculateFingerprint(org.spongycastle.bcpg.PublicKeyPacket)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #809fd1a27df9a99ae8a42777162f2e48b046cb97a288d69e4e8ffb2776b465dd)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer26866)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #f89ca978585f1e452f3d2a81141e02ebdda4151f57b98359056ac7ebb4dc2734)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer26867)
+
+
+Findings in Java Class: org.spongycastle.x509.AttributeCertificateHolder
+
+	 in Method: boolean match(java.security.cert.Certificate)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #46fc048d01f56cf04e474762e26ba86ebbe5e7d7707341e4626004fcf4cf8754)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r20 = virtualinvoke $r18.<java.security.MessageDigest: byte[] digest()>()
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 56
+
+	CryptoAnalysis found the following violations. For details see description above.
+	NeverTypeOfError: 2
+	ConstraintError: 6
+	HardCodedError: 2
+	IncompleteOperationError: 1
+	TypestateError: 1
+	RequiredPredicateError: 7
+=====================================================================

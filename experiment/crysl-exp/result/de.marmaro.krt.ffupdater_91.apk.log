@@ -1,0 +1,117 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r8
+		Type: java.security.MessageDigest
+		Statement: $r8 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5668)
+		Method: <de.marmaro.krt.ffupdater.security.FingerprintValidator$verifyPackageInfo$2: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: 153dd6820a095474195b99edb69bb927a5900b6043cfdea6ad0f60ed3e0f039b
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <de.marmaro.krt.ffupdater.security.FileHashCalculator$getSHA256ofFile$2: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: 9b89ff182ba3c434a14d269b64d0a835a12df4e173c49d3395a148837b2d16ea
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r8.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <de.marmaro.krt.ffupdater.security.FingerprintValidator$verifyPackageInfo$2: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: da5902c83a3790f58def7c2499a84d824f34e34f1b15caf9c0c615a51eefc84e
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.cert.CertificateFactory
+		Statement: $r5 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer5666)
+		Method: <de.marmaro.krt.ffupdater.security.FingerprintValidator$verifyPackageInfo$2: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: 4dae5333b7f8fde335265e31c4d2489a6019d8fc3c5f2433075e9619f85cbb13
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5738)
+		Method: <de.marmaro.krt.ffupdater.security.FileHashCalculator$getSHA256ofFile$2: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: 4f5f15608ce4900e9e974046589af0f8ff6fe239fbd7cafb4ac00f6f1d62b8fd
+		Secure: true
+
+Findings in Java Class: de.marmaro.krt.ffupdater.security.FingerprintValidator$verifyPackageInfo$2
+
+	 in Method: java.lang.Object invokeSuspend(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #4dae5333b7f8fde335265e31c4d2489a6019d8fc3c5f2433075e9619f85cbb13)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r7 = virtualinvoke $r5.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r6)
+
+
+Findings in Java Class: de.marmaro.krt.ffupdater.security.FileHashCalculator$getSHA256ofFile$2
+
+	 in Method: java.lang.Object invokeSuspend(java.lang.Object)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #4f5f15608ce4900e9e974046589af0f8ff6fe239fbd7cafb4ac00f6f1d62b8fd)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 5
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 1
+	TypestateError: 1
+=====================================================================

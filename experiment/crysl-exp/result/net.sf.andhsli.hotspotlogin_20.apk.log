@@ -1,0 +1,216 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer375)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] getRawKey(byte[])>
+		SHA-256: 338cf52a193312cb6e84ac6e90ed80ec3f1655dc5696a65c40940754ba0d84f6
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.KeyGenerator
+		Statement: $r1 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer380)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] getCompatibleRawKey(byte[])>
+		SHA-256: df75ae53d011f0fc5edee16804458f431f8e958328e9cfa9e817bcfd34dfb145
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.SecretKey
+		Statement: $r3 = virtualinvoke $r1.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] getCompatibleRawKey(byte[])>
+		SHA-256: b730dbe638b863e3a595fc454e4eb789c44ced76a710eb429609ae743ddd9360
+		Secure: false
+	Object:
+		Variable: varReplacer376
+		Type: java.lang.String
+		Statement: specialinvoke r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer376)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] getRawKey(byte[])>
+		SHA-256: 218db2585198cccff145dc08d9fd3462fc247b9d4fd8cc1a8a2c6518221b55e8
+		Secure: false
+	Object:
+		Variable: varReplacer499
+		Type: java.lang.String
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer499)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] encrypt(byte[],byte[])>
+		SHA-256: 8754529237013116709ca35a3f7b590c65589630cf3b65088c15182855411197
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer499)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] encrypt(byte[],byte[])>
+		SHA-256: e80f34760bc70977693c84661931ab687550803ce7764549c2f8efddcb755e06
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer373)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] decrypt(byte[],byte[])>
+		SHA-256: 451ec63eda86ec6528c3281dff2f7eaaa3c0dacddf099da9820802757f4d3d47
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: $r2 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String,java.lang.String)>(varReplacer377, varReplacer378)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] getCompatibleRawKey(byte[])>
+		SHA-256: 933c0c6eb1dab48b1133243add18c10fbe246c8ef1460f1fc712f70cd7a30dba
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer372)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] decrypt(byte[],byte[])>
+		SHA-256: 1f565a4c68c1b0f5bb595f54105f95cc99ec7bd2fdaed2162c78c86864a73508
+		Secure: false
+	Object:
+		Variable: r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer376)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] getRawKey(byte[])>
+		SHA-256: 5dcbb561080ef05c1b91b99a2c55e8a99c2c44ee02968f52f2406ec2fac0c9e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer500)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] encrypt(byte[],byte[])>
+		SHA-256: 4f1419c52395face04f4c0927aaac5e4644304fcb7b7a172de90d3d3d0355a00
+		Secure: false
+	Object:
+		Variable: varReplacer372
+		Type: java.lang.String
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer372)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] decrypt(byte[],byte[])>
+		SHA-256: 2cec98b93013a03d2d35708f2bc79edc3f66c33c49be7f205ab29b5141bd50e5
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <net.sf.andhsli.hotspotlogin.SimpleCrypto: byte[] getRawKey(byte[])>
+		SHA-256: b6533ce632fb77342a771158bd5b5aa0852ff306b4eade4a1848d1f3a34e1d3
+		Secure: false
+
+Findings in Java Class: net.sf.andhsli.hotspotlogin.SimpleCrypto
+
+	 in Method: byte[] decrypt(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer371, r2)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #451ec63eda86ec6528c3281dff2f7eaaa3c0dacddf099da9820802757f4d3d47)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r3.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #451ec63eda86ec6528c3281dff2f7eaaa3c0dacddf099da9820802757f4d3d47)
+			First parameter (with value "AES") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer373)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer372)
+
+
+	 in Method: byte[] getRawKey(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #338cf52a193312cb6e84ac6e90ed80ec3f1655dc5696a65c40940754ba0d84f6)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer375)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer376)
+
+
+	 in Method: byte[] encrypt(byte[],byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #4f1419c52395face04f4c0927aaac5e4644304fcb7b7a172de90d3d3d0355a00)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r3.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer499)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #4f1419c52395face04f4c0927aaac5e4644304fcb7b7a172de90d3d3d0355a00)
+			First parameter (with value "AES") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer500)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer498, r2)
+
+
+	 in Method: byte[] getCompatibleRawKey(byte[])
+		RequiredPredicateError violating CrySL rule for java.security.SecureRandom
+			First parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<java.security.SecureRandom: void setSeed(byte[])>($r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyGenerator
+			Second parameter was not properly generated as randomized
+			at statement: virtualinvoke $r1.<javax.crypto.KeyGenerator: void init(int,java.security.SecureRandom)>(varReplacer379, $r2)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 13
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 7
+	TypestateError: 2
+	ConstraintError: 3
+=====================================================================

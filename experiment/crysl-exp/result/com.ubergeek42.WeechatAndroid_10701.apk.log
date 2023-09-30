@@ -1,0 +1,2260 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r4, $r5)
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void init(java.lang.String)>
+		SHA-256: 28684ec1d3d65871b2bc49ea187b32edba84724a1bc06c3be0cdce4dd6bf5e59
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r0.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils: void putKeyPairIntoAndroidKeyStore(java.security.KeyPair,java.lang.String)>
+		SHA-256: 7bda76d11e1afc96db2297104a251c4d2f97656708eb82f51f39b45aa978dcc7
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r3)
+		Method: <com.trilead.ssh2.signature.RSASHA256Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: 7431fbd58c39f36777ce2f20759a9f378bfec1a77798592091094d45456f2231
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r3)
+		Method: <com.trilead.ssh2.signature.RSASHA512Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: 1f0a2f72708aa39badb0a994ce5c5a0f61e5c00057cd0519f076c6eef75e883c
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.MessageDigest
+		Statement: $r9 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2929)
+		Method: <com.trilead.ssh2.crypto.PEMDecoder: byte[] decryptData(byte[],byte[],byte[],int,java.lang.String)>
+		SHA-256: b76e5651e7455dd8500b2a6aec9c3356b011cfc61c3132438a45b2a8383a603d
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r10.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.crypto.tink.subtle.Ed25519Verify: void verify(byte[],byte[])>
+		SHA-256: b247a9afe92d08b47a44bf78bf2075d842e1be335d0771a0687d1ccb9e49fe5
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 5fb6984969c8c0f60ee84399ef18a49aa63648c889757c4080685ad119ecd903
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.Signature
+		Statement: $r4 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer21986)
+		Method: <com.trilead.ssh2.signature.RSASHA512Verify: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)>
+		SHA-256: cee5c83bef5d2f7f5fefdde7110c1f86b001b740ae665aff50bfd51eaabc76df
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.lang.String
+		Statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils: com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils$InsideSecurityHardware isInsideSecurityHardware(java.lang.String)>
+		SHA-256: e4a3fdef34441b4c325a2b26743690ec3a52b2a8c6749901c55c24f3138a90c3
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<java.security.Signature: byte[] sign()>()
+		Method: <com.trilead.ssh2.signature.RSASHA1Verify: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)>
+		SHA-256: 3c026ecc2f484b0c11caf7a71a5939632c6b6b10a1da18376f2f4f29d8583e7c
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r6.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r4, $r5)
+		Method: <com.trilead.ssh2.crypto.PEMDecoder: java.security.KeyPair generateKeyPair(java.lang.String,java.security.spec.KeySpec,java.security.spec.KeySpec)>
+		SHA-256: 2909f419d39d48af9c52ac7084b5d4cca641b75998e63be6d470c5041e183648
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r15.<java.security.SecureRandom: void <init>()>()
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void processSignRequest(com.trilead.ssh2.packets.TypesReader)>
+		SHA-256: 18262b8a3529bf6f48e0f16754da8cd670038d4a1c1faf4333f8a642782c61c8
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: f846c9f789fb285b1db28d011057cfb3ac6e0dfa17e51e32ec853a06e36151b2
+		Secure: true
+	Object:
+		Variable: $r85
+		Type: java.security.cert.CertificateFactory
+		Statement: $r85 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer1855)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils: void putKeyPairIntoAndroidKeyStore(java.security.KeyPair,java.lang.String)>
+		SHA-256: 3a0977b1a85be0343847bcf567971f02f78696ef61a79e07e25d198681ef94e2
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer27604)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: ac1d02636c9179f560038ae74bd3b5f2ccc146d01c47339b8f8e4798e075fc2c
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer20275)
+		Method: <com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>
+		SHA-256: 75b81112c8e1fb9cf39b9b0772f6ec8868104dab1491f55545db94246e443dea
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <com.neovisionaries.ws.client.Misc: void <clinit>()>
+		SHA-256: cbf1c51aff3d7501a2f983434f0792421d5eaf933d45bcfb5bfb11bb30cc6712
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <com.trilead.ssh2.crypto.digest.HashForSSH2Types: void <init>(java.lang.String)>
+		SHA-256: 55849ec0527423667a7d19fbe5e21f58def3496fed229ce0438cfef4434a7b0d
+		Secure: true
+	Object:
+		Variable: $r19
+		Type: java.lang.Object[]
+		Statement: $r19 = virtualinvoke $r18.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <com.ubergeek42.WeechatAndroid.service.P: void loadConnectionPreferences()>
+		SHA-256: bf89ef5b78a6100600a244e63725f80e3ede5ea0a2af3233ce6250e116922aa9
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r5.<java.security.Signature: byte[] sign()>()
+		Method: <com.trilead.ssh2.signature.ECDSASHA2Verify: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)>
+		SHA-256: 29e1b3ac998d54777e02f3be216a9ae4c49de163a9b242cc435e6447c1fbf051
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.Signature
+		Statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer26077)
+		Method: <com.trilead.ssh2.signature.RSASHA1Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: fd16c891c9adfa86a5b43168261a6efd0506061fabb6e1ef547e794c1988346
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: byte[]
+		Statement: virtualinvoke $r9.<java.security.MessageDigest: int digest(byte[],int,int)>($r15, varReplacer2913, varReplacer2914)
+		Method: <com.trilead.ssh2.crypto.PEMDecoder: byte[] decryptData(byte[],byte[],byte[],int,java.lang.String)>
+		SHA-256: d834bdebcb0816cf9c73f1f5e00722cdb3ccf0d13d831af65e12510abdd8af2b
+		Secure: true
+	Object:
+		Variable: $i1
+		Type: int
+		Statement: specialinvoke $r28.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r17, $r18, $i0, $i1)
+		Method: <com.ubergeek42.weechat.relay.connection.ModernHandshake: com.ubergeek42.weechat.relay.connection.Authenticated onMessage(com.ubergeek42.weechat.relay.RelayMessage)>
+		SHA-256: 1968a5d4fbd5bd635106e27e11bd6117a85ddef8604534517ed214fc5d39e755
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r4 = virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: a729cfd5669df603070b7ba7d05b524b10a048ab1da974a5ccb1df973521b7d3
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.lang.String
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r0)
+		Method: <com.trilead.ssh2.crypto.PEMDecoder: java.security.KeyPair generateKeyPair(java.lang.String,java.security.spec.KeySpec,java.security.spec.KeySpec)>
+		SHA-256: 71f5fa96b7e35e925f8058f9114c56a6487a8db85db66dd7775dfd3a1f393002
+		Secure: false
+	Object:
+		Variable: $r22
+		Type: java.lang.String
+		Statement: $r24 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>($r22, $r32)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: fe9f2097faceb4f0da505254c33e889901fa0f5da83c83beb8a685a01d2a16a
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.PrivateKey
+		Statement: $r8 = virtualinvoke $r7.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void init(java.lang.String)>
+		SHA-256: b282854c249efdc6fc33d7efe2749f7d0b5ea9ecb1f495e65b0411ba5fcbc17a
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer22561, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)>
+		SHA-256: fd9a3e4c68bdbffa49e9d2b397e0d9579ec8e950d32abfbe0989ebfb716d54a
+		Secure: false
+	Object:
+		Variable: varReplacer26049
+		Type: java.lang.String
+		Statement: $r9 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer26049)
+		Method: <com.trilead.ssh2.signature.ECDSASHA2Verify: java.security.PublicKey decodePublicKey(byte[])>
+		SHA-256: 4f2bd85b58521214def005fc30e49dfb039d385b79d0c5f5ce82e1f2d17448a2
+		Secure: false
+	Object:
+		Variable: $r34
+		Type: java.security.PublicKey
+		Statement: $r34 = virtualinvoke $r24.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r33)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: 9bd0f2fdf3080f358af9178cdbef2cb4d78450df9d01019ca7a692f61da7a5f4
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r4, $r5)
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void init(java.lang.String)>
+		SHA-256: 28684ec1d3d65871b2bc49ea187b32edba84724a1bc06c3be0cdce4dd6bf5e59
+		Secure: true
+	Object:
+		Variable: $r12
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r3)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int,org.bouncycastle.asn1.x509.AlgorithmIdentifier)>
+		SHA-256: 9fb1d46cccb3608578516434a67607e6b3f6d906bce1bd9d108ce15f499ac78c
+		Secure: false
+	Object:
+		Variable: varReplacer26046
+		Type: java.lang.String
+		Statement: $r9 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer26046)
+		Method: <com.trilead.ssh2.signature.DSASHA1Verify: java.security.PublicKey decodePublicKey(byte[])>
+		SHA-256: 133bfef435329f5c149169ac42d137e40d399ef95c823edeb046b7b6e7cc546c
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r10.<java.security.Signature: boolean verify(byte[])>($r2)
+		Method: <com.trilead.ssh2.signature.ECDSASHA2Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: c01fa74b3d288408b28483d2b282e609f1d3e8bf833463477efbcffd63e2481
+		Secure: false
+	Object:
+		Variable: $r39
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r39.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r29, $r30)
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void addIdentity(com.trilead.ssh2.packets.TypesReader,boolean)>
+		SHA-256: c1acc678ce293afb76dcc00290c2c2d000d3daa5e28e9be2c95e02753640d40
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r1 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r2)
+		Method: <org.bouncycastle.jcajce.util.DefaultJcaJceHelper: javax.crypto.SecretKeyFactory createSecretKeyFactory(java.lang.String)>
+		SHA-256: 715347d08e3db91b31e3051364cf270c7af19448922ff36074dfd89aa49bc06f
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.KeyFactory
+		Statement: $r7 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer26032)
+		Method: <com.trilead.ssh2.signature.RSASHA1Verify: java.security.PublicKey decodePublicKey(byte[])>
+		SHA-256: 85b84db5d111943a12b54dcf774e6bf885f871adc85f01ebd81153d86b35ddac
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r0.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r1, $r5, $r3, varReplacer2978)
+		Method: <com.trilead.ssh2.signature.ECDSASHA2Verify$ECDSASHA2NISTP384Verify: void <clinit>()>
+		SHA-256: c944b1e58e816d97e3ae28acae2a47d67fae5e7676bee2f30f97f60d8db3c5c2
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r4, $r5)
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void init(java.lang.String)>
+		SHA-256: 28684ec1d3d65871b2bc49ea187b32edba84724a1bc06c3be0cdce4dd6bf5e59
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r10.<javax.crypto.KeyAgreement: byte[] generateSecret()>()
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void setF(byte[])>
+		SHA-256: 9b3cd07f38db34d02521105833873080620cf01dc9f5d2690e02619d8400df46
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer20270)
+		Method: <com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>
+		SHA-256: bb520b00095f7413c05dd7c111b1202a8622f0948c51cc31f433c3a71e3d0e6d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 316cbc86e080130334eaabd60025d96084375d0058312a103cd3255ba6f0aeb
+		Secure: false
+	Object:
+		Variable: $r34
+		Type: java.security.MessageDigest
+		Statement: $r34 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer26611)
+		Method: <com.neovisionaries.ws.client.WebSocket: java.util.Map shakeHands(java.net.Socket)>
+		SHA-256: 341a017670b4b8d902c58a43f302e1e8ef4393bf12c47e1efdcd8768374ffb81
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.MessageDigest
+		Statement: $r9 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2924)
+		Method: <com.trilead.ssh2.crypto.PEMDecoder: byte[] decryptData(byte[],byte[],byte[],int,java.lang.String)>
+		SHA-256: 4cb378925fd1b787716b48331bb4d9c3843495f73dd41da57407040d4cd5eca
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.KeyPairGenerator
+		Statement: $r6 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(varReplacer20226)
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void init(java.lang.String)>
+		SHA-256: e0d4c60af2ad6c88c9801060e48dd95f34c2f1844c7556391b359bbb6b046e34
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <org.bouncycastle.math.ec.custom.sec.SecP192R1Curve: org.bouncycastle.math.ec.ECFieldElement randomFieldElementMult(java.security.SecureRandom)>
+		SHA-256: 90c544ac2ecd16ae27ffee14327372a3f7c655f0dbf49d5804cfbf2992446086
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: java.security.PublicKey
+		Statement: $r9 = virtualinvoke $r5.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void setF(byte[])>
+		SHA-256: 89e143a477c67fedc70434764706722a1c4e0e7350521b514e2cc586e0a70c7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <com.trilead.ssh2.packets.PacketKexInit: void <init>(com.trilead.ssh2.crypto.CryptoWishList)>
+		SHA-256: e8be50eb412518a74dd3c07ceea6c8d0714d8487adb96607fb762580e0d95953
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, $r0)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int)>
+		SHA-256: 24842f5d97af1614e338f31bc0da23181722e789efce6cba1a3ce873babd0982
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.security.Provider)>($r1, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 1027fce20723454b26980f38c5edb26bcec19bffa5b6443c75459b577c51d460
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r15.<java.security.SecureRandom: void <init>()>()
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void processSignRequest(com.trilead.ssh2.packets.TypesReader)>
+		SHA-256: 18262b8a3529bf6f48e0f16754da8cd670038d4a1c1faf4333f8a642782c61c8
+		Secure: true
+	Object:
+		Variable: $r30
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r30 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r2)
+		Method: <com.ubergeek42.weechat.relay.connection.ModernHandshake: com.ubergeek42.weechat.relay.connection.Authenticated onMessage(com.ubergeek42.weechat.relay.RelayMessage)>
+		SHA-256: fbe0a0ae287064615ef98982521b4b052233c17a6450cd8bf533b2966a234676
+		Secure: false
+	Object:
+		Variable: $r17
+		Type: java.security.Key
+		Statement: $r17 = virtualinvoke $r8.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>($r16, $r10)
+		Method: <androidx.preference.CertPickerPreference: java.lang.String saveData(byte[],java.lang.String)>
+		SHA-256: 49fa120f7784cd73ad2ade336b35121f55965d7e7968fd9817f4ce4fb7770858
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r0.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r1, $r5, $r3, varReplacer2986)
+		Method: <com.trilead.ssh2.signature.ECDSASHA2Verify$ECDSASHA2NISTP256Verify: void <clinit>()>
+		SHA-256: 960b93dad1b2728699687e08fb225b8cba1c72579b38ae10e53a78be06c91fe9
+		Secure: true
+	Object:
+		Variable: $r25
+		Type: java.security.PrivateKey
+		Statement: $r25 = virtualinvoke $r0.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils: void putKeyPairIntoAndroidKeyStore(java.security.KeyPair,java.lang.String)>
+		SHA-256: 29aab9de010ef8487bfca32bfb06c4c6cd1bd73eb753de571763528735a45bcd
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.KeyFactory
+		Statement: $r9 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer26049)
+		Method: <com.trilead.ssh2.signature.ECDSASHA2Verify: java.security.PublicKey decodePublicKey(byte[])>
+		SHA-256: 7510b862cec054ed035f2117aace3eb74cae435448b49eba243b4fbad0261dc3
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.crypto.tink.subtle.Ed25519: byte[] getHashedScalar(byte[])>
+		SHA-256: 65b29681d1cf2da42d046277d3f8105c77efd9649ebbb7b25076311bf8a1446a
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: byte[]
+		Statement: $r10 = interfaceinvoke $r9.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.bouncycastle.openssl.jcajce.JcaMiscPEMGenerator: java.lang.Object convertObject(java.lang.Object)>
+		SHA-256: 335019b5f732571ab423bc5b197feac7a024f33c14b25fe89aa00d51dc92643c
+		Secure: true
+	Object:
+		Variable: varReplacer20255
+		Type: java.lang.String
+		Statement: $r5 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer20255)
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void setF(byte[])>
+		SHA-256: 4fcd5ed99b79c2de1d7bc7c973292874457efeda3576fe68f1396326e2bad63c
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer20263)
+		Method: <com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>
+		SHA-256: bfeb17497d974815aea710b22450798508268ff80c1b407f8fcaff0265771d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer11065)
+		Method: <com.trilead.ssh2.crypto.cipher.AES$CBC: void <init>()>
+		SHA-256: cd8fadb88932ba14d20bbb95894489e668045d312bbd088e8d96dc17fa2a961b
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r3, $r1, $i0, $i1)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int)>
+		SHA-256: 66bdcfe5bf6169c9498097e6f3a70621f2827e1740edc4222bc89e105c388faa
+		Secure: false
+	Object:
+		Variable: $i1
+		Type: int
+		Statement: specialinvoke $r5.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r3, $r1, $i0, $i1)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int)>
+		SHA-256: f6550d8c0938a816d88ff91ae39eff92eca9e42e8ef3ab81a40f459037dd068b
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.KeyFactory
+		Statement: $r5 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer20255)
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void setF(byte[])>
+		SHA-256: c0a640096b44a3ceea1f1a41448d8dfcc5f9e0142b2fd33f0f364aaca40b95e3
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r15.<java.security.SecureRandom: void <init>()>()
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void processSignRequest(com.trilead.ssh2.packets.TypesReader)>
+		SHA-256: 18262b8a3529bf6f48e0f16754da8cd670038d4a1c1faf4333f8a642782c61c8
+		Secure: true
+	Object:
+		Variable: $r26
+		Type: java.security.PrivateKey
+		Statement: $r26 = virtualinvoke $r24.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r25)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: 2cd3c1ee5255612cf6dbc02ba4de31d8a13b44a0a2084fb4e7450f1a489b6f46
+		Secure: false
+	Object:
+		Variable: $r28
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r28.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r17, $r18, $i0, $i1)
+		Method: <com.ubergeek42.weechat.relay.connection.ModernHandshake: com.ubergeek42.weechat.relay.connection.Authenticated onMessage(com.ubergeek42.weechat.relay.RelayMessage)>
+		SHA-256: 18d8ae864f590d59038ce220d6a04c912abc4ba5a374ea5bc665bffa549fa2a9
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.PrivateKey
+		Statement: $r5 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r1)
+		Method: <com.trilead.ssh2.crypto.PEMDecoder: java.security.KeyPair generateKeyPair(java.lang.String,java.security.spec.KeySpec,java.security.spec.KeySpec)>
+		SHA-256: 543f36c33d5e7f838d7f14643f9ec034ccc77845a18304d923bd735204c094d
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.Signature
+		Statement: $r4 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer21988)
+		Method: <com.trilead.ssh2.signature.RSASHA1Verify: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)>
+		SHA-256: 5c69280b462838729ce6383d960c55048922dcfec2207a6588745217f6f57861
+		Secure: false
+	Object:
+		Variable: $r29
+		Type: byte[]
+		Statement: $r29 = interfaceinvoke $r28.<java.security.Key: byte[] getEncoded()>()
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: 68a7f96f8a3b7eb38ee4c054b866e85b9076ed44477f0be5d081676bc346e7e4
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r5 = virtualinvoke $r4.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <com.ubergeek42.WeechatAndroid.service.SSLHandler$UserTrustManager: javax.net.ssl.X509TrustManager buildTrustManger(java.security.KeyStore)>
+		SHA-256: e7432fac258c81c2f0291c72ee633a7459f4304485b9e883c317005fb579f9f7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r3)
+		Method: <com.trilead.ssh2.signature.RSASHA256Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: ec10faa4aa670dde118d9e7325c09333420b90f08b518c0f24858d4d995823e6
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.PublicKey
+		Statement: $r10 = virtualinvoke $r7.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void init(java.lang.String)>
+		SHA-256: 18d2bf8eb9637edfa42118b199d6527018abb5cfc93312b70c336209cb94ac6
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer20272)
+		Method: <com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>
+		SHA-256: 5103fc3840f058a3e34576cca8fc5fbfa88929d5b86975c753d20d579e8c715f
+		Secure: false
+	Object:
+		Variable: $r17
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r17.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: byte[] crypt(boolean,org.bouncycastle.jcajce.util.JcaJceHelper,byte[],char[],java.lang.String,byte[])>
+		SHA-256: cb59595f6d536fccb3facae363b290001800f4de76ca7b78c890297f0c8d1f9b
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer27602, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 2c29cf6f8930a2c638876262d4369cc88e4e52c5a97ccfed760dcda35bb76c14
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r9.<javax.crypto.KeyAgreement: byte[] generateSecret()>()
+		Method: <com.trilead.ssh2.crypto.dh.EcDhExchange: void setF(byte[])>
+		SHA-256: 9fd9a61383bac9567fb82cb0da4fc8e676ff07e75ede388723e03d4fd7c9e72a
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: java.security.Signature
+		Statement: $r13 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer31741)
+		Method: <com.trilead.ssh2.auth.AuthenticationManager: boolean authenticatePublicKey(java.lang.String,java.security.KeyPair,java.security.SecureRandom)>
+		SHA-256: 5371a87f53620e677c0643f9fc69d7f4b594ea6fe58ed9a30dc30acf43a0695b
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.KeyPair
+		Statement: $r7 = virtualinvoke $r6.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void init(java.lang.String)>
+		SHA-256: 2735534aab1f0dc1f91fbfafcd8b260590e9acebdc1b9be21ff9d255b867edb8
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, $r0)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int)>
+		SHA-256: f26bcb7f5d9e0e5a49357acef286084c84a0292877ef5d1bf1a5c1bd26fcaf9a
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.Signature
+		Statement: $r5 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r4)
+		Method: <com.trilead.ssh2.signature.ECDSASHA2Verify: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)>
+		SHA-256: 1c58361cbdda1fa96852866e2466e9f7b1bff1b85a8fc2cb03341de716ec8d39
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.PublicKey
+		Statement: $r8 = virtualinvoke $r7.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r6)
+		Method: <com.trilead.ssh2.signature.RSASHA1Verify: java.security.PublicKey decodePublicKey(byte[])>
+		SHA-256: fc7d8df76d06fdb3b5ea1c759f929d1f6b13e6229d372dea01d4d75e84afcfa9
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.KeyFactory
+		Statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer20245)
+		Method: <com.trilead.ssh2.crypto.dh.EcDhExchange: void setF(byte[])>
+		SHA-256: 26af82af6cfc1fe4ecf8e5969ae4ba410086876c325c6c819b0d6e78070eab3f
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.KeyStore
+		Statement: $r8 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer35153)
+		Method: <androidx.preference.CertPickerPreference: java.lang.String saveData(byte[],java.lang.String)>
+		SHA-256: 860a1d28e293b99bfa2dfd33946be68832a492d0ebad0ffb053197cad421e0e0
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<java.security.Signature: byte[] sign()>()
+		Method: <com.trilead.ssh2.signature.RSASHA512Verify: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)>
+		SHA-256: b3482e4a04bf3f067d72c78460690e4a9667e9df3cc14a29120e48abcbed9a21
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: 5c03c504b28858636b2ec85421ea09204b47778e25dec33da09df0306687b2cc
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.AlgorithmParameters
+		Statement: $r2 = staticinvoke <java.security.AlgorithmParameters: java.security.AlgorithmParameters getInstance(java.lang.String,java.security.Provider)>($r3, $r1)
+		Method: <org.bouncycastle.jcajce.util.ProviderJcaJceHelper: java.security.AlgorithmParameters createAlgorithmParameters(java.lang.String)>
+		SHA-256: c8b20f17b82de52ab097a55145288f3a16a7d8b203dd25e179f63dac5e41d4d7
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyStore
+		Statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer5568)
+		Method: <com.ubergeek42.WeechatAndroid.service.SSLHandler: void <init>(java.io.File)>
+		SHA-256: 66ba862d2d0155bca27239948236ee7a247f52c0b561e597a3349f0d8c32c6cd
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.PrivateKey
+		Statement: $r10 = virtualinvoke $r4.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <androidx.preference.PrivateKeyPickerPreference: java.lang.String saveData(byte[],java.lang.String)>
+		SHA-256: e70c3748547ffeca3de3d9c39565a6bc47148ce7a223473cbd86787ca86be9ae
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.PrivateKey
+		Statement: $r5 = virtualinvoke $r0.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils: void putKeyPairIntoAndroidKeyStore(java.security.KeyPair,java.lang.String)>
+		SHA-256: 138123cc19ba2963662ccb1928d57cbdded34a3c90a61bad37f05d7aacc99ea8
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r2 = virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 84f17b7e3930c76e2b174d27b9668ee8d3209ae5512e2c539d541e6ef4265515
+		Secure: false
+	Object:
+		Variable: $r53
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r53.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r52, $r51)
+		Method: <com.ubergeek42.weechat.relay.connection.SSHConnection: java.security.KeyPair makeKeyPair(byte[],java.lang.String)>
+		SHA-256: 1a8a3054bf8dd47022f38ce8e4cbd837990bfdab9d10717e0f2e5103bd5bfc9c
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.KeyPair
+		Statement: $r8 = virtualinvoke $r7.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <com.trilead.ssh2.crypto.dh.EcDhExchange: void init(java.lang.String)>
+		SHA-256: 6a6149f31e568cba23fe8fc7c170c55230f212ab501052a0f058163f8c316eaa
+		Secure: false
+	Object:
+		Variable: varReplacer14394
+		Type: java.lang.String
+		Statement: $r0 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer14394)
+		Method: <com.trilead.ssh2.transport.KexManager: void <clinit>()>
+		SHA-256: 67f704c5b583ab582f894f741eda8d11709d95527afe61f49c5c190f633a7b34
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.lang.String
+		Statement: $r1 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+		Method: <org.bouncycastle.jcajce.util.DefaultJcaJceHelper: java.security.KeyFactory createKeyFactory(java.lang.String)>
+		SHA-256: f7bc006853af11db2bdefc50a8970a168ddfa89f06fcc40a58d92e615afa11c9
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r0.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils: void putKeyPairIntoAndroidKeyStore(java.security.KeyPair,java.lang.String)>
+		SHA-256: 7bda76d11e1afc96db2297104a251c4d2f97656708eb82f51f39b45aa978dcc7
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.crypto.tink.subtle.Ed25519Sign: byte[] sign(byte[])>
+		SHA-256: a1294ae6019cb93ce50f1601420baa08240a85c61671fbd16c6ab3a0834e7ebc
+		Secure: true
+	Object:
+		Variable: $r27
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r27.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r34, $r26)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: 646cc45dc2d8ae9294f295140040f538cd8b60c2dea9bdad513a77de04722ce0
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<java.security.Signature: byte[] sign()>()
+		Method: <com.trilead.ssh2.signature.RSASHA256Verify: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)>
+		SHA-256: 213d3def89a4f5444fc41033c6bd94774f3b2660e784b9d9ec27b9db8e016362
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.KeyStore
+		Statement: $r0 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer1122)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils: java.security.KeyStore getAndroidKeyStore()>
+		SHA-256: 9e7e540029262aefa5239e7c6dd6273dc80415434b73d8b8dfd38136f11a89c
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i0, $i1)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int,org.bouncycastle.asn1.x509.AlgorithmIdentifier)>
+		SHA-256: 4955f5933c823dbe3ee7c47fcdf64174cc03de2a7372ac99065f226ac967785e
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.PublicKey
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r2)
+		Method: <com.trilead.ssh2.crypto.PEMDecoder: java.security.KeyPair generateKeyPair(java.lang.String,java.security.spec.KeySpec,java.security.spec.KeySpec)>
+		SHA-256: 70c730e84b6d5734dd5bd3c45fc030e7b83c51aa47c49ad32de133db6aa5cdbd
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r3)
+		Method: <com.trilead.ssh2.signature.RSASHA1Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: 810b16cf8593665320c53bfae8fc6cd7ac1d8fbd1922151309d727d2b116498a
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TMessageDigest: java.lang.Object getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 3a694b35ea04b2992debcb6b410b793f86e22988149fbcb69135acb0c3d6ba01
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.apache.commons.codec.digest.DigestUtils: byte[] sha256(byte[])>
+		SHA-256: d04a34131442e6215abf536c38358ba5d3ff2845ebd3a37286f3009aca967eb
+		Secure: true
+	Object:
+		Variable: $r26
+		Type: java.security.PrivateKey
+		Statement: $r26 = virtualinvoke $r24.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r25)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: 2cd3c1ee5255612cf6dbc02ba4de31d8a13b44a0a2084fb4e7450f1a489b6f46
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <org.bouncycastle.math.ec.custom.sec.SecP256K1Curve: org.bouncycastle.math.ec.ECFieldElement randomFieldElementMult(java.security.SecureRandom)>
+		SHA-256: cdf8d5ada23604a41d441bf1ee2f83259ea4e7cbea801c62193b47677e44b338
+		Secure: true
+	Object:
+		Variable: $r27
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r27.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r34, $r26)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: 646cc45dc2d8ae9294f295140040f538cd8b60c2dea9bdad513a77de04722ce0
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.PublicKey
+		Statement: $r8 = virtualinvoke $r4.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+		Method: <com.trilead.ssh2.crypto.dh.EcDhExchange: void setF(byte[])>
+		SHA-256: 3afcf1174a141a0bb4a43604b340a9b364d64775077085d991c7c5da548dbdc6
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r10.<java.security.Signature: boolean verify(byte[])>($r2)
+		Method: <com.trilead.ssh2.signature.ECDSASHA2Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: dfe414c08fde107a32f25de7328ce48110986f64c30cdf058c9e6ae3043a26c5
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r18.<java.security.Signature: byte[] sign()>()
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void processSignRequest(com.trilead.ssh2.packets.TypesReader)>
+		SHA-256: 234a7bb1bc22c0bb6056e082412151014c7014431f5b6d2386f30ccf825e926f
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r1)
+		Method: <com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>
+		SHA-256: 8b019343a51f6a81e77147770c9970a003bfdfe405dda31d87d5708d6a9e5cd1
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.lang.String
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r1)
+		Method: <com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>
+		SHA-256: 3473ca532d502a23c96fc7ad65fab930812097a5b58c7a2011e191f89e3961b6
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.Signature
+		Statement: $r10 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r5)
+		Method: <com.trilead.ssh2.signature.ECDSASHA2Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: 3fc376eb4810aff2a707a22af8a70b14093d48dee3fef53799a6968e21fed85a
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: virtualinvoke $r9.<java.security.MessageDigest: int digest(byte[],int,int)>($r5, varReplacer2922, $i2)
+		Method: <com.trilead.ssh2.crypto.PEMDecoder: byte[] decryptData(byte[],byte[],byte[],int,java.lang.String)>
+		SHA-256: 5fb92f06411a9533599bd27dc4009ca9fc356e69b7806a2781dbf5dc97e6a92e
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.PublicKey
+		Statement: $r10 = virtualinvoke $r9.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r8)
+		Method: <com.trilead.ssh2.signature.ECDSASHA2Verify: java.security.PublicKey decodePublicKey(byte[])>
+		SHA-256: a0c4bdb74252ed6e71abc4fc6bb9571437d05094e2eb43811d14c8227af7c75d
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.Signature
+		Statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer26105)
+		Method: <com.trilead.ssh2.signature.RSASHA256Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: d8c5f212e0c84565f0b717a3a892f60e652d1dd5711ce1e3b09340ba844ed913
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r15.<java.security.SecureRandom: void <init>()>()
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void processSignRequest(com.trilead.ssh2.packets.TypesReader)>
+		SHA-256: 18262b8a3529bf6f48e0f16754da8cd670038d4a1c1faf4333f8a642782c61c8
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.KeyFactory
+		Statement: $r2 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>($r3, $r1)
+		Method: <org.bouncycastle.jcajce.util.ProviderJcaJceHelper: java.security.KeyFactory createKeyFactory(java.lang.String)>
+		SHA-256: 6dcd9842a19e4a606d2bb7099685ef7f6c6b488582376a788f81b0044f4df306
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer20273)
+		Method: <com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>
+		SHA-256: e1ae15c2d2d1f28820017b07b1fd9287a4600f1b03d498f59b12bc69933ed672
+		Secure: false
+	Object:
+		Variable: $r29
+		Type: java.security.PublicKey
+		Statement: $r29 = virtualinvoke $r28.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r40)
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void addIdentity(com.trilead.ssh2.packets.TypesReader,boolean)>
+		SHA-256: a26967b908315c6077516c8cd7eafe9356dc0401abd2453cf217ceea64a0d745
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: byte[]
+		Statement: $r12 = virtualinvoke $r13.<java.security.Signature: byte[] sign()>()
+		Method: <com.trilead.ssh2.auth.AuthenticationManager: boolean authenticatePublicKey(java.lang.String,java.security.KeyPair,java.security.SecureRandom)>
+		SHA-256: 762632d331daeede41680c581bb242f84f93ae1c65c52213654334ca1a4d8280
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r9.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <com.trilead.ssh2.crypto.PEMDecoder: byte[] decryptData(byte[],byte[],byte[],int,java.lang.String)>
+		SHA-256: 12e313b554af4387bb06b1fdf49abf6782b90ffc2f7c17a874950db55028b22d
+		Secure: true
+	Object:
+		Variable: $r33
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r33.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r14)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: e6b8c401036feacf418bf32fd950ad2fa72296421d5bd16eec64f7b5a6c6ef55
+		Secure: false
+	Object:
+		Variable: $r24
+		Type: java.security.KeyFactory
+		Statement: $r24 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>($r22, $r32)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: f9b1f2f7121d0abd98d139869bfb66589a04276a30c27a4c3f1f71897aa03722
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.CryptoServicesRegistrar: java.security.SecureRandom getSecureRandom()>
+		SHA-256: 375867338a8d572664475cac25bcfa294db8f2af8faff8d50836d5d6dcf8ab15
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <org.bouncycastle.util.BigIntegers: java.math.BigInteger createRandomBigInteger(int,java.security.SecureRandom)>
+		SHA-256: 7d9776fd0dce42fa8dc8a3ac819f3ad3e16b2e476696689f3547d8b854f0ea95
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer31304)
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator$1: java.lang.Object create()>
+		SHA-256: 58d3b5189962a37cefd9f9eee859bac34242e8653ad02c5c1a889bb48a07b077
+		Secure: true
+	Object:
+		Variable: $r34
+		Type: java.security.PublicKey
+		Statement: $r34 = virtualinvoke $r24.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r33)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: 9bd0f2fdf3080f358af9178cdbef2cb4d78450df9d01019ca7a692f61da7a5f4
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r0.<java.security.SecureRandom: void nextBytes(byte[])>($r2)
+		Method: <org.bouncycastle.math.ec.custom.sec.SecP160R2Field: void randomMult(java.security.SecureRandom,int[])>
+		SHA-256: c22fa3c844c82caa3cd25cc7337c58464d8373bd0463cf23e9ef9bc6f000350
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.lang.String
+		Statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r3)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int,org.bouncycastle.asn1.x509.AlgorithmIdentifier)>
+		SHA-256: 6ebc472ac7b911203e9f0803feef86c69defbc10c3da1a64eafab4247c6303fe
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: 6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r4, $r5)
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void init(java.lang.String)>
+		SHA-256: 28684ec1d3d65871b2bc49ea187b32edba84724a1bc06c3be0cdce4dd6bf5e59
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer20279)
+		Method: <com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>
+		SHA-256: 1068a95c537f4e8510a1f383f8e0d0f8741ad6f10b0058a3a3539af06ad253c4
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer20268)
+		Method: <com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>
+		SHA-256: fbf47c0b56bd634e9cc8c0f5f1305c53c32a4c2002ec7322f03239d1634c8907
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.Signature
+		Statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer26091)
+		Method: <com.trilead.ssh2.signature.DSASHA1Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: 52c993b4a5bd016cc218fe37c257ddb68e21994ebc24f993fe8e9db13ab36f05
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r3)
+		Method: <com.trilead.ssh2.signature.RSASHA512Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: 9af5f8795b9643f8432c5491747b92c4638b7ae663a0e1805cf724614b70f640
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.KeyFactory
+		Statement: $r9 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer26046)
+		Method: <com.trilead.ssh2.signature.DSASHA1Verify: java.security.PublicKey decodePublicKey(byte[])>
+		SHA-256: 1d6815d8f71da58cfb2c839c0bd521563a861c851a884c3705a75b26c3db0433
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.crypto.tink.subtle.Ed25519Sign: byte[] sign(byte[])>
+		SHA-256: 2411f58495594fc86c46a6dbcd746a3f981c65ea6d8da295329ac2a1283f0a29
+		Secure: true
+	Object:
+		Variable: $i0
+		Type: int
+		Statement: specialinvoke $r9.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r3, $r0, varReplacer35250, $i0)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey getKey(org.bouncycastle.jcajce.util.JcaJceHelper,char[],java.lang.String,int,byte[],boolean)>
+		SHA-256: 49f2d52bbaf52b7c466b8eb1525486a26416644f5ef563ac077b75f987f01b2a
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.SecretKey
+		Statement: $r6 = virtualinvoke $r5.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r1)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey getKey(org.bouncycastle.jcajce.util.JcaJceHelper,char[],java.lang.String,int,byte[],boolean)>
+		SHA-256: d44ad6ad8f80ffe968166345ef64f2820ef7059892c0a5215c932520457f6ec0
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1163)
+		Method: <com.ubergeek42.weechat.relay.connection.SSHServerKeyVerifierKt: void <clinit>()>
+		SHA-256: 74ec8574cc1fd55e72db64d5cf16e271edbf0a987fc1ff6735aaab417bac832b
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.security.MessageDigest: int digest(byte[],int,int)>($r2, varReplacer26116, $i0)
+		Method: <com.trilead.ssh2.crypto.digest.HashForSSH2Types: byte[] getDigest()>
+		SHA-256: 3c94183b0ce31fbfac46c368e8f585d7ab94baadc434a99a9c2765dcc164fc79
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <org.bouncycastle.math.ec.custom.sec.SecP224R1Curve: org.bouncycastle.math.ec.ECFieldElement randomFieldElementMult(java.security.SecureRandom)>
+		SHA-256: a4b37d1a01b2cdb3bc653d7f2dc5e783533806f47a4234a7833ef6dacc2341df
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.lang.String
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r4)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey getKey(org.bouncycastle.jcajce.util.JcaJceHelper,char[],java.lang.String,int,byte[],boolean)>
+		SHA-256: db2617e4d034c595180a0b413184629a67214856950162e4179ed44751ced0db
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 15a76129680a3cd57380001c355c828c5afc3ba9ce32fff65b352ff3390bbd6
+		Secure: false
+	Object:
+		Variable: $r28
+		Type: java.security.KeyFactory
+		Statement: $r28 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r8)
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void addIdentity(com.trilead.ssh2.packets.TypesReader,boolean)>
+		SHA-256: 93c1d85cc2bd20a1a4b3b44d453e227d62b5a77f84931dd851df0a606e903b90
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r4)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey getKey(org.bouncycastle.jcajce.util.JcaJceHelper,char[],java.lang.String,int,byte[],boolean)>
+		SHA-256: 8f37a40126d29fb16d04d1b80ebb5110972bda0626ec6d76b5802054fee824cc
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r4, $r5)
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void init(java.lang.String)>
+		SHA-256: 28684ec1d3d65871b2bc49ea187b32edba84724a1bc06c3be0cdce4dd6bf5e59
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.lang.String)>(varReplacer22554, varReplacer22555)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: ab144e678eeda7351c2f6e91b83f1f245a81b83355079616795d6bd10193f6de
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <com.trilead.ssh2.Connection: boolean authenticateWithPublicKey(java.lang.String,java.security.KeyPair)>
+		SHA-256: d1f49dba2f0dd1af35b7cb8af3e1a58b2a9f96804b2cc0f29f712322c4f5c6b7
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: c3dcfb07eabeaead2afa7b41e33d56187e303e14a7184c21b7bac99836f2c278
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TMessageDigest: java.lang.Object getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 4ee1e49996a5c971f7aeb5a26e801c7b076c9b0e65f51e70fc752cb4886a7701
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.KeyFactory
+		Statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils: com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils$InsideSecurityHardware isInsideSecurityHardware(java.lang.String)>
+		SHA-256: f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <com.trilead.ssh2.Connection: java.security.SecureRandom getOrCreateSecureRND()>
+		SHA-256: a3bd533d934aba599d3678a1b8c115af963b773042e1d3657aa52d68270538da
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r3)
+		Method: <com.trilead.ssh2.signature.RSASHA1Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: 79dc807972f2e63cc130fb24900246df11c1f5b30cde567078f6420b5f59928e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <org.apache.commons.codec.digest.DigestUtils: java.security.MessageDigest getDigest(java.lang.String)>
+		SHA-256: e941edb5217c879acd87fed3366e0d56fa56f48ce569721201e5ad4173f69b53
+		Secure: true
+	Object:
+		Variable: $r33
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r33.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r14)
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: e6b8c401036feacf418bf32fd950ad2fa72296421d5bd16eec64f7b5a6c6ef55
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r3)
+		Method: <com.trilead.ssh2.crypto.cipher.AES: void init(boolean,byte[],byte[])>
+		SHA-256: 1f4cd558ae763b67e3d5614c4994a6a2a148744cf9618948828448f79ffb122f
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: ae39b036c5eeeba58d380660f68e23806935f12d2f5c9cefe65440425aa34f4a
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.KeyFactory
+		Statement: $r1 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+		Method: <org.bouncycastle.jcajce.util.DefaultJcaJceHelper: java.security.KeyFactory createKeyFactory(java.lang.String)>
+		SHA-256: 7f07316255acf6c2b7bca090a4e664f355d182706a163acbdb368bfde642c5ac
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r0.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r1, $r5, $r3, varReplacer2962)
+		Method: <com.trilead.ssh2.signature.ECDSASHA2Verify$ECDSASHA2NISTP521Verify: void <clinit>()>
+		SHA-256: 3a89d22503682e4f1a74650617dd377ac512d86b2d2769a27ffb640f74292167
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r3, $r1)
+		Method: <org.bouncycastle.jcajce.util.ProviderJcaJceHelper: javax.crypto.Cipher createCipher(java.lang.String)>
+		SHA-256: ca3ef12264c5513176d477a4de074d29ef2f633740f40c33890cc0dc48fde865
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer11062)
+		Method: <com.trilead.ssh2.crypto.cipher.AES$CTR: void <init>()>
+		SHA-256: 10390120306d2a4f6d06d75192743c63fe4416727cec4cbc80353566525fb213
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r2 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String,java.security.Provider)>($r3, $r1)
+		Method: <org.bouncycastle.jcajce.util.ProviderJcaJceHelper: javax.crypto.SecretKeyFactory createSecretKeyFactory(java.lang.String)>
+		SHA-256: 28fb08a6755dca00d79e95b5b3fa267ac4ceca94b7c5b7e02cac84af25df1aa9
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.Cipher
+		Statement: $r1 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r2)
+		Method: <org.bouncycastle.jcajce.util.DefaultJcaJceHelper: javax.crypto.Cipher createCipher(java.lang.String)>
+		SHA-256: f67221e8b24ffcca30ab38daf074c49210c9335dd0405b41923b398eb3511595
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <org.bouncycastle.math.ec.custom.sec.SecP224K1Curve: org.bouncycastle.math.ec.ECFieldElement randomFieldElementMult(java.security.SecureRandom)>
+		SHA-256: 462400de5f66f6895310e0e14b6f04f872f50725c42f7121272258343dbd9b9e
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer27601, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: d295367fdf5e36de57fbd68295e4878c78e2dd5464bd7908506534fdeb4d260b
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.Key
+		Statement: $r10 = interfaceinvoke $r9.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.bouncycastle.openssl.jcajce.JcaMiscPEMGenerator: java.lang.Object convertObject(java.lang.Object)>
+		SHA-256: 48ff4a6f7a8f39e87d0ec759b823d6f29908e99b8471caa4c3b01568f48d41d6
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <com.trilead.ssh2.packets.PacketKexInit: void <init>(com.trilead.ssh2.crypto.CryptoWishList)>
+		SHA-256: 9e58dce4f62a5a1b3230e1508ce00522d05faab79377f62bdc06bbc42cf61204
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.crypto.KeyAgreement
+		Statement: $r9 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String)>(varReplacer20242)
+		Method: <com.trilead.ssh2.crypto.dh.EcDhExchange: void setF(byte[])>
+		SHA-256: 50b51917755702d9764da491a54ca455196eb93ab02585f2da63f3183fe66a2e
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.PublicKey
+		Statement: $r10 = virtualinvoke $r9.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+		Method: <com.trilead.ssh2.signature.DSASHA1Verify: java.security.PublicKey decodePublicKey(byte[])>
+		SHA-256: ffa04e3f5f3593281a907fe7b3377f5aee25dbf0356ec54c29cee326e588ad12
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.AlgorithmParameters
+		Statement: $r1 = staticinvoke <java.security.AlgorithmParameters: java.security.AlgorithmParameters getInstance(java.lang.String)>($r2)
+		Method: <org.bouncycastle.jcajce.util.DefaultJcaJceHelper: java.security.AlgorithmParameters createAlgorithmParameters(java.lang.String)>
+		SHA-256: 8d123772629184fc0669650c061426f57f5203aa49ca1fae65ed6e679e158734
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r4 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r3)
+		Method: <com.ubergeek42.WeechatAndroid.service.SSLHandler$UserTrustManager: javax.net.ssl.X509TrustManager buildTrustManger(java.security.KeyStore)>
+		SHA-256: 79bdef1cbc1a55e00dcf3d122d486078c4361a5e64aa22b252076e833ffb6108
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.lang.String
+		Statement: $r2 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>($r3, $r1)
+		Method: <org.bouncycastle.jcajce.util.ProviderJcaJceHelper: java.security.KeyFactory createKeyFactory(java.lang.String)>
+		SHA-256: 7977622ee9f57d4a4fd2018199ea273a0f9eaba1f33ffad00fe7c48b628f908e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer27606, $r2)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: cee432d0e9bb7545ac797a20df70c5c0f388fe8c9e6fbe3d9a80f01f48472fe0
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <org.bouncycastle.math.ec.custom.djb.Curve25519: org.bouncycastle.math.ec.ECFieldElement randomFieldElementMult(java.security.SecureRandom)>
+		SHA-256: 70cb5aaea8f074368e52b58c003482f1fd640118dccb2fbd3a4d82d73b93a8ea
+		Secure: true
+	Object:
+		Variable: varReplacer26032
+		Type: java.lang.String
+		Statement: $r7 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer26032)
+		Method: <com.trilead.ssh2.signature.RSASHA1Verify: java.security.PublicKey decodePublicKey(byte[])>
+		SHA-256: 979a8d40579b09180567c679ddba6f0b5b3ca5c73e873eaa709166a3d7442ec7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyFactory
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r0)
+		Method: <com.trilead.ssh2.crypto.PEMDecoder: java.security.KeyPair generateKeyPair(java.lang.String,java.security.spec.KeySpec,java.security.spec.KeySpec)>
+		SHA-256: 832bd6aeeacc1e9a2ba683ece4aa3b936d0761b77d5b2411aed7b1625db6785c
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.lang.String
+		Statement: $r28 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r8)
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void addIdentity(com.trilead.ssh2.packets.TypesReader,boolean)>
+		SHA-256: f4a8ac7e594232f1db1d824e9f53463270b50874aa86b2d15d7554ea958be23c
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: byte[]
+		Statement: $r13 = virtualinvoke $r34.<java.security.MessageDigest: byte[] digest(byte[])>($r13)
+		Method: <com.neovisionaries.ws.client.WebSocket: java.util.Map shakeHands(java.net.Socket)>
+		SHA-256: dd11fb4d574c9c93aadb20e0306b556ab5cdd53615ad8bc0f8b98b802a866b29
+		Secure: false
+	Object:
+		Variable: $r28
+		Type: org.bouncycastle.jcajce.interfaces.EdDSAKey
+		Statement: $r29 = interfaceinvoke $r28.<java.security.Key: byte[] getEncoded()>()
+		Method: <com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt: java.security.KeyPair makeKeyPair(java.io.Reader,char[])>
+		SHA-256: b4e501919d201973c385dc6dd6bc1ca453ee4f832891eee16371e2d848665e0d
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.Signature
+		Statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer26102)
+		Method: <com.trilead.ssh2.signature.RSASHA512Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: e98c99a03275f8d629184993ad9cf29e306fe52f7729f24498c5283345aa9c2d
+		Secure: false
+	Object:
+		Variable: $i1
+		Type: int
+		Statement: specialinvoke $r10.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i0, $i1)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int,org.bouncycastle.asn1.x509.AlgorithmIdentifier)>
+		SHA-256: 8c6e78c3f926238491bd41c86a2afe01347399ac8b11283943d2d10a55219780
+		Secure: false
+	Object:
+		Variable: $r30
+		Type: java.security.PrivateKey
+		Statement: $r30 = virtualinvoke $r28.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r40)
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void addIdentity(com.trilead.ssh2.packets.TypesReader,boolean)>
+		SHA-256: 3550ebdefc90a32ace78793ff31b8b55c0f242e4f9ae5ddcfb2ee0351964020
+		Secure: false
+	Object:
+		Variable: $r18
+		Type: java.security.Signature
+		Statement: $r18 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer15059)
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void processSignRequest(com.trilead.ssh2.packets.TypesReader)>
+		SHA-256: c51a26bc810557e437befb8885b71bb32e09c8bed46c968820c51381e43418cd
+		Secure: false
+	Object:
+		Variable: $r18
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: $r18 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>(varReplacer1107)
+		Method: <com.ubergeek42.WeechatAndroid.service.P: void loadConnectionPreferences()>
+		SHA-256: 7316f0631526bb7a9334b029cbb1ab8bfb7e4f33376f0d132a60bc4aa11d3a1f
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: javax.crypto.SecretKey
+		Statement: $r11 = virtualinvoke $r9.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r10)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int,org.bouncycastle.asn1.x509.AlgorithmIdentifier)>
+		SHA-256: c9f44118d47c296ebe93f7a41173d6242180cf5d053f6d37ad772935b0ef21d6
+		Secure: false
+	Object:
+		Variable: $r27
+		Type: byte[]
+		Statement: $r27 = virtualinvoke $r34.<java.security.MessageDigest: byte[] digest(byte[])>($r27)
+		Method: <com.ubergeek42.weechat.relay.connection.ModernHandshake: com.ubergeek42.weechat.relay.connection.Authenticated onMessage(com.ubergeek42.weechat.relay.RelayMessage)>
+		SHA-256: dde79f98ff6f46ee38bd758ca85738e56a69bbf592d507b50b1bd7119970886d
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r13.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r12, $r10)
+		Method: <com.ubergeek42.weechat.relay.connection.SSHConnection: void <init>(java.lang.String,int,java.lang.String,int,java.lang.String,int,java.lang.String,byte[],com.ubergeek42.weechat.relay.connection.SSHServerKeyVerifier)>
+		SHA-256: 1faf0ea2f0a95fff728eaf9f33094466f6bf887e975501ef8b55ceacd59b6b5b
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r3, $r0, varReplacer35250, $i0)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey getKey(org.bouncycastle.jcajce.util.JcaJceHelper,char[],java.lang.String,int,byte[],boolean)>
+		SHA-256: 3e2f4435239e6b82655c9b9a09a321c080c4a27e47b54de12804f90208b6e02d
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r6)
+		Method: <com.trilead.ssh2.signature.DSASHA1Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: 42fa38a6e001e057eb3c37b474d95ee836be7f8917367f236874c6ce853e312c
+		Secure: false
+	Object:
+		Variable: $r31
+		Type: javax.crypto.SecretKey
+		Statement: $r31 = virtualinvoke $r30.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r28)
+		Method: <com.ubergeek42.weechat.relay.connection.ModernHandshake: com.ubergeek42.weechat.relay.connection.Authenticated onMessage(com.ubergeek42.weechat.relay.RelayMessage)>
+		SHA-256: 4c07691416c46c27bdac9006a159c95d45f83724e080b04cf96437b03a9b831f
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: byte[]
+		Statement: virtualinvoke $r9.<java.security.MessageDigest: int digest(byte[],int,int)>($r15, varReplacer2907, varReplacer2908)
+		Method: <com.trilead.ssh2.crypto.PEMDecoder: byte[] decryptData(byte[],byte[],byte[],int,java.lang.String)>
+		SHA-256: 632a9383ed9ff890767cf31b7e6a0d3d2b0899c9c81dd6a058eb9cdeead4fd13
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.SecretKey
+		Statement: $r6 = virtualinvoke $r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r5)
+		Method: <org.bouncycastle.openssl.jcajce.PEMUtilities: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int)>
+		SHA-256: 232297bdc3d6d56a4e95a98be1257cfeda5bf07a8fee964061a1582f28d30b78
+		Secure: false
+	Object:
+		Variable: varReplacer11085
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer11085)
+		Method: <com.trilead.ssh2.crypto.cipher.AES: void init(boolean,byte[],byte[])>
+		SHA-256: bd26f72450f054325cdc883cbd763f60848d5b4a5dd7fe63b6cc9665b5d7bf6
+		Secure: false
+	Object:
+		Variable: varReplacer20245
+		Type: java.lang.String
+		Statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer20245)
+		Method: <com.trilead.ssh2.crypto.dh.EcDhExchange: void setF(byte[])>
+		SHA-256: 2e19a03ec58c45e6b178d9bc7d37b1a8e980fb279f577ef646a7cfcc869c16ed
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.KeyFactory
+		Statement: $r0 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer14394)
+		Method: <com.trilead.ssh2.transport.KexManager: void <clinit>()>
+		SHA-256: 54fd57bc95946fea4620735b9377d462420e77ecf312c83e2dc5e3f51f8ab0e1
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer11085)
+		Method: <com.trilead.ssh2.crypto.cipher.AES: void init(boolean,byte[],byte[])>
+		SHA-256: 87e6deccdd5d73a276bbd988c17ce998aecbf0eb34b89279398b51698b0e5183
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.KeyPair
+		Statement: $r7 = virtualinvoke $r6.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void init(java.lang.String)>
+		SHA-256: 62281d8fd7c792cd76591f5780678694313077893e040e02f7b6ecb0ceb57bd1
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r6)
+		Method: <com.trilead.ssh2.signature.DSASHA1Verify: boolean verifySignature(byte[],byte[],java.security.PublicKey)>
+		SHA-256: 7c277b640a078ac7d7f5d351bdb6398c3d22a9d45df13bbb7917a804808cce51
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.KeyStore
+		Statement: $r8 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer14364)
+		Method: <com.ubergeek42.weechat.relay.connection.SSHConnection: void <init>(java.lang.String,int,java.lang.String,int,java.lang.String,int,java.lang.String,byte[],com.ubergeek42.weechat.relay.connection.SSHServerKeyVerifier)>
+		SHA-256: 4058e00ff13dcc11b05993e14c9ccb70e8477bc18daaf0b564019471bc63e93a
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.KeyPairGenerator
+		Statement: $r7 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(varReplacer20220)
+		Method: <com.trilead.ssh2.crypto.dh.EcDhExchange: void init(java.lang.String)>
+		SHA-256: 8e4f1d79cc5eb9ee2c86d913740bf8b5ecd8637a13505d3355813e1b999bdf72
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.Key
+		Statement: $r9 = virtualinvoke $r8.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>(varReplacer14367, varReplacer14368)
+		Method: <com.ubergeek42.weechat.relay.connection.SSHConnection: void <init>(java.lang.String,int,java.lang.String,int,java.lang.String,int,java.lang.String,byte[],com.ubergeek42.weechat.relay.connection.SSHServerKeyVerifier)>
+		SHA-256: 4f71305f9f70a2691a14f2f22c48f179a899dd64f1e35aa3f36fbb26ea74dcdf
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.KeyAgreement
+		Statement: $r10 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String)>(varReplacer20253)
+		Method: <com.trilead.ssh2.crypto.dh.DhExchange: void setF(byte[])>
+		SHA-256: 163be6d4907d93d5465404907eb8b07fab75c6584721b412b8ca764f1f2e7504
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.Signature
+		Statement: $r4 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer21987)
+		Method: <com.trilead.ssh2.signature.RSASHA256Verify: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)>
+		SHA-256: 71d8f495af10d0cd5ec882c040bf3339aca1d2cf15afa5c6acbc040718119e5
+		Secure: false
+
+Findings in Java Class: com.ubergeek42.WeechatAndroid.service.P
+
+	 in Method: void loadConnectionPreferences()
+		ConstraintError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #7316f0631526bb7a9334b029cbb1ab8bfb7e4f33376f0d132a60bc4aa11d3a1f)
+			First parameter (with value "X509") should be any of {PKIX, SunX509}
+			at statement: $r18 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>(varReplacer1107)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r18.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r17, varReplacer1095)
+
+
+Findings in Java Class: com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils
+
+	 in Method: java.security.KeyStore getAndroidKeyStore()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #9e7e540029262aefa5239e7c6dd6273dc80415434b73d8b8dfd38136f11a89c)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r0 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer1122)
+
+
+	 in Method: com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtils$InsideSecurityHardware isInsideSecurityHardware(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "LMS") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "RSASSA-PSS") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "XMSSMT") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "qTESLA-p-I") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "SPHINCS-256") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "Ed25519") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "Rainbow") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "NH") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "McEliece") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "XMSS") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "Ed448") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "McEliece-CCA2") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "X25519") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "EdDSA") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "X448") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f3ef14f235cc051e1cbec8f7f9b97e30d5c85b56ace0b3d256301da8fedc5e13)
+			First parameter (with value "qTESLA-p-III") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r4 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.lang.String)>($r0, varReplacer1827)
+
+
+	 in Method: void putKeyPairIntoAndroidKeyStore(java.security.KeyPair,java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #3a0977b1a85be0343847bcf567971f02f78696ef61a79e07e25d198681ef94e2)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r87 = virtualinvoke $r85.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r86)
+
+
+Findings in Java Class: com.ubergeek42.weechat.relay.connection.SSHServerKeyVerifierKt
+
+	 in Method: void <clinit>()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #74ec8574cc1fd55e72db64d5cf16e271edbf0a987fc1ff6735aaab417bac832b)
+			First parameter (with value "SHA256") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1163)
+
+
+Findings in Java Class: com.trilead.ssh2.crypto.PEMDecoder
+
+	 in Method: byte[] decryptData(byte[],byte[],byte[],int,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4cb378925fd1b787716b48331bb4d9c3843495f73dd41da57407040d4cd5eca)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r9 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2924)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #cd8fadb88932ba14d20bbb95894489e668045d312bbd088e8d96dc17fa2a961b)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke $r27.<com.trilead.ssh2.crypto.cipher.AES$CBC: void <init>()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #cd8fadb88932ba14d20bbb95894489e668045d312bbd088e8d96dc17fa2a961b)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke $r27.<com.trilead.ssh2.crypto.cipher.AES$CBC: void <init>()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #cd8fadb88932ba14d20bbb95894489e668045d312bbd088e8d96dc17fa2a961b)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke $r27.<com.trilead.ssh2.crypto.cipher.AES$CBC: void <init>()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #10390120306d2a4f6d06d75192743c63fe4416727cec4cbc80353566525fb213)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke $r26.<com.trilead.ssh2.crypto.cipher.AES$CTR: void <init>()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #10390120306d2a4f6d06d75192743c63fe4416727cec4cbc80353566525fb213)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke $r26.<com.trilead.ssh2.crypto.cipher.AES$CTR: void <init>()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #10390120306d2a4f6d06d75192743c63fe4416727cec4cbc80353566525fb213)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke $r26.<com.trilead.ssh2.crypto.cipher.AES$CTR: void <init>()>()
+
+
+	 in Method: java.security.KeyPair generateKeyPair(java.lang.String,java.security.spec.KeySpec,java.security.spec.KeySpec)
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r6.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r4, $r5)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r4 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r2)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r6.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r4, $r5)
+
+
+Findings in Java Class: com.ubergeek42.WeechatAndroid.service.SSLHandler
+
+	 in Method: void <init>(java.io.File)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #66ba862d2d0155bca27239948236ee7a247f52c0b561e597a3349f0d8c32c6cd)
+			First parameter (with value "BKS") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer5568)
+
+
+Findings in Java Class: com.trilead.ssh2.crypto.cipher.AES$CBC
+
+	 in Method: void <init>()
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #cd8fadb88932ba14d20bbb95894489e668045d312bbd088e8d96dc17fa2a961b)
+			First parameter (with value "AES/CBC/NoPadding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer11065)
+
+
+Findings in Java Class: com.trilead.ssh2.crypto.cipher.AES
+
+	 in Method: void init(boolean,byte[],byte[])
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #87e6deccdd5d73a276bbd988c17ce998aecbf0eb34b89279398b51698b0e5183)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer11085)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #87e6deccdd5d73a276bbd988c17ce998aecbf0eb34b89279398b51698b0e5183)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer11085)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #87e6deccdd5d73a276bbd988c17ce998aecbf0eb34b89279398b51698b0e5183)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer11085)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r5.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r3)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #87e6deccdd5d73a276bbd988c17ce998aecbf0eb34b89279398b51698b0e5183)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer11085)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer11085)
+
+
+Findings in Java Class: com.ubergeek42.weechat.relay.connection.SSHConnection
+
+	 in Method: void <init>(java.lang.String,int,java.lang.String,int,java.lang.String,int,java.lang.String,byte[],com.ubergeek42.weechat.relay.connection.SSHServerKeyVerifier)
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r13.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r12, $r10)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r13.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r12, $r10)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #4058e00ff13dcc11b05993e14c9ccb70e8477bc18daaf0b564019471bc63e93a)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r8 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer14364)
+
+
+	 in Method: java.security.KeyPair makeKeyPair(byte[],java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r53.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r52, $r51)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r53.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r52, $r51)
+
+
+Findings in Java Class: com.trilead.ssh2.channel.AuthAgentForwardThread
+
+	 in Method: void processSignRequest(com.trilead.ssh2.packets.TypesReader)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r18.<java.security.Signature: void initSign(java.security.PrivateKey)>($r12)
+
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #c51a26bc810557e437befb8885b71bb32e09c8bed46c968820c51381e43418cd)
+			First parameter (with value "SHA1withDSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r18 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer15059)
+
+
+	 in Method: void addIdentity(com.trilead.ssh2.packets.TypesReader,boolean)
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r39.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r29, $r30)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r39.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r29, $r30)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r30 = virtualinvoke $r28.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r40)
+
+
+Findings in Java Class: com.trilead.ssh2.crypto.digest.HMAC
+
+	 in Method: void <init>(java.lang.String,byte[])
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #5103fc3840f058a3e34576cca8fc5fbfa88929d5b86975c753d20d579e8c715f)
+			First parameter (with value "HmacSHA1") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer20272)
+
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #fbf47c0b56bd634e9cc8c0f5f1305c53c32a4c2002ec7322f03239d1634c8907)
+			First parameter (with value "HmacMD5") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer20268)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r1)
+
+
+Findings in Java Class: com.trilead.ssh2.transport.KexManager
+
+	 in Method: void handleMessage(byte[],int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #5103fc3840f058a3e34576cca8fc5fbfa88929d5b86975c753d20d579e8c715f)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r50.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r7, $r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fbf47c0b56bd634e9cc8c0f5f1305c53c32a4c2002ec7322f03239d1634c8907)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r50.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r7, $r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #bb520b00095f7413c05dd7c111b1202a8622f0948c51cc31f433c3a71e3d0e6d)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r50.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r7, $r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #bfeb17497d974815aea710b22450798508268ff80c1b407f8fcaff0265771d)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r50.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r7, $r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #75b81112c8e1fb9cf39b9b0772f6ec8868104dab1491f55545db94246e443dea)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r50.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r7, $r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #e1ae15c2d2d1f28820017b07b1fd9287a4600f1b03d498f59b12bc69933ed672)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r50.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r7, $r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #1068a95c537f4e8510a1f383f8e0d0f8741ad6f10b0058a3a3539af06ad253c4)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r50.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r7, $r1)
+
+
+	 in Method: void finishKex()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #5103fc3840f058a3e34576cca8fc5fbfa88929d5b86975c753d20d579e8c715f)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r21.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r5, $r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fbf47c0b56bd634e9cc8c0f5f1305c53c32a4c2002ec7322f03239d1634c8907)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r21.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r5, $r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #bb520b00095f7413c05dd7c111b1202a8622f0948c51cc31f433c3a71e3d0e6d)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r21.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r5, $r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #bfeb17497d974815aea710b22450798508268ff80c1b407f8fcaff0265771d)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r21.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r5, $r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #75b81112c8e1fb9cf39b9b0772f6ec8868104dab1491f55545db94246e443dea)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r21.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r5, $r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #e1ae15c2d2d1f28820017b07b1fd9287a4600f1b03d498f59b12bc69933ed672)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r21.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r5, $r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #1068a95c537f4e8510a1f383f8e0d0f8741ad6f10b0058a3a3539af06ad253c4)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke $r21.<com.trilead.ssh2.crypto.digest.HMAC: void <init>(java.lang.String,byte[])>($r5, $r2)
+
+
+Findings in Java Class: com.ubergeek42.weechat.relay.connection.ModernHandshake
+
+	 in Method: com.ubergeek42.weechat.relay.connection.Authenticated onMessage(com.ubergeek42.weechat.relay.RelayMessage)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r28.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r17, $r18, $i0, $i1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r31 = virtualinvoke $r30.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r28)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #18d8ae864f590d59038ce220d6a04c912abc4ba5a374ea5bc665bffa549fa2a9)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r28.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r17, $r18, $i0, $i1)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #18d8ae864f590d59038ce220d6a04c912abc4ba5a374ea5bc665bffa549fa2a9)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r28.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r17, $r18, $i0, $i1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #18d8ae864f590d59038ce220d6a04c912abc4ba5a374ea5bc665bffa549fa2a9)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: $r31 = virtualinvoke $r30.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r28)
+
+
+Findings in Java Class: com.trilead.ssh2.signature.RSASHA1Verify
+
+	 in Method: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #5c69280b462838729ce6383d960c55048922dcfec2207a6588745217f6f57861)
+			First parameter (with value "SHA1withRSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r4 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer21988)
+
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r4.<java.security.Signature: void initSign(java.security.PrivateKey,java.security.SecureRandom)>($r3, $r1)
+
+
+	 in Method: boolean verifySignature(byte[],byte[],java.security.PublicKey)
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #fd16c891c9adfa86a5b43168261a6efd0506061fabb6e1ef547e794c1988346)
+			First parameter (with value "SHA1withRSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer26077)
+
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r7.<java.security.Signature: void initVerify(java.security.PublicKey)>($r1)
+
+
+	 in Method: java.security.PublicKey decodePublicKey(byte[])
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r8 = virtualinvoke $r7.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r6)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer22559, $r6, varReplacer22559)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer22559, $r6, varReplacer22559)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer22559, $r6, varReplacer22559)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #fd9a3e4c68bdbffa49e9d2b397e0d9579ec8e950d32abfbe0989ebfb716d54a)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer22561, $r2)
+
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #d295367fdf5e36de57fbd68295e4878c78e2dd5464bd7908506534fdeb4d260b)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer27601, $r2)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer22540)
+
+
+Findings in Java Class: com.trilead.ssh2.signature.DSASHA1Verify
+
+	 in Method: boolean verifySignature(byte[],byte[],java.security.PublicKey)
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #52c993b4a5bd016cc218fe37c257ddb68e21994ebc24f993fe8e9db13ab36f05)
+			First parameter (with value "SHA1withDSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer26091)
+
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r7.<java.security.Signature: void initVerify(java.security.PublicKey)>($r3)
+
+
+	 in Method: java.security.PublicKey decodePublicKey(byte[])
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r10 = virtualinvoke $r9.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+
+
+Findings in Java Class: com.neovisionaries.ws.client.WebSocket
+
+	 in Method: java.util.Map shakeHands(java.net.Socket)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #341a017670b4b8d902c58a43f302e1e8ef4393bf12c47e1efdcd8768374ffb81)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r34 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer26611)
+
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #ac1d02636c9179f560038ae74bd3b5f2ccc146d01c47339b8f8e4798e075fc2c)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer27604)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer22549)
+
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer22566, $r10, varReplacer22566)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer22566, $r10, varReplacer22566)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer22566, $r10, varReplacer22566)
+
+
+Findings in Java Class: okhttp3.internal.platform.BouncyCastlePlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #cee432d0e9bb7545ac797a20df70c5c0f388fe8c9e6fbe3d9a80f01f48472fe0)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer27606, $r2)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer22553)
+
+
+Findings in Java Class: com.trilead.ssh2.auth.AuthenticationManager
+
+	 in Method: boolean authenticatePublicKey(java.lang.String,java.security.KeyPair,java.security.SecureRandom)
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #5371a87f53620e677c0643f9fc69d7f4b594ea6fe58ed9a30dc30acf43a0695b)
+			First parameter (with value "SHA1withDSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r13 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer31741)
+
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r13.<java.security.Signature: void initSign(java.security.PrivateKey)>($r5)
+
+
+Findings in Java Class: androidx.preference.CertPickerPreference
+
+	 in Method: java.lang.String saveData(byte[],java.lang.String)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #860a1d28e293b99bfa2dfd33946be68832a492d0ebad0ffb053197cad421e0e0)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r8.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r9, $r10)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #860a1d28e293b99bfa2dfd33946be68832a492d0ebad0ffb053197cad421e0e0)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r8.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r9, $r10)
+
+
+Findings in Java Class: com.ubergeek42.WeechatAndroid.utils.AndroidKeyStoreUtilsKt
+
+	 in Method: java.security.KeyPair makeKeyPair(java.io.Reader,char[])
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r33.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r14)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r34 = virtualinvoke $r24.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r33)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r27.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r34, $r26)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f9b1f2f7121d0abd98d139869bfb66589a04276a30c27a4c3f1f71897aa03722)
+			First parameter (with value "Ed448") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r24 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>($r22, $r32)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f9b1f2f7121d0abd98d139869bfb66589a04276a30c27a4c3f1f71897aa03722)
+			First parameter (with value "Ed25519") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r24 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>($r22, $r32)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r27.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r34, $r26)
+
+
+Findings in Java Class: org.bouncycastle.openssl.jcajce.PEMUtilities
+
+	 in Method: javax.crypto.SecretKey getKey(org.bouncycastle.jcajce.util.JcaJceHelper,char[],java.lang.String,int,byte[],boolean)
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #3e2f4435239e6b82655c9b9a09a321c080c4a27e47b54de12804f90208b6e02d)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r9.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r3, $r0, varReplacer35250, $i0)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #3e2f4435239e6b82655c9b9a09a321c080c4a27e47b54de12804f90208b6e02d)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r9.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r3, $r0, varReplacer35250, $i0)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #3e2f4435239e6b82655c9b9a09a321c080c4a27e47b54de12804f90208b6e02d)
+			Third parameter (with value 1)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r9.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r3, $r0, varReplacer35250, $i0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r3, $r0, varReplacer35250, $i0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r4)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #8f37a40126d29fb16d04d1b80ebb5110972bda0626ec6d76b5802054fee824cc)
+			Second parameter (with value "Blowfish") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r4)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #3e2f4435239e6b82655c9b9a09a321c080c4a27e47b54de12804f90208b6e02d)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: specialinvoke $r9.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r3, $r0, varReplacer35250, $i0)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #8f37a40126d29fb16d04d1b80ebb5110972bda0626ec6d76b5802054fee824cc)
+			Second parameter (with value "DESede") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r4)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #8f37a40126d29fb16d04d1b80ebb5110972bda0626ec6d76b5802054fee824cc)
+			Second parameter (with value "RC2") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r4)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #8f37a40126d29fb16d04d1b80ebb5110972bda0626ec6d76b5802054fee824cc)
+			Second parameter (with value "DES") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r4)
+
+
+	 in Method: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int,org.bouncycastle.asn1.x509.AlgorithmIdentifier)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4955f5933c823dbe3ee7c47fcdf64174cc03de2a7372ac99065f226ac967785e)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: $r11 = virtualinvoke $r9.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r10)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r11 = virtualinvoke $r9.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r10)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r10.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i0, $i1)
+
+
+	 in Method: javax.crypto.SecretKey generateSecretKeyForPKCS5Scheme2(org.bouncycastle.jcajce.util.JcaJceHelper,java.lang.String,char[],byte[],int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r5.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r3, $r1, $i0, $i1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #66bdcfe5bf6169c9498097e6f3a70621f2827e1740edc4222bc89e105c388faa)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: $r6 = virtualinvoke $r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, $r0)
+
+
+	 in Method: byte[] crypt(boolean,org.bouncycastle.jcajce.util.JcaJceHelper,byte[],char[],java.lang.String,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f67221e8b24ffcca30ab38daf074c49210c9335dd0405b41923b398eb3511595)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r15.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #ca3ef12264c5513176d477a4de074d29ef2f633740f40c33890cc0dc48fde865)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r15.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r15.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r11, $r22)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r15.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r11, $r22)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r17.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+
+
+Findings in Java Class: okio.SegmentedByteString
+
+	 in Method: okio.ByteString digest$okio(java.lang.String)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: com.trilead.ssh2.signature.RSASHA512Verify
+
+	 in Method: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r4.<java.security.Signature: void initSign(java.security.PrivateKey,java.security.SecureRandom)>($r3, $r1)
+
+
+	 in Method: boolean verifySignature(byte[],byte[],java.security.PublicKey)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r7.<java.security.Signature: void initVerify(java.security.PublicKey)>($r1)
+
+
+Findings in Java Class: org.bouncycastle.openssl.jcajce.JceOpenSSLPKCS8DecryptorProviderBuilder$1
+
+	 in Method: org.bouncycastle.operator.InputDecryptor get(org.bouncycastle.asn1.x509.AlgorithmIdentifier)
+		RequiredPredicateError violating CrySL rule for java.security.AlgorithmParameters
+			First parameter was not properly generated as preparedAlg
+			at statement: virtualinvoke $r21.<java.security.AlgorithmParameters: void init(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r19.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.AlgorithmParameters)>(varReplacer36582, $r18, $r21)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedAlg
+			at statement: virtualinvoke $r19.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.AlgorithmParameters)>(varReplacer36582, $r18, $r21)
+
+
+Findings in Java Class: okhttp3.internal.platform.OpenJSSEPlatform
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer22545)
+
+
+Findings in Java Class: com.trilead.ssh2.signature.ECDSASHA2Verify
+
+	 in Method: java.security.PublicKey decodePublicKey(byte[])
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r10 = virtualinvoke $r9.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r8)
+
+
+	 in Method: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r5.<java.security.Signature: void initSign(java.security.PrivateKey,java.security.SecureRandom)>($r3, $r1)
+
+
+	 in Method: boolean verifySignature(byte[],byte[],java.security.PublicKey)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r10.<java.security.Signature: void initVerify(java.security.PublicKey)>($r3)
+
+
+Findings in Java Class: com.trilead.ssh2.crypto.dh.EcDhExchange
+
+	 in Method: void setF(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyAgreement
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r9.<javax.crypto.KeyAgreement: java.security.Key doPhase(java.security.Key,boolean)>($r3, varReplacer20244)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r8 = virtualinvoke $r4.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyAgreement
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r9.<javax.crypto.KeyAgreement: void init(java.security.Key)>($r10)
+
+
+	 in Method: void init(java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.KeyPairGenerator
+			First parameter was not properly generated as preparedEC
+			at statement: virtualinvoke $r7.<java.security.KeyPairGenerator: void initialize(java.security.spec.AlgorithmParameterSpec)>($r3)
+
+
+Findings in Java Class: com.trilead.ssh2.crypto.dh.DhExchange
+
+	 in Method: void setF(byte[])
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r9 = virtualinvoke $r5.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyAgreement
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r10.<javax.crypto.KeyAgreement: java.security.Key doPhase(java.security.Key,boolean)>($r4, varReplacer20250)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyAgreement
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r10.<javax.crypto.KeyAgreement: void init(java.security.Key)>($r11)
+
+
+Findings in Java Class: com.ubergeek42.WeechatAndroid.service.SSLHandler$UserTrustManager
+
+	 in Method: javax.net.ssl.X509TrustManager buildTrustManger(java.security.KeyStore)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r4.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r2)
+
+
+Findings in Java Class: com.trilead.ssh2.signature.RSASHA256Verify
+
+	 in Method: byte[] generateSignature(byte[],java.security.PrivateKey,java.security.SecureRandom)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r4.<java.security.Signature: void initSign(java.security.PrivateKey,java.security.SecureRandom)>($r3, $r1)
+
+
+	 in Method: boolean verifySignature(byte[],byte[],java.security.PublicKey)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r7.<java.security.Signature: void initVerify(java.security.PublicKey)>($r1)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 206
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 42
+	RequiredPredicateError: 65
+	IncompleteOperationError: 25
+	TypestateError: 3
+	HardCodedError: 3
+	NeverTypeOfError: 7
+=====================================================================

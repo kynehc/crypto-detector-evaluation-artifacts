@@ -1,0 +1,249 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Cipher
+		Statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer23312)
+		Method: <dev.ukanth.ufirewall.Api: java.lang.String unhideCrypt(java.lang.String,java.lang.String)>
+		SHA-256: b387b72f272c95cc34ee3e96626e396d0050bc6d4a66aa2bf36c2c722409f45d
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r9 = virtualinvoke $r7.<javax.crypto.Mac: byte[] doFinal()>()
+		Method: <org.xbill.DNS.TSIG: int verify(org.xbill.DNS.Message,byte[],org.xbill.DNS.TSIGRecord,boolean)>
+		SHA-256: 836481434b73f9904d0cab32271dd946abb8bc3cdbae56252bd36f31989af1e4
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer25584)
+		Method: <dev.ukanth.ufirewall.Api: java.lang.String hideCrypt(java.lang.String,java.lang.String)>
+		SHA-256: 8b496a98b3553da9c5ed08860a1714a42ac48802a36ee2e2aa28adfbab39c049
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r4 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer25577)
+		Method: <dev.ukanth.ufirewall.Api: java.lang.String hideCrypt(java.lang.String,java.lang.String)>
+		SHA-256: 95287ce46db741879a15dc1e8e03c63d1856b383fe75dbc9ad10a3e570398823
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r6.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+		Method: <org.xbill.DNS.TSIG: org.xbill.DNS.TSIGRecord generate(org.xbill.DNS.Message,byte[],int,org.xbill.DNS.TSIGRecord,boolean)>
+		SHA-256: 55bdf794432f3b11dffeff5da04f77260c66d7bebb48e92655aad6fbaa30db21
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.SecretKey
+		Statement: $r6 = virtualinvoke $r5.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r3)
+		Method: <dev.ukanth.ufirewall.Api: java.lang.String unhideCrypt(java.lang.String,java.lang.String)>
+		SHA-256: 699d3d7e8f7903c093cb7c4f60c82f60d17114d6cdd9603551389f724c64388b
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <haibison.android.lockpattern.widget.LockPatternUtils: java.lang.String patternToSha1(java.util.List)>
+		SHA-256: cee9f0b58a52f4dd1c916339b269b06beef5e82327955f7a95086189bde9ef73
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29037)
+		Method: <haibison.android.lockpattern.widget.LockPatternUtils: java.lang.String patternToSha1(java.util.List)>
+		SHA-256: c1c443c30aff8504ff230f4937d8ebdb8ed5323f587be0bfaf95edaa38ff92bf
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r5 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer23314)
+		Method: <dev.ukanth.ufirewall.Api: java.lang.String unhideCrypt(java.lang.String,java.lang.String)>
+		SHA-256: 3a7972a7403eb37968ba1c18e8930e55b35f48ece84b7f3116a38da837b68b39
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <org.xbill.DNS.NioUdpClient: void <clinit>()>
+		SHA-256: a1ea2c79670b5625d2c5501dd9caa790bd226609c1cb357735ac1ad35554a79d
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <org.xbill.DNS.Header: void <clinit>()>
+		SHA-256: a7bd1f471dbfaae28cf3a5073bdc83b553fe9720a29013b88a4716f64d953e41
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.SecretKey
+		Statement: $r5 = virtualinvoke $r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r0)
+		Method: <dev.ukanth.ufirewall.Api: java.lang.String hideCrypt(java.lang.String,java.lang.String)>
+		SHA-256: edb37ab2f833e85902d381943b43934c79c3ce51e2770b54ace3ccd0c7c0648
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Mac
+		Statement: $r2 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r4)
+		Method: <org.xbill.DNS.TSIG: javax.crypto.Mac initHmac()>
+		SHA-256: aaad48319d012d9a3037b5f91309eb3cf3172fbd80e90a8f79bdaf0ddc0f8a67
+		Secure: false
+
+Findings in Java Class: org.xbill.DNS.TSIG
+
+	 in Method: org.xbill.DNS.TSIGRecord generate(org.xbill.DNS.Message,byte[],int,org.xbill.DNS.TSIGRecord,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #aaad48319d012d9a3037b5f91309eb3cf3172fbd80e90a8f79bdaf0ddc0f8a67)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: staticinvoke <org.xbill.DNS.TSIG: void hmacAddSignature(javax.crypto.Mac,org.xbill.DNS.TSIGRecord)>($r6, $r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #aaad48319d012d9a3037b5f91309eb3cf3172fbd80e90a8f79bdaf0ddc0f8a67)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r6 = specialinvoke r0.<org.xbill.DNS.TSIG: javax.crypto.Mac initHmac()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #aaad48319d012d9a3037b5f91309eb3cf3172fbd80e90a8f79bdaf0ddc0f8a67)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r6 = null
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #aaad48319d012d9a3037b5f91309eb3cf3172fbd80e90a8f79bdaf0ddc0f8a67)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to javax.crypto.Mac: void doFinal(byte[],int), javax.crypto.Mac: byte[] doFinal(byte[]), update, javax.crypto.Mac: byte[] doFinal()
+			at statement: $r2 = virtualinvoke $r6.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #aaad48319d012d9a3037b5f91309eb3cf3172fbd80e90a8f79bdaf0ddc0f8a67)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to javax.crypto.Mac: void update(byte[]), javax.crypto.Mac: void update(java.nio.ByteBuffer), javax.crypto.Mac: void update(byte), javax.crypto.Mac: void update(byte[],int,int), doFinal
+			at statement: virtualinvoke $r6.<javax.crypto.Mac: void update(byte[])>($r2)
+
+
+	 in Method: int verify(org.xbill.DNS.Message,byte[],org.xbill.DNS.TSIGRecord,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #aaad48319d012d9a3037b5f91309eb3cf3172fbd80e90a8f79bdaf0ddc0f8a67)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to doFinal
+			at statement: $i0 = virtualinvoke $r7.<javax.crypto.Mac: int getMacLength()>()
+
+
+	 in Method: javax.crypto.Mac initHmac()
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Mac: void init(java.security.Key)>($r5)
+
+
+Findings in Java Class: dev.ukanth.ufirewall.Api
+
+	 in Method: java.lang.String unhideCrypt(java.lang.String,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r6 = virtualinvoke $r5.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r7.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer23318, $r6)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #b387b72f272c95cc34ee3e96626e396d0050bc6d4a66aa2bf36c2c722409f45d)
+			First parameter (with value "DES") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer23312)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #3a7972a7403eb37968ba1c18e8930e55b35f48ece84b7f3116a38da837b68b39)
+			First parameter (with value "DES") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r5 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer23314)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #b387b72f272c95cc34ee3e96626e396d0050bc6d4a66aa2bf36c2c722409f45d)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r7.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+
+	 in Method: java.lang.String hideCrypt(java.lang.String,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer25578, $r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #8b496a98b3553da9c5ed08860a1714a42ac48802a36ee2e2aa28adfbab39c049)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #8b496a98b3553da9c5ed08860a1714a42ac48802a36ee2e2aa28adfbab39c049)
+			First parameter (with value "DES") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer25584)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #95287ce46db741879a15dc1e8e03c63d1856b383fe75dbc9ad10a3e570398823)
+			First parameter (with value "DES") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r4 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer25577)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r5 = virtualinvoke $r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r0)
+
+
+Findings in Java Class: haibison.android.lockpattern.widget.LockPatternUtils
+
+	 in Method: java.lang.String patternToSha1(java.util.List)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c1c443c30aff8504ff230f4937d8ebdb8ed5323f587be0bfaf95edaa38ff92bf)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29037)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 13
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 5
+	TypestateError: 2
+	IncompleteOperationError: 6
+	RequiredPredicateError: 5
+=====================================================================

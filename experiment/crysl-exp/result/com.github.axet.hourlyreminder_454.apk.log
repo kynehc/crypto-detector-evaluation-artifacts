@@ -1,0 +1,109 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1787)
+		Method: <com.github.axet.androidlibrary.crypto.MD5: byte[] digest(byte[])>
+		SHA-256: 725cbf3260b2da357a699835113c0a458ac9caef5d7ac557d7ea4aa505327e63
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11435)
+		Method: <com.android.dx.dex.file.DexFile: void calcSignature(byte[],int)>
+		SHA-256: d5003d35153a19eb4c586ed09152f1c0effef066eb39305eab6fbaacff313a44
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <com.github.axet.androidlibrary.crypto.MD5: byte[] digest(byte[])>
+		SHA-256: 5e97372c6b896a9ed8554ee619c1d230f0a22c4aac16da71146c7c70d64a8e79
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $i0 = virtualinvoke $r1.<java.security.MessageDigest: int digest(byte[],int,int)>($r0, varReplacer11437, varReplacer11438)
+		Method: <com.android.dx.dex.file.DexFile: void calcSignature(byte[],int)>
+		SHA-256: 484d2d2159213f52cf22a10842c227b71a69c046ca6d4505e07833532105586c
+		Secure: false
+
+Findings in Java Class: com.github.axet.androidlibrary.crypto.MD5
+
+	 in Method: byte[] digest(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #725cbf3260b2da357a699835113c0a458ac9caef5d7ac557d7ea4aa505327e63)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1787)
+
+
+Findings in Java Class: com.android.dx.dex.file.DexFile
+
+	 in Method: void calcSignature(byte[],int)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #d5003d35153a19eb4c586ed09152f1c0effef066eb39305eab6fbaacff313a44)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11435)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 4
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 2
+=====================================================================

@@ -1,0 +1,180 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer13090)
+		Method: <com.bumptech.glide.load.o.b0.j$a: com.bumptech.glide.load.o.b0.j$b b()>
+		SHA-256: 23020d7fc11e09cb34a5274bfc88e5132069c81e2c689d8640ecad4d02e630e0
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <k.p: k.f b(java.lang.String)>
+		SHA-256: a66219f7f9f3c81506818b4fe3c6da63abd2c391f4302ad8e4fff07cd69d0ecd
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <k.p: k.f b(java.lang.String)>
+		SHA-256: 16b3454d2367837181a21a6c9a71f1c46b4ddc34fefba3f6b2028c6b046e2b06
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <k.f: k.f b(java.lang.String)>
+		SHA-256: a21339b5c7bf2fbb2b5a0b7c305c9be763de408bb7eec306b67b61b6671ad57
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <k.f: k.f b(java.lang.String)>
+		SHA-256: a9da1feb25d78a58bad7d703ceff61ecef42e938489bed2206d8455401fde047
+		Secure: false
+
+Findings in Java Class: k.p
+
+	 in Method: k.f b(java.lang.String)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #16b3454d2367837181a21a6c9a71f1c46b4ddc34fefba3f6b2028c6b046e2b06)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #16b3454d2367837181a21a6c9a71f1c46b4ddc34fefba3f6b2028c6b046e2b06)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: k.f
+
+	 in Method: k.f b(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #a9da1feb25d78a58bad7d703ceff61ecef42e938489bed2206d8455401fde047)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: com.bumptech.glide.load.o.c
+
+	 in Method: boolean a()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #23020d7fc11e09cb34a5274bfc88e5132069c81e2c689d8640ecad4d02e630e0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r9 = interfaceinvoke $r8.<com.bumptech.glide.load.n.d: java.lang.Class a()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #23020d7fc11e09cb34a5274bfc88e5132069c81e2c689d8640ecad4d02e630e0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r8.<com.bumptech.glide.load.n.d: void e(com.bumptech.glide.f,com.bumptech.glide.load.n.d$a)>($r10, r0)
+
+
+Findings in Java Class: f.f.l.f
+
+	 in Method: boolean a(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #23020d7fc11e09cb34a5274bfc88e5132069c81e2c689d8640ecad4d02e630e0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = specialinvoke r0.<f.f.l.f: boolean c(java.lang.Object)>($r2)
+
+
+Findings in Java Class: com.bumptech.glide.load.o.w
+
+	 in Method: boolean a()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #23020d7fc11e09cb34a5274bfc88e5132069c81e2c689d8640ecad4d02e630e0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r16.<com.bumptech.glide.load.n.d: void e(com.bumptech.glide.f,com.bumptech.glide.load.n.d$a)>($r17, r0)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #23020d7fc11e09cb34a5274bfc88e5132069c81e2c689d8640ecad4d02e630e0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r5 = interfaceinvoke $r16.<com.bumptech.glide.load.n.d: java.lang.Class a()>()
+
+
+Findings in Java Class: com.bumptech.glide.load.o.z
+
+	 in Method: void j(com.bumptech.glide.load.p.n$a)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #23020d7fc11e09cb34a5274bfc88e5132069c81e2c689d8640ecad4d02e630e0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r5.<com.bumptech.glide.load.n.d: void e(com.bumptech.glide.f,com.bumptech.glide.load.n.d$a)>($r3, $r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #23020d7fc11e09cb34a5274bfc88e5132069c81e2c689d8640ecad4d02e630e0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r5.<com.bumptech.glide.load.n.d: void e(com.bumptech.glide.f,com.bumptech.glide.load.n.d$a)>($r3, $r2)
+
+
+Findings in Java Class: com.bumptech.glide.load.o.t
+
+	 in Method: com.bumptech.glide.load.o.v b(com.bumptech.glide.load.n.e,com.bumptech.glide.load.i,int,int,com.bumptech.glide.load.o.i$a,java.util.List)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #23020d7fc11e09cb34a5274bfc88e5132069c81e2c689d8640ecad4d02e630e0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r12.<java.util.ArrayList: void <init>(java.util.Collection)>($r4)
+
+
+	 in Method: com.bumptech.glide.load.o.v a(com.bumptech.glide.load.n.e,com.bumptech.glide.load.i,int,int,com.bumptech.glide.load.o.i$a)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #23020d7fc11e09cb34a5274bfc88e5132069c81e2c689d8640ecad4d02e630e0)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r4.<f.f.l.e: boolean a(java.lang.Object)>($r6)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 5
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 9
+	TypestateError: 1
+	ConstraintError: 2
+=====================================================================

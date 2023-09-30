@@ -1,0 +1,142 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+2    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: java.security.KeyStore
+		Statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer413)
+		Method: <co.infinum.goldfinger.CryptoFactory$Default: void <init>(android.content.Context,co.infinum.goldfinger.Logger)>
+		SHA-256: bca50be3ce0934aeaa3c98da67a21408b0d0d7e31a13aa3812cd801541696dbd
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r5)
+		Method: <co.infinum.goldfinger.CryptoFactory$Default: javax.crypto.Cipher createCipher(java.lang.String,co.infinum.goldfinger.Mode,java.security.Key)>
+		SHA-256: 944ba98c558ca55666ad37879417b9eb9eb6572864c885ecd4a64be324295995
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.KeyGenerator
+		Statement: $r5 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer411, varReplacer412)
+		Method: <co.infinum.goldfinger.CryptoFactory$Default: void <init>(android.content.Context,co.infinum.goldfinger.Logger)>
+		SHA-256: 5a2da5b51607f08fd62828aa1a90d7480860126221a6697ca6b7a297af704b
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r8)
+		Method: <co.infinum.goldfinger.CryptoFactory$Default: javax.crypto.Cipher createCipher(java.lang.String,co.infinum.goldfinger.Mode,java.security.Key)>
+		SHA-256: 177d1c426946a15583578725959271c1b076f728e8705b699bbab2e2ef0ff0e2
+		Secure: false
+
+Findings in Java Class: co.infinum.goldfinger.Goldfinger$Builder
+
+	 in Method: co.infinum.goldfinger.Goldfinger buildMarshmallowInstance()
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #bca50be3ce0934aeaa3c98da67a21408b0d0d7e31a13aa3812cd801541696dbd)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: specialinvoke $r7.<co.infinum.goldfinger.CryptoFactory$Default: void <init>(android.content.Context,co.infinum.goldfinger.Logger)>($r2, $r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyGenerator (on Object #5a2da5b51607f08fd62828aa1a90d7480860126221a6697ca6b7a297af704b)
+			Operation on object of type javax.crypto.KeyGenerator object not completed. Expected call to generateKey, init
+			at statement: specialinvoke $r7.<co.infinum.goldfinger.CryptoFactory$Default: void <init>(android.content.Context,co.infinum.goldfinger.Logger)>($r2, $r1)
+
+
+Findings in Java Class: co.infinum.goldfinger.CryptoFactory$Default
+
+	 in Method: void <init>(android.content.Context,co.infinum.goldfinger.Logger)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #bca50be3ce0934aeaa3c98da67a21408b0d0d7e31a13aa3812cd801541696dbd)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer413)
+
+
+	 in Method: javax.crypto.Cipher createCipher(java.lang.String,co.infinum.goldfinger.Mode,java.security.Key)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>($i0, $r1)
+
+		ForbiddenMethodError violating CrySL rule for javax.crypto.Cipher
+			Detected call to forbidden method void init(int,java.security.Key) of class javax.crypto.Cipher. Instead, call method <javax.crypto.Cipher: void init(int,java.security.Key)>.
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>($i0, $r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r9)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 4
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ForbiddenMethodError: 1
+	RequiredPredicateError: 5
+	ConstraintError: 1
+	IncompleteOperationError: 2
+=====================================================================

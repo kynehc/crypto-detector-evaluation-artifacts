@@ -1,0 +1,112 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <com.integralblue.httpresponsecache.compat.libcore.net.http.HttpResponseCache: java.lang.String uriToKey(java.net.URI)>
+		SHA-256: d4c6880ef343d1dbd2eca6c6ca0f3660f50f650cb75fc6bbeb20b3236247206e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.cert.CertificateFactory
+		Statement: $r3 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer8233)
+		Method: <com.integralblue.httpresponsecache.compat.libcore.net.http.HttpResponseCache$Entry: java.security.cert.Certificate[] readCertArray(java.io.InputStream)>
+		SHA-256: 4bd4587b4160a91d3805e2a3078f219441103f3c06ebcf484e5377901cbc7389
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer7920)
+		Method: <com.integralblue.httpresponsecache.compat.libcore.net.http.HttpResponseCache: java.lang.String uriToKey(java.net.URI)>
+		SHA-256: b35e1eb51237fbd006296cae8095c9ec5984285f4e436eb6590a62093711c754
+		Secure: false
+
+Findings in Java Class: com.integralblue.httpresponsecache.compat.libcore.net.http.HttpResponseCache
+
+	 in Method: java.lang.String uriToKey(java.net.URI)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b35e1eb51237fbd006296cae8095c9ec5984285f4e436eb6590a62093711c754)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer7920)
+
+
+Findings in Java Class: com.integralblue.httpresponsecache.compat.libcore.net.http.HttpResponseCache$Entry
+
+	 in Method: java.security.cert.Certificate[] readCertArray(java.io.InputStream)
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #4bd4587b4160a91d3805e2a3078f219441103f3c06ebcf484e5377901cbc7389)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r9 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #4bd4587b4160a91d3805e2a3078f219441103f3c06ebcf484e5377901cbc7389)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r9 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #4bd4587b4160a91d3805e2a3078f219441103f3c06ebcf484e5377901cbc7389)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r3 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer8233)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 3
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 1
+	TypestateError: 1
+	IncompleteOperationError: 2
+=====================================================================

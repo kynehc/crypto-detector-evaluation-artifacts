@@ -1,0 +1,122 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r7 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r2)
+		Method: <com.threedlite.userhash.location.HttpsUtil: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 38eb381d875c0229d056b2daef7719208c6638a5505c6baf194f7359f8dca7df
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r9 = virtualinvoke $r7.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <com.threedlite.userhash.location.HttpsUtil: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 27150e8d36c00f93922bb77126747a7ae659c5a7286d9dc421c68de5a33fa968
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.KeyStore
+		Statement: $r6 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r2)
+		Method: <com.threedlite.userhash.location.HttpsUtil: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 86415740ccf7356b1cebb76ca1548d881b3cd459c552872e87d5aeadc5083219
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.net.ssl.SSLContext
+		Statement: $r8 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer764)
+		Method: <com.threedlite.userhash.location.HttpsUtil: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 7f12c95ab2a2c25320d4e47d0567bb19f3f1e10ea7b80a0c5a369e74e28499db
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.cert.CertificateFactory
+		Statement: $r4 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer762)
+		Method: <com.threedlite.userhash.location.HttpsUtil: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 876686a4aa679ae587825447499ffd0461a42fdb0ecdab5c456d3dc3ade42f0b
+		Secure: false
+
+Findings in Java Class: com.threedlite.userhash.location.HttpsUtil
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r8.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer765, $r9, varReplacer765)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r8.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer765, $r9, varReplacer765)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #876686a4aa679ae587825447499ffd0461a42fdb0ecdab5c456d3dc3ade42f0b)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r5 = virtualinvoke $r4.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>(r1)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #7f12c95ab2a2c25320d4e47d0567bb19f3f1e10ea7b80a0c5a369e74e28499db)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r8 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer764)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 5
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 1
+	RequiredPredicateError: 2
+	IncompleteOperationError: 1
+=====================================================================

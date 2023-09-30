@@ -1,0 +1,785 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r11
+		Type: java.security.PrivateKey
+		Statement: $r11 = virtualinvoke $r9.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r10)
+		Method: <e.a.a.c.a: javax.net.ssl.SSLContext a(android.content.Context,java.security.cert.Certificate)>
+		SHA-256: cb044c27a2f7ec27dc93f3f1030ed4be39bffd4394f8f5b2bf25c36220ef5227
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <org.spongycastle.crypto.encodings.PKCS1Encoding: byte[] encodeBlock(byte[],int,int)>
+		SHA-256: eacef851ce54f73496b5b532959f537500639a3690f0ee1369bef27820eadfb
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <c.b.k.t: byte[] b(byte[])>
+		SHA-256: 6889ec509e90f251711187d44f864fd63c27de123c3f101613b6c2acbd33a60b
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.cert.CertificateFactory
+		Statement: $r1 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>($r2)
+		Method: <org.spongycastle.cert.jcajce.DefaultCertHelper: java.security.cert.CertificateFactory createCertificateFactory(java.lang.String)>
+		SHA-256: f8fbf85b40c81fe63a566f3acad5c05c9b245103f283f549e11ae2fb09219e7b
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.spongycastle.jcajce.provider.asymmetric.elgamal.BCElGamalPublicKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: a9c19b12994234db6ec00ed5b541d5738b556e23d3870b731ea4245dbf932de7
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4253)
+		Method: <c.b.k.t: byte[] a(byte[],byte[])>
+		SHA-256: dd847e1f0fa2f18c28c8f58a2b67cac25b53a6ab8d75bd8c9d3a15187f9085eb
+		Secure: true
+	Object:
+		Variable: $r22
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r22 = virtualinvoke $r20.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <e.a.a.c.a: javax.net.ssl.SSLContext a(android.content.Context,java.security.cert.Certificate)>
+		SHA-256: 20a099c6a2fdea68790635e7bfaa93619c5074f915764f1181a665f5abf42032
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.engines.ElGamalEngine: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: cc0b332bb2ddc847ca308294e1c87841df1bdcc2359c6b4559abe498d8131c20
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLEngine
+		Statement: $r2 = virtualinvoke $r1.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine()>()
+		Method: <e.a.a.g.e: void c()>
+		SHA-256: 5fd865cecefbac7d8181f3e81ddc9565830eceadc4b923dcfd048cb6faa57a29
+		Secure: false
+	Object:
+		Variable: r0
+		Type: org.spongycastle.x509.ExtendedPKIXParameters
+		Statement: specialinvoke r0.<java.security.cert.PKIXParameters: void <init>(java.util.Set)>($r1)
+		Method: <org.spongycastle.x509.ExtendedPKIXParameters: void <init>(java.util.Set)>
+		SHA-256: bc4db4edf85d5095c872f763083d4cdd57eaf413157a98ff957c0439448eaca6
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.signers.DSASigner: java.security.SecureRandom initSecureRandom(boolean,java.security.SecureRandom)>
+		SHA-256: e8268e06cdec9b55dd4e3a8d37eef42c3e6d25c634d5bfaad5469f6fbc26035f
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.pqc.crypto.ntru.NTRUSigningKeyGenerationParameters: void <init>(int,int,int,int,int,int,int,double,double,double,boolean,boolean,int,org.spongycastle.crypto.Digest)>
+		SHA-256: 7da588f6ba11daef0648e917469639d98b077179b329759419eb3ea4368bb37f
+		Secure: true
+	Object:
+		Variable: $r19
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: $r19 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r4)
+		Method: <e.a.a.c.a: javax.net.ssl.SSLContext a(android.content.Context,java.security.cert.Certificate)>
+		SHA-256: 9a726532b2077c2b8cf5c55100c2a10d4b5e1f6bf654b4dcf622b995db40e868
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.signers.ECGOST3410Signer: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: caabe0390e3d2386e10c04d6d72b0b44e335e1623efc6992e7ef060aaafe4388
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.signers.ECNRSigner: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: 9280f6752b6e6221628d06f9d60b4341d2a16061cd2ae2c26b66d065728b8af7
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.pqc.crypto.ntru.NTRUSigningKeyPairGenerator: org.spongycastle.pqc.crypto.ntru.NTRUSigningKeyPairGenerator$FGBasis generateBasis()>
+		SHA-256: bcb54d56dec785f765303fde3896b946639b8597c070f0bc991c1546f044b396
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.cert.CertificateFactory
+		Statement: $r2 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String,java.security.Provider)>($r3, $r1)
+		Method: <org.spongycastle.cert.jcajce.ProviderCertHelper: java.security.cert.CertificateFactory createCertificateFactory(java.lang.String)>
+		SHA-256: 6d3ec0a71779c0e723ed502888987ff1a41ed16ed17219921981d9d289d341c2
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.engines.RSABlindedEngine: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: 94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.encodings.OAEPEncoding: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: 2927d56a192959dc3453ff63fb3830152d4c89781cce727cc1398f859f78edbf
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.SSLContext
+		Statement: $r5 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r4)
+		Method: <e.a.a.c.a: javax.net.ssl.SSLContext a(android.content.Context,java.security.cert.Certificate)>
+		SHA-256: 19570254a92f316630f1536a84ffcf383eed6edfeb0e33f9961983fd12595d56
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <org.spongycastle.crypto.signers.ISO9796d2PSSSigner: byte[] generateSignature()>
+		SHA-256: 153ecb1a57e7fd3a3f9212bf84d10102d6cb1bcca8396308797653bf2209f59c
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.cert.CertificateFactory
+		Statement: $r2 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String,java.lang.String)>($r3, $r1)
+		Method: <org.spongycastle.cert.jcajce.NamedCertHelper: java.security.cert.CertificateFactory createCertificateFactory(java.lang.String)>
+		SHA-256: 7af7af102744f29108e79384d9ad966c7cdb212255b7ad669bab054a7fd5a599
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLEngine
+		Statement: virtualinvoke $r4.<javax.net.ssl.SSLEngine: void setEnabledCipherSuites(java.lang.String[])>($r5)
+		Method: <e.a.a.g.d: void a()>
+		SHA-256: 15c91b7a435329babe93f8188bd2f013db7a9df62b9d5376b5feecb7ee91936e
+		Secure: false
+	Object:
+		Variable: $r21
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r21 = virtualinvoke $r19.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <e.a.a.c.a: javax.net.ssl.SSLContext a(android.content.Context,java.security.cert.Certificate)>
+		SHA-256: a474c0880646dd9bf86eaa16de2042764a2175086a6e18fbf91fb695ec79cf28
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.signers.PSSSigner: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: 7331639808f0d8733f5df0230ac3a48eecf3cff3ed703c4c0022f9cd7cd80756
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.pqc.crypto.rainbow.RainbowSigner: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: b0d1ba3da8064ca082b6ab923adae7a1f903b06296e62e14fc3b962758995d3f
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r3)
+		Method: <e.a.a.c.a: javax.net.ssl.SSLContext a()>
+		SHA-256: 61632a680def0dc9805ba27adb0d9f4a15c3d40c81165414cc46455eee82f554
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r6)
+		Method: <org.spongycastle.cert.crmf.jcajce.JcePKMACValuesCalculator: byte[] calculateMac(byte[],byte[])>
+		SHA-256: eb5a34b9758880828d1f8405aff4affccd9e51d69808181b3b946a233715c51d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.pqc.crypto.ntru.NTRUSigningKeyGenerationParameters: void <init>(int,int,int,int,int,double,double,double,boolean,boolean,int,org.spongycastle.crypto.Digest)>
+		SHA-256: 7da588f6ba11daef0648e917469639d98b077179b329759419eb3ea4368bb37f
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLEngine
+		Statement: virtualinvoke $r4.<javax.net.ssl.SSLEngine: void setEnabledCipherSuites(java.lang.String[])>($r5)
+		Method: <e.a.a.g.d: void a()>
+		SHA-256: 15c91b7a435329babe93f8188bd2f013db7a9df62b9d5376b5feecb7ee91936e
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r3.<java.security.SecureRandom: void nextBytes(byte[])>($r2)
+		Method: <org.spongycastle.crypto.signers.PSSSigner: byte[] generateSignature()>
+		SHA-256: 5971d6538d25f1e396808264bf05345b660a017c8af8ec968b717cf263b5ce6a
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: java.security.KeyFactory
+		Statement: $r9 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer4205)
+		Method: <e.a.a.c.a: javax.net.ssl.SSLContext a(android.content.Context,java.security.cert.Certificate)>
+		SHA-256: 1c285069746105bcfc754ef780d3a30e95686d22066df5e582da4f91f32c3537
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer11825)
+		Method: <c.b.k.t: byte[] b(byte[])>
+		SHA-256: d39f360957d97fe0d335ede3e2d4772175f0e1bac47a455ec02f7d3b6c80f934
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.signers.ISO9796d2PSSSigner: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: 6dae500fa4127477f702f7c8db5b65ac00e8420fed109375c053548083b8d090
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.generators.ECKeyPairGenerator: void init(org.spongycastle.crypto.KeyGenerationParameters)>
+		SHA-256: b9c970d7ca75c43cb7258988e82963e870aab49d0877fadda916613732dffc1d
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <c.b.k.t: byte[] a(byte[],byte[])>
+		SHA-256: 2eb5994383b31ffb7cf7d30d880ebe9cde40c881537667f0b4247ff45606271
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLEngine
+		Statement: virtualinvoke $r2.<javax.net.ssl.SSLEngine: void setEnabledCipherSuites(java.lang.String[])>($r3)
+		Method: <e.a.a.g.e: void c()>
+		SHA-256: a14954802cf078de1935edcd95bd0c2cd1eeb69259f1c04a19a012aa24eaf23f
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.pqc.crypto.ntru.NTRUEncryptionKeyGenerationParameters: void <init>(int,int,int,int,int,int,int,int,int,int,boolean,byte[],boolean,boolean,org.spongycastle.crypto.Digest)>
+		SHA-256: 8804dfbcedc43de8915d1844bd637bb3574c76388648172f6a7135bf1a8c7524
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.pqc.crypto.ntru.NTRUSigningKeyPairGenerator: org.spongycastle.pqc.crypto.ntru.NTRUSigningKeyPairGenerator$FGBasis generateBasis()>
+		SHA-256: bcb54d56dec785f765303fde3896b946639b8597c070f0bc991c1546f044b396
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.signers.GOST3410Signer: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: 61b7887e2cfe6269c9dc5ed1565a2d9c81d2ae6237d2a5bf20c73d26a54cd85c
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.spongycastle.jcajce.provider.asymmetric.elgamal.BCElGamalPrivateKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: c908257ebef1e44e27421c3dc6127a4c79990e1515e273132ea2c2cb020fcdee
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.pqc.crypto.ntru.NTRUSigningKeyPairGenerator: org.spongycastle.pqc.crypto.ntru.NTRUSigningKeyPairGenerator$FGBasis generateBasis()>
+		SHA-256: bcb54d56dec785f765303fde3896b946639b8597c070f0bc991c1546f044b396
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.pqc.crypto.ntru.NTRUEngine: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: 4bd6151add7d31cc4c6c1b467a5fcba26d1274b4e5b8f364b9492ad636053fa7
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLEngine
+		Statement: $r4 = virtualinvoke $r3.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine()>()
+		Method: <e.a.a.g.d: void a()>
+		SHA-256: d279847d260f06f6baaebb675669264eae867622697f12afb91715effb5fdc3e
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.KeyStore
+		Statement: $r6 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r4)
+		Method: <e.a.a.c.a: javax.net.ssl.SSLContext a(android.content.Context,java.security.cert.Certificate)>
+		SHA-256: c24762b93a0cd63619996150f773e62c82ab4e4e262d0868fa649a0e57b78520
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLEngine
+		Statement: virtualinvoke $r2.<javax.net.ssl.SSLEngine: void setEnabledCipherSuites(java.lang.String[])>($r3)
+		Method: <e.a.a.g.e: void c()>
+		SHA-256: a14954802cf078de1935edcd95bd0c2cd1eeb69259f1c04a19a012aa24eaf23f
+		Secure: false
+	Object:
+		Variable: $r20
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r20 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r0)
+		Method: <e.a.a.c.a: javax.net.ssl.SSLContext a(android.content.Context,java.security.cert.Certificate)>
+		SHA-256: af3238eb772cc74de53231fdbf7aa2af5e2b14b503e472dcffb0b6048e9eff6a
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <org.spongycastle.crypto.encodings.PKCS1Encoding: byte[] decodeBlockOrRandom(byte[],int,int)>
+		SHA-256: 5401dd8da4407c879924e6ed7f3d4e70defe35dd3a02c96ebbbe6f1992167edc
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.pqc.crypto.ntru.NTRUSigningKeyPairGenerator: org.spongycastle.pqc.crypto.ntru.NTRUSigningKeyPairGenerator$FGBasis generateBasis()>
+		SHA-256: bcb54d56dec785f765303fde3896b946639b8597c070f0bc991c1546f044b396
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.signers.DSTU4145Signer: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: bb98eee2eb82fb2c71e59ff99dcc6ac412ba5d86e67e379f475f490796e58a35
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.spongycastle.jce.provider.JCEElGamalPrivateKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: 6b8822e70d4604e23c0ea07692bf2c9c1daaa36d64fb48b6df14aae465189041
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.spongycastle.jce.provider.JCEElGamalPublicKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: 2f96be90287037dd5aa521a81412c6567fe97ad3bdc0a3e0dd37cb2855cfb876
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.signers.ECDSASigner: java.security.SecureRandom initSecureRandom(boolean,java.security.SecureRandom)>
+		SHA-256: f3053cf85ff0ce748590d7e6a4da3184d4158a2e3d38a0473e74cc66757dd76
+		Secure: true
+	Object:
+		Variable: varReplacer4205
+		Type: java.lang.String
+		Statement: $r9 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer4205)
+		Method: <e.a.a.c.a: javax.net.ssl.SSLContext a(android.content.Context,java.security.cert.Certificate)>
+		SHA-256: c5619c7d836755ca7d7b43dc3d8470c51c7b03e89722f61d383c491462f3cbda
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.pqc.crypto.gmss.GMSSSigner: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: 2dc8cd1c1fa7979cada7be8f8320f93342af2ff1963c7c499a3420b2b9545bfa
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.pqc.crypto.ntru.NTRUEncryptionKeyGenerationParameters: void <init>(int,int,int,int,int,int,int,int,boolean,byte[],boolean,boolean,org.spongycastle.crypto.Digest)>
+		SHA-256: 8804dfbcedc43de8915d1844bd637bb3574c76388648172f6a7135bf1a8c7524
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.lang.String
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r6)
+		Method: <org.spongycastle.cert.crmf.jcajce.JcePKMACValuesCalculator: byte[] calculateMac(byte[],byte[])>
+		SHA-256: 7ac65d9273853d085f70ad22d3f59943ddd7ac26296cff7481955242e4100340
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.encodings.PKCS1Encoding: void init(boolean,org.spongycastle.crypto.CipherParameters)>
+		SHA-256: d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59
+		Secure: true
+
+Findings in Java Class: e.a.a.c.a
+
+	 in Method: javax.net.ssl.SSLContext a(android.content.Context,java.security.cert.Certificate)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r11 = virtualinvoke $r9.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r10)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r21, $r22, varReplacer4209)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #9a726532b2077c2b8cf5c55100c2a10d4b5e1f6bf654b4dcf622b995db40e868)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r19.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r6, $r13)
+
+		HardCodedError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #9a726532b2077c2b8cf5c55100c2a10d4b5e1f6bf654b4dcf622b995db40e868)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r19.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r6, $r13)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r21, $r22, varReplacer4209)
+
+
+	 in Method: javax.net.ssl.SSLContext a()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4223, $r7, varReplacer4223)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4223, $r7, varReplacer4223)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4223, $r7, varReplacer4223)
+
+
+Findings in Java Class: e.a.a.g.d
+
+	 in Method: void a()
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLEngine (on Object #15c91b7a435329babe93f8188bd2f013db7a9df62b9d5376b5feecb7ee91936e)
+			Operation on object of type javax.net.ssl.SSLEngine object not completed. Expected call to clearPassword
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLEngine: void setEnabledCipherSuites(java.lang.String[])>($r5)
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLEngine (on Object #15c91b7a435329babe93f8188bd2f013db7a9df62b9d5376b5feecb7ee91936e)
+			Operation on object of type javax.net.ssl.SSLEngine object not completed. Expected call to clearPassword
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLEngine: void setEnabledCipherSuites(java.lang.String[])>($r5)
+
+
+Findings in Java Class: e.a.a.g.e
+
+	 in Method: void c()
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLEngine (on Object #a14954802cf078de1935edcd95bd0c2cd1eeb69259f1c04a19a012aa24eaf23f)
+			Operation on object of type javax.net.ssl.SSLEngine object not completed. Expected call to clearPassword
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLEngine: void setEnabledCipherSuites(java.lang.String[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLEngine (on Object #a14954802cf078de1935edcd95bd0c2cd1eeb69259f1c04a19a012aa24eaf23f)
+			Operation on object of type javax.net.ssl.SSLEngine object not completed. Expected call to clearPassword
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLEngine: void setEnabledCipherSuites(java.lang.String[])>($r3)
+
+
+Findings in Java Class: org.spongycastle.cert.jcajce.JcaX509CertificateConverter
+
+	 in Method: java.security.cert.X509Certificate getCertificate(org.spongycastle.cert.X509CertificateHolder)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #f8fbf85b40c81fe63a566f3acad5c05c9b245103f283f549e11ae2fb09219e7b)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r6 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #7af7af102744f29108e79384d9ad966c7cdb212255b7ad669bab054a7fd5a599)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r6 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #6d3ec0a71779c0e723ed502888987ff1a41ed16ed17219921981d9d289d341c2)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r6 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r4)
+
+
+Findings in Java Class: org.spongycastle.crypto.encodings.PKCS1Encoding
+
+	 in Method: byte[] encodeBlock(byte[],int,int)
+		TypestateError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Unexpected call to method nextBytes on object of type java.security.SecureRandom. Expect a call to one of the following methods init,getInstanceStrong,getInstance
+			at statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = virtualinvoke r0.<org.spongycastle.crypto.encodings.PKCS1Encoding: int getInputBlockSize()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = virtualinvoke r0.<org.spongycastle.crypto.encodings.PKCS1Encoding: int getInputBlockSize()>()
+
+
+	 in Method: byte[] decodeBlockOrRandom(byte[],int,int)
+		TypestateError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Unexpected call to method nextBytes on object of type java.security.SecureRandom. Expect a call to one of the following methods init,getInstanceStrong,getInstance
+			at statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i1 = interfaceinvoke $r2.<org.spongycastle.crypto.AsymmetricBlockCipher: int getOutputBlockSize()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i1 = virtualinvoke r0.<org.spongycastle.crypto.encodings.PKCS1Encoding: int getOutputBlockSize()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i1 = virtualinvoke r0.<org.spongycastle.crypto.encodings.PKCS1Encoding: int getOutputBlockSize()>()
+
+
+	 in Method: byte[] decodeBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i1 = virtualinvoke r0.<org.spongycastle.crypto.encodings.PKCS1Encoding: int getOutputBlockSize()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i1 = virtualinvoke r0.<org.spongycastle.crypto.encodings.PKCS1Encoding: int getOutputBlockSize()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i1 = interfaceinvoke $r2.<org.spongycastle.crypto.AsymmetricBlockCipher: int getOutputBlockSize()>()
+
+
+Findings in Java Class: org.spongycastle.crypto.signers.ISO9796d2PSSSigner
+
+	 in Method: void init(boolean,org.spongycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r8.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r8.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r3)
+
+
+Findings in Java Class: org.spongycastle.crypto.signers.PSSSigner
+
+	 in Method: void init(boolean,org.spongycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r7.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r7.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r7.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r7.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r1)
+
+
+Findings in Java Class: org.spongycastle.crypto.signers.X931Signer
+
+	 in Method: void init(boolean,org.spongycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r1.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r1.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r3)
+
+
+Findings in Java Class: org.spongycastle.crypto.tls.TlsRSAUtils
+
+	 in Method: byte[] safeDecryptPreMasterSecret(org.spongycastle.crypto.tls.TlsContext,org.spongycastle.crypto.params.RSAKeyParameters,byte[])
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r5 = virtualinvoke $r1.<org.spongycastle.crypto.encodings.PKCS1Encoding: byte[] processBlock(byte[],int,int)>($r5, varReplacer21052, $i1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r5 = virtualinvoke $r1.<org.spongycastle.crypto.encodings.PKCS1Encoding: byte[] processBlock(byte[],int,int)>($r5, varReplacer21052, $i1)
+
+
+	 in Method: byte[] generateEncryptedPreMasterSecret(org.spongycastle.crypto.tls.TlsContext,org.spongycastle.crypto.params.RSAKeyParameters,java.io.OutputStream)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r9 = virtualinvoke $r6.<org.spongycastle.crypto.encodings.PKCS1Encoding: byte[] processBlock(byte[],int,int)>($r0, varReplacer20495, varReplacer20496)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r9 = virtualinvoke $r6.<org.spongycastle.crypto.encodings.PKCS1Encoding: byte[] processBlock(byte[],int,int)>($r0, varReplacer20495, varReplacer20496)
+
+
+Findings in Java Class: org.spongycastle.crypto.encodings.ISO9796d1Encoding
+
+	 in Method: void init(boolean,org.spongycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r1.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r1.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r2)
+
+
+Findings in Java Class: org.spongycastle.crypto.encodings.OAEPEncoding
+
+	 in Method: void init(boolean,org.spongycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r4.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r4.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r1)
+
+
+	 in Method: byte[] decodeBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r3 = specialinvoke r0.<org.spongycastle.crypto.encodings.OAEPEncoding: byte[] maskGeneratorFunction1(byte[],int,int,int)>($r1, varReplacer17794, $i0, $i1)
+
+
+Findings in Java Class: org.spongycastle.crypto.signers.RSADigestSigner
+
+	 in Method: void init(boolean,org.spongycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r6.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r6.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r1)
+
+
+Findings in Java Class: org.spongycastle.crypto.signers.ISO9796d2Signer
+
+	 in Method: void init(boolean,org.spongycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r3.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r3.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r2)
+
+
+Findings in Java Class: org.spongycastle.crypto.signers.GenericSigner
+
+	 in Method: void init(boolean,org.spongycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r6.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r6.<org.spongycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.spongycastle.crypto.CipherParameters)>($z0, $r1)
+
+
+Findings in Java Class: org.spongycastle.crypto.engines.NaccacheSternEngine
+
+	 in Method: byte[] processBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = virtualinvoke r0.<org.spongycastle.crypto.engines.NaccacheSternEngine: int getInputBlockSize()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = virtualinvoke r0.<org.spongycastle.crypto.engines.NaccacheSternEngine: int getInputBlockSize()>()
+
+
+Findings in Java Class: org.spongycastle.crypto.engines.RSABlindedEngine
+
+	 in Method: byte[] processBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r8 = staticinvoke <org.spongycastle.util.BigIntegers: java.math.BigInteger createRandomInRange(java.math.BigInteger,java.math.BigInteger,java.security.SecureRandom)>($r8, $r9, $r10)
+
+
+Findings in Java Class: org.spongycastle.pqc.crypto.ntru.NTRUEngine
+
+	 in Method: byte[] decrypt(byte[],org.spongycastle.pqc.crypto.ntru.NTRUEncryptionPrivateKeyParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r5 = specialinvoke r0.<org.spongycastle.pqc.crypto.ntru.NTRUEngine: org.spongycastle.pqc.math.ntru.polynomial.Polynomial generateBlindingPoly(byte[],byte[])>($r4, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r6 = virtualinvoke r0.<org.spongycastle.pqc.crypto.ntru.NTRUEngine: org.spongycastle.pqc.math.ntru.polynomial.IntegerPolynomial decrypt(org.spongycastle.pqc.math.ntru.polynomial.IntegerPolynomial,org.spongycastle.pqc.math.ntru.polynomial.Polynomial,org.spongycastle.pqc.math.ntru.polynomial.IntegerPolynomial)>($r8, $r5, $r6)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r10 = specialinvoke r0.<org.spongycastle.pqc.crypto.ntru.NTRUEngine: org.spongycastle.pqc.math.ntru.polynomial.IntegerPolynomial MGF(byte[],int,int,boolean)>($r1, $i1, $i6, $z0)
+
+
+Findings in Java Class: org.spongycastle.crypto.engines.ElGamalEngine
+
+	 in Method: byte[] processBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = virtualinvoke r0.<org.spongycastle.crypto.engines.ElGamalEngine: int getInputBlockSize()>()
+
+
+Findings in Java Class: org.spongycastle.cert.crmf.jcajce.JcePKMACValuesCalculator
+
+	 in Method: byte[] calculateMac(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r6)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 58
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 2
+	IncompleteOperationError: 45
+	RequiredPredicateError: 7
+	NeverTypeOfError: 1
+	HardCodedError: 1
+=====================================================================

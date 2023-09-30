@@ -1,0 +1,213 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher: com.google.common.hash.HashCode hash()>
+		SHA-256: 498aa274b0e0dc658a96e5b82797c2ef859caa8cc0a4a03329fbcf0be8023051
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r2)
+		Method: <org.apache.james.mime4j.storage.CipherStorageProvider$CipherStorageOutputStream: void <init>(org.apache.james.mime4j.storage.StorageOutputStream,java.lang.String,javax.crypto.spec.SecretKeySpec)>
+		SHA-256: 27a9ac0bbb75995cefc688804de60ae71310b4e695e5bc593cb89a344468c677
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r1)
+		Method: <org.apache.james.mime4j.storage.CipherStorageProvider: javax.crypto.spec.SecretKeySpec getSecretKeySpec()>
+		SHA-256: ad3e26174108e62f76245c0540efae26f2d1f3371e0c715970bc3b7af01e9d9d
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.CipherOutputStream
+		Statement: specialinvoke $r6.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>($r1, $r5)
+		Method: <org.apache.james.mime4j.storage.CipherStorageProvider$CipherStorageOutputStream: void <init>(org.apache.james.mime4j.storage.StorageOutputStream,java.lang.String,javax.crypto.spec.SecretKeySpec)>
+		SHA-256: 2f9fbce5e3ca95e7a05c117bf5cc47b0f036129ad28759da8387f9f95493e75a
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r7.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <oauth.signpost.signature.HmacSha1MessageSigner: java.lang.String sign(oauth.signpost.http.HttpRequest,oauth.signpost.http.RequestParameters)>
+		SHA-256: af588f5518a135c2a7148f74ec340c3a6a36fde9198577f878ff5b071f829122
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Mac
+		Statement: $r7 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer10520)
+		Method: <oauth.signpost.signature.HmacSha1MessageSigner: java.lang.String sign(oauth.signpost.http.HttpRequest,oauth.signpost.http.RequestParameters)>
+		SHA-256: fa12eb1402952fd633b5b65d4b7f88752c1f3e71dabd79599a0f52c14fcab884
+		Secure: false
+	Object:
+		Variable: varReplacer10522
+		Type: java.lang.String
+		Statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer10522)
+		Method: <oauth.signpost.signature.HmacSha1MessageSigner: java.lang.String sign(oauth.signpost.http.HttpRequest,oauth.signpost.http.RequestParameters)>
+		SHA-256: e1bf6daea29ab6b003825806edc3ff5cd7b70f543311ff0c156333bd6ac8c2ca
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer10522)
+		Method: <oauth.signpost.signature.HmacSha1MessageSigner: java.lang.String sign(oauth.signpost.http.HttpRequest,oauth.signpost.http.RequestParameters)>
+		SHA-256: 99c4db375e28903487650073b65be7c5bb00384802620036178b420847679d9a
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r0)
+		Method: <com.google.common.hash.MessageDigestHashFunction: java.security.MessageDigest getMessageDigest(java.lang.String)>
+		SHA-256: 1483c09d507b816f2d8e358bdcf748f95d8d6b301f37aed4de69aa06c2eae936
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.lang.String
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r1)
+		Method: <org.apache.james.mime4j.storage.CipherStorageProvider: javax.crypto.spec.SecretKeySpec getSecretKeySpec()>
+		SHA-256: 8388047c9ab098c3c276738b84169582a49864ef5a70399a5c191df5df935c0f
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher: com.google.common.hash.HashCode hash()>
+		SHA-256: 498aa274b0e0dc658a96e5b82797c2ef859caa8cc0a4a03329fbcf0be8023051
+		Secure: true
+
+Findings in Java Class: oauth.signpost.signature.HmacSha1MessageSigner
+
+	 in Method: java.lang.String sign(oauth.signpost.http.HttpRequest,oauth.signpost.http.RequestParameters)
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #99c4db375e28903487650073b65be7c5bb00384802620036178b420847679d9a)
+			Second parameter (with value "HmacSHA1") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer10522)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r12.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer10522)
+
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #fa12eb1402952fd633b5b65d4b7f88752c1f3e71dabd79599a0f52c14fcab884)
+			First parameter (with value "HmacSHA1") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r7 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer10520)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r7.<javax.crypto.Mac: void init(java.security.Key)>(r3)
+
+
+Findings in Java Class: com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher
+
+	 in Method: com.google.common.hash.HashCode hash()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #1483c09d507b816f2d8e358bdcf748f95d8d6b301f37aed4de69aa06c2eae936)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #1483c09d507b816f2d8e358bdcf748f95d8d6b301f37aed4de69aa06c2eae936)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: com.google.common.hash.AbstractCompositeHashFunction
+
+	 in Method: com.google.common.hash.Hasher newHasher()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #1483c09d507b816f2d8e358bdcf748f95d8d6b301f37aed4de69aa06c2eae936)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r5.<com.google.common.hash.AbstractCompositeHashFunction$1: void <init>(com.google.common.hash.AbstractCompositeHashFunction,com.google.common.hash.Hasher[])>(r0, r1)
+
+
+Findings in Java Class: com.google.common.hash.AbstractStreamingHashFunction
+
+	 in Method: com.google.common.hash.HashCode hashObject(java.lang.Object,com.google.common.hash.Funnel)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #1483c09d507b816f2d8e358bdcf748f95d8d6b301f37aed4de69aa06c2eae936)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r4 = interfaceinvoke $r3.<com.google.common.hash.Hasher: com.google.common.hash.HashCode hash()>()
+
+
+Findings in Java Class: org.apache.james.mime4j.storage.CipherStorageProvider$CipherStorageOutputStream
+
+	 in Method: void <init>(org.apache.james.mime4j.storage.StorageOutputStream,java.lang.String,javax.crypto.spec.SecretKeySpec)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer11329, $r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherOutputStream (on Object #2f9fbce5e3ca95e7a05c117bf5cc47b0f036129ad28759da8387f9f95493e75a)
+			Operation on object of type javax.crypto.CipherOutputStream object not completed. Expected call to write
+			at statement: specialinvoke $r6.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>($r1, $r5)
+
+
+Findings in Java Class: org.apache.james.mime4j.storage.CipherStorageProvider
+
+	 in Method: javax.crypto.spec.SecretKeySpec getSecretKeySpec()
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r1)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 11
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 4
+	ConstraintError: 2
+	TypestateError: 2
+	IncompleteOperationError: 3
+=====================================================================

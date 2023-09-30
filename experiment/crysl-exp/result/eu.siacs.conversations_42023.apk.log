@@ -1,0 +1,1616 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+2    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+2    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+2    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <eu.siacs.conversations.xmpp.jingle.DirectConnectionUtils: java.util.List getLocalCandidates(eu.siacs.conversations.xmpp.Jid)>
+		SHA-256: 8bd21b412b02ac222334f732a1de74a6757c6ea0f18b3fd26cd92f670779924
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: ae39b036c5eeeba58d380660f68e23806935f12d2f5c9cefe65440425aa34f4a
+		Secure: false
+	Object:
+		Variable: $r25
+		Type: javax.crypto.Cipher
+		Statement: $r25 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer17821, varReplacer17822)
+		Method: <eu.siacs.conversations.services.ExportBackupService: java.util.List export()>
+		SHA-256: aeda5de328ab57e539f1f2188a2ff3394595747ac1727e8d9fef878070c16628
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 316cbc86e080130334eaabd60025d96084375d0058312a103cd3255ba6f0aeb
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: byte[]
+		Statement: $r15 = virtualinvoke $r10.<java.security.MessageDigest: byte[] digest()>()
+		Method: <eu.siacs.conversations.xmpp.jingle.JingleSocks5Transport: void lambda$send$3(eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged,eu.siacs.conversations.entities.DownloadableFile)>
+		SHA-256: d9b3293a70163c23f7231e7cfed48db45aefd0420120fd766ad97b2db682a0c
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: java.security.MessageDigest
+		Statement: $r13 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer22707)
+		Method: <eu.siacs.conversations.crypto.sasl.DigestMd5: java.lang.String getResponse(java.lang.String)>
+		SHA-256: 578adca24dd047f8605653b08ed84fdba856a9a65cd6f8b060f8a5d87da8e7c6
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.Signature
+		Statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r6)
+		Method: <de.measite.minidns.dnssec.algorithms.JavaSecSignatureVerifier: boolean verify(byte[],byte[],byte[])>
+		SHA-256: 6e5a38081a611515d4b47f0556fd9fc4356c61c58cdada912e2d4ff1f24380f7
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <eu.siacs.conversations.utils.CryptoHelper: java.lang.String getFingerprint(java.lang.String)>
+		SHA-256: 91fd492baa91bed7f615dee0756947cd79e657310577765349ccc25936c69ae2
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r3.<java.security.Signature: boolean verify(byte[])>($r5)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: d02affd279e8743b6fd64cdf0e2dd47c30a5603be2e61d5718cf63d25b2d1a15
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke $r8.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>($r6, $r7)
+		Method: <eu.siacs.conversations.persistance.FileBackend: eu.siacs.conversations.xmpp.pep.Avatar getPepAvatar(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,int)>
+		SHA-256: 12f4c30f4e2fa8f1370f65137a6288fe3ee8bd4402f6cd2f15dce8d3606233fa
+		Secure: true
+	Object:
+		Variable: $r17
+		Type: byte[]
+		Statement: $r17 = virtualinvoke $r10.<java.security.MessageDigest: byte[] digest()>()
+		Method: <eu.siacs.conversations.xmpp.jingle.JingleSocks5Transport: void lambda$receive$4(eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged,eu.siacs.conversations.entities.DownloadableFile)>
+		SHA-256: b6eb2468678034ca7325ca7d5394f2e3d2d9f8bf6d86ed95a61091ac6bbf8cd6
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: javax.crypto.KeyGenerator
+		Statement: $r0 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer7671)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: byte[] generateKey()>
+		SHA-256: 4586d73db827e6c578f64199346bdb6d21d44d66737c60e802d46c2218c3c4d5
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r3)
+		Method: <org.whispersystems.libsignal.ratchet.ChainKey: byte[] getBaseMaterial(byte[])>
+		SHA-256: 8fb4835c5bab5ec63a45e8872f59bf24a48f2f4c6d745dfc352aacb8be38f264
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r13.<java.security.SecureRandom: void <init>()>()
+		Method: <eu.siacs.conversations.ui.MagicCreateActivity: void lambda$onCreate$0(android.view.View)>
+		SHA-256: e541365786a13ceaaa1dc69f245199f83560daf55c98c177a0fb6b50db207f29
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <eu.siacs.conversations.crypto.sasl.DigestMd5: java.lang.String getResponse(java.lang.String)>
+		SHA-256: 2826da7562f2c1ee744517e4499fdf17272e8a80439f44a4573bde0ec542ccd4
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r9 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest(byte[])>($r9)
+		Method: <eu.siacs.conversations.generator.AbstractGenerator: java.lang.String getCapHash(eu.siacs.conversations.entities.Account)>
+		SHA-256: 40e6ba7def175b601af0ebe658e12dbafe663826d23bcc0794776a9d5b369c8d
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.cert.CertificateFactory
+		Statement: $r0 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer40318)
+		Method: <org.conscrypt.SSLUtils: java.security.cert.CertificateFactory getCertificateFactory()>
+		SHA-256: 505ce8be86c71d1fb37d150cd10d508787472538112cdd169c7538b6d6288753
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+		Method: <org.whispersystems.libsignal.protocol.SignalMessage: byte[] getMac(org.whispersystems.libsignal.IdentityKey,org.whispersystems.libsignal.IdentityKey,javax.crypto.spec.SecretKeySpec,byte[])>
+		SHA-256: 5afcb2de494e113f2c3e8ca8d1193526f79296059cd74267f4045387b4e53bb1
+		Secure: false
+	Object:
+		Variable: $r20
+		Type: java.security.MessageDigest
+		Statement: $r20 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17937)
+		Method: <eu.siacs.conversations.persistance.FileBackend: boolean save(eu.siacs.conversations.xmpp.pep.Avatar)>
+		SHA-256: d1d6e4a95def86180384fee31bdbc7bde7dfa32d0a2bc3bae306d273d311fa92
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer32929)
+		Method: <eu.siacs.conversations.generator.AbstractGenerator: java.lang.String getCapHash(eu.siacs.conversations.entities.Account)>
+		SHA-256: 229420260aadb45825dafde29cdb7b7149476a59e32f6b36f8c983327bb8d9b8
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r0.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r1, $r5, $r3, varReplacer37891)
+		Method: <de.measite.minidns.dnssec.algorithms.ECGOSTSignatureVerifier: void <clinit>()>
+		SHA-256: 13e1beda7a24fd2cb94ecbfaa00cdc298b2ef0ce92c55aefc124c4654f9a86d2
+		Secure: true
+	Object:
+		Variable: $r25
+		Type: javax.crypto.Cipher
+		Statement: $r25 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer17825)
+		Method: <eu.siacs.conversations.services.ExportBackupService: java.util.List export()>
+		SHA-256: a9bc3f1ed882f02805de0fd5a7495a93bf3a5016f8f3b45f1adedf8a43cdc42a
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer50311)
+		Method: <org.whispersystems.libsignal.state.SessionState: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)>
+		SHA-256: fb190d81cdc351f664be190945cf2638d2b281ce876fd53999e403007b44983
+		Secure: false
+	Object:
+		Variable: varReplacer45950
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer45950)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] expand(byte[],byte[],int)>
+		SHA-256: 2f66cbd8838f9a7d40c0665139cafa92d0bff91cae59af81b0ef6a28990da471
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <eu.siacs.conversations.crypto.sasl.DigestMd5: java.lang.String getResponse(java.lang.String)>
+		SHA-256: 2826da7562f2c1ee744517e4499fdf17272e8a80439f44a4573bde0ec542ccd4
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: $r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer39225)
+		Method: <org.whispersystems.curve25519.JCESecureRandomProvider: void nextBytes(byte[])>
+		SHA-256: e8ae589e881179bfd558378218dc6738dccd13156462479bcb48362b64eb58ef
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r6.<javax.crypto.Mac: byte[] doFinal()>()
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] expand(byte[],byte[],int)>
+		SHA-256: 3e233786151d239434b197b383e2e2f3502c681ec99902a2eeadf3d8d687d1b
+		Secure: false
+	Object:
+		Variable: varReplacer44692
+		Type: java.lang.String
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer44692)
+		Method: <org.whispersystems.libsignal.kdf.DerivedMessageSecrets: void <init>(byte[])>
+		SHA-256: c7f68ebfd22ba57ac24369cf067d72a9866e211268ac72c12bd3a5e626e97c3b
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.MessageDigest
+		Statement: $r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8571)
+		Method: <eu.siacs.conversations.xmpp.jingle.JingleSocks5Transport: void lambda$receive$4(eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged,eu.siacs.conversations.entities.DownloadableFile)>
+		SHA-256: 7153ab886819658c351208f89a8b463f2db835b953600b61aca760429743ceaa
+		Secure: false
+	Object:
+		Variable: $r27
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r27.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r17)
+		Method: <eu.siacs.conversations.services.ExportBackupService: java.util.List export()>
+		SHA-256: daa4f88d77e41256e7f291942b81ab1b5445af17392e0ccb4fcaca7e9f110a28
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r10.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: 9d110d3f3943f5f1538d33e3d18932b71ca7accf2f86c174ab417a2b10712fb0
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r1.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r9)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: 7ac05a324707752a8fcdd9787a5fcda4e6af85c295ea6bb9f2ffcf779c41a30d
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer32053)
+		Method: <eu.siacs.conversations.xmpp.jingle.JingleSocks5Transport: void <init>(eu.siacs.conversations.xmpp.jingle.JingleFileTransferConnection,eu.siacs.conversations.xmpp.jingle.JingleCandidate)>
+		SHA-256: e1a55f74e9f0c02f955ab07d3fda47f69da78793a382ec7d119e8ed45b601b36
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: 6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(varReplacer19296)
+		Method: <eu.siacs.conversations.services.MemorizingTrustManager: javax.net.ssl.X509TrustManager getTrustManager(java.security.KeyStore)>
+		SHA-256: 97e6f1114411045cd1f6d5bd8d9c38fe1d5009ac13e3fadfd0bd8abf447693d6
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r13.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer43782)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage$XmppAxolotlPlaintextMessage decrypt(eu.siacs.conversations.crypto.axolotl.XmppAxolotlSession,java.lang.Integer)>
+		SHA-256: 2059a869252852ab0d329174f87ef152625875c2446f8d68314b0ccbc82d65
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.security.Provider)>($r1, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 1027fce20723454b26980f38c5edb26bcec19bffa5b6443c75459b577c51d460
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.MessageDigest
+		Statement: $r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8516)
+		Method: <eu.siacs.conversations.xmpp.jingle.JingleSocks5Transport: void lambda$send$3(eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged,eu.siacs.conversations.entities.DownloadableFile)>
+		SHA-256: ff9a1f99fb4d3d1bb67bf9bbb4f988d678011a10ff9b97eab913769c3937c37e
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Mac
+		Statement: $r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer44708)
+		Method: <org.whispersystems.libsignal.protocol.SignalMessage: byte[] getMac(org.whispersystems.libsignal.IdentityKey,org.whispersystems.libsignal.IdentityKey,javax.crypto.spec.SecretKeySpec,byte[])>
+		SHA-256: 7c469361f37bb50926f645ac8331427ee462c196ae77a894ee15b1d896c22b7b
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r2 = virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 84f17b7e3930c76e2b174d27b9668ee8d3209ae5512e2c539d541e6ef4265515
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer16868, varReplacer16869)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: void encrypt(java.lang.String)>
+		SHA-256: 381f3c04c4f06c094bf12b4a3be309462f3ce5e0304461fefe701ae8f5f044f3
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: c3dcfb07eabeaead2afa7b41e33d56187e303e14a7184c21b7bac99836f2c278
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer26090)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 8be6d1b60688a70dcca6c8abdf5158108cf1f926a07f73b41ff5696c6127d0ee
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer26093, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: bb0c14fff06f23a4a16f6eed6cd06f64b59ab002310f378b3608504830160781
+		Secure: false
+	Object:
+		Variable: $r17
+		Type: byte[]
+		Statement: virtualinvoke $r8.<java.security.SecureRandom: void nextBytes(byte[])>($r17)
+		Method: <eu.siacs.conversations.services.ExportBackupService: java.util.List export()>
+		SHA-256: e596b2cc18751afc6f64fb4527f4c42835b79b48259bab147195cbd537c4f4e4
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <eu.siacs.conversations.ui.CreatePublicChannelDialog: void <clinit>()>
+		SHA-256: 7759a648e9eff22dd49d5ca3a4757919012052c3a7313f2feeb29894b6d7de3f
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer26088, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 300eaf36745116224508d5f962c70384d3fbf5612f9ce59d077f4dadbf36492d
+		Secure: false
+	Object:
+		Variable: varReplacer43782
+		Type: java.lang.String
+		Statement: specialinvoke $r13.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer43782)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage$XmppAxolotlPlaintextMessage decrypt(eu.siacs.conversations.crypto.axolotl.XmppAxolotlSession,java.lang.Integer)>
+		SHA-256: 620462d7836398e575324a4d7ea7f338b48cfe02500c1a7a14f1d440c517c61d
+		Secure: false
+	Object:
+		Variable: $i0
+		Type: int
+		Statement: $i0 = virtualinvoke $r1.<java.security.SecureRandom: int nextInt(int)>(varReplacer25013)
+		Method: <eu.siacs.conversations.xmpp.jingle.DirectConnectionUtils: java.util.List getLocalCandidates(eu.siacs.conversations.xmpp.Jid)>
+		SHA-256: f605cd9714770469966167b9e66fe135c36704e85c27bd4271e3d8087f766af9
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5642)
+		Method: <eu.siacs.conversations.utils.CryptoHelper: java.lang.String getFingerprintCert(byte[])>
+		SHA-256: f5e2c54b3a03224a3421ac4fcb6806b22896dcc57542f93e5d7c2617e48181e7
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.whispersystems.curve25519.JCESha512Provider: void calculateDigest(byte[],byte[],long)>
+		SHA-256: e672fc3788936ab7174dbb1b35b297edc3547513e55768aca9c3c93c8a3395d7
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r14.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r3)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage$XmppAxolotlPlaintextMessage decrypt(eu.siacs.conversations.crypto.axolotl.XmppAxolotlSession,java.lang.Integer)>
+		SHA-256: 6de0974fe372410495adff952b9a5f55927e8003f0f1ec04fc1d7989588ebd7e
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <de.measite.minidns.AbstractDNSClient: void <init>(de.measite.minidns.DNSCache)>
+		SHA-256: e55ecf3493dde0cec51a717d23b0a62bf835fb741f3a71cdb824afda4d2f930
+		Secure: true
+	Object:
+		Variable: varReplacer17872
+		Type: int
+		Statement: specialinvoke $r0.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r2, varReplacer17871, varReplacer17872)
+		Method: <eu.siacs.conversations.services.ExportBackupService: byte[] getKey(java.lang.String,byte[])>
+		SHA-256: 9d9a9b51f50bd8458002c83dee30013d2724ecb8b7025d063d041ff4a55c077e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer44690)
+		Method: <org.whispersystems.libsignal.ratchet.ChainKey: byte[] getBaseMaterial(byte[])>
+		SHA-256: 3e60c5764d794ad4557c5716887951a579c7638c7328b5924c38da708ae79bdb
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.SecretKey
+		Statement: $r1 = virtualinvoke $r0.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: byte[] generateKey()>
+		SHA-256: f1baac84402a44fd10ac6acabbf8c0d9f4c76671def6c845ee93b9c32bd60c50
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 15a76129680a3cd57380001c355c828c5afc3ba9ce32fff65b352ff3390bbd6
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer45949)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] extract(byte[],byte[])>
+		SHA-256: bd8db3a365639a767a0320ab776530a90a8dea053bd1c19d8a67496bd45ea46e
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r3.<java.security.Signature: boolean verify(byte[])>($r5)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: e75571d33abb1b5e330ac5b78fcc009ac5fa3b4053acda20dad8234c0598d879
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: java.security.MessageDigest
+		Statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer34034)
+		Method: <eu.siacs.conversations.entities.ServiceDiscoveryResult: byte[] mkCapHash()>
+		SHA-256: d5b137796319a47da6aea3e9ba9e35fb910f9b7c7ca6a8888b855f0fce293f69
+		Secure: false
+	Object:
+		Variable: varReplacer16872
+		Type: java.lang.String
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer16872)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: void encrypt(java.lang.String)>
+		SHA-256: 5bce1718e75fa2e313f2ef943715a407a7946a4cf9fdf7db8c2d770557c055b
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.lang.String)>(varReplacer19515, varReplacer19516)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: f398401520f76d3af480e1266bc7a04bbefca63927b2c4c28223a4f0ee557d9d
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Mac
+		Statement: $r6 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer45951)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] expand(byte[],byte[],int)>
+		SHA-256: f855643fcd849d48834abde1ee1255e351c8a214beb4a8503ebe4f349f07fdc7
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: 9d21c3f9e3f612ea7264d21dc14a8967f32993fff60292ad252f8676282c7571
+		Secure: false
+	Object:
+		Variable: $r21
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke $r21.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>($r19, $r20)
+		Method: <eu.siacs.conversations.persistance.FileBackend: boolean save(eu.siacs.conversations.xmpp.pep.Avatar)>
+		SHA-256: f403dda9b8523eb763464336a8ff3ea97e82df53765e6097c8c68ac43419e1b7
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLParameters
+		Statement: specialinvoke $r1.<javax.net.ssl.SSLParameters: void <init>()>()
+		Method: <eu.siacs.conversations.utils.SSLSocketHelper: void setHostnameNougat(javax.net.ssl.SSLSocket,java.lang.String)>
+		SHA-256: 231bd2c35b97482b01fa5454a4d75f2bdd3dd36dd6babd29cd865958e145d299
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.security.SecureRandom: void nextBytes(byte[])>($r2)
+		Method: <org.whispersystems.curve25519.JCESecureRandomProvider: void nextBytes(byte[])>
+		SHA-256: 44832361bdc950a41a177a5a770c2cdb1b4f012349b881ff8ad9aeb9b26f8bb6
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <eu.siacs.conversations.xmpp.jingle.JingleConnectionManager: java.lang.String nextRandomId()>
+		SHA-256: 1c8e17be092d492ae0c8dacfc0164f27f46f3e81795801e6534d2107dbe4098c
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer26095, $r2)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: a9797aad589d333a460fcb0b6f1801e1d112d4c4263c7153a033f737bfa46d6f
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r8.<java.security.SecureRandom: void <init>()>()
+		Method: <eu.siacs.conversations.services.ExportBackupService: java.util.List export()>
+		SHA-256: 55a7e7296290fb820e0c3f9d2be1be8ee902e82b31e0ee8ef8795c50fdd3efa0
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r2)
+		Method: <de.measite.minidns.dnssec.algorithms.JavaSecSignatureVerifier: boolean verify(byte[],byte[],byte[])>
+		SHA-256: f1e30a6faf65a4b834a38c62244e89293f91a21f1362b088a697b9e242472c7b
+		Secure: false
+	Object:
+		Variable: varReplacer44696
+		Type: java.lang.String
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer44696)
+		Method: <org.whispersystems.libsignal.kdf.DerivedMessageSecrets: void <init>(byte[])>
+		SHA-256: d2f8656074571a7367feb9a895414e5ee4d07f211ef1a752b75a259057b12a5
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: void encrypt(java.lang.String)>
+		SHA-256: 8fd86c5a53e96c35780b9e4ea6c837db7735a66644aa7d0c726414d88e675b6
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <eu.siacs.conversations.crypto.sasl.DigestMd5: java.lang.String getResponse(java.lang.String)>
+		SHA-256: 2826da7562f2c1ee744517e4499fdf17272e8a80439f44a4573bde0ec542ccd4
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <de.measite.minidns.dnssec.algorithms.JavaSecDigestCalculator: void <init>(java.lang.String)>
+		SHA-256: 27f10d36f956bb46cbfe64756f259ad7962bc65acc218ac50caa3410dcd06af5
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: java.security.MessageDigest
+		Statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer27945)
+		Method: <eu.siacs.conversations.persistance.FileBackend: eu.siacs.conversations.xmpp.pep.Avatar getStoredPepAvatar(java.lang.String)>
+		SHA-256: 2481e198f2f3ae8c3718e6573f09e488cfffa5371d8f20b0caf88c8a8eb48484
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.KeyFactory
+		Statement: $r10 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r8)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: 6635af12fb8498a7bf018ada279831a6e3024bb07fe12c7daed2b6fbc372e6bb
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer24898)
+		Method: <eu.siacs.conversations.xmpp.jingle.JingleInBandTransport: void send(eu.siacs.conversations.entities.DownloadableFile,eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged)>
+		SHA-256: 58e037c45916fddf86b0e40f66bdc372b67a2e9c6e45128cfb8b87c76232ddaf
+		Secure: false
+	Object:
+		Variable: $r28
+		Type: javax.crypto.CipherOutputStream
+		Statement: specialinvoke $r28.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>($r23, $r25)
+		Method: <eu.siacs.conversations.services.ExportBackupService: java.util.List export()>
+		SHA-256: a495b3968c68714e9542a7b15292351f2229178daf52bfd6975517581b87a662
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer22580)
+		Method: <eu.siacs.conversations.utils.SSLSocketHelper: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: da85c8f3899bba79320baa7951a07ddb71118f171908c881057116d990bf977e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer44692)
+		Method: <org.whispersystems.libsignal.kdf.DerivedMessageSecrets: void <init>(byte[])>
+		SHA-256: 584369301c61f23afe0047489cca78f71102657e4411ad09a8d8c3c229791ca9
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: d4bf5cc88c644b9a20ac4aef1746c1f0c9ae862102406e7436b8866c875859ff
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer39228)
+		Method: <org.whispersystems.curve25519.JCESha512Provider: void calculateDigest(byte[],byte[],long)>
+		SHA-256: f74b6c24f36586712809f21cb4dc556980b66c93b962b0da5cfcc72bedd4ba74
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer44706)
+		Method: <org.whispersystems.libsignal.SessionCipher: javax.crypto.Cipher getCipher(int,javax.crypto.spec.SecretKeySpec,javax.crypto.spec.IvParameterSpec)>
+		SHA-256: 7469e61f895baff6ce4201ff1b67e32f03d27236bb3e4e3afb3b2eaea086833d
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer45948)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] extract(byte[],byte[])>
+		SHA-256: e0b8d801d26394b7afbb9f1ff77c90a28739eac9cd6f6478f5720d3de7d0c16c
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer22579)
+		Method: <eu.siacs.conversations.utils.SSLSocketHelper: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: b6edce4b60a16971720dc983d112ae1802b2b3c845cde9f8f874dc0440477c05
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1104)
+		Method: <eu.siacs.conversations.utils.CryptoHelper: java.lang.String getFingerprint(java.lang.String)>
+		SHA-256: 762ec0507b56dd1d8553ad0559dceda55f860cda1d898e7e6ad9499e8e540806
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.KeyStore
+		Statement: $r6 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r5)
+		Method: <eu.siacs.conversations.services.MemorizingTrustManager: java.security.KeyStore loadAppKeyStore()>
+		SHA-256: ea1b92c62f96aa3843af7ac4ab293ee98950902fb5e6847c9de5ad96211af3a0
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r3)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] extract(byte[],byte[])>
+		SHA-256: 77738c0a376bd1be5b6a41999e448cb2557ed8c2bb6bfe91df3f0e78b78e87b1
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: $r2 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer20098)
+		Method: <de.measite.minidns.AbstractDNSClient: void <init>(de.measite.minidns.DNSCache)>
+		SHA-256: 26d1dd24d514c05b989c07fbbc711e79b56026f8d4e06a01395f34c54a86cbe
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.lang.String
+		Statement: $r2 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r3)
+		Method: <de.measite.minidns.dnssec.algorithms.JavaSecSignatureVerifier: void <init>(java.lang.String,java.lang.String)>
+		SHA-256: 22e74f537b4fa4ebe6c0554ffcb237888613831bfc374c53ea2501d0e35bf0bb
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer44696)
+		Method: <org.whispersystems.libsignal.kdf.DerivedMessageSecrets: void <init>(byte[])>
+		SHA-256: c8644ce3072f6518376dd0b474789596f1d3631260c5d8db02a079ae8880380d
+		Secure: false
+	Object:
+		Variable: $r26
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r26.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r18, varReplacer17809)
+		Method: <eu.siacs.conversations.services.ExportBackupService: java.util.List export()>
+		SHA-256: 602c3d99aff218799101100e3b409d7a68df63630eb7fe043d28198164a7b9e8
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 5fb6984969c8c0f60ee84399ef18a49aa63648c889757c4080685ad119ecd903
+		Secure: false
+	Object:
+		Variable: $i1
+		Type: int
+		Statement: $i1 = virtualinvoke $r1.<java.security.SecureRandom: int nextInt(int)>($i1)
+		Method: <eu.siacs.conversations.utils.CryptoHelper: java.lang.String createPassword(java.security.SecureRandom)>
+		SHA-256: 1cf14069a9d064319f779def772d986f3f94a7a3c2b0fb228ce6e99f41864d02
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: byte[] generateIv()>
+		SHA-256: fe0fead027707dbb9cb79541223d7eed971b9549c91abba553bacafb40bf0d8b
+		Secure: true
+	Object:
+		Variable: varReplacer50313
+		Type: java.lang.String
+		Statement: specialinvoke $r13.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer50313)
+		Method: <org.whispersystems.libsignal.state.SessionState: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)>
+		SHA-256: 646fc95e65ecdf04a11b385d50ebb1c696b440da44cf39465b486d1a7978e456
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke $r2.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>($r13, $r14)
+		Method: <eu.siacs.conversations.persistance.FileBackend: eu.siacs.conversations.xmpp.pep.Avatar getStoredPepAvatar(java.lang.String)>
+		SHA-256: ccffdc56aeedf26373126522c29f3f81bc4d43fe45704cb92d71aa4d0ea63c8f
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer25035)
+		Method: <eu.siacs.conversations.xmpp.jingle.JingleInBandTransport: void receive(eu.siacs.conversations.entities.DownloadableFile,eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged)>
+		SHA-256: 8731e3cd622c09715af542099f49f4f5fa92c2187f7be22efbdfda02cd96c83a
+		Secure: false
+	Object:
+		Variable: varReplacer45949
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer45949)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] extract(byte[],byte[])>
+		SHA-256: 35452e710963f5061798d29fda1110535d35975d0f78b32a5d76d1467da56a4d
+		Secure: false
+	Object:
+		Variable: varReplacer50311
+		Type: java.lang.String
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer50311)
+		Method: <org.whispersystems.libsignal.state.SessionState: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)>
+		SHA-256: 6bcb4bf4c54d66b6b525ff1a694acb755196e0a980e0e795f262a60c3ab17d79
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.SecretKey
+		Statement: $r5 = virtualinvoke $r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r0)
+		Method: <eu.siacs.conversations.services.ExportBackupService: byte[] getKey(java.lang.String,byte[])>
+		SHA-256: c1388a4c3e329948c59ea8d0162d0a62ce25800028d5e710aeb499496fb1b1a2
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer24636)
+		Method: <eu.siacs.conversations.persistance.FileBackend: eu.siacs.conversations.xmpp.pep.Avatar getPepAvatar(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,int)>
+		SHA-256: e0dfcfc31ca60ef4bf5adf2c5845ed66e7498f7495c26a719ef605f2b23c2dea
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.lang.String)>($r4, $r2)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: 4b73d9ea47b70e095beb17e2b4e8c62bcb1a3b70cdd913b654094befd6fbd016
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer16872)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: void encrypt(java.lang.String)>
+		SHA-256: b7d22bda3dbba9700c576134950d5dee03b5237e6745834a6b4813dba03afa9b
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r0.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r2, varReplacer17871, varReplacer17872)
+		Method: <eu.siacs.conversations.services.ExportBackupService: byte[] getKey(java.lang.String,byte[])>
+		SHA-256: 4c170a542a3f31e9adacc006f359e6d080bbfbd0b8c39a84fefe89f54a346abb
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer45950)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] expand(byte[],byte[],int)>
+		SHA-256: 99cdded5e7fe770bb43705d8a7bbd8e87892c169de13af77e67e1b282e9b1cc8
+		Secure: false
+	Object:
+		Variable: varReplacer17809
+		Type: java.lang.String
+		Statement: specialinvoke $r26.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r18, varReplacer17809)
+		Method: <eu.siacs.conversations.services.ExportBackupService: java.util.List export()>
+		SHA-256: 4b9395039aa180178a41e6e38ffa2ed9003ea522c7b3e3ed9ff962e38363c6e4
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = interfaceinvoke $r1.<javax.crypto.SecretKey: byte[] getEncoded()>()
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: byte[] generateKey()>
+		SHA-256: fe5862cf7f528a728ac3600322c6a1ea3e90a208569b5acab1f65e9c0ec473e
+		Secure: true
+	Object:
+		Variable: $r18
+		Type: byte[]
+		Statement: virtualinvoke $r8.<java.security.SecureRandom: void nextBytes(byte[])>($r18)
+		Method: <eu.siacs.conversations.services.ExportBackupService: java.util.List export()>
+		SHA-256: 60255fe302c6a79211ceb454fb138ab92dacdc4619493d48cc308999f3e67b40
+		Secure: true
+	Object:
+		Variable: $i0
+		Type: int
+		Statement: $i0 = virtualinvoke $r0.<java.security.SecureRandom: int nextInt(int)>(varReplacer41885)
+		Method: <org.whispersystems.libsignal.util.KeyHelper: int generateRegistrationId(boolean)>
+		SHA-256: 788e294cd25f7db1bac0ce31831acdd2da86b87ba5f4da99b8f2f4aa002ae02a
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r13.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r9, $r12, $r4, $i1)
+		Method: <org.conscrypt.OpenSSLECGroupContext: java.security.spec.ECParameterSpec getECParameterSpec()>
+		SHA-256: 7223ae8f08ed0dba3dafb06f8e07e30310aca7c9be856d88494b5d1bd531fdf8
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: $r0 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer41884)
+		Method: <org.whispersystems.libsignal.util.KeyHelper: int generateRegistrationId(boolean)>
+		SHA-256: 3b12a9a1e2751892d109cbbbdfbe4461c6ec756033b446503840a8bb1358030e
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r9.<java.security.SecureRandom: void <init>()>()
+		Method: <eu.siacs.conversations.services.XmppConnectionService: void onCreate()>
+		SHA-256: 130a0863d98ab3a5dc55aeeda16170eca324a5140b86df3f69432dfaf89033e
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <org.whispersystems.libsignal.kdf.DerivedMessageSecrets: void <init>(byte[])>
+		SHA-256: 266602d7632e3c738b2dbca5b04568563deadca842aad0961eeb5315d5cef995
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r0.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: byte[] generateIv()>
+		SHA-256: 68c685a2f5dc2a1c14b34c4e5955a822fcef0ca661788bbfe7882e5b94ba74eb
+		Secure: true
+	Object:
+		Variable: $i0
+		Type: int
+		Statement: $i0 = virtualinvoke $r0.<java.security.SecureRandom: int nextInt(int)>(varReplacer41886)
+		Method: <org.whispersystems.libsignal.util.KeyHelper: int generateRegistrationId(boolean)>
+		SHA-256: 9ee5ba19534d5d644e2d4f95e18ccab5f14bea5a8d77b3c112cd95bf6c830276
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Cipher
+		Statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer43785)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage$XmppAxolotlPlaintextMessage decrypt(eu.siacs.conversations.crypto.axolotl.XmppAxolotlSession,java.lang.Integer)>
+		SHA-256: 6fd73bf3c287fbd95666bc9767cf84c5f294093f2ca816008ec5cfdcbc717887
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Cipher
+		Statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer43783, varReplacer43784)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage$XmppAxolotlPlaintextMessage decrypt(eu.siacs.conversations.crypto.axolotl.XmppAxolotlSession,java.lang.Integer)>
+		SHA-256: caef6245dcbe9d23db97c17bfdd15e3715344513936c6cf1142d8aa1433f36da
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer44691)
+		Method: <org.whispersystems.libsignal.ratchet.ChainKey: byte[] getBaseMaterial(byte[])>
+		SHA-256: 2bdf44cb9ef9a3ef2ece9fc4499847ae91ebd8b0324556af2c4248e0ceae58b1
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: byte[]
+		Statement: $r16 = virtualinvoke $r14.<java.security.MessageDigest: byte[] digest(byte[])>($r16)
+		Method: <eu.siacs.conversations.entities.ServiceDiscoveryResult: byte[] mkCapHash()>
+		SHA-256: 874151ed6e63a7629a419b061b2b718f86b7804c40ee0313735d5640cca0fe42
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r2)
+		Method: <org.conscrypt.OpenSSLX509Certificate: void verifyInternal(java.security.PublicKey,java.lang.String)>
+		SHA-256: f325059ee6f08c9776202e677308b0f19ca0767a6821e36b4f64a531d072fa45
+		Secure: false
+	Object:
+		Variable: varReplacer44690
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer44690)
+		Method: <org.whispersystems.libsignal.ratchet.ChainKey: byte[] getBaseMaterial(byte[])>
+		SHA-256: 2310c6737dbd6a52e9ce57e1b3d6ff1bc76c2794395d0e066ab09f08881b79cd
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r3)
+		Method: <org.whispersystems.libsignal.kdf.HKDF: byte[] extract(byte[],byte[])>
+		SHA-256: 361eed9cd14e6ff84c1daa2451338ec5c4dd793da69a1733393b9a61bdf2d763
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer14871)
+		Method: <eu.siacs.conversations.utils.XEP0392Helper: double angle(java.lang.String)>
+		SHA-256: 2f5e5650bf55d4e9e5ad27269f2c88b6843269f1ec55c0f6343f6da2077a85cb
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer16873)
+		Method: <eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage: void encrypt(java.lang.String)>
+		SHA-256: 32b438537e610fb801bc3f794a6398814ecbab483f910af2a18ab8f7a214835a
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r14.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r12)
+		Method: <org.whispersystems.libsignal.state.SessionState: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)>
+		SHA-256: 9eb8c1899b93ac2d0bf6cc25d1b2b35e39990f05cf39ad468e749dd3f9e4253f
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.lang.String
+		Statement: $r10 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r8)
+		Method: <org.conscrypt.OpenSSLX509Certificate: java.security.PublicKey getPublicKey()>
+		SHA-256: fb24971f565cb4681c3c1e192adc31a35b4a987353817f6def6d3d265ac75389
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r2)
+		Method: <de.measite.minidns.dnssec.algorithms.JavaSecSignatureVerifier: boolean verify(byte[],byte[],byte[])>
+		SHA-256: fc135b08a70d678ef72fc96ee1a53136e76bd520f8ffb5d3883c91a74b3b0495
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: byte[]
+		Statement: $r13 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r13)
+		Method: <eu.siacs.conversations.xmpp.jingle.JingleSocks5Transport: void <init>(eu.siacs.conversations.xmpp.jingle.JingleFileTransferConnection,eu.siacs.conversations.xmpp.jingle.JingleCandidate)>
+		SHA-256: e68e9f1c45f253bea3452ebd159638c4c3d78f0ab20a8fc5630a3368fc7792dc
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r13.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer50313)
+		Method: <org.whispersystems.libsignal.state.SessionState: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)>
+		SHA-256: 520e8c61552624d215ed5df7b9aafb03039bd5ab0a8a1ec5390090fc693c7d82
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer17870)
+		Method: <eu.siacs.conversations.services.ExportBackupService: byte[] getKey(java.lang.String,byte[])>
+		SHA-256: 2febfca128fca5330db5bb0fce500560f04dbab77bf477f6100145612a49d7c3
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <eu.siacs.conversations.utils.XEP0392Helper: double angle(java.lang.String)>
+		SHA-256: 5aa9281045c2fcc5dda0fd5cd3ce90e84bbad0aac6bd0a1ee93dbcc1ce265ed
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r4 = virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: a729cfd5669df603070b7ba7d05b524b10a048ab1da974a5ccb1df973521b7d3
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <eu.siacs.conversations.xmpp.jingle.JingleConnectionManager: java.lang.String nextRandomId()>
+		SHA-256: 407d5d9442e95cccbf94da8ee1ba431ba42c1d3807e704042386fca547d465a4
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <eu.siacs.conversations.crypto.sasl.DigestMd5: java.lang.String getResponse(java.lang.String)>
+		SHA-256: 2826da7562f2c1ee744517e4499fdf17272e8a80439f44a4573bde0ec542ccd4
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <eu.siacs.conversations.utils.CryptoHelper: java.lang.String getFingerprintCert(byte[])>
+		SHA-256: 30f2db8e38cb5c7dd01e2f6da37baa322f0e0f90e9ff398874d3725dbf7fef72
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <eu.siacs.conversations.services.MemorizingTrustManager: javax.net.ssl.X509TrustManager getTrustManager(java.security.KeyStore)>
+		SHA-256: 1ec4bbda4edfb989da327e5834a9a1c29d2c84382584c92e6b00d5eafbad12c7
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyFactory
+		Statement: $r2 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r3)
+		Method: <de.measite.minidns.dnssec.algorithms.JavaSecSignatureVerifier: void <init>(java.lang.String,java.lang.String)>
+		SHA-256: d6bb4b30cdbee7ff837ce1cc95136a9cd54ac9f5129c558d6320a140033e2fcc
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r2.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r3, $r8, $r6, varReplacer44930)
+		Method: <de.measite.minidns.dnssec.algorithms.ECDSASignatureVerifier: void <init>(java.math.BigInteger[],int,java.lang.String)>
+		SHA-256: 661adcb925dd77bf24ac60e00c7e8aab12fd2cc5a7702ec4db562163a8c8ce1
+		Secure: true
+
+Findings in Java Class: eu.siacs.conversations.utils.CryptoHelper
+
+	 in Method: java.lang.String getFingerprint(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #762ec0507b56dd1d8553ad0559dceda55f860cda1d898e7e6ad9499e8e540806)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1104)
+
+
+	 in Method: java.lang.String getFingerprintCert(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #f5e2c54b3a03224a3421ac4fcb6806b22896dcc57542f93e5d7c2617e48181e7)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5642)
+
+
+Findings in Java Class: eu.siacs.conversations.xmpp.jingle.JingleSocks5Transport
+
+	 in Method: void lambda$send$3(eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged,eu.siacs.conversations.entities.DownloadableFile)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ff9a1f99fb4d3d1bb67bf9bbb4f988d678011a10ff9b97eab913769c3937c37e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r10.<java.security.MessageDigest: void reset()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ff9a1f99fb4d3d1bb67bf9bbb4f988d678011a10ff9b97eab913769c3937c37e)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8516)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #ff9a1f99fb4d3d1bb67bf9bbb4f988d678011a10ff9b97eab913769c3937c37e)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r15 = virtualinvoke $r10.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: void lambda$receive$4(eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged,eu.siacs.conversations.entities.DownloadableFile)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #7153ab886819658c351208f89a8b463f2db835b953600b61aca760429743ceaa)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r10 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8571)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7153ab886819658c351208f89a8b463f2db835b953600b61aca760429743ceaa)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, java.security.MessageDigest: void update(byte[],int,int), java.security.MessageDigest: void update(java.nio.ByteBuffer), java.security.MessageDigest: void update(byte[]), java.security.MessageDigest: void update(byte)
+			at statement: virtualinvoke $r10.<java.security.MessageDigest: void update(byte[],int,int)>($r17, varReplacer8569, $i2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7153ab886819658c351208f89a8b463f2db835b953600b61aca760429743ceaa)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r10.<java.security.MessageDigest: void reset()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #7153ab886819658c351208f89a8b463f2db835b953600b61aca760429743ceaa)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r17 = virtualinvoke $r10.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: void <init>(eu.siacs.conversations.xmpp.jingle.JingleFileTransferConnection,eu.siacs.conversations.xmpp.jingle.JingleCandidate)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e1a55f74e9f0c02f955ab07d3fda47f69da78793a382ec7d119e8ed45b601b36)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer32053)
+
+
+Findings in Java Class: eu.siacs.conversations.utils.XEP0392Helper
+
+	 in Method: double angle(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #2f5e5650bf55d4e9e5ad27269f2c88b6843269f1ec55c0f6343f6da2077a85cb)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer14871)
+
+
+Findings in Java Class: eu.siacs.conversations.utils.SSLSocketHelper
+
+	 in Method: void setHostnameNougat(javax.net.ssl.SSLSocket,java.lang.String)
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLParameters (on Object #231bd2c35b97482b01fa5454a4d75f2bdd3dd36dd6babd29cd865958e145d299)
+			Operation on object of type javax.net.ssl.SSLParameters object not completed. Expected call to setProtocols, setCipherSuites
+			at statement: virtualinvoke $r0.<javax.net.ssl.SSLSocket: void setSSLParameters(javax.net.ssl.SSLParameters)>($r1)
+
+
+Findings in Java Class: eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage
+
+	 in Method: void encrypt(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer16874, $r3, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer16874, $r3, $r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #32b438537e610fb801bc3f794a6398814ecbab483f910af2a18ab8f7a214835a)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r4)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #381f3c04c4f06c094bf12b4a3be309462f3ce5e0304461fefe701ae8f5f044f3)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r10.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer16872)
+
+
+	 in Method: eu.siacs.conversations.crypto.axolotl.XmppAxolotlMessage$XmppAxolotlPlaintextMessage decrypt(eu.siacs.conversations.crypto.axolotl.XmppAxolotlSession,java.lang.Integer)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r7.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer43781, $r8, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r13.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer43782)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #caef6245dcbe9d23db97c17bfdd15e3715344513936c6cf1142d8aa1433f36da)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r7.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #6fd73bf3c287fbd95666bc9767cf84c5f294093f2ca816008ec5cfdcbc717887)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r7.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r14.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r7.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer43781, $r8, $r9)
+
+
+Findings in Java Class: eu.siacs.conversations.services.ExportBackupService
+
+	 in Method: java.util.List export()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherOutputStream (on Object #a495b3968c68714e9542a7b15292351f2229178daf52bfd6975517581b87a662)
+			Operation on object of type javax.crypto.CipherOutputStream object not completed. Expected call to write
+			at statement: specialinvoke $r29.<java.util.zip.GZIPOutputStream: void <init>(java.io.OutputStream)>($r28)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r25.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer17823, $r26, $r27)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r25.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer17823, $r26, $r27)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r26.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r18, varReplacer17809)
+
+
+	 in Method: byte[] getKey(java.lang.String,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r5 = virtualinvoke $r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4c170a542a3f31e9adacc006f359e6d080bbfbd0b8c39a84fefe89f54a346abb)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: $r5 = virtualinvoke $r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r0)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4c170a542a3f31e9adacc006f359e6d080bbfbd0b8c39a84fefe89f54a346abb)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r0.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r2, varReplacer17871, varReplacer17872)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4c170a542a3f31e9adacc006f359e6d080bbfbd0b8c39a84fefe89f54a346abb)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r0.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r2, varReplacer17871, varReplacer17872)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #2febfca128fca5330db5bb0fce500560f04dbab77bf477f6100145612a49d7c3)
+			First parameter (with value "PBKDF2WithHmacSHA1") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer17870)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4c170a542a3f31e9adacc006f359e6d080bbfbd0b8c39a84fefe89f54a346abb)
+			Third parameter (with value 1024)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r0.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r2, varReplacer17871, varReplacer17872)
+
+
+Findings in Java Class: eu.siacs.conversations.persistance.FileBackend
+
+	 in Method: boolean save(eu.siacs.conversations.xmpp.pep.Avatar)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #d1d6e4a95def86180384fee31bdbc7bde7dfa32d0a2bc3bae306d273d311fa92)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r20 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17937)
+
+		TypestateError violating CrySL rule for java.security.DigestOutputStream (on Object #f403dda9b8523eb763464336a8ff3ea97e82df53765e6097c8c68ac43419e1b7)
+			Unexpected call to method close on object of type java.security.DigestOutputStream. Expect a call to one of the following methods write
+			at statement: virtualinvoke $r21.<java.security.DigestOutputStream: void close()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #d1d6e4a95def86180384fee31bdbc7bde7dfa32d0a2bc3bae306d273d311fa92)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r23 = virtualinvoke $r20.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: eu.siacs.conversations.xmpp.pep.Avatar getPepAvatar(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,int)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e0dfcfc31ca60ef4bf5adf2c5845ed66e7498f7495c26a719ef605f2b23c2dea)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer24636)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #e0dfcfc31ca60ef4bf5adf2c5845ed66e7498f7495c26a719ef605f2b23c2dea)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r14 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #e0dfcfc31ca60ef4bf5adf2c5845ed66e7498f7495c26a719ef605f2b23c2dea)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r8.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>($r6, $r7)
+
+
+	 in Method: eu.siacs.conversations.xmpp.pep.Avatar getStoredPepAvatar(java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.DigestOutputStream
+			Second parameter was not properly generated as generatedMessageDigest
+			at statement: specialinvoke $r2.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>($r13, $r14)
+
+		TypestateError violating CrySL rule for java.security.DigestOutputStream (on Object #ccffdc56aeedf26373126522c29f3f81bc4d43fe45704cb92d71aa4d0ea63c8f)
+			Unexpected call to method close on object of type java.security.DigestOutputStream. Expect a call to one of the following methods write
+			at statement: virtualinvoke $r2.<java.security.DigestOutputStream: void close()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #2481e198f2f3ae8c3718e6573f09e488cfffa5371d8f20b0caf88c8a8eb48484)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer27945)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #2481e198f2f3ae8c3718e6573f09e488cfffa5371d8f20b0caf88c8a8eb48484)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r15 = virtualinvoke $r14.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: eu.siacs.conversations.services.MemorizingTrustManager
+
+	 in Method: javax.net.ssl.X509TrustManager getTrustManager(java.security.KeyStore)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r1)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.TrustManagerFactory (on Object #97e6f1114411045cd1f6d5bd8d9c38fe1d5009ac13e3fadfd0bd8abf447693d6)
+			First parameter (with value "X509") should be any of {PKIX, SunX509}
+			at statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(varReplacer19296)
+
+
+	 in Method: java.security.KeyStore loadAppKeyStore()
+		TypestateError violating CrySL rule for java.security.KeyStore (on Object #ea1b92c62f96aa3843af7ac4ab293ee98950902fb5e6847c9de5ad96211af3a0)
+			Unexpected call to method load on object of type java.security.KeyStore. Expect a call to one of the following methods getKey,getEntry,setEntry
+			at statement: virtualinvoke $r6.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r7, $r9)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #ea1b92c62f96aa3843af7ac4ab293ee98950902fb5e6847c9de5ad96211af3a0)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r6.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r7, $r9)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #ea1b92c62f96aa3843af7ac4ab293ee98950902fb5e6847c9de5ad96211af3a0)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r6.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r7, $r9)
+
+
+Findings in Java Class: eu.siacs.conversations.crypto.sasl.DigestMd5
+
+	 in Method: java.lang.String getResponse(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #578adca24dd047f8605653b08ed84fdba856a9a65cd6f8b060f8a5d87da8e7c6)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r13 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer22707)
+
+
+Findings in Java Class: eu.siacs.conversations.xmpp.jingle.JingleInBandTransport
+
+	 in Method: void send(eu.siacs.conversations.entities.DownloadableFile,eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #58e037c45916fddf86b0e40f66bdc372b67a2e9c6e45128cfb8b87c76232ddaf)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer24898)
+
+
+	 in Method: void receive(eu.siacs.conversations.entities.DownloadableFile,eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #8731e3cd622c09715af542099f49f4f5fa92c2187f7be22efbdfda02cd96c83a)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer25035)
+
+
+Findings in Java Class: eu.siacs.conversations.xmpp.jingle.JingleFileTransferConnection$3
+
+	 in Method: void success()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8731e3cd622c09715af542099f49f4f5fa92c2187f7be22efbdfda02cd96c83a)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r3.<eu.siacs.conversations.xmpp.jingle.JingleTransport: void receive(eu.siacs.conversations.entities.DownloadableFile,eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged)>($r4, $r5)
+
+
+Findings in Java Class: eu.siacs.conversations.xmpp.jingle.JingleFileTransferConnection
+
+	 in Method: void receiveFallbackToIbb(eu.siacs.conversations.xmpp.jingle.stanzas.JinglePacket,eu.siacs.conversations.xmpp.jingle.stanzas.IbbTransportInfo)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8731e3cd622c09715af542099f49f4f5fa92c2187f7be22efbdfda02cd96c83a)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r16.<eu.siacs.conversations.xmpp.jingle.JingleTransport: void receive(eu.siacs.conversations.entities.DownloadableFile,eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged)>($r17, $r18)
+
+
+	 in Method: void sendAcceptIbb()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #8731e3cd622c09715af542099f49f4f5fa92c2187f7be22efbdfda02cd96c83a)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r10.<eu.siacs.conversations.xmpp.jingle.JingleTransport: void receive(eu.siacs.conversations.entities.DownloadableFile,eu.siacs.conversations.xmpp.jingle.OnFileTransmissionStatusChanged)>($r11, $r12)
+
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #8be6d1b60688a70dcca6c8abdf5158108cf1f926a07f73b41ff5696c6127d0ee)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer26090)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer19508)
+
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer19524, $r10, varReplacer19524)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer19524, $r10, varReplacer19524)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer19524, $r10, varReplacer19524)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #bb0c14fff06f23a4a16f6eed6cd06f64b59ab002310f378b3608504830160781)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer26093, $r2)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer19513)
+
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer19527, $r5, varReplacer19527)
+
+
+Findings in Java Class: okhttp3.internal.platform.BouncyCastlePlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a9797aad589d333a460fcb0b6f1801e1d112d4c4263c7153a033f737bfa46d6f)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer26095, $r2)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer19517)
+
+
+Findings in Java Class: eu.siacs.conversations.generator.AbstractGenerator
+
+	 in Method: java.lang.String getCapHash(eu.siacs.conversations.entities.Account)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #229420260aadb45825dafde29cdb7b7149476a59e32f6b36f8c983327bb8d9b8)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer32929)
+
+
+Findings in Java Class: eu.siacs.conversations.entities.ServiceDiscoveryResult
+
+	 in Method: byte[] mkCapHash()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #d5b137796319a47da6aea3e9ba9e35fb910f9b7c7ca6a8888b855f0fce293f69)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer34034)
+
+
+Findings in Java Class: org.conscrypt.SSLUtils
+
+	 in Method: java.security.cert.X509Certificate decodeX509Certificate(java.security.cert.CertificateFactory,byte[])
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #505ce8be86c71d1fb37d150cd10d508787472538112cdd169c7538b6d6288753)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r3 = virtualinvoke $r2.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r1)
+
+
+	 in Method: java.security.cert.X509Certificate[] decodeX509CertificateChain(byte[][])
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #505ce8be86c71d1fb37d150cd10d508787472538112cdd169c7538b6d6288753)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r4 = staticinvoke <org.conscrypt.SSLUtils: java.security.cert.X509Certificate decodeX509Certificate(java.security.cert.CertificateFactory,byte[])>($r2, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #505ce8be86c71d1fb37d150cd10d508787472538112cdd169c7538b6d6288753)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r2 = staticinvoke <org.conscrypt.SSLUtils: java.security.cert.CertificateFactory getCertificateFactory()>()
+
+
+Findings in Java Class: de.measite.minidns.dnssec.algorithms.JavaSecDigestCalculator
+
+	 in Method: void <init>(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #27f10d36f956bb46cbfe64756f259ad7962bc65acc218ac50caa3410dcd06af5)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+
+
+Findings in Java Class: de.measite.minidns.dnssec.algorithms.AlgorithmMap
+
+	 in Method: void <init>()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #27f10d36f956bb46cbfe64756f259ad7962bc65acc218ac50caa3410dcd06af5)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r4.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>($r7, $r8)
+
+
+Findings in Java Class: org.whispersystems.libsignal.SessionCipher
+
+	 in Method: byte[] getPlaintext(org.whispersystems.libsignal.ratchet.MessageKeys,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #7469e61f895baff6ce4201ff1b67e32f03d27236bb3e4e3afb3b2eaea086833d)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+
+	 in Method: byte[] getCiphertext(org.whispersystems.libsignal.ratchet.MessageKeys,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #7469e61f895baff6ce4201ff1b67e32f03d27236bb3e4e3afb3b2eaea086833d)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+
+	 in Method: javax.crypto.Cipher getCipher(int,javax.crypto.spec.SecretKeySpec,javax.crypto.spec.IvParameterSpec)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r3, $r1)
+
+
+Findings in Java Class: de.measite.minidns.dnssec.algorithms.JavaSecSignatureVerifier
+
+	 in Method: void <init>(java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #d6bb4b30cdbee7ff837ce1cc95136a9cd54ac9f5129c558d6320a140033e2fcc)
+			First parameter (with value "ECGOST3410") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r2 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r3)
+
+
+	 in Method: boolean verify(byte[],byte[],byte[])
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r7.<java.security.Signature: void initVerify(java.security.PublicKey)>($r5)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest$okio(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ae39b036c5eeeba58d380660f68e23806935f12d2f5c9cefe65440425aa34f4a)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: okio.SegmentedByteString
+
+	 in Method: okio.ByteString digest$okio(java.lang.String)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: org.conscrypt.OpenSSLX509Certificate
+
+	 in Method: java.security.PublicKey getPublicKey()
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r7 = virtualinvoke $r10.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r9)
+
+
+	 in Method: void verifyInternal(java.security.PublicKey,java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r3.<java.security.Signature: void initVerify(java.security.PublicKey)>($r1)
+
+
+Findings in Java Class: eu.siacs.conversations.xmpp.XmppConnection
+
+	 in Method: javax.net.ssl.SSLSocketFactory getSSLSocketFactory()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r12, $r7, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r12, $r7, $r9)
+
+
+Findings in Java Class: eu.siacs.conversations.utils.TLSSocketFactory
+
+	 in Method: void <init>(javax.net.ssl.X509TrustManager[],java.security.SecureRandom)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer36717, $r2, $r1)
+
+
+Findings in Java Class: org.whispersystems.libsignal.kdf.DerivedMessageSecrets
+
+	 in Method: void <init>(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer44692)
+
+
+Findings in Java Class: org.whispersystems.libsignal.kdf.HKDF
+
+	 in Method: byte[] extract(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer45949)
+
+
+	 in Method: byte[] expand(byte[],byte[],int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer45950)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Mac: void init(java.security.Key)>($r2)
+
+
+Findings in Java Class: org.whispersystems.libsignal.state.SessionState
+
+	 in Method: org.whispersystems.libsignal.ratchet.MessageKeys removeMessageKeys(org.whispersystems.libsignal.ecc.ECPublicKey,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer50311)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r14.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r12)
+
+
+Findings in Java Class: okhttp3.internal.platform.OpenJSSEPlatform
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer19502)
+
+
+Findings in Java Class: org.whispersystems.libsignal.protocol.SignalMessage
+
+	 in Method: byte[] getMac(org.whispersystems.libsignal.IdentityKey,org.whispersystems.libsignal.IdentityKey,javax.crypto.spec.SecretKeySpec,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+
+Findings in Java Class: org.whispersystems.libsignal.ratchet.ChainKey
+
+	 in Method: byte[] getBaseMaterial(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer44690)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 140
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 16
+	RequiredPredicateError: 41
+	IncompleteOperationError: 13
+	NeverTypeOfError: 2
+	HardCodedError: 2
+	ConstraintError: 24
+=====================================================================

@@ -1,0 +1,126 @@
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r3)
+		Method: <digital.selfdefense.lucia.MainActivity: byte[] hmac(java.lang.String,byte[],byte[])>
+		SHA-256: 3fa359d8baa2e749c4ea4ee297fa12ed773b1dd33e94c81e5cbb3e24d515d1e0
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: byte[]
+		Statement: $r12 = virtualinvoke $r11.<java.security.MessageDigest: byte[] digest()>()
+		Method: <digital.selfdefense.lucia.MainActivity: void createCode()>
+		SHA-256: 6312c0cf9b861290e68e9f07e3e04d07ac6887a4f77c3abc6820f3e92bd602cc
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r1)
+		Method: <digital.selfdefense.lucia.MainActivity: byte[] hmac(java.lang.String,byte[],byte[])>
+		SHA-256: 55cac42aed884fc28ba387716d93c806ffab6233dd5e305a1d7fcc5d0fd955b8
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r1)
+		Method: <digital.selfdefense.lucia.MainActivity: byte[] hmac(java.lang.String,byte[],byte[])>
+		SHA-256: df63eac7914c7e91b6da51608ae8f49a23caf796a1d271e1d56a250137988587
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.MessageDigest
+		Statement: $r11 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer42)
+		Method: <digital.selfdefense.lucia.MainActivity: void createCode()>
+		SHA-256: 402c3b37b7df055dc577f53ff5422fe2d94e32e4e5d130aaf156ca98976e5812
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r3)
+		Method: <digital.selfdefense.lucia.MainActivity: byte[] hmac(java.lang.String,byte[],byte[])>
+		SHA-256: 9f8914082d263049783e43273b6a5df270dd44bd9881f5a6e1e609e5098ded10
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r3)
+		Method: <digital.selfdefense.lucia.MainActivity: byte[] hmac(java.lang.String,byte[],byte[])>
+		SHA-256: f734aa1fee73370105b0be59746bc39997a6a6a0144fdfd619b91c9227aec455
+		Secure: false
+
+Findings in Java Class: digital.selfdefense.lucia.MainActivity
+
+	 in Method: byte[] hmac(java.lang.String,byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r3)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 7
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 2
+=====================================================================

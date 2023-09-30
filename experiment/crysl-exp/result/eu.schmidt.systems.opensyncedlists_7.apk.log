@@ -1,0 +1,108 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r0
+		Type: javax.crypto.KeyGenerator
+		Statement: $r0 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer17920)
+		Method: <eu.schmidt.systems.opensyncedlists.utils.Cryptography: javax.crypto.SecretKey generateAESKey()>
+		SHA-256: 965597d2d246cc990ad59e01773470288c16dfb0ee2772e7500c1d143bb25857
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.SecretKey
+		Statement: $r1 = virtualinvoke $r0.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <eu.schmidt.systems.opensyncedlists.utils.Cryptography: javax.crypto.SecretKey generateAESKey()>
+		SHA-256: 87319ee03385a6774977b45cb6a7f5c712f7d0b3b65e562a7cda16a42892928f
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r3, varReplacer1248, $i0, varReplacer1249)
+		Method: <eu.schmidt.systems.opensyncedlists.syncedlist.SyncedListHeader: void <init>(org.json.JSONObject)>
+		SHA-256: 5ce02b284419123293da3a13fa243997bae68093df8a0c9b12668280e93de3d8
+		Secure: false
+	Object:
+		Variable: varReplacer1249
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r3, varReplacer1248, $i0, varReplacer1249)
+		Method: <eu.schmidt.systems.opensyncedlists.syncedlist.SyncedListHeader: void <init>(org.json.JSONObject)>
+		SHA-256: 74696a64f97e8a364e6d3cb2d2f19bf588c3c8f68bec82553e3af42a2e597d8b
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = interfaceinvoke $r4.<javax.crypto.SecretKey: byte[] getEncoded()>()
+		Method: <eu.schmidt.systems.opensyncedlists.syncedlist.SyncedListHeader: org.json.JSONObject toJSON()>
+		SHA-256: ae92fde1c84087fec55d15e94b462e8833bebb151d81373226f168367a3ac562
+		Secure: true
+
+Findings in Java Class: eu.schmidt.systems.opensyncedlists.syncedlist.SyncedListHeader
+
+	 in Method: void <init>(org.json.JSONObject)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r3, varReplacer1248, $i0, varReplacer1249)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 5
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 1
+=====================================================================

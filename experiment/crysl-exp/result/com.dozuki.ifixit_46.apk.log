@@ -1,0 +1,201 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <com.squareup.okhttp.HttpResponseCache: java.lang.String uriToKey(java.net.URI)>
+		SHA-256: 9d0c5a8448b7fbc83d6a71c37c2ee295917c791d0c71e085af04ccb76f38f8d9
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.cert.CertificateFactory
+		Statement: $r3 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer9087)
+		Method: <com.squareup.okhttp.HttpResponseCache$Entry: java.security.cert.Certificate[] readCertArray(com.squareup.okhttp.internal.StrictLineReader)>
+		SHA-256: 548d9633f92cd1c948adf35227180f3ee77963fbcd14adc693f9e66646712460
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2208)
+		Method: <com.github.kevinsawicki.http.HttpRequest: javax.net.ssl.SSLSocketFactory getTrustedFactory()>
+		SHA-256: a72324600f3d64c405ec1c715ad2d9a5601fe6805c573bf0bd1f6ff8b923d138
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLContext
+		Statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer104)
+		Method: <com.dozuki.ifixit.util.Utils: com.squareup.okhttp.OkHttpClient createOkHttpClient()>
+		SHA-256: dd41f8bacad19486697ba4f4813761e7b44faa620d6c6abcca62789f2601b36d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8816)
+		Method: <com.squareup.okhttp.HttpResponseCache: java.lang.String uriToKey(java.net.URI)>
+		SHA-256: bb4f2b125965e36c6a95d5a88ede3b442c3bab8690aca2246fe0b951285ba797
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLContext
+		Statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer529)
+		Method: <com.dozuki.ifixit.util.PicassoUtils: com.squareup.okhttp.OkHttpClient createClient()>
+		SHA-256: a1a4fa580ca8d16bd48285921b2a180f8a3c57fec38889715f070a7af276fe49
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r7.<java.security.SecureRandom: void <init>()>()
+		Method: <com.github.kevinsawicki.http.HttpRequest: javax.net.ssl.SSLSocketFactory getTrustedFactory()>
+		SHA-256: 3be8b4c12be67dcae852f8ce978d5c6f711d94f1e6eaac6f32728768ff4297d0
+		Secure: true
+
+Findings in Java Class: com.dozuki.ifixit.util.Utils
+
+	 in Method: com.squareup.okhttp.OkHttpClient createOkHttpClient()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer105, varReplacer105, varReplacer105)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer105, varReplacer105, varReplacer105)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer105, varReplacer105, varReplacer105)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #dd41f8bacad19486697ba4f4813761e7b44faa620d6c6abcca62789f2601b36d)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer104)
+
+
+Findings in Java Class: com.dozuki.ifixit.util.PicassoUtils
+
+	 in Method: com.squareup.okhttp.OkHttpClient createClient()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer530, varReplacer530, varReplacer530)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer530, varReplacer530, varReplacer530)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a1a4fa580ca8d16bd48285921b2a180f8a3c57fec38889715f070a7af276fe49)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer529)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer530, varReplacer530, varReplacer530)
+
+
+Findings in Java Class: com.github.kevinsawicki.http.HttpRequest
+
+	 in Method: javax.net.ssl.SSLSocketFactory getTrustedFactory()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2210, $r10, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2210, $r10, $r5)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a72324600f3d64c405ec1c715ad2d9a5601fe6805c573bf0bd1f6ff8b923d138)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2208)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2210, $r10, $r5)
+
+
+Findings in Java Class: com.squareup.okhttp.HttpResponseCache
+
+	 in Method: java.lang.String uriToKey(java.net.URI)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #bb4f2b125965e36c6a95d5a88ede3b442c3bab8690aca2246fe0b951285ba797)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8816)
+
+
+Findings in Java Class: com.squareup.okhttp.HttpResponseCache$Entry
+
+	 in Method: java.security.cert.Certificate[] readCertArray(com.squareup.okhttp.internal.StrictLineReader)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #548d9633f92cd1c948adf35227180f3ee77963fbcd14adc693f9e66646712460)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r3 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer9087)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #548d9633f92cd1c948adf35227180f3ee77963fbcd14adc693f9e66646712460)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r8 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r7)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #548d9633f92cd1c948adf35227180f3ee77963fbcd14adc693f9e66646712460)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r8 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r7)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 7
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 9
+	ConstraintError: 4
+	IncompleteOperationError: 2
+	TypestateError: 1
+=====================================================================

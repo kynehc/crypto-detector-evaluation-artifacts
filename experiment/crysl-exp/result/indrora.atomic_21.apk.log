@@ -1,0 +1,150 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r5 = virtualinvoke $r4.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <de.duenndns.ssl.MemorizingTrustManager: javax.net.ssl.X509TrustManager getTrustManager(java.security.KeyStore)>
+		SHA-256: d905b5c76357091f9166076860cd28b07b5dc74a12ef9385809c09700d9b281b
+		Secure: false
+	Object:
+		Variable: $r29
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r29.<java.security.SecureRandom: void <init>()>()
+		Method: <org.jibble.pircbot.PircBot: void connect(java.lang.String,int,java.lang.String)>
+		SHA-256: 19638f3ce9ebfc5cc47429e63a35a03d99cb05230d4d4e5efebd5e7a7c66e33b
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.net.ssl.SSLContext
+		Statement: $r9 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2397)
+		Method: <org.jibble.pircbot.PircBot: void connect(java.lang.String,int,java.lang.String)>
+		SHA-256: 2aa76d9d9a6d72b89096f565cd3bc493ddbe68b6ccb8a0d9b52dcf1f3cf7610e
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r4 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(varReplacer3737)
+		Method: <de.duenndns.ssl.MemorizingTrustManager: javax.net.ssl.X509TrustManager getTrustManager(java.security.KeyStore)>
+		SHA-256: ea9ed10948dc150559c7a97b2ba1e879584e7270c9bf0efd4c4634e4b923045c
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyStore
+		Statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r1)
+		Method: <de.duenndns.ssl.MemorizingTrustManager: java.security.KeyStore loadAppKeyStore()>
+		SHA-256: a0d886ba8aea7bea916de7686fe57c655595742412b53e072766552c698c8eb7
+		Secure: false
+
+Findings in Java Class: org.jibble.pircbot.PircBot
+
+	 in Method: void connect(java.lang.String,int,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r9.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2398, $r10, $r11)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r9.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2398, $r10, $r11)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #2aa76d9d9a6d72b89096f565cd3bc493ddbe68b6ccb8a0d9b52dcf1f3cf7610e)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r9 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer2397)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r9.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2398, $r10, $r11)
+
+
+Findings in Java Class: de.duenndns.ssl.MemorizingTrustManager
+
+	 in Method: javax.net.ssl.X509TrustManager getTrustManager(java.security.KeyStore)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r4.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r1)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.TrustManagerFactory (on Object #ea9ed10948dc150559c7a97b2ba1e879584e7270c9bf0efd4c4634e4b923045c)
+			First parameter (with value "X509") should be any of {PKIX, SunX509}
+			at statement: $r4 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(varReplacer3737)
+
+
+	 in Method: java.security.KeyStore loadAppKeyStore()
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #a0d886ba8aea7bea916de7686fe57c655595742412b53e072766552c698c8eb7)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r2.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r3, $r5)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #a0d886ba8aea7bea916de7686fe57c655595742412b53e072766552c698c8eb7)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r2.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r3, $r5)
+
+		TypestateError violating CrySL rule for java.security.KeyStore (on Object #a0d886ba8aea7bea916de7686fe57c655595742412b53e072766552c698c8eb7)
+			Unexpected call to method load on object of type java.security.KeyStore. Expect a call to one of the following methods getKey,getEntry,setEntry
+			at statement: virtualinvoke $r2.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r3, $r5)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 5
+
+	CryptoAnalysis found the following violations. For details see description above.
+	NeverTypeOfError: 1
+	RequiredPredicateError: 4
+	TypestateError: 1
+	ConstraintError: 2
+	HardCodedError: 1
+=====================================================================

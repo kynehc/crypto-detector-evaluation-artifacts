@@ -1,0 +1,100 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r13
+		Type: javax.net.ssl.SSLContext
+		Statement: $r13 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer663)
+		Method: <jp.redmine.redmineclient.task.Fetcher: boolean fetchData(jp.redmine.redmineclient.task.Fetcher$RemoteType,jp.redmine.redmineclient.task.SelectDataTaskConnectionHandler,java.lang.String,jp.redmine.redmineclient.task.SelectDataTaskDataHandler,jp.redmine.redmineclient.task.SelectDataTaskPutHandler,jp.redmine.redmineclient.task.Fetcher$ContentResponseErrorHandler)>
+		SHA-256: 4e9f4c9847b39ba18f3a7c518382420d2a702dcff93f095bf55c078b6bdd3ffc
+		Secure: false
+	Object:
+		Variable: $r24
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r24.<java.security.SecureRandom: void <init>()>()
+		Method: <jp.redmine.redmineclient.task.Fetcher: boolean fetchData(jp.redmine.redmineclient.task.Fetcher$RemoteType,jp.redmine.redmineclient.task.SelectDataTaskConnectionHandler,java.lang.String,jp.redmine.redmineclient.task.SelectDataTaskDataHandler,jp.redmine.redmineclient.task.SelectDataTaskPutHandler,jp.redmine.redmineclient.task.Fetcher$ContentResponseErrorHandler)>
+		SHA-256: 8b41586491a690b7252fcfa6424bb0c282578fffb44c6c7c085182165359ad8b
+		Secure: true
+
+Findings in Java Class: jp.redmine.redmineclient.task.Fetcher
+
+	 in Method: boolean fetchData(jp.redmine.redmineclient.task.Fetcher$RemoteType,jp.redmine.redmineclient.task.SelectDataTaskConnectionHandler,java.lang.String,jp.redmine.redmineclient.task.SelectDataTaskDataHandler,jp.redmine.redmineclient.task.SelectDataTaskPutHandler,jp.redmine.redmineclient.task.Fetcher$ContentResponseErrorHandler)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r13.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer668, $r27, $r14)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #4e9f4c9847b39ba18f3a7c518382420d2a702dcff93f095bf55c078b6bdd3ffc)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r13 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer663)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r13.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer668, $r27, $r14)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r13.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer668, $r27, $r14)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 2
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 3
+	ConstraintError: 1
+=====================================================================

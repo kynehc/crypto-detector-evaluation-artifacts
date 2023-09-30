@@ -1,0 +1,157 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: java.security.cert.CertificateFactory
+		Statement: $r3 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer1418)
+		Method: <com.squareup.okhttp.internal.http.HttpResponseCache$Entry: java.security.cert.Certificate[] readCertArray(com.squareup.okhttp.internal.StrictLineReader)>
+		SHA-256: 34b387001ea2c190f07b3a6121c1b62589f9a434930e8fadc0a49dc759b9613e
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <com.squareup.okhttp.HttpResponseCache: java.lang.String uriToKey(java.net.URI)>
+		SHA-256: 9d0c5a8448b7fbc83d6a71c37c2ee295917c791d0c71e085af04ccb76f38f8d9
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1329)
+		Method: <com.squareup.okhttp.internal.http.HttpResponseCache: java.lang.String uriToKey(java.net.URI)>
+		SHA-256: b95de1a9f55ab0e324d715644c7727d4e1b76ae60f50b69b9589e700c2bd027
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <com.squareup.okhttp.internal.http.HttpResponseCache: java.lang.String uriToKey(java.net.URI)>
+		SHA-256: 9d0c5a8448b7fbc83d6a71c37c2ee295917c791d0c71e085af04ccb76f38f8d9
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1314)
+		Method: <com.squareup.okhttp.HttpResponseCache: java.lang.String uriToKey(java.net.URI)>
+		SHA-256: a809021c5423c8e75e03ae44391e0cd4beacc79e4073adaaf7775ae9b69a1e18
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.cert.CertificateFactory
+		Statement: $r3 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer1404)
+		Method: <com.squareup.okhttp.HttpResponseCache$Entry: java.security.cert.Certificate[] readCertArray(com.squareup.okhttp.internal.StrictLineReader)>
+		SHA-256: a078fd4edfe99ff636f2fa0f9e8629da67b17370187cf83c2332e09cd687e32e
+		Secure: false
+
+Findings in Java Class: com.squareup.okhttp.HttpResponseCache
+
+	 in Method: java.lang.String uriToKey(java.net.URI)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #a809021c5423c8e75e03ae44391e0cd4beacc79e4073adaaf7775ae9b69a1e18)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1314)
+
+
+Findings in Java Class: com.squareup.okhttp.internal.http.HttpResponseCache
+
+	 in Method: java.lang.String uriToKey(java.net.URI)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b95de1a9f55ab0e324d715644c7727d4e1b76ae60f50b69b9589e700c2bd027)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1329)
+
+
+Findings in Java Class: com.squareup.okhttp.HttpResponseCache$Entry
+
+	 in Method: java.security.cert.Certificate[] readCertArray(com.squareup.okhttp.internal.StrictLineReader)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #a078fd4edfe99ff636f2fa0f9e8629da67b17370187cf83c2332e09cd687e32e)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r3 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer1404)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #a078fd4edfe99ff636f2fa0f9e8629da67b17370187cf83c2332e09cd687e32e)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r8 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r7)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #a078fd4edfe99ff636f2fa0f9e8629da67b17370187cf83c2332e09cd687e32e)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r8 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r7)
+
+
+Findings in Java Class: com.squareup.okhttp.internal.http.HttpResponseCache$Entry
+
+	 in Method: java.security.cert.Certificate[] readCertArray(com.squareup.okhttp.internal.StrictLineReader)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #34b387001ea2c190f07b3a6121c1b62589f9a434930e8fadc0a49dc759b9613e)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r3 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer1418)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #34b387001ea2c190f07b3a6121c1b62589f9a434930e8fadc0a49dc759b9613e)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r8 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r7)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #34b387001ea2c190f07b3a6121c1b62589f9a434930e8fadc0a49dc759b9613e)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r8 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r7)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 6
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 4
+	ConstraintError: 2
+	TypestateError: 2
+=====================================================================

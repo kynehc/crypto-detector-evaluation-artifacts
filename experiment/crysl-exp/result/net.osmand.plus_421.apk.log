@@ -1,0 +1,990 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Alive 18818  5000
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.engines.RSABlindedEngine: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: 94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.signers.PSSSigner: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: 7331639808f0d8733f5df0230ac3a48eecf3cff3ed703c4c0022f9cd7cd80756
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLContext
+		Statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer108790, $r1)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 42c6979e8ac987d9e19a7302059c4aff5068d0034749e3b3ae3392a10cb67922
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.Signature
+		Statement: $r6 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r5)
+		Method: <org.bouncycastle.jce.provider.X509CertificateObject: void verify(java.security.PublicKey)>
+		SHA-256: 112e0b98b9789074d4ec3ee999f422c7c115607a7d5cddcfc5fefe2723a7aec7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <org.mozilla.javascript.tools.shell.Main: byte[] getDigest(java.lang.Object)>
+		SHA-256: 8111502de4599a5f2e2873af90bfc06b5c7b639ef0f085cce7581d5a6e44a17c
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.Signature
+		Statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r6)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateObject: void verify(java.security.PublicKey)>
+		SHA-256: 12ceb637520f44953be41c6cc4cf0d880ddfab3b0759a27bcd8537de2150d294
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r3, $r1)
+		Method: <org.bouncycastle.jcajce.util.NamedJcaJceHelper: java.security.MessageDigest createDigest(java.lang.String)>
+		SHA-256: e8a87e246a6c009eb3e7a31f13191dde4223e81c9a0be79ef2d398a0ab6930dc
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.signers.ECGOST3410Signer: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: caabe0390e3d2386e10c04d6d72b0b44e335e1623efc6992e7ef060aaafe4388
+		Secure: true
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r2.<java.security.Signature: boolean verify(byte[])>($r8)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateObject: void checkSignature(java.security.PublicKey,java.security.Signature)>
+		SHA-256: 55c0ef59d2e8f2d9e7c3b9d886f8a0561a8e9e82e242551a90594b801b63073c
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLContext
+		Statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer108788)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 6207ffde3cdd1ad0476b1372534f762903ccfc980af034065aebdd8e8e8d03e4
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: java.security.MessageDigest
+		Statement: $r15 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r14, varReplacer76018)
+		Method: <org.bouncycastle.x509.AttributeCertificateHolder: boolean match(java.security.cert.Certificate)>
+		SHA-256: 574f8df2653425aff153ac00d3f52a710d3bc5b8a8b6bb8c4c5a16cec7112b97
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.bouncycastle.jce.provider.JCEElGamalPublicKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: 2f96be90287037dd5aa521a81412c6567fe97ad3bdc0a3e0dd37cb2855cfb876
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer34450)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: 3243fca5f70e1ffcf987eaf38c1021fea9cf748953c5a356d03346cb6b3096ae
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: 671980c38541e5f4635e5df9b14b3f2382c28342263daa27d76a6e21eb43fded
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r10.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r11, $r8)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: c45dba96a483e3e9ebfded9c6fc9988af7c1739a549f04c3576d99624449a7d1
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.Signature
+		Statement: $r6 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.lang.String)>($r5, varReplacer113752)
+		Method: <org.bouncycastle.jce.provider.X509CertificateObject: void verify(java.security.PublicKey)>
+		SHA-256: dcf3ad22f45efc9cd3374398730a3ee4b56c159c79e1c4472d79a11647bcf9c3
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.AlgorithmParameters
+		Statement: $r5 = staticinvoke <java.security.AlgorithmParameters: java.security.AlgorithmParameters getInstance(java.lang.String,java.security.Provider)>($r3, $r4)
+		Method: <org.bouncycastle.jce.provider.X509SignatureUtil: void setSignatureParameters(java.security.Signature,org.bouncycastle.asn1.ASN1Encodable)>
+		SHA-256: 5542b69dc5336cc3d00547288fa7f3d8d3237d121f2ce57576e26391c36e1a8d
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.bouncycastle.jce.provider.JCEElGamalPrivateKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: 6b8822e70d4604e23c0ea07692bf2c9c1daaa36d64fb48b6df14aae465189041
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.cert.CertificateFactory
+		Statement: $r5 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer109584)
+		Method: <okhttp3.Cache$Entry: java.util.List readCertificateList(okio.BufferedSource)>
+		SHA-256: 7d339382192d4dc09ae1e16de2e8e0334498fbd9d54441539725fadc22794c9c
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r2.<java.security.Signature: boolean verify(byte[])>($r8)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateObject: void checkSignature(java.security.PublicKey,java.security.Signature)>
+		SHA-256: cebe45f59ca6821eb5e75723e2592c61a7970e6687e96537a7fa5d2712864b7
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer34445)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: 7131f6dde4bf5aae897100a3aa5f0977348ca82566368d8a94e0d66b0181ed7e
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.engines.ElGamalEngine: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: cc0b332bb2ddc847ca308294e1c87841df1bdcc2359c6b4559abe498d8131c20
+		Secure: true
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r2.<java.security.Signature: boolean verify(byte[])>($r8)
+		Method: <org.bouncycastle.jce.provider.X509CertificateObject: void checkSignature(java.security.PublicKey,java.security.Signature)>
+		SHA-256: 55c0ef59d2e8f2d9e7c3b9d886f8a0561a8e9e82e242551a90594b801b63073c
+		Secure: false
+	Object:
+		Variable: r0
+		Type: org.bouncycastle.x509.ExtendedPKIXParameters
+		Statement: specialinvoke r0.<java.security.cert.PKIXParameters: void <init>(java.util.Set)>($r1)
+		Method: <org.bouncycastle.x509.ExtendedPKIXParameters: void <init>(java.util.Set)>
+		SHA-256: bc4db4edf85d5095c872f763083d4cdd57eaf413157a98ff957c0439448eaca6
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, $r6)
+		Method: <org.bouncycastle.cert.crmf.jcajce.JcePKMACValuesCalculator: byte[] calculateMac(byte[],byte[])>
+		SHA-256: 55eb535ec698f1bdaa9b9339c4f90a63f5a7b71223f9954d433aa3fd06fab83
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.elgamal.BCElGamalPrivateKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: c908257ebef1e44e27421c3dc6127a4c79990e1515e273132ea2c2cb020fcdee
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: c17421c9044aaad49761f9cd19147df7d237b870f86c00a4c3f759ad8875e0fe
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.signers.DSASigner: java.math.BigInteger getRandomizer(java.math.BigInteger,java.security.SecureRandom)>
+		SHA-256: 728067e6297e9cc689793764cefcc080705eefa266c05439d9c7a7cf503909b7
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.apache.commons.codec.digest.DigestUtils: byte[] md5(byte[])>
+		SHA-256: d2ba38deb0d2f449dfb6fcbb092e9f603e49b4b43cd2b43b5848853db2e618d6
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.OkHttpClient: javax.net.ssl.X509TrustManager systemDefaultTrustManager()>
+		SHA-256: 4704c3ea9d50e304ebaa64f80abc0358b23fd9e2c75b25360e6595ec058a5c98
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <org.bouncycastle.jcajce.util.DefaultJcaJceHelper: java.security.MessageDigest createDigest(java.lang.String)>
+		SHA-256: e485ecd53ecca8cba6ed010ffc115ca04172eb9152ffd532b50b45741978f36
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: virtualinvoke $r5.<java.security.SecureRandom: void nextBytes(byte[])>($r4)
+		Method: <org.bouncycastle.crypto.encodings.PKCS1Encoding: byte[] decodeBlockOrRandom(byte[],int,int)>
+		SHA-256: f0d838aba1c9e27b028a361659061451d28753724f242b369ab4684652f24999
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.generators.ECKeyPairGenerator: void init(org.bouncycastle.crypto.KeyGenerationParameters)>
+		SHA-256: b9c970d7ca75c43cb7258988e82963e870aab49d0877fadda916613732dffc1d
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.encodings.OAEPEncoding: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: 2927d56a192959dc3453ff63fb3830152d4c89781cce727cc1398f859f78edbf
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.Signature
+		Statement: $r2 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.lang.String)>($r3, $r1)
+		Method: <org.bouncycastle.jcajce.util.NamedJcaJceHelper: java.security.Signature createSignature(java.lang.String)>
+		SHA-256: cb6dbedb66709ff933343a7a19443259032632b9744c262530a2bb4dc73beae9
+		Secure: false
+	Object:
+		Variable: varReplacer34449
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer34449)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: f5b429363e882bd5d79fa4714f855dacc041fe574413e7c7037aa76d666ca12d
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.pqc.crypto.rainbow.RainbowSigner: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: b0d1ba3da8064ca082b6ab923adae7a1f903b06296e62e14fc3b962758995d3f
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r8.<java.security.MessageDigest: byte[] digest()>()
+		Method: <net.osmand.plus.settings.backend.backup.StreamSettingsItemWriter: void streamCopy(java.io.InputStream,java.io.OutputStream,net.osmand.IProgress,int)>
+		SHA-256: 3d35486e13461433831d5e4bb97b34450e8fbb560e03ecee068e3bad8c336fb2
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <org.apache.commons.codec.digest.DigestUtils: java.security.MessageDigest getDigest(java.lang.String)>
+		SHA-256: e941edb5217c879acd87fed3366e0d56fa56f48ce569721201e5ad4173f69b53
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.signers.ISO9796d2PSSSigner: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: 6dae500fa4127477f702f7c8db5b65ac00e8420fed109375c053548083b8d090
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.signers.GOST3410Signer: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: 61b7887e2cfe6269c9dc5ed1565a2d9c81d2ae6237d2a5bf20c73d26a54cd85c
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.AlgorithmParameters
+		Statement: $r5 = staticinvoke <java.security.AlgorithmParameters: java.security.AlgorithmParameters getInstance(java.lang.String,java.security.Provider)>($r3, $r4)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.x509.X509SignatureUtil: void setSignatureParameters(java.security.Signature,org.bouncycastle.asn1.ASN1Encodable)>
+		SHA-256: 5542b69dc5336cc3d00547288fa7f3d8d3237d121f2ce57576e26391c36e1a8d
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r13.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r6, $r14)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.dh.BCDHPublicKey: void <init>(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: 3451edf3dccf50176e144b7254eeb29d3cdc8d30009e3ba3c4cad7a8e560fa46
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r3.<java.security.SecureRandom: void nextBytes(byte[])>($r2)
+		Method: <org.bouncycastle.crypto.signers.PSSSigner: byte[] generateSignature()>
+		SHA-256: 5971d6538d25f1e396808264bf05345b660a017c8af8ec968b717cf263b5ce6a
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer32551)
+		Method: <org.mozilla.javascript.tools.shell.Main: byte[] getDigest(java.lang.Object)>
+		SHA-256: 4873f234228ea0bfffe1a0fa27dd877efa999c56b550ce07c28c11be3c11b790
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.pqc.crypto.gmss.GMSSSigner: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: 2dc8cd1c1fa7979cada7be8f8320f93342af2ff1963c7c499a3420b2b9545bfa
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.signers.DSASigner: java.security.SecureRandom initSecureRandom(boolean,java.security.SecureRandom)>
+		SHA-256: e8268e06cdec9b55dd4e3a8d37eef42c3e6d25c634d5bfaad5469f6fbc26035f
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.commons.codec.digest.DigestUtils: byte[] digest(java.security.MessageDigest,java.io.InputStream)>
+		SHA-256: 59706ca877de8557897c46539bf657c336a508c0f422f23955ee91804abe4e2
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.spec.DSAParameterSpec
+		Statement: specialinvoke $r9.<java.security.spec.DSAParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger,java.math.BigInteger)>($r5, $r10, $r11)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.dsa.BCDSAPublicKey: void <init>(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: ca8c57f00e636666523b3803cf2d449c7668aea2653306a5d436a81914fd7df0
+		Secure: true
+	Object:
+		Variable: $r27
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r27.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r24, $r32, $r1, $i0)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.dstu.BCDSTU4145PublicKey: void populateFromPubKeyInfo(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: 328a994870b4246a4b515a8d0ddaed4e9411221f2c2ca9896e6ea4b42f228b2a
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.encodings.PKCS1Encoding: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <org.bouncycastle.crypto.signers.ISO9796d2PSSSigner: byte[] generateSignature()>
+		SHA-256: 153ecb1a57e7fd3a3f9212bf84d10102d6cb1bcca8396308797653bf2209f59c
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.Signature
+		Statement: $r1 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r2)
+		Method: <org.bouncycastle.jcajce.util.DefaultJcaJceHelper: java.security.Signature createSignature(java.lang.String)>
+		SHA-256: 66f26381b2b186fbed59de5f1091ee81e1ff14794fdb45154aac9feab8965356
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <org.bouncycastle.crypto.encodings.PKCS1Encoding: byte[] encodeBlock(byte[],int,int)>
+		SHA-256: eacef851ce54f73496b5b532959f537500639a3690f0ee1369bef27820eadfb
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.security.MessageDigest
+		Statement: $r8 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer71872)
+		Method: <net.osmand.plus.settings.backend.backup.StreamSettingsItemWriter: void streamCopy(java.io.InputStream,java.io.OutputStream,net.osmand.IProgress,int)>
+		SHA-256: 12e153ffee99f4bfb9129dfd629a90fd09642686e98b10c1fac55d718844df00
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r3, $r4)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.elgamal.BCElGamalPublicKey: javax.crypto.spec.DHParameterSpec getParams()>
+		SHA-256: a9c19b12994234db6ec00ed5b541d5738b556e23d3870b731ea4245dbf932de7
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer34449)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: 2f4cba30b112c65319550765649bd6384b4fc4362e027d5df10795bca68d422b
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: a79a1700ae9d8d44f13ea218f751e7024f8f1222b1b2ae17cdbab7b56d352181
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r2.<java.security.Signature: boolean verify(byte[])>($r8)
+		Method: <org.bouncycastle.jce.provider.X509CertificateObject: void checkSignature(java.security.PublicKey,java.security.Signature)>
+		SHA-256: cebe45f59ca6821eb5e75723e2592c61a7970e6687e96537a7fa5d2712864b7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.signers.DSTU4145Signer: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: bb98eee2eb82fb2c71e59ff99dcc6ac412ba5d86e67e379f475f490796e58a35
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.Signature
+		Statement: $r2 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.security.Provider)>($r3, $r1)
+		Method: <org.bouncycastle.jcajce.util.ProviderJcaJceHelper: java.security.Signature createSignature(java.lang.String)>
+		SHA-256: 14ead5b41e52dcc0971ab3bbf6947b9738bc0cfa14d4e782ddd7a129f6301c26
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r13.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger,int)>($r6, $r14, $i0)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.dh.BCDHPublicKey: void <init>(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: 9b0b38d08756ee57f2e1cc5afa33b90eb4de6e532c351db39bbc17a82a1ffc13
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke $r13.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r6, $r14)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.dh.BCDHPublicKey: void <init>(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: 3451edf3dccf50176e144b7254eeb29d3cdc8d30009e3ba3c4cad7a8e560fa46
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.security.Provider)>($r3, $r1)
+		Method: <org.bouncycastle.jcajce.util.ProviderJcaJceHelper: java.security.MessageDigest createDigest(java.lang.String)>
+		SHA-256: 73f93d39bce4abc7febcf31ac561db4038d2baae13c0462688d95e5dc7a0ac02
+		Secure: true
+	Object:
+		Variable: $r18
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r18.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r11, $r0, $r16, $i0)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.util.EC5Util: java.security.spec.ECParameterSpec convertToSpec(org.bouncycastle.asn1.x9.X962Parameters,org.bouncycastle.math.ec.ECCurve)>
+		SHA-256: 3d674d7c8d93c70d10aec94fa2cbc4149966083ce3988ace552a9b39ec865719
+		Secure: true
+	Object:
+		Variable: $r16
+		Type: byte[]
+		Statement: $r16 = virtualinvoke $r15.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.bouncycastle.x509.AttributeCertificateHolder: boolean match(java.security.cert.Certificate)>
+		SHA-256: 733e42bbdc4639c4f728ddf34e9b407d27b5d8c13567d81937f01e426dc09e8e
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.signers.ECDSASigner: java.security.SecureRandom initSecureRandom(boolean,java.security.SecureRandom)>
+		SHA-256: f3053cf85ff0ce748590d7e6a4da3184d4158a2e3d38a0473e74cc66757dd76
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.signers.ECNRSigner: void init(boolean,org.bouncycastle.crypto.CipherParameters)>
+		SHA-256: 9280f6752b6e6221628d06f9d60b4341d2a16061cd2ae2c26b66d065728b8af7
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.lang.String
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, $r6)
+		Method: <org.bouncycastle.cert.crmf.jcajce.JcePKMACValuesCalculator: byte[] calculateMac(byte[],byte[])>
+		SHA-256: 4285b0b336ff13a2ca84a5fdd03ee2fb749bcf650a7075e378932054b1c6d205
+		Secure: false
+	Object:
+		Variable: r0
+		Type: org.bouncycastle.jce.spec.ECNamedCurveSpec
+		Statement: specialinvoke r0.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r2, $r3, $r4, $i0)
+		Method: <org.bouncycastle.jce.spec.ECNamedCurveSpec: void <init>(java.lang.String,java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,java.math.BigInteger)>
+		SHA-256: b36d50207c12d926e435b859cb9848007d52f50b2e62c847e597de1f84f657c6
+		Secure: true
+	Object:
+		Variable: $r18
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r18.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r11, $r0, $r16, varReplacer74843)
+		Method: <org.bouncycastle.jcajce.provider.asymmetric.util.EC5Util: java.security.spec.ECParameterSpec convertToSpec(org.bouncycastle.asn1.x9.X962Parameters,org.bouncycastle.math.ec.ECCurve)>
+		SHA-256: 3feb5836c0bc4729c488524aa9e2e20cebb509b5e291caeac17135d1f4e21961
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.OkHttpClient: javax.net.ssl.X509TrustManager systemDefaultTrustManager()>
+		SHA-256: 61965954da2703450175e336d331a8bc311810e943eebaeca9d739b64a0fdc1
+		Secure: false
+
+Findings in Java Class: org.mozilla.javascript.tools.shell.Main
+
+	 in Method: byte[] getDigest(java.lang.Object)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4873f234228ea0bfffe1a0fa27dd877efa999c56b550ce07c28c11be3c11b790)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer32551)
+
+
+Findings in Java Class: org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1
+
+	 in Method: javax.crypto.CipherInputStream init()
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer34443, $r7, $r9)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #7131f6dde4bf5aae897100a3aa5f0977348ca82566368d8a94e0d66b0181ed7e)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r4 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer34449)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #3243fca5f70e1ffcf987eaf38c1021fea9cf748953c5a356d03346cb6b3096ae)
+			First parameter (with value "AES/CBC/NoPadding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer34450)
+
+
+Findings in Java Class: org.apache.commons.codec.digest.DigestUtils
+
+	 in Method: java.security.MessageDigest updateDigest(java.security.MessageDigest,java.io.InputStream)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e941edb5217c879acd87fed3366e0d56fa56f48ce569721201e5ad4173f69b53)
+			Third parameter (with value 0)Variable preLenmust be  greater than 0
+			at statement: virtualinvoke $r0.<java.security.MessageDigest: void update(byte[],int,int)>($r2, varReplacer87800, $i0)
+
+
+	 in Method: java.security.MessageDigest getDigest(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e941edb5217c879acd87fed3366e0d56fa56f48ce569721201e5ad4173f69b53)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+
+
+	 in Method: byte[] digest(java.security.MessageDigest,java.io.InputStream)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #e941edb5217c879acd87fed3366e0d56fa56f48ce569721201e5ad4173f69b53)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: net.osmand.plus.settings.backend.backup.StreamSettingsItemWriter
+
+	 in Method: void streamCopy(java.io.InputStream,java.io.OutputStream,net.osmand.IProgress,int)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #12e153ffee99f4bfb9129dfd629a90fd09642686e98b10c1fac55d718844df00)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r5 = virtualinvoke $r8.<java.security.MessageDigest: byte[] digest()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #12e153ffee99f4bfb9129dfd629a90fd09642686e98b10c1fac55d718844df00)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r8 = null
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #12e153ffee99f4bfb9129dfd629a90fd09642686e98b10c1fac55d718844df00)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r8 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer71872)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #12e153ffee99f4bfb9129dfd629a90fd09642686e98b10c1fac55d718844df00)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r8 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer71872)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #12e153ffee99f4bfb9129dfd629a90fd09642686e98b10c1fac55d718844df00)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to java.security.MessageDigest: void update(byte[],int,int), digest, java.security.MessageDigest: void update(java.nio.ByteBuffer), java.security.MessageDigest: void update(byte[]), java.security.MessageDigest: void update(byte)
+			at statement: virtualinvoke $r8.<java.security.MessageDigest: void update(byte[],int,int)>($r5, varReplacer71870, $i2)
+
+
+Findings in Java Class: org.bouncycastle.x509.AttributeCertificateHolder
+
+	 in Method: boolean match(java.security.cert.Certificate)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #574f8df2653425aff153ac00d3f52a710d3bc5b8a8b6bb8c4c5a16cec7112b97)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r16 = virtualinvoke $r15.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder$1
+
+	 in Method: org.bouncycastle.operator.DigestCalculator get(org.bouncycastle.asn1.x509.AlgorithmIdentifier)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #e485ecd53ecca8cba6ed010ffc115ca04172eb9152ffd532b50b45741978f36)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r6.<org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder$1$1: void <init>(org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder$1,org.bouncycastle.asn1.x509.AlgorithmIdentifier,org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder$DigestOutputStream)>(r0, $r1, $r5)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #73f93d39bce4abc7febcf31ac561db4038d2baae13c0462688d95e5dc7a0ac02)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r6.<org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder$1$1: void <init>(org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder$1,org.bouncycastle.asn1.x509.AlgorithmIdentifier,org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder$DigestOutputStream)>(r0, $r1, $r5)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #e8a87e246a6c009eb3e7a31f13191dde4223e81c9a0be79ef2d398a0ab6930dc)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r6.<org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder$1$1: void <init>(org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder$1,org.bouncycastle.asn1.x509.AlgorithmIdentifier,org.bouncycastle.operator.jcajce.JcaDigestCalculatorProviderBuilder$DigestOutputStream)>(r0, $r1, $r5)
+
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #6207ffde3cdd1ad0476b1372534f762903ccfc980af034065aebdd8e8e8d03e4)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer108788)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #42c6979e8ac987d9e19a7302059c4aff5068d0034749e3b3ae3392a10cb67922)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer108790, $r1)
+
+
+Findings in Java Class: okhttp3.Cache$Entry
+
+	 in Method: java.util.List readCertificateList(okio.BufferedSource)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #7d339382192d4dc09ae1e16de2e8e0334498fbd9d54441539725fadc22794c9c)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertificate, generateCertPath, generateCRL
+			at statement: $r5 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer109584)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #7d339382192d4dc09ae1e16de2e8e0334498fbd9d54441539725fadc22794c9c)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r9 = virtualinvoke $r5.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #7d339382192d4dc09ae1e16de2e8e0334498fbd9d54441539725fadc22794c9c)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r9 = virtualinvoke $r5.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r8)
+
+
+Findings in Java Class: org.bouncycastle.crypto.encodings.PKCS1Encoding
+
+	 in Method: byte[] encodeBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = virtualinvoke r0.<org.bouncycastle.crypto.encodings.PKCS1Encoding: int getInputBlockSize()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = virtualinvoke r0.<org.bouncycastle.crypto.encodings.PKCS1Encoding: int getInputBlockSize()>()
+
+		TypestateError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Unexpected call to method nextBytes on object of type java.security.SecureRandom. Expect a call to one of the following methods init,getInstanceStrong,getInstance
+			at statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+
+
+	 in Method: byte[] decodeBlockOrRandom(byte[],int,int)
+		TypestateError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Unexpected call to method nextBytes on object of type java.security.SecureRandom. Expect a call to one of the following methods init,getInstanceStrong,getInstance
+			at statement: virtualinvoke $r5.<java.security.SecureRandom: void nextBytes(byte[])>($r4)
+
+
+	 in Method: byte[] decodeBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i0 = specialinvoke r0.<org.bouncycastle.crypto.encodings.PKCS1Encoding: int findStart(byte,byte[])>($b3, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i0 = specialinvoke r0.<org.bouncycastle.crypto.encodings.PKCS1Encoding: int findStart(byte,byte[])>($b3, $r1)
+
+
+	 in Method: void init(boolean,org.bouncycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i0 = interfaceinvoke $r6.<org.bouncycastle.crypto.AsymmetricBlockCipher: int getOutputBlockSize()>()
+
+
+Findings in Java Class: org.bouncycastle.crypto.signers.ISO9796d2Signer
+
+	 in Method: void init(boolean,org.bouncycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r3.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r3.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r2)
+
+
+Findings in Java Class: org.bouncycastle.crypto.signers.X931Signer
+
+	 in Method: void init(boolean,org.bouncycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r1.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r1.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r3)
+
+
+Findings in Java Class: org.bouncycastle.crypto.signers.GenericSigner
+
+	 in Method: void init(boolean,org.bouncycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r6.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r6.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r1)
+
+
+Findings in Java Class: org.bouncycastle.crypto.tls.TlsRSAUtils
+
+	 in Method: byte[] safeDecryptPreMasterSecret(org.bouncycastle.crypto.tls.TlsContext,org.bouncycastle.crypto.params.RSAKeyParameters,byte[])
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r5 = virtualinvoke $r1.<org.bouncycastle.crypto.encodings.PKCS1Encoding: byte[] processBlock(byte[],int,int)>($r5, varReplacer111667, $i1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r5 = virtualinvoke $r1.<org.bouncycastle.crypto.encodings.PKCS1Encoding: byte[] processBlock(byte[],int,int)>($r5, varReplacer111667, $i1)
+
+
+	 in Method: byte[] generateEncryptedPreMasterSecret(org.bouncycastle.crypto.tls.TlsContext,org.bouncycastle.crypto.params.RSAKeyParameters,java.io.OutputStream)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r9 = virtualinvoke $r6.<org.bouncycastle.crypto.encodings.PKCS1Encoding: byte[] processBlock(byte[],int,int)>($r0, varReplacer109938, varReplacer109939)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r9 = virtualinvoke $r6.<org.bouncycastle.crypto.encodings.PKCS1Encoding: byte[] processBlock(byte[],int,int)>($r0, varReplacer109938, varReplacer109939)
+
+
+Findings in Java Class: org.bouncycastle.crypto.signers.PSSSigner
+
+	 in Method: void init(boolean,org.bouncycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r7.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r7.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r7.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r7.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r1)
+
+
+Findings in Java Class: org.bouncycastle.crypto.encodings.OAEPEncoding
+
+	 in Method: void init(boolean,org.bouncycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r4.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r4.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r1)
+
+
+	 in Method: byte[] encodeBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = virtualinvoke r0.<org.bouncycastle.crypto.encodings.OAEPEncoding: int getInputBlockSize()>()
+
+
+	 in Method: byte[] decodeBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r3 = specialinvoke r0.<org.bouncycastle.crypto.encodings.OAEPEncoding: byte[] maskGeneratorFunction1(byte[],int,int,int)>($r1, varReplacer103203, $i1, $i2)
+
+
+Findings in Java Class: org.bouncycastle.crypto.signers.RSADigestSigner
+
+	 in Method: void init(boolean,org.bouncycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r6.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r6.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r1)
+
+
+Findings in Java Class: org.bouncycastle.crypto.signers.ISO9796d2PSSSigner
+
+	 in Method: void init(boolean,org.bouncycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r8.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r8.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r3)
+
+
+Findings in Java Class: org.bouncycastle.crypto.encodings.ISO9796d1Encoding
+
+	 in Method: void init(boolean,org.bouncycastle.crypto.CipherParameters)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #d60d93481dd6262546132fe8ec2f6f2c42eb3a0a1bfa20b033056f89fc2c0c59)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r1.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r1.<org.bouncycastle.crypto.AsymmetricBlockCipher: void init(boolean,org.bouncycastle.crypto.CipherParameters)>($z0, $r2)
+
+
+Findings in Java Class: org.bouncycastle.crypto.engines.RSABlindedEngine
+
+	 in Method: byte[] processBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r8 = staticinvoke <org.bouncycastle.util.BigIntegers: java.math.BigInteger createRandomInRange(java.math.BigInteger,java.math.BigInteger,java.security.SecureRandom)>($r8, $r9, $r10)
+
+
+Findings in Java Class: org.bouncycastle.crypto.engines.ElGamalEngine
+
+	 in Method: byte[] processBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = virtualinvoke r0.<org.bouncycastle.crypto.engines.ElGamalEngine: int getInputBlockSize()>()
+
+
+Findings in Java Class: org.bouncycastle.crypto.engines.NaccacheSternEngine
+
+	 in Method: byte[] processBlock(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = virtualinvoke r0.<org.bouncycastle.crypto.engines.NaccacheSternEngine: int getInputBlockSize()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #94642bb44c85c75f78f22ec3372247e7bdbb1cf02676b4bfb5838a813a31c51a)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = virtualinvoke r0.<org.bouncycastle.crypto.engines.NaccacheSternEngine: int getInputBlockSize()>()
+
+
+Findings in Java Class: okhttp3.OkHttpClient
+
+	 in Method: javax.net.ssl.SSLSocketFactory systemDefaultSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer105238, $r8, varReplacer105238)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer105238, $r8, varReplacer105238)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer105238, $r8, varReplacer105238)
+
+
+	 in Method: javax.net.ssl.X509TrustManager systemDefaultTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer105235)
+
+
+Findings in Java Class: org.bouncycastle.jce.provider.X509CertificateObject
+
+	 in Method: void checkSignature(java.security.PublicKey,java.security.Signature)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r2.<java.security.Signature: void initVerify(java.security.PublicKey)>($r1)
+
+
+Findings in Java Class: org.bouncycastle.jcajce.provider.asymmetric.x509.X509CertificateObject
+
+	 in Method: void checkSignature(java.security.PublicKey,java.security.Signature)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r2.<java.security.Signature: void initVerify(java.security.PublicKey)>($r1)
+
+
+Findings in Java Class: org.bouncycastle.jce.provider.X509SignatureUtil
+
+	 in Method: void setSignatureParameters(java.security.Signature,org.bouncycastle.asn1.ASN1Encodable)
+		RequiredPredicateError violating CrySL rule for java.security.AlgorithmParameters
+			First parameter was not properly generated as preparedAlg
+			at statement: virtualinvoke $r5.<java.security.AlgorithmParameters: void init(byte[])>($r7)
+
+
+Findings in Java Class: org.bouncycastle.cert.crmf.jcajce.JcePKMACValuesCalculator
+
+	 in Method: byte[] calculateMac(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, $r6)
+
+
+Findings in Java Class: org.bouncycastle.jcajce.provider.asymmetric.x509.X509SignatureUtil
+
+	 in Method: void setSignatureParameters(java.security.Signature,org.bouncycastle.asn1.ASN1Encodable)
+		RequiredPredicateError violating CrySL rule for java.security.AlgorithmParameters
+			First parameter was not properly generated as preparedAlg
+			at statement: virtualinvoke $r5.<java.security.AlgorithmParameters: void init(byte[])>($r7)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 73
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 7
+	ConstraintError: 9
+	IncompleteOperationError: 41
+	RequiredPredicateError: 12
+=====================================================================

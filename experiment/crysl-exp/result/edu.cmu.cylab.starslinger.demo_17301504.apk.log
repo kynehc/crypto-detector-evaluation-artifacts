@@ -1,0 +1,207 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: r3
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <edu.cmu.cylab.starslinger.exchange.CryptoAccess: byte[] encryptData(byte[],byte[])>
+		SHA-256: 747e56ad82c76f514bef7a4898b0b67c0c311747a37293908c49516eb63a6821
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.PublicKey
+		Statement: $r8 = virtualinvoke $r5.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <edu.cmu.cylab.starslinger.exchange.CryptoAccess: byte[] generateDHPublicKey()>
+		SHA-256: 46f1ef478e2f7c37e03149e18dddbc8a188a58536849c0e435dd41307b6ca640
+		Secure: true
+	Object:
+		Variable: r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r3.<java.security.SecureRandom: void <init>()>()
+		Method: <edu.cmu.cylab.starslinger.exchange.VerifyActivity: void onCreate(android.os.Bundle)>
+		SHA-256: c1719a225517c5580999360fc4f97336e06ca27171e89798b856cad14de781c8
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.KeyPair
+		Statement: $r5 = virtualinvoke $r3.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <edu.cmu.cylab.starslinger.exchange.CryptoAccess: byte[] generateDHPublicKey()>
+		SHA-256: 21e0a01290f15f37ff7ad47c06e7926793da91b628e7ee637468e4e7c53d0a4a
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.KeyPairGenerator
+		Statement: $r3 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(varReplacer966)
+		Method: <edu.cmu.cylab.starslinger.exchange.CryptoAccess: byte[] generateDHPublicKey()>
+		SHA-256: 3cdbf682364baccacc7b9612fdc808d8015faa11b84aaeaac854ba2b5eefc79a
+		Secure: true
+	Object:
+		Variable: r1
+		Type: javax.crypto.spec.DHParameterSpec
+		Statement: specialinvoke r1.<javax.crypto.spec.DHParameterSpec: void <init>(java.math.BigInteger,java.math.BigInteger)>($r4, $r2)
+		Method: <edu.cmu.cylab.starslinger.exchange.CryptoAccess: byte[] generateDHPublicKey()>
+		SHA-256: 386a1fa786cce537f27eb7b7b422ba57d4fb1164a80221000225609f4381383a
+		Secure: true
+	Object:
+		Variable: varReplacer963
+		Type: java.lang.String
+		Statement: specialinvoke r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer963)
+		Method: <edu.cmu.cylab.starslinger.exchange.CryptoAccess: byte[] encryptData(byte[],byte[])>
+		SHA-256: 5d1d0a1204e03afaa2cf9a45076d0f21864470b3a69f6c6aed01f282f080a6d4
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.KeyAgreement
+		Statement: $r10 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String)>(varReplacer967)
+		Method: <edu.cmu.cylab.starslinger.exchange.CryptoAccess: byte[] generateDHPublicKey()>
+		SHA-256: 2e85d1b8ce1dc572f80683fa13640f332588d85cab38550e2a100920336a336d
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer963)
+		Method: <edu.cmu.cylab.starslinger.exchange.CryptoAccess: byte[] encryptData(byte[],byte[])>
+		SHA-256: fb974bf926e09f5d8a26db532cae05fc2da5c11e6d75102b933a47fdddc3852b
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.PrivateKey
+		Statement: $r6 = virtualinvoke $r5.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <edu.cmu.cylab.starslinger.exchange.CryptoAccess: byte[] generateDHPublicKey()>
+		SHA-256: 5ba52e02b7f830a321128ef563e25f157889d8db1ccb894cd8c0afddb351972a
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.KeyPair
+		Statement: $r5 = virtualinvoke $r3.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <edu.cmu.cylab.starslinger.exchange.CryptoAccess: byte[] generateDHPublicKey()>
+		SHA-256: 2f879cf48e84c9059442c3aabadbd32b1dcf9477a55e978b355b3ec47def548e
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <edu.cmu.cylab.starslinger.exchange.ExchangeController: void <clinit>()>
+		SHA-256: d42e5684c151115be608c9dfa5604930095c6c79edb0b5b906cfe885876d7e1a
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer965)
+		Method: <edu.cmu.cylab.starslinger.exchange.CryptoAccess: byte[] encryptData(byte[],byte[])>
+		SHA-256: 53bd603c1ff532025b52cc846ba9e5eac25b1748eadf608a709ad44e1d63a353
+		Secure: false
+
+Findings in Java Class: edu.cmu.cylab.starslinger.exchange.CryptoAccess
+
+	 in Method: byte[] encryptData(byte[],byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #53bd603c1ff532025b52cc846ba9e5eac25b1748eadf608a709ad44e1d63a353)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r8.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer964, r4, r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #53bd603c1ff532025b52cc846ba9e5eac25b1748eadf608a709ad44e1d63a353)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer965)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer964, r4, r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer963)
+
+
+Findings in Java Class: edu.cmu.cylab.starslinger.exchange.ExchangeActivity
+
+	 in Method: void onCreate(android.os.Bundle)
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #2e85d1b8ce1dc572f80683fa13640f332588d85cab38550e2a100920336a336d)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to doPhase
+			at statement: $z0 = virtualinvoke $r8.<edu.cmu.cylab.starslinger.exchange.ExchangeController: boolean doInitialize()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #2e85d1b8ce1dc572f80683fa13640f332588d85cab38550e2a100920336a336d)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to doPhase
+			at statement: $z0 = virtualinvoke $r8.<edu.cmu.cylab.starslinger.exchange.ExchangeController: boolean doGenerateCommitment()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #2e85d1b8ce1dc572f80683fa13640f332588d85cab38550e2a100920336a336d)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to doPhase
+			at statement: virtualinvoke $r8.<edu.cmu.cylab.starslinger.exchange.ExchangeController: void setNumUsers(int)>($i0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #2e85d1b8ce1dc572f80683fa13640f332588d85cab38550e2a100920336a336d)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to doPhase
+			at statement: virtualinvoke $r8.<edu.cmu.cylab.starslinger.exchange.ExchangeController: void setNumUsers(int)>(varReplacer29)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 13
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 1
+	IncompleteOperationError: 4
+	TypestateError: 1
+	RequiredPredicateError: 4
+=====================================================================

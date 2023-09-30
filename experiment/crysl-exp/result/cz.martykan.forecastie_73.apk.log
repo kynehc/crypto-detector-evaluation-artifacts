@@ -1,0 +1,153 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r14
+		Type: javax.net.ssl.SSLContext
+		Statement: $r14 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer3138)
+		Method: <cz.martykan.forecastie.utils.certificate.CertificateUtils: javax.net.ssl.SSLContext addCertificate(android.content.Context,java.util.concurrent.atomic.AtomicBoolean,boolean)>
+		SHA-256: fc6b57fdf3b34302e5be32c195a6aa43a0e959d24b1e09193cd43d112b8d351e
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: java.security.KeyStore
+		Statement: $r12 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r11)
+		Method: <cz.martykan.forecastie.utils.certificate.CertificateUtils: javax.net.ssl.SSLContext addCertificate(android.content.Context,java.util.concurrent.atomic.AtomicBoolean,boolean)>
+		SHA-256: 51da898f3f2f42a8e95593d6e27cc91fefc51735fa46ee0f41cedacc306b3f9f
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.cert.CertificateFactory
+		Statement: $r2 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer3137)
+		Method: <cz.martykan.forecastie.utils.certificate.CertificateUtils: javax.net.ssl.SSLContext addCertificate(android.content.Context,java.util.concurrent.atomic.AtomicBoolean,boolean)>
+		SHA-256: f36cae03dbe36d88d867b121e96765cd0f0729fe4e86fd102c440db1a5c46753
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r15 = virtualinvoke $r13.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <cz.martykan.forecastie.utils.certificate.CertificateUtils: javax.net.ssl.SSLContext addCertificate(android.content.Context,java.util.concurrent.atomic.AtomicBoolean,boolean)>
+		SHA-256: 848de2429d01d5f9ebd383afa58ad0f95028317b4d829f4de96e0379f511a81b
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r13 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r11)
+		Method: <cz.martykan.forecastie.utils.certificate.CertificateUtils: javax.net.ssl.SSLContext addCertificate(android.content.Context,java.util.concurrent.atomic.AtomicBoolean,boolean)>
+		SHA-256: 403f8dcba03c394fe3e29c6d28b92e8917f9234045e59e72f8cd6c3c4fa0dd43
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer4416)
+		Method: <cz.martykan.forecastie.utils.certificate.CertificateDownloader: boolean fetch(android.content.Context)>
+		SHA-256: 345fcfc9e98ac6997cac12fe220fdfeb0ba03590572cf935eca41c34dede6a6a
+		Secure: false
+
+Findings in Java Class: cz.martykan.forecastie.utils.certificate.CertificateUtils
+
+	 in Method: javax.net.ssl.SSLContext addCertificate(android.content.Context,java.util.concurrent.atomic.AtomicBoolean,boolean)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #fc6b57fdf3b34302e5be32c195a6aa43a0e959d24b1e09193cd43d112b8d351e)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r14 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer3138)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #f36cae03dbe36d88d867b121e96765cd0f0729fe4e86fd102c440db1a5c46753)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r6 = virtualinvoke $r2.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r5)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #f36cae03dbe36d88d867b121e96765cd0f0729fe4e86fd102c440db1a5c46753)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertificate, generateCertPath
+			at statement: $r2 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer3137)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r14.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer3129, $r15, varReplacer3129)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r14.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer3129, $r15, varReplacer3129)
+
+
+Findings in Java Class: cz.martykan.forecastie.utils.certificate.CertificateDownloader
+
+	 in Method: boolean fetch(android.content.Context)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #345fcfc9e98ac6997cac12fe220fdfeb0ba03590572cf935eca41c34dede6a6a)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer4416)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4420, $r14, varReplacer4420)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4420, $r14, varReplacer4420)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4420, $r14, varReplacer4420)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 6
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 5
+	ConstraintError: 2
+	IncompleteOperationError: 2
+=====================================================================

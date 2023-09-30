@@ -1,0 +1,258 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r2.<javax.crypto.Mac: byte[] doFinal(byte[])>($r0)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: byte[] generateMac(byte[],javax.crypto.SecretKey)>
+		SHA-256: 8e354515ec87102dd70d95ac7f28ca2fda2f9ac788227f897dc1cdd602962c63
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.SecureRandom
+		Statement: $r10 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer64)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity$PrngFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: 87c0cf72ecc328154fa3ffd1e380cf6bad4ce86565fd12fe03831d4eec021396
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: $r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer60)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: byte[] randomBytes(int)>
+		SHA-256: 64f6f7cb548bde20ee3ed63c9dde734c91aafacf2ac169304b1ca32834842bd6
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r3)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: com.tozny.crypto.android.AesCbcWithIntegrity$CipherTextIvMac encrypt(byte[],com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys)>
+		SHA-256: 25d3835610df116c8d3f054724d99f7905e07400f4267757f6af4ad048311bb9
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r6 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer6676)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys generateKeyFromPassword(java.lang.String,byte[])>
+		SHA-256: ed6b49d9a494f5ab6daaa7518b92be1cff255af86e9ff163c77423e8f52128b3
+		Secure: false
+	Object:
+		Variable: varReplacer6677
+		Type: java.lang.String
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer6677)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys generateKeyFromPassword(java.lang.String,byte[])>
+		SHA-256: ebd5e4ebc4059cf36a2edb677f81b8490165088c59467bfe165dcecb69aae40c
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.SecretKey
+		Statement: $r7 = virtualinvoke $r6.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r4)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys generateKeyFromPassword(java.lang.String,byte[])>
+		SHA-256: d4e2969845f860e108777d4b06651f9967f652804e07fa9a18b15938cc55de8a
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Mac
+		Statement: $r2 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer6691)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: byte[] generateMac(byte[],javax.crypto.SecretKey)>
+		SHA-256: e14861126e0749f605978af69f45af568d5465e5f20b3db001f291253619d5a5
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer6686)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: byte[] decrypt(com.tozny.crypto.android.AesCbcWithIntegrity$CipherTextIvMac,com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys)>
+		SHA-256: d3dec1eb4515cecc4dff2bb45f665fd463136f6d5771314fc0bc3e528a48d01a
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer6677)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys generateKeyFromPassword(java.lang.String,byte[])>
+		SHA-256: 38454f4b2db312442e1fb41946ed33c0a07561d7420f7a9656668d49571ff4be
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r3)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: byte[] decrypt(com.tozny.crypto.android.AesCbcWithIntegrity$CipherTextIvMac,com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys)>
+		SHA-256: 197fe427bb47c7000549fc2bae1257af55f252f1907d92d197d440873bb7d19d
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r8, varReplacer6682)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys generateKeyFromPassword(java.lang.String,byte[])>
+		SHA-256: 1920f0afaac6b9230ef5e6d88ccac71fbe4c1feb41370da1cdd4f26d86c389a5
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.security.SecureRandom: void nextBytes(byte[])>(r0)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: byte[] randomBytes(int)>
+		SHA-256: 21b1be0261f4bc8d9886d16073ee7849c1eca51f42e7f8c93e1878e1ff88d5f
+		Secure: true
+	Object:
+		Variable: r4
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke r4.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r5, $r1, varReplacer6674, varReplacer6675)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys generateKeyFromPassword(java.lang.String,byte[])>
+		SHA-256: a81daed2c3ad52151f7c917f8639505f46752e1d40ed75012285c0e4862e8161
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer6719)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: com.tozny.crypto.android.AesCbcWithIntegrity$CipherTextIvMac encrypt(byte[],com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys)>
+		SHA-256: a4f92afd3179c438690ded56b53ea6f9fa98a63c6cbe7542d5f1925438191e3e
+		Secure: false
+	Object:
+		Variable: varReplacer6675
+		Type: int
+		Statement: specialinvoke r4.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r5, $r1, varReplacer6674, varReplacer6675)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys generateKeyFromPassword(java.lang.String,byte[])>
+		SHA-256: f4d01871d0c0b4db780a6c0a99f14ec2cbb232f188fb6534fa2e79afc84d1c50
+		Secure: false
+	Object:
+		Variable: varReplacer6682
+		Type: java.lang.String
+		Statement: specialinvoke r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r8, varReplacer6682)
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity: com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys generateKeyFromPassword(java.lang.String,byte[])>
+		SHA-256: 724cd49230925664d1b1d490bcb17c5d72cc9cd2855f3a298f069fead9338aaa
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r1.<java.security.SecureRandom: void <init>()>()
+		Method: <com.tozny.crypto.android.AesCbcWithIntegrity$PrngFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: f2602ff288bc5f8d62409adcaea312702c7859abd3809f44cd14d36bd11512e0
+		Secure: true
+
+Findings in Java Class: com.tozny.crypto.android.AesCbcWithIntegrity
+
+	 in Method: com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys generateKeyFromPassword(java.lang.String,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r7 = virtualinvoke $r6.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r4)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #a81daed2c3ad52151f7c917f8639505f46752e1d40ed75012285c0e4862e8161)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: $r7 = virtualinvoke $r6.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r4)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #ed6b49d9a494f5ab6daaa7518b92be1cff255af86e9ff163c77423e8f52128b3)
+			First parameter (with value "PBKDF2WithHmacSHA1") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r6 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer6676)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #a81daed2c3ad52151f7c917f8639505f46752e1d40ed75012285c0e4862e8161)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke r4.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r5, $r1, varReplacer6674, varReplacer6675)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #a81daed2c3ad52151f7c917f8639505f46752e1d40ed75012285c0e4862e8161)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke r4.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r5, $r1, varReplacer6674, varReplacer6675)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer6677)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke r4.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r5, $r1, varReplacer6674, varReplacer6675)
+
+
+	 in Method: byte[] decrypt(com.tozny.crypto.android.AesCbcWithIntegrity$CipherTextIvMac,com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer6685, $r5, $r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r2.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r3)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #d3dec1eb4515cecc4dff2bb45f665fd463136f6d5771314fc0bc3e528a48d01a)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+
+	 in Method: com.tozny.crypto.android.AesCbcWithIntegrity$CipherTextIvMac encrypt(byte[],com.tozny.crypto.android.AesCbcWithIntegrity$SecretKeys)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer6720, $r5, $r2)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #a4f92afd3179c438690ded56b53ea6f9fa98a63c6cbe7542d5f1925438191e3e)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r0)
+
+
+	 in Method: byte[] generateMac(byte[],javax.crypto.SecretKey)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 18
+
+	CryptoAnalysis found the following violations. For details see description above.
+	NeverTypeOfError: 1
+	TypestateError: 2
+	RequiredPredicateError: 7
+	ConstraintError: 1
+	IncompleteOperationError: 1
+	HardCodedError: 1
+=====================================================================

@@ -1,0 +1,241 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <Crypto: void <clinit>()>
+		SHA-256: ec058051c5d67e87660598b9b253902ee72fd9547a75c89f5550cbb5fc031e6d
+		Secure: true
+	Object:
+		Variable: $i2
+		Type: int
+		Statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i1, $i2)
+		Method: <Crypto: javax.crypto.SecretKey deriveKeyPbkdf2(byte[],java.lang.String)>
+		SHA-256: f772a936250f5336b6ef188bf44df349a0d30c45e5303d7f74a488e5c14954c9
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.SecretKey
+		Statement: $r6 = virtualinvoke $r5.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r2)
+		Method: <Crypto: javax.crypto.SecretKey deriveKeyPbkdf2(byte[],java.lang.String)>
+		SHA-256: dba51af5a1e7c9aa1c43664b7e2ceec66e6dbe0a83009e8d54888479c920ac92
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <Crypto: java.lang.String decrypt(byte[],javax.crypto.SecretKey,byte[])>
+		SHA-256: ac7ac72fdac22260545212c31296ca08fe2656e64e0e4ca435036c82906b8f90
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer843)
+		Method: <org.apache.cordova.filetransfer.FileTransfer: javax.net.ssl.SSLSocketFactory trustAllHosts(javax.net.ssl.HttpsURLConnection)>
+		SHA-256: deca8fa4fb3233aca7aa827782525975f33b282b757e5170cf46c1be459ab7d7
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r5 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer847)
+		Method: <Crypto: javax.crypto.SecretKey deriveKeyPbkdf2(byte[],java.lang.String)>
+		SHA-256: 66ab03d18a064290fdc9d066a166eff94d9c8a2e37dd76102597d66857eee006
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.cordova.filetransfer.FileTransfer: javax.net.ssl.SSLSocketFactory trustAllHosts(javax.net.ssl.HttpsURLConnection)>
+		SHA-256: 3f86d6bfd8759147235052142d1b1ad38320e7826d4ece1e1fbd3ee1b21b0198
+		Secure: true
+	Object:
+		Variable: r2
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke r2.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r6)
+		Method: <Crypto: java.lang.String encrypt(java.lang.String,java.lang.String)>
+		SHA-256: 8b5c8cdf5216fa27cf436ccb9c74a07a95f70e4b0bfda9296ed64c9fbf841086
+		Secure: false
+	Object:
+		Variable: varReplacer850
+		Type: java.lang.String
+		Statement: specialinvoke r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer850)
+		Method: <Crypto: javax.crypto.SecretKey deriveKeyPbkdf2(byte[],java.lang.String)>
+		SHA-256: a1476f029779c28344a105ef0713189758a4091db97213817138a366275a415d
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer643)
+		Method: <Crypto: java.lang.String encrypt(java.lang.String,java.lang.String)>
+		SHA-256: e1dd525959a58c68b471548229961968daccbdfa78cbaa73021f379020f37d28
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer859)
+		Method: <Crypto: java.lang.String decrypt(byte[],javax.crypto.SecretKey,byte[])>
+		SHA-256: 4b860fd35f51c49cea6846a1377d0adf48bf5f155b50e6b1fcd56ddb098f0ba0
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i1, $i2)
+		Method: <Crypto: javax.crypto.SecretKey deriveKeyPbkdf2(byte[],java.lang.String)>
+		SHA-256: 9b97c939dad739fa4e2850ebcae8243495ab2de7c07c04aa24da7d623b326ff
+		Secure: false
+	Object:
+		Variable: r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer850)
+		Method: <Crypto: javax.crypto.SecretKey deriveKeyPbkdf2(byte[],java.lang.String)>
+		SHA-256: c1db21d8f8ef626838b180184d2238f51528364ace0832c47308a8ae9f2ec911
+		Secure: false
+
+Findings in Java Class: Crypto
+
+	 in Method: java.lang.String encrypt(java.lang.String,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer644, $r4, r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer644, $r4, r2)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #e1dd525959a58c68b471548229961968daccbdfa78cbaa73021f379020f37d28)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke r2.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r6)
+
+
+	 in Method: javax.crypto.SecretKey deriveKeyPbkdf2(byte[],java.lang.String)
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #9b97c939dad739fa4e2850ebcae8243495ab2de7c07c04aa24da7d623b326ff)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i1, $i2)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #9b97c939dad739fa4e2850ebcae8243495ab2de7c07c04aa24da7d623b326ff)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i1, $i2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer850)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #9b97c939dad739fa4e2850ebcae8243495ab2de7c07c04aa24da7d623b326ff)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: $r6 = virtualinvoke $r5.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i1, $i2)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #66ab03d18a064290fdc9d066a166eff94d9c8a2e37dd76102597d66857eee006)
+			First parameter (with value "PBKDF2WithHmacSHA1") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r5 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer847)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r6 = virtualinvoke $r5.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r2)
+
+
+	 in Method: java.lang.String decrypt(byte[],javax.crypto.SecretKey,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #4b860fd35f51c49cea6846a1377d0adf48bf5f155b50e6b1fcd56ddb098f0ba0)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer858, $r1, r3)
+
+
+Findings in Java Class: org.apache.cordova.filetransfer.FileTransfer
+
+	 in Method: javax.net.ssl.SSLSocketFactory trustAllHosts(javax.net.ssl.HttpsURLConnection)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #deca8fa4fb3233aca7aa827782525975f33b282b757e5170cf46c1be459ab7d7)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer843)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer842, $r5, $r2)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer842, $r5, $r2)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 13
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 2
+	TypestateError: 2
+	IncompleteOperationError: 1
+	RequiredPredicateError: 10
+	NeverTypeOfError: 1
+	HardCodedError: 1
+=====================================================================

@@ -1,0 +1,142 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: java.security.KeyStore
+		Statement: $r7 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r6)
+		Method: <org.strongswan.android.logic.TrustedCertificateManager: void <init>()>
+		SHA-256: d71d79695312e2a36fb0e96e4b0b6988faa26a119c666a1cfb843369e922c53e
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.cert.CertificateFactory
+		Statement: $r2 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer764)
+		Method: <org.strongswan.android.ui.TrustedCertificateImportActivity: java.security.cert.X509Certificate parseCertificate(android.net.Uri)>
+		SHA-256: 44fedd3b4fb3fcd19f39eb7ca4275175e5cc43849658c96b3a6ef8d6b6c5e7df
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.KeyStore
+		Statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer12968)
+		Method: <org.strongswan.android.ui.TrustedCertificatesActivity: void onDelete(java.lang.String)>
+		SHA-256: 99d998d37e340aa0d4b81f36fc0b26c1b3a30810f0a7fff7c36475bfa0e3b0d1
+		Secure: false
+	Object:
+		Variable: $r28
+		Type: java.security.cert.CertificateFactory
+		Statement: $r28 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer15559)
+		Method: <org.strongswan.android.ui.VpnProfileImportActivity: void handleProfile(org.strongswan.android.ui.VpnProfileImportActivity$ProfileLoadResult)>
+		SHA-256: 4045683eafd44c153f0fe635c3c8fbdfa53754e40ed62b78560aaefd69fa6f5f
+		Secure: false
+	Object:
+		Variable: $r32
+		Type: java.security.KeyStore
+		Statement: $r32 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer15546)
+		Method: <org.strongswan.android.ui.VpnProfileImportActivity: void handleProfile(org.strongswan.android.ui.VpnProfileImportActivity$ProfileLoadResult)>
+		SHA-256: 9a9c6e7aa63d4b327deed0313466a49c190333ad053cbf1361d2e5a6d45481d4
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyStore
+		Statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer12990)
+		Method: <org.strongswan.android.ui.TrustedCertificateImportActivity: boolean storeCertificate(java.security.cert.X509Certificate)>
+		SHA-256: d36a6b2ffbdf96cd6fad6f7cf73a5e430515c90a7df9c5b2f47ca96704c63830
+		Secure: false
+
+Findings in Java Class: org.strongswan.android.ui.TrustedCertificateImportActivity
+
+	 in Method: java.security.cert.X509Certificate parseCertificate(android.net.Uri)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #44fedd3b4fb3fcd19f39eb7ca4275175e5cc43849658c96b3a6ef8d6b6c5e7df)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r5 = virtualinvoke $r2.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r4)
+
+
+	 in Method: boolean storeCertificate(java.security.cert.X509Certificate)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #d36a6b2ffbdf96cd6fad6f7cf73a5e430515c90a7df9c5b2f47ca96704c63830)
+			First parameter (with value "LocalCertificateStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer12990)
+
+
+Findings in Java Class: org.strongswan.android.ui.TrustedCertificatesActivity
+
+	 in Method: void onDelete(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #99d998d37e340aa0d4b81f36fc0b26c1b3a30810f0a7fff7c36475bfa0e3b0d1)
+			First parameter (with value "LocalCertificateStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer12968)
+
+
+Findings in Java Class: org.strongswan.android.ui.VpnProfileImportActivity
+
+	 in Method: void handleProfile(org.strongswan.android.ui.VpnProfileImportActivity$ProfileLoadResult)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #4045683eafd44c153f0fe635c3c8fbdfa53754e40ed62b78560aaefd69fa6f5f)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r30 = virtualinvoke $r28.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r29)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #9a9c6e7aa63d4b327deed0313466a49c190333ad053cbf1361d2e5a6d45481d4)
+			First parameter (with value "LocalCertificateStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r32 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer15546)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 6
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 2
+	ConstraintError: 3
+=====================================================================

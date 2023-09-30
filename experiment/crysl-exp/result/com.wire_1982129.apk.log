@@ -1,0 +1,1377 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+2    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+2    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>(r3)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: bd8b50717d3966526b116bdfc2f8440d09ffe34ae357ef2891016ecb6bfb2bd1
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer63036, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: c6246f5c9187655831dc8f4d262f5d1958fdc8f7f6b5093a7717e5d41b9755c1
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r0.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r13, $r14)
+		Method: <com.waz.service.assets.AssetServiceImpl$$anonfun$com$waz$service$assets$AssetServiceImpl$$extractLocalSourceAndEncryptedHashesAndSize$1$1: java.lang.Object apply(java.lang.Object)>
+		SHA-256: 4cc9c8fc2c0058e559bf5cc88adadf76f521de80a15e8e672ed79b3c2c9f5f6b
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(r3)
+		Method: <com.waz.utils.IoUtils$$anonfun$hash$2: java.lang.Object apply(java.lang.Object)>
+		SHA-256: c59e174f88f1b42fbf343185a1d5f15ef2fd5e90966e568d3747e9ac7c275c74
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer56965)
+		Method: <com.waz.utils.crypto.AESUtils$: javax.crypto.Cipher com$waz$utils$crypto$AESUtils$$cipher(byte[],byte[],int)>
+		SHA-256: 573472fe573849d6db23903702c87ed202c4ad4cbc177bb606f01c66b273bbc4
+		Secure: false
+	Object:
+		Variable: r0
+		Type: com.waz.utils.crypto.AESUtils$$anon$2
+		Statement: specialinvoke r0.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r4, $r5)
+		Method: <com.waz.utils.crypto.AESUtils$$anon$2: void <init>(byte[],java.io.InputStream,int,byte[])>
+		SHA-256: cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.SecretKey
+		Statement: $r1 = virtualinvoke $r0.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.waz.model.AESKey$: com.waz.model.AESKey random()>
+		SHA-256: e1901f1b122d73ac97e75be49a220bf9cd70d92887d57516de7ee6684a59d66b
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.SecretKey
+		Statement: $r1 = virtualinvoke $r0.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.waz.service.assets.AESKeyBytes$: byte[] random()>
+		SHA-256: 22259486313d00d46787660b7dfb9e565107fe2152a53f2f76afba5103762da4
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer3549)
+		Method: <com.waz.utils.crypto.AESUtils$: javax.crypto.Cipher cipher(com.waz.model.AESKey,byte[],int)>
+		SHA-256: 7405f05abcaaea3c3251eb3978d7d60207cd3f4782afefd1525cc09fbb425e1c
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.SecretKey
+		Statement: $r6 = virtualinvoke $r2.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.waz.utils.crypto.AESUtils$: com.waz.utils.crypto.AESUtils$EncryptedBytes encryptWithAlias(byte[],java.lang.String)>
+		SHA-256: 305bd008cc61f7a0d91850ac06d95819deb505e94aa6e0975c840ffcc78f07ef
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer7558)
+		Method: <com.waz.utils.package$: java.lang.String sha2(byte[])>
+		SHA-256: 4c00c54e9bea1ac7addce7d93366eb90afdd276f062fa8c88f9005b8681d07c0
+		Secure: true
+	Object:
+		Variable: r0
+		Type: com.waz.utils.crypto.AESUtils$$anon$1
+		Statement: specialinvoke r0.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r3, $r5)
+		Method: <com.waz.utils.crypto.AESUtils$$anon$1: void <init>(com.waz.model.AESKey,java.io.InputStream,byte[])>
+		SHA-256: 2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer63030)
+		Method: <okhttp3.internal.platform.AndroidPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 86ea133206a08584aa96bed5080fe9b4c65782f79d7e2808ddde9f04a7126273
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer63033)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 69397d7a56e35074e43a52652aacb42df7074964dc78adc6e3336132456a2036
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.CipherOutputStream
+		Statement: specialinvoke $r5.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>($r1, $r6)
+		Method: <com.waz.utils.crypto.AESUtils$: javax.crypto.CipherOutputStream outputStream(com.waz.model.AESKey,java.io.OutputStream)>
+		SHA-256: 627d61d8bc18ee530a496548a3e3aaabf4ff2cdeab8b64a140d2e82c1b880c16
+		Secure: true
+	Object:
+		Variable: $r15
+		Type: byte[]
+		Statement: $r15 = virtualinvoke $r14.<java.security.MessageDigest: byte[] digest(byte[])>($r15)
+		Method: <com.waz.znet2.HttpClientOkHttpImpl$: com.waz.znet2.HttpClientOkHttpImpl apply$77e4093e(scala.Option,com.waz.service.CertificatePin,scala.Option,scala.Option,scala.concurrent.ExecutionContext)>
+		SHA-256: d3164b6a06a372c978efac1ae58bbeb76123a7ddbe9062ccf862b4d2eef95de1
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: javax.crypto.KeyGenerator
+		Statement: $r0 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer3868)
+		Method: <com.waz.model.AESKey$: com.waz.model.AESKey random()>
+		SHA-256: 442114279cae5b677a7ced7d32341ec850fc9cb4112dfc4748661e21598e52ce
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer7125)
+		Method: <com.waz.sync.client.AssetClientImpl$$anonfun$fileWithShaBodyDeserializer$1: java.lang.Object apply(java.lang.Object)>
+		SHA-256: 632a33af078cf2aea14a2a045d2c6755b8b23883ff58568c3a7d7aa92599e699
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r2 = virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.Util: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: dea0af93b06734ae35228a014521e6e031131dd2b357359826afa61f9a6de1b
+		Secure: false
+	Object:
+		Variable: varReplacer3549
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer3549)
+		Method: <com.waz.utils.crypto.AESUtils$: javax.crypto.Cipher cipher(com.waz.model.AESKey,byte[],int)>
+		SHA-256: 472c2e41c1097c6435ce4cf9e13f77fe57d08c28b24d6bfa5f0b29095d35a7de
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke $r4.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>($r5, $r7)
+		Method: <com.waz.sync.client.AssetClientImpl$$anonfun$fileWithShaBodyDeserializer$1: java.lang.Object apply(java.lang.Object)>
+		SHA-256: 5ee41acb56180fb985bb587a945d89f7f3fa2098dd0ab1839b20cfb4bc22ad76
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer7566)
+		Method: <com.waz.model.Sha256$: com.waz.model.Sha256 calculate(byte[])>
+		SHA-256: 6f51db00f40032db99944064280190addc39e6d92e37487265ba183bc637b845
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: java.security.MessageDigest
+		Statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5232)
+		Method: <com.waz.service.assets.AssetServiceImpl$$anonfun$com$$$$$2a9077458fdb6673636731a95cb9eb$$$$fun$apply$36$$anonfun$apply$37: java.lang.Object apply(java.lang.Object)>
+		SHA-256: 1de6a6b9926da4a1d97447ea0d9525ce272b0a6ae5321446fb1966477362ca02
+		Secure: true
+	Object:
+		Variable: varReplacer56966
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer56966)
+		Method: <com.waz.utils.crypto.AESUtils$: javax.crypto.Cipher com$waz$utils$crypto$AESUtils$$cipher(byte[],byte[],int)>
+		SHA-256: ada2646ae1955579022d355bd6957834ca933234293904cefe3c66397e3a1a51
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3550)
+		Method: <com.waz.utils.crypto.AESUtils$: javax.crypto.Cipher cipher(com.waz.model.AESKey,byte[],int)>
+		SHA-256: f03bd6cd18cb16480a4fe28b052f2a891a806be9f3044d18ae212529b29a5882
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.KeyGenerator
+		Statement: $r2 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer8517, varReplacer8518)
+		Method: <com.waz.utils.crypto.AESUtils$: com.waz.utils.crypto.AESUtils$EncryptedBytes encryptWithAlias(byte[],java.lang.String)>
+		SHA-256: e076fcee4696533a43425583aa97a3987372a8da53f9901c2483d19dbced83fa
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+		Method: <com.waz.utils.crypto.AESUtils$: javax.crypto.Cipher com$waz$utils$crypto$AESUtils$$cipher(byte[],byte[],int)>
+		SHA-256: 4f526873dbf8ddfd73a69a266789754b643ba34bf9ab3962328dbef579dcc61c
+		Secure: false
+	Object:
+		Variable: $r32
+		Type: java.security.MessageDigest
+		Statement: $r32 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5016)
+		Method: <com.waz.sync.otr.OtrSyncHandlerImpl$$anonfun$co$$$$7b927fa776fcdf8df3c0c7a7c7a7220$$$$onfun$apply$4$$anonfun$apply$5: java.lang.Object apply(java.lang.Object)>
+		SHA-256: ca1b7984743d897ed056e7f51a88b16247c4ca5a1a483f3df5023ee823193dde
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <com.waz.utils.crypto.ZSecureRandom$: java.security.SecureRandom random$lzycompute()>
+		SHA-256: 1903fc49ae4880b6ff402481f8f3826a2c8993645c5c49a16637b44f621ec726
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Cipher
+		Statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer8520)
+		Method: <com.waz.utils.crypto.AESUtils$: com.waz.utils.crypto.AESUtils$EncryptedBytes encryptWithAlias(byte[],java.lang.String)>
+		SHA-256: e0a4a70f4b0704fc0812ff384808a550781c6394549b29d9c7f1eae390292c3c
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: java.security.MessageDigest
+		Statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer57548)
+		Method: <com.waz.znet2.HttpClientOkHttpImpl$: com.waz.znet2.HttpClientOkHttpImpl apply$77e4093e(scala.Option,com.waz.service.CertificatePin,scala.Option,scala.Option,scala.concurrent.ExecutionContext)>
+		SHA-256: 8d44758fff75ce784c1388d2197d7d01cb26c67cd256a1a84ec7cab56b14390b
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer8526)
+		Method: <com.waz.utils.crypto.AESUtils$: byte[] decryptWithAlias(com.waz.utils.crypto.AESUtils$EncryptedBytes,java.lang.String)>
+		SHA-256: b3336a8d6eb7dc8a75da0dc069944023bc9dbcf8f4f964c38a06d88474c0a2a4
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyStore
+		Statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer8528)
+		Method: <com.waz.utils.crypto.AESUtils$: byte[] decryptWithAlias(com.waz.utils.crypto.AESUtils$EncryptedBytes,java.lang.String)>
+		SHA-256: d77234ed547a22971cb810b29fe76960994b744ba17eebe0b7186db3e56ecd8f
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r0.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>(r5, $r4)
+		Method: <com.waz.service.assets.AssetServiceImpl$$anonfun$com$$$$$babed92ca5b8f14ea510b8ba13eb1082$$$$edHashesAndSize$1$1$$anonfun$4: java.lang.Object apply(java.lang.Object)>
+		SHA-256: c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed
+		Secure: false
+	Object:
+		Variable: $r31
+		Type: java.security.DigestOutputStream
+		Statement: specialinvoke $r31.<java.security.DigestOutputStream: void <init>(java.io.OutputStream,java.security.MessageDigest)>($r29, $r32)
+		Method: <com.waz.sync.otr.OtrSyncHandlerImpl$$anonfun$co$$$$7b927fa776fcdf8df3c0c7a7c7a7220$$$$onfun$apply$4$$anonfun$apply$5: java.lang.Object apply(java.lang.Object)>
+		SHA-256: d946cef62d7d801e47c8ee093c4725fee7db37aeeb8c4ca7472247c0ec3cf820
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r12.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <com.waz.zclient.core.network.di.NetworkDependencyProvider: okhttp3.OkHttpClient$Builder defaultHttpClient(com.waz.zclient.core.backend.BackendItem,com.waz.zclient.core.network.useragent.UserAgentInterceptor)>
+		SHA-256: 920dfd758d003012cb1434da5259f33bdb02b1867928c24c6a00a25241e2bf79
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r0)
+		Method: <okhttp3.internal.Util: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: a8764d384e0e6acd4407dba0e4c2025660362892494036c03c4b52a40e75c66b
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer63034, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 574a267fbda7b9e9f246d48a22588e4a3cd407dd8dd66e998286b962d2ad1462
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8113)
+		Method: <com.waz.utils.package$: java.lang.String sha2(java.lang.String)>
+		SHA-256: 417033ce401cba730fd247f431528c1c7fe07b63d59ad868eec1a4878d26a7af
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.security.MessageDigest
+		Statement: $r0 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer64865)
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator$1: com.bumptech.glide.load.engine.cache.SafeKeyGenerator$PoolableDigestContainer create()>
+		SHA-256: 40c465329c0eddd4fa1feeb4d39e275b4968c5c7d25578cfda46495368968fef
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+		Method: <com.waz.utils.crypto.AESUtils$: javax.crypto.Cipher cipher(com.waz.model.AESKey,byte[],int)>
+		SHA-256: 7404930c4f2c4c6be6b062929b77532773198adbd9e7ac57e5a51715ac5904b0
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r1.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r0, $r14)
+		Method: <com.waz.service.assets.AssetServiceImpl$$anonfun$com$waz$service$assets$AssetServiceImpl$$extractLocalSourceAndEncryptedHashesAndSize$1$1: java.lang.Object apply(java.lang.Object)>
+		SHA-256: 7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer8529, $r8)
+		Method: <com.waz.utils.crypto.AESUtils$: byte[] decryptWithAlias(com.waz.utils.crypto.AESUtils$EncryptedBytes,java.lang.String)>
+		SHA-256: a07becfe041e99ce003d60ac7878de4e48f8c34c68e54bae625c7937b839fe82
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <com.waz.utils.package$: java.lang.String sha2(java.lang.String)>
+		SHA-256: 8f98a55d28c3c51ce9d55fd13a2e0f0ba160b09f7c66654108f17aaae55826e6
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer56966)
+		Method: <com.waz.utils.crypto.AESUtils$: javax.crypto.Cipher com$waz$utils$crypto$AESUtils$$cipher(byte[],byte[],int)>
+		SHA-256: 930650a41b72c94fa82ded926fd40aa5b7dddf7e2fd8bef7782304b427aa3783
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <com.waz.model.Sha256$: com.waz.model.Sha256 calculate(byte[])>
+		SHA-256: e49f4194c0d50ad26fb3d4d1942c1b66c159ccac2efe82189d5b41feec28ddf7
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer52315)
+		Method: <com.waz.zclient.core.network.pinning.CertificatePinnerFactory$PinGenerator: void <init>()>
+		SHA-256: cd9460a03c4045aeb8b60940bb1e3c4f28c108bca17e34cb3709635925b69550
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <com.waz.utils.package$: java.lang.String sha2(byte[])>
+		SHA-256: 67b1f6068a93656ad5d3195bb0be681e441539a9bc541ca95dd5a2ee2665b93e
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: java.security.MessageDigest
+		Statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5233)
+		Method: <com.waz.service.assets.AssetServiceImpl$$anonfun$com$$$$$2a9077458fdb6673636731a95cb9eb$$$$fun$apply$36$$anonfun$apply$37: java.lang.Object apply(java.lang.Object)>
+		SHA-256: 4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: javax.crypto.KeyGenerator
+		Statement: $r0 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer8981)
+		Method: <com.waz.service.assets.AESKeyBytes$: byte[] random()>
+		SHA-256: fce47132549b1d3d6311a36a41ca34e9f68bbe9dc5b72ef53c59f23497559ff6
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer63029)
+		Method: <okhttp3.internal.platform.AndroidPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 5c9c430103ffc32eea902595b3111d54900e9db94376ad4a77582071e94c2fcc
+		Secure: false
+	Object:
+		Variable: $r17
+		Type: java.security.MessageDigest
+		Statement: $r17 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5234)
+		Method: <com.waz.service.assets.AssetServiceImpl$$anonfun$com$$$$$2a9077458fdb6673636731a95cb9eb$$$$fun$apply$36$$anonfun$apply$37: java.lang.Object apply(java.lang.Object)>
+		SHA-256: 76795ff4008ee6843f3e6ccc6468b673c06e3e855c70b1b40a746e190f3068e1
+		Secure: false
+
+Findings in Java Class: com.waz.service.otr.OtrServiceImpl$$anonfun$decodeExternal$2$$anonfun$apply$4
+
+	 in Method: java.lang.Object apply()
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f03bd6cd18cb16480a4fe28b052f2a891a806be9f3044d18ae212529b29a5882)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: r4 = virtualinvoke $r9.<javax.crypto.Cipher: byte[] doFinal(byte[])>(r4)
+
+
+Findings in Java Class: com.waz.zclient.conversation.ConversationController$$anonfun$1
+
+	 in Method: java.lang.Object applyOrElse(java.lang.Object,scala.Function1)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = interfaceinvoke $r0.<scala.Function1: java.lang.Object apply(java.lang.Object)>($r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r1 = interfaceinvoke $r0.<scala.Function1: java.lang.Object apply(java.lang.Object)>($r3)
+
+
+Findings in Java Class: scala.collection.immutable.Set$Set1
+
+	 in Method: boolean forall(scala.Function1)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = staticinvoke <scala.runtime.BoxesRunTime: boolean unboxToBoolean(java.lang.Object)>(r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $z0 = staticinvoke <scala.runtime.BoxesRunTime: boolean unboxToBoolean(java.lang.Object)>(r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $z0 = staticinvoke <scala.runtime.BoxesRunTime: boolean unboxToBoolean(java.lang.Object)>(r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $z0 = staticinvoke <scala.runtime.BoxesRunTime: boolean unboxToBoolean(java.lang.Object)>(r2)
+
+
+Findings in Java Class: scala.collection.immutable.ListMap$$anon$1
+
+	 in Method: java.lang.Object next()
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $z0 = virtualinvoke r0.<scala.collection.immutable.ListMap$$anon$1: boolean hasNext()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = virtualinvoke r0.<scala.collection.immutable.ListMap$$anon$1: boolean hasNext()>()
+
+
+Findings in Java Class: scala.util.matching.Regex$MatchIterator
+
+	 in Method: java.lang.String next()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = virtualinvoke r0.<scala.util.matching.Regex$MatchIterator: boolean hasNext()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $z0 = virtualinvoke r0.<scala.util.matching.Regex$MatchIterator: boolean hasNext()>()
+
+
+Findings in Java Class: com.wire.signals.CancellableFuture$$anonfun$recoverWith$1
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r15 = virtualinvoke $r10.<com.wire.signals.CancellableFuture: scala.concurrent.Future future()>()
+
+
+Findings in Java Class: com.waz.zclient.common.views.InputBox$$anonfun$com$waz$zclient$common$views$InputBox$$validate$1
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r1 = interfaceinvoke $r3.<scala.Function1: java.lang.Object apply(java.lang.Object)>(r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = interfaceinvoke $r3.<scala.Function1: java.lang.Object apply(java.lang.Object)>(r4)
+
+
+Findings in Java Class: com.waz.zclient.cursor.CursorView$$anonfun$11
+
+	 in Method: java.lang.Object applyOrElse(java.lang.Object,scala.Function1)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r1 = interfaceinvoke $r2.<scala.Function1: java.lang.Object apply(java.lang.Object)>($r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = interfaceinvoke $r2.<scala.Function1: java.lang.Object apply(java.lang.Object)>($r3)
+
+
+Findings in Java Class: scala.collection.immutable.Range
+
+	 in Method: scala.runtime.Nothing$ fail()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r3 = specialinvoke r1.<scala.collection.immutable.Range: java.lang.String description()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r3 = specialinvoke r1.<scala.collection.immutable.Range: java.lang.String description()>()
+
+
+Findings in Java Class: scala.collection.Iterator$GroupedIterator
+
+	 in Method: java.lang.Object next()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = specialinvoke r0.<scala.collection.Iterator$GroupedIterator: boolean fill()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $z0 = specialinvoke r0.<scala.collection.Iterator$GroupedIterator: boolean fill()>()
+
+
+Findings in Java Class: scala.collection.mutable.MutableList$$anon$1
+
+	 in Method: java.lang.Object next()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = virtualinvoke r0.<scala.collection.mutable.MutableList$$anon$1: boolean hasNext()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $z0 = virtualinvoke r0.<scala.collection.mutable.MutableList$$anon$1: boolean hasNext()>()
+
+
+Findings in Java Class: scala.collection.immutable.Stream$$anonfun$flatMap$1
+
+	 in Method: java.lang.Object apply()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r8 = interfaceinvoke $r9.<scala.collection.GenTraversableOnce: scala.collection.immutable.Stream toStream()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r8 = interfaceinvoke $r9.<scala.collection.GenTraversableOnce: scala.collection.immutable.Stream toStream()>()
+
+
+Findings in Java Class: scala.collection.mutable.ListBuffer$$anon$1
+
+	 in Method: java.lang.Object next()
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #c0227bcc8967f0c3dff62592f70aeb888843df47a17178311247a6d10af393ed)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $z0 = virtualinvoke r0.<scala.collection.mutable.ListBuffer$$anon$1: boolean hasNext()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4a7153984477557717971acc07266c97bcdd1cc315cea41eef994c12c7e130bb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = virtualinvoke r0.<scala.collection.mutable.ListBuffer$$anon$1: boolean hasNext()>()
+
+
+Findings in Java Class: org.osmdroid.tileprovider.util.StreamUtils
+
+	 in Method: long copy(java.io.InputStream,java.io.OutputStream)
+		ConstraintError violating CrySL rule for java.security.DigestOutputStream (on Object #d946cef62d7d801e47c8ee093c4725fee7db37aeeb8c4ca7472247c0ec3cf820)
+			Third parameter (with value -1)Variable lenmust be  greater than 0
+			at statement: virtualinvoke $r1.<java.io.OutputStream: void write(byte[],int,int)>($r2, varReplacer65118, $i0)
+
+
+Findings in Java Class: com.waz.sync.otr.OtrSyncHandlerImpl$$anonfun$co$$$$7b927fa776fcdf8df3c0c7a7c7a7220$$$$onfun$apply$4$$anonfun$apply$5
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #d946cef62d7d801e47c8ee093c4725fee7db37aeeb8c4ca7472247c0ec3cf820)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to write
+			at statement: $r32 = virtualinvoke $r31.<java.security.DigestOutputStream: java.security.MessageDigest getMessageDigest()>()
+
+
+Findings in Java Class: com.waz.service.assets.AssetServiceImpl$$anonfun$com$$$$$2a9077458fdb6673636731a95cb9eb$$$$fun$apply$36$$anonfun$apply$37
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #1de6a6b9926da4a1d97447ea0d9525ce272b0a6ae5321446fb1966477362ca02)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r20.<com.waz.service.assets.AssetServiceImpl$$anonfun$com$waz$service$assets$AssetServiceImpl$$extractLocalSourceAndEncryptedHashesAndSize$1$1: void <init>(com.waz.service.assets.Encryption,scala.Option,scala.Option,java.security.MessageDigest,java.security.MessageDigest)>($r0, $r1, $r16, $r14, $r17)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #76795ff4008ee6843f3e6ccc6468b673c06e3e855c70b1b40a746e190f3068e1)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r17 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5234)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #76795ff4008ee6843f3e6ccc6468b673c06e3e855c70b1b40a746e190f3068e1)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r20.<com.waz.service.assets.AssetServiceImpl$$anonfun$com$waz$service$assets$AssetServiceImpl$$extractLocalSourceAndEncryptedHashesAndSize$1$1: void <init>(com.waz.service.assets.Encryption,scala.Option,scala.Option,java.security.MessageDigest,java.security.MessageDigest)>($r0, $r1, $r16, $r14, $r17)
+
+
+Findings in Java Class: com.waz.service.assets.AssetServiceImpl$$anonfun$com$waz$service$assets$AssetServiceImpl$$extractLocalSourceAndEncryptedHashesAndSize$1$1
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #4cc9c8fc2c0058e559bf5cc88adadf76f521de80a15e8e672ed79b3c2c9f5f6b)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: specialinvoke $r23.<scala.Tuple11: void <init>(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>($r7, $r11, $r13, $r0, $r1, $r2, $r3, $r8, $r21, $r4, $r24)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: specialinvoke $r23.<scala.Tuple11: void <init>(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>($r7, $r11, $r13, $r0, $r1, $r2, $r3, $r8, $r21, $r4, $r24)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: specialinvoke $r23.<scala.Tuple11: void <init>(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>($r7, $r11, $r13, $r0, $r1, $r2, $r3, $r8, $r21, $r4, $r24)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: specialinvoke $r23.<scala.Tuple11: void <init>(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>($r7, $r11, $r13, $r0, $r1, $r2, $r3, $r8, $r21, $r4, $r24)
+
+
+Findings in Java Class: com.waz.utils.IoUtils$
+
+	 in Method: java.lang.Object withResource(java.io.Closeable,scala.Function1)
+		TypestateError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Unexpected call to method close on object of type java.security.DigestInputStream. Expect a call to one of the following methods read
+			at statement: interfaceinvoke $r0.<java.io.Closeable: void close()>()
+
+
+	 in Method: long copy(java.io.InputStream,java.io.OutputStream)
+		TypestateError violating CrySL rule for java.security.DigestOutputStream (on Object #5ee41acb56180fb985bb587a945d89f7f3fa2098dd0ab1839b20cfb4bc22ad76)
+			Unexpected call to method close on object of type java.security.DigestOutputStream. Expect a call to one of the following methods write
+			at statement: virtualinvoke $r2.<java.io.OutputStream: void close()>()
+
+		TypestateError violating CrySL rule for java.security.DigestOutputStream (on Object #5ee41acb56180fb985bb587a945d89f7f3fa2098dd0ab1839b20cfb4bc22ad76)
+			Unexpected call to method close on object of type java.security.DigestOutputStream. Expect a call to one of the following methods write
+			at statement: virtualinvoke $r2.<java.io.OutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #5ee41acb56180fb985bb587a945d89f7f3fa2098dd0ab1839b20cfb4bc22ad76)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to write
+			at statement: virtualinvoke $r2.<java.io.OutputStream: void close()>()
+
+
+Findings in Java Class: okhttp3.internal.Util
+
+	 in Method: boolean skipAll(okio.Source,int,java.util.concurrent.TimeUnit)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r3 = interfaceinvoke $r1.<okio.Source: okio.Timeout timeout()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r3 = interfaceinvoke $r1.<okio.Source: okio.Timeout timeout()>()
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer56668)
+
+
+Findings in Java Class: okhttp3.internal.connection.Exchange$ResponseBodySource
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r7 = specialinvoke r0.<okhttp3.internal.connection.Exchange$ResponseBodySource: java.io.IOException complete(java.io.IOException)>($r7)
+
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r0 = specialinvoke r1.<okhttp3.internal.connection.Exchange$ResponseBodySource: java.io.IOException complete(java.io.IOException)>($r0)
+
+
+Findings in Java Class: com.google.protobuf.IntArrayList
+
+	 in Method: void ensureIndexInRange(int)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r0 = specialinvoke r1.<com.google.protobuf.IntArrayList: java.lang.String makeOutOfBoundsExceptionMessage(int)>($i0)
+
+
+Findings in Java Class: com.waz.utils.wrappers.SQLiteDBWrapper
+
+	 in Method: void releaseReference()
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r12 = virtualinvoke r0.<com.waz.utils.wrappers.SQLiteDBWrapper: java.lang.String logTag()>()
+
+
+Findings in Java Class: okio.GzipSource
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<okio.GzipSource: void updateCrc(okio.Buffer,long,long)>($r3, varReplacer40294, $l4)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<okio.GzipSource: void updateCrc(okio.Buffer,long,long)>($r3, varReplacer40284, varReplacer40285)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<okio.GzipSource: void updateCrc(okio.Buffer,long,long)>($r3, varReplacer40281, varReplacer40282)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<okio.GzipSource: void updateCrc(okio.Buffer,long,long)>($r3, varReplacer40279, $l5)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<okio.GzipSource: void updateCrc(okio.Buffer,long,long)>($r3, varReplacer40273, $l5)
+
+
+Findings in Java Class: com.google.protobuf.DoubleArrayList
+
+	 in Method: void ensureIndexInRange(int)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r0 = specialinvoke r1.<com.google.protobuf.DoubleArrayList: java.lang.String makeOutOfBoundsExceptionMessage(int)>($i0)
+
+
+Findings in Java Class: shapeless.$colon$colon
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r2 = (shapeless.$colon$colon) $r0
+
+
+Findings in Java Class: org.koin.core.definition.BeanDefinition
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r5 = virtualinvoke $r2.<java.lang.Object: java.lang.Class getClass()>()
+
+
+Findings in Java Class: retrofit2.Utils
+
+	 in Method: boolean equals(java.lang.reflect.Type,java.lang.reflect.Type)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r5 = interfaceinvoke $r3.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type[] getActualTypeArguments()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r1 = interfaceinvoke $r3.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getOwnerType()>()
+
+
+Findings in Java Class: androidx.core.util.Pair
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r2 = (androidx.core.util.Pair) $r0
+
+
+Findings in Java Class: okhttp3.internal.http1.Http1ExchangeCodec$AbstractSource
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<okhttp3.internal.http1.Http1ExchangeCodec$AbstractSource: void responseBodyComplete()>()
+
+
+Findings in Java Class: okhttp3.internal.http1.Http1ExchangeCodec$ChunkedSource
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<okhttp3.internal.http1.Http1ExchangeCodec$ChunkedSource: void responseBodyComplete()>()
+
+
+Findings in Java Class: com.googlecode.mp4parser.boxes.mp4.samplegrouping.SampleGroupDescriptionBox
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: staticinvoke <com.googlecode.mp4parser.RequiresParseDetailAspect: void before(org.aspectj.lang.JoinPoint)>($r3)
+
+
+Findings in Java Class: com.google.protobuf.AbstractProtobufList
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r3 = interfaceinvoke $r2.<java.util.List: java.lang.Object get(int)>($i1)
+
+
+Findings in Java Class: com.google.protobuf.ProtobufArrayList
+
+	 in Method: void ensureIndexInRange(int)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r0 = specialinvoke r1.<com.google.protobuf.ProtobufArrayList: java.lang.String makeOutOfBoundsExceptionMessage(int)>($i0)
+
+
+Findings in Java Class: androidx.paging.PagedStorage
+
+	 in Method: java.lang.Object get(int)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $i0 = virtualinvoke r0.<androidx.paging.PagedStorage: int size()>()
+
+
+Findings in Java Class: okhttp3.internal.connection.Exchange$RequestBodySink
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r0 = specialinvoke r1.<okhttp3.internal.connection.Exchange$RequestBodySink: java.io.IOException complete(java.io.IOException)>($r0)
+
+
+Findings in Java Class: com.google.protobuf.BooleanArrayList
+
+	 in Method: void ensureIndexInRange(int)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r0 = specialinvoke r1.<com.google.protobuf.BooleanArrayList: java.lang.String makeOutOfBoundsExceptionMessage(int)>($i0)
+
+
+Findings in Java Class: okhttp3.internal.http1.Http1ExchangeCodec$FixedLengthSource
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<okhttp3.internal.http1.Http1ExchangeCodec$FixedLengthSource: void responseBodyComplete()>()
+
+
+Findings in Java Class: shapeless.Inl
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r2 = (shapeless.Inl) $r1
+
+
+Findings in Java Class: kotlinx.coroutines.scheduling.CoroutineScheduler
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r2 = specialinvoke r0.<kotlinx.coroutines.scheduling.CoroutineScheduler: kotlinx.coroutines.scheduling.CoroutineScheduler$Worker currentWorker()>()
+
+
+Findings in Java Class: com.waz.znet2.http.MultipartBodyFormData$Part
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $z0 = virtualinvoke $r2.<com.waz.znet2.http.MultipartBodyFormData$Part: boolean canEqual(java.lang.Object)>(r0)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r2 = (com.waz.znet2.http.MultipartBodyFormData$Part) $r1
+
+
+Findings in Java Class: com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: staticinvoke <com.googlecode.mp4parser.RequiresParseDetailAspect: void before(org.aspectj.lang.JoinPoint)>($r3)
+
+
+Findings in Java Class: com.google.gson.internal.$Gson$Types
+
+	 in Method: boolean equals(java.lang.reflect.Type,java.lang.reflect.Type)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r5 = interfaceinvoke $r3.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type[] getActualTypeArguments()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r1 = interfaceinvoke $r3.<java.lang.reflect.ParameterizedType: java.lang.reflect.Type getOwnerType()>()
+
+
+Findings in Java Class: scala.util.Left
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r2 = (scala.util.Left) $r1
+
+
+Findings in Java Class: com.googlecode.mp4parser.RequiresParseDetailAspect
+
+	 in Method: void before(org.aspectj.lang.JoinPoint)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r1 = interfaceinvoke $r0.<org.aspectj.lang.JoinPoint: java.lang.Object getTarget()>()
+
+
+Findings in Java Class: okio.InflaterSource
+
+	 in Method: long read(okio.Buffer,long)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<okio.InflaterSource: void releaseInflatedBytes()>()
+
+
+Findings in Java Class: android.support.v4.media.session.MediaSessionCompat$Token
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r2 = (android.support.v4.media.session.MediaSessionCompat$Token) $r1
+
+
+Findings in Java Class: com.google.protobuf.LongArrayList
+
+	 in Method: void ensureIndexInRange(int)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r0 = specialinvoke r1.<com.google.protobuf.LongArrayList: java.lang.String makeOutOfBoundsExceptionMessage(int)>($i0)
+
+
+Findings in Java Class: scala.util.Right
+
+	 in Method: boolean equals(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r2 = (scala.util.Right) $r1
+
+
+Findings in Java Class: com.google.protobuf.FloatArrayList
+
+	 in Method: void ensureIndexInRange(int)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #7f63a8c472b1fb5867ab7900eff197575edbedce87c6382f989893928c44c44c)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: $r0 = specialinvoke r1.<com.google.protobuf.FloatArrayList: java.lang.String makeOutOfBoundsExceptionMessage(int)>($i0)
+
+
+Findings in Java Class: com.waz.sync.client.AssetClientImpl$$anonfun$fileWithShaBodyDeserializer$1
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.DigestOutputStream (on Object #5ee41acb56180fb985bb587a945d89f7f3fa2098dd0ab1839b20cfb4bc22ad76)
+			Operation on object of type java.security.DigestOutputStream object not completed. Expected call to write
+			at statement: $r7 = virtualinvoke $r4.<java.security.DigestOutputStream: java.security.MessageDigest getMessageDigest()>()
+
+
+Findings in Java Class: com.waz.utils.IoUtils$$anonfun$hash$2
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #c59e174f88f1b42fbf343185a1d5f15ef2fd5e90966e568d3747e9ac7c275c74)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r7 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: com.waz.utils.crypto.AESUtils$
+
+	 in Method: com.waz.utils.crypto.AESUtils$EncryptedBytes encryptWithAlias(byte[],java.lang.String)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #e0a4a70f4b0704fc0812ff384808a550781c6394549b29d9c7f1eae390292c3c)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r7.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r0)
+
+
+	 in Method: byte[] decryptWithAlias(com.waz.utils.crypto.AESUtils$EncryptedBytes,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer8527, $r5, $r7)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer8527, $r5, $r7)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #d77234ed547a22971cb810b29fe76960994b744ba17eebe0b7186db3e56ecd8f)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer8528)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #b3336a8d6eb7dc8a75da0dc069944023bc9dbcf8f4f964c38a06d88474c0a2a4)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r8 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #d77234ed547a22971cb810b29fe76960994b744ba17eebe0b7186db3e56ecd8f)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to getKey
+			at statement: $r3 = virtualinvoke $r2.<java.security.KeyStore: java.security.KeyStore$Entry getEntry(java.lang.String,java.security.KeyStore$ProtectionParameter)>($r1, varReplacer8530)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r7.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer8529, $r8)
+
+
+	 in Method: java.io.InputStream inputStream(byte[],scala.Option,java.io.InputStream,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: specialinvoke $r10.<java.io.SequenceInputStream: void <init>(java.io.InputStream,java.io.InputStream)>($r11, r9)
+
+
+	 in Method: javax.crypto.Cipher cipher(com.waz.model.AESKey,byte[],int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer3549)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r5.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+
+
+	 in Method: javax.crypto.Cipher com$waz$utils$crypto$AESUtils$$cipher(byte[],byte[],int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer56966)
+
+
+Findings in Java Class: org.threeten.bp.format.DateTimeFormatterBuilder$PadPrinterParserDecorator
+
+	 in Method: int parse(org.threeten.bp.format.DateTimeParseContext,java.lang.CharSequence,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $i1 = interfaceinvoke $r2.<java.lang.CharSequence: int length()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $i1 = interfaceinvoke $r2.<java.lang.CharSequence: int length()>()
+
+
+Findings in Java Class: org.threeten.bp.format.DateTimeFormatterBuilder$ZoneIdPrinterParser
+
+	 in Method: int parse(org.threeten.bp.format.DateTimeParseContext,java.lang.CharSequence,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $i1 = interfaceinvoke $r2.<java.lang.CharSequence: int length()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $i1 = interfaceinvoke $r2.<java.lang.CharSequence: int length()>()
+
+
+Findings in Java Class: scala.collection.Iterator$class
+
+	 in Method: int indexWhere(scala.collection.Iterator,scala.Function1)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $z0 = staticinvoke <scala.runtime.BoxesRunTime: boolean unboxToBoolean(java.lang.Object)>($r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $z0 = staticinvoke <scala.runtime.BoxesRunTime: boolean unboxToBoolean(java.lang.Object)>($r2)
+
+
+Findings in Java Class: com.waz.zclient.participants.fragments.BlockedUserFragment$$anonfun$initFooterMenu$3
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $r1 = virtualinvoke $r2.<scala.Tuple2: java.lang.Object _1()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $r1 = virtualinvoke $r2.<scala.Tuple2: java.lang.Object _1()>()
+
+
+Findings in Java Class: com.waz.zclient.MainActivity$$anonfun$onCreate$4
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $z0 = staticinvoke <scala.runtime.BoxesRunTime: boolean unboxToBoolean(java.lang.Object)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $z0 = staticinvoke <scala.runtime.BoxesRunTime: boolean unboxToBoolean(java.lang.Object)>($r1)
+
+
+Findings in Java Class: com.waz.zclient.calling.CallingGridFragment$$anonfun$com$waz$zclient$calling$CallingGridFragment$$createView$1$1$$anonfun$apply$4
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $z0 = staticinvoke <scala.runtime.BoxesRunTime: boolean unboxToBoolean(java.lang.Object)>($r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $z0 = staticinvoke <scala.runtime.BoxesRunTime: boolean unboxToBoolean(java.lang.Object)>($r3)
+
+
+Findings in Java Class: org.threeten.bp.format.DateTimeFormatterBuilder$StringLiteralPrinterParser
+
+	 in Method: int parse(org.threeten.bp.format.DateTimeParseContext,java.lang.CharSequence,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $i1 = interfaceinvoke $r0.<java.lang.CharSequence: int length()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $i1 = interfaceinvoke $r0.<java.lang.CharSequence: int length()>()
+
+
+Findings in Java Class: org.threeten.bp.format.DateTimeFormatter
+
+	 in Method: java.lang.Object parse(java.lang.CharSequence,org.threeten.bp.temporal.TemporalQuery)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: specialinvoke $r19.<org.threeten.bp.format.DateTimeParseException: void <init>(java.lang.String,java.lang.CharSequence,int)>($r18, $r0, $i0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: specialinvoke $r19.<org.threeten.bp.format.DateTimeParseException: void <init>(java.lang.String,java.lang.CharSequence,int)>($r18, $r0, $i0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: specialinvoke $r19.<org.threeten.bp.format.DateTimeParseException: void <init>(java.lang.String,java.lang.CharSequence,java.lang.Throwable)>($r18, $r0, r20)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: specialinvoke $r19.<org.threeten.bp.format.DateTimeParseException: void <init>(java.lang.String,java.lang.CharSequence,int)>($r18, $r0, $i0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: specialinvoke $r19.<org.threeten.bp.format.DateTimeParseException: void <init>(java.lang.String,java.lang.CharSequence,int)>($r18, $r0, $i0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: specialinvoke $r19.<org.threeten.bp.format.DateTimeParseException: void <init>(java.lang.String,java.lang.CharSequence,java.lang.Throwable)>($r18, $r0, r20)
+
+
+Findings in Java Class: com.waz.zclient.preferences.pages.OptionsViewController$$anonfun$22
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $r1 = virtualinvoke $r2.<scala.Tuple2: java.lang.Object _2()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $r1 = virtualinvoke $r2.<scala.Tuple2: java.lang.Object _2()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $r1 = r4.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $r1 = r4.<scala.Some: java.lang.Object x>
+
+
+Findings in Java Class: com.waz.service.conversation.ConversationsServiceImpl$$anonfun$setConversationArchived$1
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $r4 = $r0.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $r4 = $r0.<scala.Some: java.lang.Object x>
+
+
+Findings in Java Class: com.waz.zclient.MainActivity$$anonfun$onCreate$3
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $r1 = $r3.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $r1 = $r3.<scala.Some: java.lang.Object x>
+
+
+Findings in Java Class: com.waz.zclient.preferences.pages.OptionsViewController$$anonfun$19
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $r1 = r4.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $r1 = r4.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $r1 = virtualinvoke $r2.<scala.Tuple2: java.lang.Object _2()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $r1 = virtualinvoke $r2.<scala.Tuple2: java.lang.Object _2()>()
+
+
+Findings in Java Class: org.threeten.bp.format.DateTimeFormatterBuilder$TextPrinterParser
+
+	 in Method: int parse(org.threeten.bp.format.DateTimeParseContext,java.lang.CharSequence,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $i1 = interfaceinvoke $r1.<java.lang.CharSequence: int length()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $i1 = interfaceinvoke $r1.<java.lang.CharSequence: int length()>()
+
+
+Findings in Java Class: com.waz.zclient.MainActivity$$anonfun$onCreate$8
+
+	 in Method: java.lang.Object apply(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $r1 = $r5.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $r1 = $r5.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $r1 = $r5.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #2cf795e15b45e1f952b87cdd005e2723f17d050f91577a891db9ac03d5c7455)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$1 object not completed. Expected call to read
+			at statement: $r1 = $r5.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $r1 = $r5.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $r1 = $r5.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $r1 = $r5.<scala.Some: java.lang.Object x>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #cb0473c31d1843c51970a384dd46476f1de6a4699870ef8fda4d22cacaaaee02)
+			Operation on object of type com.waz.utils.crypto.AESUtils$$anon$2 object not completed. Expected call to read
+			at statement: $r1 = $r5.<scala.Some: java.lang.Object x>
+
+
+Findings in Java Class: okhttp3.internal.platform.AndroidPlatform
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #86ea133206a08584aa96bed5080fe9b4c65782f79d7e2808ddde9f04a7126273)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer63030)
+
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #69397d7a56e35074e43a52652aacb42df7074964dc78adc6e3336132456a2036)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer63033)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #c6246f5c9187655831dc8f4d262f5d1958fdc8f7f6b5093a7717e5d41b9755c1)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer63036, $r2)
+
+
+Findings in Java Class: com.bumptech.glide.request.ErrorRequestCoordinator
+
+	 in Method: void begin()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #40c465329c0eddd4fa1feeb4d39e275b4968c5c7d25578cfda46495368968fef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke r4.<com.bumptech.glide.request.Request: void begin()>()
+
+
+Findings in Java Class: com.bumptech.glide.RequestBuilder
+
+	 in Method: com.bumptech.glide.request.target.Target into(com.bumptech.glide.request.target.Target,com.bumptech.glide.request.RequestListener,com.bumptech.glide.request.BaseRequestOptions,java.util.concurrent.Executor)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #40c465329c0eddd4fa1feeb4d39e275b4968c5c7d25578cfda46495368968fef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r6.<com.bumptech.glide.request.Request: void begin()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #40c465329c0eddd4fa1feeb4d39e275b4968c5c7d25578cfda46495368968fef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r8.<com.bumptech.glide.RequestManager: void track(com.bumptech.glide.request.target.Target,com.bumptech.glide.request.Request)>($r1, $r5)
+
+
+Findings in Java Class: com.bumptech.glide.load.engine.EngineJob$CallLoadFailed
+
+	 in Method: void run()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #40c465329c0eddd4fa1feeb4d39e275b4968c5c7d25578cfda46495368968fef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = virtualinvoke $r5.<com.bumptech.glide.load.engine.EngineJob$ResourceCallbacksAndExecutors: boolean contains(com.bumptech.glide.request.ResourceCallback)>($r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #40c465329c0eddd4fa1feeb4d39e275b4968c5c7d25578cfda46495368968fef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r2.<com.bumptech.glide.request.ResourceCallback: void onLoadFailed(com.bumptech.glide.load.engine.GlideException)>($r6)
+
+
+Findings in Java Class: com.bumptech.glide.RequestManager
+
+	 in Method: void resumeRequests()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #40c465329c0eddd4fa1feeb4d39e275b4968c5c7d25578cfda46495368968fef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r6.<com.bumptech.glide.request.Request: boolean isComplete()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #40c465329c0eddd4fa1feeb4d39e275b4968c5c7d25578cfda46495368968fef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r6.<com.bumptech.glide.request.Request: void begin()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #40c465329c0eddd4fa1feeb4d39e275b4968c5c7d25578cfda46495368968fef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = interfaceinvoke $r6.<com.bumptech.glide.request.Request: boolean isRunning()>()
+
+
+Findings in Java Class: com.bumptech.glide.request.ThumbnailRequestCoordinator
+
+	 in Method: void begin()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #40c465329c0eddd4fa1feeb4d39e275b4968c5c7d25578cfda46495368968fef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r4.<com.bumptech.glide.request.Request: void begin()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #40c465329c0eddd4fa1feeb4d39e275b4968c5c7d25578cfda46495368968fef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r4.<com.bumptech.glide.request.Request: void begin()>()
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: okhttp3.OkHttpClient
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer56664, $r7, varReplacer56664)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer56664, $r7, varReplacer56664)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer56664, $r7, varReplacer56664)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 53
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 13
+	ConstraintError: 7
+	IncompleteOperationError: 128
+	TypestateError: 7
+=====================================================================

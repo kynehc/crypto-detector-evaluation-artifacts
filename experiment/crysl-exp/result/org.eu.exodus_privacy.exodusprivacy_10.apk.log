@@ -1,0 +1,113 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r9 = virtualinvoke $r14.<java.security.MessageDigest: byte[] digest(byte[])>($r9)
+		Method: <org.eu.exodus_privacy.exodusprivacy.Utils: java.lang.String getCertificateSHA1Fingerprint(android.content.pm.PackageManager,java.lang.String)>
+		SHA-256: b36732a192b2118abb5a989ea3b9cdf13eeff4c61b33c95f9dac1809d17afb9
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: java.security.MessageDigest
+		Statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10617)
+		Method: <org.eu.exodus_privacy.exodusprivacy.Utils: java.lang.String getCertificateSHA1Fingerprint(android.content.pm.PackageManager,java.lang.String)>
+		SHA-256: d4e84a05d841369abb8b3114475c9df4333f17d7e6f41f730eeabda8b417428
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: java.security.MessageDigest
+		Statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10616)
+		Method: <org.eu.exodus_privacy.exodusprivacy.Utils: java.lang.String getCertificateSHA1Fingerprint(android.content.pm.PackageManager,java.lang.String)>
+		SHA-256: 45991ab9a3c5a0eceb60c6e6f669b31a035f50d0d73ea9fc88e56b6764098713
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r9 = virtualinvoke $r14.<java.security.MessageDigest: byte[] digest(byte[])>($r9)
+		Method: <org.eu.exodus_privacy.exodusprivacy.Utils: java.lang.String getCertificateSHA1Fingerprint(android.content.pm.PackageManager,java.lang.String)>
+		SHA-256: b36732a192b2118abb5a989ea3b9cdf13eeff4c61b33c95f9dac1809d17afb9
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.cert.CertificateFactory
+		Statement: $r10 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer10619)
+		Method: <org.eu.exodus_privacy.exodusprivacy.Utils: java.lang.String getCertificateSHA1Fingerprint(android.content.pm.PackageManager,java.lang.String)>
+		SHA-256: a3cae6785f1dbfdae52f4a0edf27704111f975eec4d31fb25f1ab0b956e0743d
+		Secure: false
+
+Findings in Java Class: org.eu.exodus_privacy.exodusprivacy.Utils
+
+	 in Method: java.lang.String getCertificateSHA1Fingerprint(android.content.pm.PackageManager,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #45991ab9a3c5a0eceb60c6e6f669b31a035f50d0d73ea9fc88e56b6764098713)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r14 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10616)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #a3cae6785f1dbfdae52f4a0edf27704111f975eec4d31fb25f1ab0b956e0743d)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r12 = virtualinvoke $r10.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r0)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 5
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 1
+	ConstraintError: 1
+=====================================================================

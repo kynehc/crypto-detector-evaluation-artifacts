@@ -1,0 +1,121 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <org.geometerplus.fbreader.book.BookUtil: org.geometerplus.fbreader.book.UID createUid(org.geometerplus.zlibrary.core.filesystem.ZLFile,java.lang.String)>
+		SHA-256: cf513db05631697a7f6dd567d0f06fed0d2babe5f05313ffd0ab2badef8f0d40
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer12053)
+		Method: <org.geometerplus.zlibrary.core.drm.embedding.EmbeddingInputStream: void <init>(java.io.InputStream,java.lang.String)>
+		SHA-256: adfdfc98947643bb53c71a5fb3038ebf12b7f0a24397226f6883ea23d3656ed4
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.geometerplus.android.fbreader.network.litres.RegistrationUtils: java.lang.String getAutoPassword()>
+		SHA-256: d3dcfdf9f5fba89394f5f48baf3e1369c5f390d071720c1f77486d6fcf01fbc6
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <org.geometerplus.zlibrary.core.drm.embedding.EmbeddingInputStream: void <init>(java.io.InputStream,java.lang.String)>
+		SHA-256: a14074a4b7db049820da9a3e402eb8778ffec759fc5213aebcebc42f190f299f
+		Secure: false
+	Object:
+		Variable: r2
+		Type: byte[]
+		Statement: r2 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.geometerplus.fbreader.book.BookUtil: org.geometerplus.fbreader.book.UID createUid(org.geometerplus.zlibrary.core.filesystem.ZLFile,java.lang.String)>
+		SHA-256: d59dff424278e803d3f2dc5a47c48bde68427aee727050f87f0d252bad751192
+		Secure: false
+
+Findings in Java Class: org.geometerplus.fbreader.book.BookUtil
+
+	 in Method: org.geometerplus.fbreader.book.UID createUid(org.geometerplus.zlibrary.core.filesystem.ZLFile,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #cf513db05631697a7f6dd567d0f06fed0d2babe5f05313ffd0ab2badef8f0d40)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #cf513db05631697a7f6dd567d0f06fed0d2babe5f05313ffd0ab2badef8f0d40)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: r2 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: org.geometerplus.zlibrary.core.drm.embedding.EmbeddingInputStream
+
+	 in Method: void <init>(java.io.InputStream,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #adfdfc98947643bb53c71a5fb3038ebf12b7f0a24397226f6883ea23d3656ed4)
+			First parameter (with value "SHA") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer12053)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 5
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 2
+	TypestateError: 1
+=====================================================================

@@ -1,0 +1,281 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+16   [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+16   [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+16   [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+16   [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String,java.lang.String)>($r1, $r2)
+		Method: <ch.qos.logback.core.net.ssl.KeyManagerFactoryFactoryBean: javax.net.ssl.KeyManagerFactory createKeyManagerFactory()>
+		SHA-256: 30edab73955c2263230cbd001405e70b03537d5a4b7833147407b6019b107734
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer5441)
+		Method: <com.lukekorth.screennotifications.billing.Security: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)>
+		SHA-256: 20ac75eba12f091667d782fa46c7b0de6fd81a84ff490ee8b98fb45394ed0e4c
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r3.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+		Method: <com.lukekorth.screennotifications.billing.Security: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: c34d110a9ada0e5385616cc373adba247df7b1b41374ae05753e19b0ebba5d65
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyFactory
+		Statement: $r2 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer5453)
+		Method: <com.lukekorth.screennotifications.billing.Security: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: 70b29215699346952830612245847968c8bf23e1ccfaa07a1f3db40d3e237511
+		Secure: false
+	Object:
+		Variable: varReplacer5453
+		Type: java.lang.String
+		Statement: $r2 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer5453)
+		Method: <com.lukekorth.screennotifications.billing.Security: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: ea66c1fb451e940a53bdd82461763a26efa74f39fbcc54fe822ea51b03400d27
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r3.<java.security.Signature: boolean verify(byte[])>($r4)
+		Method: <com.lukekorth.screennotifications.billing.Security: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)>
+		SHA-256: b45de1df5a6ef65d6a93f76d37a129d11b6576f9c0d743b1efef99b83d7300f
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5687)
+		Method: <io.realm.processor.Utils: byte[] sha256Hash(byte[])>
+		SHA-256: d6cb9bad9e079f30ca6f2d9a9ea6ae8d575819fc75e088fd6f474e3240c18368
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r1)
+		Method: <ch.qos.logback.core.net.ssl.KeyStoreFactoryBean: java.security.KeyStore newKeyStore()>
+		SHA-256: 48f5d63c81c4295734fc5a5dcf629add0d61119730017882d650201b2a352ad4
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: $r3 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String,java.lang.String)>($r1, $r2)
+		Method: <ch.qos.logback.core.net.ssl.SecureRandomFactoryBean: java.security.SecureRandom createSecureRandom()>
+		SHA-256: 9ed33fbeab1147e63fb8cb9fcde177b6c99ea036ffef9b3e8168c25039a94cf0
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.lang.String)>($r1, $r2)
+		Method: <ch.qos.logback.core.net.ssl.TrustManagerFactoryFactoryBean: javax.net.ssl.TrustManagerFactory createTrustManagerFactory()>
+		SHA-256: 1ed36fcd869347582bbbd9d848778d25cd8af6ea19a47a3f112f6fceec68c0de
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r3.<java.security.Signature: boolean verify(byte[])>($r4)
+		Method: <com.lukekorth.screennotifications.billing.Security: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)>
+		SHA-256: 50d20e0d863bf9aaaccbe6d5f71c736bbbd4ab16c1ca9b261b70d21b96f5b665
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.PublicKey
+		Statement: $r4 = virtualinvoke $r2.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r3)
+		Method: <com.lukekorth.screennotifications.billing.Security: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: 7ffcd25aa26a3a933694198f24c2dc310a72ab049bc17b4d0a88d58881786df
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <ch.qos.logback.core.net.ssl.TrustManagerFactoryFactoryBean: javax.net.ssl.TrustManagerFactory createTrustManagerFactory()>
+		SHA-256: 7dc9e83991f14c3e120a6d47872b56871898e1945856a44ea5cc0aeb766a942e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>($r1, $r2)
+		Method: <ch.qos.logback.core.net.ssl.KeyStoreFactoryBean: java.security.KeyStore newKeyStore()>
+		SHA-256: d64fffa36848d17aa1386d7b9bc92253b77e46478f803ffb96beb8c564c1d027
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <io.realm.processor.Utils: byte[] sha256Hash(byte[])>
+		SHA-256: 4fb71f1cf729df27be8eb068f5c4612e527f0354f3262624a9a559281daf4e22
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r10 = virtualinvoke $r8.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <ch.qos.logback.core.net.ssl.SSLContextFactoryBean: javax.net.ssl.KeyManager[] createKeyManagers(ch.qos.logback.core.spi.ContextAware)>
+		SHA-256: 8babd4132e0c0fe4133bb1f4554cbb3ae9d88464dcd874aa291172150e22c926
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <ch.qos.logback.core.net.ssl.KeyManagerFactoryFactoryBean: javax.net.ssl.KeyManagerFactory createKeyManagerFactory()>
+		SHA-256: 10326ce1ab2bfe82b1f8d7575df33991371e7f8fcb954583e871168e3c0d571f
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r9 = virtualinvoke $r8.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <ch.qos.logback.core.net.ssl.SSLContextFactoryBean: javax.net.ssl.TrustManager[] createTrustManagers(ch.qos.logback.core.spi.ContextAware)>
+		SHA-256: bc885f0388d155b8bd8785e6595947a32cc55c93797ed30b37e2f92ef5a08b85
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r2)
+		Method: <ch.qos.logback.core.net.ssl.SSLContextFactoryBean: javax.net.ssl.SSLContext createContext(ch.qos.logback.core.spi.ContextAware)>
+		SHA-256: 4b05176adcdb6f967be8edbc09fc31fe3f31b7181b4796854b2c6a6af100f28a
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>($r2, $r3)
+		Method: <ch.qos.logback.core.net.ssl.SSLContextFactoryBean: javax.net.ssl.SSLContext createContext(ch.qos.logback.core.spi.ContextAware)>
+		SHA-256: 9cf5b9eb0d00e4ce6f1071ec47de6112d134fc8f8819401c38af69fb0d85bbf9
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: $r3 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>($r1)
+		Method: <ch.qos.logback.core.net.ssl.SecureRandomFactoryBean: java.security.SecureRandom createSecureRandom()>
+		SHA-256: 4299c4046c1bee356c685dfaad4e7a17a8b6d3a46f6682dd9d26e61a680b30f0
+		Secure: true
+
+Findings in Java Class: ch.qos.logback.core.net.ssl.SSLContextFactoryBean
+
+	 in Method: javax.net.ssl.KeyManager[] createKeyManagers(ch.qos.logback.core.spi.ContextAware)
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #30edab73955c2263230cbd001405e70b03537d5a4b7833147407b6019b107734)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r8.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r3, $r9)
+
+		HardCodedError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #30edab73955c2263230cbd001405e70b03537d5a4b7833147407b6019b107734)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r8.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r3, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r8.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r3, $r9)
+
+
+	 in Method: javax.net.ssl.TrustManager[] createTrustManagers(ch.qos.logback.core.spi.ContextAware)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r8.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r3)
+
+
+	 in Method: javax.net.ssl.SSLContext createContext(ch.qos.logback.core.spi.ContextAware)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r7, $r8, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r7, $r8, $r9)
+
+
+Findings in Java Class: com.lukekorth.screennotifications.billing.Security
+
+	 in Method: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #20ac75eba12f091667d782fa46c7b0de6fd81a84ff490ee8b98fb45394ed0e4c)
+			First parameter (with value "SHA1withRSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer5441)
+
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r3.<java.security.Signature: void initVerify(java.security.PublicKey)>($r0)
+
+
+	 in Method: java.security.PublicKey generatePublicKey(java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r4 = virtualinvoke $r2.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r3)
+
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r3.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+
+
+Findings in Java Class: ch.qos.logback.core.net.ssl.KeyStoreFactoryBean
+
+	 in Method: java.security.KeyStore createKeyStore()
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #48f5d63c81c4295734fc5a5dcf629add0d61119730017882d650201b2a352ad4)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r5.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r4, $r6)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #48f5d63c81c4295734fc5a5dcf629add0d61119730017882d650201b2a352ad4)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r5.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r4, $r6)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 21
+
+	CryptoAnalysis found the following violations. For details see description above.
+	HardCodedError: 2
+	ConstraintError: 1
+	RequiredPredicateError: 7
+	NeverTypeOfError: 2
+=====================================================================

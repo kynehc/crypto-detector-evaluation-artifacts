@@ -1,0 +1,581 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.generators.ECKeyPairGenerator: void init(org.spongycastle.crypto.KeyGenerationParameters)>
+		SHA-256: b9c970d7ca75c43cb7258988e82963e870aab49d0877fadda916613732dffc1d
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r0)
+		Method: <com.google.common.hash.MessageDigestHashFunction: java.security.MessageDigest getMessageDigest(java.lang.String)>
+		SHA-256: 1483c09d507b816f2d8e358bdcf748f95d8d6b301f37aed4de69aa06c2eae936
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <info.guardianproject.netcipher.proxy.SignatureUtils: java.lang.String getSignatureHash(android.content.Context,java.lang.String)>
+		SHA-256: 7cb502fd4f9aa1f0e5a28951a50f8e595356cde776def4c16c8091b8d5416483
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r4 = virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.OkHttpClient: javax.net.ssl.X509TrustManager systemDefaultTrustManager()>
+		SHA-256: 1a27914d4fa0cccd4258c31d2327789a4c4f86227090a14ea854b6b35086568
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.spongycastle.crypto.signers.ECDSASigner: java.security.SecureRandom initSecureRandom(boolean,java.security.SecureRandom)>
+		SHA-256: 907e1f5c07beb4945875e3d9df0753f4b7e3c9cbc7e6d6fca061334ed85525ba
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r10.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bitcoinj.core.ECKey: void <clinit>()>
+		SHA-256: de01faa934047049af11594a48dfbbec2615d939e1478a4c2b497c03706bf57f
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: byte[]
+		Statement: $r14 = virtualinvoke $r31.<java.security.MessageDigest: byte[] digest(byte[])>($r14)
+		Method: <org.bitcoinj.script.Script: void executeScript(org.bitcoinj.core.Transaction,long,org.bitcoinj.script.Script,java.util.LinkedList,org.bitcoinj.core.Coin,boolean,java.util.Set)>
+		SHA-256: dbd5055e789c0674e4a1c6d78b2e1c8b14a1011a65acdfa2ff4f3db7af92945d
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5873)
+		Method: <org.bitcoinj.core.Sha256Hash: java.security.MessageDigest newDigest()>
+		SHA-256: e8dfa0dbef593c42d18f7499536a994097211c8b1a4c132add2dbbd8781c0632
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.bitcoinj.core.Sha256Hash: byte[] hashTwice(byte[],int,int)>
+		SHA-256: 632592033291c467ee0911d6f099f16c48ebd7364f50d28da6aa21e5ae603fe3
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer15626)
+		Method: <okhttp3.OkHttpClient: javax.net.ssl.SSLSocketFactory systemDefaultSslSocketFactory(javax.net.ssl.X509TrustManager)>
+		SHA-256: 3cb5d63a7d782869dde5bc2446347c18c9859e0b3925431b3fc9a0aa2c74a24c
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke $r7.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: d54262cd8af85b03b824d1fe8add433ba7337a9c99f7057dca58f9e4142e8d2b
+		Secure: false
+	Object:
+		Variable: r2
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke r2.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r1, $r6)
+		Method: <org.bitcoinj.core.CheckpointManager: org.bitcoinj.core.Sha256Hash readBinary(java.io.InputStream)>
+		SHA-256: 2a553da6325e6f7045a6ae88b62c0dabf45281ecc3e23e6dbdcb9d65ef0b2377
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bitcoinj.crypto.HDKeyDerivation: void <clinit>()>
+		SHA-256: cb407491e28e0402fdc6ba8758a3ba9cac18f651ca407249f5438a8fb72cb819
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r8.<java.security.SecureRandom: void <init>()>()
+		Method: <com.github.kevinsawicki.http.HttpRequest: javax.net.ssl.SSLSocketFactory getTrustedFactory()>
+		SHA-256: c20294a0196cb414f8b097f1fb77bef1ee0794e86837eb3af23e00b265e96bf6
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher: com.google.common.hash.HashCode hash()>
+		SHA-256: 498aa274b0e0dc658a96e5b82797c2ef859caa8cc0a4a03329fbcf0be8023051
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: 7b779354a7d31deee89324042f17da1ef594752c07a3354862823145813b961a
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.bitcoinj.core.Sha256Hash: byte[] hashTwice(byte[],int,int,byte[],int,int)>
+		SHA-256: 434a4467103699c5339fb3d7cf98fccee934071ff081e3935dfd39d0dee8d4f3
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer17621)
+		Method: <com.github.kevinsawicki.http.HttpRequest: javax.net.ssl.SSLSocketFactory getTrustedFactory()>
+		SHA-256: 2a0b5b51a434036866efe62622f68266247e2ba40c336cc46383e7ca09030574
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: 6e045f7584747c327a9d5bb550347ce4daef9811052466088da0d8d5aee24032
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher: com.google.common.hash.HashCode hash()>
+		SHA-256: 498aa274b0e0dc658a96e5b82797c2ef859caa8cc0a4a03329fbcf0be8023051
+		Secure: true
+	Object:
+		Variable: r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer19473)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: 74998927f234bcad25f985fdb3ccb033ba43b105fdac8c302c01722ff8462b7c
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Mac
+		Statement: $r7 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r0)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: 3227298f3b7015bc0a74bf3203d232266e2f3aa101164d01eae289a58e2b7b56
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r2)
+		Method: <okhttp3.OkHttpClient: javax.net.ssl.X509TrustManager systemDefaultTrustManager()>
+		SHA-256: 131be75562789377964b01a1048670ba51f7fa7f9f94e1fbf399e843541d1155
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer20604)
+		Method: <com.lightning.walletapp.helper.AES$: javax.crypto.Cipher cipher(byte[],byte[],int)>
+		SHA-256: d98e980fc9f8368f17bb760b1eb2a716f808120ec10a84fb25907dd72a35e9d9
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer20603)
+		Method: <com.lightning.walletapp.helper.AES$: javax.crypto.Cipher cipher(byte[],byte[],int)>
+		SHA-256: 80d0bf451febeaf8da814ade28e6bd3f826aebd25f61bc24f5b345dcce8d5537
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bitcoinj.wallet.KeyChainGroup: void createAndActivateNewHDChain()>
+		SHA-256: 5552b207c72c49ce36993b69b9293a869705f290523fccbb11e95c58b85a7913
+		Secure: true
+	Object:
+		Variable: r3
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <com.lightning.walletapp.helper.AES$: javax.crypto.Cipher cipher(byte[],byte[],int)>
+		SHA-256: 74fa71c130ce7551cdd8ec7aaeba302cd52bc0455414b59e12b6ccbda06aef33
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.bitcoinj.core.Sha256Hash: byte[] hashTwice(byte[],int,int,byte[],int,int)>
+		SHA-256: 3e7062e587ecb894627627fd3019a34cd8009839bc328ed4ae37666ba1324c61
+		Secure: true
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: virtualinvoke $r0.<java.security.SecureRandom: void nextBytes(byte[])>(r1)
+		Method: <org.bitcoinj.wallet.DeterministicSeed: byte[] getEntropy(java.security.SecureRandom,int)>
+		SHA-256: a5b660a64ae63840a97deb4c085f00501e8ef4a886f6c0a21ef9b669f0604fc6
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer18547)
+		Method: <info.guardianproject.netcipher.proxy.SignatureUtils: java.lang.String getSignatureHash(android.content.Context,java.lang.String)>
+		SHA-256: eae26efb34905f055b50b2ba35c7477feccca73560258748a17fc7c54a0eb419
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.KeyGenerator
+		Statement: $r5 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer27444, varReplacer27445)
+		Method: <co.infinum.goldfinger.CryptoFactory$Default: void <init>(android.content.Context)>
+		SHA-256: 9c4e05da6e79d8b2054754cd04d4f094f0ee718a89e249778704f9ba3f11de1c
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: r3 = virtualinvoke $r7.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: b69e47ef4154c14c23ba930285b61d997b4f56a123a344228d0a6f65e28de198
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r8)
+		Method: <co.infinum.goldfinger.CryptoFactory$Default: javax.crypto.Cipher createCipher(java.lang.String,co.infinum.goldfinger.Mode,java.security.Key)>
+		SHA-256: 177d1c426946a15583578725959271c1b076f728e8705b699bbab2e2ef0ff0e2
+		Secure: false
+	Object:
+		Variable: $r31
+		Type: java.security.MessageDigest
+		Statement: $r31 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29021)
+		Method: <org.bitcoinj.script.Script: void executeScript(org.bitcoinj.core.Transaction,long,org.bitcoinj.script.Script,java.util.LinkedList,org.bitcoinj.core.Coin,boolean,java.util.Set)>
+		SHA-256: 2fbb7526b1b1d4f86b68ea983f499be529e6fd9ee6fe17a47f488b3da4327812
+		Secure: false
+	Object:
+		Variable: r0
+		Type: com.lightning.walletapp.ln.crypto.RandomGenerator
+		Statement: specialinvoke r0.<java.security.SecureRandom: void <init>()>()
+		Method: <com.lightning.walletapp.ln.crypto.RandomGenerator: void <init>()>
+		SHA-256: 87dcbb2093a114f348843703c1e518bd07d794ef835c987c9d85d7480d7e6dbc
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.bitcoinj.core.Sha256Hash: byte[] hashTwice(byte[],int,int)>
+		SHA-256: cdd5149aa942778bd2c7bbbeb934e422ecb021663b4d8bd250a5febe3d81b7d9
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.bitcoinj.core.Sha256Hash: byte[] hash(byte[],int,int)>
+		SHA-256: 745d180ca1b1078784f0d4ae2cbfb88eb653caa50702ece66c28c8c157d7a000
+		Secure: true
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke $r7.<javax.crypto.Mac: byte[] doFinal(byte[])>(r3)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: 5c1a8560c91d9f5017b84a41e401a4291921495c3de72238f671bc735155462d
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r5)
+		Method: <co.infinum.goldfinger.CryptoFactory$Default: javax.crypto.Cipher createCipher(java.lang.String,co.infinum.goldfinger.Mode,java.security.Key)>
+		SHA-256: 944ba98c558ca55666ad37879417b9eb9eb6572864c885ecd4a64be324295995
+		Secure: false
+	Object:
+		Variable: varReplacer20603
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer20603)
+		Method: <com.lightning.walletapp.helper.AES$: javax.crypto.Cipher cipher(byte[],byte[],int)>
+		SHA-256: db890b24ee7e68bcb6116bc8361e6849e77aa2d5be96dad133215ee2c0f39358
+		Secure: false
+	Object:
+		Variable: varReplacer19473
+		Type: java.lang.String
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer19473)
+		Method: <org.bitcoinj.crypto.PBKDF2SHA512: byte[] F(java.lang.String,java.lang.String,int,int)>
+		SHA-256: 211050cc520037ebb8075a0f70f9e98786a00536318cea0abd60565b9cb948ee
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.KeyStore
+		Statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer27446)
+		Method: <co.infinum.goldfinger.CryptoFactory$Default: void <init>(android.content.Context)>
+		SHA-256: 75ecb5d9f94b215ef131c742bce847b90331fd61ba9ffcc1f5894fa997fcb16
+		Secure: false
+
+Findings in Java Class: org.bitcoinj.core.CheckpointManager
+
+	 in Method: org.bitcoinj.core.Sha256Hash readBinary(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #e8dfa0dbef593c42d18f7499536a994097211c8b1a4c132add2dbbd8781c0632)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke r2.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r1, $r6)
+
+		ForbiddenMethodError violating CrySL rule for java.security.DigestInputStream
+			Detected call to forbidden method void on(boolean) of class java.security.DigestInputStream
+			at statement: virtualinvoke r2.<java.security.DigestInputStream: void on(boolean)>(varReplacer18962)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #2a553da6325e6f7045a6ae88b62c0dabf45281ecc3e23e6dbdcb9d65ef0b2377)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r2.<java.security.DigestInputStream: void on(boolean)>(varReplacer18962)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #2a553da6325e6f7045a6ae88b62c0dabf45281ecc3e23e6dbdcb9d65ef0b2377)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r2.<java.security.DigestInputStream: void on(boolean)>(varReplacer18960)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #e8dfa0dbef593c42d18f7499536a994097211c8b1a4c132add2dbbd8781c0632)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r4 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: org.bitcoinj.core.Sha256Hash readTextual(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #1483c09d507b816f2d8e358bdcf748f95d8d6b301f37aed4de69aa06c2eae936)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r4 = interfaceinvoke $r3.<com.google.common.hash.HashFunction: com.google.common.hash.Hasher newHasher()>()
+
+
+Findings in Java Class: com.lightning.walletapp.ln.Tools$
+
+	 in Method: void <clinit>()
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #87dcbb2093a114f348843703c1e518bd07d794ef835c987c9d85d7480d7e6dbc)
+			Operation on object of type com.lightning.walletapp.ln.crypto.RandomGenerator object not completed. Expected call to java.security.SecureRandom: void init(byte[]), getInstanceStrong, java.security.SecureRandom: void init(), getInstance
+			at statement: specialinvoke $r0.<com.lightning.walletapp.ln.Tools$: void <init>()>()
+
+
+Findings in Java Class: okhttp3.OkHttpClient
+
+	 in Method: javax.net.ssl.SSLSocketFactory systemDefaultSslSocketFactory(javax.net.ssl.X509TrustManager)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #3cb5d63a7d782869dde5bc2446347c18c9859e0b3925431b3fc9a0aa2c74a24c)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer15626)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer15624, $r7, varReplacer15624)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer15624, $r7, varReplacer15624)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer15624, $r7, varReplacer15624)
+
+
+	 in Method: javax.net.ssl.X509TrustManager systemDefaultTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer15620)
+
+
+Findings in Java Class: com.github.kevinsawicki.http.HttpRequest
+
+	 in Method: javax.net.ssl.SSLSocketFactory getTrustedFactory()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer17622, $r11, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer17622, $r11, $r5)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #2a0b5b51a434036866efe62622f68266247e2ba40c336cc46383e7ca09030574)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer17621)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer17622, $r11, $r5)
+
+
+Findings in Java Class: org.bitcoinj.crypto.PBKDF2SHA512
+
+	 in Method: byte[] F(java.lang.String,java.lang.String,int,int)
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #3227298f3b7015bc0a74bf3203d232266e2f3aa101164d01eae289a58e2b7b56)
+			Unexpected call to method doFinal on object of type javax.crypto.Mac.
+			at statement: r3 = virtualinvoke $r7.<javax.crypto.Mac: byte[] doFinal(byte[])>($r6)
+
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #3227298f3b7015bc0a74bf3203d232266e2f3aa101164d01eae289a58e2b7b56)
+			Unexpected call to method doFinal on object of type javax.crypto.Mac.
+			at statement: r3 = virtualinvoke $r7.<javax.crypto.Mac: byte[] doFinal(byte[])>(r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #3227298f3b7015bc0a74bf3203d232266e2f3aa101164d01eae289a58e2b7b56)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r7.<javax.crypto.Mac: void init(java.security.Key)>(r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer19473)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #3227298f3b7015bc0a74bf3203d232266e2f3aa101164d01eae289a58e2b7b56)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r7.<javax.crypto.Mac: void reset()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #3227298f3b7015bc0a74bf3203d232266e2f3aa101164d01eae289a58e2b7b56)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r7.<javax.crypto.Mac: void reset()>()
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r7.<javax.crypto.Mac: void init(java.security.Key)>(r2)
+
+
+Findings in Java Class: co.infinum.goldfinger.CryptoFactory$Default
+
+	 in Method: javax.crypto.Cipher createCipher(java.lang.String,co.infinum.goldfinger.Mode,java.security.Key)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r3, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r3, $r9)
+
+		ForbiddenMethodError violating CrySL rule for javax.crypto.Cipher
+			Detected call to forbidden method void init(int,java.security.Key) of class javax.crypto.Cipher. Instead, call method <javax.crypto.Cipher: void init(int,java.security.Key)>.
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>($i0, $r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r3, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r3, $r9)
+
+
+	 in Method: void <init>(android.content.Context)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #75ecb5d9f94b215ef131c742bce847b90331fd61ba9ffcc1f5894fa997fcb16)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer27446)
+
+
+Findings in Java Class: com.lightning.walletapp.helper.AES$
+
+	 in Method: scodec.bits.ByteVector dec(byte[],byte[],byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #d98e980fc9f8368f17bb760b1eb2a716f808120ec10a84fb25907dd72a35e9d9)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+
+	 in Method: scodec.bits.ByteVector enc(byte[],byte[],byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #d98e980fc9f8368f17bb760b1eb2a716f808120ec10a84fb25907dd72a35e9d9)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+
+	 in Method: javax.crypto.Cipher cipher(byte[],byte[],int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer20603)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r4, r3)
+
+
+Findings in Java Class: com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher
+
+	 in Method: com.google.common.hash.HashCode hash()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #1483c09d507b816f2d8e358bdcf748f95d8d6b301f37aed4de69aa06c2eae936)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #1483c09d507b816f2d8e358bdcf748f95d8d6b301f37aed4de69aa06c2eae936)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: co.infinum.goldfinger.Goldfinger$Builder
+
+	 in Method: co.infinum.goldfinger.Goldfinger buildMarshmallowInstance()
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #75ecb5d9f94b215ef131c742bce847b90331fd61ba9ffcc1f5894fa997fcb16)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: specialinvoke $r7.<co.infinum.goldfinger.CryptoFactory$Default: void <init>(android.content.Context)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyGenerator (on Object #9c4e05da6e79d8b2054754cd04d4f094f0ee718a89e249778704f9ba3f11de1c)
+			Operation on object of type javax.crypto.KeyGenerator object not completed. Expected call to generateKey, init
+			at statement: specialinvoke $r7.<co.infinum.goldfinger.CryptoFactory$Default: void <init>(android.content.Context)>($r1)
+
+
+Findings in Java Class: org.bitcoinj.script.Script
+
+	 in Method: void executeScript(org.bitcoinj.core.Transaction,long,org.bitcoinj.script.Script,java.util.LinkedList,org.bitcoinj.core.Coin,boolean,java.util.Set)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #2fbb7526b1b1d4f86b68ea983f499be529e6fd9ee6fe17a47f488b3da4327812)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r31 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29021)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6e045f7584747c327a9d5bb550347ce4daef9811052466088da0d8d5aee24032)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 42
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 17
+	TypestateError: 7
+	ConstraintError: 5
+	ForbiddenMethodError: 2
+	IncompleteOperationError: 10
+=====================================================================

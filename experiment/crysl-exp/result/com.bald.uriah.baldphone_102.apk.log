@@ -1,0 +1,137 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: javax.net.ssl.SSLContext
+		Statement: $r7 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer20742)
+		Method: <org.acra.f.a: void a(javax.net.ssl.HttpsURLConnection)>
+		SHA-256: e59ef103cf0e8eb1e4d71568075fcf0c1e4dd0be863a4c5225d45fabcf938b01
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r2)
+		Method: <org.acra.f.a: void a(javax.net.ssl.HttpsURLConnection)>
+		SHA-256: b658b0f4126f1dbd5bb8212c2600b52441d4d9c74c084ff29cbc60181bf78d6f
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: java.security.cert.CertificateFactory
+		Statement: $r9 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>($r4)
+		Method: <org.acra.security.BaseKeyStoreFactory: java.security.KeyStore create(android.content.Context)>
+		SHA-256: 6354b454ea0efe5008579fe336bf54e0cb7951f0d65e24c27930d87a53ea0e7
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer18228)
+		Method: <com.bumptech.glide.load.o.b0.j$a: com.bumptech.glide.load.o.b0.j$b a()>
+		SHA-256: 4bf63146719d42490ea7d8e841139463799c04404071d8d80faae44fc390659d
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.KeyStore
+		Statement: $r5 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r4)
+		Method: <org.acra.security.BaseKeyStoreFactory: java.security.KeyStore create(android.content.Context)>
+		SHA-256: 22a183d5116504e02ad96ba67561ecf0f83bf3a7f2bfba4ad5fe01efac8fa773
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r8 = virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.acra.f.a: void a(javax.net.ssl.HttpsURLConnection)>
+		SHA-256: 5fb181042c4eb5bcc998956a133fcfe86db6ec2d4748f514d5f8668fc4ae4839
+		Secure: true
+
+Findings in Java Class: org.acra.f.a
+
+	 in Method: void a(javax.net.ssl.HttpsURLConnection)
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #22a183d5116504e02ad96ba67561ecf0f83bf3a7f2bfba4ad5fe01efac8fa773)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r6)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #e59ef103cf0e8eb1e4d71568075fcf0c1e4dd0be863a4c5225d45fabcf938b01)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r7 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer20742)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r7.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer20743, $r8, varReplacer20743)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r7.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer20743, $r8, varReplacer20743)
+
+
+Findings in Java Class: org.acra.security.BaseKeyStoreFactory
+
+	 in Method: java.security.KeyStore create(android.content.Context)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #6354b454ea0efe5008579fe336bf54e0cb7951f0d65e24c27930d87a53ea0e7)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r10 = virtualinvoke $r9.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r1)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 6
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 1
+	RequiredPredicateError: 2
+	IncompleteOperationError: 2
+=====================================================================

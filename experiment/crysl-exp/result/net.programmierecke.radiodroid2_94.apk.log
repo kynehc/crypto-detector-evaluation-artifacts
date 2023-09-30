@@ -1,0 +1,1028 @@
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: javax.crypto.Cipher
+		Statement: $r1 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer39260)
+		Method: <com.google.android.exoplayer2.source.hls.Aes128DataSource: javax.crypto.Cipher getCipherInstance()>
+		SHA-256: e2d1e4323cf7fda8a8e525c3e54e8f85983e77173ec3d02223c0d017f90edf9c
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer26715)
+		Method: <okhttp3.internal.platform.AndroidPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: d24b75a20523f6ae6584469cf4c676a2b82a5fa3799ded5a8ec13411948abe34
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <com.google.android.exoplayer2.upstream.cache.SimpleCache: long createUid(java.io.File)>
+		SHA-256: 99c672eefa4689a445952b16fc572f3658b4c117a83684d8406fcdb6e6246872
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r1)
+		Method: <com.google.android.exoplayer2.upstream.crypto.AesFlushingCipher: void <init>(int,byte[],long,long)>
+		SHA-256: d9f9b6685ddf3461eb2ea2eff23ffe28902e5309125e8841c7ce2eb950fff47a
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: a79a1700ae9d8d44f13ea218f751e7024f8f1222b1b2ae17cdbab7b56d352181
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer26719, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 8fba4711762ab3b2ee3675d26a91cfe6498077e9bc4f7c2d8eb69eeb78dcbfcc
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r2 = virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.Util: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: dea0af93b06734ae35228a014521e6e031131dd2b357359826afa61f9a6de1b
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer26711)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 91c9ad4f11a5d2e347eb8811fe2f493a7eb14eb9942138c59dbd6db22294b263
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, $r5)
+		Method: <com.google.android.exoplayer2.upstream.crypto.AesFlushingCipher: void <init>(int,byte[],long,long)>
+		SHA-256: 8b962118ea3c603585afd0c9cb8eebc7393b428bc7f8f570f875d4bc8d807d0e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer26717, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 7d9005f49d669247dcef5f07cf4ed8beda296c11be97087420b6fef64042f3a4
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: javax.crypto.CipherOutputStream
+		Statement: specialinvoke $r12.<javax.crypto.CipherOutputStream: void <init>(java.io.OutputStream,javax.crypto.Cipher)>($r5, $r10)
+		Method: <com.google.android.exoplayer2.upstream.cache.CachedContentIndex$LegacyStorage: void writeFile(java.util.HashMap)>
+		SHA-256: d25fda46376f2e332f56ea026ae45706bde4c3a80699c95ac5175b26870d5614
+		Secure: false
+	Object:
+		Variable: varReplacer33535
+		Type: java.lang.String
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer33535)
+		Method: <com.google.android.exoplayer2.source.hls.Aes128DataSource: long open(com.google.android.exoplayer2.upstream.DataSpec)>
+		SHA-256: 69818d5905d0d44219532bef0b63562bd4a6952f10379f1abeb88d4ce805f623
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <net.programmierecke.radiodroid2.Utils: okhttp3.OkHttpClient$Builder enableTls12OnPreLollipop(okhttp3.OkHttpClient$Builder)>
+		SHA-256: a64bad198414561a8c90e10cf37516ebcffcff8a22b17d0e95971620bc3a932c
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer26712)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: d7ae520f7b3eeb1bbf9220d6bd3e10e2eb711e2e2d60001f7a26d662ed2e2cec
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.net.ssl.SSLContext
+		Statement: $r7 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1134)
+		Method: <net.programmierecke.radiodroid2.Utils: okhttp3.OkHttpClient$Builder enableTls12OnPreLollipop(okhttp3.OkHttpClient$Builder)>
+		SHA-256: 83b9ef2ec5688c6bdb471e343f3d18b4df830439d26f929b901ebc35714c6150
+		Secure: false
+	Object:
+		Variable: $r18
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r18.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r11, $r14)
+		Method: <com.google.android.exoplayer2.upstream.cache.CachedContentIndex$LegacyStorage: boolean readFile(java.util.HashMap,android.util.SparseArray)>
+		SHA-256: 6b30d6219e1be8a5e0a9a049ef7eb5d6780a49f6a7b22f8ed8fe44856ade655b
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+		Method: <com.google.android.exoplayer2.source.hls.Aes128DataSource: long open(com.google.android.exoplayer2.upstream.DataSpec)>
+		SHA-256: 74efd2ca2013e34a93725a12b2428b082241b229a3b9c59222ec28d5225e0d5
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer33535)
+		Method: <com.google.android.exoplayer2.source.hls.Aes128DataSource: long open(com.google.android.exoplayer2.upstream.DataSpec)>
+		SHA-256: 7db615b1cdaa377cf69a0997be016eaff313a6a12fc3ceb6fa110a5202d6a445
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer39231)
+		Method: <com.google.android.exoplayer2.upstream.crypto.AesFlushingCipher: void <init>(int,byte[],long,long)>
+		SHA-256: 50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r8.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r6, $r1)
+		Method: <com.google.android.exoplayer2.source.hls.Aes128DataSource: long open(com.google.android.exoplayer2.upstream.DataSpec)>
+		SHA-256: e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, $r5)
+		Method: <com.google.android.exoplayer2.upstream.crypto.AesFlushingCipher: void <init>(int,byte[],long,long)>
+		SHA-256: 904cc563415265daa258bb0005f4d8ce0eefc5d2a51ed39954b73bdc6cc251cb
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r16.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r15)
+		Method: <com.google.android.exoplayer2.upstream.cache.CachedContentIndex$LegacyStorage: boolean readFile(java.util.HashMap,android.util.SparseArray)>
+		SHA-256: 5c8390126ebcbb5ddbf76db4602dc5d8f36a732b2def33cdbb420dbb221f041b
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+		Method: <com.google.android.exoplayer2.upstream.cache.CachedContentIndex$LegacyStorage: void writeFile(java.util.HashMap)>
+		SHA-256: 2c509f54f169000fda7a2d594f0a37a51d8a71318d9074548051a677d33a5aaa
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer26714)
+		Method: <okhttp3.internal.platform.AndroidPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: af191361bad7e58265b3589bd2bc565ebf7f7411cc4f1c89fd6851d5a1b49826
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.cert.CertificateFactory
+		Statement: $r5 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer56981)
+		Method: <okhttp3.Cache$Entry: java.util.List readCertificateList(okio.BufferedSource)>
+		SHA-256: d35be6dffb1fa364632db18bc6c50d16d1b164d92c662f01fd76a98e7b10d61
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <net.programmierecke.radiodroid2.Utils: okhttp3.OkHttpClient$Builder enableTls12OnPreLollipop(okhttp3.OkHttpClient$Builder)>
+		SHA-256: bb61e02f7457f29c8c5b2741849f6cce0aec0793fcf7363228de111f7900614e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r0)
+		Method: <okhttp3.internal.Util: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: a8764d384e0e6acd4407dba0e4c2025660362892494036c03c4b52a40e75c66b
+		Secure: false
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #91c9ad4f11a5d2e347eb8811fe2f493a7eb14eb9942138c59dbd6db22294b263)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer26711)
+
+
+Findings in Java Class: okhttp3.internal.platform.AndroidPlatform
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #af191361bad7e58265b3589bd2bc565ebf7f7411cc4f1c89fd6851d5a1b49826)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer26714)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #8fba4711762ab3b2ee3675d26a91cfe6498077e9bc4f7c2d8eb69eeb78dcbfcc)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer26719, $r2)
+
+
+Findings in Java Class: com.google.android.exoplayer2.source.hls.HlsMediaChunk
+
+	 in Method: void maybeLoadInitData()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.source.hls.HlsMediaChunk: void feedDataToExtractor(com.google.android.exoplayer2.upstream.DataSource,com.google.android.exoplayer2.upstream.DataSpec,boolean)>($r2, $r1, $z0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.source.hls.HlsMediaChunk: void feedDataToExtractor(com.google.android.exoplayer2.upstream.DataSource,com.google.android.exoplayer2.upstream.DataSpec,boolean)>($r2, $r1, $z0)
+
+
+	 in Method: void loadMedia()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.source.hls.HlsMediaChunk: void feedDataToExtractor(com.google.android.exoplayer2.upstream.DataSource,com.google.android.exoplayer2.upstream.DataSpec,boolean)>($r2, $r3, $z0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.source.hls.HlsMediaChunk: void feedDataToExtractor(com.google.android.exoplayer2.upstream.DataSource,com.google.android.exoplayer2.upstream.DataSpec,boolean)>($r2, $r3, $z0)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.cache.CacheDataSource
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.cache.CacheDataSource: void handleBeforeThrow(java.lang.Throwable)>($r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.cache.CacheDataSource: void handleBeforeThrow(java.lang.Throwable)>($r2)
+
+
+	 in Method: void openNextSource(boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $l1 = interfaceinvoke $r8.<com.google.android.exoplayer2.upstream.DataSource: long open(com.google.android.exoplayer2.upstream.DataSpec)>($r9)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $r10 = interfaceinvoke $r8.<com.google.android.exoplayer2.upstream.DataSource: android.net.Uri getUri()>()
+
+
+	 in Method: int read(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.cache.CacheDataSource: void handleBeforeThrow(java.lang.Throwable)>($r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.cache.CacheDataSource: void handleBeforeThrow(java.lang.Throwable)>($r4)
+
+
+	 in Method: long open(com.google.android.exoplayer2.upstream.DataSpec)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.cache.CacheDataSource: void notifyCacheIgnored(int)>($i0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.cache.CacheDataSource: void handleBeforeThrow(java.lang.Throwable)>($r10)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $i0 = specialinvoke r0.<com.google.android.exoplayer2.upstream.cache.CacheDataSource: int shouldIgnoreCacheForRequest(com.google.android.exoplayer2.upstream.DataSpec)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.AssetDataSource
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.AssetDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.AssetDataSource: void transferEnded()>()
+
+
+	 in Method: long open(com.google.android.exoplayer2.upstream.DataSpec)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.AssetDataSource: void transferInitializing(com.google.android.exoplayer2.upstream.DataSpec)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.DefaultDataSource
+
+	 in Method: long open(com.google.android.exoplayer2.upstream.DataSpec)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $l0 = interfaceinvoke $r2.<com.google.android.exoplayer2.upstream.DataSource: long open(com.google.android.exoplayer2.upstream.DataSpec)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.DefaultExtractorInput
+
+	 in Method: int readFromDataSource(byte[],int,int,int,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $i0 = interfaceinvoke $r2.<com.google.android.exoplayer2.upstream.DataSource: int read(byte[],int,int)>($r1, $i0, $i1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to java.io.InputStream: int read(byte[],int,int), javax.crypto.CipherInputStream: int read(), java.io.InputStream: int read(byte[]), java.io.FilterInputStream: int read(byte[],int,int), java.io.InputStream: int read(), javax.crypto.CipherInputStream: int read(byte[]), java.io.FilterInputStream: int read(byte[]), java.io.FilterInputStream: int read(), javax.crypto.CipherInputStream: int read(byte[],int,int)
+			at statement: $i0 = interfaceinvoke $r2.<com.google.android.exoplayer2.upstream.DataSource: int read(byte[],int,int)>($r1, $i0, $i1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.FileDataSource
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.FileDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.FileDataSource: void transferEnded()>()
+
+
+	 in Method: long open(com.google.android.exoplayer2.upstream.DataSpec)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.FileDataSource: void transferInitializing(com.google.android.exoplayer2.upstream.DataSpec)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.RawResourceDataSource
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.RawResourceDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.RawResourceDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.RawResourceDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.RawResourceDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.RawResourceDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.RawResourceDataSource: void transferEnded()>()
+
+
+	 in Method: long open(com.google.android.exoplayer2.upstream.DataSpec)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.RawResourceDataSource: void transferInitializing(com.google.android.exoplayer2.upstream.DataSpec)>($r2)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.DefaultHttpDataSource
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.DefaultHttpDataSource: void closeConnectionQuietly()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.DefaultHttpDataSource: void closeConnectionQuietly()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.DefaultHttpDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.DefaultHttpDataSource: void transferEnded()>()
+
+
+	 in Method: long open(com.google.android.exoplayer2.upstream.DataSpec)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.DefaultHttpDataSource: void closeConnectionQuietly()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.DefaultHttpDataSource: void closeConnectionQuietly()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.DefaultHttpDataSource: void closeConnectionQuietly()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.upstream.DefaultHttpDataSource: void closeConnectionQuietly()>()
+
+
+	 in Method: void skipInternal()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.DefaultHttpDataSource: void bytesTransferred(int)>($i3)
+
+
+	 in Method: java.net.HttpURLConnection makeConnection(com.google.android.exoplayer2.upstream.DataSpec)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r8 = specialinvoke r0.<com.google.android.exoplayer2.upstream.DefaultHttpDataSource: java.net.HttpURLConnection makeConnection(java.net.URL,int,byte[],long,long,boolean,boolean,java.util.Map)>($r3, $i2, $r6, $l3, $l4, $z0, varReplacer39232, $r7)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.ContentDataSource
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.ContentDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.ContentDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #e899dee01d55d270e79a5441cb05f39cda46030c1ce70bb65798863cf7de103a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.ContentDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.ContentDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.ContentDataSource: void transferEnded()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.ContentDataSource: void transferEnded()>()
+
+
+	 in Method: long open(com.google.android.exoplayer2.upstream.DataSpec)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.ContentDataSource: void transferInitializing(com.google.android.exoplayer2.upstream.DataSpec)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.ogg.DefaultOggSeeker
+
+	 in Method: long getNextSeekPosition(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<com.google.android.exoplayer2.extractor.ogg.DefaultOggSeeker: boolean skipToNextPage(com.google.android.exoplayer2.extractor.ExtractorInput,long)>($r1, $l1)
+
+
+	 in Method: void skipToNextPage(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<com.google.android.exoplayer2.extractor.ogg.DefaultOggSeeker: boolean skipToNextPage(com.google.android.exoplayer2.extractor.ExtractorInput,long)>($r1, $l0)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.FlacMetadataReader
+
+	 in Method: void readStreamMarker(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r0.<com.google.android.exoplayer2.extractor.ExtractorInput: void readFully(byte[],int,int)>($r2, varReplacer37799, varReplacer37800)
+
+
+	 in Method: int getFrameStartMarker(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r0.<com.google.android.exoplayer2.extractor.ExtractorInput: void resetPeekPosition()>()
+
+
+	 in Method: boolean readMetadataBlock(com.google.android.exoplayer2.extractor.ExtractorInput,com.google.android.exoplayer2.extractor.FlacMetadataReader$FlacStreamMetadataHolder)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: void peekFully(byte[],int,int)>($r3, varReplacer37795, varReplacer37796)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.DataSchemeDataSource
+
+	 in Method: long open(com.google.android.exoplayer2.upstream.DataSpec)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.DataSchemeDataSource: void transferInitializing(com.google.android.exoplayer2.upstream.DataSpec)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.rawcc.RawCcExtractor
+
+	 in Method: int read(com.google.android.exoplayer2.extractor.ExtractorInput,com.google.android.exoplayer2.extractor.PositionHolder)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<com.google.android.exoplayer2.extractor.rawcc.RawCcExtractor: boolean parseHeader(com.google.android.exoplayer2.extractor.ExtractorInput)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<com.google.android.exoplayer2.extractor.rawcc.RawCcExtractor: boolean parseTimestampAndSampleCount(com.google.android.exoplayer2.extractor.ExtractorInput)>($r1)
+
+
+	 in Method: boolean parseHeader(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: boolean readFully(byte[],int,int,boolean)>($r3, varReplacer37845, varReplacer37846, varReplacer37847)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.BinarySearchSeeker
+
+	 in Method: int handlePendingSeek(com.google.android.exoplayer2.extractor.ExtractorInput,com.google.android.exoplayer2.extractor.PositionHolder)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r6 = interfaceinvoke $r3.<com.google.android.exoplayer2.extractor.BinarySearchSeeker$TimestampSeeker: com.google.android.exoplayer2.extractor.BinarySearchSeeker$TimestampSearchResult searchForTimestamp(com.google.android.exoplayer2.extractor.ExtractorInput,long)>($r1, $l1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor
+
+	 in Method: int writeSampleData(com.google.android.exoplayer2.extractor.ExtractorInput,com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor$Track,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: void readFully(byte[],int,int)>($r5, varReplacer50631, varReplacer50632)
+
+
+	 in Method: void binaryElement(int,int,com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor: void readScratch(com.google.android.exoplayer2.extractor.ExtractorInput,int)>($r1, $i3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor: void readScratch(com.google.android.exoplayer2.extractor.ExtractorInput,int)>($r1, $i3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor: void readScratch(com.google.android.exoplayer2.extractor.ExtractorInput,int)>($r1, varReplacer46580)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor
+
+	 in Method: boolean readAtomHeader(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l1 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: long getPosition()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l3 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: long getPosition()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l3 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: long getLength()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: boolean readFully(byte[],int,int,boolean)>($r3, varReplacer37557, varReplacer37558, varReplacer37559)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: void readFully(byte[],int,int)>($r3, varReplacer37552, varReplacer37552)
+
+
+	 in Method: boolean readSample(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: void readFully(byte[],int,int)>($r15, $i4, $i3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l2 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: long getPosition()>()
+
+
+	 in Method: void readEncryptionData(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l4 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: long getPosition()>()
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.DummyTrackOutput
+
+	 in Method: int sampleData(com.google.android.exoplayer2.extractor.ExtractorInput,int,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $i0 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: int skip(int)>($i0)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.mkv.VarintReader
+
+	 in Method: long readUnsignedVarint(com.google.android.exoplayer2.extractor.ExtractorInput,boolean,boolean,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z1 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: boolean readFully(byte[],int,int,boolean)>($r2, varReplacer42332, varReplacer42333, $z1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.cache.CacheUtil
+
+	 in Method: void cache(com.google.android.exoplayer2.upstream.DataSpec,com.google.android.exoplayer2.upstream.cache.Cache,com.google.android.exoplayer2.upstream.cache.CacheKeyFactory,com.google.android.exoplayer2.upstream.cache.CacheDataSource,byte[],com.google.android.exoplayer2.util.PriorityTaskManager,int,com.google.android.exoplayer2.upstream.cache.CacheUtil$ProgressListener,java.util.concurrent.atomic.AtomicBoolean,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l5 = staticinvoke <com.google.android.exoplayer2.upstream.cache.CacheUtil: long readAndDiscard(com.google.android.exoplayer2.upstream.DataSpec,long,long,com.google.android.exoplayer2.upstream.DataSource,byte[],com.google.android.exoplayer2.util.PriorityTaskManager,int,com.google.android.exoplayer2.upstream.cache.CacheUtil$ProgressNotifier,boolean,java.util.concurrent.atomic.AtomicBoolean)>($r0, $l2, $l5, $r3, $r4, $r5, $i0, $r8, $z2, $r7)
+
+
+	 in Method: long readAndDiscard(com.google.android.exoplayer2.upstream.DataSpec,long,long,com.google.android.exoplayer2.upstream.DataSource,byte[],com.google.android.exoplayer2.util.PriorityTaskManager,int,com.google.android.exoplayer2.upstream.cache.CacheUtil$ProgressNotifier,boolean,java.util.concurrent.atomic.AtomicBoolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: staticinvoke <com.google.android.exoplayer2.util.Util: void closeQuietly(com.google.android.exoplayer2.upstream.DataSource)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.source.hls.HlsSampleStreamWrapper$EmsgUnwrappingTrackOutput
+
+	 in Method: int sampleData(com.google.android.exoplayer2.extractor.ExtractorInput,int,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $i1 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: int read(byte[],int,int)>($r2, $i0, $i1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.source.hls.DefaultHlsExtractorFactory
+
+	 in Method: boolean sniffQuietly(com.google.android.exoplayer2.extractor.Extractor,com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r0.<com.google.android.exoplayer2.extractor.ExtractorInput: void resetPeekPosition()>()
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.mp4.Mp4Extractor
+
+	 in Method: int readSample(com.google.android.exoplayer2.extractor.ExtractorInput,com.google.android.exoplayer2.extractor.PositionHolder)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: void readFully(byte[],int,int)>($r11, $i7, $i4)
+
+
+	 in Method: int read(com.google.android.exoplayer2.extractor.ExtractorInput,com.google.android.exoplayer2.extractor.PositionHolder)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<com.google.android.exoplayer2.extractor.mp4.Mp4Extractor: boolean readAtomPayload(com.google.android.exoplayer2.extractor.ExtractorInput,com.google.android.exoplayer2.extractor.PositionHolder)>($r2, $r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<com.google.android.exoplayer2.extractor.mp4.Mp4Extractor: boolean readAtomHeader(com.google.android.exoplayer2.extractor.ExtractorInput)>($r2)
+
+
+	 in Method: boolean readAtomHeader(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: boolean readFully(byte[],int,int,boolean)>($r3, varReplacer37938, varReplacer37939, varReplacer37940)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: void readFully(byte[],int,int)>($r3, varReplacer37942, varReplacer37942)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l3 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: long getPosition()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l3 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: long getLength()>()
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.ogg.OggExtractor
+
+	 in Method: int read(com.google.android.exoplayer2.extractor.ExtractorInput,com.google.android.exoplayer2.extractor.PositionHolder)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<com.google.android.exoplayer2.extractor.ogg.OggExtractor: boolean sniffInternal(com.google.android.exoplayer2.extractor.ExtractorInput)>($r2)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.ByteArrayDataSource
+
+	 in Method: long open(com.google.android.exoplayer2.upstream.DataSpec)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<com.google.android.exoplayer2.upstream.ByteArrayDataSource: void transferInitializing(com.google.android.exoplayer2.upstream.DataSpec)>($r3)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.flv.FlvExtractor
+
+	 in Method: int read(com.google.android.exoplayer2.extractor.ExtractorInput,com.google.android.exoplayer2.extractor.PositionHolder)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<com.google.android.exoplayer2.extractor.flv.FlvExtractor: boolean readTagHeader(com.google.android.exoplayer2.extractor.ExtractorInput)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.extractor.flv.FlvExtractor: void skipToTagHeader(com.google.android.exoplayer2.extractor.ExtractorInput)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<com.google.android.exoplayer2.extractor.flv.FlvExtractor: boolean readTagData(com.google.android.exoplayer2.extractor.ExtractorInput)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<com.google.android.exoplayer2.extractor.flv.FlvExtractor: boolean readFlvHeader(com.google.android.exoplayer2.extractor.ExtractorInput)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.amr.AmrExtractor
+
+	 in Method: int peekNextSampleSize(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: void peekFully(byte[],int,int)>($r2, varReplacer42081, varReplacer42082)
+
+
+	 in Method: int read(com.google.android.exoplayer2.extractor.ExtractorInput,com.google.android.exoplayer2.extractor.PositionHolder)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<com.google.android.exoplayer2.extractor.amr.AmrExtractor: boolean readAmrHeader(com.google.android.exoplayer2.extractor.ExtractorInput)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.ts.AdtsExtractor
+
+	 in Method: void calculateAverageFrameSize(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = interfaceinvoke $r2.<com.google.android.exoplayer2.extractor.ExtractorInput: boolean peekFully(byte[],int,int,boolean)>($r4, varReplacer37744, varReplacer37745, varReplacer37746)
+
+
+Findings in Java Class: com.google.android.exoplayer2.offline.ProgressiveDownloader
+
+	 in Method: void download(com.google.android.exoplayer2.offline.Downloader$ProgressListener)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: staticinvoke <com.google.android.exoplayer2.upstream.cache.CacheUtil: void cache(com.google.android.exoplayer2.upstream.DataSpec,com.google.android.exoplayer2.upstream.cache.Cache,com.google.android.exoplayer2.upstream.cache.CacheKeyFactory,com.google.android.exoplayer2.upstream.cache.CacheDataSource,byte[],com.google.android.exoplayer2.util.PriorityTaskManager,int,com.google.android.exoplayer2.upstream.cache.CacheUtil$ProgressListener,java.util.concurrent.atomic.AtomicBoolean,boolean)>($r1, $r2, $r3, $r4, $r5, $r6, varReplacer29640, $r9, $r7, varReplacer29641)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.mkv.DefaultEbmlReader
+
+	 in Method: boolean read(com.google.android.exoplayer2.extractor.ExtractorInput)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l0 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: long getPosition()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: void skipFully(int)>($i3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l0 = virtualinvoke $r6.<com.google.android.exoplayer2.extractor.mkv.VarintReader: long readUnsignedVarint(com.google.android.exoplayer2.extractor.ExtractorInput,boolean,boolean,int)>($r1, varReplacer37494, varReplacer37495, varReplacer37496)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l0 = virtualinvoke $r6.<com.google.android.exoplayer2.extractor.mkv.VarintReader: long readUnsignedVarint(com.google.android.exoplayer2.extractor.ExtractorInput,boolean,boolean,int)>($r1, varReplacer37506, varReplacer37507, varReplacer37508)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l1 = specialinvoke r0.<com.google.android.exoplayer2.extractor.mkv.DefaultEbmlReader: long maybeResyncToNextLevel1Element(com.google.android.exoplayer2.extractor.ExtractorInput)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.ogg.OggPageHeader
+
+	 in Method: boolean populate(com.google.android.exoplayer2.extractor.ExtractorInput,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l3 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: long getPeekPosition()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z1 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: boolean peekFully(byte[],int,int,boolean)>($r3, varReplacer42087, varReplacer42088, varReplacer42089)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $l0 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: long getLength()>()
+
+
+Findings in Java Class: com.google.android.exoplayer2.offline.SegmentDownloader
+
+	 in Method: void download(com.google.android.exoplayer2.offline.Downloader$ProgressListener)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: staticinvoke <com.google.android.exoplayer2.upstream.cache.CacheUtil: void cache(com.google.android.exoplayer2.upstream.DataSpec,com.google.android.exoplayer2.upstream.cache.Cache,com.google.android.exoplayer2.upstream.cache.CacheKeyFactory,com.google.android.exoplayer2.upstream.cache.CacheDataSource,byte[],com.google.android.exoplayer2.util.PriorityTaskManager,int,com.google.android.exoplayer2.upstream.cache.CacheUtil$ProgressListener,java.util.concurrent.atomic.AtomicBoolean,boolean)>($r6, $r3, $r13, $r5, $r17, $r4, varReplacer29642, $r16, $r2, varReplacer29643)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r11 = virtualinvoke r0.<com.google.android.exoplayer2.offline.SegmentDownloader: java.util.List getSegments(com.google.android.exoplayer2.upstream.DataSource,com.google.android.exoplayer2.offline.FilterableManifest,boolean)>($r5, $r8, varReplacer29646)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.mp3.Mp3Extractor
+
+	 in Method: boolean synchronize(com.google.android.exoplayer2.extractor.ExtractorInput,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z1 = specialinvoke r0.<com.google.android.exoplayer2.extractor.mp3.Mp3Extractor: boolean peekEndOfStreamOrHeader(com.google.android.exoplayer2.extractor.ExtractorInput)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.source.SampleDataQueue
+
+	 in Method: int sampleData(com.google.android.exoplayer2.extractor.ExtractorInput,int,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $i1 = interfaceinvoke $r1.<com.google.android.exoplayer2.extractor.ExtractorInput: int read(byte[],int,int)>($r4, $i2, $i1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.extractor.FlacFrameReader
+
+	 in Method: long getFirstSampleNumber(com.google.android.exoplayer2.extractor.ExtractorInput,com.google.android.exoplayer2.util.FlacStreamMetadata)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r2.<com.google.android.exoplayer2.extractor.ExtractorInput: void resetPeekPosition()>()
+
+
+Findings in Java Class: net.programmierecke.radiodroid2.players.exoplayer.IcyDataSource
+
+	 in Method: long connect()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<net.programmierecke.radiodroid2.players.exoplayer.IcyDataSource: void close()>()
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.DataSourceInputStream
+
+	 in Method: void checkOpened()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #50a12f6b932208a755d434674468f59f177ac5ea7104f9baa01b22574ce8f32c)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: interfaceinvoke $r2.<com.google.android.exoplayer2.upstream.DataSource: long open(com.google.android.exoplayer2.upstream.DataSpec)>($r1)
+
+
+Findings in Java Class: com.google.android.exoplayer2.source.hls.Aes128DataSource
+
+	 in Method: javax.crypto.Cipher getCipherInstance()
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #e2d1e4323cf7fda8a8e525c3e54e8f85983e77173ec3d02223c0d017f90edf9c)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r1 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer39260)
+
+
+	 in Method: long open(com.google.android.exoplayer2.upstream.DataSpec)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer33535)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r1.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer33533, $r3, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r5.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.cache.CachedContentIndex$LegacyStorage
+
+	 in Method: boolean readFile(java.util.HashMap,android.util.SparseArray)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #6b30d6219e1be8a5e0a9a049ef7eb5d6780a49f6a7b22f8ed8fe44856ade655b)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: specialinvoke $r10.<java.io.DataInputStream: void <init>(java.io.InputStream)>($r18)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r16.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r15)
+
+
+	 in Method: void writeFile(java.util.HashMap)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherOutputStream (on Object #d25fda46376f2e332f56ea026ae45706bde4c3a80699c95ac5175b26870d5614)
+			Operation on object of type javax.crypto.CipherOutputStream object not completed. Expected call to write
+			at statement: specialinvoke $r2.<java.io.DataOutputStream: void <init>(java.io.OutputStream)>($r12)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: okhttp3.Cache$Entry
+
+	 in Method: java.util.List readCertificateList(okio.BufferedSource)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #d35be6dffb1fa364632db18bc6c50d16d1b164d92c662f01fd76a98e7b10d61)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertificate, generateCertPath, generateCRL
+			at statement: $r5 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer56981)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #d35be6dffb1fa364632db18bc6c50d16d1b164d92c662f01fd76a98e7b10d61)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r9 = virtualinvoke $r5.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #d35be6dffb1fa364632db18bc6c50d16d1b164d92c662f01fd76a98e7b10d61)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r9 = virtualinvoke $r5.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r8)
+
+
+Findings in Java Class: okhttp3.OkHttpClient
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4304, $r7, varReplacer4304)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4304, $r7, varReplacer4304)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4304, $r7, varReplacer4304)
+
+
+Findings in Java Class: net.programmierecke.radiodroid2.Utils
+
+	 in Method: okhttp3.OkHttpClient$Builder enableTls12OnPreLollipop(okhttp3.OkHttpClient$Builder)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r7.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1130, varReplacer1130, varReplacer1130)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r7.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1130, varReplacer1130, varReplacer1130)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer1133)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r7.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1130, varReplacer1130, varReplacer1130)
+
+
+Findings in Java Class: com.google.android.exoplayer2.upstream.crypto.AesFlushingCipher
+
+	 in Method: void <init>(int,byte[],long,long)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r7.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r1)
+
+
+Findings in Java Class: okhttp3.internal.Util
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer4307)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 28
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 110
+	RequiredPredicateError: 15
+	TypestateError: 1
+	ConstraintError: 6
+=====================================================================

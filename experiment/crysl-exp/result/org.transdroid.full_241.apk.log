@@ -1,0 +1,131 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.transdroid.daemon.adapters.tfb4rt.Tfb4rtAdapter: java.lang.String buildWebUIUrl(java.lang.String)>
+		SHA-256: bfa101cf088b67ede5f01070c27001960270b4aa6e03010be3a3ef8eab27dd0d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.transdroid.daemon.adapters.kTorrent.KTorrentAdapter: java.lang.String sha1Pass(java.lang.String)>
+		SHA-256: 1a2a4cc748ae0a9ec076e740dc7e8fbaf4ecf819fd74dd0109590afa31216f3f
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer15441)
+		Method: <org.transdroid.daemon.adapters.kTorrent.KTorrentAdapter: java.lang.String sha1Pass(java.lang.String)>
+		SHA-256: d76b0baa87545bcae94f8a51df13dbc68fc00f68ada798e6685216ca2149a8d3
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer12167)
+		Method: <de.timroes.axmlrpc.serializer.IntSerializer: byte[] getMD5(byte[])>
+		SHA-256: 8585dc7ed029fce0be7df9d93ee8ff9d39a6c144f15213eb8d541d798f50dd93
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <de.timroes.axmlrpc.serializer.IntSerializer: byte[] getMD5(byte[])>
+		SHA-256: a2cdccb2f1cf78b4e904fcd694dbe325843656a67357cd19532459ebe2f6bb73
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer15412)
+		Method: <org.transdroid.daemon.adapters.tfb4rt.Tfb4rtAdapter: java.lang.String buildWebUIUrl(java.lang.String)>
+		SHA-256: d3adbae10cc3824f6fdb57cae6a483d233e70fbda40488dd748419fd56b7ddd6
+		Secure: false
+
+Findings in Java Class: de.timroes.axmlrpc.serializer.IntSerializer
+
+	 in Method: byte[] getMD5(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #8585dc7ed029fce0be7df9d93ee8ff9d39a6c144f15213eb8d541d798f50dd93)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer12167)
+
+
+Findings in Java Class: org.transdroid.daemon.adapters.tfb4rt.Tfb4rtAdapter
+
+	 in Method: java.lang.String buildWebUIUrl(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #d3adbae10cc3824f6fdb57cae6a483d233e70fbda40488dd748419fd56b7ddd6)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer15412)
+
+
+Findings in Java Class: org.transdroid.daemon.adapters.kTorrent.KTorrentAdapter
+
+	 in Method: java.lang.String sha1Pass(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #d76b0baa87545bcae94f8a51df13dbc68fc00f68ada798e6685216ca2149a8d3)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer15441)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 6
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 3
+=====================================================================

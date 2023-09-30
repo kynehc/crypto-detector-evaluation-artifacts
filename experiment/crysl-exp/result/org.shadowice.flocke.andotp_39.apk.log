@@ -1,0 +1,1377 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r3.<java.security.SecureRandom: void nextBytes(byte[])>($r2)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: byte[] encrypt(javax.crypto.SecretKey,byte[])>
+		SHA-256: 7265ec9098c3e14b3b38cb62273daa7a22c24a4fa07eb88f4cdbcffc149a4fdc
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.SecretKey
+		Statement: $r5 = virtualinvoke $r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r0)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: org.shadowice.flocke.andotp.Utilities.EncryptionHelper$PBKDF2Credentials generatePBKDF2Credentials(java.lang.String,byte[],int)>
+		SHA-256: 57f5cc3b601366bb48c080c3a99d786677ae9c1648aa808bc15ee73261a75c0c
+		Secure: false
+	Object:
+		Variable: varReplacer9063
+		Type: java.lang.String
+		Statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer9063)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey generateSymmetricKeyFromPassword(java.lang.String)>
+		SHA-256: 1599195342d759912563343c85ccb6610cc3858f9032fd6c159ab51f2bd3c86
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.PublicKey
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <org.shadowice.flocke.andotp.Utilities.SecretKeyWrapper: byte[] wrap(javax.crypto.SecretKey)>
+		SHA-256: 7a4a5ad4d02675dfaa88f8e3387a978fbe3210dc9b064e57db56716f5f529f9a
+		Secure: false
+	Object:
+		Variable: varReplacer164
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, varReplacer163, $i0, varReplacer164)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey generateSymmetricKey(byte[])>
+		SHA-256: b7ebe91b81f8f74274b50624d5025867857247f14d2165c7e861291d3ea3165e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer81)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey loadOrGenerateWrappedKey(java.io.File,java.security.KeyPair)>
+		SHA-256: 3d7b41ccec67add031b925788f897e9a1bc2b51978227a3d8bf09a7d6e6d760d
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer99)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: byte[] decrypt(javax.crypto.SecretKey,javax.crypto.spec.IvParameterSpec,byte[])>
+		SHA-256: 3b91f56512e8a0640bb1315c3afed936d1b9a4c544bbe3790652ac30a4e5772f
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer348)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: byte[] decrypt(java.security.PrivateKey,byte[])>
+		SHA-256: 88d7866e8e9a2d07d6e16b06a85021b29c324c9d6f13b9b4af33a5fd54952c30
+		Secure: false
+	Object:
+		Variable: varReplacer81
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer81)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey loadOrGenerateWrappedKey(java.io.File,java.security.KeyPair)>
+		SHA-256: b4e1e0cc62c51f673a976cbd2dadabbe594c19b5555f4d4ce4f95d810d394d40
+		Secure: false
+	Object:
+		Variable: varReplacer9061
+		Type: int
+		Statement: specialinvoke $r1.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i0, varReplacer9061)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey generateSymmetricKeyPBKDF2(java.lang.String,int,byte[])>
+		SHA-256: ab3b1297b14fea57592a8db0f0d1e2b4b4a8d1736f76a77f1f5d753f15977312
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.PublicKey
+		Statement: $r11 = virtualinvoke $r10.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <org.shadowice.flocke.andotp.Utilities.Settings: void migrateDeprecatedSettings()>
+		SHA-256: b71ef358465a14a7412f6f80e2a9ffca4f978b7dc98d611b803bdc557e76231b
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer3839)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: org.shadowice.flocke.andotp.Utilities.EncryptionHelper$PBKDF2Credentials generatePBKDF2Credentials(java.lang.String,byte[],int)>
+		SHA-256: 880cb8a0e50fdfdac6c37774f590a181e949da2788c7f2d187a12cd2f2fd5e98
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9064)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey generateSymmetricKeyFromPassword(java.lang.String)>
+		SHA-256: 7f4dc4fe70cef7716e3539f9e8742465cf38e230cae3f006b13fd7885be84b82
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.SecretKey
+		Statement: $r5 = virtualinvoke $r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r1)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey generateSymmetricKeyPBKDF2(java.lang.String,int,byte[])>
+		SHA-256: 6a16e955941f4488bbca8d7934472b3db5e25139b346412d53f3d75fb3cc7c1d
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.PrivateKey
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <org.shadowice.flocke.andotp.Utilities.SecretKeyWrapper: javax.crypto.SecretKey unwrap(byte[])>
+		SHA-256: 9147709239ec6c6fc49ed972a0c2fecd39f5da5c37924f0477ad9f1724561f01
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer2014)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: byte[] encrypt(java.security.PublicKey,byte[])>
+		SHA-256: 1b067a6700360d785b937aa8557b02587037bc455468f08345de6ad47f2bf644
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Mac
+		Statement: $r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r4)
+		Method: <org.shadowice.flocke.andotp.Utilities.TokenCalculator: byte[] generateHash(org.shadowice.flocke.andotp.Utilities.TokenCalculator$HashAlgorithm,byte[],byte[])>
+		SHA-256: 292a06a1cd44bb4a3d29aabd4cdb344126befb46cb3a3982765a3bba6aeb58f
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r0.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: byte[] generateRandom(int)>
+		SHA-256: 9ea8e37cdf690800d2c4360d9e8c63db6ea4b23613f8cf72ff357e2d8d8c1412
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r1)
+		Method: <org.shadowice.flocke.andotp.Utilities.TokenCalculator: byte[] generateHash(org.shadowice.flocke.andotp.Utilities.TokenCalculator$HashAlgorithm,byte[],byte[])>
+		SHA-256: 14147ceafb69a5c348d86ea43d6d84b21b9fdd408087b5d70cac6814b2c8a5cb
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, varReplacer163, $i0, varReplacer164)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey generateSymmetricKey(byte[])>
+		SHA-256: d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923
+		Secure: false
+	Object:
+		Variable: varReplacer3840
+		Type: int
+		Statement: specialinvoke $r0.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r2, $i0, varReplacer3840)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: org.shadowice.flocke.andotp.Utilities.EncryptionHelper$PBKDF2Credentials generatePBKDF2Credentials(java.lang.String,byte[],int)>
+		SHA-256: e6cf0a54b1d91ce80b8601f69ec4356d6518dee9bb37b97f1cb1c64d29e983e3
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r0.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r2, $i0, varReplacer3840)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: org.shadowice.flocke.andotp.Utilities.EncryptionHelper$PBKDF2Credentials generatePBKDF2Credentials(java.lang.String,byte[],int)>
+		SHA-256: 691be6a10c55dd0fbfd2abf1d0237d48061364cf97b12dd9966d0fe2afafdf3e
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer9063)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey generateSymmetricKeyFromPassword(java.lang.String)>
+		SHA-256: 7590681cbd882c719af9cabb300e975dc143a32f2635abc5c26c991c41a44580
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: byte[] generateRandom(int)>
+		SHA-256: 296192bbc47bf53402c1578e905774759870b9748cb508dbd714984f8057aa93
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: java.security.KeyPairGenerator
+		Statement: $r13 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer91, varReplacer92)
+		Method: <org.shadowice.flocke.andotp.Utilities.KeyStoreHelper: java.security.KeyPair loadOrGenerateAsymmetricKeyPair(android.content.Context,java.lang.String)>
+		SHA-256: ec629382ea46f05d6a6baf8b8981c2862681e60320bdcf09e3797759da8e7e0d
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r4)
+		Method: <org.shadowice.flocke.andotp.Utilities.TokenCalculator: byte[] generateHash(org.shadowice.flocke.andotp.Utilities.TokenCalculator$HashAlgorithm,byte[],byte[])>
+		SHA-256: cf9cefb11a7b929e2cc57771256826e6c75b23605bf2232b69b1cb939cf2c7ef
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r4)
+		Method: <org.shadowice.flocke.andotp.Utilities.TokenCalculator: byte[] generateHash(org.shadowice.flocke.andotp.Utilities.TokenCalculator$HashAlgorithm,byte[],byte[])>
+		SHA-256: b0967865c007b9c674b9436054a838a162f361cf3f588301b80495ee7a166efd
+		Secure: false
+	Object:
+		Variable: $r24
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r24.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r17, $r18)
+		Method: <org.shadowice.flocke.andotp.Utilities.KeyStoreHelper: java.security.KeyPair loadOrGenerateAsymmetricKeyPair(android.content.Context,java.lang.String)>
+		SHA-256: 43193f407a13d9385ca104feea95d44f1d80d72eb31104900051a6aeacbbee89
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.shadowice.flocke.andotp.Utilities.TokenCalculator: java.lang.String MOTP(java.lang.String,java.lang.String,long,int)>
+		SHA-256: eaa89d1bca26c88df6d1b21041104e8db589c3be5edefa556be0e82dc4eebeee
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: byte[] encrypt(javax.crypto.SecretKey,byte[])>
+		SHA-256: d867e0b4107023eb601f6bfbda410c35ba06332789fc78a52035878671e906b6
+		Secure: true
+	Object:
+		Variable: varReplacer3838
+		Type: int
+		Statement: specialinvoke $r6.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, varReplacer3837, varReplacer3838)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: int benchmarkIterations(java.lang.String,byte[])>
+		SHA-256: aafa72afe7898568f16fbb595f49569aa9ef9a2c8d205d7a9f0b2edf9f918a7f
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer88)
+		Method: <org.shadowice.flocke.andotp.Utilities.KeyStoreHelper: java.security.KeyPair loadOrGenerateAsymmetricKeyPair(android.content.Context,java.lang.String)>
+		SHA-256: 60bb1c15447b3cba621e8d7c02ba29b6def5265def5341d90a8755327569fa6e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <org.apache.commons.codec.digest.DigestUtils: java.security.MessageDigest getDigest(java.lang.String)>
+		SHA-256: e941edb5217c879acd87fed3366e0d56fa56f48ce569721201e5ad4173f69b53
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer3835)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: int benchmarkIterations(java.lang.String,byte[])>
+		SHA-256: fcb1e8e431dc666d0385057e299410fc8dc4bea87be8e458742a10f2d054b04
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer9113)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: byte[] encrypt(javax.crypto.SecretKey,javax.crypto.spec.IvParameterSpec,byte[])>
+		SHA-256: e2ce926d7f361d9d10b871213e8e90646f189033909517d4d63711146a62e3f8
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.apache.commons.codec.digest.DigestUtils: byte[] sha256(byte[])>
+		SHA-256: d04a34131442e6215abf536c38358ba5d3ff2845ebd3a37286f3009aca967eb
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, varReplacer3837, varReplacer3838)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: int benchmarkIterations(java.lang.String,byte[])>
+		SHA-256: 4103d7ace5566f3de8e5584df4d27af030d7ac3d50da5c93f8333dd3f3e058a4
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.PrivateKey
+		Statement: $r5 = virtualinvoke $r4.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <org.shadowice.flocke.andotp.Utilities.Settings: java.lang.String getBackupPasswordEnc()>
+		SHA-256: b88a4d4d37ee1852610742092256eae7e1f8dea932c863c060cdd99f732c23f2
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey generateSymmetricKeyFromPassword(java.lang.String)>
+		SHA-256: 82d0126eb9767a4cfb2dd4a38fdc3d69f90aeb709c5a9c0055d6594afb825654
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3374)
+		Method: <org.shadowice.flocke.andotp.Utilities.TokenCalculator: java.lang.String MOTP(java.lang.String,java.lang.String,long,int)>
+		SHA-256: 949f89393756192f098bc4337201736210dd60a429745e0b24f9790f84541c60
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer1449)
+		Method: <org.shadowice.flocke.andotp.Utilities.SecretKeyWrapper: void <init>(java.security.KeyPair)>
+		SHA-256: 79d82635370226c11c7f1c0c6ed588494e40847c765d6a2de59eb62295c13792
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: byte[] encrypt(javax.crypto.SecretKey,byte[])>
+		SHA-256: b8629d0ada4d6520aa92d38ac7d2e8381de34072a5c6f8e38a95a5c011789182
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: byte[] decrypt(javax.crypto.SecretKey,byte[])>
+		SHA-256: 8661c6bb9eb7dee5917d699e52332cc8b2fa0bb6780bb7141e98ee0c9e3daff4
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.KeyStore
+		Statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer240)
+		Method: <org.shadowice.flocke.andotp.Utilities.KeyStoreHelper: void wipeKeys(android.content.Context)>
+		SHA-256: a8d8eb2d2e1e820ca608593188f06749346178ca29ec4dc386c8510cedf252e6
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r1)
+		Method: <org.shadowice.flocke.andotp.Utilities.TokenCalculator: byte[] generateHash(org.shadowice.flocke.andotp.Utilities.TokenCalculator$HashAlgorithm,byte[],byte[])>
+		SHA-256: d924838522401ff0a56842198add320f7435a89b8cd3a0a473436c546ddb1aac
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i0, varReplacer9061)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey generateSymmetricKeyPBKDF2(java.lang.String,int,byte[])>
+		SHA-256: fb2299ad8255e0ac9bd25877ed6c25f264ab0af7d2a337944e13568f9670e322
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer9062)
+		Method: <org.shadowice.flocke.andotp.Utilities.EncryptionHelper: javax.crypto.SecretKey generateSymmetricKeyPBKDF2(java.lang.String,int,byte[])>
+		SHA-256: 993c59f26c93cd4b59aa3a5eaad833d4e8205615e4dfd77bfb6e2e1c4c637463
+		Secure: false
+
+Findings in Java Class: org.shadowice.flocke.andotp.Utilities.KeyStoreHelper
+
+	 in Method: java.security.KeyPair loadOrGenerateAsymmetricKeyPair(android.content.Context,java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r24.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r17, $r18)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPairGenerator
+			First parameter was not properly generated as preparedRSA
+			at statement: virtualinvoke $r13.<java.security.KeyPairGenerator: void initialize(java.security.spec.AlgorithmParameterSpec)>($r25)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r24.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r17, $r18)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #60bb1c15447b3cba621e8d7c02ba29b6def5265def5341d90a8755327569fa6e)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer88)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #60bb1c15447b3cba621e8d7c02ba29b6def5265def5341d90a8755327569fa6e)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to getKey
+			at statement: $r14 = virtualinvoke $r3.<java.security.KeyStore: java.security.KeyStore$Entry getEntry(java.lang.String,java.security.KeyStore$ProtectionParameter)>($r2, varReplacer86)
+
+
+	 in Method: void wipeKeys(android.content.Context)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #a8d8eb2d2e1e820ca608593188f06749346178ca29ec4dc386c8510cedf252e6)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer240)
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Utilities.EncryptionHelper
+
+	 in Method: byte[] decrypt(javax.crypto.SecretKey,javax.crypto.spec.IvParameterSpec,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer100, $r2, $r0)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #3b91f56512e8a0640bb1315c3afed936d1b9a4c544bbe3790652ac30a4e5772f)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r3.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer100, $r2, $r0)
+
+
+	 in Method: byte[] decrypt(java.security.PrivateKey,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #88d7866e8e9a2d07d6e16b06a85021b29c324c9d6f13b9b4af33a5fd54952c30)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer349, $r1)
+
+
+	 in Method: byte[] encrypt(java.security.PublicKey,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #1b067a6700360d785b937aa8557b02587037bc455468f08345de6ad47f2bf644)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer2013, $r1)
+
+
+	 in Method: int benchmarkIterations(java.lang.String,byte[])
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4103d7ace5566f3de8e5584df4d27af030d7ac3d50da5c93f8333dd3f3e058a4)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: specialinvoke $r6.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, varReplacer3837, varReplacer3838)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4103d7ace5566f3de8e5584df4d27af030d7ac3d50da5c93f8333dd3f3e058a4)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r6.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, varReplacer3837, varReplacer3838)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #4103d7ace5566f3de8e5584df4d27af030d7ac3d50da5c93f8333dd3f3e058a4)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r6.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, varReplacer3837, varReplacer3838)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #fcb1e8e431dc666d0385057e299410fc8dc4bea87be8e458742a10f2d054b04)
+			First parameter (with value "PBKDF2WithHmacSHA1") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer3835)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: virtualinvoke $r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r6.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, varReplacer3837, varReplacer3838)
+
+
+	 in Method: org.shadowice.flocke.andotp.Utilities.EncryptionHelper$PBKDF2Credentials generatePBKDF2Credentials(java.lang.String,byte[],int)
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #880cb8a0e50fdfdac6c37774f590a181e949da2788c7f2d187a12cd2f2fd5e98)
+			First parameter (with value "PBKDF2WithHmacSHA1") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer3839)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r0.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r2, $i0, varReplacer3840)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r5 = virtualinvoke $r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r0)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #691be6a10c55dd0fbfd2abf1d0237d48061364cf97b12dd9966d0fe2afafdf3e)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r0.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r2, $i0, varReplacer3840)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #691be6a10c55dd0fbfd2abf1d0237d48061364cf97b12dd9966d0fe2afafdf3e)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r0.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r2, $i0, varReplacer3840)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #691be6a10c55dd0fbfd2abf1d0237d48061364cf97b12dd9966d0fe2afafdf3e)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: $r5 = virtualinvoke $r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r0)
+
+
+	 in Method: javax.crypto.SecretKey generateSymmetricKeyPBKDF2(java.lang.String,int,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r5 = virtualinvoke $r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r1)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #fb2299ad8255e0ac9bd25877ed6c25f264ab0af7d2a337944e13568f9670e322)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r1.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i0, varReplacer9061)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #fb2299ad8255e0ac9bd25877ed6c25f264ab0af7d2a337944e13568f9670e322)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r1.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r4, $r0, $i0, varReplacer9061)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #fb2299ad8255e0ac9bd25877ed6c25f264ab0af7d2a337944e13568f9670e322)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: $r5 = virtualinvoke $r3.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #993c59f26c93cd4b59aa3a5eaad833d4e8205615e4dfd77bfb6e2e1c4c637463)
+			First parameter (with value "PBKDF2WithHmacSHA1") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer9062)
+
+
+	 in Method: byte[] encrypt(javax.crypto.SecretKey,javax.crypto.spec.IvParameterSpec,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer9114, $r2, $r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer9114, $r2, $r0)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #e2ce926d7f361d9d10b871213e8e90646f189033909517d4d63711146a62e3f8)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r3.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+
+	 in Method: javax.crypto.SecretKey loadOrGenerateWrappedKey(java.io.File,java.security.KeyPair)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer81)
+
+
+	 in Method: javax.crypto.SecretKey generateSymmetricKey(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r0, varReplacer163, $i0, varReplacer164)
+
+
+	 in Method: javax.crypto.SecretKey generateSymmetricKeyFromPassword(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer9063)
+
+
+	 in Method: byte[] decrypt(javax.crypto.SecretKey,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+
+
+Findings in Java Class: j$.util.stream.Streams$1
+
+	 in Method: void run()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r2.<java.lang.Runnable: void run()>()
+
+
+Findings in Java Class: androidx.media.MediaBrowserServiceCompat$ServiceBinderImpl
+
+	 in Method: void getMediaItem(java.lang.String,android.support.v4.os.ResultReceiver,androidx.media.MediaBrowserServiceCompat$ServiceCallbacks)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r6.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r4)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r6.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r4)
+
+
+	 in Method: void unregisterCallbacks(androidx.media.MediaBrowserServiceCompat$ServiceCallbacks)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r2)
+
+
+	 in Method: void removeSubscription(java.lang.String,android.os.IBinder,androidx.media.MediaBrowserServiceCompat$ServiceCallbacks)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r6.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r4)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r6.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r4)
+
+
+	 in Method: void addSubscription(java.lang.String,android.os.IBinder,android.os.Bundle,androidx.media.MediaBrowserServiceCompat$ServiceCallbacks)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r7.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r5)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r7.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r5)
+
+
+	 in Method: void search(java.lang.String,android.os.Bundle,android.support.v4.os.ResultReceiver,androidx.media.MediaBrowserServiceCompat$ServiceCallbacks)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r7.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r5)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r7.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r5)
+
+
+	 in Method: void connect(java.lang.String,int,int,android.os.Bundle,androidx.media.MediaBrowserServiceCompat$ServiceCallbacks)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r6.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r6.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r1)
+
+
+	 in Method: void sendCustomAction(java.lang.String,android.os.Bundle,android.support.v4.os.ResultReceiver,androidx.media.MediaBrowserServiceCompat$ServiceCallbacks)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r7.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r5)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r7.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r5)
+
+
+	 in Method: void registerCallbacks(androidx.media.MediaBrowserServiceCompat$ServiceCallbacks,java.lang.String,int,int,android.os.Bundle)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r6.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r4)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r6.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r4)
+
+
+	 in Method: void disconnect(androidx.media.MediaBrowserServiceCompat$ServiceCallbacks)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<androidx.media.MediaBrowserServiceCompat$ServiceHandler: void postOrRun(java.lang.Runnable)>($r2)
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Receivers.PlainTextBackupBroadcastReceiver
+
+	 in Method: void onReceive(android.content.Context,android.content.Intent)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r9.<org.shadowice.flocke.andotp.Tasks.PlainTextBackupTask: void execute()>()
+
+
+Findings in Java Class: androidx.core.content.ContextCompat$MainHandlerExecutor
+
+	 in Method: void execute(java.lang.Runnable)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $z0 = virtualinvoke $r2.<android.os.Handler: boolean post(java.lang.Runnable)>($r1)
+
+
+Findings in Java Class: androidx.loader.content.ModernAsyncTask
+
+	 in Method: androidx.loader.content.ModernAsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object[])
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r2.<java.util.concurrent.Executor: void execute(java.lang.Runnable)>($r8)
+
+
+Findings in Java Class: androidx.viewpager.widget.ViewPager
+
+	 in Method: void completeScroll(boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r5.<java.lang.Runnable: void run()>()
+
+
+Findings in Java Class: com.journeyapps.barcodescanner.camera.CameraInstance
+
+	 in Method: void lambda$requestPreview$3$CameraInstance(com.journeyapps.barcodescanner.camera.PreviewCallback)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<com.journeyapps.barcodescanner.camera.CameraThread: void enqueue(java.lang.Runnable)>($r1)
+
+
+	 in Method: void requestPreview(com.journeyapps.barcodescanner.camera.PreviewCallback)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<android.os.Handler: boolean post(java.lang.Runnable)>($r3)
+
+
+	 in Method: void open()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<com.journeyapps.barcodescanner.camera.CameraThread: void incrementAndEnqueue(java.lang.Runnable)>($r1)
+
+
+	 in Method: void startPreview()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<com.journeyapps.barcodescanner.camera.CameraThread: void enqueue(java.lang.Runnable)>($r2)
+
+
+	 in Method: void setTorch(boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<com.journeyapps.barcodescanner.camera.CameraThread: void enqueue(java.lang.Runnable)>($r1)
+
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<com.journeyapps.barcodescanner.camera.CameraThread: void enqueue(java.lang.Runnable)>($r1)
+
+
+Findings in Java Class: androidx.appcompat.view.menu.MenuItemImpl
+
+	 in Method: boolean invoke()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r3.<java.lang.Runnable: void run()>()
+
+
+Findings in Java Class: androidx.core.widget.AutoScrollHelper
+
+	 in Method: void startAnimating()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: staticinvoke <androidx.core.view.ViewCompat: void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long)>($r1, $r2, $l0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: staticinvoke <androidx.core.view.ViewCompat: void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long)>($r1, $r2, $l0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r2.<java.lang.Runnable: void run()>()
+
+
+Findings in Java Class: j$.util.stream.AbstractPipeline
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r1 = r0.<j$.util.stream.AbstractPipeline: java.lang.Runnable sourceCloseAction>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<java.lang.Runnable: void run()>()
+
+
+Findings in Java Class: androidx.recyclerview.widget.RecyclerView
+
+	 in Method: androidx.recyclerview.widget.RecyclerView$ViewHolder getChildViewHolder(android.view.View)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>(r0)
+
+
+Findings in Java Class: androidx.appcompat.widget.ForwardingListener
+
+	 in Method: boolean onTouchObserved(android.view.MotionEvent)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<android.view.View: boolean postDelayed(java.lang.Runnable,long)>($r4, $l1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $z0 = virtualinvoke $r1.<android.view.View: boolean isEnabled()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $z0 = staticinvoke <androidx.appcompat.widget.ForwardingListener: boolean pointInView(android.view.View,float,float,float)>($r1, $f0, $f1, $f2)
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Activities.BackupActivity
+
+	 in Method: void doBackupPlain(android.net.Uri)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke r0.<org.shadowice.flocke.andotp.Activities.BackupActivity: void startBackgroundTask(org.shadowice.flocke.andotp.Tasks.UiBasedBackgroundTask,org.shadowice.flocke.andotp.Tasks.BackupTaskResult$ResultType)>($r1, $r5)
+
+
+	 in Method: void doRestoreCryptWithPassword(android.net.Uri,java.lang.String,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke r0.<org.shadowice.flocke.andotp.Activities.BackupActivity: void startBackgroundTask(org.shadowice.flocke.andotp.Tasks.UiBasedBackgroundTask,org.shadowice.flocke.andotp.Tasks.BackupTaskResult$ResultType)>($r3, $r4)
+
+
+	 in Method: void doBackupEncrypted(android.net.Uri,java.lang.String)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke r0.<org.shadowice.flocke.andotp.Activities.BackupActivity: void startBackgroundTask(org.shadowice.flocke.andotp.Tasks.UiBasedBackgroundTask,org.shadowice.flocke.andotp.Tasks.BackupTaskResult$ResultType)>($r3, $r4)
+
+
+	 in Method: void doBackupCryptWithPassword(android.net.Uri,java.lang.String)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke r0.<org.shadowice.flocke.andotp.Activities.BackupActivity: void startBackgroundTask(org.shadowice.flocke.andotp.Tasks.UiBasedBackgroundTask,org.shadowice.flocke.andotp.Tasks.BackupTaskResult$ResultType)>($r1, $r6)
+
+
+Findings in Java Class: androidx.core.view.NestedScrollingChildHelper
+
+	 in Method: void stopNestedScroll(int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r2 = specialinvoke r0.<androidx.core.view.NestedScrollingChildHelper: android.view.ViewParent getNestedScrollingParentForType(int)>($i0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: staticinvoke <androidx.core.view.ViewParentCompat: void onStopNestedScroll(android.view.ViewParent,android.view.View,int)>($r2, $r1, $i0)
+
+
+Findings in Java Class: androidx.fragment.app.BackStackRecord
+
+	 in Method: void runOnCommitRunnables()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r3.<java.lang.Runnable: void run()>()
+
+
+Findings in Java Class: androidx.recyclerview.widget.AdapterHelper
+
+	 in Method: void consumeUpdatesInOnePass()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r5.<java.lang.Runnable: void run()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r5 = r0.<androidx.recyclerview.widget.AdapterHelper: java.lang.Runnable mOnItemProcessedCallback>
+
+
+	 in Method: void preProcess()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r5.<java.lang.Runnable: void run()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r5 = r0.<androidx.recyclerview.widget.AdapterHelper: java.lang.Runnable mOnItemProcessedCallback>
+
+
+Findings in Java Class: androidx.core.app.ActivityCompat
+
+	 in Method: void recreate(android.app.Activity)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<android.os.Handler: boolean post(java.lang.Runnable)>($r3)
+
+
+	 in Method: void requestPermissions(android.app.Activity,java.lang.String[],int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<android.os.Handler: boolean post(java.lang.Runnable)>($r6)
+
+
+Findings in Java Class: androidx.loader.content.AsyncTaskLoader
+
+	 in Method: void executePendingTask()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<android.os.Handler: boolean postAtTime(java.lang.Runnable,long)>($r1, $l0)
+
+
+Findings in Java Class: androidx.fragment.app.DialogFragment
+
+	 in Method: void dismissInternal(boolean,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r4 = virtualinvoke $r3.<android.os.Handler: android.os.Looper getLooper()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r3.<android.os.Handler: boolean post(java.lang.Runnable)>($r5)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r3.<android.os.Handler: boolean post(java.lang.Runnable)>($r5)
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.View.EntriesCardAdapter
+
+	 in Method: void saveEntries(boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r7.<org.shadowice.flocke.andotp.Tasks.EncryptedBackupTask: void execute()>()
+
+
+	 in Method: void cardTapToRevealHandler(int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r7.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r8, $l3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r7.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r8, $l3)
+
+
+Findings in Java Class: androidx.core.view.ViewPropertyAnimatorCompat$ViewPropertyAnimatorListenerApi14
+
+	 in Method: void onAnimationEnd(android.view.View)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r5.<java.lang.Runnable: void run()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r5 = $r3.<androidx.core.view.ViewPropertyAnimatorCompat: java.lang.Runnable mEndAction>
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Receivers.EncryptedBackupBroadcastReceiver
+
+	 in Method: void onReceive(android.content.Context,android.content.Intent)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r10.<org.shadowice.flocke.andotp.Tasks.EncryptedBackupTask: void execute()>()
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Activities.AuthenticateActivity
+
+	 in Method: void startAuthTask(java.lang.String)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke r0.<org.shadowice.flocke.andotp.Activities.AuthenticateActivity: void startBackgroundTask(org.shadowice.flocke.andotp.Tasks.UiBasedBackgroundTask)>($r2)
+
+
+Findings in Java Class: com.google.android.material.timepicker.RadialViewGroup
+
+	 in Method: void updateLayoutParamsAsync()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<android.os.Handler: boolean post(java.lang.Runnable)>($r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<android.os.Handler: boolean post(java.lang.Runnable)>($r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke r0.<com.google.android.material.timepicker.RadialViewGroup: android.os.Handler getHandler()>()
+
+
+Findings in Java Class: androidx.appcompat.widget.TooltipCompatHandler
+
+	 in Method: void scheduleShow()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<android.view.View: boolean postDelayed(java.lang.Runnable,long)>($r2, $l1)
+
+
+	 in Method: void show(boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r3.<android.view.View: boolean postDelayed(java.lang.Runnable,long)>($r6, $l2)
+
+
+Findings in Java Class: androidx.recyclerview.widget.FastScroller
+
+	 in Method: void resetHideDelay(int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<androidx.recyclerview.widget.RecyclerView: boolean postDelayed(java.lang.Runnable,long)>($r2, $l1)
+
+
+Findings in Java Class: androidx.arch.core.executor.DefaultTaskExecutor
+
+	 in Method: void executeOnDiskIO(java.lang.Runnable)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r2.<java.util.concurrent.ExecutorService: void execute(java.lang.Runnable)>($r1)
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Activities.IntroScreenActivity$IntroFinishedFragment
+
+	 in Method: void saveSettings(org.shadowice.flocke.andotp.Utilities.Constants$EncryptionType,org.shadowice.flocke.andotp.Utilities.Constants$AuthMethod,java.lang.String,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r8.<org.shadowice.flocke.andotp.Tasks.FinishIntroTask: void execute()>()
+
+
+Findings in Java Class: androidx.fragment.app.Fragment
+
+	 in Method: void startPostponedEnterTransition()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<android.os.Handler: boolean postAtFrontOfQueue(java.lang.Runnable)>($r6)
+
+
+Findings in Java Class: androidx.fragment.app.FragmentManagerImpl
+
+	 in Method: void scheduleCommit()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r3.<android.os.Handler: boolean post(java.lang.Runnable)>($r4)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r3.<android.os.Handler: boolean post(java.lang.Runnable)>($r4)
+
+
+Findings in Java Class: androidx.recyclerview.widget.MessageThreadUtil$1
+
+	 in Method: void sendMessage(androidx.recyclerview.widget.MessageThreadUtil$SyncQueueItem)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r3.<android.os.Handler: boolean post(java.lang.Runnable)>($r4)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r3.<android.os.Handler: boolean post(java.lang.Runnable)>($r4)
+
+
+Findings in Java Class: androidx.recyclerview.widget.RecyclerView$4
+
+	 in Method: void processAppeared(androidx.recyclerview.widget.RecyclerView$ViewHolder,androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo,androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<androidx.recyclerview.widget.RecyclerView: void animateAppearance(androidx.recyclerview.widget.RecyclerView$ViewHolder,androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo,androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo)>($r1, $r2, $r3)
+
+
+	 in Method: void processDisappeared(androidx.recyclerview.widget.RecyclerView$ViewHolder,androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo,androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<androidx.recyclerview.widget.RecyclerView: void animateDisappearance(androidx.recyclerview.widget.RecyclerView$ViewHolder,androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo,androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo)>($r1, $r2, $r3)
+
+
+	 in Method: void processPersistent(androidx.recyclerview.widget.RecyclerView$ViewHolder,androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo,androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r4 = r0.<androidx.recyclerview.widget.RecyclerView$4: androidx.recyclerview.widget.RecyclerView this$0>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r4 = r0.<androidx.recyclerview.widget.RecyclerView$4: androidx.recyclerview.widget.RecyclerView this$0>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<androidx.recyclerview.widget.RecyclerView: void postAnimationRunner()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<androidx.recyclerview.widget.RecyclerView: void postAnimationRunner()>()
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Activities.MainActivity
+
+	 in Method: void startUpdater()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<android.os.Handler: boolean post(java.lang.Runnable)>($r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<android.os.Handler: boolean post(java.lang.Runnable)>($r2)
+
+
+Findings in Java Class: androidx.appcompat.widget.ActionBarOverlayLayout
+
+	 in Method: void addActionBarHideOffset()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<java.lang.Runnable: void run()>()
+
+
+	 in Method: void removeActionBarHideOffset()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r1.<java.lang.Runnable: void run()>()
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Preferences.CredentialsPreference
+
+	 in Method: void saveValues()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r11.<org.shadowice.flocke.andotp.Tasks.ChangeCredentialsTask: void execute()>()
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Activities.BackgroundTaskActivity$TaskFragment
+
+	 in Method: void setCallback(org.shadowice.flocke.andotp.Tasks.UiBasedBackgroundTask$UiCallback)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r2 = r0.<org.shadowice.flocke.andotp.Activities.BackgroundTaskActivity$TaskFragment: org.shadowice.flocke.andotp.Tasks.UiBasedBackgroundTask task>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<org.shadowice.flocke.andotp.Tasks.UiBasedBackgroundTask: void setCallback(org.shadowice.flocke.andotp.Tasks.UiBasedBackgroundTask$UiCallback)>($r1)
+
+
+Findings in Java Class: androidx.lifecycle.LiveData
+
+	 in Method: void postValue(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<androidx.arch.core.executor.ArchTaskExecutor: void postToMainThread(java.lang.Runnable)>($r6)
+
+
+Findings in Java Class: androidx.core.content.res.ResourcesCompat$FontCallback
+
+	 in Method: void callbackSuccessAsync(android.graphics.Typeface,android.os.Handler)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r3.<android.os.Handler: boolean post(java.lang.Runnable)>($r4)
+
+
+	 in Method: void callbackFailAsync(int,android.os.Handler)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<android.os.Handler: boolean post(java.lang.Runnable)>($r3)
+
+
+Findings in Java Class: android.support.v4.media.MediaBrowserCompat$MediaBrowserImplBase
+
+	 in Method: void connect()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<android.support.v4.media.MediaBrowserCompat$CallbackHandler: boolean post(java.lang.Runnable)>($r5)
+
+
+	 in Method: void disconnect()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<android.support.v4.media.MediaBrowserCompat$CallbackHandler: boolean post(java.lang.Runnable)>($r1)
+
+
+Findings in Java Class: androidx.lifecycle.ComputableLiveData$1
+
+	 in Method: void onActive()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r2.<java.util.concurrent.Executor: void execute(java.lang.Runnable)>($r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r2.<java.util.concurrent.Executor: void execute(java.lang.Runnable)>($r3)
+
+
+Findings in Java Class: androidx.recyclerview.widget.MessageThreadUtil$2
+
+	 in Method: void maybeExecuteBackgroundRunnable()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r2.<java.util.concurrent.Executor: void execute(java.lang.Runnable)>($r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r2.<java.util.concurrent.Executor: void execute(java.lang.Runnable)>($r3)
+
+
+Findings in Java Class: androidx.fragment.app.ListFragment
+
+	 in Method: void ensureList()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r9.<android.os.Handler: boolean post(java.lang.Runnable)>($r10)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r9.<android.os.Handler: boolean post(java.lang.Runnable)>($r10)
+
+
+Findings in Java Class: androidx.transition.Scene
+
+	 in Method: void exit()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r3 = r0.<androidx.transition.Scene: java.lang.Runnable mExitAction>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r3.<java.lang.Runnable: void run()>()
+
+
+Findings in Java Class: androidx.appcompat.app.AppCompatDelegateImpl
+
+	 in Method: void reopenMenu(boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r9.<java.lang.Runnable: void run()>()
+
+
+Findings in Java Class: com.google.zxing.client.android.InactivityTimer
+
+	 in Method: void activity()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r1, varReplacer4681)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r1, varReplacer4681)
+
+
+Findings in Java Class: androidx.customview.widget.ViewDragHelper
+
+	 in Method: boolean continueSettling(boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r4.<android.view.ViewGroup: boolean post(java.lang.Runnable)>($r5)
+
+
+Findings in Java Class: com.journeyapps.barcodescanner.CaptureManager
+
+	 in Method: void initializeFromIntent(android.content.Intent,android.os.Bundle)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r10.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r1, $l1)
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Utilities.UIHelper$1
+
+	 in Method: void onClick(android.content.DialogInterface,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: $r2 = r0.<org.shadowice.flocke.andotp.Utilities.UIHelper$1: java.lang.Runnable val$onOk>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r2.<java.lang.Runnable: void run()>()
+
+
+Findings in Java Class: androidx.recyclerview.widget.ItemTouchHelper$2
+
+	 in Method: void onTouchEvent(androidx.recyclerview.widget.RecyclerView,android.view.MotionEvent)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r7.<java.lang.Runnable: void run()>()
+
+
+Findings in Java Class: androidx.appcompat.widget.ListPopupWindow
+
+	 in Method: void show()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r9.<android.os.Handler: boolean post(java.lang.Runnable)>($r10)
+
+
+Findings in Java Class: com.google.zxing.client.android.InactivityTimer$PowerStatusReceiver
+
+	 in Method: void onReceive(android.content.Context,android.content.Intent)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r6.<android.os.Handler: boolean post(java.lang.Runnable)>($r7)
+
+
+Findings in Java Class: androidx.drawerlayout.widget.DrawerLayout$ViewDragCallback
+
+	 in Method: void onEdgeTouched(int,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<androidx.drawerlayout.widget.DrawerLayout: boolean postDelayed(java.lang.Runnable,long)>($r2, varReplacer14065)
+
+
+Findings in Java Class: androidx.core.app.ActivityRecreator
+
+	 in Method: boolean recreate(android.app.Activity)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<android.os.Handler: boolean post(java.lang.Runnable)>($r14)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r1.<android.os.Handler: boolean post(java.lang.Runnable)>($r14)
+
+
+Findings in Java Class: androidx.dynamicanimation.animation.AnimationHandler$FrameCallbackProvider14
+
+	 in Method: void postFrameCallback()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r1, $l0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke $r2.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r1, $l0)
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Activities.SettingsActivity
+
+	 in Method: void startEncryptionChangeTask(org.shadowice.flocke.andotp.Utilities.Constants$EncryptionType,byte[])
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: virtualinvoke r0.<org.shadowice.flocke.andotp.Activities.SettingsActivity: void startBackgroundTask(org.shadowice.flocke.andotp.Tasks.UiBasedBackgroundTask)>($r3)
+
+
+Findings in Java Class: androidx.recyclerview.widget.DefaultItemAnimator
+
+	 in Method: void runPendingAnimations()
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: staticinvoke <androidx.core.view.ViewCompat: void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long)>($r8, $r9, $l0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: staticinvoke <androidx.core.view.ViewCompat: void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long)>($r8, $r6, $l0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: staticinvoke <androidx.core.view.ViewCompat: void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long)>($r8, $r11, $l0)
+
+
+Findings in Java Class: androidx.core.view.ViewParentCompat
+
+	 in Method: void onStopNestedScroll(android.view.ViewParent,android.view.View,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r3.<androidx.core.view.NestedScrollingParent2: void onStopNestedScroll(android.view.View,int)>($r2, $i0)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #d4eeddd236a3874850996f39eef96d379f08c8edc2e6f4a083dc0bfdd064923)
+			Operation on object of type javax.crypto.spec.SecretKeySpec object not completed. Expected call to init
+			at statement: interfaceinvoke $r6.<androidx.core.view.NestedScrollingParent: void onStopNestedScroll(android.view.View)>($r2)
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Utilities.SecretKeyWrapper
+
+	 in Method: byte[] wrap(javax.crypto.SecretKey)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer1450, $r4)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #79d82635370226c11c7f1c0c6ed588494e40847c765d6a2de59eb62295c13792)
+			Unexpected call to method wrap on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] wrap(java.security.Key)>($r1)
+
+
+Findings in Java Class: org.shadowice.flocke.andotp.Utilities.TokenCalculator
+
+	 in Method: java.lang.String MOTP(java.lang.String,java.lang.String,long,int)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #949f89393756192f098bc4337201736210dd60a429745e0b24f9790f84541c60)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer3374)
+
+
+	 in Method: byte[] generateHash(org.shadowice.flocke.andotp.Utilities.TokenCalculator$HashAlgorithm,byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Mac: void init(java.security.Key)>($r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, $r4)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 47
+
+	CryptoAnalysis found the following violations. For details see description above.
+	NeverTypeOfError: 3
+	RequiredPredicateError: 21
+	HardCodedError: 3
+	ConstraintError: 6
+	IncompleteOperationError: 127
+	TypestateError: 5
+=====================================================================

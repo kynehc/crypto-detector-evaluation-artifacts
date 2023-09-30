@@ -1,0 +1,643 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r8
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r8 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r3)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.TrustManager[] getTrustManagers(java.security.KeyStore,java.util.Collection)>
+		SHA-256: 9c804c0b4803f8a94e59001bbe90c094994ae10399b1413da67714a012ddf203
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r5)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: void doStart()>
+		SHA-256: 3344b686090ce6bd10a0cd6ad4554cb11fe526b6f9219e5b33737f5108743b5f
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r10 = virtualinvoke $r8.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.TrustManager[] getTrustManagers(java.security.KeyStore,java.util.Collection)>
+		SHA-256: bda6682f9855f1798f6ab26f475757bab959e404f0e5c16aa147e9e09907420c
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer74546, $r2)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: aabc648d17f59796c18bea2abb418786a6e53007009436922548bbf830257c86
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: ae39b036c5eeeba58d380660f68e23806935f12d2f5c9cefe65440425aa34f4a
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 15a76129680a3cd57380001c355c828c5afc3ba9ce32fff65b352ff3390bbd6
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: $r4 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r3)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.KeyManager[] getKeyManagers(java.security.KeyStore)>
+		SHA-256: c3dab8329dc120e657299892c7d112d947fad6c6c22e38cf1394f4fd5bc3eaa7
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer73800)
+		Method: <org.eclipse.jetty.security.authentication.DigestAuthenticator$Digest: boolean check(java.lang.Object)>
+		SHA-256: c4eb3d748fb8aba1f24c48d8141a37decd06bc9eb9282f0ad7b92ac0272952df
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r2 = virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 84f17b7e3930c76e2b174d27b9668ee8d3209ae5512e2c539d541e6ef4265515
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: 6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer66965)
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator$1: com.bumptech.glide.load.engine.cache.SafeKeyGenerator$PoolableDigestContainer create()>
+		SHA-256: 4d03a04cbd15881339cbbad6f51063d8eb44d4272be1d6e23ffc9f48e0b1adbb
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: $r3 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>($r5)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: void doStart()>
+		SHA-256: fe977b0a16bded9d091ed63d54c935dd33980919b0b80611f1152e2a51f49e00
+		Secure: true
+	Object:
+		Variable: $r12
+		Type: java.security.MessageDigest
+		Statement: $r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer73783)
+		Method: <org.eclipse.jetty.util.security.Credential$MD5: boolean check(java.lang.Object)>
+		SHA-256: 4ce5342dd2a4c3db72646b7f3d675a421868e805c443b1617f218f504c243dd0
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: $r3 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>($r5)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: void doStart()>
+		SHA-256: fe977b0a16bded9d091ed63d54c935dd33980919b0b80611f1152e2a51f49e00
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: b189e83daa1cae39dacb5d56f8d20e560b21d5b6f8f0c6a35bc1a551d3d1c123
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r8 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r3)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.TrustManager[] getTrustManagers(java.security.KeyStore,java.util.Collection)>
+		SHA-256: 9c804c0b4803f8a94e59001bbe90c094994ae10399b1413da67714a012ddf203
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.cert.CertificateFactory
+		Statement: $r5 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer43477)
+		Method: <org.eclipse.jetty.server.ssl.SslCertificates: java.security.cert.X509Certificate[] getCertChain(javax.net.ssl.SSLSession)>
+		SHA-256: 61c894d993614817b9e5e7f6b2c9751ad1d703348838ce2fcde209e9987225e
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 5fb6984969c8c0f60ee84399ef18a49aa63648c889757c4080685ad119ecd903
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.net.ssl.CertPathTrustManagerParameters
+		Statement: specialinvoke $r9.<javax.net.ssl.CertPathTrustManagerParameters: void <init>(java.security.cert.CertPathParameters)>($r4)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.TrustManager[] getTrustManagers(java.security.KeyStore,java.util.Collection)>
+		SHA-256: c35258edf08d1d663d5a370a3faeb11522857755ba531cc7021a29691607c47
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.KeyStore
+		Statement: $r9 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r0)
+		Method: <org.eclipse.jetty.util.security.CertificateUtils: java.security.KeyStore getKeyStore(java.io.InputStream,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 2de84421c238dd35df94e8ba5819458453d277fc3a3d63a58c3d1191116d1eb3
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer54238)
+		Method: <org.eclipse.jetty.client.security.DigestAuthentication: java.lang.String newCnonce(org.eclipse.jetty.client.HttpExchange,org.eclipse.jetty.client.security.Realm,java.util.Map)>
+		SHA-256: 8cc9f3dfc701499f9c82e571909a882e3d5e35522df7afebef2d58ad740034f
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r10 = virtualinvoke $r8.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.TrustManager[] getTrustManagers(java.security.KeyStore,java.util.Collection)>
+		SHA-256: bda6682f9855f1798f6ab26f475757bab959e404f0e5c16aa147e9e09907420c
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.cert.CertificateFactory
+		Statement: $r4 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer42606)
+		Method: <org.eclipse.jetty.util.security.CertificateUtils: java.util.Collection loadCRL(java.lang.String)>
+		SHA-256: f7dc9a683d270635ee336738650cdf19c15f8e4763bea0c83bff9d198a50dfd
+		Secure: false
+	Object:
+		Variable: $r23
+		Type: java.security.cert.PKIXBuilderParameters
+		Statement: specialinvoke $r23.<java.security.cert.PKIXBuilderParameters: void <init>(java.security.KeyStore,java.security.cert.CertSelector)>($r8, $r5)
+		Method: <org.eclipse.jetty.util.security.CertificateValidator: void validate(java.security.cert.Certificate[])>
+		SHA-256: eea1feffe670638e96a5776aeb9f435313541c1246355da7d24e4b3be943dac2
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.eclipse.jetty.security.authentication.DigestAuthenticator: void <init>()>
+		SHA-256: 95059cf4222e57e85834dbd0d3e457f82f076a0e500943c289c606c3707feaf0
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <com.m3sv.plainupnp.upnp.UpnpContentRepositoryImpl: void <clinit>()>
+		SHA-256: 53be6db2ee2eeaab781b964f15e010157bf8a1d13d687b753dd88a910fbca824
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: java.security.KeyStore
+		Statement: $r9 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>($r0, $r1)
+		Method: <org.eclipse.jetty.util.security.CertificateUtils: java.security.KeyStore getKeyStore(java.io.InputStream,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: f37c29025a192792c87dbda553d3497426cf94920d5059cc79b2b08916802cd7
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer74543)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 317d4ac0215154c55cf445f31919bdcc3c19e95b42e07bba8ee2aa7581dc0e20
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <org.eclipse.jetty.client.security.DigestAuthentication: java.lang.String newCnonce(org.eclipse.jetty.client.HttpExchange,org.eclipse.jetty.client.security.Realm,java.util.Map)>
+		SHA-256: 75b9d9becbc3dd2f1d400ff82bd201c696a1a94c996ef1962862761c64cf4114
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.cert.CertificateFactory
+		Statement: $r6 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer64433)
+		Method: <okhttp3.Cache$Entry: java.util.List readCertificateList(okio.BufferedSource)>
+		SHA-256: 7b40fa868af510f63028397fa5aad7b5115678938cf1f59725fc6f21bdfe6e6d
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r5)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: void doStart()>
+		SHA-256: 3344b686090ce6bd10a0cd6ad4554cb11fe526b6f9219e5b33737f5108743b5f
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: d4bf5cc88c644b9a20ac4aef1746c1f0c9ae862102406e7436b8866c875859ff
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.eclipse.jetty.client.security.DigestAuthentication: java.lang.String newResponse(java.lang.String,org.eclipse.jetty.client.HttpExchange,org.eclipse.jetty.client.security.Realm,java.util.Map)>
+		SHA-256: 313a0c266e45a86b5dc5080fdf25c8c524e20cdd3d1d0b56d300e7e0c7996b4a
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r4 = virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: a729cfd5669df603070b7ba7d05b524b10a048ab1da974a5ccb1df973521b7d3
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.eclipse.jetty.server.session.AbstractSessionIdManager: void initRandom()>
+		SHA-256: edd44b93896dfe00450928d17f69d9a90bcac2b55f70116c617c1facc82cac06
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.lang.Object[]
+		Statement: $r6 = virtualinvoke $r4.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.KeyManager[] getKeyManagers(java.security.KeyStore)>
+		SHA-256: de2989dacfafabef4bfc8d209c479dacbfd7b2706eeec81843ca5e60059a3e9d
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer54248)
+		Method: <org.eclipse.jetty.client.security.DigestAuthentication: java.lang.String newResponse(java.lang.String,org.eclipse.jetty.client.HttpExchange,org.eclipse.jetty.client.security.Realm,java.util.Map)>
+		SHA-256: 7feb3cb9c9d39f1d11a291a30efe60970c8e486682113c02fa37fc35aa30225f
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.lang.String)>(varReplacer74124, varReplacer74125)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 3f0044dec6fbef92f128c38d117ff5a066183b3d7905e0c70eee9b1fe482675c
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.lang.String)>($r20, $r5)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: void doStart()>
+		SHA-256: fbae95eecaa997df2876c8e23ef796ca58868bd7a391d9de36507707d203861a
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.eclipse.jetty.security.authentication.DigestAuthenticator$Digest: boolean check(java.lang.Object)>
+		SHA-256: d5f5a7a9ea69143e5509e8c324c5acfe668631e43e7f2084811cc9240e96d1d8
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.eclipse.jetty.security.authentication.DigestAuthenticator$Digest: boolean check(java.lang.Object)>
+		SHA-256: d5f5a7a9ea69143e5509e8c324c5acfe668631e43e7f2084811cc9240e96d1d8
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLEngine
+		Statement: virtualinvoke $r1.<javax.net.ssl.SSLEngine: void setEnabledCipherSuites(java.lang.String[])>($r2)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: void customize(javax.net.ssl.SSLEngine)>
+		SHA-256: 3db855a164a3e61c20e1472a6b39844bb720f7b4e6e5ffa20e203e2782bedcfb
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 316cbc86e080130334eaabd60025d96084375d0058312a103cd3255ba6f0aeb
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r9 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.eclipse.jetty.client.security.DigestAuthentication: java.lang.String newResponse(java.lang.String,org.eclipse.jetty.client.HttpExchange,org.eclipse.jetty.client.security.Realm,java.util.Map)>
+		SHA-256: 91b1a30b88b9c5530eee739f8ac49cfeca10a06dc3cadc5213b760545bd41045
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.eclipse.jetty.client.security.DigestAuthentication: java.lang.String newResponse(java.lang.String,org.eclipse.jetty.client.HttpExchange,org.eclipse.jetty.client.security.Realm,java.util.Map)>
+		SHA-256: 313a0c266e45a86b5dc5080fdf25c8c524e20cdd3d1d0b56d300e7e0c7996b4a
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.eclipse.jetty.security.authentication.DigestAuthenticator$Digest: boolean check(java.lang.Object)>
+		SHA-256: d5f5a7a9ea69143e5509e8c324c5acfe668631e43e7f2084811cc9240e96d1d8
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: c3dcfb07eabeaead2afa7b41e33d56187e303e14a7184c21b7bac99836f2c278
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.security.Provider)>($r1, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 1027fce20723454b26980f38c5edb26bcec19bffa5b6443c75459b577c51d460
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.cert.PKIXBuilderParameters
+		Statement: specialinvoke $r4.<java.security.cert.PKIXBuilderParameters: void <init>(java.security.KeyStore,java.security.cert.CertSelector)>($r1, $r5)
+		Method: <org.eclipse.jetty.util.ssl.SslContextFactory: javax.net.ssl.TrustManager[] getTrustManagers(java.security.KeyStore,java.util.Collection)>
+		SHA-256: 61d7ae6c8198ba19dfb7d5e2e173ae934eceaee3098f3304877291093921f44e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer74540, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 7617d1e2d1abadcd46b93ed9e3d6d142e22957cdafcecdd4b0aa4fe858807a87
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer74544, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: c7fa00ede62b1c58092ce7fccd70b9c6d7be23f9547fd024704f062b7653815
+		Secure: false
+
+Findings in Java Class: org.eclipse.jetty.util.ssl.SslContextFactory
+
+	 in Method: javax.net.ssl.KeyManager[] getKeyManagers(java.security.KeyStore)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r4.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r1, $r2)
+
+		NeverTypeOfError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #c3dab8329dc120e657299892c7d112d947fad6c6c22e38cf1394f4fd5bc3eaa7)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r4.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r1, $r2)
+
+		HardCodedError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #c3dab8329dc120e657299892c7d112d947fad6c6c22e38cf1394f4fd5bc3eaa7)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r4.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>($r1, $r2)
+
+
+	 in Method: javax.net.ssl.TrustManager[] getTrustManagers(java.security.KeyStore,java.util.Collection)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedManagerFactoryParameters
+			at statement: virtualinvoke $r8.<javax.net.ssl.TrustManagerFactory: void init(javax.net.ssl.ManagerFactoryParameters)>($r9)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.CertPathTrustManagerParameters
+			First parameter was not properly generated as generatedCertPathParameters
+			at statement: specialinvoke $r9.<javax.net.ssl.CertPathTrustManagerParameters: void <init>(java.security.cert.CertPathParameters)>($r4)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r8.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r1)
+
+		RequiredPredicateError violating CrySL rule for java.security.cert.PKIXBuilderParameters
+			First parameter was not properly generated as generatedKeyStore
+			at statement: specialinvoke $r4.<java.security.cert.PKIXBuilderParameters: void <init>(java.security.KeyStore,java.security.cert.CertSelector)>($r1, $r5)
+
+
+	 in Method: void doStart()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r19, $r8, $r3)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r19, $r8, $r3)
+
+
+Findings in Java Class: org.eclipse.jetty.util.security.CertificateUtils
+
+	 in Method: java.util.Collection loadCRL(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #f7dc9a683d270635ee336738650cdf19c15f8e4763bea0c83bff9d198a50dfd)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate
+			at statement: $r5 = virtualinvoke $r4.<java.security.cert.CertificateFactory: java.util.Collection generateCRLs(java.io.InputStream)>($r3)
+
+
+	 in Method: java.security.KeyStore getKeyStore(java.io.InputStream,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #2de84421c238dd35df94e8ba5819458453d277fc3a3d63a58c3d1191116d1eb3)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r9.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r3, $r5)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #2de84421c238dd35df94e8ba5819458453d277fc3a3d63a58c3d1191116d1eb3)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r9.<java.security.KeyStore: void load(java.io.InputStream,char[])>($r3, $r5)
+
+
+Findings in Java Class: org.eclipse.jetty.server.ssl.SslCertificates
+
+	 in Method: java.security.cert.X509Certificate[] getCertChain(javax.net.ssl.SSLSession)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #61c894d993614817b9e5e7f6b2c9751ad1d703348838ce2fcde209e9987225e)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r8 = virtualinvoke $r5.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r0)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #61c894d993614817b9e5e7f6b2c9751ad1d703348838ce2fcde209e9987225e)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r5 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer43477)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #61c894d993614817b9e5e7f6b2c9751ad1d703348838ce2fcde209e9987225e)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r8 = virtualinvoke $r5.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r0)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest$okio(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ae39b036c5eeeba58d380660f68e23806935f12d2f5c9cefe65440425aa34f4a)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: okio.SegmentedByteString
+
+	 in Method: okio.ByteString digest$okio(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r6 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: org.eclipse.jetty.client.security.DigestAuthentication
+
+	 in Method: java.lang.String newCnonce(org.eclipse.jetty.client.HttpExchange,org.eclipse.jetty.client.security.Realm,java.util.Map)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #8cc9f3dfc701499f9c82e571909a882e3d5e35522df7afebef2d58ad740034f)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer54238)
+
+
+	 in Method: java.lang.String newResponse(java.lang.String,org.eclipse.jetty.client.HttpExchange,org.eclipse.jetty.client.security.Realm,java.util.Map)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #7feb3cb9c9d39f1d11a291a30efe60970c8e486682113c02fa37fc35aa30225f)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer54248)
+
+
+Findings in Java Class: okhttp3.Cache$Entry
+
+	 in Method: java.util.List readCertificateList(okio.BufferedSource)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #7b40fa868af510f63028397fa5aad7b5115678938cf1f59725fc6f21bdfe6e6d)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r6 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer64433)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #7b40fa868af510f63028397fa5aad7b5115678938cf1f59725fc6f21bdfe6e6d)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r11 = virtualinvoke $r6.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r10)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #7b40fa868af510f63028397fa5aad7b5115678938cf1f59725fc6f21bdfe6e6d)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r11 = virtualinvoke $r6.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r10)
+
+
+Findings in Java Class: org.eclipse.jetty.util.security.Credential$MD5
+
+	 in Method: boolean check(java.lang.Object)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4ce5342dd2a4c3db72646b7f3d675a421868e805c443b1617f218f504c243dd0)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer73783)
+
+
+Findings in Java Class: org.eclipse.jetty.security.authentication.DigestAuthenticator$Digest
+
+	 in Method: boolean check(java.lang.Object)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c4eb3d748fb8aba1f24c48d8141a37decd06bc9eb9282f0ad7b92ac0272952df)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer73800)
+
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #317d4ac0215154c55cf445f31919bdcc3c19e95b42e07bba8ee2aa7581dc0e20)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer74543)
+
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer74130, $r3, varReplacer74130)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer74130, $r3, varReplacer74130)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer74130, $r3, varReplacer74130)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer74115)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #c7fa00ede62b1c58092ce7fccd70b9c6d7be23f9547fd024704f062b7653815)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer74544, $r2)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer74117)
+
+
+Findings in Java Class: okhttp3.internal.platform.BouncyCastlePlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #aabc648d17f59796c18bea2abb418786a6e53007009436922548bbf830257c86)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer74546, $r2)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer74128)
+
+
+Findings in Java Class: org.eclipse.jetty.util.security.CertificateValidator
+
+	 in Method: void validate(java.security.cert.Certificate[])
+		RequiredPredicateError violating CrySL rule for java.security.cert.PKIXBuilderParameters
+			First parameter was not properly generated as generatedKeyStore
+			at statement: specialinvoke $r23.<java.security.cert.PKIXBuilderParameters: void <init>(java.security.KeyStore,java.security.cert.CertSelector)>($r8, $r5)
+
+
+Findings in Java Class: okhttp3.internal.platform.OpenJSSEPlatform
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer74107)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 51
+
+	CryptoAnalysis found the following violations. For details see description above.
+	HardCodedError: 2
+	ConstraintError: 9
+	RequiredPredicateError: 15
+	TypestateError: 3
+	NeverTypeOfError: 2
+	IncompleteOperationError: 5
+=====================================================================

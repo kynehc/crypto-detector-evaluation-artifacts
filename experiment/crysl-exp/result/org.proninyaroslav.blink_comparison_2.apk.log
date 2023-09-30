@@ -1,0 +1,244 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer9316)
+		Method: <com.google.android.exoplayer2.source.hls.a: long o(b2.o)>
+		SHA-256: 2747836dc41b59c31085cf638e0d23363b7231ade377e0b2bc593064cf17b610
+		Secure: false
+	Object:
+		Variable: varReplacer9316
+		Type: java.lang.String
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer9316)
+		Method: <com.google.android.exoplayer2.source.hls.a: long o(b2.o)>
+		SHA-256: 5f9784e1c88b70f5ec93364326ea8cfe5a7a9cfd4f3c363aff5db76774aedafa
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <x2.a: java.lang.String d(byte[])>
+		SHA-256: 744e82bdf4dd8eabb80722128e77ccfd978657c6aa8b7f66184dcc347fcfa406
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.Cipher
+		Statement: $r1 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer12688)
+		Method: <com.google.android.exoplayer2.source.hls.a: javax.crypto.Cipher q()>
+		SHA-256: 674bcbb8b010eae4b2b587b28b69411fd8bf2af8550ba72a10baf335ca757a25
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer20555)
+		Method: <x2.a: java.lang.String d(byte[])>
+		SHA-256: a1417cf4920af79b920f5bcf5761160a0d9b19ecd39c4eed4a012337ed26787
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+		Method: <com.google.android.exoplayer2.source.hls.a: long o(b2.o)>
+		SHA-256: 92b17da1965fc60b324e78175512cad3fb350daaf89f981f25e43dabc77cc63
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r8.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r6, $r1)
+		Method: <com.google.android.exoplayer2.source.hls.a: long o(b2.o)>
+		SHA-256: dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a
+		Secure: false
+
+Findings in Java Class: com.google.android.exoplayer2.source.hls.e
+
+	 in Method: void r()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.source.hls.e: void k(b2.l,b2.o,boolean)>($r3, $r4, $z0)
+
+
+	 in Method: void s()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<com.google.android.exoplayer2.source.hls.e: void k(b2.l,b2.o,boolean)>($r2, $r1, $z0)
+
+
+Findings in Java Class: b2.w
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<b2.g: void r()>()
+
+
+Findings in Java Class: b2.n
+
+	 in Method: void a()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: interfaceinvoke $r2.<b2.l: long o(b2.o)>($r1)
+
+
+Findings in Java Class: b2.f0
+
+	 in Method: long o(b2.o)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $l0 = interfaceinvoke $r4.<b2.l: long o(b2.o)>($r1)
+
+
+Findings in Java Class: b2.h
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<b2.g: void r()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<b2.g: void r()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<b2.g: void r()>()
+
+
+Findings in Java Class: m0.f
+
+	 in Method: int t(byte[],int,int,int,boolean)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to java.io.InputStream: int read(byte[],int,int), javax.crypto.CipherInputStream: int read(), java.io.InputStream: int read(byte[]), java.io.FilterInputStream: int read(byte[],int,int), java.io.InputStream: int read(), javax.crypto.CipherInputStream: int read(byte[]), java.io.FilterInputStream: int read(byte[]), java.io.FilterInputStream: int read(), javax.crypto.CipherInputStream: int read(byte[],int,int)
+			at statement: $i0 = interfaceinvoke $r2.<b2.i: int read(byte[],int,int)>($r1, $i0, $i1)
+
+
+Findings in Java Class: b2.c
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<b2.g: void r()>()
+
+
+Findings in Java Class: b2.e0
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<b2.g: void r()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<b2.g: void r()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<b2.g: void r()>()
+
+
+Findings in Java Class: b2.u
+
+	 in Method: void close()
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<b2.u: void u()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dc9a4b41def7993a9c5065da4848e3191da24da8ba3090f5749aa14aa63b7a4a)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke r0.<b2.g: void r()>()
+
+
+Findings in Java Class: com.google.android.exoplayer2.source.hls.a
+
+	 in Method: javax.crypto.Cipher q()
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #674bcbb8b010eae4b2b587b28b69411fd8bf2af8550ba72a10baf335ca757a25)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r1 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer12688)
+
+
+	 in Method: long o(b2.o)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r1.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer9315, $r3, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r5.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer9316)
+
+
+Findings in Java Class: x2.a
+
+	 in Method: java.lang.String d(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #a1417cf4920af79b920f5bcf5761160a0d9b19ecd39c4eed4a012337ed26787)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer20555)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 7
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 2
+	RequiredPredicateError: 3
+	IncompleteOperationError: 15
+=====================================================================

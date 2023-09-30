@@ -1,0 +1,167 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2033)
+		Method: <d.e.a.i.g$a: java.lang.Object a()>
+		SHA-256: 7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8
+		Secure: false
+
+Findings in Java Class: d.e.a.i.g$a
+
+	 in Method: java.lang.Object a()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			First parameter (with value "SHA256") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2033)
+
+
+Findings in Java Class: d.e.a.i.i.g$f
+
+	 in Method: java.lang.Object k(java.lang.Object,java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r6 = staticinvoke <d.e.a.i.i.g: d.e.a.i.g J0(d.e.a.i.i.g)>($r5)
+
+
+Findings in Java Class: com.tnibler.cryptocam.MainActivity
+
+	 in Method: void z(d.f.b.a.a)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r15 = (d.e.a.i.g) $r8
+
+
+Findings in Java Class: d.e.a.i.i.h
+
+	 in Method: java.lang.Object c(java.lang.Object,f.k.d)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r16 = staticinvoke <d.d.a.b: d.e.a.i.i.f h0(d.e.a.i.g,d.e.a.i.g$c)>($r15, $r13)
+
+
+Findings in Java Class: d.e.a.i.i.g$b
+
+	 in Method: java.lang.Object h(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r9 = staticinvoke <d.e.a.i.i.g: d.e.a.i.g J0(d.e.a.i.i.g)>($r8)
+
+
+Findings in Java Class: d.e.a.i.i.g$e
+
+	 in Method: java.lang.Object a()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r10 = staticinvoke <d.d.a.b: d.e.a.i.i.f h0(d.e.a.i.g,d.e.a.i.g$c)>($r4, $r9)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r4 = staticinvoke <d.e.a.i.i.g: d.e.a.i.g J0(d.e.a.i.i.g)>($r1)
+
+
+Findings in Java Class: com.tnibler.cryptocam.video.RecordingService
+
+	 in Method: void i()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r12 = virtualinvoke r0.<com.tnibler.cryptocam.video.RecordingService: android.content.SharedPreferences g()>()
+
+
+	 in Method: void onCreate()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: specialinvoke $r24.<d.e.a.a: void <init>(android.content.SharedPreferences)>($r4)
+
+
+Findings in Java Class: d.e.a.i.i.i
+
+	 in Method: java.lang.Object o(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = virtualinvoke $r4.<d.e.a.i.g: boolean b(d.e.a.i.g$c)>($r2)
+
+
+Findings in Java Class: d.e.a.i.i.g$d
+
+	 in Method: java.lang.Object a()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r2 = staticinvoke <d.e.a.i.i.g: d.e.a.i.g J0(d.e.a.i.i.g)>($r1)
+
+
+Findings in Java Class: d.e.a.i.i.g$c$a$b
+
+	 in Method: java.lang.Object a()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r4 = staticinvoke <d.e.a.i.i.g: d.e.a.i.g J0(d.e.a.i.i.g)>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7f7e6cba4cb70f05faab28924bccdbb07db102c3fa235a60b5954ae6f59825a8)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r10 = staticinvoke <d.d.a.b: d.e.a.i.i.f h0(d.e.a.i.g,d.e.a.i.g$c)>($r4, $r9)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 1
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 1
+	IncompleteOperationError: 12
+=====================================================================

@@ -1,0 +1,788 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r6
+		Type: java.security.KeyFactory
+		Statement: $r6 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer8931)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: javax.crypto.interfaces.DHPublicKey getDHPublicKey(java.math.BigInteger)>
+		SHA-256: 63d27769f1c3212ef412c56f342d11f755e0ba299ff9b090fbc53558ef5354bc
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9140)
+		Method: <com.novell.sasl.client.DigestMD5SaslClient: char[] DigestCalcHA1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 6662f83b2ed86918d022fb5b3310e225e8c55d31db194db37da637b55fcb6c2c
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <com.xabber.android.data.extension.capability.Capability: java.lang.String getHashedValue(java.lang.String)>
+		SHA-256: d62a4794a4cec0e8b9408abf5e684c1f7b964a1c5756f26da7f6ca0e0d4e7739
+		Secure: true
+	Object:
+		Variable: r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r1.<java.security.SecureRandom: void <init>()>()
+		Method: <net.java.otr4j.crypto.SM: java.math.BigInteger randomExponent()>
+		SHA-256: 829d6ab39ad1e60b4481ce3a8d85dd75db5e0717ea0a8b128195dddb20d3f6a6
+		Secure: true
+	Object:
+		Variable: varReplacer8872
+		Type: java.lang.String
+		Statement: $r14 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer8872)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: java.security.KeyPair generateDHKeyPair()>
+		SHA-256: d493d1987c9265c81b9e6fb8aaf886d1c90238874ad2d76a22d85c3f48957dab
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: java.security.PublicKey
+		Statement: $r16 = virtualinvoke $r14.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>(r6)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: java.security.KeyPair generateDHKeyPair()>
+		SHA-256: fc8d909c70b20c7fef2a864f29075e30e80951e6e1e717e9afe9ab73f4648682
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r9 = virtualinvoke $r8.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.novell.sasl.client.DigestMD5SaslClient: char[] DigestCalcResponse(char[],java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean)>
+		SHA-256: b33053ef6e239afb760b4ddce587faabe16428217f4f7b844d0c38f57dd86f37
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>(r3)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: javax.crypto.interfaces.DHPublicKey getDHPublicKey(java.math.BigInteger)>
+		SHA-256: f23c01f300659543da2ff00d4e361f7b9c49879037b638766dc84f7b16974522
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8222)
+		Method: <org.jivesoftware.smack.sasl.SASLFacebookConnect: java.lang.String MD5(java.lang.String)>
+		SHA-256: f59b1988a08baff271a13772481f6579dc7137fe9cfadf9f99df94dce1d91b5
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <net.java.otr4j.crypto.SM: java.math.BigInteger hash(int,java.math.BigInteger,java.math.BigInteger)>
+		SHA-256: fa4d49d663dd26e7b631ee678c90de8920751b280f0f3009178a94619c9f4ec4
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: $r11 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>(varReplacer6476)
+		Method: <org.jivesoftware.smack.XMPPConnection: void enableEncryption(boolean)>
+		SHA-256: b20dfd519bcffced730c58ba3c35c1486a563f9931f72b9631925e676ce13a79
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <org.xbill.DNS.utils.HMAC: byte[] sign()>
+		SHA-256: 1e31e15d341bd5b649e3174c2df91f09ef704d73f0791a55fd926de41359b1a0
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r5.<javax.crypto.KeyAgreement: byte[] generateSecret()>()
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: java.math.BigInteger generateSecret(java.security.PrivateKey,java.security.PublicKey)>
+		SHA-256: ac59a461b042c7a19d0e4fa891abf67ab18ce709f1a73b3181a6d704f2ac7595
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r1)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha256Hmac(byte[],byte[],int)>
+		SHA-256: e3f7951696a434c34d1b5de88a60e8127be16a30e0f998f47d270352c01b5251
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.PublicKey
+		Statement: $r8 = virtualinvoke $r7.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>(r1)
+		Method: <net.java.otr4j.io.OtrInputStream: java.security.PublicKey readPublicKey()>
+		SHA-256: 1025ca98c462c5e91fe7f7130e6e85593af41c65eade6b66bb01c951577ead9
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.KeyPairGenerator
+		Statement: $r5 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(varReplacer3303)
+		Method: <com.xabber.android.data.extension.otr.OTRManager$3: void run()>
+		SHA-256: 85d23fbfde8e2c7c946e222984514f89163127a790409513e0171f019ae3f98d
+		Secure: false
+	Object:
+		Variable: varReplacer8931
+		Type: java.lang.String
+		Statement: $r6 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer8931)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: javax.crypto.interfaces.DHPublicKey getDHPublicKey(java.math.BigInteger)>
+		SHA-256: 724a296aec3f7dd26186f74bb00521cad7f670219c1378a8fcfe6a2ba23a87d9
+		Secure: false
+	Object:
+		Variable: r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer4604)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha1Hmac(byte[],byte[],int)>
+		SHA-256: 9680aad6635f428897ef1176e4395fa695fed27ad92d50bd8de15d49036c2acd
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9554)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha256Hash(byte[])>
+		SHA-256: 64c2b01ec5df3d148dd3579b138e145336530f90e5acfa61d6d21e9474b30591
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r3)
+		Method: <com.xabber.android.data.extension.capability.Capability: java.lang.String getHashedValue(java.lang.String)>
+		SHA-256: 3cbf3847677ed0803a9441c2400e081693febed61a3cd1207baf3c91cde2dbcc
+		Secure: true
+	Object:
+		Variable: $r20
+		Type: java.security.KeyStore
+		Statement: $r20 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r9)
+		Method: <org.jivesoftware.smack.XMPPConnection: void enableEncryption(boolean)>
+		SHA-256: 13276bb225df606ea2e8f3911998aa0808f97737692244ad230b32478716ecb6
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9320)
+		Method: <net.java.otr4j.crypto.SM: java.math.BigInteger hash(int,java.math.BigInteger,java.math.BigInteger)>
+		SHA-256: 6505b002a3103b614c718aba04146a321a28b4fb5d6bad5172d98d9b97dc2581
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.xbill.DNS.UDPClient: void <clinit>()>
+		SHA-256: fcebb9e881f86bd38585606df0d0e993ca0aa8852fe9338092fa2df92cf72b68
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r9 = virtualinvoke $r8.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.novell.sasl.client.DigestMD5SaslClient: char[] DigestCalcResponse(char[],java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean)>
+		SHA-256: b33053ef6e239afb760b4ddce587faabe16428217f4f7b844d0c38f57dd86f37
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r6 = virtualinvoke $r5.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.jivesoftware.smack.XMPPTrustManager: void <init>(java.security.KeyStore,java.lang.String,org.jivesoftware.smack.CertificateListener,boolean,boolean,boolean)>
+		SHA-256: e13276effe787e7065060a1e86b604f4c8e52e428ce609418e8bae0d827aef64
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha1Hash(byte[])>
+		SHA-256: 234105360c92d648575948edd2ad53309584e660dc5baa3b5b6876db41877e69
+		Secure: false
+	Object:
+		Variable: $r20
+		Type: java.security.KeyStore
+		Statement: $r20 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.security.Provider)>(varReplacer6488, r19)
+		Method: <org.jivesoftware.smack.XMPPConnection: void enableEncryption(boolean)>
+		SHA-256: 893cf3c31174420386ad75d4b494eeb58c9cdc01c29ef25e9f4559bf5ff82dbb
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <org.xbill.DNS.utils.HMAC: void <init>(java.lang.String,int,byte[])>
+		SHA-256: 6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7
+		Secure: true
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.jivesoftware.smack.sasl.SASLFacebookConnect: java.lang.String MD5(java.lang.String)>
+		SHA-256: b8693f8ec881529116931c7e45cc4f90923b51b4fed3bb1d667ab6297afca6fc
+		Secure: false
+	Object:
+		Variable: varReplacer9624
+		Type: java.lang.String
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer9624)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha256Hmac(byte[],byte[],int)>
+		SHA-256: ea4c08aef9ddc944ea2963a9283aa03bbcd774a433e1bbc787f43efaacb5f996
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.MessageDigest
+		Statement: $r8 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9160)
+		Method: <com.novell.sasl.client.DigestMD5SaslClient: char[] DigestCalcResponse(char[],java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean)>
+		SHA-256: 7195dbf978f61e6abf90dcb23819f86664ab06d1d756a601e9d5ac2e621fdf65
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.KeyStore
+		Statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer5314)
+		Method: <com.xabber.android.data.connection.CertificateManager: java.security.KeyStore loadKeyStore(java.io.InputStream)>
+		SHA-256: d718bcad6a36fe4677647e44f93f5f115c17287febf901379e03bf86fa00a690
+		Secure: false
+	Object:
+		Variable: varReplacer4604
+		Type: java.lang.String
+		Statement: specialinvoke r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer4604)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha1Hmac(byte[],byte[],int)>
+		SHA-256: a40fb7ebaf50955771e40d7463ad2fb13f28114757051ff2145c929f010ecbc9
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer6475)
+		Method: <org.jivesoftware.smack.XMPPConnection: void enableEncryption(boolean)>
+		SHA-256: e093bdea387c01758085dc6b5a902d94fff372043f44b769efe30dd2e1b59e9d
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.KeyAgreement
+		Statement: $r5 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String)>(varReplacer8287)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: java.math.BigInteger generateSecret(java.security.PrivateKey,java.security.PublicKey)>
+		SHA-256: 2a06bd1de8ac49efdb6d68a2ecff47cefb12eda055790d94121cae47759fac70
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r9.<java.security.SecureRandom: void <init>()>()
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: java.security.KeyPair generateDHKeyPair()>
+		SHA-256: 571a5a5becc50a13097ce3a4cbafc9d1462889f858d1f855f46e5fb28b52aa28
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4740)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha1Hash(byte[])>
+		SHA-256: e99a5159e0872563c072e0191e9c2d4f00fb7f29118b6633f979336520c80359
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9387)
+		Method: <org.jivesoftware.smackx.EntityCapsManager: java.lang.String capsToHash(java.lang.String)>
+		SHA-256: 6afddee025ed0e7327774ba7af79ff0f8612cff16e02915a76279149f07c3c8b
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.novell.sasl.client.DigestMD5SaslClient: char[] DigestCalcHA1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 5ce200b86928979103b98691c5ad531280c93661fb686380042bd5b5b09abc0d
+		Secure: false
+	Object:
+		Variable: $r20
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r20.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>(r17, r19)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: java.security.KeyPair generateDHKeyPair()>
+		SHA-256: f7e38e2baf3e1a7ad8eeee1b512a0e735786127e89b66241f597574327abe529
+		Secure: false
+	Object:
+		Variable: r6
+		Type: javax.net.ssl.KeyManager[]
+		Statement: r6 = virtualinvoke $r11.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.jivesoftware.smack.XMPPConnection: void enableEncryption(boolean)>
+		SHA-256: f2d66dd4ce2eaddc5a3813040f1a028d8321a11a50efcaa0fb4f6e792695dd25
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Mac
+		Statement: $r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer4605)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha1Hmac(byte[],byte[],int)>
+		SHA-256: a9ba9576ac0452edd605e1996355dcc7f023426dbdf1b69301b11697d0e2e99a
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <org.xbill.DNS.utils.HMAC: void init(byte[])>
+		SHA-256: 219d4777456ccb405b8e6faee0474d2b062dca180af69cd68695408d2c66b5c6
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6447)
+		Method: <com.xabber.xmpp.vcard.VCard: java.lang.String getAvatarHash()>
+		SHA-256: c71ed2464d21d516b6be6e8ad991b0ff35d89ea883521594760fdc78651818b5
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r5 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r4)
+		Method: <org.jivesoftware.smack.XMPPTrustManager: void <init>(java.security.KeyStore,java.lang.String,org.jivesoftware.smack.CertificateListener,boolean,boolean,boolean)>
+		SHA-256: fccfc9e6ed0f956e2d57735136a9c3ec1f3a046c00b05af81f73f44f696a93
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: $r4 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer9131)
+		Method: <com.novell.sasl.client.DigestMD5SaslClient: java.lang.String getClientNonce()>
+		SHA-256: 2dfa319d7b1eebabe73b49aa1bd12f6ea682104feb34c35206dcdb8e0f93708f
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <net.java.otr4j.bouncycastle.crypto.signers.DSASigner: void init(boolean,net.java.otr4j.bouncycastle.crypto.CipherParameters)>
+		SHA-256: 71587c8001c9c4cfb5eb3b36cf1bb7c68e59a9748c653f87dfd071a1ed0537e
+		Secure: true
+	Object:
+		Variable: r19
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke r19.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r26)
+		Method: <com.xabber.android.data.account.AccountTable: long write(java.lang.Long,com.xabber.android.data.account.AccountProtocol,boolean,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String,int,int,com.xabber.android.data.account.StatusMode,java.lang.String,boolean,boolean,com.xabber.android.data.connection.TLSMode,boolean,com.xabber.android.data.connection.ProxyType,java.lang.String,int,java.lang.String,java.lang.String,boolean,java.security.KeyPair,java.util.Date,com.xabber.android.data.account.ArchiveMode)>
+		SHA-256: e163f17c94eb656ea6cc4c1e96ffabe3ac091378e9c2206de74c71c7e11eba02
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.novell.sasl.client.DigestMD5SaslClient: char[] DigestCalcHA1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 5ce200b86928979103b98691c5ad531280c93661fb686380042bd5b5b09abc0d
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <org.jivesoftware.smack.XMPPConnection: void <clinit>()>
+		SHA-256: 661a307ca68878954ebff4996137e368f511c45a43103b19e2c255d6f4b0f296
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6650)
+		Method: <org.jivesoftware.smack.util.StringUtils: java.lang.String hash(java.lang.String)>
+		SHA-256: a63c1300d0cea35a4dcc359b3c7cf0c4fcc0c707ef34d94dd4f9cae3a57c534a
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.KeyStore
+		Statement: $r11 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r4)
+		Method: <org.jivesoftware.smack.KeyStoreManager: java.security.KeyStore getOrCreateKeyStore(org.jivesoftware.smack.ConnectionConfiguration)>
+		SHA-256: f0f6ac9bd8de98c57f2ed5ad93275c65b1fc775c53eb066475c8b76bb1023de9
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>(r3)
+		Method: <com.novell.sasl.client.DigestMD5SaslClient: java.lang.String getClientNonce()>
+		SHA-256: 11428fb7f8f81cd7cf0fbcfc3b6620a79ad6323e312693768a87d6fe57d96050
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: java.security.KeyFactory
+		Statement: $r14 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer8872)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: java.security.KeyPair generateDHKeyPair()>
+		SHA-256: 16bcdbcbe08f2ff1e61a45021341aad1b9690ad025fe5b0fd0b095c0a8db8eb3
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer9624)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha256Hmac(byte[],byte[],int)>
+		SHA-256: debfb00e5ada160ab415097994aa95cc479463729db4a105d20380e4c5d18369
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.xbill.DNS.utils.HMAC: byte[] sign()>
+		SHA-256: 1f9ab97014da7246d8025bc231cf18a522caea62a689d47a735e3eaba2816f6c
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.xabber.xmpp.vcard.VCard: java.lang.String getAvatarHash()>
+		SHA-256: e3729c30f707e1d5a4d0daea37ccaf1809b475c3aa16b44470d90db9545d3143
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer9623)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha256Hmac(byte[],byte[],int)>
+		SHA-256: 855333267988515b604c8de36ad8c884400f71aeda112dcf3ae82ebb0b0f46e2
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: virtualinvoke r1.<java.security.SecureRandom: void nextBytes(byte[])>(r0)
+		Method: <net.java.otr4j.crypto.SM: java.math.BigInteger randomExponent()>
+		SHA-256: 35bc49bf5fbc9203a63926943336cc80285025bcdeffe12b2e44677549208c13
+		Secure: true
+	Object:
+		Variable: varReplacer9633
+		Type: java.lang.String
+		Statement: $r7 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9633)
+		Method: <net.java.otr4j.io.OtrInputStream: java.security.PublicKey readPublicKey()>
+		SHA-256: a08e0d97a932200264a68651d93f42522316df952cd97897fa0b11c2ece96af7
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r5.<javax.crypto.Mac: byte[] doFinal(byte[])>($r1)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha1Hmac(byte[],byte[],int)>
+		SHA-256: ef48fe8b849076f225ea48183e984fa08d3291c94f86015de3ada210870989d5
+		Secure: false
+	Object:
+		Variable: $r20
+		Type: java.security.KeyStore
+		Statement: $r20 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>(varReplacer6484, varReplacer6485)
+		Method: <org.jivesoftware.smack.XMPPConnection: void enableEncryption(boolean)>
+		SHA-256: a0abdd213d3de604faa075946cd68779742f9d8e7b7e1ef05d1fe89213b56df
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <org.jivesoftware.smackx.EntityCapsManager: java.lang.String capsToHash(java.lang.String)>
+		SHA-256: 4b3753884be8333560313cb4f3ef9ed25815b781146b405cb0daab52a31eddb5
+		Secure: false
+	Object:
+		Variable: $r18
+		Type: java.security.PrivateKey
+		Statement: $r18 = virtualinvoke $r14.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>(r5)
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: java.security.KeyPair generateDHKeyPair()>
+		SHA-256: d0fdabb083a3efff380846c2711b15c85c952dc1e58e30e7ac0578b24d4627fd
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.KeyFactory
+		Statement: $r7 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9633)
+		Method: <net.java.otr4j.io.OtrInputStream: java.security.PublicKey readPublicKey()>
+		SHA-256: e029efa0ee46d884382f635b58e3d818d3cd1b326656dc732a642cce6e36bb8a
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <org.xbill.DNS.utils.HMAC: byte[] sign()>
+		SHA-256: e1bd6cd60e2b1abe936c6525f13a02d956042586df0f64220869ac8d7f67784a
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <net.java.otr4j.crypto.OtrCryptoEngineImpl: byte[] sha256Hash(byte[])>
+		SHA-256: ca2fe8b98f2b8a3befea8437b4e4a82107fed81b60772aae51581a4dda50cd90
+		Secure: true
+
+Findings in Java Class: com.xabber.android.data.extension.otr.OTRManager$3
+
+	 in Method: void run()
+		TypestateError violating CrySL rule for java.security.KeyPairGenerator (on Object #85d23fbfde8e2c7c946e222984514f89163127a790409513e0171f019ae3f98d)
+			Unexpected call to method genKeyPair on object of type java.security.KeyPairGenerator. Expect a call to one of the following methods initialize
+			at statement: $r6 = virtualinvoke $r5.<java.security.KeyPairGenerator: java.security.KeyPair genKeyPair()>()
+
+
+Findings in Java Class: net.java.otr4j.crypto.OtrCryptoEngineImpl
+
+	 in Method: byte[] sha1Hmac(byte[],byte[],int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Mac: void init(java.security.Key)>(r4)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #9680aad6635f428897ef1176e4395fa695fed27ad92d50bd8de15d49036c2acd)
+			Second parameter (with value "HmacSHA1") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer4604)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer4604)
+
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #a9ba9576ac0452edd605e1996355dcc7f023426dbdf1b69301b11697d0e2e99a)
+			First parameter (with value "HmacSHA1") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r5 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer4605)
+
+
+	 in Method: byte[] sha1Hash(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e99a5159e0872563c072e0191e9c2d4f00fb7f29118b6633f979336520c80359)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4740)
+
+
+	 in Method: java.security.KeyPair generateDHKeyPair()
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r20.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>(r17, r19)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r16 = virtualinvoke $r14.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>(r6)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r20.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>(r17, r19)
+
+
+	 in Method: javax.crypto.interfaces.DHPublicKey getDHPublicKey(java.math.BigInteger)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r7 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>(r3)
+
+
+	 in Method: byte[] sha256Hmac(byte[],byte[],int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>(r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer9624)
+
+
+	 in Method: java.math.BigInteger generateSecret(java.security.PrivateKey,java.security.PublicKey)
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyAgreement
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r5.<javax.crypto.KeyAgreement: java.security.Key doPhase(java.security.Key,boolean)>($r2, varReplacer8289)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.KeyAgreement
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r5.<javax.crypto.KeyAgreement: void init(java.security.Key)>($r1)
+
+
+Findings in Java Class: com.xabber.android.data.connection.CertificateManager
+
+	 in Method: java.security.KeyStore loadKeyStore(java.io.InputStream)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #d718bcad6a36fe4677647e44f93f5f115c17287febf901379e03bf86fa00a690)
+			First parameter (with value "BKS") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer5314)
+
+
+Findings in Java Class: com.xabber.xmpp.vcard.VCard
+
+	 in Method: java.lang.String getAvatarHash()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c71ed2464d21d516b6be6e8ad991b0ff35d89ea883521594760fdc78651818b5)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6447)
+
+
+Findings in Java Class: org.jivesoftware.smack.XMPPConnection
+
+	 in Method: void enableEncryption(boolean)
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLContext (on Object #e093bdea387c01758085dc6b5a902d94fff372043f44b769efe30dd2e1b59e9d)
+			Operation on object of type javax.net.ssl.SSLContext object not completed. Expected call to init
+			at statement: r5 = $r4
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #f0f6ac9bd8de98c57f2ed5ad93275c65b1fc775c53eb066475c8b76bb1023de9)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: specialinvoke $r38.<org.jivesoftware.smack.XMPPTrustManager: void <init>(java.security.KeyStore,java.lang.String,org.jivesoftware.smack.CertificateListener,boolean,boolean,boolean)>(r10, $r9, $r26, $z0, $z1, $z2)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r6, $r39, $r27)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #e093bdea387c01758085dc6b5a902d94fff372043f44b769efe30dd2e1b59e9d)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer6475)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.KeyManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r11.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r10, varReplacer6487)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #a0abdd213d3de604faa075946cd68779742f9d8e7b7e1ef05d1fe89213b56df)
+			First parameter (with value "KeychainStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r20 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>(varReplacer6484, varReplacer6485)
+
+		HardCodedError violating CrySL rule for javax.net.ssl.KeyManagerFactory (on Object #b20dfd519bcffced730c58ba3c35c1486a563f9931f72b9631925e676ce13a79)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r11.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r10, $r22)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #893cf3c31174420386ad75d4b494eeb58c9cdc01c29ef25e9f4559bf5ff82dbb)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r20.<java.security.KeyStore: void load(java.io.InputStream,char[])>(varReplacer6486, $r22)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #f0f6ac9bd8de98c57f2ed5ad93275c65b1fc775c53eb066475c8b76bb1023de9)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: virtualinvoke $r11.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r10, varReplacer6487)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #f0f6ac9bd8de98c57f2ed5ad93275c65b1fc775c53eb066475c8b76bb1023de9)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: virtualinvoke $r11.<javax.net.ssl.KeyManagerFactory: void init(java.security.KeyStore,char[])>(r10, $r22)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r6, $r39, $r27)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(r6, $r39, $r27)
+
+
+Findings in Java Class: org.jivesoftware.smack.util.StringUtils
+
+	 in Method: java.lang.String hash(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #a63c1300d0cea35a4dcc359b3c7cf0c4fcc0c707ef34d94dd4f9cae3a57c534a)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6650)
+
+
+Findings in Java Class: org.jivesoftware.smack.sasl.SASLFacebookConnect
+
+	 in Method: java.lang.String MD5(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #f59b1988a08baff271a13772481f6579dc7137fe9cfadf9f99df94dce1d91b5)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8222)
+
+
+Findings in Java Class: org.xbill.DNS.TSIG
+
+	 in Method: byte verify(org.xbill.DNS.Message,byte[],int,org.xbill.DNS.TSIGRecord)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: specialinvoke r4.<org.xbill.DNS.utils.HMAC: void <init>(java.lang.String,int,byte[])>($r6, $i0, $r7)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: $i5 = virtualinvoke r4.<org.xbill.DNS.utils.HMAC: int digestLength()>()
+
+
+	 in Method: org.xbill.DNS.TSIGRecord generate(org.xbill.DNS.Message,byte[],int,org.xbill.DNS.TSIGRecord)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: r6 = null
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: virtualinvoke r6.<org.xbill.DNS.utils.HMAC: void update(byte[])>($r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: virtualinvoke r6.<org.xbill.DNS.utils.HMAC: void update(byte[])>($r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: virtualinvoke r6.<org.xbill.DNS.utils.HMAC: void update(byte[])>($r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: specialinvoke r6.<org.xbill.DNS.utils.HMAC: void <init>(java.lang.String,int,byte[])>($r7, $i1, $r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: $r2 = virtualinvoke r6.<org.xbill.DNS.utils.HMAC: byte[] sign()>()
+
+
+Findings in Java Class: org.xbill.DNS.SimpleResolver
+
+	 in Method: org.xbill.DNS.Message sendAXFR(org.xbill.DNS.Message)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, getInstance
+			at statement: $r9 = virtualinvoke $r8.<org.xbill.DNS.ZoneTransferIn: java.util.List getAXFR()>()
+
+
+Findings in Java Class: com.novell.sasl.client.DigestMD5SaslClient
+
+	 in Method: char[] DigestCalcHA1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6662f83b2ed86918d022fb5b3310e225e8c55d31db194db37da637b55fcb6c2c)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9140)
+
+
+	 in Method: char[] DigestCalcResponse(char[],java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #7195dbf978f61e6abf90dcb23819f86664ab06d1d756a601e9d5ac2e621fdf65)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r8 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9160)
+
+
+Findings in Java Class: org.jivesoftware.smackx.EntityCapsManager
+
+	 in Method: java.lang.String capsToHash(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6afddee025ed0e7327774ba7af79ff0f8612cff16e02915a76279149f07c3c8b)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9387)
+
+
+Findings in Java Class: org.jivesoftware.smack.XMPPTrustManager
+
+	 in Method: void <init>(java.security.KeyStore,java.lang.String,org.jivesoftware.smack.CertificateListener,boolean,boolean,boolean)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r5.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r1)
+
+
+Findings in Java Class: com.xabber.android.data.account.AccountTable
+
+	 in Method: long write(java.lang.Long,com.xabber.android.data.account.AccountProtocol,boolean,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String,int,int,com.xabber.android.data.account.StatusMode,java.lang.String,boolean,boolean,com.xabber.android.data.connection.TLSMode,boolean,com.xabber.android.data.connection.ProxyType,java.lang.String,int,java.lang.String,java.lang.String,boolean,java.security.KeyPair,java.util.Date,com.xabber.android.data.account.ArchiveMode)
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r19.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r26)
+
+
+Findings in Java Class: net.java.otr4j.io.OtrInputStream
+
+	 in Method: java.security.PublicKey readPublicKey()
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r8 = virtualinvoke $r7.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>(r1)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 67
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 1
+	ConstraintError: 12
+	HardCodedError: 2
+	IncompleteOperationError: 13
+	RequiredPredicateError: 17
+=====================================================================

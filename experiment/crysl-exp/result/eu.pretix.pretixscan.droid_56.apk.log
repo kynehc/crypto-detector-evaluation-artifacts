@@ -1,0 +1,1524 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+		Method: <com.google.crypto.tink.subtle.AesCtrJceCipher: void doCtr(byte[],int,int,byte[],int,byte[],boolean)>
+		SHA-256: 8b027ec037ed999e6ae523f4c678489ee05c12d6bf70ae191ea02e97b0c7a3f1
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.KeyAgreement
+		Statement: $r3 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TKeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: f6e57b42576a01cf779c496bf6795aa5e9337e888e93d4c22d5e827d44b31dfb
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75358)
+		Method: <com.google.crypto.tink.subtle.PrfAesCmac: void <init>(byte[])>
+		SHA-256: 3d9078ea19d43ec8ebef6f8fbc5a351253d1ffcdd3d90db47de31bbedad3f05e
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.Key
+		Statement: $r5 = virtualinvoke $r4.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>($r1, varReplacer18952)
+		Method: <eu.pretix.pretixscan.utils.KeystoreHelper: java.lang.String secureValue(java.lang.String,boolean)>
+		SHA-256: f27465e4f28c3042485be95fdcfc3666ccfa4925fb772136bd719751ef50776b
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r9, varReplacer55278)
+		Method: <com.google.crypto.tink.subtle.AesSiv: byte[] decryptDeterministically(byte[],byte[])>
+		SHA-256: 7e907cc436ea44cf22259366548983d4d127d2ccaddc2043e680934688de8131
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r2)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TCipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 640b3ce10d955f2685c7b85ba7b9a21e5b3284c31a9fa033826b3693ed4c27e7
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.PublicKey
+		Statement: $r6 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r4)
+		Method: <org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter: java.security.PublicKey getPublicKey(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: 4fb6d1788e4060b57c4e622d5af6c427e00d3367ce3f324e4593abc1859c15ff
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.cert.CertificateFactory
+		Statement: $r1 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>($r2)
+		Method: <org.bouncycastle.cert.jcajce.DefaultCertHelper: java.security.cert.CertificateFactory createCertificateFactory(java.lang.String)>
+		SHA-256: f8fbf85b40c81fe63a566f3acad5c05c9b245103f283f549e11ae2fb09219e7b
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: 6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r11.<java.security.Signature: boolean verify(byte[])>($r4)
+		Method: <de.rki.covpass.sdk.crypto.SignatureUtilsKt: void validateSignature(java.security.PublicKey,byte[],byte[],java.lang.String)>
+		SHA-256: 14e5c84da133efea339c16aa7d618ad15c251a33a99d19e9c3af08d7ae09021c
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r4.<javax.crypto.Cipher: int doFinal(byte[],int,int,byte[],int)>($r1, varReplacer55266, $i0, $r3, varReplacer55267)
+		Method: <com.google.crypto.tink.integration.android.AndroidKeystoreAesGcm: byte[] encryptInternal(byte[],byte[])>
+		SHA-256: 651df981bb72863d6770b8f1ef34d81d569fa2ef54c01cb5fb6fe82019865e10
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.MessageDigest
+		Statement: $r8 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer37020)
+		Method: <eu.pretix.pretixscan.droid.ui.MainActivity: void handleScan(java.lang.String,java.util.List,boolean)>
+		SHA-256: b86624493a9cb4e83ce72298c08c4f347593ac9f4f6ac1dd3ffe67c99efdec0d
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer38483)
+		Method: <com.google.crypto.tink.integration.android.AndroidKeystoreAesGcm: byte[] decryptInternal(byte[],byte[])>
+		SHA-256: 8a7ccbcbbdd768b5ee9c9ef9cad018343ea1056bf1cf6453eb42de4f395adcc3
+		Secure: false
+	Object:
+		Variable: varReplacer75362
+		Type: java.lang.String
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75362)
+		Method: <com.google.crypto.tink.subtle.AesEaxJce: void <init>(byte[],int)>
+		SHA-256: 7ced675624bdcea31f2b4d29dc5b74a21a93199d4a7210e7b58f6b5d188bc54
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <de.rki.covpass.http.DefaultHttpConfig$sslContext$2: javax.net.ssl.SSLContext invoke()>
+		SHA-256: 28772820abf84ef5f21d5a798fd4d03bfc662accfc020ac6692f0c45f43fade7
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.KeyPairGenerator
+		Statement: $r3 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TKeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 31579772aaec5a816143c7ef812cc1e25a25da0ce13eab8174637bf9e82c7fff
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.lang.String
+		Statement: $r1 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+		Method: <org.bouncycastle.jcajce.util.DefaultJcaJceHelper: java.security.KeyFactory createKeyFactory(java.lang.String)>
+		SHA-256: f7bc006853af11db2bdefc50a8970a168ddfa89f06fcc40a58d92e615afa11c9
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r2)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TSignature: java.security.Signature getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 672604f2929d39e6798d3d97eaf8020693a989b9b50c219eefc0b3064ee9878f
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r6)
+		Method: <net.i2p.crypto.eddsa.spec.EdDSAParameterSpec: void <init>(net.i2p.crypto.eddsa.math.Curve,java.lang.String,net.i2p.crypto.eddsa.math.ScalarOps,net.i2p.crypto.eddsa.math.GroupElement)>
+		SHA-256: e2a7fde5e14223557a76ad0c1c621daab6834282af96171dab264b22557dc255
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TCipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: f412a4b6b6af857b02da3ea5721d5fbd73b3618d315ce7a8cc29c14ad33abb42
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75360)
+		Method: <com.google.crypto.tink.subtle.AesGcmJce: void <init>(byte[])>
+		SHA-256: 396fd30df2863b2cb9511d21aa6039d482bfdbc5f25ab0ff5b943456161715d7
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75362)
+		Method: <com.google.crypto.tink.subtle.AesEaxJce: void <init>(byte[],int)>
+		SHA-256: 4c856f3e076e7b70e88a6baf926430a23161d0688b62f42c6c6075a0ef861593
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer27141)
+		Method: <de.rki.covpass.http.DefaultHttpConfig$sslContext$2: javax.net.ssl.SSLContext invoke()>
+		SHA-256: a3402e0331106f97e293d940b4fb522191e0f2df33cc631fc6294c5bf07adb79
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TMessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 4ee1e49996a5c971f7aeb5a26e801c7b076c9b0e65f51e70fc752cb4886a7701
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <okio.SegmentedByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: 9d21c3f9e3f612ea7264d21dc14a8967f32993fff60292ad252f8676282c7571
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 5fb6984969c8c0f60ee84399ef18a49aa63648c889757c4080685ad119ecd903
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.KeyGenerator
+		Statement: $r2 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer59926, varReplacer59927)
+		Method: <com.google.crypto.tink.integration.android.AndroidKeystoreKmsClient: void generateNewAeadKey(java.lang.String)>
+		SHA-256: 15a5dd6fe00b14efd990f18eefbce67cf8fd5fdbc4869a216d10e8aa935f6ef3
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r2 = virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 84f17b7e3930c76e2b174d27b9668ee8d3209ae5512e2c539d541e6ef4265515
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.IvParameterSpec: void <init>(byte[],int,int)>($r0, $i0, $i1)
+		Method: <com.google.crypto.tink.subtle.AesGcmJce: java.security.spec.AlgorithmParameterSpec getParams(byte[],int,int)>
+		SHA-256: c67b29513468d79cc4ae5c4bee7d630860ff1973dbd20d94526c43cfd1f9e980
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75377)
+		Method: <com.google.crypto.tink.aead.subtle.AesGcmSiv: void <init>(byte[])>
+		SHA-256: a770102cb0bf8811125ba7984289e1b3da47f995eae653145b438d4fa434e121
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.KeyFactory
+		Statement: $r1 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+		Method: <org.bouncycastle.jcajce.util.DefaultJcaJceHelper: java.security.KeyFactory createKeyFactory(java.lang.String)>
+		SHA-256: 7f07316255acf6c2b7bca090a4e664f355d182706a163acbdb368bfde642c5ac
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TSignature: java.security.Signature getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: cb105a5771bcd81cae436a986d3e03a8ad1f29a9eb56a4dcb4ca4659c5a58cda
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLContext
+		Statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer18985)
+		Method: <eu.pretix.libpretixsync.api.DefaultHttpClientFactory: okhttp3.OkHttpClient buildClient(boolean)>
+		SHA-256: f645af4ca300e6ff264a3e3825a5bb0780625c4ce3cf1681b036aab6b440184d
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+		Method: <com.google.crypto.tink.subtle.AesSiv: byte[] encryptDeterministically(byte[],byte[])>
+		SHA-256: 47afe7d8c5e21d73ab258690f6e85d2e213fa257f554cc8720ffb1fc2b8389ca
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Mac
+		Statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TMac: javax.crypto.Mac getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: e0ddadc13f7bb0fe2b209042e6fb1e08b684a4132db178ec9b403eb5eee11587
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+		Method: <com.google.crypto.tink.subtle.AesSiv: byte[] decryptDeterministically(byte[],byte[])>
+		SHA-256: 903023b995f5882e5451d20b614f88efddf2f35ac40028665b154bcfd798e9cf
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TMessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 3a694b35ea04b2992debcb6b410b793f86e22988149fbcb69135acb0c3d6ba01
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <de.rki.covpass.http.DefaultHttpConfig$trustManager$2: de.rki.covpass.http.CustomTrustManager invoke()>
+		SHA-256: 790040dc20adeeb0c7487ef0f01b86fef603fb1f240e337b3bcfcdbfb6dece75
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.KeyStore
+		Statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer59901)
+		Method: <androidx.security.crypto.MasterKeys: boolean keyExists(java.lang.String)>
+		SHA-256: bfb26fc2820418d70d80cf394525deed14c260ef24694df4c1b5d63db374301c
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: c3dcfb07eabeaead2afa7b41e33d56187e303e14a7184c21b7bac99836f2c278
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: ae39b036c5eeeba58d380660f68e23806935f12d2f5c9cefe65440425aa34f4a
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.KeyGenerator
+		Statement: $r7 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer18954, $r3)
+		Method: <eu.pretix.pretixscan.utils.KeystoreHelper: java.lang.String secureValue(java.lang.String,boolean)>
+		SHA-256: 7110e6d93f397908a6c7fcec2726c9718018aa52c0c6ea8ec1825b8b771e4986
+		Secure: true
+	Object:
+		Variable: varReplacer75360
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75360)
+		Method: <com.google.crypto.tink.subtle.AesGcmJce: void <init>(byte[])>
+		SHA-256: 225c1fbb10a9102e84fc116046ca2dcb94d5d152e74cc146580715cf3e42c5d
+		Secure: false
+	Object:
+		Variable: varReplacer75378
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75378)
+		Method: <com.google.crypto.tink.subtle.AesCtrJceCipher: void <init>(byte[],int)>
+		SHA-256: ac95429964d8c4cc68fc9da0ed9be472e416dc19622883b454d104a898523d08
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Mac
+		Statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TMac: javax.crypto.Mac getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 6d763f9467be3d0d73fb479325f103273511edf0e140c0da470a5ccd80fd30b2
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer43509)
+		Method: <eu.pretix.libpretixsync.utils.HashUtils: java.lang.String toSHA1(byte[])>
+		SHA-256: 4d6299dab4bef1d71c9c7600339b3c37e64be18fdf5b086c60be0d43df3d4adf
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r11.<java.security.Signature: boolean verify(byte[])>($r4)
+		Method: <de.rki.covpass.sdk.crypto.SignatureUtilsKt: void validateSignature(java.security.PublicKey,byte[],byte[],java.lang.String)>
+		SHA-256: 760d5b78abbf4a9e894c75dee5c34bd7f2b023a8f9fe11e12b73acc918b27e77
+		Secure: false
+	Object:
+		Variable: varReplacer37484
+		Type: java.lang.String
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r9, varReplacer37484)
+		Method: <com.google.crypto.tink.subtle.AesSiv: byte[] encryptDeterministically(byte[],byte[])>
+		SHA-256: c4fd1b3b94ece7c742ff95fda503449944557011cb26705e44e2e54cc89edefd
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <com.google.crypto.tink.KeysetManager: int randPositiveInt()>
+		SHA-256: 4ebee29c3524c464d63774c6ad1b27675d82b46c620ac98fa8ab5f89a0bcc030
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.Key
+		Statement: $r4 = interfaceinvoke $r2.<java.security.Key: byte[] getEncoded()>()
+		Method: <com.google.crypto.tink.subtle.PrfHmacJce: void <init>(java.lang.String,java.security.Key)>
+		SHA-256: e1eea5081cf0aadf8e508267fd22718dcf76be755dbf3e35faaf1e8f3674e96e
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <de.rki.covpass.http.DefaultHttpConfig$trustManager$2: de.rki.covpass.http.CustomTrustManager invoke()>
+		SHA-256: a27741eb8fe25de0d79bc0dfa1933fd57289075ba6072eba83580ac20da09eda
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.KeyStore
+		Statement: $r5 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer44696)
+		Method: <androidx.security.crypto.MasterKey: boolean isKeyStoreBacked()>
+		SHA-256: 2c35bb600eb688cde4b586d2a67c5fce6a873a2df24fa3390f7cc5e157d8e68
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer69427)
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator$1: com.bumptech.glide.load.engine.cache.SafeKeyGenerator$PoolableDigestContainer create()>
+		SHA-256: a72801229b0cf18e009979959819ca25dac5ac1bb99eddea2d74f274062f013f
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer70633)
+		Method: <com.google.crypto.tink.mac.HmacKeyManager$1: com.google.crypto.tink.Mac getPrimitive(com.google.crypto.tink.proto.HmacKey)>
+		SHA-256: 58ab866f09e58c6bc5291a35097baf528534109e3d0d70ad3444dddf7b09bd8
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer55268)
+		Method: <com.google.crypto.tink.integration.android.AndroidKeystoreAesGcm: byte[] encryptInternal(byte[],byte[])>
+		SHA-256: 22692def9778abc75cb91a64071aa16250c911836a09bf3baa5d9581ab8b4297
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyPairGenerator
+		Statement: $r3 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>($r2)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TKeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 9d792201b769fe047e7a4ac888b6c8bf5e59b4c0df6aad68d04eb687e5998de5
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Key
+		Statement: $r3 = virtualinvoke $r2.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>($r1, varReplacer71170)
+		Method: <com.google.crypto.tink.integration.android.AndroidKeystoreAesGcm: void <init>(java.lang.String,java.security.KeyStore)>
+		SHA-256: b863efed49659def8adb36889c6084b43801be7fdc5319233ddec981b86d2423
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = interfaceinvoke $r2.<java.security.Key: byte[] getEncoded()>()
+		Method: <com.google.crypto.tink.subtle.PrfHmacJce: void <init>(java.lang.String,java.security.Key)>
+		SHA-256: 9504b3f716c7bcc89dfe690d24f15b0aa6bd18c44ad0477c83ca56afaa8a613d
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: java.security.Signature
+		Statement: $r11 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r5)
+		Method: <de.rki.covpass.sdk.crypto.SignatureUtilsKt: void validateSignature(java.security.PublicKey,byte[],byte[],java.lang.String)>
+		SHA-256: 8d39f1e86fe6637edc9eda43cb8319c8c98114741a12083fd9a5f4b840157e6e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.KeyStore
+		Statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer66324)
+		Method: <com.google.crypto.tink.integration.android.AndroidKeystoreKmsClient$Builder: void <init>()>
+		SHA-256: 546752ff9209717f0b3d18fd3e01f4bb7ab778ef3ebb3b00bea7f7623e62d879
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75378)
+		Method: <com.google.crypto.tink.subtle.AesCtrJceCipher: void <init>(byte[],int)>
+		SHA-256: 4df0288820fb079bb39ad2d90e52af6f5525341493e686a6ce8b4b27bc55d6a5
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[],int,int)>($r1, $i1, $i0)
+		Method: <com.google.crypto.tink.aead.subtle.AesGcmSiv: java.security.spec.AlgorithmParameterSpec getParams(byte[],int,int)>
+		SHA-256: eb539a033328f301387ad80c043bae0685ea4d61b8fdcf3fe687ca4a704f4e7a
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer60306, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: e1487f2f7ec5e717d3817291e93a8027599663d0bfde1ed571c7d6aad96e2eaf
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.security.SecureRandom: void nextBytes(byte[])>($r0)
+		Method: <org.bouncycastle.util.BigIntegers: byte[] createRandom(int,java.security.SecureRandom)>
+		SHA-256: 54418fb8cccad41580025a6cd60e076f32d76c789f930e53f124a29a10dd03c4
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r0.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <com.google.crypto.tink.KeysetManager: int randPositiveInt()>
+		SHA-256: bbc9d8394c2dcb76e848cfab8276b3333598af437db700e2dbb7ef0521dd9a8e
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r13.<java.security.SecureRandom: void <init>()>()
+		Method: <eu.pretix.libpretixsync.api.DefaultHttpClientFactory: okhttp3.OkHttpClient buildClient(boolean)>
+		SHA-256: ec4b12cd628ff31534783398280cc312aa816d027861a48e3936d96fc1bffa55
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 316cbc86e080130334eaabd60025d96084375d0058312a103cd3255ba6f0aeb
+		Secure: false
+	Object:
+		Variable: varReplacer75358
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75358)
+		Method: <com.google.crypto.tink.subtle.PrfAesCmac: void <init>(byte[])>
+		SHA-256: ce7245e58920af524d3926996a8c6fe4a7c9486f45d92de8f5b4e9a61250c615
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <eu.pretix.libpretixsync.utils.HashUtils: java.lang.String toSHA1(byte[])>
+		SHA-256: 50888ec3762fdc2d663e894b228b2d689ec5d1e64c288c139cf0f8923ed95b1d
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer60309)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 17e4810a88498d2cc9503766f39fce21f6d8234d47f86dc167184b1e2176ff0f
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyFactory
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TKeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: f1c2e63073ddcb24fe930029fe06df7c733e5105821a35c0b065c88337b1de11
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r4 = virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: a729cfd5669df603070b7ba7d05b524b10a048ab1da974a5ccb1df973521b7d3
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r4.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r5)
+		Method: <org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter: java.security.PublicKey getPublicKey(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)>
+		SHA-256: e5545119f5e047fb9f43f167212e446f9f1d578b17b8aa9903f1c037ad30c6f4
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r15.<java.security.SecureRandom: void <init>()>()
+		Method: <eu.pretix.pretixscan.droid.AndroidHttpClientFactory: okhttp3.OkHttpClient buildClient(boolean)>
+		SHA-256: 77fac99e8a4c6723977ccdc76837f0f4fbcc7595db11aed72218ac1116667b6d
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: byte[]
+		Statement: $r10 = virtualinvoke $r8.<java.security.MessageDigest: byte[] digest()>()
+		Method: <eu.pretix.pretixscan.droid.ui.MainActivity: void handleScan(java.lang.String,java.util.List,boolean)>
+		SHA-256: 37d789de9fc4b7fd5c8e50c24199aafc31f16cce4a0500bc0300827d7dedaa
+		Secure: true
+	Object:
+		Variable: varReplacer75377
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75377)
+		Method: <com.google.crypto.tink.aead.subtle.AesGcmSiv: void <init>(byte[])>
+		SHA-256: c04cb7321743a95edc20cb9bd7532500ab383e286a76143fc7ff771560598408
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.lang.String
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TKeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 95a7709424d7ff5043097deae52b9702f187f1e98d93e83e54df9a8f5cea5565
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[],int,int)>(varReplacer22453, $r0, $i0, $i1)
+		Method: <com.google.crypto.tink.subtle.AesGcmJce: java.security.spec.AlgorithmParameterSpec getParams(byte[],int,int)>
+		SHA-256: 42786cb5d75805b3991e90e24e483d1513136881c77b04e0d0f30e7557debd15
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.KeyAgreement
+		Statement: $r3 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String)>($r2)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TKeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 4702644eb9a1c407255cb270b0ae349589b1ac4a4f813039e42194478eb42f5e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.lang.String)>(varReplacer52605, varReplacer52606)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 12b14aa4284a32fe2e548468fc9e1d4f20e12b07029a7b69bab2ee146e15dfda
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 15a76129680a3cd57380001c355c828c5afc3ba9ce32fff65b352ff3390bbd6
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.CryptoServicesRegistrar: java.security.SecureRandom getSecureRandom()>
+		SHA-256: 375867338a8d572664475cac25bcfa294db8f2af8faff8d50836d5d6dcf8ab15
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[],int,int)>(varReplacer38484, $r2, varReplacer38485, varReplacer38486)
+		Method: <com.google.crypto.tink.integration.android.AndroidKeystoreAesGcm: byte[] decryptInternal(byte[],byte[])>
+		SHA-256: bfa41f8173ed405643d625e9248041f15d8f98c2a65eabc2e13af2dbc1f3a584
+		Secure: false
+	Object:
+		Variable: varReplacer55278
+		Type: java.lang.String
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r9, varReplacer55278)
+		Method: <com.google.crypto.tink.subtle.AesSiv: byte[] decryptDeterministically(byte[],byte[])>
+		SHA-256: 184dc17149662588d33c887fdb3c5521ee7ec7058809ad5989f2cffc347f5121
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyFactory
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TKeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 34ab4b1bd965bdb4093c51cc820e75355ac946cb1d7a4a73744794cbc42a6278
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: javax.crypto.Cipher
+		Statement: $r12 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer18945)
+		Method: <eu.pretix.pretixscan.utils.KeystoreHelper: java.lang.String secureValue(java.lang.String,boolean)>
+		SHA-256: 2836c5c762a1641af2a6e022390550b20162e2668da07c7846837892ee71d062
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.security.Provider)>($r1, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 1027fce20723454b26980f38c5edb26bcec19bffa5b6443c75459b577c51d460
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[],int,int)>(varReplacer22455, $r1, $i1, $i0)
+		Method: <com.google.crypto.tink.aead.subtle.AesGcmSiv: java.security.spec.AlgorithmParameterSpec getParams(byte[],int,int)>
+		SHA-256: d36c3e2a1fdec3f2db232aaf74c1628e52199b612c88746de47179330524e862
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.Key
+		Statement: $r5 = virtualinvoke $r4.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>($r1, varReplacer18944)
+		Method: <eu.pretix.pretixscan.utils.KeystoreHelper: java.lang.String secureValue(java.lang.String,boolean)>
+		SHA-256: 66e0f6474199e51ffb1bd27f406420b6864c4d92d6ecff1c58d189cd4e6e1ddb
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <eu.pretix.libpretixsync.db.NonceGenerator: void <clinit>()>
+		SHA-256: 41175b27f767395c1eb27e6d7a45a5b2915e0a93e02d3f99eee0bdf7e48a209e
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.KeyStore
+		Statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r3)
+		Method: <eu.pretix.pretixscan.utils.KeystoreHelper: java.lang.String secureValue(java.lang.String,boolean)>
+		SHA-256: 3e183389372812284627ca2733b8db80eca5ad069d39bf606636ac76d9809691
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+		Method: <com.google.crypto.tink.subtle.AesEaxJce: byte[] encrypt(byte[],byte[])>
+		SHA-256: fca0f7a4d4663820637fe4a8be8b66b9b3fcf19b04db0adee18d32afb3b24bd0
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+		Method: <com.google.crypto.tink.subtle.AesEaxJce: byte[] decrypt(byte[],byte[])>
+		SHA-256: debe6a91358516f13574bcf942d1c7a159aab945ff1938cfed1e10e6c805ed83
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <okio.ByteString: okio.ByteString digest$okio(java.lang.String)>
+		SHA-256: d4bf5cc88c644b9a20ac4aef1746c1f0c9ae862102406e7436b8866c875859ff
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer60310, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: a086bbab7bd8238fce5be64008dc53b1dcac25b30e8048978aef5e142343fbb8
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer60312, $r2)
+		Method: <okhttp3.internal.platform.BouncyCastlePlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 8fddc4f14b62bda517eaa5b4c021405f31fac6acc6ee6e36507183ae76ccb465
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.KeyStore
+		Statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer66329)
+		Method: <com.google.crypto.tink.integration.android.AndroidKeystoreKmsClient: boolean hasKey(java.lang.String)>
+		SHA-256: fe3d178bffd6f0df674d8df1ea2bf3be0d664b8787ba3c070b6a5b2ce2f3a354
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r9, varReplacer37484)
+		Method: <com.google.crypto.tink.subtle.AesSiv: byte[] encryptDeterministically(byte[],byte[])>
+		SHA-256: aaecb9e08e059cee0581dd2b2a93daa40c7806cdcea17a7043bf8f609328ac70
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>($r2, varReplacer38481, $i0)
+		Method: <com.google.crypto.tink.integration.android.AndroidKeystoreAesGcm: byte[] decryptInternal(byte[],byte[])>
+		SHA-256: e924c494b2f8b5d4a80da05aa3cad56f3be02e5aaf7c7d9ed3f73816a0e98a18
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r4.<javax.crypto.Cipher: int doFinal(byte[],int,int,byte[],int)>($r1, varReplacer55266, $i0, $r3, varReplacer55267)
+		Method: <com.google.crypto.tink.integration.android.AndroidKeystoreAesGcm: byte[] encryptInternal(byte[],byte[])>
+		SHA-256: 18e21534d00198f0066da27a9dffed2882fe553a420e9eddee39feaeae3e921c
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.net.ssl.SSLContext
+		Statement: $r7 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer18992)
+		Method: <eu.pretix.pretixscan.droid.AndroidHttpClientFactory: okhttp3.OkHttpClient buildClient(boolean)>
+		SHA-256: 3c3c15ad1a660dccbb446490f366dd8141d9869b34bdbd84bd13c702db675748
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.KeyGenerator
+		Statement: $r1 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer59899, varReplacer59900)
+		Method: <androidx.security.crypto.MasterKeys: void generateKey(android.security.keystore.KeyGenParameterSpec)>
+		SHA-256: 7e3e3251f1e78e420eb2bbf4d2f2412cc36733b507ed3d0290066d3c276e9b46
+		Secure: true
+	Object:
+		Variable: varReplacer70633
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer70633)
+		Method: <com.google.crypto.tink.mac.HmacKeyManager$1: com.google.crypto.tink.Mac getPrimitive(com.google.crypto.tink.proto.HmacKey)>
+		SHA-256: c0e6c1755502e3e126a66d6439dd1c8d8a02cc3b913f523f9ddcd6e71d661f11
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.lang.String
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+		Method: <com.google.crypto.tink.subtle.EngineWrapper$TKeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>
+		SHA-256: 83f13ea5bf4d88f582ce2812e4f31a103e62153876bf37453a067b44d78c80d4
+		Secure: false
+
+Findings in Java Class: eu.pretix.pretixscan.utils.KeystoreHelper
+
+	 in Method: java.lang.String secureValue(java.lang.String,boolean)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #2836c5c762a1641af2a6e022390550b20162e2668da07c7846837892ee71d062)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r14 = virtualinvoke $r12.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r14)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #2836c5c762a1641af2a6e022390550b20162e2668da07c7846837892ee71d062)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r14 = virtualinvoke $r12.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r14)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r12.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer18949, $r6)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #2836c5c762a1641af2a6e022390550b20162e2668da07c7846837892ee71d062)
+			First parameter (with value "AES/ECB/PKCS7Padding") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: $r12 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer18945)
+
+
+Findings in Java Class: eu.pretix.libpretixsync.api.DefaultHttpClientFactory
+
+	 in Method: okhttp3.OkHttpClient buildClient(boolean)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer18981, $r16, $r3)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #f645af4ca300e6ff264a3e3825a5bb0780625c4ce3cf1681b036aab6b440184d)
+			First parameter (with value "SSL") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer18985)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer18981, $r16, $r3)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer18981, $r16, $r3)
+
+
+Findings in Java Class: eu.pretix.pretixscan.droid.AndroidHttpClientFactory
+
+	 in Method: okhttp3.OkHttpClient buildClient(boolean)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #3c3c15ad1a660dccbb446490f366dd8141d9869b34bdbd84bd13c702db675748)
+			First parameter (with value "SSL") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r7 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer18992)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r7.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer18989, $r16, $r15)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r7.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer18989, $r16, $r15)
+
+
+Findings in Java Class: de.rki.covpass.http.DefaultHttpConfig$sslContext$2
+
+	 in Method: javax.net.ssl.SSLContext invoke()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer27140, $r3, $r5)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a3402e0331106f97e293d940b4fb522191e0f2df33cc631fc6294c5bf07adb79)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer27141)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer27140, $r3, $r5)
+
+
+Findings in Java Class: eu.pretix.libpretixsync.utils.HashUtils
+
+	 in Method: java.lang.String toSHA1(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4d6299dab4bef1d71c9c7600339b3c37e64be18fdf5b086c60be0d43df3d4adf)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer43509)
+
+
+Findings in Java Class: androidx.security.crypto.MasterKey
+
+	 in Method: boolean isKeyStoreBacked()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #2c35bb600eb688cde4b586d2a67c5fce6a873a2df24fa3390f7cc5e157d8e68)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r5 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer44696)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest$okio(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ae39b036c5eeeba58d380660f68e23806935f12d2f5c9cefe65440425aa34f4a)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: okio.SegmentedByteString
+
+	 in Method: okio.ByteString digest$okio(java.lang.String)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r5 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6c960e488f21ae2f1d37981b7f790ff5823030d9f242d798118968e0f93ba357)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: org.bouncycastle.cert.jcajce.JcaX509CertificateConverter
+
+	 in Method: java.security.cert.X509Certificate getCertificate(org.bouncycastle.cert.X509CertificateHolder)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #f8fbf85b40c81fe63a566f3acad5c05c9b245103f283f549e11ae2fb09219e7b)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r6 = virtualinvoke $r3.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r4)
+
+
+Findings in Java Class: net.i2p.crypto.eddsa.spec.EdDSAParameterSpec
+
+	 in Method: void <init>(net.i2p.crypto.eddsa.math.Curve,java.lang.String,net.i2p.crypto.eddsa.math.ScalarOps,net.i2p.crypto.eddsa.math.GroupElement)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #e2a7fde5e14223557a76ad0c1c621daab6834282af96171dab264b22557dc255)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $i1 = virtualinvoke $r7.<java.security.MessageDigest: int getDigestLength()>()
+
+
+Findings in Java Class: androidx.security.crypto.MasterKeys
+
+	 in Method: boolean keyExists(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #bfb26fc2820418d70d80cf394525deed14c260ef24694df4c1b5d63db374301c)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer59901)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #e1487f2f7ec5e717d3817291e93a8027599663d0bfde1ed571c7d6aad96e2eaf)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer60306, $r2)
+
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer52610, $r5, varReplacer52610)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer52587)
+
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #17e4810a88498d2cc9503766f39fce21f6d8234d47f86dc167184b1e2176ff0f)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer60309)
+
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer52614, $r11, varReplacer52614)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer52614, $r11, varReplacer52614)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer52614, $r11, varReplacer52614)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer52592)
+
+
+Findings in Java Class: okhttp3.internal.platform.BouncyCastlePlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #8fddc4f14b62bda517eaa5b4c021405f31fac6acc6ee6e36507183ae76ccb465)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer60312, $r2)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer52603)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.EngineWrapper$TKeyFactory
+
+	 in Method: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #34ab4b1bd965bdb4093c51cc820e75355ac946cb1d7a4a73744794cbc42a6278)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #34ab4b1bd965bdb4093c51cc820e75355ac946cb1d7a4a73744794cbc42a6278)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f1c2e63073ddcb24fe930029fe06df7c733e5105821a35c0b065c88337b1de11)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #f1c2e63073ddcb24fe930029fe06df7c733e5105821a35c0b065c88337b1de11)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.EngineWrapper$TMessageDigest
+
+	 in Method: java.security.MessageDigest getInstance(java.lang.String,java.security.Provider)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #3a694b35ea04b2992debcb6b410b793f86e22988149fbcb69135acb0c3d6ba01)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #3a694b35ea04b2992debcb6b410b793f86e22988149fbcb69135acb0c3d6ba01)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4ee1e49996a5c971f7aeb5a26e801c7b076c9b0e65f51e70fc752cb4886a7701)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4ee1e49996a5c971f7aeb5a26e801c7b076c9b0e65f51e70fc752cb4886a7701)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.PrfAesCmac
+
+	 in Method: byte[] compute(byte[],int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #e0ddadc13f7bb0fe2b209042e6fb1e08b684a4132db178ec9b403eb5eee11587)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #6d763f9467be3d0d73fb479325f103273511edf0e140c0da470a5ccd80fd30b2)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.Signature (on Object #672604f2929d39e6798d3d97eaf8020693a989b9b50c219eefc0b3064ee9878f)
+			Operation on object of type java.security.Signature object not completed. Expected call to initSign, initVerify
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.Signature (on Object #cb105a5771bcd81cae436a986d3e03a8ad1f29a9eb56a4dcb4ca4659c5a58cda)
+			Operation on object of type java.security.Signature object not completed. Expected call to initSign, initVerify
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #3a694b35ea04b2992debcb6b410b793f86e22988149fbcb69135acb0c3d6ba01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4ee1e49996a5c971f7aeb5a26e801c7b076c9b0e65f51e70fc752cb4886a7701)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyPairGenerator (on Object #9d792201b769fe047e7a4ac888b6c8bf5e59b4c0df6aad68d04eb687e5998de5)
+			Operation on object of type java.security.KeyPairGenerator object not completed. Expected call to initialize
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyPairGenerator (on Object #31579772aaec5a816143c7ef812cc1e25a25da0ce13eab8174637bf9e82c7fff)
+			Operation on object of type java.security.KeyPairGenerator object not completed. Expected call to initialize
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #640b3ce10d955f2685c7b85ba7b9a21e5b3284c31a9fa033826b3693ed4c27e7)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #640b3ce10d955f2685c7b85ba7b9a21e5b3284c31a9fa033826b3693ed4c27e7)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f412a4b6b6af857b02da3ea5721d5fbd73b3618d315ce7a8cc29c14ad33abb42)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f412a4b6b6af857b02da3ea5721d5fbd73b3618d315ce7a8cc29c14ad33abb42)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #4702644eb9a1c407255cb270b0ae349589b1ac4a4f813039e42194478eb42f5e)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #f6e57b42576a01cf779c496bf6795aa5e9337e888e93d4c22d5e827d44b31dfb)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+
+	 in Method: void generateSubKeys()
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #640b3ce10d955f2685c7b85ba7b9a21e5b3284c31a9fa033826b3693ed4c27e7)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f412a4b6b6af857b02da3ea5721d5fbd73b3618d315ce7a8cc29c14ad33abb42)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.Signature (on Object #672604f2929d39e6798d3d97eaf8020693a989b9b50c219eefc0b3064ee9878f)
+			Operation on object of type java.security.Signature object not completed. Expected call to initSign, initVerify
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.Signature (on Object #cb105a5771bcd81cae436a986d3e03a8ad1f29a9eb56a4dcb4ca4659c5a58cda)
+			Operation on object of type java.security.Signature object not completed. Expected call to initSign, initVerify
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyPairGenerator (on Object #9d792201b769fe047e7a4ac888b6c8bf5e59b4c0df6aad68d04eb687e5998de5)
+			Operation on object of type java.security.KeyPairGenerator object not completed. Expected call to initialize
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyPairGenerator (on Object #31579772aaec5a816143c7ef812cc1e25a25da0ce13eab8174637bf9e82c7fff)
+			Operation on object of type java.security.KeyPairGenerator object not completed. Expected call to initialize
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #3a694b35ea04b2992debcb6b410b793f86e22988149fbcb69135acb0c3d6ba01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4ee1e49996a5c971f7aeb5a26e801c7b076c9b0e65f51e70fc752cb4886a7701)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #e0ddadc13f7bb0fe2b209042e6fb1e08b684a4132db178ec9b403eb5eee11587)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #6d763f9467be3d0d73fb479325f103273511edf0e140c0da470a5ccd80fd30b2)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #4702644eb9a1c407255cb270b0ae349589b1ac4a4f813039e42194478eb42f5e)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to init
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #f6e57b42576a01cf779c496bf6795aa5e9337e888e93d4c22d5e827d44b31dfb)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to init
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+
+	 in Method: void <init>(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75358)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.AesSiv
+
+	 in Method: byte[] encryptDeterministically(byte[],byte[])
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #3a694b35ea04b2992debcb6b410b793f86e22988149fbcb69135acb0c3d6ba01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4ee1e49996a5c971f7aeb5a26e801c7b076c9b0e65f51e70fc752cb4886a7701)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r10.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #4702644eb9a1c407255cb270b0ae349589b1ac4a4f813039e42194478eb42f5e)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #f6e57b42576a01cf779c496bf6795aa5e9337e888e93d4c22d5e827d44b31dfb)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r9, varReplacer37484)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #640b3ce10d955f2685c7b85ba7b9a21e5b3284c31a9fa033826b3693ed4c27e7)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f412a4b6b6af857b02da3ea5721d5fbd73b3618d315ce7a8cc29c14ad33abb42)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.Signature (on Object #672604f2929d39e6798d3d97eaf8020693a989b9b50c219eefc0b3064ee9878f)
+			Operation on object of type java.security.Signature object not completed. Expected call to initSign, initVerify
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.Signature (on Object #cb105a5771bcd81cae436a986d3e03a8ad1f29a9eb56a4dcb4ca4659c5a58cda)
+			Operation on object of type java.security.Signature object not completed. Expected call to initSign, initVerify
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyPairGenerator (on Object #9d792201b769fe047e7a4ac888b6c8bf5e59b4c0df6aad68d04eb687e5998de5)
+			Operation on object of type java.security.KeyPairGenerator object not completed. Expected call to initialize
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyPairGenerator (on Object #31579772aaec5a816143c7ef812cc1e25a25da0ce13eab8174637bf9e82c7fff)
+			Operation on object of type java.security.KeyPairGenerator object not completed. Expected call to initialize
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #e0ddadc13f7bb0fe2b209042e6fb1e08b684a4132db178ec9b403eb5eee11587)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #6d763f9467be3d0d73fb479325f103273511edf0e140c0da470a5ccd80fd30b2)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+
+	 in Method: byte[] decryptDeterministically(byte[],byte[])
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #3a694b35ea04b2992debcb6b410b793f86e22988149fbcb69135acb0c3d6ba01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #4ee1e49996a5c971f7aeb5a26e801c7b076c9b0e65f51e70fc752cb4886a7701)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		IncompleteOperationError violating CrySL rule for java.security.Signature (on Object #672604f2929d39e6798d3d97eaf8020693a989b9b50c219eefc0b3064ee9878f)
+			Operation on object of type java.security.Signature object not completed. Expected call to initSign, initVerify
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		IncompleteOperationError violating CrySL rule for java.security.Signature (on Object #cb105a5771bcd81cae436a986d3e03a8ad1f29a9eb56a4dcb4ca4659c5a58cda)
+			Operation on object of type java.security.Signature object not completed. Expected call to initSign, initVerify
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer55275, $r8, $r10)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #e0ddadc13f7bb0fe2b209042e6fb1e08b684a4132db178ec9b403eb5eee11587)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #6d763f9467be3d0d73fb479325f103273511edf0e140c0da470a5ccd80fd30b2)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to init
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyPairGenerator (on Object #9d792201b769fe047e7a4ac888b6c8bf5e59b4c0df6aad68d04eb687e5998de5)
+			Operation on object of type java.security.KeyPairGenerator object not completed. Expected call to initialize
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyPairGenerator (on Object #31579772aaec5a816143c7ef812cc1e25a25da0ce13eab8174637bf9e82c7fff)
+			Operation on object of type java.security.KeyPairGenerator object not completed. Expected call to initialize
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #640b3ce10d955f2685c7b85ba7b9a21e5b3284c31a9fa033826b3693ed4c27e7)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f412a4b6b6af857b02da3ea5721d5fbd73b3618d315ce7a8cc29c14ad33abb42)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r9, varReplacer55278)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #4702644eb9a1c407255cb270b0ae349589b1ac4a4f813039e42194478eb42f5e)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to init
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyAgreement (on Object #f6e57b42576a01cf779c496bf6795aa5e9337e888e93d4c22d5e827d44b31dfb)
+			Operation on object of type javax.crypto.KeyAgreement object not completed. Expected call to init
+			at statement: $r9 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r10.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.EngineWrapper$TMac
+
+	 in Method: javax.crypto.Mac getInstance(java.lang.String,java.security.Provider)
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #6d763f9467be3d0d73fb479325f103273511edf0e140c0da470a5ccd80fd30b2)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #e0ddadc13f7bb0fe2b209042e6fb1e08b684a4132db178ec9b403eb5eee11587)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #6d763f9467be3d0d73fb479325f103273511edf0e140c0da470a5ccd80fd30b2)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #e0ddadc13f7bb0fe2b209042e6fb1e08b684a4132db178ec9b403eb5eee11587)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.EngineWrapper$TCipher
+
+	 in Method: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #f412a4b6b6af857b02da3ea5721d5fbd73b3618d315ce7a8cc29c14ad33abb42)
+			First parameter (with value "AES/ECB/NoPadding") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #640b3ce10d955f2685c7b85ba7b9a21e5b3284c31a9fa033826b3693ed4c27e7)
+			First parameter (with value "AES/ECB/NoPadding") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r2)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.EngineWrapper$TSignature
+
+	 in Method: java.security.Signature getInstance(java.lang.String,java.security.Provider)
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #cb105a5771bcd81cae436a986d3e03a8ad1f29a9eb56a4dcb4ca4659c5a58cda)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #cb105a5771bcd81cae436a986d3e03a8ad1f29a9eb56a4dcb4ca4659c5a58cda)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #672604f2929d39e6798d3d97eaf8020693a989b9b50c219eefc0b3064ee9878f)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r2)
+
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #672604f2929d39e6798d3d97eaf8020693a989b9b50c219eefc0b3064ee9878f)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r2)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.EngineWrapper$TKeyAgreement
+
+	 in Method: javax.crypto.KeyAgreement getInstance(java.lang.String,java.security.Provider)
+		ConstraintError violating CrySL rule for javax.crypto.KeyAgreement (on Object #4702644eb9a1c407255cb270b0ae349589b1ac4a4f813039e42194478eb42f5e)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {DH, DiffieHellman, ECDH}
+			at statement: $r3 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String)>($r2)
+
+		ConstraintError violating CrySL rule for javax.crypto.KeyAgreement (on Object #f6e57b42576a01cf779c496bf6795aa5e9337e888e93d4c22d5e827d44b31dfb)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {DH, DiffieHellman, ECDH}
+			at statement: $r3 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.KeyAgreement (on Object #f6e57b42576a01cf779c496bf6795aa5e9337e888e93d4c22d5e827d44b31dfb)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {DH, DiffieHellman, ECDH}
+			at statement: $r3 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.KeyAgreement (on Object #4702644eb9a1c407255cb270b0ae349589b1ac4a4f813039e42194478eb42f5e)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {DH, DiffieHellman, ECDH}
+			at statement: $r3 = staticinvoke <javax.crypto.KeyAgreement: javax.crypto.KeyAgreement getInstance(java.lang.String)>($r2)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.EngineWrapper$TKeyPairGenerator
+
+	 in Method: java.security.KeyPairGenerator getInstance(java.lang.String,java.security.Provider)
+		ConstraintError violating CrySL rule for java.security.KeyPairGenerator (on Object #9d792201b769fe047e7a4ac888b6c8bf5e59b4c0df6aad68d04eb687e5998de5)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {RSA, EC, DSA, DiffieHellman, DH}
+			at statement: $r3 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>($r2)
+
+		ConstraintError violating CrySL rule for java.security.KeyPairGenerator (on Object #9d792201b769fe047e7a4ac888b6c8bf5e59b4c0df6aad68d04eb687e5998de5)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {RSA, EC, DSA, DiffieHellman, DH}
+			at statement: $r3 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>($r2)
+
+		ConstraintError violating CrySL rule for java.security.KeyPairGenerator (on Object #31579772aaec5a816143c7ef812cc1e25a25da0ce13eab8174637bf9e82c7fff)
+			First parameter (with value "AES/CTR/NoPadding") should be any of {RSA, EC, DSA, DiffieHellman, DH}
+			at statement: $r3 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+		ConstraintError violating CrySL rule for java.security.KeyPairGenerator (on Object #31579772aaec5a816143c7ef812cc1e25a25da0ce13eab8174637bf9e82c7fff)
+			First parameter (with value "AES/ECB/NoPadding") should be any of {RSA, EC, DSA, DiffieHellman, DH}
+			at statement: $r3 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.security.Provider)>($r2, $r1)
+
+
+Findings in Java Class: com.google.crypto.tink.integration.android.AndroidKeystoreKmsClient$Builder
+
+	 in Method: void <init>()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #546752ff9209717f0b3d18fd3e01f4bb7ab778ef3ebb3b00bea7f7623e62d879)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer66324)
+
+
+Findings in Java Class: com.google.crypto.tink.integration.android.AndroidKeystoreKmsClient
+
+	 in Method: boolean hasKey(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #fe3d178bffd6f0df674d8df1ea2bf3be0d664b8787ba3c070b6a5b2ce2f3a354)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer66329)
+
+
+Findings in Java Class: com.bumptech.glide.load.engine.cache.SafeKeyGenerator
+
+	 in Method: java.lang.String calculateHexStringDigest(com.bumptech.glide.load.Key)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #a72801229b0cf18e009979959819ca25dac5ac1bb99eddea2d74f274062f013f)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r6 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: com.google.crypto.tink.mac.HmacKeyManager$1
+
+	 in Method: com.google.crypto.tink.Mac getPrimitive(com.google.crypto.tink.proto.HmacKey)
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #58ab866f09e58c6bc5291a35097baf528534109e3d0d70ad3444dddf7b09bd8)
+			Second parameter (with value "HMAC") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer70633)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r6, varReplacer70633)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.AesCtrJceCipher
+
+	 in Method: void doCtr(byte[],int,int,byte[],int,byte[],boolean)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r8.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+
+
+	 in Method: void <init>(byte[],int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75378)
+
+
+Findings in Java Class: de.rki.covpass.http.DefaultHttpConfig$trustManager$2
+
+	 in Method: de.rki.covpass.http.CustomTrustManager invoke()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer27082)
+
+
+Findings in Java Class: com.google.crypto.tink.integration.android.AndroidKeystoreAesGcm
+
+	 in Method: byte[] encryptInternal(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer55265, $r5)
+
+
+	 in Method: byte[] decryptInternal(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r4.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[],int,int)>(varReplacer38484, $r2, varReplacer38485, varReplacer38486)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer38487, $r1, $r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer38487, $r1, $r4)
+
+
+Findings in Java Class: de.rki.covpass.sdk.crypto.SignatureUtilsKt
+
+	 in Method: void validateSignature(java.security.PublicKey,byte[],byte[],java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r11.<java.security.Signature: void initVerify(java.security.PublicKey)>($r3)
+
+
+Findings in Java Class: com.google.crypto.tink.aead.subtle.AesGcmSiv
+
+	 in Method: java.security.spec.AlgorithmParameterSpec getParams(byte[],int,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[],int,int)>($r1, $i1, $i0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r2.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[],int,int)>(varReplacer22455, $r1, $i1, $i0)
+
+
+	 in Method: void <init>(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75377)
+
+
+Findings in Java Class: org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter
+
+	 in Method: java.security.PublicKey getPublicKey(org.bouncycastle.asn1.x509.SubjectPublicKeyInfo)
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r4.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r5)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r6 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r4)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.AesGcmJce
+
+	 in Method: void <init>(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75360)
+
+
+	 in Method: java.security.spec.AlgorithmParameterSpec getParams(byte[],int,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r2.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[],int,int)>(varReplacer22453, $r0, $i0, $i1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r1.<javax.crypto.spec.IvParameterSpec: void <init>(byte[],int,int)>($r0, $i0, $i1)
+
+
+Findings in Java Class: com.google.crypto.tink.subtle.AesEaxJce
+
+	 in Method: void <init>(byte[],int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer75362)
+
+
+	 in Method: byte[] encrypt(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r10.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r4)
+
+
+	 in Method: byte[] decrypt(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+
+
+Findings in Java Class: okhttp3.internal.platform.OpenJSSEPlatform
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer52599)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 104
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 41
+	IncompleteOperationError: 42
+	RequiredPredicateError: 42
+	TypestateError: 14
+=====================================================================

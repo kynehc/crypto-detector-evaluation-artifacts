@@ -1,0 +1,644 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r8
+		Type: javax.crypto.SecretKey
+		Statement: $r8 = virtualinvoke $r3.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <de.tutao.tutanota.credentials.DataKeyGeneratorFromAPI30: javax.crypto.SecretKey generateDataKey(java.lang.String,de.tutao.tutanota.credentials.CredentialEncryptionMode)>
+		SHA-256: d8a294b706a4482b9b16fbfc4ee2d08edae6064cd842e0d2459120e3a04548d6
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.security.PublicKey
+		Statement: $r8 = virtualinvoke $r5.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r6)
+		Method: <de.tutao.tutanota.Crypto: java.security.PublicKey jsonToPublicKey(org.json.JSONObject)>
+		SHA-256: 784a2bb6bb063e22a01d8fed70aeca1b3c2183c31dbe19df4137e764d14471f7
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer6484)
+		Method: <de.tutao.tutanota.Crypto: void aesEncrypt(byte[],java.io.InputStream,java.io.OutputStream,byte[],boolean)>
+		SHA-256: 93757ae942065205a7bbb2578a9c1f5a9cedf3b20487e23c4e515971019a254b
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4473)
+		Method: <de.tutao.tutanota.Crypto: de.tutao.tutanota.Crypto$SubKeys getSubKeys(javax.crypto.spec.SecretKeySpec,boolean)>
+		SHA-256: a44c75e95019723848ef273650ee5773e618e78df3278b63ec4dbf1a45b56172
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7050)
+		Method: <de.tutao.tutanota.Crypto: byte[] encryptKey(java.security.Key,byte[])>
+		SHA-256: 1feee01eb0416145d0b454decb1e4e0ed7d7e583ee2ce67965789ca8ca25919d
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r3)
+		Method: <de.tutao.tutanota.AndroidKeyStoreFacade: javax.crypto.Cipher getCipherForDecryptionMode(de.tutao.tutanota.credentials.CredentialEncryptionMode,byte[])>
+		SHA-256: f5189f96f8c47a6c58efd057151a5ecd96f3f6b2441e645b055c90acb2426212
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.KeyFactory
+		Statement: $r6 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer6488)
+		Method: <de.tutao.tutanota.Crypto: java.security.PrivateKey jsonToPrivateKey(org.json.JSONObject)>
+		SHA-256: 6c72ac10d41be520070ed9348ff7e8079c52decb130807c249fbd81e88c87a5b
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.KeyGenerator
+		Statement: $r2 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer6386, varReplacer6387)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 79ecd3c914009d4f32e2287428d96cae039d417ecdc9eba776943659fc34ad23
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer6432, varReplacer6433)
+		Method: <de.tutao.tutanota.AndroidKeyStoreFacade: javax.crypto.Cipher getCipherForDecryptionMode(de.tutao.tutanota.credentials.CredentialEncryptionMode,byte[])>
+		SHA-256: 1d5d544f60058d7408425996111d06718f4258e40d51cc554c895282f138684
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.KeyGenerator
+		Statement: $r3 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer7498, varReplacer7499)
+		Method: <de.tutao.tutanota.credentials.DataKeyGeneratorFromAPI30: javax.crypto.SecretKey generateDataKey(java.lang.String,de.tutao.tutanota.credentials.CredentialEncryptionMode)>
+		SHA-256: d544809c9ce920c9f533ff79691fdaf54ea7c45763a711071fbf61ad833ea3f1
+		Secure: true
+	Object:
+		Variable: varReplacer6492
+		Type: java.lang.String
+		Statement: $r5 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer6492)
+		Method: <de.tutao.tutanota.Crypto: java.security.PublicKey jsonToPublicKey(org.json.JSONObject)>
+		SHA-256: b10bd8dbb6970e0e0d621088014bb32d71e286dc052bb853080b71f45e1e9a9f
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.KeyGenerator
+		Statement: $r1 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer5359, varReplacer5360)
+		Method: <de.tutao.tutanota.AndroidKeyStoreFacade: void generateSymmetricKey()>
+		SHA-256: 59354f72d1135f40cda2a994d809b79bc01b7c32406926575076f35fcbb52c42
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
+		Method: <de.tutao.tutanota.Crypto: byte[] decryptKey(java.security.Key,byte[])>
+		SHA-256: ff400896ba2516a4d6772132679c8a1617ac7a51a6e6a3f2891faec0fda3cb9
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r3.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+		Method: <de.tutao.tutanota.Crypto: byte[] hmac256(byte[],byte[])>
+		SHA-256: 298a92826a1cbd21b2db8b06dfbc8fad2858782ddefac54c4bdfe312154bc487
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <de.tutao.tutanota.Crypto: de.tutao.tutanota.Crypto$SubKeys getSubKeys(javax.crypto.spec.SecretKeySpec,boolean)>
+		SHA-256: f2451fff053844cf373749e11752dc6322626ae80abe83299341a5ec1f80b5bd
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.SecretKey
+		Statement: $r8 = virtualinvoke $r3.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <de.tutao.tutanota.credentials.DataKeyGeneratorBeforeAPI30: javax.crypto.SecretKey generateDataKey(java.lang.String,de.tutao.tutanota.credentials.CredentialEncryptionMode)>
+		SHA-256: c2461f16710064c8a2df22585007e2d24df3717971356149088c8e7d53bce402
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <de.tutao.tutanota.Crypto: void <init>(android.content.Context)>
+		SHA-256: e5aed81b27946e8751c2a3c2f1e13b38fbee1173686e31e62d95beda2fe38124
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer4466)
+		Method: <de.tutao.tutanota.Crypto: byte[] hmac256(byte[],byte[])>
+		SHA-256: 1f8363d7de586879768ef09a444bbfaf3c1c5b640e0deb3e4d6001f50c46b23e
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.Key
+		Statement: $r4 = virtualinvoke $r0.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>(varReplacer6395, varReplacer6396)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 6419857eeafa2cccec7c325928b5ac4f485d8c9fdcf57726c8e329af8d7667d2
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer6447, varReplacer6448)
+		Method: <de.tutao.tutanota.AndroidKeyStoreFacade: javax.crypto.Cipher getCipherForEncryptionMode(de.tutao.tutanota.credentials.CredentialEncryptionMode)>
+		SHA-256: fbf6e6b1fe042673b68c55b0f9b74b4011c994e06f438fc13a639f68c87c4e05
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Mac
+		Statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer4465)
+		Method: <de.tutao.tutanota.Crypto: byte[] hmac256(byte[],byte[])>
+		SHA-256: 922a2ac9bdeb8806b3a69986285564d250e82e7d026841afdba81524b9b6669c
+		Secure: false
+	Object:
+		Variable: varReplacer1620
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer1620)
+		Method: <de.tutao.tutanota.Crypto: javax.crypto.spec.SecretKeySpec bytesToKey(byte[])>
+		SHA-256: 22a4e6d4a35cc5a4d98e8e713aa18e701dee1a2c5b9586cdb66e731d20400a37
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r3.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+		Method: <de.tutao.tutanota.Crypto: byte[] hmac256(byte[],byte[])>
+		SHA-256: b664612b8bda193d83c785679f87e11b4310a6b85b7896d10f2da3cca82dafb0
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.KeyStore
+		Statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer4449)
+		Method: <de.tutao.tutanota.AndroidKeyStoreFacade: java.security.KeyStore getOrInitKeyStore()>
+		SHA-256: 48d46bb42c9b55959f0ce29d119dc531300c21191901e1222e9fb1c3c74a80f
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.KeyPair
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <de.tutao.tutanota.Crypto: org.json.JSONObject generateRsaKey(byte[])>
+		SHA-256: eb5430459e3c75a66be927e6374bcbd8f4f02546a840f989a9de10231ba59897
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.PublicKey
+		Statement: $r3 = virtualinvoke $r2.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <de.tutao.tutanota.Crypto: org.json.JSONObject keyPairToJson(java.security.KeyPair)>
+		SHA-256: babae588a756fa9d1149c4ebcd79059e4b5aced08fa876ad47990cd29edcb08e
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.OAEPParameterSpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.OAEPParameterSpec: void <init>(java.lang.String,java.lang.String,java.security.spec.AlgorithmParameterSpec,javax.crypto.spec.PSource)>(varReplacer48, varReplacer49, $r0, $r1)
+		Method: <de.tutao.tutanota.Crypto: void <clinit>()>
+		SHA-256: 40fdc3107f325b6cea9a3b0985e628af796d5d1e471977ad0725223ab67c016d
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.KeyGenerator
+		Statement: $r3 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer7489, varReplacer7490)
+		Method: <de.tutao.tutanota.credentials.DataKeyGeneratorBeforeAPI30: javax.crypto.SecretKey generateDataKey(java.lang.String,de.tutao.tutanota.credentials.CredentialEncryptionMode)>
+		SHA-256: 58ea395fd05e5fec957c3d4dc3157e0acc9032855a7a4e139f8e88f9cada5002
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r5.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r1, $r2)
+		Method: <de.tutao.tutanota.Crypto: java.io.InputStream getCipherInputStream(java.io.InputStream,javax.crypto.Cipher)>
+		SHA-256: 35d284c45a9601cbffa757f6fb1734595baaa87baf7d27f24f2f1c12a6892fe8
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer6392)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 40cdb5a4723d359bd53e7ffe25a321549f66905f45535fb3bec4659673555c5c
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer1620)
+		Method: <de.tutao.tutanota.Crypto: javax.crypto.spec.SecretKeySpec bytesToKey(byte[])>
+		SHA-256: 6e39efda42410a6aaa0137d59908fd8de7aeb2cc4168e25a13be7e45453513ae
+		Secure: false
+	Object:
+		Variable: varReplacer6488
+		Type: java.lang.String
+		Statement: $r6 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer6488)
+		Method: <de.tutao.tutanota.Crypto: java.security.PrivateKey jsonToPrivateKey(org.json.JSONObject)>
+		SHA-256: 15b36046ca8d362aff48d333aa72d1f1c0db2a1351390f9b941ea1cf9e6f5652
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.Cipher
+		Statement: $r1 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer4454, varReplacer4455)
+		Method: <de.tutao.tutanota.AndroidKeyStoreFacade: javax.crypto.Cipher createRSACipher(java.security.Key,int)>
+		SHA-256: a9a9dc3c2b8c45f01298e07321c2b7a85f29ca12ceab41db933b6bf19ddd00bb
+		Secure: false
+	Object:
+		Variable: $r22
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r22.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r9)
+		Method: <de.tutao.tutanota.Crypto: void aesDecrypt(byte[],java.io.InputStream,java.io.OutputStream,long)>
+		SHA-256: cd28cd795ff0b198e95de14eb96dbb37c1eafa918ee7ffdc9ca219d643c503f3
+		Secure: false
+	Object:
+		Variable: varReplacer4466
+		Type: java.lang.String
+		Statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer4466)
+		Method: <de.tutao.tutanota.Crypto: byte[] hmac256(byte[],byte[])>
+		SHA-256: c9f94fac6d613381c50a55c8dd389651324068ca1b88001ba19d57c3a916be58
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.PrivateKey
+		Statement: $r8 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r7)
+		Method: <de.tutao.tutanota.Crypto: java.security.PrivateKey jsonToPrivateKey(org.json.JSONObject)>
+		SHA-256: e873dee6e67f70ce32034b78934ddf3e285ea0da30f2f1645bfadf72438d6927
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.KeyFactory
+		Statement: $r5 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer6492)
+		Method: <de.tutao.tutanota.Crypto: java.security.PublicKey jsonToPublicKey(org.json.JSONObject)>
+		SHA-256: 7f7bc654ae4624636d24ec273a48a94ed26a56230a10e817e48b4a312aa32736
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer6489)
+		Method: <de.tutao.tutanota.Crypto: byte[] rsaDecrypt(java.security.PrivateKey,byte[])>
+		SHA-256: f005253a23e77d2b7a01968d65707c3b2ceb92385872470ed1340e164d57c043
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
+		Method: <de.tutao.tutanota.Crypto: byte[] encryptKey(java.security.Key,byte[])>
+		SHA-256: 4afe7422b39c1b5c5ec4f151cf0bf1d6b22301772753770e83aa3aeba4ab4c7b
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer4470)
+		Method: <de.tutao.tutanota.Crypto: de.tutao.tutanota.Crypto$SubKeys getSubKeys(javax.crypto.spec.SecretKeySpec,boolean)>
+		SHA-256: 9f082a56cafac072da4e3951c3201f0239dde4aa91a7829a30c2bb17ece630
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.KeyStore
+		Statement: $r0 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer6389)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 9841fbefb16e5c990787b3dd46a13a5b8c961cee784e67f82dd2bfd0db1d24b2
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer2589)
+		Method: <de.tutao.tutanota.Crypto: byte[] decryptKey(java.security.Key,byte[])>
+		SHA-256: fb7622d81c1bddaa994acf67121ba9dc249d5667a3a9d1aca3b72c759f68d1da
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r6)
+		Method: <de.tutao.tutanota.Crypto: void aesEncrypt(byte[],java.io.InputStream,java.io.OutputStream,byte[],boolean)>
+		SHA-256: 2eda2941304bfd0fe39d198464b8c896319040ab60ab53d740af3be412c1bf77
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyPairGenerator
+		Statement: $r3 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(varReplacer5090)
+		Method: <de.tutao.tutanota.Crypto: org.json.JSONObject generateRsaKey(byte[])>
+		SHA-256: 54374ae50496b9f7db4b0edf5e6f20318ef8c5cadac5bfc7153bb1c78c454442
+		Secure: true
+	Object:
+		Variable: varReplacer4470
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer4470)
+		Method: <de.tutao.tutanota.Crypto: de.tutao.tutanota.Crypto$SubKeys getSubKeys(javax.crypto.spec.SecretKeySpec,boolean)>
+		SHA-256: 8c8007d50402ae4cf64e008a1aefef3dbbf428a7532571ac839192acf03f010a
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: javax.crypto.Cipher
+		Statement: $r12 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer4462)
+		Method: <de.tutao.tutanota.Crypto: void aesDecrypt(byte[],java.io.InputStream,java.io.OutputStream,long)>
+		SHA-256: 83f0a83a5aa28e6e940fbb81a36b894df130b70c09ca96583425819313f309e4
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.PrivateKey
+		Statement: $r6 = virtualinvoke $r2.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <de.tutao.tutanota.Crypto: org.json.JSONObject keyPairToJson(java.security.KeyPair)>
+		SHA-256: f3c6364eb1be87e91c927286f1e06e4b5d105243993b63f4dc6fe3e2ab62a859
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7052)
+		Method: <de.tutao.tutanota.Crypto: byte[] rsaEncrypt(byte[],java.security.PublicKey,java.security.SecureRandom)>
+		SHA-256: 2587ebfb17c7a5132eef00b1589950607170b53ad676df1b27038f77071bc50
+		Secure: false
+
+Findings in Java Class: de.tutao.tutanota.Crypto
+
+	 in Method: byte[] decryptKey(java.security.Key,byte[])
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #fb7622d81c1bddaa994acf67121ba9dc249d5667a3a9d1aca3b72c759f68d1da)
+			First parameter (with value "AES/CBC/NoPadding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer2589)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r1.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer2588, $r2, $r1)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #fb7622d81c1bddaa994acf67121ba9dc249d5667a3a9d1aca3b72c759f68d1da)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+
+	 in Method: java.lang.String aesDecryptFile(byte[],java.lang.String)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #35d284c45a9601cbffa757f6fb1734595baaa87baf7d27f24f2f1c12a6892fe8)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read, close
+			at statement: virtualinvoke r0.<de.tutao.tutanota.Crypto: void aesDecrypt(byte[],java.io.InputStream,java.io.OutputStream,long)>($r2, $r11, $r1, $l0)
+
+
+	 in Method: de.tutao.tutanota.Crypto$EncryptedFileInfo aesEncryptFile(byte[],java.lang.String,byte[])
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #35d284c45a9601cbffa757f6fb1734595baaa87baf7d27f24f2f1c12a6892fe8)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read, close
+			at statement: $l0 = virtualinvoke $r10.<org.apache.commons.io.input.CountingInputStream: long getByteCount()>()
+
+
+	 in Method: byte[] aesDecrypt(byte[],byte[])
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #35d284c45a9601cbffa757f6fb1734595baaa87baf7d27f24f2f1c12a6892fe8)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read, close
+			at statement: virtualinvoke r0.<de.tutao.tutanota.Crypto: void aesDecrypt(byte[],java.io.InputStream,java.io.OutputStream,long)>($r3, $r1, $r2, $l0)
+
+
+	 in Method: byte[] rsaDecrypt(java.security.PrivateKey,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f005253a23e77d2b7a01968d65707c3b2ceb92385872470ed1340e164d57c043)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r4 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r4)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec,java.security.SecureRandom)>(varReplacer6491, $r3, $r1, $r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Fourth parameter was not properly generated as randomized
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec,java.security.SecureRandom)>(varReplacer6491, $r3, $r1, $r2)
+
+
+	 in Method: byte[] encryptKey(java.security.Key,byte[])
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #1feee01eb0416145d0b454decb1e4e0ed7d7e583ee2ce67965789ca8ca25919d)
+			First parameter (with value "AES/CBC/NoPadding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7050)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r1.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7051, $r2, $r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7051, $r2, $r1)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #1feee01eb0416145d0b454decb1e4e0ed7d7e583ee2ce67965789ca8ca25919d)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+
+	 in Method: byte[] rsaEncrypt(byte[],java.security.PublicKey,java.security.SecureRandom)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec,java.security.SecureRandom)>(varReplacer7053, $r4, $r2, $r1)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #2587ebfb17c7a5132eef00b1589950607170b53ad676df1b27038f77071bc50)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Fourth parameter was not properly generated as randomized
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec,java.security.SecureRandom)>(varReplacer7053, $r4, $r2, $r1)
+
+
+	 in Method: void aesEncrypt(byte[],java.io.InputStream,java.io.OutputStream,byte[],boolean)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer6485, $r4, $r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer6485, $r4, $r3)
+
+
+	 in Method: java.security.PrivateKey jsonToPrivateKey(org.json.JSONObject)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r8 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r7)
+
+
+	 in Method: byte[] hmac256(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Mac: void init(java.security.Key)>($r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer4466)
+
+
+	 in Method: void <clinit>()
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.OAEPParameterSpec
+			First parameter was not properly generated as preparedMGF1
+			at statement: specialinvoke $r4.<javax.crypto.spec.OAEPParameterSpec: void <init>(java.lang.String,java.lang.String,java.security.spec.AlgorithmParameterSpec,javax.crypto.spec.PSource)>(varReplacer48, varReplacer49, $r0, $r1)
+
+
+	 in Method: java.io.InputStream getCipherInputStream(java.io.InputStream,javax.crypto.Cipher)
+		RequiredPredicateError violating CrySL rule for javax.crypto.CipherInputStream
+			Second parameter was not properly generated as generatedCipher
+			at statement: specialinvoke $r5.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r1, $r2)
+
+
+	 in Method: javax.crypto.spec.SecretKeySpec bytesToKey(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer1620)
+
+
+	 in Method: void aesDecrypt(byte[],java.io.InputStream,java.io.OutputStream,long)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r22.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r12.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer4463, $r5, $r13)
+
+
+	 in Method: java.security.PublicKey jsonToPublicKey(org.json.JSONObject)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r8 = virtualinvoke $r5.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r6)
+
+
+	 in Method: de.tutao.tutanota.Crypto$SubKeys getSubKeys(javax.crypto.spec.SecretKeySpec,boolean)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer4470)
+
+
+Findings in Java Class: de.tutao.tutanota.AndroidKeyStoreFacade
+
+	 in Method: java.security.KeyStore getOrInitKeyStore()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #48d46bb42c9b55959f0ce29d119dc531300c21191901e1222e9fb1c3c74a80f)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer4449)
+
+
+	 in Method: javax.crypto.Cipher createRSACipher(java.security.Key,int)
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #a9a9dc3c2b8c45f01298e07321c2b7a85f29ca12ceab41db933b6bf19ddd00bb)
+			First parameter (with value "RSA/ECB/PKCS1Padding") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r1 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer4454, varReplacer4455)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r1.<javax.crypto.Cipher: void init(int,java.security.Key)>($i0, $r2)
+
+
+	 in Method: byte[] decryptKey(byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #a9a9dc3c2b8c45f01298e07321c2b7a85f29ca12ceab41db933b6bf19ddd00bb)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+
+	 in Method: byte[] encryptKey(byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #a9a9dc3c2b8c45f01298e07321c2b7a85f29ca12ceab41db933b6bf19ddd00bb)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r5.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+
+	 in Method: javax.crypto.Cipher getCipherForDecryptionMode(de.tutao.tutanota.credentials.CredentialEncryptionMode,byte[])
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #1d5d544f60058d7408425996111d06718f4258e40d51cc554c895282f138684)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer6432, varReplacer6433)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r1.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r3)
+
+
+	 in Method: byte[] decryptData(byte[],javax.crypto.Cipher)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #1d5d544f60058d7408425996111d06718f4258e40d51cc554c895282f138684)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+
+	 in Method: javax.crypto.Cipher getCipherForEncryptionMode(de.tutao.tutanota.credentials.CredentialEncryptionMode)
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #fbf6e6b1fe042673b68c55b0f9b74b4011c994e06f438fc13a639f68c87c4e05)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>(varReplacer6447, varReplacer6448)
+
+
+	 in Method: byte[] encryptData(byte[],javax.crypto.Cipher)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #fbf6e6b1fe042673b68c55b0f9b74b4011c994e06f438fc13a639f68c87c4e05)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r3.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+
+Findings in Java Class: org.apache.commons.io.IOUtils
+
+	 in Method: void closeQuietly(java.io.Closeable)
+		TypestateError violating CrySL rule for javax.crypto.CipherInputStream (on Object #35d284c45a9601cbffa757f6fb1734595baaa87baf7d27f24f2f1c12a6892fe8)
+			Unexpected call to method close on object of type javax.crypto.CipherInputStream. Expect a call to one of the following methods read
+			at statement: interfaceinvoke $r0.<java.io.Closeable: void close()>()
+
+
+Findings in Java Class: androidx.biometric.CryptoObjectUtils
+
+	 in Method: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #9841fbefb16e5c990787b3dd46a13a5b8c961cee784e67f82dd2bfd0db1d24b2)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r0 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer6389)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer6397, $r5)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #40cdb5a4723d359bd53e7ffe25a321549f66905f45535fb3bec4659673555c5c)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer6392)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 48
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 8
+	RequiredPredicateError: 25
+	TypestateError: 9
+	IncompleteOperationError: 3
+=====================================================================

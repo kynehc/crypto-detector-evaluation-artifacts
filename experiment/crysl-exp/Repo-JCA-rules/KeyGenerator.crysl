@@ -1,0 +1,36 @@
+SPEC javax.crypto.KeyGenerator
+
+OBJECTS
+	int keysize;
+	java.security.spec.AlgorithmParameterSpec params;
+	javax.crypto.SecretKey key;
+	java.lang.String algorithm;
+	java.security.SecureRandom random;
+
+EVENTS
+	g1: getInstance(algorithm);
+	g2: getInstance(algorithm, _);
+	Get := g1 | g2;
+
+	i1: init(keysize);
+	i2: init(keysize, random);
+	i3: init(params);
+	i4: init(params, random);
+	i5: init(random);
+	Init := i1 | i2 | i3 | i4 | i5;
+    
+	gk1: key = generateKey();
+	GenKey := gk1;
+
+ORDER
+	Get, Init?, GenKey
+
+CONSTRAINTS
+	algorithm in {"AES", "HmacSHA256", "HmacSHA384", "HmacSHA512"};
+	algorithm in {"AES"} => keysize in {128, 192, 256};
+   
+REQUIRES
+	randomized[random];
+    
+ENSURES 
+	generatedKey[key, algorithm];

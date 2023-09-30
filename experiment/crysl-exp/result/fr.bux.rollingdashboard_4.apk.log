@@ -1,0 +1,154 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: virtualinvoke $r7.<java.security.SecureRandom: void nextBytes(byte[])>($r5)
+		Method: <io.ktor.util.NonceKt$nonceGeneratorJob$1: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: 76b8174e2edd3c314a3e67902e6093b3a192ba78e52c4d4158db89ad9385ad5a
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <io.ktor.util.CryptoKt__CryptoJvmKt: byte[] getDigest$CryptoKt__CryptoJvmKt(java.lang.String,java.lang.String,kotlin.jvm.functions.Function1)>
+		SHA-256: 4844fc1458a119720f640b584b124ee839bd5b95be39e60ce9c7d1dca4a0aa2b
+		Secure: true
+	Object:
+		Variable: $r15
+		Type: byte[]
+		Statement: $r15 = virtualinvoke $r8.<java.security.SecureRandom: byte[] generateSeed(int)>($i0)
+		Method: <io.ktor.util.NonceKt$nonceGeneratorJob$1: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: 42ef720148f3fefa465de7553d748694c2e66569614ec731a7efb48d9fb75125
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r0)
+		Method: <io.ktor.util.CryptoKt__CryptoJvmKt: io.ktor.util.Digest Digest(java.lang.String)>
+		SHA-256: 42ca34c85e7d7e7659a10e0214b35b4d5fe369318b2c1780c167ea15509a33b7
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: $r0 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>($r2)
+		Method: <io.ktor.util.NonceKt: java.security.SecureRandom getInstanceOrNull(java.lang.String)>
+		SHA-256: 5bdf8abef70c6ddc19b5ee2780cd50ea79ba22c1f145924031bae0da8337c2bf
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <io.ktor.util.CryptoKt__CryptoJvmKt: byte[] getDigest$CryptoKt__CryptoJvmKt(java.lang.String,java.lang.String,kotlin.jvm.functions.Function1)>
+		SHA-256: 9e23a4948c6140fe430adf4e8025f4f4752cecc0f97e1b6efc6b738fad2a2f2e
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: virtualinvoke $r8.<java.security.SecureRandom: void nextBytes(byte[])>($r6)
+		Method: <io.ktor.util.NonceKt$nonceGeneratorJob$1: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: d9d393bbbcbbe94520f8271f092d07711f8d49d5e746d7d08512dc0154eaa23a
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: java.security.SecureRandom
+		Statement: $r14 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer14245)
+		Method: <io.ktor.util.NonceKt$nonceGeneratorJob$1: java.lang.Object invokeSuspend(java.lang.Object)>
+		SHA-256: 947c8735c431b7353601c7415c87d198e96672e2720b4f6de6c747d51dc28bd6
+		Secure: true
+
+Findings in Java Class: io.ktor.util.NonceKt$nonceGeneratorJob$1
+
+	 in Method: java.lang.Object invokeSuspend(java.lang.Object)
+		TypestateError violating CrySL rule for java.security.SecureRandom (on Object #947c8735c431b7353601c7415c87d198e96672e2720b4f6de6c747d51dc28bd6)
+			Unexpected call to method setSeed on object of type java.security.SecureRandom. Expect a call to one of the following methods generateSeed,nextInt,nextBytes
+			at statement: virtualinvoke $r7.<java.security.SecureRandom: void setSeed(byte[])>($r15)
+
+		TypestateError violating CrySL rule for java.security.SecureRandom (on Object #947c8735c431b7353601c7415c87d198e96672e2720b4f6de6c747d51dc28bd6)
+			Unexpected call to method <java.security.SecureRandom: void nextBytes(byte[])> on object of type java.security.SecureRandom. Expect a call to one of the following methods java.util.Random: int nextInt(),java.util.Random: void nextBytes(byte[]),java.security.SecureRandom: void nextBytes(byte[]),java.security.SecureRandom: byte[] generateSeed(int),java.util.Random: int nextInt(int)
+			at statement: virtualinvoke $r7.<java.security.SecureRandom: void nextBytes(byte[])>($r5)
+
+		TypestateError violating CrySL rule for java.security.SecureRandom (on Object #947c8735c431b7353601c7415c87d198e96672e2720b4f6de6c747d51dc28bd6)
+			Unexpected call to method setSeed on object of type java.security.SecureRandom. Expect a call to one of the following methods generateSeed,nextInt,nextBytes
+			at statement: virtualinvoke $r7.<java.security.SecureRandom: void setSeed(long)>($l1)
+
+
+Findings in Java Class: io.ktor.util.CryptoKt__CryptoJvmKt$sha1$1
+
+	 in Method: java.lang.Object invokeSuspend(java.lang.Object)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #42ca34c85e7d7e7659a10e0214b35b4d5fe369318b2c1780c167ea15509a33b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = interfaceinvoke $r4.<io.ktor.util.Digest: java.lang.Object build(kotlin.coroutines.Continuation)>($r6)
+
+
+Findings in Java Class: io.ktor.client.features.auth.providers.DigestAuthProvider
+
+	 in Method: java.lang.Object makeDigest(java.lang.String,kotlin.coroutines.Continuation)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #42ca34c85e7d7e7659a10e0214b35b4d5fe369318b2c1780c167ea15509a33b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r9 = staticinvoke <io.ktor.util.CryptoKt: java.lang.Object build(io.ktor.util.Digest,byte[],kotlin.coroutines.Continuation)>($r4, $r8, $r1)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 8
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 3
+	IncompleteOperationError: 2
+=====================================================================

@@ -1,0 +1,98 @@
+[*] Time cost: 9.10277247428894
+[-] Decompressing firmware: 0.001172780990600586
+[-] Extracting firmware: 0.41997337341308594
+[-] Running idc script: 3.4762070178985596
+[-] CFG construction: 4.453404903411865
+[-] Taint analysis: 0.0037012100219726562
+
+[-] Extracted binaries:
+[-] /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract/mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/evp_aes_ecb (MIPS32)
+[-] /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract/mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/aes_encrypt (MIPS32)
+[-] /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract/mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/ignore_calls (MIPS32)
+[-] /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract/mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/test_scenario (MIPS32)
+[-] /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract/mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/crypt (MIPS32)
+
+[*] Crypto libraries imported:
+[-] libgcrypt: set()
+[-] libwolfssl: set()
+[-] libssl: set()
+[-] libmcrypt: set()
+[-] libcrypto: {'test_scenario', 'ignore_calls', 'aes_encrypt', 'evp_aes_ecb'}
+[-] libcrypt: {'crypt'}
+
+[*] Vulnerabilities:
+[-] Vulnerablity number: (8)
+--------------------------------------
+File: /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract/mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/crypt
+Rule: Rule-1. Do not use constant salts for password-based encryption (PBE)
+Function name: crypt (0x0)
+Data: XX
+Path: ['0x400730']
+Count: 1
+Call stack:
+-> test_crypt (0x400730)
+--------------------------------------
+--------------------------------------
+File: /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract/mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/test_scenario
+Rule: Rule-1. Do not use constant salts for password-based encryption (PBE)
+Function name: EVP_BytesToKey (0x0)
+Data: "salt"<0>
+Path: ['0x400838']
+Count: 1
+Call stack:
+--------------------------------------
+--------------------------------------
+File: /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract/mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/crypt
+Rule: Rule-2. Do not use constant encryption keys
+Function name: crypt (0x0)
+Data: "admin"<0>
+Path: ['0x400730']
+Count: 1
+Call stack:
+-> test_crypt (0x400730)
+--------------------------------------
+--------------------------------------
+File: /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract/mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/test_scenario
+Rule: Rule-2. Do not use constant encryption keys
+Function name: EVP_BytesToKey (0x0)
+Data: "data"<0>
+Path: ['0x400838']
+Count: 1
+Call stack:
+--------------------------------------
+--------------------------------------
+File: /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract/mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/aes_encrypt
+Rule: Rule-4. Do not use electronic code book (ECB) mode for encryption
+Function name: AES_encrypt (0x0)
+Data: 
+Path: ['0x400a48']
+Count: 1
+Call stack:
+--------------------------------------
+--------------------------------------
+File: /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract/mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/evp_aes_ecb
+Rule: Rule-4. Do not use electronic code book (ECB) mode for encryption
+Function name: EVP_aes_128_ecb (0x0)
+Data: 
+Path: ['0x400abc']
+Count: 1
+Call stack:
+--------------------------------------
+--------------------------------------
+File: /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract//mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/ignore_srandom
+Rule: Rule-5. Do not use static seeds for random number generation (RNG) functions
+Function name: rand
+Data: rand() without srand()
+Path: ['0x0']
+Count: 1
+Call stack:
+--------------------------------------
+--------------------------------------
+File: /home/xx/CRYPTOREX/crypto-detectors-evaluation-artifacts/experiment/cryptorex-exp/CryptoREX/tmp/extract//mwe_mips.bin/_mwe_mips.bin.extracted/squashfs-root/rand_sleep
+Rule: Rule-5. Do not use static seeds for random number generation (RNG) functions
+Function name: rand
+Data: rand() without srand()
+Path: ['0x0']
+Count: 1
+Call stack:
+--------------------------------------

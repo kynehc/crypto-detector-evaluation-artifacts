@@ -1,0 +1,901 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>($r4, varReplacer21941)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: c9b5b723b01f3c2cba45e79cb189c3d2d09e628f2499124ae720434729499d43
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: java.security.MessageDigest getMessageDigest(org.apache.poi.poifs.crypt.HashAlgorithm)>
+		SHA-256: 8a2704d57dfabba753b6a53112f6e0c757f617ef52d930bb5fa81297432981f5
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<javax.crypto.Mac: byte[] doFinal()>()
+		Method: <com.google.common.hash.MacHashFunction$MacHasher: com.google.common.hash.HashCode hash()>
+		SHA-256: a89d37061ba0dac61e1b08aaf3eb3497c39726681770418d4469691a8e1f6dbc
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.Key
+		Statement: $r5 = interfaceinvoke $r1.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: 89787cca2ff69b187601127b90dc369e3672ab268db2b0f5522338f65ab6b774
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r3)
+		Method: <k.a.a.a.a.f$a: java.lang.String c(java.lang.String,java.lang.String)>
+		SHA-256: a7f09f820ba9a402e9db4dd162b52fa9802385f77889af74b2af896a93e4288f
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r14.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: e131e43310291f91c5e3e21e621fd57ef068b83db2afee175f286e910b36aaa3
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: javax.crypto.SecretKey
+		Statement: $r16 = virtualinvoke $r15.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r13)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: 4f24614ef458735a12fe9125406f470914d045bab304c4422193c1dcd32db13d
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: javax.crypto.KeyGenerator
+		Statement: $r13 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer276, varReplacer277)
+		Method: <me.blog.korn123.easydiary.activities.FingerprintLockActivity: void onResume()>
+		SHA-256: 6b2ac2aaf632c7d6cb212458fe0998ffe1dff015be02cf8743dbe8df0ed74e38
+		Secure: false
+	Object:
+		Variable: $r17
+		Type: javax.crypto.Cipher
+		Statement: $r17 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r2, $r9)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r8)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfoBuilder,javax.crypto.SecretKey,int)>
+		SHA-256: 5e2b13ca67fb38264a779d92b8958e5c114b1162c674741cd3bdd65781d159ad
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r15 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String,java.lang.String)>($r3, $r2)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: 9afd1252e5a360ebfc26e0ffa49f0691e64a550789e0f2e36853cf3f3506ed53
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: javax.crypto.SecretKey
+		Statement: $r16 = virtualinvoke $r15.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r13)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: 4f24614ef458735a12fe9125406f470914d045bab304c4422193c1dcd32db13d
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r1, varReplacer21944)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: java.security.MessageDigest getMessageDigest(org.apache.poi.poifs.crypt.HashAlgorithm)>
+		SHA-256: b1ef40154915bd4eb9b2eee08a2012b51903418bbf506ada9fa3857b8d1385c1
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: $r2 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>($r3)
+		Method: <l.b.f.a: void <init>(java.lang.String)>
+		SHA-256: 1803186d2473a089900f0be8e59980ec26337fe03334c91efb7cbdeb6fd16592
+		Secure: true
+	Object:
+		Variable: $r16
+		Type: javax.crypto.spec.PBEParameterSpec
+		Statement: specialinvoke $r16.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r12, $i0)
+		Method: <l.b.c.a.a: byte[] c(byte[])>
+		SHA-256: 1abd07cf0c2cc020f6ff059e48caab687933f400214f5622257b73b00c9061a0
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.Key
+		Statement: $r5 = interfaceinvoke $r1.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: 89787cca2ff69b187601127b90dc369e3672ab268db2b0f5522338f65ab6b774
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r10.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r8, $r7)
+		Method: <org.apache.poi.poifs.crypt.standard.StandardDecryptor: java.io.InputStream getDataStream(org.apache.poi.poifs.filesystem.DirectoryNode)>
+		SHA-256: dfa50c3ccbcb42a905ab23801c206a89d09953246c58fe98e2d237170ef4c9df
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r15 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String,java.security.Provider)>($r2, $r9)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: 3fbb80a96abfc5ecf1f022fc672a8fa10ff616b03b54190fe9c33b9a6fd98359
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: byte[] generateKey(byte[],org.apache.poi.poifs.crypt.HashAlgorithm,byte[],int)>
+		SHA-256: 907aa7b7a72ba03feb0eeaabf0ed2b66b2b6e362c40195f20e4a4cdc479702fe
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: javax.crypto.Mac
+		Statement: $r0 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r1)
+		Method: <com.google.common.hash.MacHashFunction: javax.crypto.Mac getMac(java.lang.String,java.security.Key)>
+		SHA-256: 6dfe92fb5526abc60bb706d9a02bc7267374c73eb4cfabeec75ce74a35a0603d
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r15 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r2)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: 7288fb367bc9b86639e59d1f044dc7f67102bf2e1c1e424c3020c3beb7e72ea
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: java.security.KeyStore
+		Statement: $r12 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer265)
+		Method: <me.blog.korn123.easydiary.activities.FingerprintLockActivity: void onResume()>
+		SHA-256: 4ca9e03ac98658048570ed466b15df249ceae3e8f4f06b9f4a1f3cb76d24cb73
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <l.b.f.a: byte[] a(int)>
+		SHA-256: f5c2c594c16d3b92ef07af60f6d0cb439a5ae96d72ba9e0c42dff04bed6cae99
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: java.lang.String
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, $r10)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfoBuilder,javax.crypto.SecretKey,int)>
+		SHA-256: 7e4d65799bb40c2b8dc7c7c9417f29c3b465fa602ea63c8a23f6e9730c61798d
+		Secure: false
+	Object:
+		Variable: $r17
+		Type: javax.crypto.Cipher
+		Statement: $r17 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r2)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: 260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35
+		Secure: false
+	Object:
+		Variable: $r17
+		Type: javax.crypto.Cipher
+		Statement: $r17 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>($r2, $r3)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: 82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.crypto.Cipher
+		Statement: $r14 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer282)
+		Method: <me.blog.korn123.easydiary.activities.FingerprintLockActivity: void onResume()>
+		SHA-256: 137b65a82a30d256676ababbfc649a4432fa0494c737c1807ca5c47cc3adf0f6
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r11.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r10)
+		Method: <me.blog.korn123.easydiary.activities.FingerprintLockActivity: boolean initCipher(javax.crypto.Cipher,java.lang.String)>
+		SHA-256: 3ccba84b0a4c964d174bb23c0b57b781ad2b57f819c293893abc39c2bc765412
+		Secure: false
+	Object:
+		Variable: $r17
+		Type: javax.crypto.Cipher
+		Statement: $r17 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>($r2, $r3)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: 82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92
+		Secure: false
+	Object:
+		Variable: $r17
+		Type: javax.crypto.Cipher
+		Statement: $r17 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r2)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: 260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: byte[] generateKey(byte[],org.apache.poi.poifs.crypt.HashAlgorithm,byte[],int)>
+		SHA-256: 767f426521be18e72df6a061df02eb3b6a403be6b840214ef23efd7ba34ae53a
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r8)
+		Method: <org.apache.poi.hssf.record.crypto.Biff8RC4Key: void initCipherForBlock(javax.crypto.Cipher,int)>
+		SHA-256: 6ab887487b2b2b574624b8dbbe5f25cdbb131054d1869a8c0d8a0ab00e76e173
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r4)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: fe54f3722dfadb02449ab5b749199e7bf880028e325edc51b3e5915ab99c58bd
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r8)
+		Method: <org.apache.poi.hssf.record.crypto.Biff8RC4Key: void initCipherForBlock(javax.crypto.Cipher,int)>
+		SHA-256: fd371dec244f415cb7fb3bd1d014a95b3965e6184c0982d11cd8e321a9e73171
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, $r10)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfoBuilder,javax.crypto.SecretKey,int)>
+		SHA-256: 15b029563c0ee2affefc9aef4050dff9383d83cffe77c416f0d9e5ec4592d809
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = interfaceinvoke $r1.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: 8ce26a85430fbf7593f30d59a11bf86e9c5eae41ece68f7cf0283a9455db9a7c
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <com.google.common.hash.MessageDigestHashFunction: java.security.MessageDigest getMessageDigest(java.lang.String)>
+		SHA-256: f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher: com.google.common.hash.HashCode hash()>
+		SHA-256: 498aa274b0e0dc658a96e5b82797c2ef859caa8cc0a4a03329fbcf0be8023051
+		Secure: true
+	Object:
+		Variable: $r17
+		Type: javax.crypto.Cipher
+		Statement: $r17 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r2, $r9)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.poi.hssf.record.crypto.Biff8RC4Key: void initCipherForBlock(javax.crypto.Cipher,int)>
+		SHA-256: 171382842952535d57d76f401433775d0fac9b8bac5c6e681b80f622a5599e9e
+		Secure: true
+	Object:
+		Variable: $r16
+		Type: javax.crypto.SecretKey
+		Statement: $r16 = virtualinvoke $r15.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r13)
+		Method: <l.b.c.a.a: void e()>
+		SHA-256: 4f24614ef458735a12fe9125406f470914d045bab304c4422193c1dcd32db13d
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer40848)
+		Method: <com.bumptech.glide.load.p.b0.j$a: com.bumptech.glide.load.p.b0.j$b b()>
+		SHA-256: 7ca3e2d2a06b897464a92096ebfbd5f8bdd6802715aa96b9a8d2264d3be3d3d6
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher: com.google.common.hash.HashCode hash()>
+		SHA-256: 498aa274b0e0dc658a96e5b82797c2ef859caa8cc0a4a03329fbcf0be8023051
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r8)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfoBuilder,javax.crypto.SecretKey,int)>
+		SHA-256: d2f7ec6115113bac1692b21cb3bb51202dadc0f8870740b41f1ade61bd72048b
+		Secure: false
+	Object:
+		Variable: $r16
+		Type: javax.crypto.spec.PBEParameterSpec
+		Statement: specialinvoke $r16.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r7, $i0)
+		Method: <l.b.c.a.a: byte[] b(byte[])>
+		SHA-256: 20537b3c415ddeac008751380754ccd30b4383da868abe9c16a3835da7bf32e6
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = interfaceinvoke $r1.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: 8ce26a85430fbf7593f30d59a11bf86e9c5eae41ece68f7cf0283a9455db9a7c
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfoBuilder,javax.crypto.SecretKey,int)>
+		SHA-256: ecdc658878df476b8adf35dd1b05fb0d6e6d22b873c98312af9bccc9538f4c7b
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <k.a.a.a.a.f$a: java.lang.String c(java.lang.String,java.lang.String)>
+		SHA-256: 30d44e23ed972117c3cfd63a3486e5aa6907a0841b536cf05a4eb7f3f5b0450c
+		Secure: true
+
+Findings in Java Class: l.b.c.a.a
+
+	 in Method: void e()
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #3fbb80a96abfc5ecf1f022fc672a8fa10ff616b03b54190fe9c33b9a6fd98359)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r15 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String,java.security.Provider)>($r2, $r9)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r17 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>($r2, $r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void g()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void g()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void g()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void g()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void g()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void g()>()
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r17 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r16 = virtualinvoke $r15.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r13)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r17 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.security.Provider)>($r2, $r9)
+
+		ForbiddenMethodError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Detected call to forbidden method void <init>(char[]) of class javax.crypto.spec.PBEKeySpec. Instead, call method <javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>.
+			at statement: specialinvoke $r13.<javax.crypto.spec.PBEKeySpec: void <init>(char[])>($r12)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #7288fb367bc9b86639e59d1f044dc7f67102bf2e1c1e424c3020c3beb7e72ea)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r15 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r2)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #9afd1252e5a360ebfc26e0ffa49f0691e64a550789e0f2e36853cf3f3506ed53)
+			First parameter (with value "PBEWithMD5AndDES") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r15 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String,java.lang.String)>($r3, $r2)
+
+
+	 in Method: byte[] b(byte[])
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<l.b.c.a.a: void e()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<l.b.c.a.a: void e()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<l.b.c.a.a: void e()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<l.b.c.a.a: void e()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<l.b.c.a.a: void e()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: virtualinvoke r0.<l.b.c.a.a: void e()>()
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r9.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r9.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r9.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init
+			at statement: $r5 = virtualinvoke $r9.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = virtualinvoke r0.<l.b.c.a.a: boolean f()>()
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init
+			at statement: $r5 = virtualinvoke $r9.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = virtualinvoke r0.<l.b.c.a.a: boolean f()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = virtualinvoke r0.<l.b.c.a.a: boolean f()>()
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init
+			at statement: $r5 = virtualinvoke $r9.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = virtualinvoke r0.<l.b.c.a.a: boolean f()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = virtualinvoke r0.<l.b.c.a.a: boolean f()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = virtualinvoke r0.<l.b.c.a.a: boolean f()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r17)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r17)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r17)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r17)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r17)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r17)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r9.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer32123, $r12, $r11)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEParameterSpec (on Object #20537b3c415ddeac008751380754ccd30b4383da868abe9c16a3835da7bf32e6)
+			Second parameter (with value 1000)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r16.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r7, $i0)
+
+
+	 in Method: byte[] c(byte[])
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEParameterSpec (on Object #1abd07cf0c2cc020f6ff059e48caab687933f400214f5622257b73b00c9061a0)
+			Second parameter (with value 1000)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r16.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r12, $i0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r1.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer46322, $r2, $r13)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r18)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r18)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r18)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r18)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r18)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke r0.<l.b.c.a.a: void d(java.security.InvalidKeyException)>($r18)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r7 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r7 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r7 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init
+			at statement: $r7 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init
+			at statement: $r7 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init
+			at statement: $r7 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r7)
+
+
+Findings in Java Class: me.blog.korn123.easydiary.activities.FingerprintLockActivity
+
+	 in Method: void onResume()
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #137b65a82a30d256676ababbfc649a4432fa0494c737c1807ca5c47cc3adf0f6)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r14 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer282)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #137b65a82a30d256676ababbfc649a4432fa0494c737c1807ca5c47cc3adf0f6)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke $r18.<d.g.k.a.a$d: void <init>(javax.crypto.Cipher)>($r14)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #137b65a82a30d256676ababbfc649a4432fa0494c737c1807ca5c47cc3adf0f6)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: specialinvoke $r18.<d.g.k.a.a$d: void <init>(javax.crypto.Cipher)>($r14)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #137b65a82a30d256676ababbfc649a4432fa0494c737c1807ca5c47cc3adf0f6)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r14 = null
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #137b65a82a30d256676ababbfc649a4432fa0494c737c1807ca5c47cc3adf0f6)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r14 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer282)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #4ca9e03ac98658048570ed466b15df249ceae3e8f4f06b9f4a1f3cb76d24cb73)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r12 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer265)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.KeyGenerator (on Object #6b2ac2aaf632c7d6cb212458fe0998ffe1dff015be02cf8743dbe8df0ed74e38)
+			Operation on object of type javax.crypto.KeyGenerator object not completed. Expected call to generateKey, init
+			at statement: staticinvoke <i.x.d.k: void d(java.lang.Object,java.lang.String)>($r13, varReplacer266)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #4ca9e03ac98658048570ed466b15df249ceae3e8f4f06b9f4a1f3cb76d24cb73)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: staticinvoke <i.x.d.k: void d(java.lang.Object,java.lang.String)>($r12, varReplacer287)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #137b65a82a30d256676ababbfc649a4432fa0494c737c1807ca5c47cc3adf0f6)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = specialinvoke r0.<me.blog.korn123.easydiary.activities.FingerprintLockActivity: boolean initCipher(javax.crypto.Cipher,java.lang.String)>($r14, varReplacer267)
+
+
+	 in Method: void startListening(d.g.k.a.a$d)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #137b65a82a30d256676ababbfc649a4432fa0494c737c1807ca5c47cc3adf0f6)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $z0 = virtualinvoke r0.<me.blog.korn123.easydiary.activities.FingerprintLockActivity: boolean isFingerprintAuthAvailable()>()
+
+
+	 in Method: boolean initCipher(javax.crypto.Cipher,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer2240, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r11.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r10)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.ChunkedCipherInputStream
+
+	 in Method: byte[] nextChunk()
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #c9b5b723b01f3c2cba45e79cb189c3d2d09e628f2499124ae720434729499d43)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #fe54f3722dfadb02449ab5b749199e7bf880028e325edc51b3e5915ab99c58bd)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+
+Findings in Java Class: com.google.common.hash.MacHashFunction$MacHasher
+
+	 in Method: com.google.common.hash.HashCode hash()
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #6dfe92fb5526abc60bb706d9a02bc7267374c73eb4cfabeec75ce74a35a0603d)
+			Unexpected call to method <javax.crypto.Mac: byte[] doFinal()> on object of type javax.crypto.Mac. Expect a call to one of the following methods javax.crypto.Mac: void update(byte[]),javax.crypto.Mac: byte[] doFinal(byte[]),javax.crypto.Mac: void update(java.nio.ByteBuffer),javax.crypto.Mac: void update(byte),javax.crypto.Mac: void update(byte[],int,int)
+			at statement: $r2 = virtualinvoke $r1.<javax.crypto.Mac: byte[] doFinal()>()
+
+
+Findings in Java Class: com.google.common.hash.AbstractHashFunction
+
+	 in Method: com.google.common.hash.HashCode hashObject(java.lang.Object,com.google.common.hash.Funnel)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #6dfe92fb5526abc60bb706d9a02bc7267374c73eb4cfabeec75ce74a35a0603d)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r4 = interfaceinvoke $r3.<com.google.common.hash.Hasher: com.google.common.hash.HashCode hash()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r4 = interfaceinvoke $r3.<com.google.common.hash.Hasher: com.google.common.hash.HashCode hash()>()
+
+
+Findings in Java Class: com.google.common.hash.AbstractCompositeHashFunction
+
+	 in Method: com.google.common.hash.Hasher newHasher()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #6dfe92fb5526abc60bb706d9a02bc7267374c73eb4cfabeec75ce74a35a0603d)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r4 = specialinvoke r0.<com.google.common.hash.AbstractCompositeHashFunction: com.google.common.hash.Hasher fromHashers(com.google.common.hash.Hasher[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r4 = specialinvoke r0.<com.google.common.hash.AbstractCompositeHashFunction: com.google.common.hash.Hasher fromHashers(com.google.common.hash.Hasher[])>($r1)
+
+
+Findings in Java Class: com.google.common.hash.MessageDigestHashFunction$MessageDigestHasher
+
+	 in Method: com.google.common.hash.HashCode hash()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #f4e887286d0504cb5722b1da9a4eac06d6ea434977af7216dbf1f6217c285838)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: k.a.a.a.a.f$a
+
+	 in Method: java.lang.String b(java.lang.String,java.lang.String)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String b(java.lang.String)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String b(java.lang.String)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String b(java.lang.String)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String b(java.lang.String)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String b(java.lang.String)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String b(java.lang.String)>($r1)
+
+
+	 in Method: java.lang.String a(java.lang.String,java.lang.String)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String a(java.lang.String)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String a(java.lang.String)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String a(java.lang.String)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #82904fa09e4e9fa2b3d3157aa66fde4d5d2c9a9df3f76e587a18500464f3ff92)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String a(java.lang.String)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #260b5490446f5fe77c119a154f48641b90794b0c738b1aa0aa5418709474ff35)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String a(java.lang.String)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #d0e9dcab401a6e63947e3b080f150de82756e369098a1d47b820a65267bdeab9)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: $r1 = virtualinvoke $r3.<l.b.g.a.a: java.lang.String a(java.lang.String)>($r1)
+
+
+Findings in Java Class: e.e.a.a.e0.b
+
+	 in Method: e.e.a.a.e0.b$i o(e.e.a.a.e0.b$g)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #7ca3e2d2a06b897464a92096ebfbd5f8bdd6802715aa96b9a8d2264d3be3d3d6)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r3 = interfaceinvoke $r2.<d.g.s.e: java.lang.Object b()>()
+
+
+Findings in Java Class: org.apache.poi.util.BoundedInputStream
+
+	 in Method: void close()
+		TypestateError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dfa50c3ccbcb42a905ab23801c206a89d09953246c58fe98e2d237170ef4c9df)
+			Unexpected call to method close on object of type javax.crypto.CipherInputStream. Expect a call to one of the following methods read
+			at statement: virtualinvoke $r1.<java.io.InputStream: void close()>()
+
+
+Findings in Java Class: org.apache.commons.io.input.WindowsLineEndingInputStream
+
+	 in Method: void close()
+		TypestateError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dfa50c3ccbcb42a905ab23801c206a89d09953246c58fe98e2d237170ef4c9df)
+			Unexpected call to method close on object of type javax.crypto.CipherInputStream. Expect a call to one of the following methods read
+			at statement: specialinvoke r0.<java.io.InputStream: void close()>()
+
+
+Findings in Java Class: org.apache.commons.io.input.UnixLineEndingInputStream
+
+	 in Method: void close()
+		TypestateError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dfa50c3ccbcb42a905ab23801c206a89d09953246c58fe98e2d237170ef4c9df)
+			Unexpected call to method close on object of type javax.crypto.CipherInputStream. Expect a call to one of the following methods read
+			at statement: specialinvoke r0.<java.io.InputStream: void close()>()
+
+
+Findings in Java Class: org.apache.poi.POIDocument
+
+	 in Method: org.apache.poi.hpsf.PropertySet getPropertySet(java.lang.String,org.apache.poi.poifs.crypt.EncryptionInfo)
+		TypestateError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dfa50c3ccbcb42a905ab23801c206a89d09953246c58fe98e2d237170ef4c9df)
+			Unexpected call to method close on object of type javax.crypto.CipherInputStream. Expect a call to one of the following methods read
+			at statement: virtualinvoke $r5.<java.io.InputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dfa50c3ccbcb42a905ab23801c206a89d09953246c58fe98e2d237170ef4c9df)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: virtualinvoke $r5.<java.io.InputStream: void close()>()
+
+
+Findings in Java Class: org.apache.poi.poifs.filesystem.NPOIFSFileSystem
+
+	 in Method: void closeInputStream(java.io.InputStream,boolean)
+		TypestateError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dfa50c3ccbcb42a905ab23801c206a89d09953246c58fe98e2d237170ef4c9df)
+			Unexpected call to method close on object of type javax.crypto.CipherInputStream. Expect a call to one of the following methods read
+			at statement: virtualinvoke $r1.<java.io.InputStream: void close()>()
+
+
+	 in Method: void <init>(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dfa50c3ccbcb42a905ab23801c206a89d09953246c58fe98e2d237170ef4c9df)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: $r2 = staticinvoke <java.nio.channels.Channels: java.nio.channels.ReadableByteChannel newChannel(java.io.InputStream)>($r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.CipherInputStream (on Object #dfa50c3ccbcb42a905ab23801c206a89d09953246c58fe98e2d237170ef4c9df)
+			Operation on object of type javax.crypto.CipherInputStream object not completed. Expected call to read
+			at statement: specialinvoke r0.<org.apache.poi.poifs.filesystem.NPOIFSFileSystem: void closeInputStream(java.io.InputStream,boolean)>($r1, $z0)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.CryptoFunctions
+
+	 in Method: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key)>($i0, $r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r14.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor
+
+	 in Method: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfoBuilder,javax.crypto.SecretKey,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r8)
+
+
+Findings in Java Class: com.google.common.hash.MacHashFunction
+
+	 in Method: javax.crypto.Mac getMac(java.lang.String,java.security.Key)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r0.<javax.crypto.Mac: void init(java.security.Key)>($r2)
+
+
+Findings in Java Class: org.apache.poi.hssf.record.crypto.Biff8RC4Key
+
+	 in Method: void initCipherForBlock(javax.crypto.Cipher,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r8)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor
+
+	 in Method: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfoBuilder,javax.crypto.SecretKey,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, $r10)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 48
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ForbiddenMethodError: 1
+	IncompleteOperationError: 58
+	RequiredPredicateError: 11
+	TypestateError: 22
+	ConstraintError: 10
+=====================================================================

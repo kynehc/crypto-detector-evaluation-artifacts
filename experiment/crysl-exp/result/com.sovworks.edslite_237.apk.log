@@ -1,0 +1,889 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer16386)
+		Method: <com.sovworks.eds.crypto.kdf.HMACSHA512: void <init>(byte[])>
+		SHA-256: 8955db1f367614c90af6376abb7ebff7d825d01ba2a1716d164d925c3cc2b84f
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r3.<java.security.MessageDigest: int digest(byte[],int,int)>($r2, varReplacer10488, $i0)
+		Method: <com.sovworks.eds.crypto.kdf.HMAC: void calcHMAC(byte[],int,int,byte[])>
+		SHA-256: a8e322029d226058bc373f1581907a5bdcc478df9d7d4852fdbe6a054db1728a
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29845)
+		Method: <com.sovworks.eds.luks.VolumeLayout: java.util.List getSupportedHashFuncs()>
+		SHA-256: 92a967a3ef776ffedfc64862d45d38fb2bc8c5264cb845acaeab1ae5019735eb
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <com.sovworks.eds.fs.encfs.File$Header: void initNew()>
+		SHA-256: 516127045a46de022f80b75d6c6bbd6ed5e2b42f97ab4da52269f63088987d20
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29847)
+		Method: <com.sovworks.eds.truecrypt.StdLayout: java.util.List getSupportedHashFuncs()>
+		SHA-256: 95d8b9551e78f148fae47dad64dc26cd61fa06a4081fe689b736ded602af1d01
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer955)
+		Method: <com.sovworks.eds.crypto.SimpleCrypto: java.lang.String calcStringMD5(java.lang.String)>
+		SHA-256: 889b629f1e2267ec61494538269cdb01b36ea1bf177b87c48c08aa2ce8a92fb8
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: $r5 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer67)
+		Method: <com.sovworks.eds.android.PRNGFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: aa8586a2fcd0b6e21173b9da30338334f940426ac9fa05688085a1f3f174e7e4
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r3.<java.security.MessageDigest: int digest(byte[],int,int)>($r2, varReplacer10492, $i0)
+		Method: <com.sovworks.eds.crypto.kdf.HMAC: void calcHMAC(byte[],int,int,byte[])>
+		SHA-256: d54fd1dd9ffa5d14866eca9a27c077e51d1588c4e57157ac36a6f2c2650dfed2
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <com.sovworks.eds.android.settings.UserSettingsCommon: void saveSettingsProtectionKey()>
+		SHA-256: 26a36c4c478b5a77d6981cb4d9a75c2e4cb053579163a5df8f10bace5898357b
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29843)
+		Method: <com.sovworks.eds.veracrypt.VolumeLayout: java.util.List getSupportedHashFuncs()>
+		SHA-256: 6de4cc119e8c76afbf64ee760d88feee50e770779722bfb44f23208e6f75c32c
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <com.sovworks.eds.fs.encfs.File$Header: void initNew()>
+		SHA-256: d9f86bbc0a53918cfbc965074f8e5a349d74cc4d6210a54a812d2f3fcee6f436
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <com.sovworks.eds.crypto.SecureBuffer: void <clinit>()>
+		SHA-256: a22ea4168fae329cabb13b0ff01265e90cab7ca12ebb1e07521a34f378c49122
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <com.sovworks.eds.crypto.SimpleCrypto: java.lang.String calcStringMD5(java.lang.String)>
+		SHA-256: 8721e381475fb54a408abd5b52cea01cccb21c592a5e63c9b2980b7dd03f332e
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <com.sovworks.eds.android.PRNGFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: fbec00fe93d15517143af9e354e3e3fbfd9140a2563664ef8b53a88162c8254b
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r0)
+		Method: <com.sovworks.eds.crypto.SimpleCrypto: byte[] encrypt(byte[],byte[],int,int)>
+		SHA-256: db35ec1d8c6057ba365de39900df44fa9ab0cc5604a429c9252257de985b8796
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29844)
+		Method: <com.sovworks.eds.luks.VolumeLayout: java.util.List getSupportedHashFuncs()>
+		SHA-256: b01795edd77f757491fd218db35ce9e5b6ec00b52af773a7c55c4ed380c4f067
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <com.sovworks.eds.android.settings.UserSettingsCommon: void saveSettingsProtectionKey()>
+		SHA-256: 65267dc87a745a50d54663368e936d5f22c8f2917ecb5e24e3ead47624ece5f
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <com.sovworks.eds.crypto.SimpleCrypto: byte[] encrypt(byte[],byte[],int,int)>
+		SHA-256: 62dbd7aa22e7a99043bf9f1f35cd60fbbc4c445197e7d903931e828242201f0f
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <com.sovworks.eds.crypto.MACFile: void <init>(com.sovworks.eds.fs.RandomAccessIO,com.sovworks.eds.fs.encfs.macs.MACCalculator,int,int,int,boolean)>
+		SHA-256: 288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29846)
+		Method: <com.sovworks.eds.luks.VolumeLayout: java.util.List getSupportedHashFuncs()>
+		SHA-256: c2b50c2a52b6aacbeabd3e1c755ba917e6afa35803af41c6bd843e3a2bf85e66
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6655)
+		Method: <com.sovworks.eds.crypto.kdf.HMACSHA1: void <init>(byte[])>
+		SHA-256: ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <com.sovworks.eds.crypto.kdf.HMAC: void <init>(byte[],java.security.MessageDigest,int)>
+		SHA-256: 278136b509ef3fb5c8ccb7842b9fc50cd2d0729b0768265d184028257f4f8016
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <com.sovworks.eds.crypto.SimpleCrypto: byte[] encryptWithPasswordBytes(byte[],byte[])>
+		SHA-256: 1d47b91aab50219fe1450332ca81acf8742d40bc07801466d5bf547d8c3f7f79
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.security.SecureRandom: void nextBytes(byte[])>($r2)
+		Method: <com.sovworks.eds.crypto.MACFile: void makeMACCheckedBuffer(byte[],int,int,byte[],com.sovworks.eds.fs.encfs.macs.MACCalculator,int,int,java.security.SecureRandom)>
+		SHA-256: 8e624004e829846021bf9634f721320d94acac6b6e40ab575932a9695bb2a79c
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r3.<java.security.SecureRandom: void <init>()>()
+		Method: <com.sovworks.eds.crypto.MACOutputStream: void <init>(java.io.OutputStream,com.sovworks.eds.fs.encfs.macs.MACCalculator,int,int,int)>
+		SHA-256: 1832e01c4ec5eb8a47fb3eb4438fb7da9628016270e3cb936182f59de01db34c
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <com.sovworks.eds.crypto.SimpleCrypto: byte[] encryptWithPasswordBytes(byte[],byte[])>
+		SHA-256: b1f1c373a05dd0cba025a7867e8954e5ca585464aeacc1a54cd52720e9053630
+		Secure: true
+
+Findings in Java Class: com.sovworks.eds.crypto.SimpleCrypto
+
+	 in Method: java.lang.String calcStringMD5(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #889b629f1e2267ec61494538269cdb01b36ea1bf177b87c48c08aa2ce8a92fb8)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer955)
+
+
+	 in Method: byte[] encrypt(byte[],byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: interfaceinvoke $r1.<com.sovworks.eds.crypto.EncryptionEngine: void close()>()
+
+
+	 in Method: byte[] decrypt(byte[],byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: interfaceinvoke $r1.<com.sovworks.eds.crypto.EncryptionEngine: void close()>()
+
+
+Findings in Java Class: com.sovworks.eds.crypto.MACFile
+
+	 in Method: void makeMACCheckedBuffer(byte[],int,int,byte[],com.sovworks.eds.fs.encfs.macs.MACCalculator,int,int,java.security.SecureRandom)
+		TypestateError violating CrySL rule for java.security.SecureRandom (on Object #1832e01c4ec5eb8a47fb3eb4438fb7da9628016270e3cb936182f59de01db34c)
+			Unexpected call to method nextBytes on object of type java.security.SecureRandom. Expect a call to one of the following methods init,getInstanceStrong,getInstance
+			at statement: virtualinvoke $r1.<java.security.SecureRandom: void nextBytes(byte[])>($r2)
+
+
+	 in Method: int getMACCheckedBuffer(byte[],int,int,long,byte[],com.sovworks.eds.fs.encfs.macs.MACCalculator,int,int,boolean,boolean)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r1 = virtualinvoke $r2.<com.sovworks.eds.fs.encfs.macs.MACCalculator: byte[] calcChecksum(byte[],int,int)>($r0, $i4, $i2)
+
+
+Findings in Java Class: com.sovworks.eds.fs.util.ActivityTrackingFSWrapper$File
+
+	 in Method: java.io.OutputStream getOutputStream()
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #1832e01c4ec5eb8a47fb3eb4438fb7da9628016270e3cb936182f59de01db34c)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to getInstanceStrong, java.security.SecureRandom: void init(byte[]), java.security.SecureRandom: void init(), getInstance
+			at statement: specialinvoke $r1.<com.sovworks.eds.fs.util.ActivityTrackingFSWrapper$File$2: void <init>(com.sovworks.eds.fs.util.ActivityTrackingFSWrapper$File,java.io.OutputStream)>(r0, $r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke $r1.<com.sovworks.eds.fs.util.ActivityTrackingFSWrapper$File$2: void <init>(com.sovworks.eds.fs.util.ActivityTrackingFSWrapper$File,java.io.OutputStream)>(r0, $r2)
+
+
+	 in Method: java.io.InputStream getInputStream()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke $r1.<com.sovworks.eds.fs.util.ActivityTrackingFSWrapper$File$1: void <init>(com.sovworks.eds.fs.util.ActivityTrackingFSWrapper$File,java.io.InputStream)>(r0, $r2)
+
+
+Findings in Java Class: com.sovworks.eds.fs.encfs.File
+
+	 in Method: void moveTo(com.sovworks.eds.fs.Directory)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #1832e01c4ec5eb8a47fb3eb4438fb7da9628016270e3cb936182f59de01db34c)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke $r7.<java.io.OutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke $r7.<java.io.OutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r7.<java.io.OutputStream: void close()>()
+
+
+	 in Method: void rename(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #1832e01c4ec5eb8a47fb3eb4438fb7da9628016270e3cb936182f59de01db34c)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke $r8.<java.io.OutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke $r8.<java.io.OutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r8.<java.io.OutputStream: void close()>()
+
+
+	 in Method: com.sovworks.eds.fs.RandomAccessIO getRandomAccessIO(com.sovworks.eds.fs.File$AccessMode)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $r2 = specialinvoke r0.<com.sovworks.eds.fs.util.FileWrapper: com.sovworks.eds.fs.RandomAccessIO getRandomAccessIO(com.sovworks.eds.fs.File$AccessMode)>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r2 = specialinvoke r0.<com.sovworks.eds.fs.util.FileWrapper: com.sovworks.eds.fs.RandomAccessIO getRandomAccessIO(com.sovworks.eds.fs.File$AccessMode)>($r1)
+
+
+	 in Method: com.sovworks.eds.fs.encfs.File$Header readHeader(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = staticinvoke <com.sovworks.eds.fs.util.Util: int readBytes(java.io.InputStream,byte[])>($r1, $r2)
+
+
+Findings in Java Class: com.sovworks.eds.fs.encfs.Directory
+
+	 in Method: com.sovworks.eds.fs.File createFile(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #1832e01c4ec5eb8a47fb3eb4438fb7da9628016270e3cb936182f59de01db34c)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke $r7.<java.io.OutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r7.<java.io.OutputStream: void close()>()
+
+
+Findings in Java Class: com.sovworks.eds.android.helpers.WipeFilesTask
+
+	 in Method: void wipeFileRnd(com.sovworks.eds.fs.File,com.sovworks.eds.android.helpers.WipeFilesTask$ITask)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r4.<java.io.OutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r4.<java.io.OutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #1832e01c4ec5eb8a47fb3eb4438fb7da9628016270e3cb936182f59de01db34c)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke $r4.<java.io.OutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #1832e01c4ec5eb8a47fb3eb4438fb7da9628016270e3cb936182f59de01db34c)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke $r4.<java.io.OutputStream: void close()>()
+
+
+Findings in Java Class: com.sovworks.eds.fs.util.Util
+
+	 in Method: long copyFileFromInputStream(java.io.InputStream,com.sovworks.eds.fs.File,long,long,com.sovworks.eds.fs.File$ProgressInfo)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to getInstanceStrong, java.security.SecureRandom: void init(byte[]), java.security.SecureRandom: void init(), getInstance
+			at statement: specialinvoke $r9.<com.sovworks.eds.fs.util.RandomAccessOutputStream: void <init>(com.sovworks.eds.fs.RandomAccessIO)>($r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to getInstanceStrong, java.security.SecureRandom: void init(byte[]), java.security.SecureRandom: void init(), getInstance
+			at statement: specialinvoke $r9.<com.sovworks.eds.fs.util.RandomAccessOutputStream: void <init>(com.sovworks.eds.fs.RandomAccessIO)>($r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #1832e01c4ec5eb8a47fb3eb4438fb7da9628016270e3cb936182f59de01db34c)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke $r7.<java.io.OutputStream: void close()>()
+
+
+	 in Method: void copyFile(com.sovworks.eds.fs.File,com.sovworks.eds.fs.File)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #1832e01c4ec5eb8a47fb3eb4438fb7da9628016270e3cb936182f59de01db34c)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke $r0.<java.io.OutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke $r0.<java.io.OutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r0.<java.io.OutputStream: void close()>()
+
+
+	 in Method: int readWordLE(com.sovworks.eds.fs.RandomAccessIO)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i1 = staticinvoke <com.sovworks.eds.fs.util.Util: int readBytes(com.sovworks.eds.fs.DataInput,byte[])>($r0, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i1 = staticinvoke <com.sovworks.eds.fs.util.Util: int readBytes(com.sovworks.eds.fs.DataInput,byte[])>($r0, $r1)
+
+
+	 in Method: java.lang.String readFromFile(com.sovworks.eds.fs.File)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r2 = staticinvoke <com.sovworks.eds.fs.util.Util: java.lang.String readFromFile(java.io.InputStream)>($r1)
+
+
+	 in Method: long readDoubleWordLE(com.sovworks.eds.fs.RandomAccessIO)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i1 = staticinvoke <com.sovworks.eds.fs.util.Util: int readBytes(com.sovworks.eds.fs.DataInput,byte[])>($r0, $r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i1 = staticinvoke <com.sovworks.eds.fs.util.Util: int readBytes(com.sovworks.eds.fs.DataInput,byte[])>($r0, $r1)
+
+
+Findings in Java Class: com.sovworks.eds.crypto.kdf.HMACSHA1
+
+	 in Method: void <init>(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6655)
+
+
+Findings in Java Class: com.sovworks.eds.fs.exfat.ExFat
+
+	 in Method: void <init>(com.sovworks.eds.fs.RandomAccessIO,boolean)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $l1 = virtualinvoke r0.<com.sovworks.eds.fs.exfat.ExFat: long openFS(boolean)>($z0)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $l1 = virtualinvoke r0.<com.sovworks.eds.fs.exfat.ExFat: long openFS(boolean)>($z0)
+
+
+Findings in Java Class: com.sovworks.eds.fs.encfs.ciphers.StreamNameCipher
+
+	 in Method: java.lang.String decodeName(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: interfaceinvoke $r5.<com.sovworks.eds.crypto.EncryptionEngine: void decrypt(byte[],int,int)>($r2, varReplacer6697, $i0)
+
+
+Findings in Java Class: com.drew.imaging.raf.RafMetadataReader
+
+	 in Method: com.drew.metadata.Metadata readMetadata(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = virtualinvoke $r0.<java.io.InputStream: int read(byte[])>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $l5 = virtualinvoke $r0.<java.io.InputStream: long skip(long)>($l4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z0 = virtualinvoke $r0.<java.io.InputStream: boolean markSupported()>()
+
+
+Findings in Java Class: com.drew.metadata.pcx.PcxReader
+
+	 in Method: void extract(com.drew.lang.SequentialReader,com.drew.metadata.Metadata)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $b0 = virtualinvoke $r1.<com.drew.lang.SequentialReader: byte getInt8()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $b0 = virtualinvoke $r1.<com.drew.lang.SequentialReader: byte getInt8()>()
+
+
+Findings in Java Class: com.sovworks.eds.crypto.modes.XTS
+
+	 in Method: void encrypt(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = virtualinvoke r0.<com.sovworks.eds.crypto.modes.XTS: int getEncryptionBlockSize()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i3 = specialinvoke r0.<com.sovworks.eds.crypto.modes.XTS: int encrypt(byte[],int,int,long,long)>($r1, $i3, $i4, $l1, $l2)
+
+
+	 in Method: void decrypt(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i3 = specialinvoke r0.<com.sovworks.eds.crypto.modes.XTS: int decrypt(byte[],int,int,long,long)>($r1, $i3, $i4, $l1, $l2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = virtualinvoke r0.<com.sovworks.eds.crypto.modes.XTS: int getEncryptionBlockSize()>()
+
+
+Findings in Java Class: com.drew.lang.StreamReader
+
+	 in Method: void getBytes(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i1 = virtualinvoke $r2.<java.io.InputStream: int read(byte[],int,int)>($r1, $i4, $i1)
+
+
+	 in Method: void skip(long)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $l2 = specialinvoke r0.<com.drew.lang.StreamReader: long skipInternal(long)>($l0)
+
+
+	 in Method: byte getByte()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = virtualinvoke $r1.<java.io.InputStream: int read()>()
+
+
+Findings in Java Class: com.drew.metadata.photoshop.PhotoshopReader
+
+	 in Method: void extract(com.drew.lang.SequentialReader,int,com.drew.metadata.Metadata,com.drew.metadata.Directory)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $s4 = virtualinvoke $r1.<com.drew.lang.SequentialReader: short getUInt8()>()
+
+
+Findings in Java Class: com.drew.lang.RandomAccessFileReader
+
+	 in Method: byte[] getBytes(int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<com.drew.lang.RandomAccessFileReader: void seek(int)>($i0)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke r0.<com.drew.lang.RandomAccessFileReader: void validateIndex(int,int)>($i0, $i1)
+
+
+	 in Method: void validateIndex(int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z0 = virtualinvoke r0.<com.drew.lang.RandomAccessFileReader: boolean isValidIndex(int,int)>($i0, $i1)
+
+
+	 in Method: byte getByte(int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke r0.<com.drew.lang.RandomAccessFileReader: void seek(int)>($i0)
+
+
+Findings in Java Class: com.drew.metadata.mp3.Mp3Reader
+
+	 in Method: void extract(java.io.InputStream,com.drew.metadata.Metadata)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke $r13.<com.drew.lang.StreamReader: void <init>(java.io.InputStream)>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke $r13.<com.drew.lang.StreamReader: void <init>(java.io.InputStream)>($r1)
+
+
+Findings in Java Class: com.drew.imaging.png.PngChunkReader
+
+	 in Method: java.lang.Iterable extract(com.drew.lang.SequentialReader,java.util.Set)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r2.<com.drew.lang.SequentialReader: void skip(long)>(varReplacer14387)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = virtualinvoke $r2.<com.drew.lang.SequentialReader: int getInt32()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r5 = virtualinvoke $r2.<com.drew.lang.SequentialReader: byte[] getBytes(int)>($i0)
+
+
+Findings in Java Class: com.sovworks.eds.crypto.modes.CTR
+
+	 in Method: void decrypt(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = specialinvoke r0.<com.sovworks.eds.crypto.modes.CTR: int decrypt(byte[],int,int,byte[],long)>($r2, $i2, $i0, $r1, $l1)
+
+
+	 in Method: void encrypt(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = specialinvoke r0.<com.sovworks.eds.crypto.modes.CTR: int encrypt(byte[],int,int,byte[],long)>($r2, $i2, $i0, $r1, $l1)
+
+
+Findings in Java Class: com.sovworks.eds.fs.encfs.Path
+
+	 in Method: com.sovworks.eds.fs.util.StringPathUtil calcCombinedEncodedParts(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: interfaceinvoke $r5.<com.sovworks.eds.fs.encfs.NameCodec: void close()>()
+
+
+	 in Method: com.sovworks.eds.fs.util.StringPathUtil decodePath()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: interfaceinvoke $r5.<com.sovworks.eds.fs.encfs.NameCodec: void close()>()
+
+
+Findings in Java Class: com.sovworks.eds.fs.fat.FatFS$ClusterChainIO
+
+	 in Method: void writeBuffer()
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke r0.<com.sovworks.eds.fs.fat.FatFS$ClusterChainIO: void setLength(long)>($l2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke r0.<com.sovworks.eds.fs.fat.FatFS$ClusterChainIO: void setLength(long)>($l2)
+
+
+Findings in Java Class: com.sovworks.eds.android.providers.MainContentProviderBase
+
+	 in Method: void lambda$writeToPipe$3(android.os.ParcelFileDescriptor[],com.sovworks.eds.fs.File,android.os.Bundle,io.reactivex.CompletableEmitter)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r4.<java.io.FileOutputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke $r4.<java.io.FileOutputStream: void close()>()
+
+
+	 in Method: void lambda$readFromPipe$1(android.os.ParcelFileDescriptor[],com.sovworks.eds.fs.File,android.os.Bundle,io.reactivex.CompletableEmitter)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r4.<java.io.FileInputStream: void close()>()
+
+
+Findings in Java Class: com.sovworks.eds.crypto.modes.CBC
+
+	 in Method: void encrypt(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i3 = specialinvoke r0.<com.sovworks.eds.crypto.modes.CBC: int encrypt(byte[],int,int,byte[],long,boolean)>($r2, $i3, $i0, $r1, $l2, $z0)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i1 = virtualinvoke r0.<com.sovworks.eds.crypto.modes.CBC: int getEncryptionBlockSize()>()
+
+
+	 in Method: void decrypt(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i3 = specialinvoke r0.<com.sovworks.eds.crypto.modes.CBC: int decrypt(byte[],int,int,byte[],long,boolean)>($r2, $i3, $i0, $r1, $l2, $z0)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i1 = virtualinvoke r0.<com.sovworks.eds.crypto.modes.CBC: int getEncryptionBlockSize()>()
+
+
+Findings in Java Class: com.sovworks.eds.crypto.modes.CFB
+
+	 in Method: void decrypt(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = specialinvoke r0.<com.sovworks.eds.crypto.modes.CFB: int decrypt(byte[],int,int,byte[],long)>($r2, $i2, $i0, $r1, $l1)
+
+
+	 in Method: void encrypt(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = specialinvoke r0.<com.sovworks.eds.crypto.modes.CFB: int encrypt(byte[],int,int,byte[],long)>($r2, $i2, $i0, $r1, $l1)
+
+
+Findings in Java Class: com.sovworks.eds.fs.util.BufferedRandomAccessIO
+
+	 in Method: void seek(long)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: virtualinvoke r0.<com.sovworks.eds.fs.util.BufferedRandomAccessIO: void log(java.lang.String,java.lang.Object[])>(varReplacer4012, $r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke r0.<com.sovworks.eds.fs.util.BufferedRandomAccessIO: void log(java.lang.String,java.lang.Object[])>(varReplacer4012, $r2)
+
+
+Findings in Java Class: com.sovworks.eds.container.EdsContainerBase
+
+	 in Method: com.sovworks.eds.fs.FileSystem loadFileSystem(com.sovworks.eds.fs.RandomAccessIO,boolean)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $z1 = staticinvoke <com.sovworks.eds.fs.exfat.ExFat: boolean isExFATImage(com.sovworks.eds.fs.RandomAccessIO)>($r0)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z1 = staticinvoke <com.sovworks.eds.fs.exfat.ExFat: boolean isExFATImage(com.sovworks.eds.fs.RandomAccessIO)>($r0)
+
+
+Findings in Java Class: com.drew.imaging.jpeg.JpegSegmentReader
+
+	 in Method: com.drew.imaging.jpeg.JpegSegmentData readSegments(com.drew.lang.SequentialReader,java.lang.Iterable)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i1 = virtualinvoke $r0.<com.drew.lang.SequentialReader: int getUInt16()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i1 = virtualinvoke $r0.<com.drew.lang.SequentialReader: int getUInt16()>()
+
+
+Findings in Java Class: com.drew.imaging.FileTypeDetector
+
+	 in Method: com.drew.imaging.FileType detectFileType(java.io.BufferedInputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = virtualinvoke $r0.<java.io.BufferedInputStream: int read(byte[])>($r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z0 = virtualinvoke $r0.<java.io.BufferedInputStream: boolean markSupported()>()
+
+
+Findings in Java Class: com.drew.imaging.riff.RiffReader
+
+	 in Method: void processRiff(com.drew.lang.SequentialReader,com.drew.imaging.riff.RiffHandler)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $r3 = virtualinvoke $r1.<com.drew.lang.SequentialReader: java.lang.String getString(int)>(varReplacer14584)
+
+
+Findings in Java Class: com.sovworks.eds.fs.fat.BPB
+
+	 in Method: void readCommonPart(com.sovworks.eds.fs.RandomAccessIO)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = staticinvoke <com.sovworks.eds.fs.util.Util: int readBytes(com.sovworks.eds.fs.DataInput,byte[],int)>($r1, $r2, varReplacer12371)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i2 = staticinvoke <com.sovworks.eds.fs.util.Util: int readBytes(com.sovworks.eds.fs.DataInput,byte[],int)>($r1, $r2, varReplacer12370)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = staticinvoke <com.sovworks.eds.fs.util.Util: int readBytes(com.sovworks.eds.fs.DataInput,byte[],int)>($r1, $r2, varReplacer12371)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i2 = staticinvoke <com.sovworks.eds.fs.util.Util: int readBytes(com.sovworks.eds.fs.DataInput,byte[],int)>($r1, $r2, varReplacer12370)
+
+
+	 in Method: void checkEndingSignature(com.sovworks.eds.fs.RandomAccessIO)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i0 = staticinvoke <com.sovworks.eds.fs.util.Util: int readWordLE(com.sovworks.eds.fs.RandomAccessIO)>($r1)
+
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: $i0 = staticinvoke <com.sovworks.eds.fs.util.Util: int readWordLE(com.sovworks.eds.fs.RandomAccessIO)>($r1)
+
+
+Findings in Java Class: com.drew.lang.ByteArrayReader
+
+	 in Method: void validateIndex(int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $i1 = virtualinvoke r0.<com.drew.lang.ByteArrayReader: int toUnshiftedOffset(int)>($i1)
+
+
+Findings in Java Class: com.sovworks.eds.crypto.kdf.PBKDF
+
+	 in Method: void deriveKey(com.sovworks.eds.crypto.kdf.HMAC,byte[],byte[],int,byte[],int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke r0.<com.sovworks.eds.crypto.kdf.PBKDF: void calcHMAC(com.sovworks.eds.crypto.kdf.HMAC,byte[],byte[],byte[])>($r3, $r1, $r4, $r7)
+
+
+	 in Method: byte[] deriveKey(byte[],byte[],int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r5.<com.sovworks.eds.crypto.kdf.HMAC: void close()>()
+
+
+Findings in Java Class: com.sovworks.eds.android.filemanager.tasks.LoadedImage
+
+	 in Method: void loadInitOrientation(com.sovworks.eds.fs.Path)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r3.<java.io.InputStream: void close()>()
+
+
+Findings in Java Class: com.sovworks.eds.fs.encfs.ciphers.BlockAndStreamCipher
+
+	 in Method: void init()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: interfaceinvoke $r2.<com.sovworks.eds.crypto.EncryptionEngine: void init()>()
+
+
+Findings in Java Class: com.drew.lang.RandomAccessStreamReader
+
+	 in Method: void validateIndex(int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $z0 = virtualinvoke r0.<com.drew.lang.RandomAccessStreamReader: boolean isValidIndex(int,int)>($i1, $i2)
+
+
+Findings in Java Class: com.drew.imaging.tiff.TiffReader
+
+	 in Method: void processTiff(com.drew.lang.RandomAccessReader,com.drew.imaging.tiff.TiffHandler,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: $s2 = virtualinvoke $r1.<com.drew.lang.RandomAccessReader: short getInt16(int)>($i1)
+
+
+	 in Method: void processIfd(com.drew.imaging.tiff.TiffHandler,com.drew.lang.RandomAccessReader,java.util.Set,int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: virtualinvoke $r1.<com.drew.lang.RandomAccessReader: void setMotorolaByteOrder(boolean)>($z0)
+
+
+Findings in Java Class: com.sovworks.eds.android.helpers.UtilBase
+
+	 in Method: android.graphics.Bitmap loadDownsampledImage(com.sovworks.eds.fs.Path,int,int)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #ca9facc952bfbe257b202295e942a6b10cf40b5e33b7fc599bf498ec3a7551ef)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update, getInstance
+			at statement: specialinvoke $r2.<java.io.BufferedInputStream: void <init>(java.io.InputStream)>($r4)
+
+
+Findings in Java Class: com.sovworks.eds.fs.fat.FileIO
+
+	 in Method: void flush()
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: specialinvoke r0.<com.sovworks.eds.fs.fat.FileIO: void updateFileEntry()>()
+
+
+Findings in Java Class: com.sovworks.eds.crypto.EncryptedFileWithCache
+
+	 in Method: void close(boolean)
+		IncompleteOperationError violating CrySL rule for java.security.SecureRandom (on Object #288be7185b682041ee4d3ab5df675634b6c35ff21c37d2acb11db0c3fb5f7f03)
+			Operation on object of type java.security.SecureRandom object not completed. Expected call to init, getInstanceStrong, getInstance
+			at statement: interfaceinvoke $r5.<com.sovworks.eds.fs.RandomAccessIO: void close()>()
+
+
+Findings in Java Class: com.sovworks.eds.veracrypt.VolumeLayout
+
+	 in Method: java.util.List getSupportedHashFuncs()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #6de4cc119e8c76afbf64ee760d88feee50e770779722bfb44f23208e6f75c32c)
+			First parameter (with value "SHA256") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29843)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6de4cc119e8c76afbf64ee760d88feee50e770779722bfb44f23208e6f75c32c)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: interfaceinvoke $r2.<java.util.List: boolean add(java.lang.Object)>($r3)
+
+
+Findings in Java Class: com.sovworks.eds.luks.VolumeLayout
+
+	 in Method: java.util.List getSupportedHashFuncs()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #92a967a3ef776ffedfc64862d45d38fb2bc8c5264cb845acaeab1ae5019735eb)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r1.<java.util.ArrayList: boolean add(java.lang.Object)>($r5)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c2b50c2a52b6aacbeabd3e1c755ba917e6afa35803af41c6bd843e3a2bf85e66)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer29846)
+
+
+Findings in Java Class: com.sovworks.eds.truecrypt.StdLayout
+
+	 in Method: java.util.List getSupportedHashFuncs()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #95d8b9551e78f148fae47dad64dc26cd61fa06a4081fe689b736ded602af1d01)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r1.<java.util.ArrayList: boolean add(java.lang.Object)>($r2)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 26
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 101
+	TypestateError: 1
+	ConstraintError: 4
+=====================================================================

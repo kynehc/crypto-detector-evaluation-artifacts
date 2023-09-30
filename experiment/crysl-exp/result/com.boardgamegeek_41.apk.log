@@ -1,0 +1,184 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <okio.ByteString: java.lang.String toString()>
+		SHA-256: fb0ca6372c4bf050585556cc9c870381181b9c8bed82c949771f758fff6037c6
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r9 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <okio.Buffer: java.lang.String toString()>
+		SHA-256: fb004f05b5388edcc7c3df84964af3a7d6e354e96694836f8caba5bdeca881c5
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6602)
+		Method: <okio.ByteString: java.lang.String toString()>
+		SHA-256: fb8fd8825a02677a03b3ed14073bd7f792ce9bafa33fab390e068ed764512027
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8536)
+		Method: <com.squareup.okhttp.internal.Util: java.lang.String hash(java.lang.String)>
+		SHA-256: 575dc852de7840000a9d545df77c3bccdfce4b39d7039e20f31678b635c0a263
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <com.squareup.okhttp.internal.Util: java.lang.String hash(java.lang.String)>
+		SHA-256: 6384cc08f50833e68b46c16b560b399c28b52ece8e657000d93e3c63802d8562
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6625)
+		Method: <okio.Buffer: java.lang.String toString()>
+		SHA-256: 9e5bad1f916ef2d559237fca1811d5a0c983952b379766b489cb2421ad350884
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer10375)
+		Method: <com.squareup.okhttp.OkHttpClient: javax.net.ssl.SSLSocketFactory getDefaultSSLSocketFactory()>
+		SHA-256: 3732f04f8a1cf31ad7ae6d0c8a326ccd25ba45ac74dce726f8b7bfee49108e32
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.cert.CertificateFactory
+		Statement: $r4 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer10078)
+		Method: <com.squareup.okhttp.Cache$Entry: java.util.List readCertificateList(okio.BufferedSource)>
+		SHA-256: 6d48a64a58a6ce2e8b939437c5c0e82db7a1549e65365050539742b7727f0c77
+		Secure: false
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: java.lang.String toString()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #fb8fd8825a02677a03b3ed14073bd7f792ce9bafa33fab390e068ed764512027)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6602)
+
+
+Findings in Java Class: okio.Buffer
+
+	 in Method: java.lang.String toString()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #9e5bad1f916ef2d559237fca1811d5a0c983952b379766b489cb2421ad350884)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6625)
+
+
+Findings in Java Class: com.squareup.okhttp.internal.Util
+
+	 in Method: java.lang.String hash(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #575dc852de7840000a9d545df77c3bccdfce4b39d7039e20f31678b635c0a263)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8536)
+
+
+Findings in Java Class: com.squareup.okhttp.Cache$Entry
+
+	 in Method: java.util.List readCertificateList(okio.BufferedSource)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #6d48a64a58a6ce2e8b939437c5c0e82db7a1549e65365050539742b7727f0c77)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r4 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer10078)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #6d48a64a58a6ce2e8b939437c5c0e82db7a1549e65365050539742b7727f0c77)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r10 = virtualinvoke $r4.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r9)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #6d48a64a58a6ce2e8b939437c5c0e82db7a1549e65365050539742b7727f0c77)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r10 = virtualinvoke $r4.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r9)
+
+
+Findings in Java Class: com.squareup.okhttp.OkHttpClient
+
+	 in Method: javax.net.ssl.SSLSocketFactory getDefaultSSLSocketFactory()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer10372, varReplacer10372, varReplacer10372)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #3732f04f8a1cf31ad7ae6d0c8a326ccd25ba45ac74dce726f8b7bfee49108e32)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer10375)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer10372, varReplacer10372, varReplacer10372)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer10372, varReplacer10372, varReplacer10372)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 8
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 3
+	ConstraintError: 4
+	TypestateError: 1
+	IncompleteOperationError: 2
+=====================================================================

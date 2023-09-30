@@ -1,0 +1,149 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Cipher
+		Statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer580)
+		Method: <org.pulpdust.lesserpad.forFroyo: java.lang.String doDecrypt(java.lang.String,java.lang.String)>
+		SHA-256: d709e7d62cf0b2d4b3b3fdc1619eef8481d5b9e4077dfa9942bd5b0d9da4124a
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer575)
+		Method: <org.pulpdust.lesserpad.forFroyo: java.lang.String doDecrypt(java.lang.String,java.lang.String)>
+		SHA-256: 4d40d921cfac61625c45074f51682b110fcb92410983e4173718b6c35ff6c4a3
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer602)
+		Method: <org.pulpdust.lesserpad.forFroyo: java.lang.String doEncrypt(java.lang.String,java.lang.String)>
+		SHA-256: b411204d9c7c737398f4e677c7121c56d59a21b93f2121b378b45ac258403fee
+		Secure: false
+	Object:
+		Variable: varReplacer575
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer575)
+		Method: <org.pulpdust.lesserpad.forFroyo: java.lang.String doDecrypt(java.lang.String,java.lang.String)>
+		SHA-256: a05d4061f6a8c4de7a45eef59fa32919a3cfcd442853bdc914cbe4d074a48bdb
+		Secure: false
+	Object:
+		Variable: varReplacer601
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer601)
+		Method: <org.pulpdust.lesserpad.forFroyo: java.lang.String doEncrypt(java.lang.String,java.lang.String)>
+		SHA-256: 25c1b9cbbceccf271cff03471ae9eb2f7c132040399c28c5656e770556d6345d
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
+		Method: <org.pulpdust.lesserpad.forFroyo: java.lang.String doDecrypt(java.lang.String,java.lang.String)>
+		SHA-256: 34b700e3d9eef5ed349569de292b1d4a2a837e12af27c7cdaa96b074c2e01262
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer601)
+		Method: <org.pulpdust.lesserpad.forFroyo: java.lang.String doEncrypt(java.lang.String,java.lang.String)>
+		SHA-256: 528b97954077d2f4dcfeb8180f7bbd64992d64959e0e4040d779cdc9d8f936
+		Secure: false
+
+Findings in Java Class: org.pulpdust.lesserpad.forFroyo
+
+	 in Method: java.lang.String doDecrypt(java.lang.String,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r4.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #d709e7d62cf0b2d4b3b3fdc1619eef8481d5b9e4077dfa9942bd5b0d9da4124a)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r7.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>($r5, varReplacer577, $i0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer575)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r7.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer582, $r6, $r4)
+
+
+	 in Method: java.lang.String doEncrypt(java.lang.String,java.lang.String)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #b411204d9c7c737398f4e677c7121c56d59a21b93f2121b378b45ac258403fee)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[],int,int)>($r5, varReplacer597, $i0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer601)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer599, $r4)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 7
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 2
+	RequiredPredicateError: 5
+=====================================================================

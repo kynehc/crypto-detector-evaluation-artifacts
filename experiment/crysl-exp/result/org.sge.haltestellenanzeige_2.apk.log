@@ -1,0 +1,160 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: java.net.PasswordAuthentication
+		Statement: specialinvoke $r2.<java.net.PasswordAuthentication: void <init>(java.lang.String,char[])>($r1, $r3)
+		Method: <org.apache.tools.ant.taskdefs.optional.net.SetProxy$ProxyAuth: void <init>(java.lang.String,java.lang.String)>
+		SHA-256: 27df4cfa1f4564b0b04ffb220bf8b6d42334276e7df828c38c21aaf6ab774ebd
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r5)
+		Method: <org.apache.tools.ant.taskdefs.Checksum: boolean validateAndExecute()>
+		SHA-256: 9058b53bc94900e37e1725f8f6c5fd282ddeea18ecac2c2d132b6a0c4d656247
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r2, $r3)
+		Method: <org.apache.tools.ant.types.selectors.modifiedselector.DigestAlgorithm: void initMessageDigest()>
+		SHA-256: 106cf7510f20f8e0d513688d932e5c6319d99aa2bd60ec0bd522012be389b46a
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r7.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r6, $r5)
+		Method: <org.apache.tools.ant.types.selectors.modifiedselector.DigestAlgorithm: java.lang.String getValue(java.io.File)>
+		SHA-256: a213204fa606a679d184e59e0b72869f821a02d64a66c9a0a97160ae7e1b8fb2
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r6, $r5)
+		Method: <org.apache.tools.ant.taskdefs.Checksum: boolean validateAndExecute()>
+		SHA-256: d70c55ff664cca66e37559a430fc5f00cc05e33d86bdef68e2006bdd22fcf116
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <org.apache.tools.ant.types.selectors.modifiedselector.DigestAlgorithm: void initMessageDigest()>
+		SHA-256: eb36899addc72634471103b4ec37b4788f042fb9466537d0adb0b79d8c280689
+		Secure: true
+	Object:
+		Variable: $r14
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r14.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r13, $r9)
+		Method: <org.apache.tools.ant.taskdefs.Checksum: boolean generateChecksums()>
+		SHA-256: 9675c0d4829aab480852881975af2cbcc51689187d072bc3a25ce2a6531f8968
+		Secure: false
+
+Findings in Java Class: org.apache.tools.ant.taskdefs.optional.net.SetProxy$ProxyAuth
+
+	 in Method: void <init>(java.lang.String,java.lang.String)
+		NeverTypeOfError violating CrySL rule for java.net.PasswordAuthentication (on Object #27df4cfa1f4564b0b04ffb220bf8b6d42334276e7df828c38c21aaf6ab774ebd)
+			Second parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r2.<java.net.PasswordAuthentication: void <init>(java.lang.String,char[])>($r1, $r3)
+
+		HardCodedError violating CrySL rule for java.net.PasswordAuthentication (on Object #27df4cfa1f4564b0b04ffb220bf8b6d42334276e7df828c38c21aaf6ab774ebd)
+			Second parameter should never be hardcoded.
+			at statement: specialinvoke $r2.<java.net.PasswordAuthentication: void <init>(java.lang.String,char[])>($r1, $r3)
+
+
+Findings in Java Class: org.apache.tools.ant.types.selectors.modifiedselector.DigestAlgorithm
+
+	 in Method: java.lang.String getValue(java.io.File)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #eb36899addc72634471103b4ec37b4788f042fb9466537d0adb0b79d8c280689)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r4 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: void initMessageDigest()
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #106cf7510f20f8e0d513688d932e5c6319d99aa2bd60ec0bd522012be389b46a)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r2, $r3)
+
+
+Findings in Java Class: org.apache.tools.ant.types.selectors.modifiedselector.ModifiedSelector
+
+	 in Method: boolean isSelected(java.io.File,java.lang.String,java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #eb36899addc72634471103b4ec37b4788f042fb9466537d0adb0b79d8c280689)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r2 = interfaceinvoke $r7.<org.apache.tools.ant.types.selectors.modifiedselector.Algorithm: java.lang.String getValue(java.io.File)>($r4)
+
+
+Findings in Java Class: org.apache.tools.ant.taskdefs.Checksum
+
+	 in Method: boolean generateChecksums()
+		RequiredPredicateError violating CrySL rule for java.security.DigestInputStream
+			Second parameter was not properly generated as generatedMessageDigest
+			at statement: specialinvoke $r14.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r13, $r9)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 7
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 2
+	NeverTypeOfError: 1
+	TypestateError: 1
+	HardCodedError: 1
+	RequiredPredicateError: 1
+=====================================================================

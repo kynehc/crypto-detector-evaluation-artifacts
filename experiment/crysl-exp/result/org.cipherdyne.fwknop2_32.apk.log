@@ -1,0 +1,153 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.xbill.DNS.utils.HMAC: byte[] sign()>
+		SHA-256: 1f9ab97014da7246d8025bc231cf18a522caea62a689d47a735e3eaba2816f6c
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <org.xbill.DNS.utils.HMAC: byte[] sign()>
+		SHA-256: 1e31e15d341bd5b649e3174c2df91f09ef704d73f0791a55fd926de41359b1a0
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <org.xbill.DNS.utils.HMAC: byte[] sign()>
+		SHA-256: e1bd6cd60e2b1abe936c6525f13a02d956042586df0f64220869ac8d7f67784a
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <org.xbill.DNS.utils.HMAC: void init(byte[])>
+		SHA-256: 219d4777456ccb405b8e6faee0474d2b062dca180af69cd68695408d2c66b5c6
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <org.xbill.DNS.utils.HMAC: void <init>(java.lang.String,int,byte[])>
+		SHA-256: 6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.xbill.DNS.UDPClient: void <clinit>()>
+		SHA-256: fcebb9e881f86bd38585606df0d0e993ca0aa8852fe9338092fa2df92cf72b68
+		Secure: true
+
+Findings in Java Class: org.xbill.DNS.TSIG
+
+	 in Method: byte verify(org.xbill.DNS.Message,byte[],int,org.xbill.DNS.TSIGRecord)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: specialinvoke r4.<org.xbill.DNS.utils.HMAC: void <init>(java.lang.String,int,byte[])>($r6, $i0, $r7)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: $i5 = virtualinvoke r4.<org.xbill.DNS.utils.HMAC: int digestLength()>()
+
+
+	 in Method: org.xbill.DNS.TSIGRecord generate(org.xbill.DNS.Message,byte[],int,org.xbill.DNS.TSIGRecord)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: r6 = null
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: virtualinvoke r6.<org.xbill.DNS.utils.HMAC: void update(byte[])>($r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: virtualinvoke r6.<org.xbill.DNS.utils.HMAC: void update(byte[])>($r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: virtualinvoke r6.<org.xbill.DNS.utils.HMAC: void update(byte[])>($r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: specialinvoke r6.<org.xbill.DNS.utils.HMAC: void <init>(java.lang.String,int,byte[])>($r7, $i1, $r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest
+			at statement: $r2 = virtualinvoke r6.<org.xbill.DNS.utils.HMAC: byte[] sign()>()
+
+
+Findings in Java Class: org.xbill.DNS.SimpleResolver
+
+	 in Method: org.xbill.DNS.Message sendAXFR(org.xbill.DNS.Message)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #6166e08a9044525fac3743cdfeb133b2ef06f4f7bbc97074815e8c46585210b7)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, getInstance
+			at statement: $r9 = virtualinvoke $r8.<org.xbill.DNS.ZoneTransferIn: java.util.List getAXFR()>()
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 6
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 9
+=====================================================================

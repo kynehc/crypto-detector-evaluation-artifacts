@@ -1,0 +1,201 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r3.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+		Method: <li.klass.fhem.billing.playstore.PlayStoreSecurity: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: c8195a328df90010463a92f322ec940a0fb3a294bed1dd3da55b8e0bcb630e93
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <li.klass.fhem.billing.playstore.PlayStoreSecurity: void <clinit>()>
+		SHA-256: d6a337bc406faa791a16bd985e8d8fd470f2fc74c06fa64875c2cbeffb976ee7
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer498)
+		Method: <li.klass.fhem.billing.playstore.PlayStoreSecurity: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)>
+		SHA-256: a86d5c6dd8864e0da11820c76ee160817261262617336c78f25c9db5959e1585
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyFactory
+		Statement: $r2 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer503)
+		Method: <li.klass.fhem.billing.playstore.PlayStoreSecurity: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: ea52e3bac14a3f5f11c1aab30102a772c507deec83734202c6f2ac41cd3f0067
+		Secure: false
+	Object:
+		Variable: varReplacer503
+		Type: java.lang.String
+		Statement: $r2 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer503)
+		Method: <li.klass.fhem.billing.playstore.PlayStoreSecurity: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: b4c68737e2e34bed98a5a389f5b7477c0feda6ba5fdbe2edb3378a65da2b81ad
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.SSLContext
+		Statement: $r5 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r0)
+		Method: <org.apache.commons.net.util.SSLContextUtils: javax.net.ssl.SSLContext createSSLContext(java.lang.String,javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[])>
+		SHA-256: 4a0855e175104e03b3b34fa084fb9f5e957b74846d3f4f81ccf506c3d8829dfa
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.KeyStore
+		Statement: $r7 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r6)
+		Method: <li.klass.fhem.fhem.FHEMWebConnection: org.apache.http.impl.client.DefaultHttpClient createNewHTTPClient(int,int)>
+		SHA-256: e612ba9d0f9b4aed1117c3ebf7c073166808f5febf1ad21457611202201751cc
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r3.<java.security.Signature: boolean verify(byte[])>($r4)
+		Method: <li.klass.fhem.billing.playstore.PlayStoreSecurity: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)>
+		SHA-256: bc0c23b1f7056017145f5633dd4539bf6beec94197dc4459330dbf126bdd3ef7
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.PublicKey
+		Statement: $r4 = virtualinvoke $r2.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r3)
+		Method: <li.klass.fhem.billing.playstore.PlayStoreSecurity: java.security.PublicKey generatePublicKey(java.lang.String)>
+		SHA-256: d3d5b89a21e3ee45da0b6e25288133c7834347f61c38350afbfb61649f61aed8
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLContext
+		Statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer3051)
+		Method: <li.klass.fhem.fhem.CustomSSLSocketFactory: void <init>(java.security.KeyStore)>
+		SHA-256: e45c99e5d249928bcd328b11528451238dd39fe8fe8ec6eb99cfc7698987078e
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r3.<java.security.Signature: boolean verify(byte[])>($r4)
+		Method: <li.klass.fhem.billing.playstore.PlayStoreSecurity: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)>
+		SHA-256: f87b740c043a4c33a2a0269dbac49f1b05ebbb0cd6246ea8df325733c6bf7a0
+		Secure: false
+
+Findings in Java Class: li.klass.fhem.billing.playstore.PlayStoreSecurity
+
+	 in Method: boolean verify(java.security.PublicKey,java.lang.String,java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r3.<java.security.Signature: void initVerify(java.security.PublicKey)>($r0)
+
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #a86d5c6dd8864e0da11820c76ee160817261262617336c78f25c9db5959e1585)
+			First parameter (with value "SHA1withRSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer498)
+
+
+	 in Method: java.security.PublicKey generatePublicKey(java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r3.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r4 = virtualinvoke $r2.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r3)
+
+
+Findings in Java Class: li.klass.fhem.fhem.CustomSSLSocketFactory
+
+	 in Method: void <init>(java.security.KeyStore)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #e45c99e5d249928bcd328b11528451238dd39fe8fe8ec6eb99cfc7698987078e)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer3051)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer3049, $r5, varReplacer3049)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer3049, $r5, varReplacer3049)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer3049, $r5, varReplacer3049)
+
+
+Findings in Java Class: org.apache.commons.net.util.SSLContextUtils
+
+	 in Method: javax.net.ssl.SSLContext createSSLContext(java.lang.String,javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[])
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r1, $r2, varReplacer5548)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r1, $r2, varReplacer5548)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r1, $r2, varReplacer5548)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 11
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 9
+	ConstraintError: 2
+=====================================================================

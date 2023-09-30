@@ -1,0 +1,143 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r10
+		Type: java.security.KeyStore
+		Statement: $r10 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r9)
+		Method: <org.ocsinventoryng.android.actions.OCSProtocol: org.apache.http.impl.client.DefaultHttpClient getNewHttpClient(boolean)>
+		SHA-256: 3b4a3b7f0b23036a0deca30d1673a9a5d46fb2dbc4628264e892b587916e6ad
+		Secure: true
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: r3 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.ocsinventoryng.android.actions.Utils: java.lang.String digestFile(java.io.File,java.lang.String,java.lang.String)>
+		SHA-256: 1e53ce7ea6593872049284beb49f42875a32e3e29c66cb46cef5f6b76c48e592
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <org.ocsinventoryng.android.actions.Utils: java.lang.String digestFile(java.io.File,java.lang.String,java.lang.String)>
+		SHA-256: 45c43bcb59bbbb387737142a6226206d12bb746595461da56f0c6e18231f146d
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLContext
+		Statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1801)
+		Method: <org.ocsinventoryng.android.actions.CoolSSLSocketFactory: void <init>(java.security.KeyStore)>
+		SHA-256: 38b51e01b74874c06fd299bf150ec9da79f23ea6cf4be6da1b8b039578b54546
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.ocsinventoryng.android.actions.Utils: java.lang.String md5(java.lang.String)>
+		SHA-256: fb9e5939f79bc4eeff2b19875c6525e187e3c6cce5df96c1a47d1d439cfecab8
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1108)
+		Method: <org.ocsinventoryng.android.actions.Utils: java.lang.String md5(java.lang.String)>
+		SHA-256: aae8cdd4c95c0b2672ad147a677940c38b7d2c161aa9aa7ce8677a52a2083974
+		Secure: false
+
+Findings in Java Class: org.ocsinventoryng.android.actions.Utils
+
+	 in Method: java.lang.String md5(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #aae8cdd4c95c0b2672ad147a677940c38b7d2c161aa9aa7ce8677a52a2083974)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1108)
+
+
+	 in Method: java.lang.String digestFile(java.io.File,java.lang.String,java.lang.String)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #45c43bcb59bbbb387737142a6226206d12bb746595461da56f0c6e18231f146d)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: r3 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: org.ocsinventoryng.android.actions.CoolSSLSocketFactory
+
+	 in Method: void <init>(java.security.KeyStore)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1802, $r6, varReplacer1802)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1802, $r6, varReplacer1802)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #38b51e01b74874c06fd299bf150ec9da79f23ea6cf4be6da1b8b039578b54546)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1801)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1802, $r6, varReplacer1802)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 6
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 3
+	ConstraintError: 2
+	TypestateError: 1
+=====================================================================

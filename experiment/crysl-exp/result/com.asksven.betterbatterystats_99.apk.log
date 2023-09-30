@@ -1,0 +1,140 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10438)
+		Method: <com.asksven.android.common.utils.StringUtils: java.lang.String maskAccountInfo(java.lang.String,java.lang.String)>
+		SHA-256: 1cbf4a7f9b40c1a5e9abcd9cbbffcf136e5ffee72ce9a9f52edb3baa92cf7cd5
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <com.asksven.android.common.utils.StringUtils: java.lang.String maskAccountInfo(java.lang.String,java.lang.String)>
+		SHA-256: 4c6dc22f7b9e5ff726c2fc0ce10f4e9b99622429c79f73452c0d95630a4d347e
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <com.asksven.android.common.utils.StringUtils: java.lang.String maskAccountInfo(java.lang.String,java.lang.String)>
+		SHA-256: adf677eafd760b5cc440088795e1be64b086cbeeb1d251e57b1a8c3473f14f98
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <com.asksven.android.common.utils.StringUtils: java.lang.String maskAccountInfo(java.lang.String,java.lang.String)>
+		SHA-256: adf677eafd760b5cc440088795e1be64b086cbeeb1d251e57b1a8c3473f14f98
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10437)
+		Method: <com.asksven.android.common.utils.StringUtils: java.lang.String maskAccountInfo(java.lang.String,java.lang.String)>
+		SHA-256: 46ec9f13fceb4844e7d70bacaae077bf0aacefce883c9952bf021a1b0169047a
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.cert.CertificateFactory
+		Statement: $r10 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer1010)
+		Method: <com.asksven.betterbatterystats.SystemAppActivity: boolean isDebuggable(android.content.Context)>
+		SHA-256: 692c3584b22b59e9717a9c883785becdad5f9f68aa2b4f13b5000127fe3de414
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10443)
+		Method: <com.asksven.android.common.utils.StringUtils: java.lang.String maskAccountInfo(java.lang.String,java.lang.String)>
+		SHA-256: d68a7da59d8933fd9812d6f776d7df307ca699d349ef3e808d946acf7f88d976
+		Secure: false
+
+Findings in Java Class: com.asksven.betterbatterystats.SystemAppActivity
+
+	 in Method: boolean isDebuggable(android.content.Context)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #692c3584b22b59e9717a9c883785becdad5f9f68aa2b4f13b5000127fe3de414)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r10 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer1010)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #692c3584b22b59e9717a9c883785becdad5f9f68aa2b4f13b5000127fe3de414)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r14 = virtualinvoke $r10.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r11)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #692c3584b22b59e9717a9c883785becdad5f9f68aa2b4f13b5000127fe3de414)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r14 = virtualinvoke $r10.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r11)
+
+
+Findings in Java Class: com.asksven.android.common.utils.StringUtils
+
+	 in Method: java.lang.String maskAccountInfo(java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #d68a7da59d8933fd9812d6f776d7df307ca699d349ef3e808d946acf7f88d976)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10443)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 7
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 2
+	TypestateError: 1
+	ConstraintError: 1
+=====================================================================

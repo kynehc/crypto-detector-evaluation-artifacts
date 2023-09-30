@@ -1,0 +1,19 @@
+SPEC java.security.spec.RSAKeyGenParameterSpec
+
+OBJECTS 
+	int keysize;
+	java.math.BigInteger publicExponent;
+	
+EVENTS
+	c1: RSAKeyGenParameterSpec(keysize, publicExponent);
+	Con := c1;
+	
+ORDER
+	Con
+	
+CONSTRAINTS
+	keysize in {1024, 2048, 4096};
+	publicExponent in {65537};
+	 
+ENSURES
+	preparedRSA[this];

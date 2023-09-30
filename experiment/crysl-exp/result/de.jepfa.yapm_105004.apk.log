@@ -1,0 +1,340 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r10
+		Type: javax.crypto.Cipher
+		Statement: $r10 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r9)
+		Method: <de.jepfa.yapm.service.secret.SecretService: byte[] decryptData(de.jepfa.yapm.model.secret.SecretKeyHolder,de.jepfa.yapm.model.encrypted.Encrypted)>
+		SHA-256: d336777bd685c41115bf7d20215caeb91d95784f3e4e4507844e7a61a3b5c962
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r5, $r6, $i0, $i1)
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.secret.SecretKeyHolder generatePBESecretKey(de.jepfa.yapm.model.secret.Password,de.jepfa.yapm.model.secret.Key,int,de.jepfa.yapm.model.encrypted.CipherAlgorithm)>
+		SHA-256: 9a5855ebd53969f193dcfb930544e9addf64fde73432aed8a3240078aeff9ae9
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.secret.Key fastHash(byte[],de.jepfa.yapm.model.secret.Key)>
+		SHA-256: f05f31d7b1da7bf6e3ba926f2334665e7dca0eea10790ac7fa3f213a0858018b
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r5)
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.encrypted.Encrypted encryptData(de.jepfa.yapm.model.encrypted.EncryptedType,de.jepfa.yapm.model.secret.SecretKeyHolder,byte[])>
+		SHA-256: f47a3374eec9c1d4ee6f5278ed1d01f8c7410c45c51905ddd90d53bb6778da91
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: javax.crypto.SecretKey
+		Statement: $r11 = virtualinvoke $r4.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <de.jepfa.yapm.service.secret.SecretService: javax.crypto.SecretKey initAndroidSecretKey(de.jepfa.yapm.service.secret.AndroidKey,android.content.Context)>
+		SHA-256: 895c2b5e40a3e14063418acccdba88c68ee53eb3f73a27726b1b19c5c891465f
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r8 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r7)
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.secret.SecretKeyHolder generatePBESecretKey(de.jepfa.yapm.model.secret.Password,de.jepfa.yapm.model.secret.Key,int,de.jepfa.yapm.model.encrypted.CipherAlgorithm)>
+		SHA-256: b2d9b759119e79cb9a39f1a0b85c8c139c1680dcad5d2a638a40cc0cff7ef7f3
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r5)
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.secret.SecretKeyHolder createSecretKey(de.jepfa.yapm.model.secret.Key,de.jepfa.yapm.model.encrypted.CipherAlgorithm)>
+		SHA-256: 32355d717ab7c454c2b69a392068ed83271aae45311b3692af23769c4dd0f4b7
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer27687)
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.secret.Password conjunctPasswords(de.jepfa.yapm.model.secret.Password,de.jepfa.yapm.model.secret.Password,de.jepfa.yapm.model.secret.Key)>
+		SHA-256: bf38a6a6d58e04cf365a6862cc135f44e47acdaa207b893bc2e329c22f406fc5
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r11.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer4687, $r7)
+		Method: <de.jepfa.yapm.service.secret.SecretService: byte[] decryptData(de.jepfa.yapm.model.secret.SecretKeyHolder,de.jepfa.yapm.model.encrypted.Encrypted)>
+		SHA-256: e35af4a8ee96337f49eefe0592b1aeddea1786beb075d8611750fa7a0af31e6d
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r3)
+		Method: <de.jepfa.yapm.service.secret.MasterPasswordService: javax.crypto.Cipher createEncryptCipher(de.jepfa.yapm.model.secret.SecretKeyHolder)>
+		SHA-256: dee2486eb9fef1dae77fba50c9a5a6e59c452a318ab114a1d7470b88f08f0bc3
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: javax.crypto.SecretKey
+		Statement: $r11 = virtualinvoke $r4.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <de.jepfa.yapm.service.secret.SecretService: javax.crypto.SecretKey initAndroidSecretKey(de.jepfa.yapm.service.secret.AndroidKey,android.content.Context)>
+		SHA-256: 895c2b5e40a3e14063418acccdba88c68ee53eb3f73a27726b1b19c5c891465f
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: javax.crypto.SecretKey
+		Statement: $r11 = virtualinvoke $r8.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r10)
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.secret.SecretKeyHolder generatePBESecretKey(de.jepfa.yapm.model.secret.Password,de.jepfa.yapm.model.secret.Key,int,de.jepfa.yapm.model.encrypted.CipherAlgorithm)>
+		SHA-256: aeaff65355e9a03ba522fb5601ae250b600c092610fb397e4d46aea13714d83c
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <de.jepfa.yapm.service.secretgenerator.GeneratorBase: void <init>()>
+		SHA-256: e92b280129d8d1581e87cbc1c2d66925296537182f82a37fe32e69db7205670c
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer25123)
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.secret.Key fastHash(byte[],de.jepfa.yapm.model.secret.Key)>
+		SHA-256: be5ad574c98aaa0ce55968ce1ac8656f133d225c10fa49788e33d179f7c5440
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.KeyGenerator
+		Statement: $r4 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer4678, $r3)
+		Method: <de.jepfa.yapm.service.secret.SecretService: javax.crypto.SecretKey initAndroidSecretKey(de.jepfa.yapm.service.secret.AndroidKey,android.content.Context)>
+		SHA-256: 1b019ddf6739dab7ba1b98fcc443e7d2d5e03e9fa32591261e4b2f453506f98e
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.Cipher
+		Statement: $r5 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r4)
+		Method: <de.jepfa.yapm.service.secret.MasterPasswordService: javax.crypto.Cipher createDecryptCipher(de.jepfa.yapm.model.secret.SecretKeyHolder,de.jepfa.yapm.model.encrypted.Encrypted)>
+		SHA-256: 6f09ed78d201adaf4762f1d6d80c074a669bf52d4bbecf1069d0d8179e5055a8
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer27850, $r7)
+		Method: <de.jepfa.yapm.service.secret.MasterPasswordService: javax.crypto.Cipher createDecryptCipher(de.jepfa.yapm.model.secret.SecretKeyHolder,de.jepfa.yapm.model.encrypted.Encrypted)>
+		SHA-256: 1e82d77351ba7bb976867ce2b72a8493973f8a06839fa9f85f010937978465d3
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <de.jepfa.yapm.service.secretgenerator.GeneratorBase: void maybeResetPRNG()>
+		SHA-256: 20f0ae3eda90d0674849a36760c6d1df13001ee11bc2a61f45bd7314064b90f2
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r11.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r9)
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.encrypted.Encrypted encryptData(de.jepfa.yapm.model.encrypted.EncryptedType,de.jepfa.yapm.model.secret.SecretKeyHolder,byte[])>
+		SHA-256: a93c453b4a131462e7803327f30a0e58d9c869395dc7173c60c19af2b6bdcf8d
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <de.jepfa.yapm.service.secret.SecretService: void <clinit>()>
+		SHA-256: 6be3a5bc575e151fa3abe454f255c23f27befc8f36d52e3634277824eddb9131
+		Secure: true
+	Object:
+		Variable: $r15
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r15.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+		Method: <de.jepfa.yapm.service.secret.SecretService: byte[] decryptData(de.jepfa.yapm.model.secret.SecretKeyHolder,de.jepfa.yapm.model.encrypted.Encrypted)>
+		SHA-256: ee0a5b92abf814f7de984db16aed4fe2b673beae3796ab90e6d499343e89de40
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.secret.Password conjunctPasswords(de.jepfa.yapm.model.secret.Password,de.jepfa.yapm.model.secret.Password,de.jepfa.yapm.model.secret.Key)>
+		SHA-256: 2f5b403322f08a92fb6b9ae00b2d697a88485bf61675d8a2525abb58dfd4870
+		Secure: true
+	Object:
+		Variable: $i1
+		Type: int
+		Statement: specialinvoke $r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r5, $r6, $i0, $i1)
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.secret.SecretKeyHolder generatePBESecretKey(de.jepfa.yapm.model.secret.Password,de.jepfa.yapm.model.secret.Key,int,de.jepfa.yapm.model.encrypted.CipherAlgorithm)>
+		SHA-256: 9b9b1aad8d7d7320252b4080c565797dd2c0df71f1e034d35726c6766e6cf270
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.lang.String
+		Statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r5)
+		Method: <de.jepfa.yapm.service.secret.SecretService: de.jepfa.yapm.model.secret.SecretKeyHolder createSecretKey(de.jepfa.yapm.model.secret.Key,de.jepfa.yapm.model.encrypted.CipherAlgorithm)>
+		SHA-256: cc07d42b25e1df66a771084d94b15093499a6d4280fc9a9ff7d88da674df6094
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.KeyStore
+		Statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer164)
+		Method: <de.jepfa.yapm.service.secret.SecretService: void <clinit>()>
+		SHA-256: cba188f8233303e5e02f2bba31f715fa14487cef4c51b5a88549ae74c1f33bdf
+		Secure: false
+
+Findings in Java Class: de.jepfa.yapm.service.secret.SecretService
+
+	 in Method: void <clinit>()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #cba188f8233303e5e02f2bba31f715fa14487cef4c51b5a88549ae74c1f33bdf)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer164)
+
+
+	 in Method: byte[] decryptData(de.jepfa.yapm.model.secret.SecretKeyHolder,de.jepfa.yapm.model.encrypted.Encrypted)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r11.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer4687, $r7)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #d336777bd685c41115bf7d20215caeb91d95784f3e4e4507844e7a61a3b5c962)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r7 = virtualinvoke $r10.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r15.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r10.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer4691, $r13, $r14)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r10.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer4691, $r13, $r14)
+
+
+	 in Method: de.jepfa.yapm.model.encrypted.Encrypted encryptData(de.jepfa.yapm.model.encrypted.EncryptedType,de.jepfa.yapm.model.secret.SecretKeyHolder,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer18795, $r8, $r12)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer18795, $r8, $r12)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #f47a3374eec9c1d4ee6f5278ed1d01f8c7410c45c51905ddd90d53bb6778da91)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r11.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer18795, $r8, $r12)
+
+
+	 in Method: de.jepfa.yapm.model.secret.SecretKeyHolder generatePBESecretKey(de.jepfa.yapm.model.secret.Password,de.jepfa.yapm.model.secret.Key,int,de.jepfa.yapm.model.encrypted.CipherAlgorithm)
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #9a5855ebd53969f193dcfb930544e9addf64fde73432aed8a3240078aeff9ae9)
+			Third parameter (with value 1000)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r5, $r6, $i0, $i1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r5, $r6, $i0, $i1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r11 = virtualinvoke $r8.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r10)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #9a5855ebd53969f193dcfb930544e9addf64fde73432aed8a3240078aeff9ae9)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke $r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r5, $r6, $i0, $i1)
+
+
+	 in Method: de.jepfa.yapm.model.secret.SecretKeyHolder createSecretKey(de.jepfa.yapm.model.secret.Key,de.jepfa.yapm.model.encrypted.CipherAlgorithm)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r5)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #32355d717ab7c454c2b69a392068ed83271aae45311b3692af23769c4dd0f4b7)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke $r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r5)
+
+
+Findings in Java Class: de.jepfa.yapm.service.secret.MasterPasswordService
+
+	 in Method: javax.crypto.Cipher createDecryptCipher(de.jepfa.yapm.model.secret.SecretKeyHolder,de.jepfa.yapm.model.encrypted.Encrypted)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r6.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer27850, $r7)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer27852, $r9, $r10)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r5.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer27852, $r9, $r10)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 25
+
+	CryptoAnalysis found the following violations. For details see description above.
+	HardCodedError: 1
+	TypestateError: 2
+	NeverTypeOfError: 1
+	ConstraintError: 2
+	RequiredPredicateError: 14
+=====================================================================

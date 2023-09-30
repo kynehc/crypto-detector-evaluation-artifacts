@@ -1,0 +1,491 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r13
+		Type: java.security.PrivateKey
+		Statement: $r13 = virtualinvoke $r6.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <io.mrarm.irc.EditServerActivity: void generateCert()>
+		SHA-256: 4df0ededff86ff6554b080e327b878d2002dec4f082b4dcdb208f7d9524cd264
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <io.mrarm.irc.config.ServerCertificateManager: android.text.SpannableString buildCertOverviewString(java.security.cert.X509Certificate)>
+		SHA-256: 9d0610d929bbe096dd514132837fa0d1af7d96747206b72a821d521c449b5b2a
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.cert.CertificateFactory
+		Statement: $r2 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer1515)
+		Method: <io.mrarm.irc.config.ServerConfigData: java.security.cert.X509Certificate getAuthCert()>
+		SHA-256: 5c305c20b529615945eac177c7746a670844c1edd947f3248c6a89f0cfbaf91b
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.AlgorithmParameters
+		Statement: $r1 = staticinvoke <java.security.AlgorithmParameters: java.security.AlgorithmParameters getInstance(java.lang.String)>($r2)
+		Method: <org.spongycastle.jcajce.util.DefaultJcaJceHelper: java.security.AlgorithmParameters createAlgorithmParameters(java.lang.String)>
+		SHA-256: 8d123772629184fc0669650c061426f57f5203aa49ca1fae65ed6e679e158734
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<javax.crypto.Mac: byte[] doFinal()>()
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: byte[] doFinal()>
+		SHA-256: 23eb6bc332ca789bcf27299e70f0704eed45b5662a070781c9eade8f4b4d6994
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r2)
+		Method: <io.mrarm.irc.config.ServerCertificateManager: void loadKeyStore(java.io.InputStream)>
+		SHA-256: 8c15d9f7433900f68f5dfc1dad790dc0607e28ce6c09f5098096b113adc694cf
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.KeyPairGenerator
+		Statement: $r5 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>(varReplacer17988)
+		Method: <io.mrarm.irc.EditServerActivity: void generateCert()>
+		SHA-256: 6bb5792b0a48ed55bf28fb5df5c499210f9e630b604b266422fe17e9d512e5a8
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: java.security.PrivateKey
+		Statement: $r13 = virtualinvoke $r6.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <io.mrarm.irc.EditServerActivity: void generateCert()>
+		SHA-256: 4df0ededff86ff6554b080e327b878d2002dec4f082b4dcdb208f7d9524cd264
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: java.security.PublicKey
+		Statement: $r9 = virtualinvoke $r6.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <io.mrarm.irc.EditServerActivity: void generateCert()>
+		SHA-256: 3b638044daa881a508aad3d83c3293e834b6db91e5f09cf5dc5397c755e739b6
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer656)
+		Method: <io.mrarm.irc.EditServerActivity: java.lang.String getCertificateFingerprint(java.security.cert.X509Certificate)>
+		SHA-256: c61215bec227e65d977d7d71db14bdc9ed0597c59e1295faac984455549f195f
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <io.mrarm.irc.config.ServerCertificateManager: javax.net.ssl.X509TrustManager createKeyStoreTrustManager(java.security.KeyStore)>
+		SHA-256: a346ae5bda6a169d5aa1cc3d6e259fe085744e1b167e35b47ac3ccb90b9f4dae
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1219)
+		Method: <io.mrarm.irc.config.ServerCertificateManager: android.text.SpannableString buildCertOverviewString(java.security.cert.X509Certificate)>
+		SHA-256: 503da1341b94099beddb57910fd562dc8c1c43db4d0120cc5c653b2dbdbac95b
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.KeyStore
+		Statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r2)
+		Method: <io.mrarm.irc.config.ServerCertificateManager: void createKeyStoreIfNull()>
+		SHA-256: a3a506fc484f5e0b8a4f7f06d17486a60aff445bafdb8d4bff0358af4f5b58b9
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.KeyFactory
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+		Method: <io.mrarm.irc.config.ServerConfigData: java.security.PrivateKey getAuthPrivateKey()>
+		SHA-256: e930b7251df5b9bc9067b62700a35fae6334617bb91b8c953e66a54e8c557a98
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Mac
+		Statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: void <init>(java.lang.String)>
+		SHA-256: fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: byte[] doFinal(byte[])>
+		SHA-256: 1d6d7521ca30973fba926ddd40a80c0789b657f0d2fe66908725c8ffdc37c7cf
+		Secure: false
+	Object:
+		Variable: $r18
+		Type: javax.net.ssl.SSLContext
+		Statement: $r18 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1783)
+		Method: <io.mrarm.irc.ServerConnectionManager: io.mrarm.irc.ServerConnectionInfo createConnection(io.mrarm.irc.config.ServerConfigData,java.util.List,boolean)>
+		SHA-256: bbe22302f72e11cc98b3387ac6e87d020dbd0b846d47333da2251ae4c0d323b0
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <org.spongycastle.jcajce.util.DefaultJcaJceHelper: java.security.MessageDigest createDigest(java.lang.String)>
+		SHA-256: e485ecd53ecca8cba6ed010ffc115ca04172eb9152ffd532b50b45741978f36
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.KeyPair
+		Statement: $r6 = virtualinvoke $r5.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <io.mrarm.irc.EditServerActivity: void generateCert()>
+		SHA-256: 5042130d34de231d25e1acd74e06a1e9dce44ec3821d80864c7ded42b37dda3e
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <io.mrarm.irc.config.ServerCertificateManager: javax.net.ssl.X509TrustManager createKeyStoreTrustManager(java.security.KeyStore)>
+		SHA-256: 12c0cbfdef9ba1e1499092ea0307f4dbe553ac752103153f31d2802ccec2fe1b
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r2)
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: void init(byte[])>
+		SHA-256: 2c8b6542a35e929698f4560c93b5cf68fb53e0b3268e298dc399955f0bfa617b
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: java.security.PrivateKey
+		Statement: $r13 = virtualinvoke $r6.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <io.mrarm.irc.EditServerActivity: void generateCert()>
+		SHA-256: 4df0ededff86ff6554b080e327b878d2002dec4f082b4dcdb208f7d9524cd264
+		Secure: true
+	Object:
+		Variable: $r16
+		Type: java.security.cert.CertificateFactory
+		Statement: $r16 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer17984)
+		Method: <io.mrarm.irc.EditServerActivity: void generateCert()>
+		SHA-256: 53a01f06db1434a0905d249fe9cc2b02976f8f5f3d1915b79019bc666296570c
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.lang.String
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+		Method: <io.mrarm.irc.config.ServerConfigData: java.security.PrivateKey getAuthPrivateKey()>
+		SHA-256: 1bbbe25cb5c55ee510c2b688d4b4fca857d17a0f8031bbd8d61725dabcbc5b06
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r8.<java.security.SecureRandom: void <init>()>()
+		Method: <io.mrarm.irc.EditServerActivity: void generateCert()>
+		SHA-256: 7f304cc0beede89ad7ac7b1dd29902b8ebb62a0d79988d53931bd2b98209f008
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.PrivateKey
+		Statement: $r5 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r4)
+		Method: <io.mrarm.irc.config.ServerConfigData: java.security.PrivateKey getAuthPrivateKey()>
+		SHA-256: 98e6c7c998e85227f2d2ad33ba0f4f38254ff399d202a23e853931bbffaa06f5
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r2)
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: void init(byte[])>
+		SHA-256: 1af3e375106d10b26ea6034ef73b9c61e751ef18cab8bd19d427ede96b1bf3f8
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <io.mrarm.irc.EditServerActivity: java.lang.String getCertificateFingerprint(java.security.cert.X509Certificate)>
+		SHA-256: a2fbd687b00c8bb3699cb2cd4a71763dcdc97ec59bcbf3b85d5a95b21bd3bb2e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.Signature
+		Statement: $r1 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r2)
+		Method: <org.spongycastle.jcajce.util.DefaultJcaJceHelper: java.security.Signature createSignature(java.lang.String)>
+		SHA-256: 66f26381b2b186fbed59de5f1091ee81e1ff14794fdb45154aac9feab8965356
+		Secure: true
+
+Findings in Java Class: io.mrarm.irc.EditServerActivity
+
+	 in Method: java.lang.String getCertificateFingerprint(java.security.cert.X509Certificate)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #c61215bec227e65d977d7d71db14bdc9ed0597c59e1295faac984455549f195f)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer656)
+
+
+	 in Method: void onResume()
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #8c15d9f7433900f68f5dfc1dad790dc0607e28ce6c09f5098096b113adc694cf)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: $r5 = virtualinvoke $r4.<io.mrarm.irc.config.ServerCertificateManager: java.util.List getCertificateAliases()>()
+
+
+	 in Method: void generateCert()
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #53a01f06db1434a0905d249fe9cc2b02976f8f5f3d1915b79019bc666296570c)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r18 = virtualinvoke $r16.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r17)
+
+
+Findings in Java Class: io.mrarm.irc.config.ServerCertificateManager
+
+	 in Method: android.text.SpannableString buildCertOverviewString(java.security.cert.X509Certificate)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #503da1341b94099beddb57910fd562dc8c1c43db4d0120cc5c653b2dbdbac95b)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1219)
+
+
+	 in Method: void saveKeyStore(java.io.OutputStream)
+		TypestateError violating CrySL rule for java.security.KeyStore (on Object #a3a506fc484f5e0b8a4f7f06d17486a60aff445bafdb8d4bff0358af4f5b58b9)
+			Unexpected call to method store on object of type java.security.KeyStore. Expect a call to one of the following methods getKey,getEntry,setEntry
+			at statement: virtualinvoke $r1.<java.security.KeyStore: void store(java.io.OutputStream,char[])>($r2, varReplacer20456)
+
+
+	 in Method: javax.net.ssl.X509TrustManager createKeyStoreTrustManager(java.security.KeyStore)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>($r0)
+
+
+Findings in Java Class: io.mrarm.irc.config.ServerConfigData
+
+	 in Method: java.security.cert.X509Certificate getAuthCert()
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #5c305c20b529615945eac177c7746a670844c1edd947f3248c6a89f0cfbaf91b)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r4 = virtualinvoke $r2.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r3)
+
+
+	 in Method: java.security.PrivateKey getAuthPrivateKey()
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r5 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r4)
+
+
+Findings in Java Class: io.mrarm.irc.ServerConnectionManager
+
+	 in Method: io.mrarm.irc.ServerConnectionInfo createConnection(io.mrarm.irc.config.ServerConfigData,java.util.List,boolean)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #bbe22302f72e11cc98b3387ac6e87d020dbd0b846d47333da2251ae4c0d323b0)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r18 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1783)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r18.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r30, $r31, varReplacer1784)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r18.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r30, $r31, varReplacer1784)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #8c15d9f7433900f68f5dfc1dad790dc0607e28ce6c09f5098096b113adc694cf)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to load
+			at statement: specialinvoke $r26.<io.mrarm.irc.UserOverrideTrustManager: void <init>(android.content.Context,java.util.UUID)>($r17, $r4)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r18.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r30, $r31, varReplacer1784)
+
+
+Findings in Java Class: net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF
+
+	 in Method: void <init>(java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			First parameter (with value "HmacSHA1") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+
+
+	 in Method: byte[] doFinal()
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Unexpected call to method <javax.crypto.Mac: byte[] doFinal()> on object of type javax.crypto.Mac. Expect a call to one of the following methods javax.crypto.Mac: void update(byte[]),javax.crypto.Mac: byte[] doFinal(byte[]),javax.crypto.Mac: void update(java.nio.ByteBuffer),javax.crypto.Mac: void update(byte),javax.crypto.Mac: void update(byte[],int,int)
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Mac: byte[] doFinal()>()
+
+
+	 in Method: byte[] doFinal(byte[])
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Unexpected call to method doFinal on object of type javax.crypto.Mac.
+			at statement: $r2 = virtualinvoke $r1.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+
+
+	 in Method: void init(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #2c8b6542a35e929698f4560c93b5cf68fb53e0b3268e298dc399955f0bfa617b)
+			Second parameter (with value "HmacSHA1") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r2)
+
+
+Findings in Java Class: net.lingala.zip4j.unzip.Unzip
+
+	 in Method: void initExtractFile(net.lingala.zip4j.model.FileHeader,java.lang.String,net.lingala.zip4j.model.UnzipParameters,java.lang.String,net.lingala.zip4j.progress.ProgressMonitor)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r14.<net.lingala.zip4j.unzip.UnzipEngine: void unzipFile(net.lingala.zip4j.progress.ProgressMonitor,java.lang.String,java.lang.String,net.lingala.zip4j.model.UnzipParameters)>($r1, $r3, $r5, $r4)
+
+
+Findings in Java Class: net.lingala.zip4j.crypto.AESEncrpyter
+
+	 in Method: byte[] deriveKey(byte[],char[])
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r1 = virtualinvoke $r4.<net.lingala.zip4j.crypto.PBKDF2.PBKDF2Engine: byte[] deriveKey(char[],int)>($r2, $i0)
+
+
+Findings in Java Class: net.lingala.zip4j.io.DeflaterOutputStream
+
+	 in Method: void putNextEntry(java.io.File,net.lingala.zip4j.model.ZipParameters)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke r0.<net.lingala.zip4j.io.CipherOutputStream: void putNextEntry(java.io.File,net.lingala.zip4j.model.ZipParameters)>($r1, $r2)
+
+
+Findings in Java Class: net.lingala.zip4j.io.PartInputStream
+
+	 in Method: void checkAndReadAESMacBytes()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r6 = virtualinvoke $r5.<net.lingala.zip4j.unzip.UnzipEngine: net.lingala.zip4j.model.ZipModel getZipModel()>()
+
+
+Findings in Java Class: net.lingala.zip4j.io.InflaterInputStream
+
+	 in Method: int read(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r5 = r0.<net.lingala.zip4j.io.InflaterInputStream: net.lingala.zip4j.unzip.UnzipEngine unzipEngine>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r6 = virtualinvoke $r5.<net.lingala.zip4j.unzip.UnzipEngine: net.lingala.zip4j.model.LocalFileHeader getLocalFileHeader()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r6 = virtualinvoke $r5.<net.lingala.zip4j.unzip.UnzipEngine: net.lingala.zip4j.model.LocalFileHeader getLocalFileHeader()>()
+
+
+	 in Method: void fill()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $i0 = specialinvoke r0.<net.lingala.zip4j.io.PartInputStream: int read(byte[],int,int)>($r1, varReplacer12923, $i0)
+
+
+Findings in Java Class: net.lingala.zip4j.unzip.UnzipEngine
+
+	 in Method: net.lingala.zip4j.io.ZipInputStream getInputStream()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r7 = r0.<net.lingala.zip4j.unzip.UnzipEngine: net.lingala.zip4j.crypto.IDecrypter decrypter>
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $i5 = virtualinvoke $r8.<net.lingala.zip4j.crypto.AESDecrypter: int getPasswordVerifierLength()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke r0.<net.lingala.zip4j.unzip.UnzipEngine: void init(java.io.RandomAccessFile)>($r5)
+
+
+Findings in Java Class: net.lingala.zip4j.zip.ZipEngine
+
+	 in Method: void initAddFiles(java.util.ArrayList,net.lingala.zip4j.model.ZipParameters,net.lingala.zip4j.progress.ProgressMonitor)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r36.<net.lingala.zip4j.io.DeflaterOutputStream: void putNextEntry(java.io.File,net.lingala.zip4j.model.ZipParameters)>($r19, $r24)
+
+
+Findings in Java Class: net.lingala.zip4j.crypto.AESDecrypter
+
+	 in Method: byte[] deriveKey(byte[],char[])
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r1 = virtualinvoke $r4.<net.lingala.zip4j.crypto.PBKDF2.PBKDF2Engine: byte[] deriveKey(char[],int)>($r2, $i0)
+
+
+Findings in Java Class: org.spongycastle.jcajce.util.DefaultJcaJceHelper
+
+	 in Method: java.security.AlgorithmParameters createAlgorithmParameters(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.AlgorithmParameters (on Object #8d123772629184fc0669650c061426f57f5203aa49ca1fae65ed6e679e158734)
+			First parameter (with value "PSS") should be any of {AES, DiffieHellman, DH, OAEP, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r1 = staticinvoke <java.security.AlgorithmParameters: java.security.AlgorithmParameters getInstance(java.lang.String)>($r2)
+
+
+Findings in Java Class: org.spongycastle.operator.jcajce.OperatorHelper
+
+	 in Method: boolean notDefaultPSSParams(org.spongycastle.asn1.ASN1Sequence)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #e485ecd53ecca8cba6ed010ffc115ca04172eb9152ffd532b50b45741978f36)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $i1 = virtualinvoke $r8.<java.security.MessageDigest: int getDigestLength()>()
+
+
+	 in Method: java.security.Signature createSignature(org.spongycastle.asn1.x509.AlgorithmIdentifier)
+		RequiredPredicateError violating CrySL rule for java.security.AlgorithmParameters
+			First parameter was not properly generated as preparedAlg
+			at statement: virtualinvoke $r12.<java.security.AlgorithmParameters: void init(byte[])>($r13)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 29
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 6
+	TypestateError: 3
+	IncompleteOperationError: 18
+	RequiredPredicateError: 8
+=====================================================================

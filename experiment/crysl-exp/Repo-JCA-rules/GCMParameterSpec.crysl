@@ -1,0 +1,27 @@
+SPEC javax.crypto.spec.GCMParameterSpec
+
+OBJECTS 
+	int tagLen;
+	byte[] src;
+	int offset;
+	int len;
+	
+EVENTS
+	c1: GCMParameterSpec(tagLen, src);
+	c2: GCMParameterSpec(tagLen, src, offset, len);
+	Con := c1 | c2;
+	
+ORDER
+	Con
+	
+CONSTRAINTS
+	tagLen in {96, 104, 112, 120, 128};
+	length[src] >= offset + len;
+	offset >= 0;
+	len > 0;
+	
+REQUIRES
+	randomized[src];
+	
+ENSURES
+	preparedGCM[this];

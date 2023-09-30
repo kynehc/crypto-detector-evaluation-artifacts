@@ -1,0 +1,299 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8062)
+		Method: <com.fsck.k9.mail.Authentication: byte[] computeCramMd5Bytes(java.lang.String,java.lang.String,byte[])>
+		SHA-256: 5f9d2468e4628e3c152cafbfd0c4b899257b9f206bd2bc94d503b01ee0557a3f
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.KeyStore
+		Statement: $r7 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r4)
+		Method: <com.fsck.k9.mail.ssl.LocalKeyStore: void setKeyStoreFile(java.io.File)>
+		SHA-256: 1593918c2cd8908977ab9b2f24a1387dcd0b9d6c80d7c3eb58ea53e93dd53fa1
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.zegoggles.smssync.mail.HeaderGenerator: java.lang.String createMessageId(java.util.Date,java.lang.String,int)>
+		SHA-256: 9d52f48e9798c92b201069f7de4a39a2ffdbb7ab74be6775351035cfd34ea395
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <com.fsck.k9.mail.store.pop3.Pop3Store$Pop3Folder: void authAPOP(java.lang.String)>
+		SHA-256: 6d12a4f71410f42c189f7e5aa16332d42c21c34cb52f4211febf33f9466c28c5
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <com.fsck.k9.mail.Authentication: byte[] computeCramMd5Bytes(java.lang.String,java.lang.String,byte[])>
+		SHA-256: 2684a70854bf4717e82d84ce212139c44a0c289ef47c839877c647a86826fe50
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.SSLContext
+		Statement: $r5 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer11151)
+		Method: <com.zegoggles.smssync.mail.AllTrustedSocketFactory: java.net.Socket createSocket(java.net.Socket,java.lang.String,int,java.lang.String)>
+		SHA-256: c73ca3953a962793a60925f90450ae9fd1d2348b5a64c6c5710dc4088edde393
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.SSLContext
+		Statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer11730)
+		Method: <com.fsck.k9.mail.store.webdav.WebDavSocketFactory: void <init>(java.lang.String,int)>
+		SHA-256: 41306cda99865eab2226e8b41ed05c8c0916e5dfdc780dce3a7bcb17c0b836d4
+		Secure: false
+	Object:
+		Variable: r5
+		Type: byte[]
+		Statement: r5 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest(byte[])>(r5)
+		Method: <com.fsck.k9.mail.Authentication: byte[] computeCramMd5Bytes(java.lang.String,java.lang.String,byte[])>
+		SHA-256: 268ba0af058f2c4d537ac8c06bf00c44560d7b54455dcc3b14cdcdd581c10ec7
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r2 = virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <com.fsck.k9.mail.ssl.TrustManagerFactory: void <clinit>()>
+		SHA-256: 859bee31685c6309f68fe161d836a7623910c6a1665df8015d1bb0a7d238d71
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(varReplacer11159)
+		Method: <com.fsck.k9.mail.ssl.TrustManagerFactory: void <clinit>()>
+		SHA-256: 2c5229ca6dee135b19ee4eebc8ec888f2729a71a9f8333173f24690b35daf619
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1568)
+		Method: <com.fsck.k9.mail.ssl.DefaultTrustedSocketFactory: void <clinit>()>
+		SHA-256: 5833947275be5db1d6e289f1e29716d6a282726722297b6128099647b141802b
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer13883)
+		Method: <com.fsck.k9.mail.store.pop3.Pop3Store$Pop3Folder: void authAPOP(java.lang.String)>
+		SHA-256: 903ae1a01ea058dd32aecc7e1bcc824b70569f5a626a3dcf909a1c424d644d43
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.net.ssl.SSLContext
+		Statement: $r8 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer11150)
+		Method: <com.fsck.k9.mail.ssl.DefaultTrustedSocketFactory: java.net.Socket createSocket(java.net.Socket,java.lang.String,int,java.lang.String)>
+		SHA-256: 4cd5117166a15094d830a1c2a7d5c3a5547b2df13adfa9d19a8b98e73130fa1b
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <com.fsck.k9.mail.Authentication: byte[] computeCramMd5Bytes(java.lang.String,java.lang.String,byte[])>
+		SHA-256: 2684a70854bf4717e82d84ce212139c44a0c289ef47c839877c647a86826fe50
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer14084)
+		Method: <com.zegoggles.smssync.mail.HeaderGenerator: java.lang.String createMessageId(java.util.Date,java.lang.String,int)>
+		SHA-256: a11ad00a70cf9541fe35e2c5983646f098e377fb87867fe5e32ea132dce1fa21
+		Secure: false
+
+Findings in Java Class: com.fsck.k9.mail.ssl.DefaultTrustedSocketFactory
+
+	 in Method: void <clinit>()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1569, varReplacer1569, varReplacer1569)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1569, varReplacer1569, varReplacer1569)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #5833947275be5db1d6e289f1e29716d6a282726722297b6128099647b141802b)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1568)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1569, varReplacer1569, varReplacer1569)
+
+
+	 in Method: java.net.Socket createSocket(java.net.Socket,java.lang.String,int,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r8.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r13, $r14, varReplacer11148)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r8.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r13, $r14, varReplacer11148)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #4cd5117166a15094d830a1c2a7d5c3a5547b2df13adfa9d19a8b98e73130fa1b)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r8 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer11150)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r8.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r13, $r14, varReplacer11148)
+
+
+Findings in Java Class: com.fsck.k9.mail.Authentication
+
+	 in Method: byte[] computeCramMd5Bytes(java.lang.String,java.lang.String,byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #5f9d2468e4628e3c152cafbfd0c4b899257b9f206bd2bc94d503b01ee0557a3f)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8062)
+
+
+Findings in Java Class: com.zegoggles.smssync.mail.AllTrustedSocketFactory
+
+	 in Method: java.net.Socket createSocket(java.net.Socket,java.lang.String,int,java.lang.String)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #c73ca3953a962793a60925f90450ae9fd1d2348b5a64c6c5710dc4088edde393)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r5 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer11151)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer11152, $r8, varReplacer11152)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer11152, $r8, varReplacer11152)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer11152, $r8, varReplacer11152)
+
+
+Findings in Java Class: com.fsck.k9.mail.ssl.TrustManagerFactory
+
+	 in Method: void <clinit>()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer11158)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.TrustManagerFactory (on Object #2c5229ca6dee135b19ee4eebc8ec888f2729a71a9f8333173f24690b35daf619)
+			First parameter (with value "X509") should be any of {PKIX, SunX509}
+			at statement: $r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>(varReplacer11159)
+
+
+Findings in Java Class: com.fsck.k9.mail.store.webdav.WebDavSocketFactory
+
+	 in Method: void <init>(java.lang.String,int)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #41306cda99865eab2226e8b41ed05c8c0916e5dfdc780dce3a7bcb17c0b836d4)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r2 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer11730)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer11728, $r8, varReplacer11728)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer11728, $r8, varReplacer11728)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer11728, $r8, varReplacer11728)
+
+
+Findings in Java Class: com.fsck.k9.mail.store.pop3.Pop3Store$Pop3Folder
+
+	 in Method: void authAPOP(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #903ae1a01ea058dd32aecc7e1bcc824b70569f5a626a3dcf909a1c424d644d43)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer13883)
+
+
+Findings in Java Class: com.zegoggles.smssync.mail.HeaderGenerator
+
+	 in Method: java.lang.String createMessageId(java.util.Date,java.lang.String,int)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #a11ad00a70cf9541fe35e2c5983646f098e377fb87867fe5e32ea132dce1fa21)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer14084)
+
+
+Findings in Java Class: com.fsck.k9.mail.ssl.LocalKeyStore
+
+	 in Method: void setKeyStoreFile(java.io.File)
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #1593918c2cd8908977ab9b2f24a1387dcd0b9d6c80d7c3eb58ea53e93dd53fa1)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r7.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r6, $r8)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #1593918c2cd8908977ab9b2f24a1387dcd0b9d6c80d7c3eb58ea53e93dd53fa1)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r7.<java.security.KeyStore: void load(java.io.InputStream,char[])>(r6, $r8)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 15
+
+	CryptoAnalysis found the following violations. For details see description above.
+	NeverTypeOfError: 1
+	HardCodedError: 1
+	ConstraintError: 8
+	RequiredPredicateError: 13
+=====================================================================

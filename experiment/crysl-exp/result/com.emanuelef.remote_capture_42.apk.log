@@ -1,0 +1,155 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: varReplacer1963
+		Type: java.lang.String
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer1963)
+		Method: <com.emanuelef.remote_capture.Billing: boolean isValidLicense(java.lang.String)>
+		SHA-256: ce9a3c9580494980ac6507a47259ad36cee6f7f996bdeff1fef54cb83c6ee6c
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyFactory
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer1963)
+		Method: <com.emanuelef.remote_capture.Billing: boolean isValidLicense(java.lang.String)>
+		SHA-256: d42e5bcd4e1530f891652269a341620b2cc18423cd36c56e3dc782f634a98821
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.Signature
+		Statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer1965)
+		Method: <com.emanuelef.remote_capture.Billing: boolean isValidLicense(java.lang.String)>
+		SHA-256: 73a698ce4257bb47452c365b5824bf124f3fd2cb65ef59f53b53992865751202
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r11.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r5)
+		Method: <com.emanuelef.remote_capture.Billing: boolean isValidLicense(java.lang.String)>
+		SHA-256: 566ed28824c6fd53f8b0792df976ef8db22ece5215d469d8776001115f1cb21a
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.PublicKey
+		Statement: $r6 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r4)
+		Method: <com.emanuelef.remote_capture.Billing: boolean isValidLicense(java.lang.String)>
+		SHA-256: 83a30220258106ec16fe801948cea65e29c7a0a25861b883ae35b34f12c72a46
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r2)
+		Method: <com.emanuelef.remote_capture.Billing: boolean isValidLicense(java.lang.String)>
+		SHA-256: 25c1772f6ab99a8f8d228caa47f09e9503d3539a27d75cc606e19c229b58fc30
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <com.emanuelef.remote_capture.Billing: java.lang.String getSystemId()>
+		SHA-256: b3702966053c03459cfcf9bd7a323ec0ef50de70ff5fd96cbc8ed0e3e239a113
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5399)
+		Method: <com.emanuelef.remote_capture.Billing: java.lang.String getSystemId()>
+		SHA-256: 52d568c2166fa15d650a70256395766a357b45920e8627d9543cedbc7a70c49f
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r2)
+		Method: <com.emanuelef.remote_capture.Billing: boolean isValidLicense(java.lang.String)>
+		SHA-256: 325dbd6326e136329aba5eaec538101234581062ba6ee3cddab0b246499f2714
+		Secure: false
+
+Findings in Java Class: com.emanuelef.remote_capture.Billing
+
+	 in Method: boolean isValidLicense(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #73a698ce4257bb47452c365b5824bf124f3fd2cb65ef59f53b53992865751202)
+			First parameter (with value "SHA1withECDSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>(varReplacer1965)
+
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r7.<java.security.Signature: void initVerify(java.security.PublicKey)>($r6)
+
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r11.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r5)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r6 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r4)
+
+
+	 in Method: java.lang.String getSystemId()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #52d568c2166fa15d650a70256395766a357b45920e8627d9543cedbc7a70c49f)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5399)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 9
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 3
+	ConstraintError: 2
+=====================================================================

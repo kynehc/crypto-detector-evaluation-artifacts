@@ -1,0 +1,536 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r2.<javax.crypto.Mac: byte[] doFinal(byte[])>($r5)
+		Method: <org.briarproject.briar.android.AndroidKeyStrengthener: org.briarproject.bramble.api.crypto.SecretKey strengthenKey(org.briarproject.bramble.api.crypto.SecretKey)>
+		SHA-256: 1c961a31f2c770844ea4b98cb105665831ca22a4f33ae0ba0bfd2ed88fac98c3
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r1.<java.security.Signature: boolean verify(byte[])>($r2)
+		Method: <org.briarproject.bramble.crypto.EdSignature: boolean verify(byte[])>
+		SHA-256: 7adbd4dbf40db105d8491af4e47d46b04a16f322a2c8a413b8c412d8f5bad682
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: $r0 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer19885)
+		Method: <org.h2.util.MathUtils: java.security.SecureRandom getSecureRandom()>
+		SHA-256: b08104f73d3beaa2a4d996746fed7cad01dc0f2d7db479b91b222ddea1b36f3d
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer37795)
+		Method: <okhttp3.internal.platform.AndroidPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: ca972ae1d06c5f62ce0f28b68e7d1d9daaaaa972eeddfac419bc78494d672cd8
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.cert.CertificateFactory
+		Statement: $r10 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer42819)
+		Method: <org.h2.security.CipherFactory: java.security.KeyStore getKeyStore(java.lang.String)>
+		SHA-256: 32200ee5f344794047fb431ada73c08724e8c3ae873d22c6e7c6d49ef7a54131
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer37791)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: e0ca6f6992122ed34ef577c79e892a95c4c11a6ae18bba537ff74b3f4a9d6329
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyStore
+		Statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer43926)
+		Method: <org.briarproject.briar.android.AndroidKeyStrengthener: boolean isInitialised()>
+		SHA-256: 86a50b62f3c19a8f698712bea9492fdf86d706e0dba781929a696ae76ee51daf
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.KeyFactory
+		Statement: $r5 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer42815)
+		Method: <org.h2.security.CipherFactory: java.security.KeyStore getKeyStore(java.lang.String)>
+		SHA-256: dc64e3c2e08aabd1bbe07f0535febfbfb7651238f9a017c6b9cf5b395f09803e
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.cert.CertificateFactory
+		Statement: $r6 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer19098)
+		Method: <org.briarproject.briar.android.ScreenFilterMonitorImpl: boolean isPlayServices(java.lang.String)>
+		SHA-256: 45962f62289db0a4470d69631993ca34abfac6d20cc46f9bfe82da992334ef9
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.SecretKey
+		Statement: $r6 = virtualinvoke $r5.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <org.briarproject.briar.android.AndroidKeyStrengthener: void initialise()>
+		SHA-256: cfa7d538ea3119b6ecbeb4cabda37850cab86a769b317665af54181fe821aed8
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <okio.ByteString: okio.ByteString digest(java.lang.String)>
+		SHA-256: a79a1700ae9d8d44f13ea218f751e7024f8f1222b1b2ae17cdbab7b56d352181
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r6)
+		Method: <net.i2p.crypto.eddsa.spec.EdDSAPrivateKeySpec: void <init>(byte[],net.i2p.crypto.eddsa.spec.EdDSAParameterSpec)>
+		SHA-256: d5b38735dd5a1264aff1067c406c42adc332ffc85d247dbac86d03b47b3b04b3
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.security.SecureRandom: void nextBytes(byte[])>($r5)
+		Method: <net.i2p.crypto.eddsa.KeyPairGenerator: java.security.KeyPair generateKeyPair()>
+		SHA-256: d9b0650b11f88a83bb30425c07acb5a522c69b11a30f8da4df4c86361c52c144
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Mac
+		Statement: $r2 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer43574)
+		Method: <org.briarproject.briar.android.AndroidKeyStrengthener: org.briarproject.bramble.api.crypto.SecretKey strengthenKey(org.briarproject.bramble.api.crypto.SecretKey)>
+		SHA-256: 5023d217194a0160d6b45c1227484924d8a454a3d00ec8d8a440808c7c5426b0
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <org.whispersystems.curve25519.JCESecureRandomProvider: void nextBytes(byte[])>
+		SHA-256: b6eaee850f63d2344fe0da86f260a4056da7ba2afa079fe8669a882d349c88ae
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <org.briarproject.bramble.crypto.CryptoComponentImpl: void <init>(org.briarproject.bramble.api.system.SecureRandomProvider,org.briarproject.bramble.crypto.PasswordBasedKdf)>
+		SHA-256: e7773ba49b729df7f9c73f598617f03ad03f8f7b053a41c047c0fe9c171fdcbe
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <net.i2p.crypto.eddsa.KeyPairGenerator: java.security.KeyPair generateKeyPair()>
+		SHA-256: 5b046b944a3ae385bb3a5e9fc3d6092fe6340a6297e4eec89abd88ab9850f4a7
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<java.security.Signature: byte[] sign()>()
+		Method: <org.briarproject.bramble.crypto.EdSignature: byte[] sign()>
+		SHA-256: b68f5646365ea9f7fed42d1e4b83e1d892e9ebc05c57fe9429c4cfc00ae0a55a
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.PrivateKey
+		Statement: $r7 = virtualinvoke $r3.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <org.briarproject.bramble.crypto.CryptoComponentImpl: org.briarproject.bramble.api.crypto.KeyPair generateSignatureKeyPair()>
+		SHA-256: 148d09c7f08486ef3e815c4a7539e5ca2d6ee64ab62f445f19cd1b69940f9148
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r2)
+		Method: <org.h2.security.CipherFactory: java.security.KeyStore getKeyStore(java.lang.String)>
+		SHA-256: ce0707c76be59a3c4770b9e9643f9d4a7c415a8d662b2e9c306dd6956abd931
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <org.h2.util.MathUtils: java.security.SecureRandom getSecureRandom()>
+		SHA-256: d75550c9083472c7c43e6f5f5860285f0b52621e3cdc9ab4b5797d07c8c57724
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r6.<java.security.SecureRandom: void <init>()>()
+		Method: <org.briarproject.bramble.crypto.CryptoComponentImpl: void installSecureRandomProvider(java.security.Provider)>
+		SHA-256: c3e6097e5c69a87ac2962dca2745b153e730a9c3176099f775be9c5c9970b5d1
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r6)
+		Method: <net.i2p.crypto.eddsa.spec.EdDSAParameterSpec: void <init>(net.i2p.crypto.eddsa.math.Curve,java.lang.String,net.i2p.crypto.eddsa.math.ScalarOps,net.i2p.crypto.eddsa.math.GroupElement)>
+		SHA-256: e2a7fde5e14223557a76ad0c1c621daab6834282af96171dab264b22557dc255
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest(byte[])>($r2)
+		Method: <net.i2p.crypto.eddsa.spec.EdDSAPrivateKeySpec: void <init>(byte[],net.i2p.crypto.eddsa.spec.EdDSAParameterSpec)>
+		SHA-256: 1dbf57a27ae4cae19ca0df068bc587116d14c8716d6aeb248563e15dc6867285
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer37796)
+		Method: <okhttp3.internal.platform.AndroidPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 67436129e1297f987444a1e4cc386188887b2ca5c28a498cac99784f01d88731
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.Signature
+		Statement: $r1 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.security.Provider)>(varReplacer38953, $r2)
+		Method: <org.briarproject.bramble.crypto.EdSignature: void <init>()>
+		SHA-256: 31384d401a5abc7ce7ed25349df5b43ad3fdaab9ea1a8f2d43f50a2d36d6f4ee
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r9.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r10, $r11)
+		Method: <net.i2p.crypto.eddsa.KeyPairGenerator: java.security.KeyPair generateKeyPair()>
+		SHA-256: 80dc842ac8da178fd27b0a3bd3877d9dd4c006fae2f636c37f55cb326e92ba95
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer45509)
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator$1: com.bumptech.glide.load.engine.cache.SafeKeyGenerator$PoolableDigestContainer create()>
+		SHA-256: eb5daec58175589ac4fcb40fc337e1824dd61179ab8684636829a5c90f723daf
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.KeyGenerator
+		Statement: $r5 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer50032, varReplacer50033)
+		Method: <org.briarproject.briar.android.AndroidKeyStrengthener: void initialise()>
+		SHA-256: ba40fb497a4bd7d86acb3ba57f4ed93e0a230345bb730241321db3aa7b0e25a2
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.whispersystems.curve25519.JCESecureRandomProvider: void nextBytes(byte[])>
+		SHA-256: 3e784b8048702cdde6d69e3c7b8665ffab00a8ef9ca96f418078ed6997701f20
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: java.security.PrivateKey
+		Statement: $r8 = virtualinvoke $r5.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r6)
+		Method: <org.h2.security.CipherFactory: java.security.KeyStore getKeyStore(java.lang.String)>
+		SHA-256: 2c8b873b788ce7751236cd35b37a2c0bd387db2a5a32662bc64903d9439405e9
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer37798, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: d13d0989209ead7d1081a2be230eb176b24977c0cbf6f1d6bec2b5561839c11
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r2 = virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.Util: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: dea0af93b06734ae35228a014521e6e031131dd2b357359826afa61f9a6de1b
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.SecureRandom
+		Statement: $r6 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer22722)
+		Method: <org.briarproject.bramble.crypto.CryptoComponentImpl: void installSecureRandomProvider(java.security.Provider)>
+		SHA-256: bf276d453d917574f9b7c52026c345e4fa3ae193965a4561aacf1ff25b4d2f64
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.SecureRandom: byte[] generateSeed(int)>(varReplacer12506)
+		Method: <org.h2.util.MathUtils$1: void run()>
+		SHA-256: c6a203a0d61f04e9ebc8f3209e9b98ba8b6e29b94978f6e6d53ab26f1962c368
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: $r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer12505)
+		Method: <org.h2.util.MathUtils$1: void run()>
+		SHA-256: e1f539c55c0a2b1f2b13c7ec973c164717762abcddaf766b06d51614eb9504d3
+		Secure: true
+	Object:
+		Variable: varReplacer42815
+		Type: java.lang.String
+		Statement: $r5 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer42815)
+		Method: <org.h2.security.CipherFactory: java.security.KeyStore getKeyStore(java.lang.String)>
+		SHA-256: 2cd1cc4359ff0670c0251789c6d67ecc012c5d693e9ddf577216be587617386f
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r1 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r0)
+		Method: <okhttp3.internal.Util: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: a8764d384e0e6acd4407dba0e4c2025660362892494036c03c4b52a40e75c66b
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <org.briarproject.bramble.crypto.CryptoComponentImpl: void <init>(org.briarproject.bramble.api.system.SecureRandomProvider,org.briarproject.bramble.crypto.PasswordBasedKdf)>
+		SHA-256: e7773ba49b729df7f9c73f598617f03ad03f8f7b053a41c047c0fe9c171fdcbe
+		Secure: true
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r1.<java.security.Signature: boolean verify(byte[])>($r2)
+		Method: <org.briarproject.bramble.crypto.EdSignature: boolean verify(byte[])>
+		SHA-256: 6dd6111c8ad2623d6488a912c05bc181fa4a3875d5a459572ba72963ad50d79d
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer37797, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: 1f8a65a7fa63b218c8ef6aa9fcd2bf09be007ec27228f24b4dcb44cddf25d4d0
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.bouncycastle.crypto.CryptoServicesRegistrar: java.security.SecureRandom getSecureRandom()>
+		SHA-256: 375867338a8d572664475cac25bcfa294db8f2af8faff8d50836d5d6dcf8ab15
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.PublicKey
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <org.briarproject.bramble.crypto.CryptoComponentImpl: org.briarproject.bramble.api.crypto.KeyPair generateSignatureKeyPair()>
+		SHA-256: e0ed384b1921633e1c28b4d443bb11cfd42007b1f590ad365237facff2acda6f
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <org.briarproject.bramble.crypto.CryptoComponentImpl: void <init>(org.briarproject.bramble.api.system.SecureRandomProvider,org.briarproject.bramble.crypto.PasswordBasedKdf)>
+		SHA-256: e7773ba49b729df7f9c73f598617f03ad03f8f7b053a41c047c0fe9c171fdcbe
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.SSLContext
+		Statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer37790)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext getSSLContext()>
+		SHA-256: bb751e8f23fdbcad0c3ee00b2c2f06b3ccefcad55898aef52ce77a3afc1230a9
+		Secure: false
+
+Findings in Java Class: org.briarproject.briar.android.ScreenFilterMonitorImpl
+
+	 in Method: boolean isPlayServices(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #45962f62289db0a4470d69631993ca34abfac6d20cc46f9bfe82da992334ef9)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r10 = virtualinvoke $r6.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r9)
+
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #e0ca6f6992122ed34ef577c79e892a95c4c11a6ae18bba537ff74b3f4a9d6329)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r4 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer37791)
+
+
+Findings in Java Class: okhttp3.internal.platform.AndroidPlatform
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #ca972ae1d06c5f62ce0f28b68e7d1d9daaaaa972eeddfac419bc78494d672cd8)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer37795)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLContext getSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #1f8a65a7fa63b218c8ef6aa9fcd2bf09be007ec27228f24b4dcb44cddf25d4d0)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer37797, $r2)
+
+
+Findings in Java Class: net.i2p.crypto.eddsa.spec.EdDSAParameterSpec
+
+	 in Method: void <init>(net.i2p.crypto.eddsa.math.Curve,java.lang.String,net.i2p.crypto.eddsa.math.ScalarOps,net.i2p.crypto.eddsa.math.GroupElement)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #e2a7fde5e14223557a76ad0c1c621daab6834282af96171dab264b22557dc255)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $i1 = virtualinvoke $r7.<java.security.MessageDigest: int getDigestLength()>()
+
+
+Findings in Java Class: org.briarproject.bramble.crypto.EdSignature
+
+	 in Method: void <init>()
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #31384d401a5abc7ce7ed25349df5b43ad3fdaab9ea1a8f2d43f50a2d36d6f4ee)
+			First parameter (with value "NONEwithEdDSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r1 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String,java.security.Provider)>(varReplacer38953, $r2)
+
+
+	 in Method: void initSign(org.briarproject.bramble.api.crypto.PrivateKey)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r7.<java.security.Signature: void initSign(java.security.PrivateKey)>($r4)
+
+
+	 in Method: void initVerify(org.briarproject.bramble.api.crypto.PublicKey)
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r7.<java.security.Signature: void initVerify(java.security.PublicKey)>($r4)
+
+
+Findings in Java Class: org.h2.security.CipherFactory
+
+	 in Method: java.security.KeyStore getKeyStore(java.lang.String)
+		TypestateError violating CrySL rule for java.security.KeyStore (on Object #ce0707c76be59a3c4770b9e9643f9d4a7c415a8d662b2e9c306dd6956abd931)
+			Unexpected call to method load on object of type java.security.KeyStore. Expect a call to one of the following methods getKey,getEntry,setEntry
+			at statement: virtualinvoke $r3.<java.security.KeyStore: void load(java.io.InputStream,char[])>(varReplacer42817, $r4)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r8 = virtualinvoke $r5.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r6)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #ce0707c76be59a3c4770b9e9643f9d4a7c415a8d662b2e9c306dd6956abd931)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r3.<java.security.KeyStore: void load(java.io.InputStream,char[])>(varReplacer42816, $r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #32200ee5f344794047fb431ada73c08724e8c3ae873d22c6e7c6d49ef7a54131)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r11 = virtualinvoke $r10.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r0)
+
+		NeverTypeOfError violating CrySL rule for java.security.KeyStore (on Object #ce0707c76be59a3c4770b9e9643f9d4a7c415a8d662b2e9c306dd6956abd931)
+			Second parameter should never be of type java.lang.String.
+			at statement: virtualinvoke $r3.<java.security.KeyStore: void load(java.io.InputStream,char[])>(varReplacer42817, $r4)
+
+		HardCodedError violating CrySL rule for java.security.KeyStore (on Object #ce0707c76be59a3c4770b9e9643f9d4a7c415a8d662b2e9c306dd6956abd931)
+			Second parameter should never be hardcoded.
+			at statement: virtualinvoke $r3.<java.security.KeyStore: void load(java.io.InputStream,char[])>(varReplacer42817, $r4)
+
+
+Findings in Java Class: org.briarproject.briar.android.AndroidKeyStrengthener
+
+	 in Method: boolean isInitialised()
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #86a50b62f3c19a8f698712bea9492fdf86d706e0dba781929a696ae76ee51daf)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to getKey
+			at statement: $r3 = virtualinvoke $r2.<java.security.KeyStore: java.security.KeyStore$Entry getEntry(java.lang.String,java.security.KeyStore$ProtectionParameter)>(varReplacer43923, varReplacer43924)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #86a50b62f3c19a8f698712bea9492fdf86d706e0dba781929a696ae76ee51daf)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer43926)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #b336d574501b28a5bd90db22472c23a68acb0c1b99c4f14746fdc2a23c69a24e)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: okhttp3.OkHttpClient
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer30506, $r7, varReplacer30506)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer30506, $r7, varReplacer30506)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r2.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer30506, $r7, varReplacer30506)
+
+
+Findings in Java Class: net.i2p.crypto.eddsa.KeyPairGenerator
+
+	 in Method: java.security.KeyPair generateKeyPair()
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r9.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r10, $r11)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r9.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r10, $r11)
+
+
+Findings in Java Class: okhttp3.internal.Util
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r1.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer30509)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 46
+
+	CryptoAnalysis found the following violations. For details see description above.
+	HardCodedError: 2
+	ConstraintError: 6
+	NeverTypeOfError: 1
+	IncompleteOperationError: 4
+	TypestateError: 1
+	RequiredPredicateError: 9
+=====================================================================

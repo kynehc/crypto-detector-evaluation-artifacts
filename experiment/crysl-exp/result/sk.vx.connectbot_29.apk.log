@@ -1,0 +1,446 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: java.security.KeyFactory
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r1)
+		Method: <sk.vx.connectbot.util.PubkeyUtils: java.security.PrivateKey decodePrivate(byte[],java.lang.String)>
+		SHA-256: e1b6c34ce51e47a1558c51419dda4e8638aab18ae42289daed21edce36b461a2
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.KeyPairGenerator
+		Statement: $r8 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String)>($r5)
+		Method: <sk.vx.connectbot.GeneratePubkeyActivity$6: void run()>
+		SHA-256: 3f4c791d69709ed40196472341b9c647da4d3241e728e67795c84c143e1a1c9b
+		Secure: true
+	Object:
+		Variable: r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer2810)
+		Method: <sk.vx.connectbot.util.PubkeyUtils: byte[] cipher(int,byte[],byte[])>
+		SHA-256: c4246275cc3c0e4897231bc1bf17a3285d7bb2d4b82d366e563403a2d749f150
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Cipher
+		Statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer1137)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] encrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 3842db73ad8adcb4ac97635fcf542752bda3fb302be7f1a24172d6026b21cab0
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.lang.String
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r1)
+		Method: <sk.vx.connectbot.util.PubkeyUtils: java.security.PrivateKey decodePrivate(byte[],java.lang.String)>
+		SHA-256: 61ab802df9a84c23859de72276564a0eeb269657da14376f318fec5ef48b8588
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest(byte[])>(r3)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] encrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 688a68079a457b927c70d8ffa6bb705bdeee2934b7dd2b8d33500ffd7c7de3fe
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: $r4 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer1139)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] encrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: c494558790060352d3c17568045c5797d20bee3417858de632bbadd114405285
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] decrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: f0644a81259ea700a0a95bb569b0797f7ee22ccf9b175b726c3ef1600ef48d03
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = interfaceinvoke $r0.<java.security.Key: byte[] getEncoded()>()
+		Method: <sk.vx.connectbot.util.PubkeyUtils: java.lang.String formatKey(java.security.Key)>
+		SHA-256: 136102cb38ed6c98f74c9268bb1eab4c248042def4965401c2a1dde1a6f61bfc
+		Secure: true
+	Object:
+		Variable: varReplacer1141
+		Type: java.lang.String
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer1141)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] encrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 5353ec57fd97754073ad94c77da5ad0bda1498d216fe5e24c5ccdba22025f56
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2847)
+		Method: <sk.vx.connectbot.util.PubkeyUtils: byte[] sha256(byte[])>
+		SHA-256: 224aee7780879ec23ac68f8bcec648b59c0c6e5098a48cbccb86e6a048b7b271
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.PrivateKey
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>(r2)
+		Method: <sk.vx.connectbot.util.PubkeyUtils: java.security.PrivateKey decodePrivate(byte[],java.lang.String)>
+		SHA-256: 717e05d623dead6e2a88a3f61ac9face2f6fe82ab2b269b9802273916e9fb3f
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1140)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] encrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 251aaf7afad19d9327b40edb69f908e0f9ce2c00c5125a453a36ec17ba498472
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>(r3)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] decrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: d70133d37e0d00c02856441d30cfe675f544a96ab1fee6f0a3a5de0d3f600395
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: java.security.KeyPair
+		Statement: $r9 = virtualinvoke $r8.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <sk.vx.connectbot.GeneratePubkeyActivity$6: void run()>
+		SHA-256: a9018851294102812dbd3696d6643f089418bc2951cd5e98e9159f3942dfd232
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest(byte[])>(r3)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] encrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 2123e239709a6da0811f6f66798a9fe7b150ed954acccef5674d7b5895d366b9
+		Secure: true
+	Object:
+		Variable: r2
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke r2.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+		Method: <sk.vx.connectbot.bean.PubkeyBean: void setPublicKey(byte[])>
+		SHA-256: 2eed41a144a6ca6b432df9e461e55619267e6ccede02aac6fe7cbb9c10fe0d97
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.spec.X509EncodedKeySpec
+		Statement: specialinvoke $r1.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r2)
+		Method: <sk.vx.connectbot.util.PubkeyUtils: byte[] getEncodedPublic(java.security.PublicKey)>
+		SHA-256: 14ee0c7571faa275fa780aefd9ceadc325d21caccc809282d34ab8d6ec249cc
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2825)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] decrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 70238b6b11dfaceb4592dd974b460485ec002c1479384da504f7e839b5519b71
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: java.security.PrivateKey
+		Statement: $r10 = virtualinvoke $r9.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <sk.vx.connectbot.GeneratePubkeyActivity$6: void run()>
+		SHA-256: 15d5c6f140439acdc06a845c357b5f1fa9c860e6edbf5b6f584e0d22faf19224
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.lang.String
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+		Method: <sk.vx.connectbot.bean.PubkeyBean: java.security.PublicKey decodePublicKeyAs(java.security.spec.EncodedKeySpec,java.lang.String)>
+		SHA-256: 8defd36dd6d1c114c66c7217c90237277b7e9ada833f0f52bf4d5f9588e7294b
+		Secure: false
+	Object:
+		Variable: varReplacer2822
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer2822)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] decrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: e8f595051714dc59dc201d5a1080a962edf0be1fef313f43f25b9c1d1704e7cd
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer2822)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] decrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 8267ed6b8b48c8cd38bc82515cf7eb0161f40b04dc47b060bc3257b03b7a219c
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r13.<java.security.SecureRandom: void <init>()>()
+		Method: <com.trilead.ssh2.channel.AuthAgentForwardThread: void processSignRequest(com.trilead.ssh2.packets.TypesReader)>
+		SHA-256: b5edd402a8e1f6795f7f8ba9dbddffa7259cccd4d1576aa2ed43657e41f05e24
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <sk.vx.connectbot.util.PubkeyUtils: byte[] sha256(byte[])>
+		SHA-256: 876637d4f7a26b637a7f3b7e8e8073686697acbb876f55d7123239b5af2eec9b
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.PublicKey
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+		Method: <sk.vx.connectbot.bean.PubkeyBean: java.security.PublicKey decodePublicKeyAs(java.security.spec.EncodedKeySpec,java.lang.String)>
+		SHA-256: 6e2004db9f46c7c44fd20fa6562e8706aa2046712b133fd2640355c54dec8506
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: java.security.PublicKey
+		Statement: $r11 = virtualinvoke $r9.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <sk.vx.connectbot.GeneratePubkeyActivity$6: void run()>
+		SHA-256: d46a77afd7952a2cdc6c743ec755e10b01cb6fec724701f33f21fbee8d2d2cd7
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <com.trilead.ssh2.Connection: java.security.SecureRandom getOrCreateSecureRND()>
+		SHA-256: a3bd533d934aba599d3678a1b8c115af963b773042e1d3657aa52d68270538da
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] encrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 7e219c8b0976041c1e359ee9f71f24e879148f06ae64675bb407942d96f717fe
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer1141)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] encrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 11035694852f0ec159deb2d7ed473488b44cb3341ac5510d75df8e3f74d051ee
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer2809)
+		Method: <sk.vx.connectbot.util.PubkeyUtils: byte[] cipher(int,byte[],byte[])>
+		SHA-256: 8d3c0e1ce1f3f747b9c35fd03e536957cc8c0b3cd31d4bd83f1d3f5984ef410c
+		Secure: false
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>(r3)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] decrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 5156e1a5dec914f2d736d8410d0fd2b9b3b8ebf9e39069bc1d70534708c50b4c
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.KeyFactory
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>($r2)
+		Method: <sk.vx.connectbot.bean.PubkeyBean: java.security.PublicKey decodePublicKeyAs(java.security.spec.EncodedKeySpec,java.lang.String)>
+		SHA-256: 4824ecaeaa945d9ec43ec4a5566cb52edd6b5e71a7331e8180bd2a6e528dbaf9
+		Secure: false
+	Object:
+		Variable: varReplacer2810
+		Type: java.lang.String
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer2810)
+		Method: <sk.vx.connectbot.util.PubkeyUtils: byte[] cipher(int,byte[],byte[])>
+		SHA-256: 606850e3deb6f90eb4baf124badc284065004a783bc8e8e6c61eadbc7fa43ba8
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.Key
+		Statement: $r3 = interfaceinvoke $r0.<java.security.Key: byte[] getEncoded()>()
+		Method: <sk.vx.connectbot.util.PubkeyUtils: java.lang.String formatKey(java.security.Key)>
+		SHA-256: e939719c0042baaca810ee6455328d9372679580d9c9c869de6d69a9441e7c76
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>($r0)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] encrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 5197f383b1d3231b681aa3ce68bb84f4bcbbcafbff0cc86747c3dbffd8de8df2
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer2824)
+		Method: <sk.vx.connectbot.util.Encryptor: byte[] decrypt(byte[],int,java.lang.String,byte[])>
+		SHA-256: 7710b0a3ab4bbaacb26f1753d5e323f65211d927e97b02796388637f2eb474d8
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.SecureRandom
+		Statement: $r6 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer1090)
+		Method: <sk.vx.connectbot.GeneratePubkeyActivity$6: void run()>
+		SHA-256: 1ea7e2c088c5f7aa36d02f0c2320b13520e5756e4cee72a2ae80fe12e8c5bad
+		Secure: false
+
+Findings in Java Class: sk.vx.connectbot.util.Encryptor
+
+	 in Method: byte[] encrypt(byte[],int,java.lang.String,byte[])
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #251aaf7afad19d9327b40edb69f908e0f9ce2c00c5125a453a36ec17ba498472)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to update, java.security.MessageDigest: byte[] digest(byte[])
+			at statement: $r6 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest(byte[])>(r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r7.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer1142, $r8, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r8.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer1141)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #3842db73ad8adcb4ac97635fcf542752bda3fb302be7f1a24172d6026b21cab0)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r7.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedIV [ with CBC, It's required to use IVParameterSpec]
+			at statement: virtualinvoke $r7.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer1142, $r8, $r9)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #251aaf7afad19d9327b40edb69f908e0f9ce2c00c5125a453a36ec17ba498472)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1140)
+
+
+	 in Method: byte[] decrypt(byte[],int,java.lang.String,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r8.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #7710b0a3ab4bbaacb26f1753d5e323f65211d927e97b02796388637f2eb474d8)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #70238b6b11dfaceb4592dd974b460485ec002c1479384da504f7e839b5519b71)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to update, java.security.MessageDigest: byte[] digest(byte[])
+			at statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>(r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer2812, $r7, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer2822)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #70238b6b11dfaceb4592dd974b460485ec002c1479384da504f7e839b5519b71)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2825)
+
+
+Findings in Java Class: sk.vx.connectbot.util.PubkeyUtils
+
+	 in Method: byte[] cipher(int,byte[],byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #8d3c0e1ce1f3f747b9c35fd03e536957cc8c0b3cd31d4bd83f1d3f5984ef410c)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r3.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key)>($i0, r2)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #8d3c0e1ce1f3f747b9c35fd03e536957cc8c0b3cd31d4bd83f1d3f5984ef410c)
+			First parameter (with value "AES") should be any of AES/{CBC, GCM, PCBC, CTR, CTS, CFB, OFB}
+			at statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer2809)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer2810)
+
+
+	 in Method: java.security.PrivateKey decodePrivate(byte[],java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r4 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>(r2)
+
+
+	 in Method: byte[] getEncodedPublic(java.security.PublicKey)
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r2)
+
+
+Findings in Java Class: sk.vx.connectbot.bean.PubkeyBean
+
+	 in Method: java.security.PublicKey decodePublicKeyAs(java.security.spec.EncodedKeySpec,java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r4 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r1)
+
+
+	 in Method: void setPublicKey(byte[])
+		RequiredPredicateError violating CrySL rule for java.security.spec.X509EncodedKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r2.<java.security.spec.X509EncodedKeySpec: void <init>(byte[])>($r1)
+
+
+Findings in Java Class: sk.vx.connectbot.GeneratePubkeyActivity$6
+
+	 in Method: void run()
+		RequiredPredicateError violating CrySL rule for java.security.SecureRandom
+			First parameter was not properly generated as randomized
+			at statement: virtualinvoke $r6.<java.security.SecureRandom: void setSeed(byte[])>($r7)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 38
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 3
+	ConstraintError: 1
+	RequiredPredicateError: 14
+	IncompleteOperationError: 4
+=====================================================================

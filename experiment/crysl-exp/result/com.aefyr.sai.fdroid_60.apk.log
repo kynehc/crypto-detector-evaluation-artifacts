@@ -1,0 +1,234 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: java.security.PrivateKey
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r0)
+		Method: <com.aefyr.pseudoapksigner.Utils: java.security.interfaces.RSAPrivateKey readPrivateKey(java.io.File)>
+		SHA-256: 4d0f95a4b2a7da99a0fe05e7ce40d89bad4c2fbf7ad0a497fb4718b0395d5c4
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <com.aefyr.pseudoapksigner.Utils: byte[] hash(byte[],java.lang.String)>
+		SHA-256: 80d0bb8b06cc80a3cb621fb9bf5737f9c30e1889d1a9544e7c38675d2435bc2
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer22372)
+		Method: <com.aefyr.sai.installerx.resolver.appmeta.brute.BruteAppMetaExtractor: java.lang.String getStreamHash(java.io.InputStream)>
+		SHA-256: 718e949ef29cd538552b4c774869f3d1932845098a72b661e58ae5bf25d5bf12
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.aefyr.pseudoapksigner.Utils: byte[] hash(byte[],java.lang.String)>
+		SHA-256: afae215b3d3d73f146047fc4c7b3cfb3c89282950d7f0344256257965f80230f
+		Secure: false
+	Object:
+		Variable: varReplacer9094
+		Type: java.lang.String
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9094)
+		Method: <com.aefyr.pseudoapksigner.Utils: java.security.interfaces.RSAPrivateKey readPrivateKey(java.io.File)>
+		SHA-256: c49c92cca4ff30226d858dd85be109d1d09d57d250f2f1d25db879b05f4ab2f2
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer16264)
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator$1: com.bumptech.glide.load.engine.cache.SafeKeyGenerator$PoolableDigestContainer create()>
+		SHA-256: 4260377971d6a0c6b5d818ea3cd9100a0acd169aa6fd993354f3cbfdd19b2390
+		Secure: true
+	Object:
+		Variable: $r12
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r12.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r1, $r7)
+		Method: <com.aefyr.pseudoapksigner.PseudoApkSigner: void sign(java.io.InputStream,java.io.OutputStream)>
+		SHA-256: 8b18fb90a1589d82107912deb7c40afa53e27015a957b4f31bba389d6940ceaf
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r2.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r0, $r1)
+		Method: <com.aefyr.sai.utils.IOUtils: byte[] hashStream(java.io.InputStream,java.security.MessageDigest)>
+		SHA-256: b5fcb558a0fb67fe7715ce9e0b8346c26bf727e00d61064b8dea3cceb938aca7
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r4.<java.security.Signature: byte[] sign()>()
+		Method: <com.aefyr.pseudoapksigner.Utils: byte[] sign(java.lang.String,java.security.PrivateKey,byte[])>
+		SHA-256: 56af486151d0bfaacea03690d0d2729aedf6e053c9dfd694ab29ec164ca498e1
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1754)
+		Method: <com.aefyr.pseudoapksigner.PseudoApkSigner: void sign(java.io.InputStream,java.io.OutputStream)>
+		SHA-256: 5b0de8bbc9541b184505693890d78da5bbce403c954e61bfbddc0d978f418628
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer21180)
+		Method: <com.aefyr.sai.installerx.resolver.appmeta.brute.BruteAppMetaExtractor: com.aefyr.sai.installerx.resolver.appmeta.AppMeta extractAppMeta(com.aefyr.sai.installerx.resolver.meta.ApkSourceFile,com.aefyr.sai.installerx.resolver.meta.ApkSourceFile$Entry)>
+		SHA-256: 91c2d038b6b552d89f08de18c0628252965188669fb30f0e59e4c1d163915f3e
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.Signature
+		Statement: $r4 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r3)
+		Method: <com.aefyr.pseudoapksigner.Utils: byte[] sign(java.lang.String,java.security.PrivateKey,byte[])>
+		SHA-256: 678ebb2c4679b616d85d32539466b776d6837ea724ee28c494de88409cc971e2
+		Secure: false
+	Object:
+		Variable: $r35
+		Type: java.security.DigestInputStream
+		Statement: specialinvoke $r35.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r8, $r6)
+		Method: <com.aefyr.sai.installerx.resolver.appmeta.brute.BruteAppMetaExtractor: com.aefyr.sai.installerx.resolver.appmeta.AppMeta extractAppMeta(com.aefyr.sai.installerx.resolver.meta.ApkSourceFile,com.aefyr.sai.installerx.resolver.meta.ApkSourceFile$Entry)>
+		SHA-256: a31157664a2b5eb230ffe6d5ddcc8e2c0e4fada7c8870b58291c675cb2fb03b1
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.KeyFactory
+		Statement: $r3 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9094)
+		Method: <com.aefyr.pseudoapksigner.Utils: java.security.interfaces.RSAPrivateKey readPrivateKey(java.io.File)>
+		SHA-256: bc1b97884bd058a35b956cb1f004ac2bd275abee0e3d9151240feb46a204d58c
+		Secure: false
+
+Findings in Java Class: com.aefyr.pseudoapksigner.PseudoApkSigner
+
+	 in Method: void sign(java.io.InputStream,java.io.OutputStream)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5b0de8bbc9541b184505693890d78da5bbce403c954e61bfbddc0d978f418628)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1754)
+
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #8b18fb90a1589d82107912deb7c40afa53e27015a957b4f31bba389d6940ceaf)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read, close
+			at statement: staticinvoke <com.aefyr.pseudoapksigner.Utils: void copyStream(java.io.InputStream,java.io.OutputStream)>($r12, $r6)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #5b0de8bbc9541b184505693890d78da5bbce403c954e61bfbddc0d978f418628)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer1754)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #5b0de8bbc9541b184505693890d78da5bbce403c954e61bfbddc0d978f418628)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r15 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5b0de8bbc9541b184505693890d78da5bbce403c954e61bfbddc0d978f418628)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to update, java.security.MessageDigest: byte[] digest(byte[])
+			at statement: $r15 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: com.aefyr.pseudoapksigner.Utils
+
+	 in Method: byte[] hash(byte[],java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #80d0bb8b06cc80a3cb621fb9bf5737f9c30e1889d1a9544e7c38675d2435bc2)
+			First parameter (with value "SHA1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+	 in Method: byte[] sign(java.lang.String,java.security.PrivateKey,byte[])
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r4.<java.security.Signature: void initSign(java.security.PrivateKey)>($r0)
+
+
+	 in Method: java.security.interfaces.RSAPrivateKey readPrivateKey(java.io.File)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r4 = virtualinvoke $r3.<java.security.KeyFactory: java.security.PrivateKey generatePrivate(java.security.spec.KeySpec)>($r0)
+
+
+Findings in Java Class: com.aefyr.sai.installerx.resolver.appmeta.brute.BruteAppMetaExtractor
+
+	 in Method: com.aefyr.sai.installerx.resolver.appmeta.AppMeta extractAppMeta(com.aefyr.sai.installerx.resolver.meta.ApkSourceFile,com.aefyr.sai.installerx.resolver.meta.ApkSourceFile$Entry)
+		IncompleteOperationError violating CrySL rule for java.security.DigestInputStream (on Object #a31157664a2b5eb230ffe6d5ddcc8e2c0e4fada7c8870b58291c675cb2fb03b1)
+			Operation on object of type java.security.DigestInputStream object not completed. Expected call to read
+			at statement: specialinvoke $r35.<java.security.DigestInputStream: void <init>(java.io.InputStream,java.security.MessageDigest)>($r8, $r6)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #91c2d038b6b552d89f08de18c0628252965188669fb30f0e59e4c1d163915f3e)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r10 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: com.aefyr.sai.utils.IOUtils
+
+	 in Method: byte[] hashStream(java.io.InputStream,java.security.MessageDigest)
+		TypestateError violating CrySL rule for java.security.DigestInputStream (on Object #b5fcb558a0fb67fe7715ce9e0b8346c26bf727e00d61064b8dea3cceb938aca7)
+			Unexpected call to method close on object of type java.security.DigestInputStream. Expect a call to one of the following methods read
+			at statement: virtualinvoke $r2.<java.security.DigestInputStream: void close()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #718e949ef29cd538552b4c774869f3d1932845098a72b661e58ae5bf25d5bf12)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r3 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 14
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 4
+	ConstraintError: 2
+	RequiredPredicateError: 2
+	TypestateError: 4
+=====================================================================

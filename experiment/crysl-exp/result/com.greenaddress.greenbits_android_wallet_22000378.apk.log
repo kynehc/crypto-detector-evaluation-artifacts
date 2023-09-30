@@ -1,0 +1,241 @@
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+		Method: <com.blockstream.green.utils.AppKeystore: javax.crypto.Cipher getDecryptionCipher(java.lang.String,com.blockstream.green.utils.EncryptedData)>
+		SHA-256: b3f4ae9141cabdfe343b5645e5e4c1f615846e8b6a8abc35dd812324427bb30f
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.KeyStore
+		Statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer32665)
+		Method: <com.blockstream.green.utils.AppKeystore: void <init>()>
+		SHA-256: d8bd567c9dde78e8b5330f65e8c15a42c47a01f9bcd5faaea1e93c37ee2ddd0a
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <com.blockstream.gdk.GreenWallet: byte[] randomBytes(int)>
+		SHA-256: 5873ec03cc1033d51339ccb8d5029fa682d5884404021c58cca5f0236c4ce873
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.KeyGenerator
+		Statement: $r2 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer20134, varReplacer20135)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 3c5305e793cef3c5424f304584beb5c0f89aa8f6dc443e75f284b1a9ebb14892
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer28009)
+		Method: <com.blockstream.green.utils.AppKeystore: javax.crypto.Cipher getDecryptionCipher(java.lang.String,com.blockstream.green.utils.EncryptedData)>
+		SHA-256: 712cfe019d588d9aba4ee0af031ea5ccbfd66fc516625627b4a109ff013cea08
+		Secure: false
+	Object:
+		Variable: $i1
+		Type: int
+		Statement: $i1 = virtualinvoke $r1.<java.util.Random: int nextInt()>()
+		Method: <kotlin.random.AbstractPlatformRandom: int nextBits(int)>
+		SHA-256: 9452da4baa4acb0b7dd2858a28c70b5fad01cafe25d1244a5e11e8787b2dc3f9
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.security.SecureRandom: void nextBytes(byte[])>($r2)
+		Method: <com.blockstream.gdk.GreenWallet: byte[] randomBytes(int)>
+		SHA-256: a54718e27118a10c2de9449571e0ab6c0724d8dbe41a93ac613d7b40a9ab7925
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.KeyStore
+		Statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer32473)
+		Method: <com.blockstream.green.settings.Migrator: void <init>(android.content.Context,com.blockstream.green.database.WalletRepository,com.blockstream.gdk.GreenWallet,com.blockstream.green.settings.SettingsManager)>
+		SHA-256: 5f638297cd117166251ceff365bfe459da5da88e4e02367fe0b1ab0e515a17c1
+		Secure: false
+	Object:
+		Variable: $i0
+		Type: int
+		Statement: $i0 = virtualinvoke $r1.<java.util.Random: int nextInt()>()
+		Method: <kotlin.random.AbstractPlatformRandom: int nextInt()>
+		SHA-256: c45226ecc051e2367a3d8e18a66cb48550977a44f0a1cb79e3ab471e999d43bc
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer20132)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 7ecdcf9149fab5c0428fe4973f3cb903246a299339c87f2218515ef8540f5ba0
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.Cipher
+		Statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer24161)
+		Method: <com.blockstream.green.utils.AppKeystore: javax.crypto.Cipher getEncryptionCipher(java.lang.String)>
+		SHA-256: 1ae9284a7fc2016788ddadb78be8f4f46ed99622eb22424fc7476c81a2c09f4c
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r9.<java.security.SecureRandom: void <init>()>()
+		Method: <com.blockstream.green.ui.recovery.RecoveryCheckViewModel: void <init>(com.blockstream.gdk.GreenWallet,java.util.List,int,boolean)>
+		SHA-256: 723f0bdd324d1312eb2fcdfe47dba8910ecd3f5703560a6262c91e0ce6641223
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.KeyGenerator
+		Statement: $r2 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer24148, varReplacer24149)
+		Method: <com.blockstream.green.utils.AppKeystore: void initializeKeyStoreKey(java.lang.String,boolean)>
+		SHA-256: 4a2ae5cd96c329e38064efe33e97bcd0b16b5048b4b354e00389f94def6c4d6a
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <com.blockstream.gdk.GreenWallet: java.lang.String randomChars(int)>
+		SHA-256: 7901b9b296a686812c02df52f63ab49a2ab0bd82cebd3167a4bcc39550aab4ea
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.Key
+		Statement: $r4 = virtualinvoke $r0.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>(varReplacer20136, varReplacer20137)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 473852d34d8f53315013381fec69ada8ad4c6b04235b810974db49052e9c5ee5
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.KeyStore
+		Statement: $r0 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer20133)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 3e9a06db687b018668dffc6e66ff2f34431f62a5dc549284939543fbe2b8ea3f
+		Secure: false
+
+Findings in Java Class: androidx.biometric.CryptoObjectUtils
+
+	 in Method: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #3e9a06db687b018668dffc6e66ff2f34431f62a5dc549284939543fbe2b8ea3f)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r0 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer20133)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer20130, $r5)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #7ecdcf9149fab5c0428fe4973f3cb903246a299339c87f2218515ef8540f5ba0)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer20132)
+
+
+Findings in Java Class: com.blockstream.green.utils.AppKeystore
+
+	 in Method: javax.crypto.Cipher getEncryptionCipher(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer24164, $r5)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #1ae9284a7fc2016788ddadb78be8f4f46ed99622eb22424fc7476c81a2c09f4c)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r2 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer24161)
+
+
+	 in Method: javax.crypto.Cipher getDecryptionCipher(java.lang.String,com.blockstream.green.utils.EncryptedData)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r6.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r7)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer28010, $r5, $r6)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #712cfe019d588d9aba4ee0af031ea5ccbfd66fc516625627b4a109ff013cea08)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer28009)
+
+
+	 in Method: byte[] decryptData(javax.crypto.Cipher,com.blockstream.green.utils.EncryptedData)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #712cfe019d588d9aba4ee0af031ea5ccbfd66fc516625627b4a109ff013cea08)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r3 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r3)
+
+
+	 in Method: void <init>()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #d8bd567c9dde78e8b5330f65e8c15a42c47a01f9bcd5faaea1e93c37ee2ddd0a)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r1 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer32665)
+
+
+Findings in Java Class: com.blockstream.green.settings.Migrator
+
+	 in Method: void <init>(android.content.Context,com.blockstream.green.database.WalletRepository,com.blockstream.gdk.GreenWallet,com.blockstream.green.settings.SettingsManager)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #5f638297cd117166251ceff365bfe459da5da88e4e02367fe0b1ab0e515a17c1)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r3 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer32473)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 16
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 6
+	TypestateError: 1
+	RequiredPredicateError: 4
+=====================================================================

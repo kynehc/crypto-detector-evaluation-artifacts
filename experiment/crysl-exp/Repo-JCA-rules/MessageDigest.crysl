@@ -1,0 +1,48 @@
+SPEC java.security.MessageDigest
+
+OBJECTS
+	java.lang.String algorithm;
+	byte preInputByte;
+	byte[] preInput;
+	int preOffset;
+	int preLen;
+	java.nio.ByteBuffer preInputByteBuffer;
+	byte[] input;
+	int offset;
+	int len;
+	byte[] output;
+	
+EVENTS
+	g1: getInstance(algorithm);
+	g2: getInstance(algorithm, _);
+	Get := g1 | g2;
+
+	u1: update(preInputByte);
+	u2: update(preInput);
+	u3: update(preInput, preOffset, preLen);
+	u4: update(preInputByteBuffer);
+	Update := u1 | u2 | u3 | u4;
+
+	d1: output = digest();
+	d2: output = digest(input);
+	d3: digest(output, offset, len);
+	DWOU := d2;
+	DWU := d1 | d3;
+	Digest := DWU | DWOU;
+
+ORDER
+	Get, (DWOU | (Update+, Digest))+
+
+CONSTRAINTS
+	algorithm in {"SHA-256", "SHA-384", "SHA-512"};
+	length[preInput] >= preLen + preOffset;
+	preOffset >= 0;
+	preLen > 0;
+	length[output] >= len + offset;
+	offset >= 0;
+	len > 0;
+
+ENSURES
+	generatedMessageDigest[this] after Get;
+	digested[output, _];
+	digested[output, input];

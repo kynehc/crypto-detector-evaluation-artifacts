@@ -1,0 +1,381 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r12
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r12 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <mobi.meddle.wehe.activity.ReplayActivity$TraceRunAsync: void generateServerCertificate(boolean)>
+		SHA-256: b4f689bc613935f12e7db92d509a89ecbb2649a2fc63a762b741f0d48364db62
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.cert.CertificateFactory
+		Statement: $r7 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer23914)
+		Method: <org.glassfish.grizzly.ssl.SSLSupportImpl: java.security.cert.X509Certificate[] getX509Certificates(javax.net.ssl.SSLSession)>
+		SHA-256: f2ca4e23ccd35328fdd05ce1e7ace7210d73786b0cb50a9ac73a9b9bdeed60b6
+		Secure: false
+	Object:
+		Variable: $r40
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r40 = virtualinvoke $r25.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.glassfish.grizzly.ssl.SSLContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 794f27b2410711b76191dcd47fb1941d44b5e8e468581ae1a047be87d3b56615
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.KeyStore
+		Statement: $r6 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r3)
+		Method: <org.glassfish.tyrus.client.SslContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: ead102f02c090e6551ca4c5c18dc1af27bd43351cf9d018526d213afee16041c
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: java.security.KeyStore
+		Statement: $r10 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r7)
+		Method: <org.glassfish.grizzly.ssl.SSLContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 22859fcf2902db78bf86d388975917314ec3bb08a8603ce2e7c1654483697ef3
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: java.security.KeyStore
+		Statement: $r10 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>($r7, $r9)
+		Method: <org.glassfish.grizzly.ssl.SSLContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 2817d249c3c361f8336209e9c25ddad048edb3e3b0333ee117903b4f46858f93
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.glassfish.tyrus.client.auth.DigestAuthenticator: java.lang.String md5(java.lang.String[])>
+		SHA-256: f0b65e8ac106966a7e647abd139a68ab460ac425618f7e5d52f567cae3ace55c
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.glassfish.tyrus.core.ProtocolHandler$1: void <init>(org.glassfish.tyrus.core.ProtocolHandler)>
+		SHA-256: b599ec398eb42f3a1ad4c36ad9e4b15b4e24cac595e6fd2e067578b8d90441b
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.cert.CertificateFactory
+		Statement: $r2 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer3515)
+		Method: <mobi.meddle.wehe.activity.ReplayActivity$TraceRunAsync: void generateServerCertificate(boolean)>
+		SHA-256: 90aba89a99defbcab81b9646b47bc6e7c0e1cbb211cc6b24f776e3e72c1cd831
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.net.ssl.SSLEngine
+		Statement: $r6 = virtualinvoke $r2.<javax.net.ssl.SSLContext: javax.net.ssl.SSLEngine createSSLEngine(java.lang.String,int)>($r1, $i0)
+		Method: <org.glassfish.grizzly.ssl.SSLEngineConfigurator: javax.net.ssl.SSLEngine createSSLEngine(java.lang.String,int)>
+		SHA-256: 2a13b57350374e980f1db05dd1dc06e177b9c6f080e1a0e4dd78a1d6ed34401b
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.KeyStore
+		Statement: $r10 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>($r7, $r9)
+		Method: <org.glassfish.grizzly.ssl.SSLContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 2817d249c3c361f8336209e9c25ddad048edb3e3b0333ee117903b4f46858f93
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.KeyStore
+		Statement: $r6 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>($r3, $r5)
+		Method: <org.glassfish.tyrus.client.SslContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 9ed115d62acf1593d8fbaf35381916b43f1d963fc7a7b83da18a42c0cb0cf962
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.KeyStore
+		Statement: $r6 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r3)
+		Method: <org.glassfish.tyrus.client.SslContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: ead102f02c090e6551ca4c5c18dc1af27bd43351cf9d018526d213afee16041c
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: java.security.KeyStore
+		Statement: $r11 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r10)
+		Method: <mobi.meddle.wehe.activity.ReplayActivity$TraceRunAsync: void generateServerCertificate(boolean)>
+		SHA-256: ae53460ef14e79c99933ed4b8add8e826f11b055a42bbcb513e3cb7eba76c147
+		Secure: true
+	Object:
+		Variable: $r51
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r51 = virtualinvoke $r30.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <org.glassfish.tyrus.client.SslContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 2fe5ad08ac03453361f9d13f7845843115a334198339abe43fc57c3e8b67131
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17363)
+		Method: <org.glassfish.tyrus.client.auth.DigestAuthenticator: java.lang.String md5(java.lang.String[])>
+		SHA-256: ac265eb5727021cfba3d3a1aa345e700723c8694d7c1d591bc835361976157dd
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.KeyStore
+		Statement: $r10 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r7)
+		Method: <org.glassfish.grizzly.ssl.SSLContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 22859fcf2902db78bf86d388975917314ec3bb08a8603ce2e7c1654483697ef3
+		Secure: true
+	Object:
+		Variable: $r47
+		Type: javax.net.ssl.SSLContext
+		Statement: $r47 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r3)
+		Method: <org.glassfish.tyrus.client.SslContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 788256404c503e6b3a8235a5bac2e0dac442d75b0388226366984604af0ea2db
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer24258)
+		Method: <org.glassfish.tyrus.core.SecKey: org.glassfish.tyrus.core.SecKey generateServerKey(org.glassfish.tyrus.core.SecKey)>
+		SHA-256: 3f666c6ad2a13e9607fb4309e64d6cb4d1ba5587e221b23bd8733ae9b55652b9
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r14 = virtualinvoke $r12.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <mobi.meddle.wehe.activity.ReplayActivity$TraceRunAsync: void generateServerCertificate(boolean)>
+		SHA-256: 8a75c4a69ee03679513547e5e2b910451138930866232d3815191a30ed2580d8
+		Secure: true
+	Object:
+		Variable: $r34
+		Type: javax.net.ssl.SSLContext
+		Statement: $r34 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r7)
+		Method: <org.glassfish.grizzly.ssl.SSLContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 92273ef27a710760b08737b255dcfd1a340cbd20979844b04fc5b3d24280bafc
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: javax.net.ssl.SSLContext
+		Statement: $r13 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer3516)
+		Method: <mobi.meddle.wehe.activity.ReplayActivity$TraceRunAsync: void generateServerCertificate(boolean)>
+		SHA-256: d426fa23b471359c83bc397811b3314640bac0afbfd206cb42bbc4db353a3608
+		Secure: false
+	Object:
+		Variable: $r35
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r35 = virtualinvoke $r8.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.glassfish.grizzly.ssl.SSLContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: d41e060ee13465ab4459a539bc319315a5824e64583106614774cc26e85a0e30
+		Secure: true
+	Object:
+		Variable: $r48
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r48 = virtualinvoke $r4.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <org.glassfish.tyrus.client.SslContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: a4af5471ea6e3a0dd084634d69302591cf67418ab912690a0f244b9fe8b98e24
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: $r2 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer23879)
+		Method: <org.glassfish.tyrus.client.auth.DigestAuthenticator: void <init>()>
+		SHA-256: ff7bbbb9424a2cf7ed84b637f77bc654ca50ffe1e4e8b18d9ff1517d43a6a5f9
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.cert.CertificateFactory
+		Statement: $r6 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer21498)
+		Method: <org.glassfish.grizzly.ssl.SSLBaseFilter: java.security.cert.X509Certificate[] extractX509Certs(java.security.cert.Certificate[])>
+		SHA-256: a689ce23af725b5a417a837463c11199f8abebade272ae12ec4eaa5d7cb5b752
+		Secure: false
+	Object:
+		Variable: $r26
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r26 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r7)
+		Method: <org.glassfish.grizzly.ssl.SSLContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 6a06ab1e18635f1fdfed9f5bcc236c457673b031564e822f5e68df12010ef38c
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.glassfish.tyrus.core.SecKey: org.glassfish.tyrus.core.SecKey generateServerKey(org.glassfish.tyrus.core.SecKey)>
+		SHA-256: 83edbe3304cb482334558d0fe025ed494429c4d367003cf3cb865ee351cbc260
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: $r12 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r3)
+		Method: <org.glassfish.tyrus.client.SslContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: b2a27945f9a818fed38b0dcaeb57995dba345d5505da214f5fa5734e182874cf
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.security.KeyStore
+		Statement: $r6 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String,java.lang.String)>($r3, $r5)
+		Method: <org.glassfish.tyrus.client.SslContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 9ed115d62acf1593d8fbaf35381916b43f1d963fc7a7b83da18a42c0cb0cf962
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLEngine
+		Statement: virtualinvoke $r1.<javax.net.ssl.SSLEngine: void setEnabledCipherSuites(java.lang.String[])>($r2)
+		Method: <org.glassfish.grizzly.ssl.SSLEngineConfigurator: javax.net.ssl.SSLEngine configure(javax.net.ssl.SSLEngine)>
+		SHA-256: e39f010bd8b1ecea2d1e389b4bd022b7b05bf0e2fd8169b75ca960078c18315b
+		Secure: true
+	Object:
+		Variable: $r32
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r32 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r3)
+		Method: <org.glassfish.tyrus.client.SslContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: 6324e6da991254693c23c0c7ca8b295fdb1a262477b5d9d8cb6443cf0ab5dfa3
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: $r13 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r7)
+		Method: <org.glassfish.grizzly.ssl.SSLContextConfigurator: javax.net.ssl.SSLContext createSSLContext()>
+		SHA-256: f7a1419b14b1ce3534218d207043894975e22be30e444a6d8b3695e9c69ff176
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <org.glassfish.tyrus.core.SecKey: void <clinit>()>
+		SHA-256: c5363648a8fce7e259762c7f8463b947df3d1b3a3f10f8c3c7405cf265f0e944
+		Secure: true
+
+Findings in Java Class: mobi.meddle.wehe.activity.ReplayActivity$TraceRunAsync
+
+	 in Method: void generateServerCertificate(boolean)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r13.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer3510, $r14, varReplacer3510)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #90aba89a99defbcab81b9646b47bc6e7c0e1cbb211cc6b24f776e3e72c1cd831)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r6 = virtualinvoke $r2.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r5)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #d426fa23b471359c83bc397811b3314640bac0afbfd206cb42bbc4db353a3608)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r13 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer3516)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r13.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer3510, $r14, varReplacer3510)
+
+
+Findings in Java Class: org.glassfish.grizzly.ssl.SSLContextConfigurator
+
+	 in Method: javax.net.ssl.SSLContext createSSLContext()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r34.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r35, $r40, varReplacer15344)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #92273ef27a710760b08737b255dcfd1a340cbd20979844b04fc5b3d24280bafc)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r34 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r7)
+
+
+Findings in Java Class: org.glassfish.tyrus.client.auth.DigestAuthenticator
+
+	 in Method: java.lang.String md5(java.lang.String[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ac265eb5727021cfba3d3a1aa345e700723c8694d7c1d591bc835361976157dd)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17363)
+
+
+Findings in Java Class: org.glassfish.tyrus.client.SslContextConfigurator
+
+	 in Method: javax.net.ssl.SSLContext createSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #788256404c503e6b3a8235a5bac2e0dac442d75b0388226366984604af0ea2db)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r47 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r3)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r47.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r48, $r51, varReplacer19303)
+
+
+Findings in Java Class: org.glassfish.grizzly.ssl.SSLBaseFilter
+
+	 in Method: java.security.cert.X509Certificate[] extractX509Certs(java.security.cert.Certificate[])
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #a689ce23af725b5a417a837463c11199f8abebade272ae12ec4eaa5d7cb5b752)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r3 = virtualinvoke $r6.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r7)
+
+
+Findings in Java Class: org.glassfish.grizzly.ssl.SSLSupportImpl
+
+	 in Method: java.security.cert.X509Certificate[] getX509Certificates(javax.net.ssl.SSLSession)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #f2ca4e23ccd35328fdd05ce1e7ace7210d73786b0cb50a9ac73a9b9bdeed60b6)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r9 = virtualinvoke $r7.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r8)
+
+
+Findings in Java Class: org.glassfish.tyrus.core.SecKey
+
+	 in Method: org.glassfish.tyrus.core.SecKey generateServerKey(org.glassfish.tyrus.core.SecKey)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #3f666c6ad2a13e9607fb4309e64d6cb4d1ba5587e221b23bd8733ae9b55652b9)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer24258)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 34
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 5
+	IncompleteOperationError: 3
+	RequiredPredicateError: 4
+=====================================================================

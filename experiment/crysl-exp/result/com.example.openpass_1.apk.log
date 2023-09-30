@@ -1,0 +1,126 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r0.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.example.openpass.engine.MobilePass: byte[] KDF1(java.security.MessageDigest,byte[],byte[],int,int)>
+		SHA-256: 3429e2fc3f1784249bd28ea880a7298c4b01d94dcb7e25ec1291aeba832cf536
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer129)
+		Method: <com.example.openpass.engine.MobilePass: byte[] getKey(byte[],java.lang.String)>
+		SHA-256: 5b011f6ec53f6f93fef2ee1e4773e5d726ee6fe0b862e7686540c0c48a4753c6
+		Secure: true
+	Object:
+		Variable: r3
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer118)
+		Method: <com.example.openpass.engine.MobilePass: java.lang.String generateToken(java.lang.String,long,java.lang.String)>
+		SHA-256: b6f5ed12a0be0cce367c0a7313412b190c3c96484817cf125e10a603a4030220
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Mac
+		Statement: $r6 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer119)
+		Method: <com.example.openpass.engine.MobilePass: java.lang.String generateToken(java.lang.String,long,java.lang.String)>
+		SHA-256: c8138a313cd6b6561bfa4ec9132302df81379f4b7138401be409ef2802ddfcac
+		Secure: false
+	Object:
+		Variable: varReplacer118
+		Type: java.lang.String
+		Statement: specialinvoke r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer118)
+		Method: <com.example.openpass.engine.MobilePass: java.lang.String generateToken(java.lang.String,long,java.lang.String)>
+		SHA-256: a66fdf37900ed804f2e71430c907fbccd06bc1b8fdd0d44c3410688d098cbf4d
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r6.<javax.crypto.Mac: byte[] doFinal(byte[])>($r4)
+		Method: <com.example.openpass.engine.MobilePass: java.lang.String generateToken(java.lang.String,long,java.lang.String)>
+		SHA-256: 303a56c242b04df67c4d5e174c3a22b346dfa160f2017abd95834a7a0d1f77ab
+		Secure: false
+
+Findings in Java Class: com.example.openpass.engine.MobilePass
+
+	 in Method: byte[] getKey(byte[],java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #5b011f6ec53f6f93fef2ee1e4773e5d726ee6fe0b862e7686540c0c48a4753c6)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r0 = staticinvoke <com.example.openpass.engine.MobilePass: byte[] KDF1(java.security.MessageDigest,byte[],byte[],int,int)>($r3, $r0, varReplacer125, varReplacer126, varReplacer127)
+
+
+	 in Method: java.lang.String generateToken(java.lang.String,long,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r3.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer118)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Mac: void init(java.security.Key)>(r3)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 6
+
+	CryptoAnalysis found the following violations. For details see description above.
+	IncompleteOperationError: 1
+	RequiredPredicateError: 2
+=====================================================================

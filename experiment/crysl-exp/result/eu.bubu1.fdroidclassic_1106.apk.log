@@ -1,0 +1,151 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10910)
+		Method: <org.fdroid.fdroid.Utils: java.lang.String calcFingerprint(byte[])>
+		SHA-256: f1fbf681088d9436b028a7c6b55370d8b70f36671073ddfb27c9d7a35eed93bd
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: javax.net.ssl.SSLContext
+		Statement: $r0 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer11025)
+		Method: <info.guardianproject.netcipher.NetCipher: info.guardianproject.netcipher.client.TlsOnlySocketFactory getTlsOnlySocketFactory(boolean)>
+		SHA-256: 6952304edce7c35b18f33be88c7eb9c9c9edfcfaa332bc8c4d35e1cba446ac9
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r3)
+		Method: <org.fdroid.fdroid.Hasher: void init(java.lang.String)>
+		SHA-256: a3bf33341d15b4c170db88ae653f4df46270d882dc557bb05a0127166d351847
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.fdroid.fdroid.Utils: java.lang.String calcFingerprint(byte[])>
+		SHA-256: 816e517041aa206837f041ad29c63f15b32b3ae6c156a5e6e051c6c793537002
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r9.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.fdroid.fdroid.Hasher: java.lang.String getHash()>
+		SHA-256: f5e98f7527b083f85f69c756f042feccd60a9d8bbb610af43d37f4985843cf15
+		Secure: false
+
+Findings in Java Class: org.fdroid.fdroid.Hasher
+
+	 in Method: void init(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #a3bf33341d15b4c170db88ae653f4df46270d882dc557bb05a0127166d351847)
+			First parameter (with value "sha256") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r3)
+
+
+	 in Method: java.lang.String getHash()
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #a3bf33341d15b4c170db88ae653f4df46270d882dc557bb05a0127166d351847)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r6 = virtualinvoke $r9.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: boolean isFileMatchingHash(java.io.File,java.lang.String,java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #a3bf33341d15b4c170db88ae653f4df46270d882dc557bb05a0127166d351847)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $z0 = virtualinvoke $r3.<org.fdroid.fdroid.Hasher: boolean match(java.lang.String)>($r2)
+
+
+Findings in Java Class: org.fdroid.fdroid.Utils
+
+	 in Method: java.lang.String calcFingerprint(byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #f1fbf681088d9436b028a7c6b55370d8b70f36671073ddfb27c9d7a35eed93bd)
+			First parameter (with value "sha256") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10910)
+
+
+Findings in Java Class: info.guardianproject.netcipher.NetCipher
+
+	 in Method: info.guardianproject.netcipher.client.TlsOnlySocketFactory getTlsOnlySocketFactory(boolean)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r0.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer11026, varReplacer11026, varReplacer11026)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r0.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer11026, varReplacer11026, varReplacer11026)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #6952304edce7c35b18f33be88c7eb9c9c9edfcfaa332bc8c4d35e1cba446ac9)
+			First parameter (with value "TLSv1") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r0 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer11025)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r0.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer11026, varReplacer11026, varReplacer11026)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 5
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 3
+	TypestateError: 1
+	RequiredPredicateError: 3
+	IncompleteOperationError: 1
+=====================================================================

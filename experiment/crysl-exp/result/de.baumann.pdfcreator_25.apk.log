@@ -1,0 +1,445 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: java.security.AlgorithmParameterGenerator
+		Statement: $r3 = staticinvoke <java.security.AlgorithmParameterGenerator: java.security.AlgorithmParameterGenerator getInstance(java.lang.String)>(varReplacer15284)
+		Method: <com.itextpdf.text.pdf.PdfPublicKeySecurityHandler: org.bouncycastle.asn1.ASN1Primitive createDERForRecipient(byte[],java.security.cert.X509Certificate)>
+		SHA-256: 93d3827f3c72d91f55a105de5040aa7b55b8885c90caf610f9bec984e4ac0981
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9294)
+		Method: <com.itextpdf.text.pdf.PdfEncryption: void setupAllKeys(byte[],byte[],int)>
+		SHA-256: 8766ad4f709ff1f3423f9356e2904632737e8eb116c2b116d6965ace45277ce1
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.MessageDigest: int digest(byte[],int,int)>($r6, varReplacer9289, varReplacer9290)
+		Method: <com.itextpdf.text.pdf.PdfEncryption: void setupAllKeys(byte[],byte[],int)>
+		SHA-256: 958011a5b17f1f63679293cda9a430b2fd03d15d27a2358e817ae50eae774390
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r12.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.itextpdf.text.pdf.PdfEncryption: boolean readKey(com.itextpdf.text.pdf.PdfDictionary,byte[])>
+		SHA-256: cd8643090a9a4d38c9fb2bac4b47ac347142ec9fd58f71b4f3bd51170bc40621
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9021)
+		Method: <com.itextpdf.text.pdf.PdfEncryption: com.itextpdf.text.pdf.PdfDictionary getEncryptionDictionary()>
+		SHA-256: a0b243cddafe8951f3f584d846f7cd0ffa97ada15f595c6c474a236eebafee4e
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.itextpdf.text.pdf.PdfEncryption: void setupAllKeys(byte[],byte[],int)>
+		SHA-256: f62a6ea677ecd253a7ccd74b41c32c35a278a503404df9281e8365b16b8cd81f
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.itextpdf.text.pdf.PdfEncryption: void setupAllKeys(byte[],byte[],int)>
+		SHA-256: f62a6ea677ecd253a7ccd74b41c32c35a278a503404df9281e8365b16b8cd81f
+		Secure: true
+	Object:
+		Variable: $r39
+		Type: java.security.MessageDigest
+		Statement: $r39 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer18309)
+		Method: <com.itextpdf.text.pdf.PdfReader: void readDecryptedDocObj()>
+		SHA-256: 390c676fe5c3858692748a79fc175b6a66b78c7a2fa9e4a9ec96445ea8801ec9
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.SecretKey
+		Statement: $r5 = virtualinvoke $r3.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.itextpdf.text.pdf.PdfPublicKeySecurityHandler: void <init>()>
+		SHA-256: dd6b1c4917e70c51ad4099a7151e602f2c5913dbb831d77fc5974257d09cf92f
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.SecretKey
+		Statement: $r8 = virtualinvoke $r7.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <com.itextpdf.text.pdf.PdfPublicKeySecurityHandler: org.bouncycastle.asn1.ASN1Primitive createDERForRecipient(byte[],java.security.cert.X509Certificate)>
+		SHA-256: 32f375bb75cd2da7fd1ce96a1c0affd2e25ce28a72cddccffbda519752e99ab6
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6274)
+		Method: <com.itextpdf.text.pdf.PdfEncryption: byte[] createDocumentId()>
+		SHA-256: 8b7fd307b324ad0280e858a0f33b3184cc628e32adc3772f5b462e2513c338f8
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke $r7.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.itextpdf.text.pdf.PdfEncryption: com.itextpdf.text.pdf.PdfDictionary getEncryptionDictionary()>
+		SHA-256: 7beb84fb7171235ec85edf66b7a24bb214985352c37737467ad7cfa43fec57fd
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = interfaceinvoke $r5.<javax.crypto.SecretKey: byte[] getEncoded()>()
+		Method: <com.itextpdf.text.pdf.PdfPublicKeySecurityHandler: void <init>()>
+		SHA-256: 5c4027fccf0850b161d93b65f1f920f18da22ac322d752c79ece6284995a0be
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.crypto.Cipher
+		Statement: $r9 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer15285)
+		Method: <com.itextpdf.text.pdf.PdfPublicKeySecurityHandler: org.bouncycastle.asn1.ASN1Primitive createDERForRecipient(byte[],java.security.cert.X509Certificate)>
+		SHA-256: 629be805d7b8477be1482d6d1fd077fa68e5742258d7386e6ad5021bdaab1d8c
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.itextpdf.text.ImgJBIG2: void <init>(int,int,byte[],byte[])>
+		SHA-256: d6f6f03f2107e689a034ba8c5e752a76da847fa9247174abee7cfa5331e5b68b
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17110)
+		Method: <com.itextpdf.text.pdf.PdfSmartCopy$ByteStore: void <init>(com.itextpdf.text.pdf.PRStream,java.util.HashMap)>
+		SHA-256: 1e3e813fbb892d291635d643e91061444afc2710d36a77f809f04b391c3a4f17
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17111)
+		Method: <com.itextpdf.text.pdf.PdfSmartCopy$ByteStore: void <init>(com.itextpdf.text.pdf.PdfDictionary,java.util.HashMap)>
+		SHA-256: 3afa6455f2103e3dc57a1b22d18486a487a0bcc5e6aef21382ae02077fbb034e
+		Secure: false
+	Object:
+		Variable: $r39
+		Type: java.security.MessageDigest
+		Statement: $r39 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer18279)
+		Method: <com.itextpdf.text.pdf.PdfReader: void readDecryptedDocObj()>
+		SHA-256: a4acb5b87e418b76edb8b418bd29838eec1d26b9749e614e51b6f18010f60bf5
+		Secure: false
+	Object:
+		Variable: $r13
+		Type: byte[]
+		Statement: $r13 = virtualinvoke $r12.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.itextpdf.text.pdf.PdfEncryption: boolean readKey(com.itextpdf.text.pdf.PdfDictionary,byte[])>
+		SHA-256: 8705c2dc6baeaf48e6d9149187a353da41db3d4755305322912b47d488180a0
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9254)
+		Method: <com.itextpdf.text.pdf.PdfEncryption: void <init>()>
+		SHA-256: 9bfedfaff0ff6d2a8fa99e054852d98745115ab96771255be7652d5b7619cac1
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <com.itextpdf.text.pdf.PdfPublicKeySecurityHandler: void <init>()>
+		SHA-256: 94a72c58557b7499ae339ccaddc26783d4e8f2479f98c3b8aaa1a96b1bd4d44d
+		Secure: true
+	Object:
+		Variable: $r12
+		Type: byte[]
+		Statement: $r12 = virtualinvoke $r10.<java.security.MessageDigest: byte[] digest(byte[])>($r12)
+		Method: <com.itextpdf.text.pdf.PdfSmartCopy$ByteStore: void serObject(com.itextpdf.text.pdf.PdfObject,int,com.itextpdf.text.pdf.ByteBuffer,java.util.HashMap)>
+		SHA-256: 3dc0931e15cbcf6254c4752b91455c88d6777936ca94dc44aaf3f8e98bcf6107
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r39.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.itextpdf.text.pdf.PdfReader: void readDecryptedDocObj()>
+		SHA-256: 1ede4406be3c7b50318f0e62386c6f4b846812b4da15712e9576aba4221444ee
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.MessageDigest: int digest(byte[],int,int)>($r7, varReplacer9301, varReplacer9302)
+		Method: <com.itextpdf.text.pdf.PdfEncryption: void setupAllKeys(byte[],byte[],int)>
+		SHA-256: 6a6fb47992476cce1710cd5a0422927c8a6af208ca850c8f0a96b9546f02d383
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.crypto.KeyGenerator
+		Statement: $r7 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer15286)
+		Method: <com.itextpdf.text.pdf.PdfPublicKeySecurityHandler: org.bouncycastle.asn1.ASN1Primitive createDERForRecipient(byte[],java.security.cert.X509Certificate)>
+		SHA-256: 8cd6e62379247023f48a83dbb9045f7bc540c4f0f274436e2ff75c4641c0bf1a
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: byte[]
+		Statement: $r8 = virtualinvoke $r12.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.itextpdf.text.pdf.PdfEncryption: boolean readKey(com.itextpdf.text.pdf.PdfDictionary,byte[])>
+		SHA-256: 57777c5c1b2cfa8b76fdd847f8fff83acb794d69520ca4ad2909353df3043004
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.MessageDigest
+		Statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9014)
+		Method: <com.itextpdf.text.pdf.PdfEncryption: com.itextpdf.text.pdf.PdfDictionary getEncryptionDictionary()>
+		SHA-256: 34d2cadfe4dacc96d4dd249f8010e1b559b454b047a872301c8a107ba8847b7e
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: javax.crypto.Cipher
+		Statement: $r15 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r14)
+		Method: <com.itextpdf.text.pdf.PdfPublicKeySecurityHandler: org.bouncycastle.asn1.cms.KeyTransRecipientInfo computeRecipientInfo(java.security.cert.X509Certificate,byte[])>
+		SHA-256: af72fead94b2d64f11398cab2fcf81db6e23b7696111bef982499a268966c807
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9403)
+		Method: <com.itextpdf.text.ImgJBIG2: void <init>(int,int,byte[],byte[])>
+		SHA-256: 3853e840e256a90951d3c2272518812620eed76259b7cd7f5484bf02010224f5
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r12.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.itextpdf.text.pdf.PdfEncryption: boolean readKey(com.itextpdf.text.pdf.PdfDictionary,byte[])>
+		SHA-256: cd8643090a9a4d38c9fb2bac4b47ac347142ec9fd58f71b4f3bd51170bc40621
+		Secure: true
+	Object:
+		Variable: $r12
+		Type: java.security.MessageDigest
+		Statement: $r12 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer19618)
+		Method: <com.itextpdf.text.pdf.PdfEncryption: boolean readKey(com.itextpdf.text.pdf.PdfDictionary,byte[])>
+		SHA-256: e1913a7103ce30df831efabb0baaead2dd6cd5e3ff5b6f6faeaffe0c91cc4afb
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <com.itextpdf.text.pdf.PdfEncryption: byte[] createDocumentId()>
+		SHA-256: 730f3e61d3c3c15c97a284a3d2f05ddf71ad6ddd629ff93e7371c0f67b686e81
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.MessageDigest
+		Statement: $r6 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer18129)
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator: java.lang.String getSafeKey(com.bumptech.glide.load.Key)>
+		SHA-256: 4af6a4687b812d4dc249d9626b7a41507ed0235878184aed0aa00ec6959e075d
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator: java.lang.String getSafeKey(com.bumptech.glide.load.Key)>
+		SHA-256: 6763e0d09de34caa999df127c6d30dc02400c44c84c5c574d6dd222776edfb5c
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.KeyGenerator
+		Statement: $r3 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer11921)
+		Method: <com.itextpdf.text.pdf.PdfPublicKeySecurityHandler: void <init>()>
+		SHA-256: fcd628242c7cccf73f6d65bd0235b876bd24d7b11c416ea2ed59b7ad6d829a53
+		Secure: true
+
+Findings in Java Class: com.itextpdf.text.pdf.PdfEncryption
+
+	 in Method: byte[] createDocumentId()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #8b7fd307b324ad0280e858a0f33b3184cc628e32adc3772f5b462e2513c338f8)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer6274)
+
+
+	 in Method: com.itextpdf.text.pdf.PdfDictionary getEncryptionDictionary()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #34d2cadfe4dacc96d4dd249f8010e1b559b454b047a872301c8a107ba8847b7e)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r7 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9014)
+
+
+	 in Method: void <init>()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #9bfedfaff0ff6d2a8fa99e054852d98745115ab96771255be7652d5b7619cac1)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9254)
+
+
+Findings in Java Class: com.itextpdf.text.ImgJBIG2
+
+	 in Method: void <init>(int,int,byte[],byte[])
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #3853e840e256a90951d3c2272518812620eed76259b7cd7f5484bf02010224f5)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9403)
+
+
+Findings in Java Class: com.itextpdf.text.pdf.PdfPublicKeySecurityHandler
+
+	 in Method: org.bouncycastle.asn1.ASN1Primitive createDERForRecipient(byte[],java.security.cert.X509Certificate)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r9.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.AlgorithmParameters)>(varReplacer15280, $r8, $r4)
+
+		TypestateError violating CrySL rule for java.security.AlgorithmParameterGenerator (on Object #93d3827f3c72d91f55a105de5040aa7b55b8885c90caf610f9bec984e4ac0981)
+			Unexpected call to method generateParameters on object of type java.security.AlgorithmParameterGenerator. Expect a call to one of the following methods init
+			at statement: $r4 = virtualinvoke $r3.<java.security.AlgorithmParameterGenerator: java.security.AlgorithmParameters generateParameters()>()
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #629be805d7b8477be1482d6d1fd077fa68e5742258d7386e6ad5021bdaab1d8c)
+			First parameter (with value "1.2.840.113549.3.2") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r9 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer15285)
+
+		ConstraintError violating CrySL rule for javax.crypto.KeyGenerator (on Object #8cd6e62379247023f48a83dbb9045f7bc540c4f0f274436e2ff75c4641c0bf1a)
+			First parameter (with value "1.2.840.113549.3.2") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: $r7 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer15286)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedAlg
+			at statement: virtualinvoke $r9.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.AlgorithmParameters)>(varReplacer15280, $r8, $r4)
+
+		ConstraintError violating CrySL rule for java.security.AlgorithmParameterGenerator (on Object #93d3827f3c72d91f55a105de5040aa7b55b8885c90caf610f9bec984e4ac0981)
+			First parameter (with value "1.2.840.113549.3.2") should be any of {DH, DiffieHellman, DSA}
+			at statement: $r3 = staticinvoke <java.security.AlgorithmParameterGenerator: java.security.AlgorithmParameterGenerator getInstance(java.lang.String)>(varReplacer15284)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #629be805d7b8477be1482d6d1fd077fa68e5742258d7386e6ad5021bdaab1d8c)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r9.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+
+	 in Method: org.bouncycastle.asn1.cms.KeyTransRecipientInfo computeRecipientInfo(java.security.cert.X509Certificate,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #af72fead94b2d64f11398cab2fcf81db6e23b7696111bef982499a268966c807)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r15.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+
+Findings in Java Class: com.itextpdf.text.pdf.PdfSmartCopy$ByteStore
+
+	 in Method: void <init>(com.itextpdf.text.pdf.PRStream,java.util.HashMap)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #1e3e813fbb892d291635d643e91061444afc2710d36a77f809f04b391c3a4f17)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17110)
+
+
+	 in Method: void <init>(com.itextpdf.text.pdf.PdfDictionary,java.util.HashMap)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #3afa6455f2103e3dc57a1b22d18486a487a0bcc5e6aef21382ae02077fbb034e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17111)
+
+
+Findings in Java Class: com.itextpdf.text.pdf.PdfSmartCopy
+
+	 in Method: com.itextpdf.text.pdf.PdfIndirectReference copyIndirect(com.itextpdf.text.pdf.PRIndirectReference)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #1e3e813fbb892d291635d643e91061444afc2710d36a77f809f04b391c3a4f17)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r7 = virtualinvoke $r6.<java.util.HashMap: java.lang.Object get(java.lang.Object)>(r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #1e3e813fbb892d291635d643e91061444afc2710d36a77f809f04b391c3a4f17)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r7 = virtualinvoke $r6.<java.util.HashMap: java.lang.Object get(java.lang.Object)>(r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #3afa6455f2103e3dc57a1b22d18486a487a0bcc5e6aef21382ae02077fbb034e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r7 = virtualinvoke $r6.<java.util.HashMap: java.lang.Object get(java.lang.Object)>(r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #3afa6455f2103e3dc57a1b22d18486a487a0bcc5e6aef21382ae02077fbb034e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r7 = virtualinvoke $r6.<java.util.HashMap: java.lang.Object get(java.lang.Object)>(r4)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #1e3e813fbb892d291635d643e91061444afc2710d36a77f809f04b391c3a4f17)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: r4 = null
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #3afa6455f2103e3dc57a1b22d18486a487a0bcc5e6aef21382ae02077fbb034e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: r4 = null
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #1e3e813fbb892d291635d643e91061444afc2710d36a77f809f04b391c3a4f17)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r6.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>(r4, r8)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #3afa6455f2103e3dc57a1b22d18486a487a0bcc5e6aef21382ae02077fbb034e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r6.<java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>(r4, r8)
+
+
+Findings in Java Class: com.bumptech.glide.load.engine.cache.SafeKeyGenerator
+
+	 in Method: java.lang.String getSafeKey(com.bumptech.glide.load.Key)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #4af6a4687b812d4dc249d9626b7a41507ed0235878184aed0aa00ec6959e075d)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r7 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: com.itextpdf.text.pdf.PdfReader
+
+	 in Method: void readDecryptedDocObj()
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #a4acb5b87e418b76edb8b418bd29838eec1d26b9749e614e51b6f18010f60bf5)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r39 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer18279)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 35
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 4
+	RequiredPredicateError: 2
+	IncompleteOperationError: 8
+	ConstraintError: 10
+=====================================================================

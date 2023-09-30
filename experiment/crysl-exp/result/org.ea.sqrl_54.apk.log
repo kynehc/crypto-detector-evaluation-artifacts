@@ -1,0 +1,923 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: java.security.KeyPairGenerator
+		Statement: $r2 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer7174, varReplacer7175)
+		Method: <org.ea.sqrl.processors.SQRLStorage: void encryptIdentityKeyBiometric(byte[])>
+		SHA-256: d541e2600d97129a7150b9cb0195894dcbb7be1f67d524985329f505b7c53811
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.Cipher
+		Statement: $r9 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7182)
+		Method: <org.ea.sqrl.processors.SQRLStorage: void encryptIdentityKeyBiometric(byte[])>
+		SHA-256: adf0b5b2a3f62c97c47a3780053b76ddb14d7fc61e52bd813f9dc1d068f352d5
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.ea.sqrl.processors.SQRLStorage: void clearBytes(byte[])>
+		SHA-256: 434f90ee77baaa0b34187aad8b48cbf4264e8724cccbc977cab62bb2a7c6eeb9
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer627)
+		Method: <org.ea.sqrl.processors.EntropyHarvester: void <init>()>
+		SHA-256: 5d1ce8eb4639aa56c75e0edef2444adb17e9197ebeba6366c5fb3625fbf560b0
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.spec.RSAKeyGenParameterSpec
+		Statement: specialinvoke $r4.<java.security.spec.RSAKeyGenParameterSpec: void <init>(int,java.math.BigInteger)>(varReplacer7177, $r5)
+		Method: <org.ea.sqrl.processors.SQRLStorage: void encryptIdentityKeyBiometric(byte[])>
+		SHA-256: 7c3f476f5674f7f0192105e196632b408ae65c5768a496b843fa75ea7c33183a
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer13317)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] encodeSecretIndex(byte[],byte[])>
+		SHA-256: f607e7c3e838ef3b88212298fcd65ff721a34e855cf238a6976c9b7449eb70fa
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: virtualinvoke $r7.<javax.crypto.Cipher: byte[] update(byte[])>($r4)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptIdentityKeyInternal(byte[])>
+		SHA-256: e3265ee8932f72f3c19d3459d79a2a32a9cc17acd8b009536af6b519b70feaa4
+		Secure: false
+	Object:
+		Variable: varReplacer13317
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer13317)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] encodeSecretIndex(byte[],byte[])>
+		SHA-256: 2acc201fd47c8fc538d159bf6a7abd9d80db41bd0c790439ea7e8fa4132a053b
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.crypto.Cipher
+		Statement: $r14 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7132)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] decryptIdentityKeyQuickPass(java.lang.String)>
+		SHA-256: 878c545d289f9dc252ee58345ecb2d9f6228d042fc3b994757616a730aac1dc7
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7676)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptPreviousBlock()>
+		SHA-256: 8ed5c0dee898267774d15e642360f3798e9cd962de0de6fbc9441d805e1db431
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r8.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptPreviousBlock()>
+		SHA-256: 5821837c3a67e03d7cee2d612527c534388d71178b490f82dba606106904e8b6
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: virtualinvoke $r8.<javax.crypto.Cipher: byte[] update(byte[])>($r4)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptIdentityKey(java.lang.String,org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: c6ed62c66145cec5af0516b267c59ad0015e54a219c6533499437b4baaaa46b9
+		Secure: false
+	Object:
+		Variable: varReplacer7133
+		Type: java.lang.String
+		Statement: specialinvoke $r13.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer7133)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] decryptIdentityKeyQuickPass(java.lang.String)>
+		SHA-256: 6b00ed182a1a3dc763a85312c43c488070cd85dbd01aa0d5c057c3c88ee105d9
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r9, varReplacer7172)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptIdentityKeyQuickPass(java.lang.String,byte[],org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: 4263992d367ba18105599923ba797423f051a49eb2c0d405d976307e2af0dce6
+		Secure: false
+	Object:
+		Variable: $r15
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r15.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7142, $r9)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] decryptIdentityKeyQuickPass(java.lang.String)>
+		SHA-256: 63ac57e5ba5b4de97f3c1c54220d8e47978ec9918fd7d546092275f5c86eb75b
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2558)
+		Method: <org.ea.sqrl.utils.EncryptionUtils: byte[] decodeBase56(java.lang.String)>
+		SHA-256: 93bd92ecf7ab40b3e2f1099ff2cf7a96d56a93156e469d39cd97338306660279
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer13319)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] getPreviousKeySeed(byte[])>
+		SHA-256: 22feb3da5e3514278c3c9ddea2d9902b37c1ddf424faac5af006356187341633
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: virtualinvoke $r7.<javax.crypto.Cipher: byte[] update(byte[])>($r5)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptUnlockKey(java.lang.String)>
+		SHA-256: ee829425c541873738dd8ea61d25f3653e47ada861497c3be150b7c357aff86
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer13318)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] encodeSecretIndex(byte[],byte[])>
+		SHA-256: 17d699a15f52b95105a8f10d31b1251e2fbf46191d67e79f6e34b983c1f4b28a
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer4045, $r5)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptUnlockKey(java.lang.String)>
+		SHA-256: 99b26dd7558dee6f7a644db0155e5576acd29f3bd5a74784e20237e54815bfff
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r3)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] getKeySeed(byte[])>
+		SHA-256: 20611b2b8d128ecc36ed6a26c5db5020a764bad6866e35e925b9dc24c547df9a
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: $r2 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer628)
+		Method: <org.ea.sqrl.processors.EntropyHarvester: void <init>()>
+		SHA-256: 810013b859218ec0186bb7b042ec358bea8a0cfd5e316031fdb4e8a6ae59e672
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Cipher
+		Statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7190)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptIdentityKeyInternal(byte[])>
+		SHA-256: 1dcacda2877fc318fc64f52bf3c641029e6e93279128a563763c7390d184883e
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7211, $r3)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptPreviousBlock()>
+		SHA-256: 88879b7f74f998d928c2b86f0543bb7186c245fc1d7bb54aea2bcd689fcf5a4d
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer13320)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] getPreviousKeySeed(byte[])>
+		SHA-256: 5f10427721f797afee693362b53a06dd8a088b0f2478415aa22fb8d11002e2ca
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7214)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptPreviousBlock()>
+		SHA-256: 1331b63457ae5d31e63da58c5cec625443c36a753ec506a5f121f1e1e4b804ac
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.ea.sqrl.utils.EncryptionUtils: byte[] enHash(byte[])>
+		SHA-256: 1e36eccd91e4a2441c1eb27bc5aed530d9004931820eb89852043f108a04df54
+		Secure: true
+	Object:
+		Variable: varReplacer7172
+		Type: java.lang.String
+		Statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r9, varReplacer7172)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptIdentityKeyQuickPass(java.lang.String,byte[],org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: 44bfea08430096b82de98c610de8e41b54af084de87b38b7908373f4813982ac
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r7.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptIdentityKeyInternal(byte[])>
+		SHA-256: e348aab08fcc39c35dad89be5b9409ee34306d36c499dac1f698707c695f38a5
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.crypto.Cipher
+		Statement: $r14 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer869)
+		Method: <org.ea.sqrl.activites.LoginActivity: void doLoginBiometric()>
+		SHA-256: 902d99b6905aff41e5c959656dc6aa938f2bb6d5043198bec5670eca1a097acb
+		Secure: false
+	Object:
+		Variable: varReplacer13319
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer13319)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] getPreviousKeySeed(byte[])>
+		SHA-256: 8863c48c550ac15c946aad6f11da268065039823bcf8773cfdaa3f569ded198b
+		Secure: false
+	Object:
+		Variable: varReplacer7191
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7191)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptIdentityKeyInternal(byte[])>
+		SHA-256: 360e720b80aa275d8a0d2adc5a10f3b7d70aedfd0da782d5221cdbfcd05a8193
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] getPreviousKeySeed(byte[])>
+		SHA-256: 2e7e2b4712b63139aba2abc3e446edc412e3a326ea0d7ea704def4160febd2ac
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer5062)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptRescueKey(org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: 1be471674719f8abbfa3233bf79bd28faacea6483e00d5a0b2232df8fe95dc32
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.ea.sqrl.utils.EncryptionUtils: byte[] enHash(byte[])>
+		SHA-256: 8e477faa6cecffdea4676a88f4e46acec8ab8ccbab631abd512639f72cba9bbb
+		Secure: true
+	Object:
+		Variable: varReplacer3839
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer3839)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptIdentityKey(java.lang.String,org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: e245b0c8dc8d1e9795e9af34fd09f392db2e9f2566e275d18469d8efe07ddb93
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r8.<javax.crypto.Cipher: byte[] doFinal()>()
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptRescueKey(org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: 169a8b6306bf5f7931c600075072190c63f5b0838879df6301516bb8cc4d14f0
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer3828, $r6)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptIdentityKey(java.lang.String,org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: d6e2908b1fd38518e731ba505b9ce34cd5a332ac9b9b834571ab47a7c4951324
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer4043)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptUnlockKey(java.lang.String)>
+		SHA-256: 93cec7b1f861e14af22a54b9379d4c5ad10ed8edf24afd0346c28ddc461ccbe9
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r3)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] encodeSecretIndex(byte[],byte[])>
+		SHA-256: 9fb0acf91531c3d7de033751100404421b3f1d26d4bd0a232c1d1f9cf77234af
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7185, $r1)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptIdentityKeyInternal(byte[])>
+		SHA-256: 40265402b31597ceab8d1aa7130347b4e505188aad06a4210b90cc7e77c33548
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer5083, $r2)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptRescueKey(org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: 50dd481e4001d2396dbf05dcaabd4fa3ba4133b9a539bd40fc281fc79b439bd
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer5072)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptRescueKey(org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: c02f00843d6bd543d9353060caa585e06c31922ac0f80061fd5851acda39bb24
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.KeyStore
+		Statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer852)
+		Method: <org.ea.sqrl.processors.SQRLStorage: void clearQuickPass()>
+		SHA-256: d0c9b78d77d70df2980f746b4cc504955f4671d2abcea8679f7a69531db1d6b5
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r8.<javax.crypto.Cipher: byte[] update(byte[])>($r2)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptRescueKey(org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: 4610fa174a36a9cef3f1e97cf79f7dc5ee88ebe55c5db136aae0eb9bc4930e98
+		Secure: false
+	Object:
+		Variable: varReplacer7681
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7681)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptPreviousBlock()>
+		SHA-256: 43baa46b68498beee429e81e7092922c10e3d9c0ed40a0a243c364712f9870ee
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.ea.sqrl.utils.EncryptionUtils: byte[] enHash(byte[])>
+		SHA-256: c66d3270ecdcd2b218aeb7246d1fba65f15afceef58caf444a52a76955fe6770
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer3839)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptIdentityKey(java.lang.String,org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: 1404a09f6e164f2e2feabc8050f74a4b16d179d3e103d63218c010d8f87e4d5c
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.ea.sqrl.utils.EncryptionUtils: java.lang.String encodeBase56(byte[])>
+		SHA-256: 35298a792410ad2c8fc77038c27a7e6f906624b3d742b0b711d18aad64feca1b
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r8.<javax.crypto.Cipher: byte[] doFinal()>()
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptIdentityKey(java.lang.String,org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: 32640136de6d622936895ddfd0d4ab9de23f163a5200d808910c0989ca3a9059
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: virtualinvoke $r8.<javax.crypto.Cipher: byte[] update(byte[])>($r4)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptPreviousBlock()>
+		SHA-256: b0ed93d3a58725bd9954c808cf2f2ef193ea2bcee94e18433c6981d439ab9bf8
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.ea.sqrl.utils.EncryptionUtils: java.lang.String encodeBase56(byte[])>
+		SHA-256: 35298a792410ad2c8fc77038c27a7e6f906624b3d742b0b711d18aad64feca1b
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer13315)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] getKeySeed(byte[])>
+		SHA-256: 8050fc671250cc1059a1100060510740eff7bf7196fc457c31b8fec038a7eaca
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r6.<javax.crypto.Cipher: byte[] doFinal()>()
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptPreviousBlock()>
+		SHA-256: dfa18a7aa8d5e2081c0789efc9c0c16ff0bfca32825f97673c184cf5df9a8173
+		Secure: false
+	Object:
+		Variable: varReplacer13315
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer13315)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] getKeySeed(byte[])>
+		SHA-256: 23487514ca0b6693d30eda6659a901821088abed58cad34e0fc63bd9b298debb
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.SSLContext
+		Statement: $r5 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer835)
+		Method: <org.ea.sqrl.processors.CommunicationHandler: org.ea.sqrl.processors.CommunicationHandler getInstance(android.content.Context)>
+		SHA-256: aee0a6514b62763b1a43248cfdce665d12b74d573c8fef991d290988fa26ae0f
+		Secure: false
+	Object:
+		Variable: varReplacer7218
+		Type: java.lang.String
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer7218)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptPreviousBlock()>
+		SHA-256: 9bd3fa005bd6ae5845f8ac54c4738667b21c11a5a220a442d84ecb723a50318b
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: java.security.KeyStore
+		Statement: $r12 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer867)
+		Method: <org.ea.sqrl.activites.LoginActivity: void doLoginBiometric()>
+		SHA-256: ddfd2892a546c324cc9a890d59ef45ab3c571f32b6c226cef8f906a35c76254d
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.util.Random: void nextBytes(byte[])>($r1)
+		Method: <org.ea.sqrl.processors.SQRLStorage: void clearBytes(byte[])>
+		SHA-256: 6ddbe3bb87dfec857437848a4529ad78ed6c43cf1efddec42ca54d78338ec618
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r7.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r5)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptUnlockKey(java.lang.String)>
+		SHA-256: fd799cb83ce6572b7c848ad68bee0f6760518331fbf69813729060d8b977a27e
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3837)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptIdentityKey(java.lang.String,org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: 78e37412fc4c1ee0f32afc0a69413492c44b8f528c0f276df72fc014e28c66b6
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer7218)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptPreviousBlock()>
+		SHA-256: be093297e72445216ed1d1b574b605995822786d2ed5171c0837df5573e7fe26
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.ea.sqrl.utils.EncryptionUtils: byte[] enHash(byte[])>
+		SHA-256: cf032754ee4603f14392b7732f77d0970254d31b68e9fb2a41aba1c7888a9c40
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Cipher
+		Statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer4031)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptUnlockKey(java.lang.String)>
+		SHA-256: ed57a452cf8f1bd21d7726edfbffa0a38901913bfa392bf8ff853f482df62244
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.util.Random: void nextBytes(byte[])>($r1)
+		Method: <org.ea.sqrl.processors.SQRLStorage: void clearBytes(byte[])>
+		SHA-256: 6ddbe3bb87dfec857437848a4529ad78ed6c43cf1efddec42ca54d78338ec618
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r13.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer7133)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] decryptIdentityKeyQuickPass(java.lang.String)>
+		SHA-256: faff2bb5024664c5250a92561d74da4833f6b31c8da25db10b84166bbcc7c62b
+		Secure: false
+	Object:
+		Variable: varReplacer5062
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer5062)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptRescueKey(org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: b9ce66b949a450eec8b48d214265e2664c87703e431d1c55505393bb65dae5b8
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: $r2 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstanceStrong()>()
+		Method: <org.ea.sqrl.processors.EntropyHarvester: void <init>()>
+		SHA-256: da6381340bc72c4b4076fcaaf314acfbcd1db4eeb8511bc6e187833972603436
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r6.<javax.crypto.Cipher: byte[] update(byte[])>($r1)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptPreviousBlock()>
+		SHA-256: 1fe4ac612750d206c37b04f69a5d97592f7adf44cc5d9d04d34d6844c385daeb
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7681)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptPreviousBlock()>
+		SHA-256: d3ad9fdf795909b432eafadce4a1c9e10ff8cc1e5aa3ec666c02efee641040ff
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.KeyPair
+		Statement: $r8 = virtualinvoke $r2.<java.security.KeyPairGenerator: java.security.KeyPair generateKeyPair()>()
+		Method: <org.ea.sqrl.processors.SQRLStorage: void encryptIdentityKeyBiometric(byte[])>
+		SHA-256: 9bf35788dcc4ae44c79f5d6bc4fc9a8caf23f74b119e90dc201207a5d40feeed
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer13316)
+		Method: <org.ea.sqrl.processors.SQRLStorage: byte[] getKeySeed(byte[])>
+		SHA-256: 5183a3766af5a1dae4cab0726b865c8457ad785f7e5c8ee099284242e948721b
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5022)
+		Method: <org.ea.sqrl.utils.EncryptionUtils: byte[] enHash(byte[])>
+		SHA-256: 7ee57abe887c738dddb21efc39d966bb8847a4b0b46799969b30378b14883641
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r11.<java.security.SecureRandom: void <init>()>()
+		Method: <org.ea.sqrl.processors.CommunicationHandler: org.ea.sqrl.processors.CommunicationHandler getInstance(android.content.Context)>
+		SHA-256: 617230c6a3930701e7c4596470f3c75e75445075dc7ba8fdf5c01421e393f022
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7691, $r6)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptPreviousBlock()>
+		SHA-256: ed85a5a795fda96c818bffe132f340a41edb7b0316f66ba4a1d446f194089680
+		Secure: false
+	Object:
+		Variable: varReplacer4043
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer4043)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptUnlockKey(java.lang.String)>
+		SHA-256: 63b451052d8a6ae97e8beed8ee4f6394d91084bd788ac4501a2e0b577b5c126e
+		Secure: false
+	Object:
+		Variable: $r12
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r12.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7161, $r5)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptIdentityKeyQuickPass(java.lang.String,byte[],org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: c5bbd7bade99953e95654b2948db5834da12c2470eafcabb1f4f913f556b476d
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.ea.sqrl.utils.EncryptionUtils: byte[] decodeBase56(java.lang.String)>
+		SHA-256: e24b56f7fb0df35cd0dc24e718a6f51eb5d5fb3fd74a27e8b56881cec4b9684e
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7191)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean decryptIdentityKeyInternal(byte[])>
+		SHA-256: bb673073e152eb6b19e12aabba6fb8e501bdeb670e33c7bee762428286c6ca7
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: javax.crypto.Cipher
+		Statement: $r11 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7165)
+		Method: <org.ea.sqrl.processors.SQRLStorage: boolean encryptIdentityKeyQuickPass(java.lang.String,byte[],org.ea.sqrl.processors.EntropyHarvester)>
+		SHA-256: cae597f01227ef44b734c6a8acedc951aab32fef260cc1561c94530408878970
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer619)
+		Method: <org.ea.sqrl.utils.EncryptionUtils: java.lang.String encodeBase56(byte[])>
+		SHA-256: 7315a0178928fe78fa9f0961f3368ecc5020621db69e01264345eaa8cffc7e8a
+		Secure: true
+
+Findings in Java Class: org.ea.sqrl.processors.CommunicationHandler
+
+	 in Method: org.ea.sqrl.processors.CommunicationHandler getInstance(android.content.Context)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer834, $r13, $r0)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer834, $r13, $r0)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer834, $r13, $r0)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #aee0a6514b62763b1a43248cfdce665d12b74d573c8fef991d290988fa26ae0f)
+			First parameter (with value "SSL") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r5 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer835)
+
+
+Findings in Java Class: org.ea.sqrl.processors.SQRLStorage
+
+	 in Method: void clearQuickPass()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #d0c9b78d77d70df2980f746b4cc504955f4671d2abcea8679f7a69531db1d6b5)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer852)
+
+
+	 in Method: boolean encryptIdentityKey(java.lang.String,org.ea.sqrl.processors.EntropyHarvester)
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #78e37412fc4c1ee0f32afc0a69413492c44b8f528c0f276df72fc014e28c66b6)
+			First parameter (with value "AES_256/GCM/NoPadding") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer3837)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer3828, $r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer3839)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer3833, $r7, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer3833, $r7, $r9)
+
+
+	 in Method: boolean decryptUnlockKey(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r8.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer4045, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r7.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer4038, $r6, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer4043)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r7.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer4038, $r6, $r8)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #ed57a452cf8f1bd21d7726edfbffa0a38901913bfa392bf8ff853f482df62244)
+			First parameter (with value "AES_256/GCM/NoPadding") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer4031)
+
+
+	 in Method: boolean encryptRescueKey(org.ea.sqrl.processors.EntropyHarvester)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer5079, $r7, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer5079, $r7, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer5083, $r2)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #c02f00843d6bd543d9353060caa585e06c31922ac0f80061fd5851acda39bb24)
+			First parameter (with value "AES_256/GCM/NoPadding") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer5072)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer5062)
+
+
+	 in Method: byte[] decryptIdentityKeyQuickPass(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r15.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7142, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r14.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7146, $r13, $r15)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #878c545d289f9dc252ee58345ecb2d9f6228d042fc3b994757616a730aac1dc7)
+			First parameter (with value "AES_256/GCM/NoPadding") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r14 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7132)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r13.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r12, varReplacer7133)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #878c545d289f9dc252ee58345ecb2d9f6228d042fc3b994757616a730aac1dc7)
+			Unexpected call to method update on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: virtualinvoke $r14.<javax.crypto.Cipher: byte[] update(byte[])>($r10)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r14.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7146, $r13, $r15)
+
+
+	 in Method: boolean encryptIdentityKeyQuickPass(java.lang.String,byte[],org.ea.sqrl.processors.EntropyHarvester)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r12.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7161, $r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #cae597f01227ef44b734c6a8acedc951aab32fef260cc1561c94530408878970)
+			Unexpected call to method update on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: virtualinvoke $r11.<javax.crypto.Cipher: byte[] update(byte[])>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r10.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r9, varReplacer7172)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r11.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7171, $r10, $r12)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r11.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7171, $r10, $r12)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #cae597f01227ef44b734c6a8acedc951aab32fef260cc1561c94530408878970)
+			First parameter (with value "AES_256/GCM/NoPadding") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r11 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7165)
+
+
+	 in Method: void encryptIdentityKeyBiometric(byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #adf0b5b2a3f62c97c47a3780053b76ddb14d7fc61e52bd813f9dc1d068f352d5)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r9.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r9.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer7179, $r10)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPairGenerator
+			First parameter was not properly generated as preparedRSA
+			at statement: virtualinvoke $r2.<java.security.KeyPairGenerator: void initialize(java.security.spec.AlgorithmParameterSpec)>($r7)
+
+
+	 in Method: boolean decryptIdentityKeyInternal(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r7.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7189, $r6, $r8)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r8.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7185, $r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #1dcacda2877fc318fc64f52bf3c641029e6e93279128a563763c7390d184883e)
+			First parameter (with value "AES_256/GCM/NoPadding") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7190)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7191)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r7.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7189, $r6, $r8)
+
+
+	 in Method: boolean encryptPreviousBlock()
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #1331b63457ae5d31e63da58c5cec625443c36a753ec506a5f121f1e1e4b804ac)
+			First parameter (with value "AES_256/GCM/NoPadding") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7214)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r7.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7211, $r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer7218)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7201, $r5, $r7)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7201, $r5, $r7)
+
+
+	 in Method: boolean decryptPreviousBlock()
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7689, $r7, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7681)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #8ed5c0dee898267774d15e642360f3798e9cd962de0de6fbc9441d805e1db431)
+			First parameter (with value "AES_256/GCM/NoPadding") should be any of {AES, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7676)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer7691, $r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7689, $r7, $r9)
+
+
+	 in Method: byte[] encodeSecretIndex(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer13317)
+
+
+	 in Method: byte[] getKeySeed(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer13315)
+
+
+	 in Method: byte[] getPreviousKeySeed(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer13319)
+
+
+Findings in Java Class: org.ea.sqrl.activites.LoginActivity
+
+	 in Method: void doLoginBiometric()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #ddfd2892a546c324cc9a890d59ef45ab3c571f32b6c226cef8f906a35c76254d)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r12 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer867)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #ddfd2892a546c324cc9a890d59ef45ab3c571f32b6c226cef8f906a35c76254d)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to getKey
+			at statement: $r13 = virtualinvoke $r12.<java.security.KeyStore: java.security.KeyStore$Entry getEntry(java.lang.String,java.security.KeyStore$ProtectionParameter)>(varReplacer871, varReplacer872)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r14.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer873, $r16)
+
+
+Findings in Java Class: org.ea.sqrl.utils.EncryptionUtils
+
+	 in Method: byte[] decodeBase56(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #93bd92ecf7ab40b3e2f1099ff2cf7a96d56a93156e469d39cd97338306660279)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: virtualinvoke $r1.<java.security.MessageDigest: void reset()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #93bd92ecf7ab40b3e2f1099ff2cf7a96d56a93156e469d39cd97338306660279)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, java.security.MessageDigest: void update(byte[],int,int), java.security.MessageDigest: void update(java.nio.ByteBuffer), java.security.MessageDigest: void update(byte), java.security.MessageDigest: void update(byte[])
+			at statement: virtualinvoke $r1.<java.security.MessageDigest: void update(byte[])>($r7)
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #93bd92ecf7ab40b3e2f1099ff2cf7a96d56a93156e469d39cd97338306660279)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2558)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 81
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 11
+	IncompleteOperationError: 4
+	RequiredPredicateError: 44
+	TypestateError: 3
+=====================================================================

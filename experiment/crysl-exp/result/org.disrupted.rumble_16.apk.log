@@ -1,0 +1,246 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r7)
+		Method: <org.disrupted.rumble.util.CryptoUtil: org.disrupted.rumble.util.EncryptedInputStream getCipherInputStream(java.io.InputStream,org.disrupted.rumble.util.CryptoUtil$CipherAlgo,org.disrupted.rumble.util.CryptoUtil$CipherBlock,org.disrupted.rumble.util.CryptoUtil$CipherPadding,javax.crypto.SecretKey,byte[])>
+		SHA-256: e218a38c3f017afc513a9cf4526e9899717fd908a0664d46ef2102b859f166ac
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.disrupted.rumble.util.HashUtil: java.lang.String computeContactUid(java.lang.String,long)>
+		SHA-256: a3111cf4cdb2ad6d1f5edee0d4d509485604401b8a79f09aaff1f7de15b22d11
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.KeyGenerator
+		Statement: $r1 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer14477)
+		Method: <org.disrupted.rumble.util.CryptoUtil: javax.crypto.SecretKey generateRandomAESKey()>
+		SHA-256: 630ab5e3d4566c57b7db8449304a35915540c405918e3341ecca865816b820f9
+		Secure: true
+	Object:
+		Variable: varReplacer1585
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer1585)
+		Method: <org.disrupted.rumble.util.CryptoUtil: javax.crypto.SecretKey getSecretKeyFromByteArray(byte[])>
+		SHA-256: 41ece0945a3513eb648f49b8a2bd979f9bb85bdd8b0cb42f4bcc489f88100e4f
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer1585)
+		Method: <org.disrupted.rumble.util.CryptoUtil: javax.crypto.SecretKey getSecretKeyFromByteArray(byte[])>
+		SHA-256: 969a769d4a7ca39a11cb090a8dcbe834e62efb214656cd51f41ac830b5b13629
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r7)
+		Method: <org.disrupted.rumble.util.CryptoUtil: org.disrupted.rumble.util.EncryptedOutputStream getCipherOutputStream(java.io.OutputStream,org.disrupted.rumble.util.CryptoUtil$CipherAlgo,org.disrupted.rumble.util.CryptoUtil$CipherBlock,org.disrupted.rumble.util.CryptoUtil$CipherPadding,javax.crypto.SecretKey,byte[])>
+		SHA-256: a732967dedc8e309cf3095354d101d7e37f62176594e7940ed5f7d32c3e3addd
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.disrupted.rumble.util.HashUtil: java.lang.String computeStatusUUID(java.lang.String,java.lang.String,java.lang.String,long)>
+		SHA-256: 23849270d6ce14fcb4b8c3aea94bfc5f5ac5016ce313665c1f889af4d117bb42
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.disrupted.rumble.util.HashUtil: java.lang.String computeChatMessageUUID(java.lang.String,java.lang.String,long)>
+		SHA-256: a6f6851ccca0cc6c3986d0a2a041150d7dee22d11697f511488da9aa636d3454
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
+		Method: <org.disrupted.rumble.util.CryptoUtil: org.disrupted.rumble.util.EncryptedOutputStream getCipherOutputStream(java.io.OutputStream,org.disrupted.rumble.util.CryptoUtil$CipherAlgo,org.disrupted.rumble.util.CryptoUtil$CipherBlock,org.disrupted.rumble.util.CryptoUtil$CipherPadding,javax.crypto.SecretKey,byte[])>
+		SHA-256: 75b827cd29642e8ae869863e310e4dae972f5d4ae34b2ba727c9e445f9ef0a20
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.disrupted.rumble.util.HashUtil: java.lang.String computeGroupUid(java.lang.String,boolean)>
+		SHA-256: a399e1e435c93c8f884e7afdcffe9e4588286f19610330bdf9251b9dd1794271
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer14476)
+		Method: <org.disrupted.rumble.util.HashUtil: java.lang.String computeGroupUid(java.lang.String,boolean)>
+		SHA-256: 94e3e85b80c6abdfa32fda0b56e90ffcd21f11bc1e9358793ff42e098288b130
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.SecretKey
+		Statement: $r2 = virtualinvoke $r1.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <org.disrupted.rumble.util.CryptoUtil: javax.crypto.SecretKey generateRandomAESKey()>
+		SHA-256: bd53b2fbd7a1b14a1b4b578552b2b733286225dd190c130cdf242554881bc184
+		Secure: true
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>(r1)
+		Method: <org.disrupted.rumble.util.CryptoUtil: byte[] generateRandomIV(int)>
+		SHA-256: 9071ee9452e7fc464f40c1a3475852a5cb1999add9ad5ff739675e4204f23bdd
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer5811)
+		Method: <org.disrupted.rumble.util.HashUtil: java.lang.String computeStatusUUID(java.lang.String,java.lang.String,java.lang.String,long)>
+		SHA-256: d0a6ce3cb0f5277f1c4322c634f6b56b31f648cd616ff6e661a52fb7e1b1c516
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8166)
+		Method: <org.disrupted.rumble.util.HashUtil: java.lang.String computeChatMessageUUID(java.lang.String,java.lang.String,long)>
+		SHA-256: 5398d3b9b5ca3c3b7b7f65e8bc99dd3b96c6b3920d4305aa8d600ee1a74c446b
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer8651)
+		Method: <org.disrupted.rumble.util.HashUtil: java.lang.String computeContactUid(java.lang.String,long)>
+		SHA-256: 921c1c17f126925709475a2d3369cb7ebc08230578eb68ea5cea4930b779a6f9
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: $r2 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer4926)
+		Method: <org.disrupted.rumble.util.CryptoUtil: byte[] generateRandomIV(int)>
+		SHA-256: 1c94b8a7edab42fe519bca4c17e837b874b4eb988065caa761b730871c08ef7
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
+		Method: <org.disrupted.rumble.util.CryptoUtil: org.disrupted.rumble.util.EncryptedInputStream getCipherInputStream(java.io.InputStream,org.disrupted.rumble.util.CryptoUtil$CipherAlgo,org.disrupted.rumble.util.CryptoUtil$CipherBlock,org.disrupted.rumble.util.CryptoUtil$CipherPadding,javax.crypto.SecretKey,byte[])>
+		SHA-256: 9daa5fb461df93080196c3d276d28e7d3c77f6503feb03460821d3a3a27e7ea7
+		Secure: false
+
+Findings in Java Class: org.disrupted.rumble.util.EncryptedOutputStream
+
+	 in Method: void flush()
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #a732967dedc8e309cf3095354d101d7e37f62176594e7940ed5f7d32c3e3addd)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r1.<javax.crypto.Cipher: byte[] doFinal()>()
+
+
+	 in Method: void write(byte[],int,int)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #a732967dedc8e309cf3095354d101d7e37f62176594e7940ed5f7d32c3e3addd)
+			Unexpected call to method update on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] update(byte[],int,int)>($r1, $i0, $i1)
+
+
+Findings in Java Class: org.disrupted.rumble.util.CryptoUtil
+
+	 in Method: org.disrupted.rumble.util.EncryptedInputStream getCipherInputStream(java.io.InputStream,org.disrupted.rumble.util.CryptoUtil$CipherAlgo,org.disrupted.rumble.util.CryptoUtil$CipherBlock,org.disrupted.rumble.util.CryptoUtil$CipherPadding,javax.crypto.SecretKey,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer8619, $r4, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer8619, $r4, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer8619, $r4, $r9)
+
+
+	 in Method: javax.crypto.SecretKey getSecretKeyFromByteArray(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer1585)
+
+
+	 in Method: org.disrupted.rumble.util.EncryptedOutputStream getCipherOutputStream(java.io.OutputStream,org.disrupted.rumble.util.CryptoUtil$CipherAlgo,org.disrupted.rumble.util.CryptoUtil$CipherBlock,org.disrupted.rumble.util.CryptoUtil$CipherPadding,javax.crypto.SecretKey,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer4925, $r4, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer4925, $r4, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer4925, $r4, $r9)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 18
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 2
+	RequiredPredicateError: 8
+=====================================================================

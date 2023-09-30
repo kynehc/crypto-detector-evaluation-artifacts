@@ -1,0 +1,722 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <com.arialyy.aria.util.SSLContextUtil: javax.net.ssl.SSLContext getDefaultSLLContext(java.lang.String)>
+		SHA-256: 2a694f3ef22f7ad5d01e0c0bf8a1ce160993146a7cea373eba557f79f012c2ba
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.net.ssl.SSLContext
+		Statement: $r8 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r3)
+		Method: <com.arialyy.aria.util.SSLContextUtil: javax.net.ssl.SSLContext createContext(java.lang.String,java.security.cert.Certificate,java.lang.String,java.lang.String)>
+		SHA-256: 86333177c5df4e8f26c7575d8c94f147151d24f4831760c2a81a2c8de9bc841d
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Mac
+		Statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: void <init>(java.lang.String)>
+		SHA-256: fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer26730, $r2)
+		Method: <okhttp3.internal.platform.ConscryptPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 57603e553c1a7d1587925c1f35a25681034d10a2a3211b68bf7a77249d9e7b0
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.SegmentedByteString: okio.ByteString digest$jvm(java.lang.String)>
+		SHA-256: ea9bd02bb32dbb2be26eca134efdb9d94c1e5921cb9abf4599d98facf22c83d6
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r6 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <com.arialyy.aria.util.SSLContextUtil: javax.net.ssl.SSLContext createContext(java.lang.String,java.security.cert.Certificate,java.lang.String,java.lang.String)>
+		SHA-256: b207c9ba9bce8ba2f435ec71d891cfef381183f394c277f07b0a7cdbcdbba2ed
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer26728)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 9a2bb535cb3e394f72072ebcb8660050128ff1f0ab9fd9718788ba92e33d87ed
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r2)
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: void init(byte[])>
+		SHA-256: 2c8b6542a35e929698f4560c93b5cf68fb53e0b3268e298dc399955f0bfa617b
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.MessageDigest
+		Statement: $r4 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer10040)
+		Method: <com.perol.asdpl.pixivez.networks.Pkce: java.lang.String generateCodeChallenge(java.lang.String)>
+		SHA-256: 8169fcafecb252e3cb0413c0419aa5cf69ff9306aebc4d23a15e8976cb4d14b2
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17335)
+		Method: <com.arialyy.aria.util.CommonUtil: java.lang.String keyToHashKey(java.lang.String)>
+		SHA-256: 86de1cdd1fa9ed11732b588ac52e791caec9d5d794dd1954010ace6f76d4d59a
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r3 = virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: c3dcfb07eabeaead2afa7b41e33d56187e303e14a7184c21b7bac99836f2c278
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer43396)
+		Method: <com.bumptech.glide.load.engine.cache.SafeKeyGenerator$1: com.bumptech.glide.load.engine.cache.SafeKeyGenerator$PoolableDigestContainer create()>
+		SHA-256: 2ee49b7a54ff5160b85170ad70634391e260a2e7d16f34cf8d31106a49fcd98e
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r3 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String,java.security.Provider)>($r1, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 1027fce20723454b26980f38c5edb26bcec19bffa5b6443c75459b577c51d460
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r14.<java.security.SecureRandom: void <init>()>()
+		Method: <com.arialyy.aria.util.SSLContextUtil: javax.net.ssl.SSLContext createContext(java.lang.String,java.security.cert.Certificate,java.lang.String,java.lang.String)>
+		SHA-256: a84b974a787ed31e80de4725914d72ea6d1115a9c02eb726bc4427429899ebcf
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <okio.SegmentedByteString: okio.ByteString digest$jvm(java.lang.String)>
+		SHA-256: 14f15a41dd8b92f7a4458441f9908c3bd2e90bddb540afe032aa88ebd3fdc6dd
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: byte[] doFinal(byte[])>
+		SHA-256: 1d6d7521ca30973fba926ddd40a80c0789b657f0d2fe66908725c8ffdc37c7cf
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>($r3)
+		Method: <com.perol.asdpl.pixivez.networks.Pkce: java.lang.String generateCodeVerifier()>
+		SHA-256: 4cb3a69c43ddc5b1ee9f0a847c89f9945d11b777807afb6bfaa9f1336305ee02
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.net.ssl.KeyManager[]
+		Statement: $r9 = virtualinvoke $r7.<javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManager[] getKeyManagers()>()
+		Method: <com.arialyy.aria.util.SSLContextUtil: javax.net.ssl.SSLContext createContext(java.lang.String,java.security.cert.Certificate,java.lang.String,java.lang.String)>
+		SHA-256: f0f1353a10b327195b922b0a8c824ce0fe7536b10a4e4d1c7cae5f326b587ccf
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r4 = virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: a729cfd5669df603070b7ba7d05b524b10a048ab1da974a5ccb1df973521b7d3
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <okio.ByteString: okio.ByteString digest$jvm(java.lang.String)>
+		SHA-256: 8ce052ed6c630e0078d05e19ab4bff46430fe8453e4fc121d3b9ee58a22dc10e
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.cert.CertificateFactory
+		Statement: $r1 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer2724)
+		Method: <com.arialyy.aria.util.SSLContextUtil: java.security.cert.Certificate loadCert(java.io.InputStream)>
+		SHA-256: 795b052d9381b1443cf407a85f4ba322fe62faaecea5b8d75153fdcd904f6787
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <okio.ByteString: okio.ByteString digest$jvm(java.lang.String)>
+		SHA-256: 4fff7c5d15f021d956e87c05e0dc87688a11eec9c61bcdc27645605a965776c9
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.net.ssl.TrustManagerFactory
+		Statement: $r2 = staticinvoke <javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <okhttp3.internal.platform.Platform: javax.net.ssl.X509TrustManager platformTrustManager()>
+		SHA-256: 5fb6984969c8c0f60ee84399ef18a49aa63648c889757c4080685ad119ecd903
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.arialyy.aria.util.CommonUtil: java.lang.String keyToHashKey(java.lang.String)>
+		SHA-256: 7917c47f3db135fa7f83cf7cf108d1b92993685ec68f180b83ee251e76a4ee9c
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.cert.CertificateFactory
+		Statement: $r6 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer47050)
+		Method: <okhttp3.Cache$Entry: java.util.List readCertificateList(okio.BufferedSource)>
+		SHA-256: b90b1202d05a3e5589fe88df5d7f01085e0ded701237b866746f66941c2a444e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.net.ssl.SSLContext
+		Statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r1)
+		Method: <com.arialyy.aria.util.SSLContextUtil: javax.net.ssl.SSLContext getDefaultSLLContext(java.lang.String)>
+		SHA-256: bda168da363001df51aa93735fbaf9eb18168d5620f2ee8434021a847ee9ec5f
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <com.perol.asdpl.pixivez.networks.Pkce: java.lang.String generateCodeVerifier()>
+		SHA-256: 3c5494b17a5784e391d6db58239668077659027eff25b179f58bc4039d620b36
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer26731, $r2)
+		Method: <okhttp3.internal.platform.OpenJSSEPlatform: javax.net.ssl.SSLContext newSSLContext()>
+		SHA-256: 9d08c4c1346282364b7ae0ab15d8e085d5cb1f9a185038ead9251dea8f3231a6
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2792)
+		Method: <com.arialyy.aria.util.CommonUtil: java.lang.String getStrMd5(java.lang.String)>
+		SHA-256: eb5fd03a4538bdd9676a013378285379f8d4d7291c7bac3ecc281b9a7a14fe6e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.perol.asdpl.pixivez.networks.Pkce: java.lang.String generateCodeChallenge(java.lang.String)>
+		SHA-256: ddc110eb8130b6a79930d4dc23de4fe2a5bb84ceb74313ff4a5093fcb800ac6a
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer14149)
+		Method: <com.arialyy.aria.util.CommonUtil: java.lang.String getFileMD5(java.io.InputStream)>
+		SHA-256: 1cf28a8cfa3a32895ff6ee3b04ef6c2722f8c17805bb8ed32518be923b5ee835
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer37614)
+		Method: <com.perol.asdpl.pixivez.networks.RestClient: java.lang.String encode(java.lang.String)>
+		SHA-256: 88e4ecc82e039bcb31fa90a17e7df4e232e8c83cef06a94d60a473075d7010c
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.arialyy.aria.util.CommonUtil: java.lang.String getFileMD5(java.io.InputStream)>
+		SHA-256: 59cceb276aa0496899e08a56442fe4f9c6f3d82d4e3145cb458fc4f6b8e9411d
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.KeyStore
+		Statement: $r5 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>($r4)
+		Method: <com.arialyy.aria.util.SSLContextUtil: javax.net.ssl.SSLContext createContext(java.lang.String,java.security.cert.Certificate,java.lang.String,java.lang.String)>
+		SHA-256: 5e7af697e60405306e637c0f2ed4fa90100fe85738987f6675b2766f9d198e3
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <com.perol.asdpl.pixivez.networks.RestClient: java.lang.String encode(java.lang.String)>
+		SHA-256: 85b7e63536f69188f82acdb92d4ca99225efbc5790d830d20363a196ea393ec0
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r2)
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: void init(byte[])>
+		SHA-256: 1af3e375106d10b26ea6034ef73b9c61e751ef18cab8bd19d427ede96b1bf3f8
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <com.perol.asdpl.pixivez.services.ApiClient: java.lang.String encode(java.lang.String)>
+		SHA-256: ccfb3c5292cf8932d6cae53ac7c426731812ecb9c6bd3dc610c7c6473d440278
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.net.ssl.TrustManager[]
+		Statement: $r10 = virtualinvoke $r6.<javax.net.ssl.TrustManagerFactory: javax.net.ssl.TrustManager[] getTrustManagers()>()
+		Method: <com.arialyy.aria.util.SSLContextUtil: javax.net.ssl.SSLContext createContext(java.lang.String,java.security.cert.Certificate,java.lang.String,java.lang.String)>
+		SHA-256: 19ee86ea231bc300dc88cd1bb7a61669f43f6831396536dd1d95cde951c7da76
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.net.ssl.KeyManagerFactory
+		Statement: $r7 = staticinvoke <javax.net.ssl.KeyManagerFactory: javax.net.ssl.KeyManagerFactory getInstance(java.lang.String)>($r1)
+		Method: <com.arialyy.aria.util.SSLContextUtil: javax.net.ssl.SSLContext createContext(java.lang.String,java.security.cert.Certificate,java.lang.String,java.lang.String)>
+		SHA-256: bb9006d3357c427c5cbb34da20dc8f35dc3d9e80bd6765605dff3fa9c7dbdca1
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer37642)
+		Method: <com.perol.asdpl.pixivez.services.ApiClient: java.lang.String encode(java.lang.String)>
+		SHA-256: 99e55a876f3fc3234d10b8d3d7478be62917b5e881b18616549485afd6452a4e
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <com.arialyy.aria.util.CommonUtil: java.lang.String getStrMd5(java.lang.String)>
+		SHA-256: cad3c4781ad0f286c938319740a10b338185ceeb9f2c9324dfb783b2e0cb30bb
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<javax.crypto.Mac: byte[] doFinal()>()
+		Method: <net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF: byte[] doFinal()>
+		SHA-256: 23eb6bc332ca789bcf27299e70f0704eed45b5662a070781c9eade8f4b4d6994
+		Secure: false
+
+Findings in Java Class: com.arialyy.aria.util.SSLContextUtil
+
+	 in Method: javax.net.ssl.SSLContext getDefaultSLLContext(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2596, $r4, $r5)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r3.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer2596, $r4, $r5)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #bda168da363001df51aa93735fbaf9eb18168d5620f2ee8434021a847ee9ec5f)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r3 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r1)
+
+
+	 in Method: javax.net.ssl.SSLContext createContext(java.lang.String,java.security.cert.Certificate,java.lang.String,java.lang.String)
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #86333177c5df4e8f26c7575d8c94f147151d24f4831760c2a81a2c8de9bc841d)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r8 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r3)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r8.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r9, $r10, $r11)
+
+
+	 in Method: java.security.cert.Certificate loadCert(java.io.InputStream)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #795b052d9381b1443cf407a85f4ba322fe62faaecea5b8d75153fdcd904f6787)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCRL
+			at statement: $r2 = virtualinvoke $r1.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r0)
+
+
+Findings in Java Class: com.arialyy.aria.util.CommonUtil
+
+	 in Method: java.lang.String getStrMd5(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #eb5fd03a4538bdd9676a013378285379f8d4d7291c7bac3ecc281b9a7a14fe6e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer2792)
+
+
+	 in Method: java.lang.String getFileMD5(java.io.InputStream)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #1cf28a8cfa3a32895ff6ee3b04ef6c2722f8c17805bb8ed32518be923b5ee835)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer14149)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #1cf28a8cfa3a32895ff6ee3b04ef6c2722f8c17805bb8ed32518be923b5ee835)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: java.lang.String keyToHashKey(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #86de1cdd1fa9ed11732b588ac52e791caec9d5d794dd1954010ace6f76d4d59a)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer17335)
+
+
+Findings in Java Class: okhttp3.internal.platform.Platform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #9a2bb535cb3e394f72072ebcb8660050128ff1f0ab9fd9718788ba92e33d87ed)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer26728)
+
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r2.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer19769)
+
+
+Findings in Java Class: okhttp3.internal.platform.ConscryptPlatform
+
+	 in Method: javax.net.ssl.SSLContext newSSLContext()
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #57603e553c1a7d1587925c1f35a25681034d10a2a3211b68bf7a77249d9e7b0)
+			First parameter (with value "TLS") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String,java.security.Provider)>(varReplacer26730, $r2)
+
+
+Findings in Java Class: okio.ByteString
+
+	 in Method: okio.ByteString digest$jvm(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4fff7c5d15f021d956e87c05e0dc87688a11eec9c61bcdc27645605a965776c9)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #4fff7c5d15f021d956e87c05e0dc87688a11eec9c61bcdc27645605a965776c9)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+
+Findings in Java Class: okio.SegmentedByteString
+
+	 in Method: okio.ByteString digest$jvm(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ea9bd02bb32dbb2be26eca134efdb9d94c1e5921cb9abf4599d98facf22c83d6)
+			First parameter (with value "SHA-1") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #ea9bd02bb32dbb2be26eca134efdb9d94c1e5921cb9abf4599d98facf22c83d6)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #ea9bd02bb32dbb2be26eca134efdb9d94c1e5921cb9abf4599d98facf22c83d6)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r6 = virtualinvoke $r2.<java.security.MessageDigest: byte[] digest()>()
+
+
+Findings in Java Class: com.perol.asdpl.pixivez.networks.RestClient
+
+	 in Method: java.lang.String encode(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #88e4ecc82e039bcb31fa90a17e7df4e232e8c83cef06a94d60a473075d7010c)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer37614)
+
+
+Findings in Java Class: com.perol.asdpl.pixivez.services.ApiClient
+
+	 in Method: java.lang.String encode(java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #99e55a876f3fc3234d10b8d3d7478be62917b5e881b18616549485afd6452a4e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: staticinvoke <kotlin.jvm.internal.Intrinsics: void checkNotNullExpressionValue(java.lang.Object,java.lang.String)>($r2, varReplacer37639)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #99e55a876f3fc3234d10b8d3d7478be62917b5e881b18616549485afd6452a4e)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer37642)
+
+
+Findings in Java Class: com.bumptech.glide.load.engine.cache.SafeKeyGenerator
+
+	 in Method: java.lang.String calculateHexStringDigest(com.bumptech.glide.load.Key)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #2ee49b7a54ff5160b85170ad70634391e260a2e7d16f34cf8d31106a49fcd98e)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r6 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+
+		IncompleteOperationError violating CrySL rule for java.security.MessageDigest (on Object #2ee49b7a54ff5160b85170ad70634391e260a2e7d16f34cf8d31106a49fcd98e)
+			Operation on object of type java.security.MessageDigest object not completed. Expected call to digest, update
+			at statement: $r3 = staticinvoke <com.bumptech.glide.util.Preconditions: java.lang.Object checkNotNull(java.lang.Object)>($r3)
+
+
+Findings in Java Class: okhttp3.Cache$Entry
+
+	 in Method: java.util.List readCertificateList(okio.BufferedSource)
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #b90b1202d05a3e5589fe88df5d7f01085e0ded701237b866746f66941c2a444e)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCertificate, generateCRL
+			at statement: $r6 = staticinvoke <java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>(varReplacer47050)
+
+		TypestateError violating CrySL rule for java.security.cert.CertificateFactory (on Object #b90b1202d05a3e5589fe88df5d7f01085e0ded701237b866746f66941c2a444e)
+			Unexpected call to method generateCertificate on object of type java.security.cert.CertificateFactory. Expect a call to one of the following methods generateCRL
+			at statement: $r11 = virtualinvoke $r6.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r10)
+
+		IncompleteOperationError violating CrySL rule for java.security.cert.CertificateFactory (on Object #b90b1202d05a3e5589fe88df5d7f01085e0ded701237b866746f66941c2a444e)
+			Operation on object of type java.security.cert.CertificateFactory object not completed. Expected call to generateCertPath, generateCRL, java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)
+			at statement: $r11 = virtualinvoke $r6.<java.security.cert.CertificateFactory: java.security.cert.Certificate generateCertificate(java.io.InputStream)>($r10)
+
+
+Findings in Java Class: net.lingala.zip4j.crypto.PBKDF2.MacBasedPRF
+
+	 in Method: void <init>(java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			First parameter (with value "HmacSHA1") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+
+
+	 in Method: byte[] doFinal()
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Unexpected call to method <javax.crypto.Mac: byte[] doFinal()> on object of type javax.crypto.Mac. Expect a call to one of the following methods javax.crypto.Mac: void update(byte[]),javax.crypto.Mac: byte[] doFinal(byte[]),javax.crypto.Mac: void update(java.nio.ByteBuffer),javax.crypto.Mac: void update(byte),javax.crypto.Mac: void update(byte[],int,int)
+			at statement: $r1 = virtualinvoke $r2.<javax.crypto.Mac: byte[] doFinal()>()
+
+
+	 in Method: byte[] doFinal(byte[])
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Unexpected call to method doFinal on object of type javax.crypto.Mac.
+			at statement: $r2 = virtualinvoke $r1.<javax.crypto.Mac: byte[] doFinal(byte[])>($r2)
+
+
+	 in Method: void update(byte[],int,int)
+		TypestateError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Unexpected call to method update on object of type javax.crypto.Mac.
+			at statement: virtualinvoke $r1.<javax.crypto.Mac: void update(byte[],int,int)>($r2, $i1, $i0)
+
+
+	 in Method: void init(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #2c8b6542a35e929698f4560c93b5cf68fb53e0b3268e298dc399955f0bfa617b)
+			Second parameter (with value "HmacSHA1") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r2)
+
+
+Findings in Java Class: net.lingala.zip4j.io.inputstream.ZipInputStream
+
+	 in Method: void verifyCrc()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $z0 = specialinvoke r0.<net.lingala.zip4j.io.inputstream.ZipInputStream: boolean isEncryptionMethodZipStandard(net.lingala.zip4j.model.LocalFileHeader)>($r1)
+
+
+	 in Method: int read(byte[],int,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $z0 = specialinvoke r0.<net.lingala.zip4j.io.inputstream.ZipInputStream: boolean isEncryptionMethodZipStandard(net.lingala.zip4j.model.LocalFileHeader)>($r2)
+
+
+	 in Method: void verifyLocalFileHeader(net.lingala.zip4j.model.LocalFileHeader)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $z0 = specialinvoke r0.<net.lingala.zip4j.io.inputstream.ZipInputStream: boolean isEntryDirectory(java.lang.String)>($r2)
+
+
+Findings in Java Class: net.lingala.zip4j.crypto.AESEncrpyter
+
+	 in Method: byte[] deriveKey(byte[],char[],int,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r2 = virtualinvoke $r4.<net.lingala.zip4j.crypto.PBKDF2.PBKDF2Engine: byte[] deriveKey(char[],int)>($r3, $i1)
+
+
+Findings in Java Class: net.lingala.zip4j.tasks.ExtractAllFilesTask
+
+	 in Method: void executeTask(net.lingala.zip4j.tasks.ExtractAllFilesTask$ExtractAllFilesTaskParameters,net.lingala.zip4j.progress.ProgressMonitor)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r4.<net.lingala.zip4j.io.inputstream.ZipInputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r4 = specialinvoke r0.<net.lingala.zip4j.tasks.ExtractAllFilesTask: net.lingala.zip4j.io.inputstream.ZipInputStream prepareZipInputStream(java.nio.charset.Charset)>($r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke r0.<net.lingala.zip4j.tasks.ExtractAllFilesTask: void extractFile(net.lingala.zip4j.io.inputstream.ZipInputStream,net.lingala.zip4j.model.FileHeader,java.lang.String,java.lang.String,net.lingala.zip4j.progress.ProgressMonitor)>($r4, $r10, $r11, varReplacer31628, $r2)
+
+
+Findings in Java Class: net.lingala.zip4j.tasks.ExtractFileTask
+
+	 in Method: void executeTask(net.lingala.zip4j.tasks.ExtractFileTask$ExtractFileTaskParameters,net.lingala.zip4j.progress.ProgressMonitor)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r5 = specialinvoke r0.<net.lingala.zip4j.tasks.ExtractFileTask: net.lingala.zip4j.io.inputstream.ZipInputStream createZipInputStream(net.lingala.zip4j.model.FileHeader,java.nio.charset.Charset)>($r3, $r4)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r5.<net.lingala.zip4j.io.inputstream.ZipInputStream: void close()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke r0.<net.lingala.zip4j.tasks.ExtractFileTask: void extractFile(net.lingala.zip4j.io.inputstream.ZipInputStream,net.lingala.zip4j.model.FileHeader,java.lang.String,java.lang.String,net.lingala.zip4j.progress.ProgressMonitor)>($r5, $r3, $r11, $r9, $r2)
+
+
+Findings in Java Class: net.lingala.zip4j.crypto.AESDecrypter
+
+	 in Method: byte[] deriveKey(byte[],char[],int,int)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r3 = virtualinvoke $r4.<net.lingala.zip4j.crypto.PBKDF2.PBKDF2Engine: byte[] deriveKey(char[],int)>($r1, $i1)
+
+
+Findings in Java Class: net.lingala.zip4j.tasks.AbstractExtractFileTask
+
+	 in Method: void verifyNextEntry(net.lingala.zip4j.io.inputstream.ZipInputStream,net.lingala.zip4j.model.FileHeader)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r4 = virtualinvoke $r2.<net.lingala.zip4j.io.inputstream.ZipInputStream: net.lingala.zip4j.model.LocalFileHeader getNextEntry(net.lingala.zip4j.model.FileHeader)>($r3)
+
+
+	 in Method: void createSymLink(net.lingala.zip4j.io.inputstream.ZipInputStream,net.lingala.zip4j.model.FileHeader,java.io.File,net.lingala.zip4j.progress.ProgressMonitor)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r7 = specialinvoke r0.<net.lingala.zip4j.tasks.AbstractExtractFileTask: byte[] readCompleteEntry(net.lingala.zip4j.io.inputstream.ZipInputStream,net.lingala.zip4j.model.FileHeader,net.lingala.zip4j.progress.ProgressMonitor)>($r3, $r4, $r6)
+
+
+	 in Method: void extractFile(net.lingala.zip4j.io.inputstream.ZipInputStream,net.lingala.zip4j.model.FileHeader,java.lang.String,java.lang.String,net.lingala.zip4j.progress.ProgressMonitor)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke r0.<net.lingala.zip4j.tasks.AbstractExtractFileTask: void verifyNextEntry(net.lingala.zip4j.io.inputstream.ZipInputStream,net.lingala.zip4j.model.FileHeader)>($r3, $r4)
+
+
+	 in Method: byte[] readCompleteEntry(net.lingala.zip4j.io.inputstream.ZipInputStream,net.lingala.zip4j.model.FileHeader,net.lingala.zip4j.progress.ProgressMonitor)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $i2 = virtualinvoke $r2.<net.lingala.zip4j.io.inputstream.ZipInputStream: int read(byte[])>($r4)
+
+
+Findings in Java Class: net.lingala.zip4j.io.outputstream.ZipOutputStream
+
+	 in Method: void verifyZipParameters(net.lingala.zip4j.model.ZipParameters)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $z0 = specialinvoke r0.<net.lingala.zip4j.io.outputstream.ZipOutputStream: boolean isEntryDirectory(java.lang.String)>($r4)
+
+
+Findings in Java Class: net.lingala.zip4j.tasks.AddStreamToZipTask
+
+	 in Method: void executeTask(net.lingala.zip4j.tasks.AddStreamToZipTask$AddStreamToZipTaskParameters,net.lingala.zip4j.progress.ProgressMonitor)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r14 = virtualinvoke $r11.<net.lingala.zip4j.io.outputstream.ZipOutputStream: net.lingala.zip4j.model.FileHeader closeEntry()>()
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r11.<net.lingala.zip4j.io.outputstream.ZipOutputStream: void close()>()
+
+
+Findings in Java Class: net.lingala.zip4j.tasks.AbstractAddFileToZipTask
+
+	 in Method: void addFilesToZip(java.util.List,net.lingala.zip4j.progress.ProgressMonitor,net.lingala.zip4j.model.ZipParameters,java.nio.charset.Charset)
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke r0.<net.lingala.zip4j.tasks.AbstractAddFileToZipTask: void addFileToZip(java.io.File,net.lingala.zip4j.io.outputstream.ZipOutputStream,net.lingala.zip4j.model.ZipParameters,net.lingala.zip4j.io.outputstream.SplitOutputStream,net.lingala.zip4j.progress.ProgressMonitor)>($r8, $r9, $r12, $r1, $r3)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $r9 = virtualinvoke r0.<net.lingala.zip4j.tasks.AbstractAddFileToZipTask: net.lingala.zip4j.io.outputstream.ZipOutputStream initializeOutputStream(net.lingala.zip4j.io.outputstream.SplitOutputStream,java.nio.charset.Charset)>($r1, $r5)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: specialinvoke r0.<net.lingala.zip4j.tasks.AbstractAddFileToZipTask: void addSymlinkToZip(java.io.File,net.lingala.zip4j.io.outputstream.ZipOutputStream,net.lingala.zip4j.model.ZipParameters,net.lingala.zip4j.io.outputstream.SplitOutputStream)>($r8, $r9, $r12, $r1)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: virtualinvoke $r9.<net.lingala.zip4j.io.outputstream.ZipOutputStream: void close()>()
+
+
+Findings in Java Class: net.lingala.zip4j.io.inputstream.InflaterInputStream
+
+	 in Method: void fill()
+		IncompleteOperationError violating CrySL rule for javax.crypto.Mac (on Object #fe86d6df4f79d1062ebbc1599317d6572713990c2d231593223a215eef0fe89e)
+			Operation on object of type javax.crypto.Mac object not completed. Expected call to update, doFinal
+			at statement: $i0 = specialinvoke r0.<net.lingala.zip4j.io.inputstream.DecompressedInputStream: int read(byte[],int,int)>($r1, varReplacer28501, $i0)
+
+
+Findings in Java Class: okhttp3.OkHttpClient$Companion
+
+	 in Method: javax.net.ssl.SSLSocketFactory newSslSocketFactory(javax.net.ssl.X509TrustManager)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer19785, $r5, varReplacer19785)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer19785, $r5, varReplacer19785)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r4.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer19785, $r5, varReplacer19785)
+
+
+Findings in Java Class: okhttp3.internal.platform.OpenJSSEPlatform
+
+	 in Method: javax.net.ssl.X509TrustManager platformTrustManager()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.TrustManagerFactory
+			First parameter was not properly generated as generatedKeyStore
+			at statement: virtualinvoke $r3.<javax.net.ssl.TrustManagerFactory: void init(java.security.KeyStore)>(varReplacer19775)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 42
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 15
+	RequiredPredicateError: 10
+	IncompleteOperationError: 28
+	TypestateError: 7
+=====================================================================

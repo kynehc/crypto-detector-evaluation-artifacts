@@ -1,0 +1,134 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: javax.net.ssl.SSLContext
+		Statement: $r1 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>($r2)
+		Method: <org.apache.commons.net.ftp.FTPSClient: void initSslContext()>
+		SHA-256: a8a2115d5bc9b5ab9de673f41c019e57f2fe657ffb9e85ba96c92c82d8a2590d
+		Secure: false
+
+Findings in Java Class: org.apache.commons.net.ftp.FTPSClient
+
+	 in Method: void initSslContext()
+		TypestateError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a8a2115d5bc9b5ab9de673f41c019e57f2fe657ffb9e85ba96c92c82d8a2590d)
+			Unexpected call to method init on object of type javax.net.ssl.SSLContext. Expect a call to one of the following methods createSSLEngine
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r3, $r5, varReplacer2547)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r3, $r5, varReplacer2547)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r3, $r5, varReplacer2547)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r1.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>($r3, $r5, varReplacer2547)
+
+
+	 in Method: void execAUTH()
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a8a2115d5bc9b5ab9de673f41c019e57f2fe657ffb9e85ba96c92c82d8a2590d)
+			Operation on object of type javax.net.ssl.SSLContext object not completed. Expected call to getInstance
+			at statement: $r2 = virtualinvoke r0.<org.apache.commons.net.ftp.FTPSClient: java.lang.String getReplyString()>()
+
+
+	 in Method: int sendCommand(java.lang.String,java.lang.String)
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a8a2115d5bc9b5ab9de673f41c019e57f2fe657ffb9e85ba96c92c82d8a2590d)
+			Operation on object of type javax.net.ssl.SSLContext object not completed. Expected call to init, getInstance
+			at statement: $r1 = virtualinvoke r0.<org.apache.commons.net.ftp.FTPSClient: java.lang.String getReplyString()>()
+
+
+Findings in Java Class: org.apache.commons.net.ftp.FTP
+
+	 in Method: void __getReply()
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a8a2115d5bc9b5ab9de673f41c019e57f2fe657ffb9e85ba96c92c82d8a2590d)
+			Operation on object of type javax.net.ssl.SSLContext object not completed. Expected call to init, getInstance
+			at statement: $i0 = virtualinvoke $r9.<org.apache.commons.net.ProtocolCommandSupport: int getListenerCount()>()
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a8a2115d5bc9b5ab9de673f41c019e57f2fe657ffb9e85ba96c92c82d8a2590d)
+			Operation on object of type javax.net.ssl.SSLContext object not completed. Expected call to init, getInstance
+			at statement: $z0 = specialinvoke r0.<org.apache.commons.net.ftp.FTP: boolean __lenientCheck(java.lang.String)>($r4)
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a8a2115d5bc9b5ab9de673f41c019e57f2fe657ffb9e85ba96c92c82d8a2590d)
+			Operation on object of type javax.net.ssl.SSLContext object not completed. Expected call to init, getInstance
+			at statement: $z0 = specialinvoke r0.<org.apache.commons.net.ftp.FTP: boolean __strictCheck(java.lang.String,java.lang.String)>($r4, $r8)
+
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a8a2115d5bc9b5ab9de673f41c019e57f2fe657ffb9e85ba96c92c82d8a2590d)
+			Operation on object of type javax.net.ssl.SSLContext object not completed. Expected call to init, getInstance
+			at statement: virtualinvoke $r9.<org.apache.commons.net.ProtocolCommandSupport: void fireReplyReceived(int,java.lang.String)>($i0, $r8)
+
+
+Findings in Java Class: com.dngames.mobilewebcam.PhotoService$UploadFTPPhotoTask
+
+	 in Method: java.lang.String doInBackground(byte[][])
+		IncompleteOperationError violating CrySL rule for javax.net.ssl.SSLContext (on Object #a8a2115d5bc9b5ab9de673f41c019e57f2fe657ffb9e85ba96c92c82d8a2590d)
+			Operation on object of type javax.net.ssl.SSLContext object not completed. Expected call to init, getInstance
+			at statement: specialinvoke $r37.<org.apache.commons.net.ftp.FTPClient: void <init>()>()
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 1
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 1
+	RequiredPredicateError: 3
+	IncompleteOperationError: 7
+=====================================================================

@@ -1,0 +1,219 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: r2
+		Type: byte[]
+		Statement: virtualinvoke r4.<java.security.SecureRandom: void nextBytes(byte[])>(r2)
+		Method: <org.openintents.util.SecureDelete: boolean delete(java.io.File)>
+		SHA-256: abe62d5aa0f62e53dca0df8c232b56e4f821fefb5de40e3cf36bbf4fe94b99a8
+		Secure: true
+	Object:
+		Variable: $r12
+		Type: byte[]
+		Statement: $r12 = interfaceinvoke $r11.<javax.crypto.SecretKey: byte[] getEncoded()>()
+		Method: <org.openintents.safe.CryptoHelper: java.lang.String encryptWithSessionKey(java.lang.String)>
+		SHA-256: bc5c50d4da83a7774d99ef713e536e451641d8c65ef7108f4e91121c5b8700a
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String,java.lang.String)>($r2, varReplacer1068)
+		Method: <org.openintents.safe.CryptoHelper: void initialize(int)>
+		SHA-256: 1b1d65995b84f23ecef0eb06fb603f6270809205859be96fb14624ae8843d13a
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: javax.crypto.spec.PBEParameterSpec
+		Statement: specialinvoke $r8.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r1, varReplacer1065)
+		Method: <org.openintents.safe.CryptoHelper: void initialize(int)>
+		SHA-256: e0b0f2c340ccad88d427c17d5d4752df9bbb7482f1f6254c00e9eab896ae41c
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: virtualinvoke r4.<java.security.SecureRandom: void nextBytes(byte[])>(r1)
+		Method: <org.openintents.util.SecureDelete: boolean delete(java.io.File)>
+		SHA-256: 3fdaae0f15e1ffbef1b4309e4dd3dee0843ce7c27e75f693bc3be055104db36
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: javax.crypto.SecretKey
+		Statement: $r13 = virtualinvoke $r12.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <org.openintents.safe.CryptoHelper: android.net.Uri encryptFileWithSessionKey(android.content.ContentResolver,android.net.Uri)>
+		SHA-256: a158b1569749324f9e827953c08caa01af4442927335208bc761acb834ca4097
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: $r2 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer1070)
+		Method: <org.openintents.safe.CryptoHelper: java.lang.String generateSalt()>
+		SHA-256: b2a9e19ae35344126b6e2e892a0e9cecadd6a5bd47bd37c803f5e265c1406fd2
+		Secure: true
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.security.SecureRandom: void nextBytes(byte[])>(r1)
+		Method: <org.openintents.safe.CryptoHelper: java.lang.String generateSalt()>
+		SHA-256: 7780ed451d021b415b827f9270790325faaa20b3222574762d97af9ac400c28
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>($r1, varReplacer588)
+		Method: <org.openintents.safe.CryptoHelper: void setPassword(java.lang.String)>
+		SHA-256: ae95a14d4b215d962e93582f79e2d4da30e471cd97fcd9124aadcf1a4860d115
+		Secure: false
+	Object:
+		Variable: r5
+		Type: byte[]
+		Statement: r5 = interfaceinvoke $r13.<javax.crypto.SecretKey: byte[] getEncoded()>()
+		Method: <org.openintents.safe.CryptoHelper: android.net.Uri encryptFileWithSessionKey(android.content.ContentResolver,android.net.Uri)>
+		SHA-256: 7ab3e223c0692fac685254d2213711a41b63d9c4edff395351780b53fbd890c1
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: javax.crypto.SecretKey
+		Statement: $r11 = virtualinvoke $r10.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <org.openintents.safe.CryptoHelper: java.lang.String encryptWithSessionKey(java.lang.String)>
+		SHA-256: 608b3eb56e7fbb3a4673be3dcff7d2351c60ef78ab689f5c8b41596432c39c4b
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.SecretKey
+		Statement: $r5 = virtualinvoke $r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r2)
+		Method: <org.openintents.safe.CryptoHelper: void setPassword(java.lang.String)>
+		SHA-256: 5cf19bca5a3ff1e36053d795cedd7b82682d6763f6ae56e4e3eda34e6a0f268a
+		Secure: false
+	Object:
+		Variable: r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r4.<java.security.SecureRandom: void <init>()>()
+		Method: <org.openintents.util.SecureDelete: boolean delete(java.io.File)>
+		SHA-256: 3c11fc4ab7a60bc725523ce6dfc2f3d31ae7ec4f51e4242dba46c5b4524740cb
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: javax.crypto.KeyGenerator
+		Statement: $r10 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer1813)
+		Method: <org.openintents.safe.CryptoHelper: java.lang.String encryptWithSessionKey(java.lang.String)>
+		SHA-256: 22f16c2f9d354a8596b24167e2ff7b55baa62b02acec25618bd5d128ae1d18a5
+		Secure: true
+	Object:
+		Variable: $r12
+		Type: javax.crypto.KeyGenerator
+		Statement: $r12 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer1842)
+		Method: <org.openintents.safe.CryptoHelper: android.net.Uri encryptFileWithSessionKey(android.content.ContentResolver,android.net.Uri)>
+		SHA-256: cf022338da6cc2ef95d8abb5bb4a85093aaa7c7be557bf602fbc6c8704a4765a
+		Secure: true
+
+Findings in Java Class: org.openintents.safe.CryptoHelper
+
+	 in Method: void setPassword(java.lang.String)
+		ForbiddenMethodError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Detected call to forbidden method void <init>(char[]) of class javax.crypto.spec.PBEKeySpec. Instead, call method <javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>.
+			at statement: specialinvoke $r13.<javax.crypto.spec.PBEKeySpec: void <init>(char[])>($r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r5 = virtualinvoke $r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r2)
+
+
+	 in Method: java.lang.String encryptWithSessionKey(java.lang.String)
+		ForbiddenMethodError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Detected call to forbidden method void <init>(char[]) of class javax.crypto.spec.PBEKeySpec. Instead, call method <javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>.
+			at statement: specialinvoke $r29.<javax.crypto.spec.PBEKeySpec: void <init>(char[])>($r13)
+
+
+	 in Method: java.lang.String decryptWithSessionKey(java.lang.String)
+		ForbiddenMethodError violating CrySL rule for javax.crypto.spec.PBEKeySpec
+			Detected call to forbidden method void <init>(char[]) of class javax.crypto.spec.PBEKeySpec. Instead, call method <javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>.
+			at statement: specialinvoke $r25.<javax.crypto.spec.PBEKeySpec: void <init>(char[])>($r9)
+
+
+	 in Method: void initialize(int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.PBEParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r8.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r1, varReplacer1065)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #1b1d65995b84f23ecef0eb06fb603f6270809205859be96fb14624ae8843d13a)
+			First parameter (with value "") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r3 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String,java.lang.String)>($r2, varReplacer1068)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEParameterSpec (on Object #e0b0f2c340ccad88d427c17d5d4752df9bbb7482f1f6254c00e9eab896ae41c)
+			Second parameter (with value 20)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke $r8.<javax.crypto.spec.PBEParameterSpec: void <init>(byte[],int)>($r1, varReplacer1065)
+
+
+Findings in Java Class: dummyMainClass
+
+	 in Method: void dummyMainMethod(java.lang.String[])
+		IncompleteOperationError violating CrySL rule for javax.crypto.Cipher (on Object #ae95a14d4b215d962e93582f79e2d4da30e471cd97fcd9124aadcf1a4860d115)
+			Operation on object of type javax.crypto.Cipher object not completed. Expected call to init
+			at statement: return
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 15
+
+	CryptoAnalysis found the following violations. For details see description above.
+	ConstraintError: 2
+	ForbiddenMethodError: 3
+	IncompleteOperationError: 1
+	RequiredPredicateError: 2
+=====================================================================

@@ -1,0 +1,209 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r0)
+		Method: <org.cry.otp.TOTP: byte[] hmac_sha1(java.lang.String,byte[],byte[])>
+		SHA-256: 4979b92f2f45766311c0e3dea8908cf181faa7c17a216377231fc1859d2ff183
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r0)
+		Method: <org.cry.otp.TOTP: byte[] hmac_sha1(java.lang.String,byte[],byte[])>
+		SHA-256: 9b84aa3882789532377aa90d50a93fee8420cd29245338dee79725d673cba646
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.cry.otp.MD5: void <init>(java.lang.String)>
+		SHA-256: 5ba3615d6db96d6551db61bdabbb9fae4ad6f823b386ca05c3787eddb98a88e8
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer8312)
+		Method: <org.cry.otp.HOTP: byte[] hmac_sha1(byte[],byte[])>
+		SHA-256: 72fa211c59e4ea832107bff9ac0b9137ba9c41f2a6f8110175a051dc20f6e6a6
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.MessageDigest
+		Statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9849)
+		Method: <org.cry.otp.MD5: void <init>(java.lang.String)>
+		SHA-256: fabeeda9662601e75c502bfca5fae9340a8b838d38e6fddcfba806c9ca1e4660
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer8313)
+		Method: <org.cry.otp.HOTP: byte[] hmac_sha1(byte[],byte[])>
+		SHA-256: 5be1ef0ea99397542d1ccb30dcd03c43635a3f97c87755520ce2840f0d4fb637
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer8294)
+		Method: <org.cry.otp.TOTP: byte[] hmac_sha1(java.lang.String,byte[],byte[])>
+		SHA-256: f780c9717285ad1d498a95708c0a73839a7c5e23afc7b487c1ae16c83ac5e1fe
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer8311)
+		Method: <org.cry.otp.HOTP: byte[] hmac_sha1(byte[],byte[])>
+		SHA-256: d482b0e50236d747ebb881f5b58787729753590268306aa2dd22913c94539156
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r0)
+		Method: <org.cry.otp.HOTP: byte[] hmac_sha1(byte[],byte[])>
+		SHA-256: f640d017ac7e3d53ac7d6ea7c47c196068b6c071af69900991d5ed5795db24bd
+		Secure: false
+	Object:
+		Variable: varReplacer8294
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer8294)
+		Method: <org.cry.otp.TOTP: byte[] hmac_sha1(java.lang.String,byte[],byte[])>
+		SHA-256: 99237c59ef0f2ec30746281569a7193283fba113754c9554f4571c2f13fa4da8
+		Secure: false
+	Object:
+		Variable: varReplacer8313
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer8313)
+		Method: <org.cry.otp.HOTP: byte[] hmac_sha1(byte[],byte[])>
+		SHA-256: 946d7e124218ec13f6ca7de9d23639c9635709880cfe85a135294c2e85d2f06e
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<javax.crypto.Mac: byte[] doFinal(byte[])>($r0)
+		Method: <org.cry.otp.HOTP: byte[] hmac_sha1(byte[],byte[])>
+		SHA-256: c795e528ffb3725ef25dff99474e291976b38e66640d24a6aacc52fda08bf701
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+		Method: <org.cry.otp.TOTP: byte[] hmac_sha1(java.lang.String,byte[],byte[])>
+		SHA-256: 1916e3186433cbe7b9c7aaca59c3988bad395948c379a564b4b2d405254f67cb
+		Secure: false
+
+Findings in Java Class: org.cry.otp.TOTP
+
+	 in Method: byte[] hmac_sha1(java.lang.String,byte[],byte[])
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #1916e3186433cbe7b9c7aaca59c3988bad395948c379a564b4b2d405254f67cb)
+			First parameter (with value "HmacSHA1") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #f780c9717285ad1d498a95708c0a73839a7c5e23afc7b487c1ae16c83ac5e1fe)
+			Second parameter (with value "RAW") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer8294)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer8294)
+
+
+Findings in Java Class: org.cry.otp.HOTP
+
+	 in Method: byte[] hmac_sha1(byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #5be1ef0ea99397542d1ccb30dcd03c43635a3f97c87755520ce2840f0d4fb637)
+			Second parameter (with value "RAW") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer8313)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, varReplacer8313)
+
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #72fa211c59e4ea832107bff9ac0b9137ba9c41f2a6f8110175a051dc20f6e6a6)
+			First parameter (with value "HMAC-SHA-1") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer8312)
+
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #d482b0e50236d747ebb881f5b58787729753590268306aa2dd22913c94539156)
+			First parameter (with value "HmacSHA1") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer8311)
+
+
+Findings in Java Class: org.cry.otp.MD5
+
+	 in Method: void <init>(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #fabeeda9662601e75c502bfca5fae9340a8b838d38e6fddcfba806c9ca1e4660)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r3 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer9849)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 13
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 4
+	ConstraintError: 6
+=====================================================================

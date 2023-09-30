@@ -1,0 +1,295 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: varReplacer7572
+		Type: java.lang.String
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7572)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: javax.crypto.spec.SecretKeySpec hashPassphrase(char[],byte[])>
+		SHA-256: e4e0492f5b569607d183985868d47476a47e47c24c1e8da964da1ebef8f85393
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r0, $r1, varReplacer7573, varReplacer7574)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: javax.crypto.spec.SecretKeySpec hashPassphrase(char[],byte[])>
+		SHA-256: f3e00c5a91df694d6663fe5b2a12b62aec69a37a2f25b67b4503633edc50514
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.SecretKey
+		Statement: $r2 = virtualinvoke $r1.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: javax.crypto.SecretKey generateSecretKey()>
+		SHA-256: c2078535485d3c62dbf7b8d97fda6258854558a0bc1ead8560d36f90741cddc9
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.SecretKey
+		Statement: $r6 = virtualinvoke $r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r2)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: javax.crypto.spec.SecretKeySpec hashPassphrase(char[],byte[])>
+		SHA-256: b89b7611207a5f0816b3ec0c503386dec83f8dc8d485e47800b6fe8686ef7ea0
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7572)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: javax.crypto.spec.SecretKeySpec hashPassphrase(char[],byte[])>
+		SHA-256: 8782feeb1a804b2002549f884e24d65d7405be30a0802689c9175cab086e4e38
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r1)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: byte[] encryptSecretKey(javax.crypto.SecretKey,byte[],byte[])>
+		SHA-256: 234b218a41e745e3c5b949bd1cf6405dde774d61fea29d6fae616477cd911f46
+		Secure: true
+	Object:
+		Variable: varReplacer7626
+		Type: java.lang.String
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7626)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: void <init>(byte[])>
+		SHA-256: 4a8229b43dd11e3e91e21ab84aa9c09dbcbfa05b6dcbde277e3fdfc8a9da7f6f
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r1.<java.security.SecureRandom: void <init>()>()
+		Method: <info.guardianproject.cacheword.PRNGFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: 5a9473181c4b29a47db06af88a317e845cb17b53b7f6803df239f2a3b2a9fdf3
+		Secure: true
+	Object:
+		Variable: varReplacer7574
+		Type: int
+		Statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r0, $r1, varReplacer7573, varReplacer7574)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: javax.crypto.spec.SecretKeySpec hashPassphrase(char[],byte[])>
+		SHA-256: c69f23db746e03266b465b1b3be001742c1497a2d35848208425873715b9f584
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.security.SecureRandom: void nextBytes(byte[])>(r0)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: byte[] generateIv(int)>
+		SHA-256: 94e63b2ac536b58c5ef858cbaac55799b550d8217fdcce11a0cd308e0b1a60c6
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7566)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: byte[] encryptSecretKey(javax.crypto.SecretKey,byte[],byte[])>
+		SHA-256: fc696015dfdff17a87c1a08441fd27e1dd232db4fa112c3ddae0d406aa9e3dc8
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: byte[]
+		Statement: $r9 = interfaceinvoke $r8.<javax.crypto.SecretKey: byte[] getEncoded()>()
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: info.guardianproject.cacheword.PassphraseSecrets initializeSecrets(android.content.Context,char[])>
+		SHA-256: 55609172171167f282ed9d6c3ffb644a6cfb9c1ad24d25f7048f002e96d83de7
+		Secure: true
+	Object:
+		Variable: r1
+		Type: java.security.SecureRandom
+		Statement: r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer1293)
+		Method: <info.guardianproject.cacheword.PRNGFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: 53d53fd64e6093ca04d643c04660d3a6f8b90644a29cd851ecd0eb5692b7e069
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7626)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: void <init>(byte[])>
+		SHA-256: 197b4ea571ba1fff621f20dbd0732032708a1ca11e3ea744d95ad0d668d86cf2
+		Secure: false
+	Object:
+		Variable: r0
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.security.SecureRandom: void nextBytes(byte[])>(r0)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: byte[] generateSalt(int)>
+		SHA-256: c3529a8fe53047563d30b209f6b7ecd33e599d5ef25246b1eba24107f265f680
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: $r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer7576)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: byte[] generateSalt(int)>
+		SHA-256: b04d4e4b44fd6721c89b9b9ddc677868d2b471ad44b8e09939e85804ac07083a
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7578)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: byte[] decryptSecretKey(javax.crypto.SecretKey,byte[],byte[])>
+		SHA-256: c916048f7cb4a674b1835a93f89dd4f4fd4d10728e8383a169bc1290b2f1797f
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r1)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: byte[] decryptSecretKey(javax.crypto.SecretKey,byte[],byte[])>
+		SHA-256: 9daec93c19921dd9312470ce5c9651f5cf614e4a625a6dd0339d9edf39139946
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: javax.crypto.KeyGenerator
+		Statement: $r1 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String)>(varReplacer7570)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: javax.crypto.SecretKey generateSecretKey()>
+		SHA-256: c7ef20b6203b5763c29531fb9fb66629e931d744161c32c529a6ca42b6b5d1c6
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: $r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer7575)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: byte[] generateIv(int)>
+		SHA-256: 91f9b3f485e8c4362632617ae572d24cb3906e991e788d20f6dcb2dee2a6de4
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r4 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer7571)
+		Method: <info.guardianproject.cacheword.PassphraseSecrets: javax.crypto.spec.SecretKeySpec hashPassphrase(char[],byte[])>
+		SHA-256: 9de9b1c733f96b6cb1ef6358be5aa8eac18c968ef4dc8f4963b6d94cfdba0514
+		Secure: false
+
+Findings in Java Class: info.guardianproject.cacheword.PassphraseSecrets
+
+	 in Method: byte[] encryptSecretKey(javax.crypto.SecretKey,byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7567, $r0, $r3)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7567, $r0, $r3)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #fc696015dfdff17a87c1a08441fd27e1dd232db4fa112c3ddae0d406aa9e3dc8)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+
+	 in Method: javax.crypto.spec.SecretKeySpec hashPassphrase(char[],byte[])
+		ConstraintError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #f3e00c5a91df694d6663fe5b2a12b62aec69a37a2f25b67b4503633edc50514)
+			Third parameter (with value 100)Variable iterationCountmust be  at least 10000
+			at statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r0, $r1, varReplacer7573, varReplacer7574)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #f3e00c5a91df694d6663fe5b2a12b62aec69a37a2f25b67b4503633edc50514)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r0, $r1, varReplacer7573, varReplacer7574)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #f3e00c5a91df694d6663fe5b2a12b62aec69a37a2f25b67b4503633edc50514)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r0, $r1, varReplacer7573, varReplacer7574)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r6 = virtualinvoke $r4.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>(r2)
+
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #f3e00c5a91df694d6663fe5b2a12b62aec69a37a2f25b67b4503633edc50514)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: staticinvoke <info.guardianproject.cacheword.Wiper: void wipe(javax.crypto.spec.PBEKeySpec)>(r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7572)
+
+		ConstraintError violating CrySL rule for javax.crypto.SecretKeyFactory (on Object #9de9b1c733f96b6cb1ef6358be5aa8eac18c968ef4dc8f4963b6d94cfdba0514)
+			First parameter (with value "PBKDF2WithHmacSHA1") should be any of {PBKDF2WithHmacSHA512, PBKDF2WithHmacSHA384, PBKDF2WithHmacSHA256, PBKDF2WithHmacSHA224, PBEWithHmacSHA512AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA384AndAES_128, PBEWithHmacSHA224AndAES_128, PBEWithHmacSHA256AndAES_128, PBEWithHmacSHA224AndAES_256, PBEWithHmacSHA256AndAES_256, PBEWithHmacSHA384AndAES_256, PBEWithHmacSHA512AndAES_256}
+			at statement: $r4 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>(varReplacer7571)
+
+		NeverTypeOfError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #f3e00c5a91df694d6663fe5b2a12b62aec69a37a2f25b67b4503633edc50514)
+			First parameter should never be of type java.lang.String.
+			at statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r0, $r1, varReplacer7573, varReplacer7574)
+
+		HardCodedError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #f3e00c5a91df694d6663fe5b2a12b62aec69a37a2f25b67b4503633edc50514)
+			First parameter should never be hardcoded.
+			at statement: specialinvoke r2.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r0, $r1, varReplacer7573, varReplacer7574)
+
+
+	 in Method: byte[] decryptSecretKey(javax.crypto.SecretKey,byte[],byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7577, $r0, $r3)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #c916048f7cb4a674b1835a93f89dd4f4fd4d10728e8383a169bc1290b2f1797f)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7577, $r0, $r3)
+
+
+	 in Method: void <init>(byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r1, varReplacer7626)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 21
+
+	CryptoAnalysis found the following violations. For details see description above.
+	HardCodedError: 2
+	RequiredPredicateError: 8
+	NeverTypeOfError: 2
+	IncompleteOperationError: 1
+	ConstraintError: 2
+	TypestateError: 2
+=====================================================================

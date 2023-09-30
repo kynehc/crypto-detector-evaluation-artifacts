@@ -1,0 +1,248 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r4.<java.security.Signature: byte[] sign()>()
+		Method: <io.jsonwebtoken.impl.crypto.RsaSigner: byte[] doSign(byte[])>
+		SHA-256: 98f07673a5eb06121abff36bf0c3b12a7dbc2d4e321f0ed06df14792992e8580
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r0.<java.security.SecureRandom: void <init>()>()
+		Method: <io.jsonwebtoken.impl.crypto.SignatureProvider: void <clinit>()>
+		SHA-256: bd77c10f408e393bf6a88a9f259346bb12383ce9f5ef6237ca9f00f578063397
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.SecureRandom: byte[] generateSeed(int)>(varReplacer1012)
+		Method: <b.a.a.a.d: byte[] a()>
+		SHA-256: 451fb9566ad9b5cf910746083be8e781c04ec4693588c4cce1051348ceb7cb8b
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Cipher
+		Statement: $r4 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer609)
+		Method: <b.a.a.a.d: byte[] a(int,byte[],javax.crypto.SecretKey,byte[])>
+		SHA-256: b05e45ba3a3737a09010458fa4da70dc238faa013888dcc9c93737ce6a718662
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.net.ssl.SSLContext
+		Statement: $r5 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1767)
+		Method: <org.jsoup.helper.HttpConnection$Response: void b()>
+		SHA-256: 2ef25fa188c10b27b4b65531297d4b455fa8dae37c545a1ec4d84a5324185725
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: virtualinvoke $r0.<java.security.SecureRandom: void nextBytes(byte[])>($r1)
+		Method: <io.jsonwebtoken.impl.crypto.SignatureProvider: void <clinit>()>
+		SHA-256: d777e14eab337e09fad46d648071f974b3d06ed5ddbe27d0fbb553277a45c475
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <b.a.a.a.d: byte[] a(int,byte[],javax.crypto.SecretKey,byte[])>
+		SHA-256: da462c28f4e5f398cbf1bc11f5ed7c89860d8dd678e1e46075c432a2fd21b771
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r1, varReplacer932, $i0, varReplacer933)
+		Method: <b.a.a.a.d: javax.crypto.SecretKey b(java.lang.String)>
+		SHA-256: 638eff4779a7f19d3ecbe38da2bd7929bb938c7e5987b6e7bb93f6d98be36e0d
+		Secure: false
+	Object:
+		Variable: $r17
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r2)
+		Method: <io.jsonwebtoken.impl.DefaultJwtBuilder: java.lang.String compact()>
+		SHA-256: acbe23ab8df2226c85693c30392be8e73c278f1adf2e96be60b9371fd3344b5a
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: java.security.Signature
+		Statement: $r3 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r2)
+		Method: <io.jsonwebtoken.impl.crypto.SignatureProvider: java.security.Signature getSignatureInstance()>
+		SHA-256: 5245505faa1caa67a21a8f77bf7afcdbd914eeb8cbdcc06c6e02f21254765066
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <b.a.a.a.d: byte[] a()>
+		SHA-256: 4566a734bc941a83e01be9765fc5723bbf4ef1417f641e7d6a2d01b4e3953447
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.Mac
+		Statement: $r4 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>($r3)
+		Method: <io.jsonwebtoken.impl.crypto.MacSigner: javax.crypto.Mac doGetMacInstance()>
+		SHA-256: a1d1f1a96b2229cb8032249f276d2e6d47471c6890809e6db563b576e5d67a47
+		Secure: false
+	Object:
+		Variable: varReplacer933
+		Type: java.lang.String
+		Statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r1, varReplacer932, $i0, varReplacer933)
+		Method: <b.a.a.a.d: javax.crypto.SecretKey b(java.lang.String)>
+		SHA-256: 9541adfdf298ee974e931307fc87288e5cb551783234658144608f64d70dc652
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r2.<javax.crypto.Mac: byte[] doFinal(byte[])>($r1)
+		Method: <io.jsonwebtoken.impl.crypto.MacSigner: byte[] sign(byte[])>
+		SHA-256: fb9b5309c47033cd7609de1d4dabb9acd46aaea0d84eb6f36565412c8a88ab30
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r4.<java.security.Signature: byte[] sign()>()
+		Method: <io.jsonwebtoken.impl.crypto.EllipticCurveSigner: byte[] doSign(byte[])>
+		SHA-256: 1c50c9c03a1e85f4143def81dc9f4534f9a40d413b2e1d723db91a5aa4923b41
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r8.<java.security.SecureRandom: void <init>()>()
+		Method: <org.jsoup.helper.HttpConnection$Response: void b()>
+		SHA-256: cf58b5a0ae0f4f4659e59fae2bea60a0c2a01457cb8d3378948e732ffcc8f2
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.lang.String
+		Statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r2)
+		Method: <io.jsonwebtoken.impl.DefaultJwtBuilder: java.lang.String compact()>
+		SHA-256: 964c9f1b6b396b886edf04934f11f4d6b6ad8e598847147e2916b08879ceb222
+		Secure: false
+
+Findings in Java Class: b.a.a.a.d
+
+	 in Method: byte[] a(int,byte[],javax.crypto.SecretKey,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #b05e45ba3a3737a09010458fa4da70dc238faa013888dcc9c93737ce6a718662)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r0 = virtualinvoke $r4.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r0)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r3)
+
+
+	 in Method: javax.crypto.SecretKey b(java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r0.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],int,int,java.lang.String)>($r1, varReplacer932, $i0, varReplacer933)
+
+
+Findings in Java Class: org.jsoup.helper.HttpConnection$Response
+
+	 in Method: void b()
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1765, $r10, $r0)
+
+		ConstraintError violating CrySL rule for javax.net.ssl.SSLContext (on Object #2ef25fa188c10b27b4b65531297d4b455fa8dae37c545a1ec4d84a5324185725)
+			First parameter (with value "SSL") should be any of {TLSv1.2, TLSv1.3}
+			at statement: $r5 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer1767)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1765, $r10, $r0)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r5.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer1765, $r10, $r0)
+
+
+Findings in Java Class: io.jsonwebtoken.impl.crypto.RsaSigner
+
+	 in Method: byte[] doSign(byte[])
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPrivkey
+			at statement: virtualinvoke $r4.<java.security.Signature: void initSign(java.security.PrivateKey)>($r3)
+
+
+Findings in Java Class: io.jsonwebtoken.impl.crypto.MacSigner
+
+	 in Method: javax.crypto.Mac doGetMacInstance()
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r4.<javax.crypto.Mac: void init(java.security.Key)>($r1)
+
+
+Findings in Java Class: io.jsonwebtoken.impl.DefaultJwtBuilder
+
+	 in Method: java.lang.String compact()
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r17.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r2)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 17
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 1
+	RequiredPredicateError: 8
+	ConstraintError: 1
+=====================================================================

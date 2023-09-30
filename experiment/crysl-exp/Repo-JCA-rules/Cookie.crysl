@@ -1,0 +1,22 @@
+SPEC javax.servlet.http.Cookie
+
+OBJECTS
+	java.lang.String name;
+	java.lang.String value;
+	boolean flag;
+
+EVENTS
+	c1: Cookie(name, value);
+	Con := c1;
+	
+	s1: setSecure(flag);
+	SetSecure := s1;
+	
+ORDER
+	Con, SetSecure
+    
+CONSTRAINTS
+	flag in {true};
+
+ENSURES
+	generatedCookie[this];

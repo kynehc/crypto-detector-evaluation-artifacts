@@ -1,0 +1,327 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer83)
+		Method: <net.bierbaumer.otp_authenticator.EncryptionHelper: byte[] decrypt(javax.crypto.SecretKey,javax.crypto.spec.IvParameterSpec,byte[])>
+		SHA-256: 7f254cd6e131ff407813c5f93c93751e65cc108cec89a037054af7a6c4b2fa3a
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>(r2)
+		Method: <net.bierbaumer.otp_authenticator.EncryptionHelper: byte[] encrypt(javax.crypto.SecretKey,byte[])>
+		SHA-256: 86b0556cadf7b461c2cc41eaa28f01599cc391cd8afc5d59788a78e84a6e9052
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r3.<javax.crypto.Mac: byte[] doFinal(byte[])>(r1)
+		Method: <net.bierbaumer.otp_authenticator.TOTPHelper: int generate(byte[],long,int)>
+		SHA-256: afe4c043435fec28a82aa272e82c458f1818065e71170d257dd4f5eda24d3a61
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer81)
+		Method: <net.bierbaumer.otp_authenticator.EncryptionHelper: javax.crypto.SecretKey loadOrGenerateKeys(android.content.Context,java.io.File)>
+		SHA-256: e0abeb7553a4eca49fa5d3fe48f05df755247fdf99790661c8038537e6479619
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.PrivateKey
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyPair: java.security.PrivateKey getPrivate()>()
+		Method: <net.bierbaumer.otp_authenticator.SecretKeyWrapper: javax.crypto.SecretKey unwrap(byte[])>
+		SHA-256: 9147709239ec6c6fc49ed972a0c2fecd39f5da5c37924f0477ad9f1724561f01
+		Secure: false
+	Object:
+		Variable: r2
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer295)
+		Method: <net.bierbaumer.otp_authenticator.TOTPHelper: int generate(byte[],long,int)>
+		SHA-256: f85e98ea85bafd3c108ece3251b861aa9e0a935be6e4aa5f333a270aa40ba4ae
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Mac
+		Statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer293)
+		Method: <net.bierbaumer.otp_authenticator.TOTPHelper: int generate(byte[],long,int)>
+		SHA-256: 6ced1abc6d359d9589c5a1ae5d1603e04b31545f58e63ea68eea7636c9f157aa
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.PublicKey
+		Statement: $r4 = virtualinvoke $r3.<java.security.KeyPair: java.security.PublicKey getPublic()>()
+		Method: <net.bierbaumer.otp_authenticator.SecretKeyWrapper: byte[] wrap(javax.crypto.SecretKey)>
+		SHA-256: 7a4a5ad4d02675dfaa88f8e3387a978fbe3210dc9b064e57db56716f5f529f9a
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <net.bierbaumer.otp_authenticator.EncryptionHelper: byte[] decrypt(javax.crypto.SecretKey,byte[])>
+		SHA-256: 8661c6bb9eb7dee5917d699e52332cc8b2fa0bb6780bb7141e98ee0c9e3daff4
+		Secure: false
+	Object:
+		Variable: r1
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r3.<javax.crypto.Mac: byte[] doFinal(byte[])>(r1)
+		Method: <net.bierbaumer.otp_authenticator.TOTPHelper: int generate(byte[],long,int)>
+		SHA-256: 2d0ecb203bfd7e24fa4a00588161dab1e538fb7249d972b0e0fd1f4fb4513a8e
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.KeyPair
+		Statement: specialinvoke $r7.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r9, $r10)
+		Method: <net.bierbaumer.otp_authenticator.SecretKeyWrapper: void <init>(android.content.Context,java.lang.String)>
+		SHA-256: 793cd510b8f3e288a973253daeda56e5c90baf3eb13e090f0ccbe4cd0a9a045
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r5.<java.security.SecureRandom: void <init>()>()
+		Method: <net.bierbaumer.otp_authenticator.EncryptionHelper: javax.crypto.SecretKey loadOrGenerateKeys(android.content.Context,java.io.File)>
+		SHA-256: 207d1156c48e9b7e3dbd8f7d3338668820d66675174baa7d6726febb45d0f836
+		Secure: true
+	Object:
+		Variable: varReplacer295
+		Type: java.lang.String
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer295)
+		Method: <net.bierbaumer.otp_authenticator.TOTPHelper: int generate(byte[],long,int)>
+		SHA-256: 5809282c772ef3c82fb3af383e876ddf8c7768962fc66f3c6b48f1d02003d469
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.KeyStore
+		Statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer311)
+		Method: <net.bierbaumer.otp_authenticator.SecretKeyWrapper: void <init>(android.content.Context,java.lang.String)>
+		SHA-256: 241cd53efe07febff8d2265ff6059caac410f8d5f22beb7dac48a8b9eb520b65
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke r1.<java.security.SecureRandom: void <init>()>()
+		Method: <net.bierbaumer.otp_authenticator.PRNGFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: 5a9473181c4b29a47db06af88a317e845cb17b53b7f6803df239f2a3b2a9fdf3
+		Secure: true
+	Object:
+		Variable: r3
+		Type: byte[]
+		Statement: virtualinvoke $r5.<java.security.SecureRandom: void nextBytes(byte[])>(r3)
+		Method: <net.bierbaumer.otp_authenticator.EncryptionHelper: javax.crypto.SecretKey loadOrGenerateKeys(android.content.Context,java.io.File)>
+		SHA-256: a363a12eb7018f78bdf991b240261d71bb2de8016fbaecf3a443e220274f0dc3
+		Secure: true
+	Object:
+		Variable: varReplacer81
+		Type: java.lang.String
+		Statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer81)
+		Method: <net.bierbaumer.otp_authenticator.EncryptionHelper: javax.crypto.SecretKey loadOrGenerateKeys(android.content.Context,java.io.File)>
+		SHA-256: 1f438549e3e84ad160a240087cd842f89a4c9c8980c88933cfcddcfeee837d4
+		Secure: false
+	Object:
+		Variable: r2
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.SecureRandom: void nextBytes(byte[])>(r2)
+		Method: <net.bierbaumer.otp_authenticator.EncryptionHelper: byte[] encrypt(javax.crypto.SecretKey,byte[])>
+		SHA-256: 58ed5c45eeb77dd94ec7407765f8b1044e9bd173ac12dc72822a2cbe2359e98
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer310)
+		Method: <net.bierbaumer.otp_authenticator.SecretKeyWrapper: void <init>(android.content.Context,java.lang.String)>
+		SHA-256: 404d81a6cfd5dbc53d03b82903757f429d30d668a2678de00bc56f4af23d14a3
+		Secure: false
+	Object:
+		Variable: r1
+		Type: java.security.SecureRandom
+		Statement: r1 = staticinvoke <java.security.SecureRandom: java.security.SecureRandom getInstance(java.lang.String)>(varReplacer12)
+		Method: <net.bierbaumer.otp_authenticator.PRNGFixes: void installLinuxPRNGSecureRandom()>
+		SHA-256: cd59d7d79cad000eef413439b6ec3a0cb48d1ea80cc74dd72a9866c3aa3e399f
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: java.security.KeyPairGenerator
+		Statement: $r10 = staticinvoke <java.security.KeyPairGenerator: java.security.KeyPairGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer318, varReplacer319)
+		Method: <net.bierbaumer.otp_authenticator.SecretKeyWrapper: void generateKeyPair(android.content.Context,java.lang.String)>
+		SHA-256: 9183c125d7f5178aedcb12e490c1cbadb9fd892b8bef7ae20e2abb3b6e43b379
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r4.<java.security.SecureRandom: void <init>()>()
+		Method: <net.bierbaumer.otp_authenticator.EncryptionHelper: byte[] encrypt(javax.crypto.SecretKey,byte[])>
+		SHA-256: d8b4d5a0e9a64ecaf8f903e41f81974b6055fd3c9f7a26465b9b0b46cb564437
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.Cipher
+		Statement: $r3 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer5696)
+		Method: <net.bierbaumer.otp_authenticator.EncryptionHelper: byte[] encrypt(javax.crypto.SecretKey,javax.crypto.spec.IvParameterSpec,byte[])>
+		SHA-256: 2ca754c00e79fd1e2591ac180f61b26b30b98df636f270292e781f00899aa45c
+		Secure: false
+
+Findings in Java Class: net.bierbaumer.otp_authenticator.EncryptionHelper
+
+	 in Method: byte[] decrypt(javax.crypto.SecretKey,javax.crypto.spec.IvParameterSpec,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #7f254cd6e131ff407813c5f93c93751e65cc108cec89a037054af7a6c4b2fa3a)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r3.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer84, $r0, $r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer84, $r0, $r1)
+
+
+	 in Method: byte[] encrypt(javax.crypto.SecretKey,javax.crypto.spec.IvParameterSpec,byte[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #2ca754c00e79fd1e2591ac180f61b26b30b98df636f270292e781f00899aa45c)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r2 = virtualinvoke $r3.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r2)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer5695, $r0, $r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer5695, $r0, $r1)
+
+
+	 in Method: javax.crypto.SecretKey loadOrGenerateKeys(android.content.Context,java.io.File)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>(r3, varReplacer81)
+
+
+	 in Method: byte[] decrypt(javax.crypto.SecretKey,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+
+
+Findings in Java Class: net.bierbaumer.otp_authenticator.TOTPHelper
+
+	 in Method: int generate(byte[],long,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer295)
+
+		ConstraintError violating CrySL rule for javax.crypto.Mac (on Object #6ced1abc6d359d9589c5a1ae5d1603e04b31545f58e63ea68eea7636c9f157aa)
+			First parameter (with value "HmacSHA1") should be any of {HmacSHA256, HmacSHA384, HmacSHA512, HmacPBESHA1, PBEWithHmacSHA1, PBEWithHmacSHA224, PBEWithHmacSHA256, PBEWithHmacSHA384, PBEWithHmacSHA512}
+			at statement: $r3 = staticinvoke <javax.crypto.Mac: javax.crypto.Mac getInstance(java.lang.String)>(varReplacer293)
+
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #f85e98ea85bafd3c108ece3251b861aa9e0a935be6e4aa5f333a270aa40ba4ae)
+			Second parameter (with value "HmacSHA1") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke r2.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r0, varReplacer295)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Mac
+			First parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r3.<javax.crypto.Mac: void init(java.security.Key)>(r2)
+
+
+Findings in Java Class: net.bierbaumer.otp_authenticator.SecretKeyWrapper
+
+	 in Method: byte[] wrap(javax.crypto.SecretKey)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #404d81a6cfd5dbc53d03b82903757f429d30d668a2678de00bc56f4af23d14a3)
+			Unexpected call to method wrap on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r5 = virtualinvoke $r2.<javax.crypto.Cipher: byte[] wrap(java.security.Key)>($r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r2.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer313, $r4)
+
+
+	 in Method: void <init>(android.content.Context,java.lang.String)
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #241cd53efe07febff8d2265ff6059caac410f8d5f22beb7dac48a8b9eb520b65)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to getKey
+			at statement: $r5 = virtualinvoke $r4.<java.security.KeyStore: java.security.KeyStore$Entry getEntry(java.lang.String,java.security.KeyStore$ProtectionParameter)>($r2, varReplacer312)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			First parameter was not properly generated as generatedPubkey
+			at statement: specialinvoke $r7.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r9, $r10)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyPair
+			Second parameter was not properly generated as generatedPrivkey
+			at statement: specialinvoke $r7.<java.security.KeyPair: void <init>(java.security.PublicKey,java.security.PrivateKey)>($r9, $r10)
+
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #241cd53efe07febff8d2265ff6059caac410f8d5f22beb7dac48a8b9eb520b65)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r4 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer311)
+
+
+	 in Method: void generateKeyPair(android.content.Context,java.lang.String)
+		RequiredPredicateError violating CrySL rule for java.security.KeyPairGenerator
+			First parameter was not properly generated as preparedRSA
+			at statement: virtualinvoke $r10.<java.security.KeyPairGenerator: void initialize(java.security.spec.AlgorithmParameterSpec)>($r9)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 23
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 12
+	TypestateError: 3
+	ConstraintError: 3
+	IncompleteOperationError: 1
+=====================================================================

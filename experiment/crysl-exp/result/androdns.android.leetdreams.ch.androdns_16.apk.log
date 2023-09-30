@@ -1,0 +1,260 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r1
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r1.<java.security.SecureRandom: void <init>()>()
+		Method: <org.xbill.DNS.UDPClient: void <clinit>()>
+		SHA-256: fcebb9e881f86bd38585606df0d0e993ca0aa8852fe9338092fa2df92cf72b68
+		Secure: true
+	Object:
+		Variable: $r11
+		Type: java.security.spec.ECParameterSpec
+		Statement: specialinvoke $r11.<java.security.spec.ECParameterSpec: void <init>(java.security.spec.EllipticCurve,java.security.spec.ECPoint,java.math.BigInteger,int)>($r8, $r12, $r7, varReplacer9087)
+		Method: <org.xbill.DNS.DNSSEC$ECKeyInfo: void <init>(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>
+		SHA-256: 946fb7096f637b3349813e11c597920aacc05423d61f1a166e4ff27967164c94
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.Signature
+		Statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r6)
+		Method: <org.xbill.DNS.DNSSEC: void verify(java.security.PublicKey,int,byte[],byte[])>
+		SHA-256: 95287be255a73c39a69daec863cb1dfa92694c605e9172431dc7f10a540c5a3a
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: java.security.PublicKey
+		Statement: $r9 = virtualinvoke $r8.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r0)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toDSAPublicKey(org.xbill.DNS.KEYBase)>
+		SHA-256: 904f1fdd07439d8f4ad1610aef9b3294d8c0b84f2e9b75b41ba922206f927ee1
+		Secure: false
+	Object:
+		Variable: varReplacer9138
+		Type: java.lang.String
+		Statement: $r7 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9138)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toECDSAPublicKey(org.xbill.DNS.KEYBase,org.xbill.DNS.DNSSEC$ECKeyInfo)>
+		SHA-256: e951a2ad6a9e40079ae1acccf3b74304555df675ef7c045a9be828eaed1f86dc
+		Secure: false
+	Object:
+		Variable: varReplacer9136
+		Type: java.lang.String
+		Statement: $r8 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9136)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toDSAPublicKey(org.xbill.DNS.KEYBase)>
+		SHA-256: b0fd371e360bfa7b96121d269b6fd91bc2a6e69cbc1c3317dd89929196ea43fd
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.PublicKey
+		Statement: $r10 = virtualinvoke $r7.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r8)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toECDSAPublicKey(org.xbill.DNS.KEYBase,org.xbill.DNS.DNSSEC$ECKeyInfo)>
+		SHA-256: 54ac90fdfd1a88b04719c1a62d4681918e86bd83942cae25589d31d70ba53932
+		Secure: false
+	Object:
+		Variable: varReplacer9137
+		Type: java.lang.String
+		Statement: $r7 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9137)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toECGOSTPublicKey(org.xbill.DNS.KEYBase,org.xbill.DNS.DNSSEC$ECKeyInfo)>
+		SHA-256: db7e9075725eef14566fb38b7b389ccfd068df216594631eabd62aa6f6d58db0
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.KeyFactory
+		Statement: $r7 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9137)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toECGOSTPublicKey(org.xbill.DNS.KEYBase,org.xbill.DNS.DNSSEC$ECKeyInfo)>
+		SHA-256: 8e754de90dc53ee5dc07c073dc7b26c0f1e385856726d2e84f232f1e802d0c8
+		Secure: false
+	Object:
+		Variable: varReplacer9134
+		Type: java.lang.String
+		Statement: $r6 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9134)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toRSAPublicKey(org.xbill.DNS.KEYBase)>
+		SHA-256: 2f62c4edfa51b66a881b8995cf7f02fae17859e9e0ba7740d7ed8291c68e4bb
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r4)
+		Method: <org.xbill.DNS.DNSSEC: void verify(java.security.PublicKey,int,byte[],byte[])>
+		SHA-256: 95e3425e4865275a68d9d1ef4ac0caaaac3367edb0bb0b0c27e3af1c1541a47d
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: java.security.PublicKey
+		Statement: $r10 = virtualinvoke $r7.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r8)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toECGOSTPublicKey(org.xbill.DNS.KEYBase,org.xbill.DNS.DNSSEC$ECKeyInfo)>
+		SHA-256: 64e52ef553e9859c8522514977df3723a16793c6ec0791896ce9cbda0dde57a0
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.KeyFactory
+		Statement: $r7 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9138)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toECDSAPublicKey(org.xbill.DNS.KEYBase,org.xbill.DNS.DNSSEC$ECKeyInfo)>
+		SHA-256: 70b7f2eee29eac6839c5ea05c1464502f4398f0baf15d3bb7ef2dced9460c1a9
+		Secure: false
+	Object:
+		Variable: $z0
+		Type: boolean
+		Statement: $z0 = virtualinvoke $r7.<java.security.Signature: boolean verify(byte[])>($r4)
+		Method: <org.xbill.DNS.DNSSEC: void verify(java.security.PublicKey,int,byte[],byte[])>
+		SHA-256: c75270b649970afbf2574a9d19297891743068e415a2349e9d3872559bb06038
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.net.ssl.SSLContext
+		Statement: $r9 = staticinvoke <javax.net.ssl.SSLContext: javax.net.ssl.SSLContext getInstance(java.lang.String)>(varReplacer4116)
+		Method: <androdns.android.leetdreams.ch.androdns.SimpleDoTResolver: byte[] sendAndReceive(org.xbill.DNS.Message)>
+		SHA-256: 3138bc8e3a9d46760d3abf115d43fd606f0c1ffa7b576004e48982452ef64e0b
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.security.KeyFactory
+		Statement: $r8 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9136)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toDSAPublicKey(org.xbill.DNS.KEYBase)>
+		SHA-256: f5af6e5964fc25275b8c8fd23119bb92da48a5c3ad5fdfc174d9bff45299f79
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.security.KeyFactory
+		Statement: $r6 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9134)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toRSAPublicKey(org.xbill.DNS.KEYBase)>
+		SHA-256: add8f7f227683838acf135c0c77586af6cd217d99bb3889a71e2455cd1c0e25d
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: java.security.PublicKey
+		Statement: $r7 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r0)
+		Method: <org.xbill.DNS.DNSSEC: java.security.PublicKey toRSAPublicKey(org.xbill.DNS.KEYBase)>
+		SHA-256: dc4cb16df0c3925b5f59059ea264b9d666a8d1b358f096f57e435e076dac1870
+		Secure: false
+
+Findings in Java Class: org.xbill.DNS.DNSSEC
+
+	 in Method: void verify(java.security.PublicKey,int,byte[],byte[])
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #95287be255a73c39a69daec863cb1dfa92694c605e9172431dc7f10a540c5a3a)
+			First parameter (with value "GOST3411withECGOST3410") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r6)
+
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #95287be255a73c39a69daec863cb1dfa92694c605e9172431dc7f10a540c5a3a)
+			First parameter (with value "SHA1withRSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r6)
+
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #95287be255a73c39a69daec863cb1dfa92694c605e9172431dc7f10a540c5a3a)
+			First parameter (with value "MD5withRSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r6)
+
+		ConstraintError violating CrySL rule for java.security.Signature (on Object #95287be255a73c39a69daec863cb1dfa92694c605e9172431dc7f10a540c5a3a)
+			First parameter (with value "SHA1withDSA") should be any of {SHA256withRSA, SHA256withECDSA, SHA256withDSA, SHA384withRSA, SHA512withRSA, SHA384withECDSA, SHA512withECDSA}
+			at statement: $r7 = staticinvoke <java.security.Signature: java.security.Signature getInstance(java.lang.String)>($r6)
+
+		RequiredPredicateError violating CrySL rule for java.security.Signature
+			First parameter was not properly generated as generatedPubkey
+			at statement: virtualinvoke $r7.<java.security.Signature: void initVerify(java.security.PublicKey)>($r3)
+
+
+	 in Method: java.security.PublicKey toECGOSTPublicKey(org.xbill.DNS.KEYBase,org.xbill.DNS.DNSSEC$ECKeyInfo)
+		ConstraintError violating CrySL rule for java.security.KeyFactory (on Object #8e754de90dc53ee5dc07c073dc7b26c0f1e385856726d2e84f232f1e802d0c8)
+			First parameter (with value "ECGOST3410") should be any of {RSA, DiffieHellman, DH, DSA, EC}
+			at statement: $r7 = staticinvoke <java.security.KeyFactory: java.security.KeyFactory getInstance(java.lang.String)>(varReplacer9137)
+
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r10 = virtualinvoke $r7.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r8)
+
+
+	 in Method: java.security.PublicKey toECDSAPublicKey(org.xbill.DNS.KEYBase,org.xbill.DNS.DNSSEC$ECKeyInfo)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r10 = virtualinvoke $r7.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r8)
+
+
+	 in Method: java.security.PublicKey toDSAPublicKey(org.xbill.DNS.KEYBase)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r9 = virtualinvoke $r8.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r0)
+
+
+	 in Method: java.security.PublicKey toRSAPublicKey(org.xbill.DNS.KEYBase)
+		RequiredPredicateError violating CrySL rule for java.security.KeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r7 = virtualinvoke $r6.<java.security.KeyFactory: java.security.PublicKey generatePublic(java.security.spec.KeySpec)>($r0)
+
+
+Findings in Java Class: androdns.android.leetdreams.ch.androdns.SimpleDoTResolver
+
+	 in Method: byte[] sendAndReceive(org.xbill.DNS.Message)
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Second parameter was not properly generated as generatedTrustManagers
+			at statement: virtualinvoke $r9.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4120, $r23, varReplacer4120)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			First parameter was not properly generated as generatedKeyManagers
+			at statement: virtualinvoke $r9.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4120, $r23, varReplacer4120)
+
+		RequiredPredicateError violating CrySL rule for javax.net.ssl.SSLContext
+			Third parameter was not properly generated as randomized
+			at statement: virtualinvoke $r9.<javax.net.ssl.SSLContext: void init(javax.net.ssl.KeyManager[],javax.net.ssl.TrustManager[],java.security.SecureRandom)>(varReplacer4120, $r23, varReplacer4120)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 18
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 8
+	ConstraintError: 5
+=====================================================================

@@ -1,0 +1,261 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer6395, $r7)
+		Method: <other.de.stanetz.jpencconverter.PasswordStore: char[] loadKey(java.lang.String)>
+		SHA-256: da8645eea5c91324bbfc06a4f6a9d4ed58d35c494105a1f8e0cf4d4e67cc1f15
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: virtualinvoke $r1.<java.util.Random: void nextBytes(byte[])>($r2)
+		Method: <other.de.stanetz.jpencconverter.JavaPasswordbasedCryption: byte[] getRandomBytes(int)>
+		SHA-256: beaa9c471c4995d607ff631d496e71f8e4a78091ba76943a70980d4c5d3fb4c9
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.SecretKey
+		Statement: $r8 = virtualinvoke $r3.<javax.crypto.KeyGenerator: javax.crypto.SecretKey generateKey()>()
+		Method: <other.de.stanetz.jpencconverter.PasswordStore: javax.crypto.SecretKey createSecretKey(java.lang.String,other.de.stanetz.jpencconverter.PasswordStore$SecurityMode)>
+		SHA-256: 8f1353e44d57f3ee3cdde14f1eaaa026b48c46d294dd37c67caea31c7fbf819e
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.crypto.Cipher
+		Statement: $r7 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer9312)
+		Method: <other.de.stanetz.jpencconverter.PasswordStore: boolean storeKey(java.lang.String,java.lang.String,other.de.stanetz.jpencconverter.PasswordStore$SecurityMode)>
+		SHA-256: 11ea1f4fab245bb73af7406993c4d6e733816df6070ad095ab0212409dac3deb
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r7)
+		Method: <other.de.stanetz.jpencconverter.JavaPasswordbasedCryption: javax.crypto.Cipher getCipher(javax.crypto.SecretKey,int,byte[])>
+		SHA-256: 8817c5bb1c33c140078c3536f40bcb01a5bb4c7593877d4221ea5a4c28831a80
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.spec.PBEKeySpec
+		Statement: specialinvoke $r10.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r1, $r2, $i0, $i1)
+		Method: <other.de.stanetz.jpencconverter.JavaPasswordbasedCryption: javax.crypto.SecretKey createKeyFromPassword(char[],byte[])>
+		SHA-256: e5c34cc2248bef5165fcdadee7fbd1c149dafcba0011b144df02f2773cee07bc
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.GCMParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer16007, $r2)
+		Method: <other.de.stanetz.jpencconverter.JavaPasswordbasedCryption: javax.crypto.Cipher getCipher(javax.crypto.SecretKey,int,byte[])>
+		SHA-256: f80515be33d8cf0fa7523dfc223042540253f538b4f792ffa97b15481815d673
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: javax.crypto.KeyGenerator
+		Statement: $r3 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer12214, varReplacer12215)
+		Method: <other.de.stanetz.jpencconverter.PasswordStore: javax.crypto.SecretKey createSecretKey(java.lang.String,other.de.stanetz.jpencconverter.PasswordStore$SecurityMode)>
+		SHA-256: 9ac943bfebbb65357d772c61e20fd4abe041633b50c4956f96f7f1a43325ef4c
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r7.<java.security.SecureRandom: void <init>()>()
+		Method: <net.gsantner.markor.model.Document: boolean saveContent(android.content.Context,java.lang.String,net.gsantner.markor.util.ShareUtil,boolean)>
+		SHA-256: c934261c83f4c2519ccd72b49753da7a50600d9c846aeb4bcac5de07c2e51595
+		Secure: true
+	Object:
+		Variable: $r13
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r13.<java.security.SecureRandom: void <init>()>()
+		Method: <net.gsantner.markor.ui.NewFileDialog: byte[] getTemplateContent(android.widget.Spinner,java.io.File,java.lang.String,boolean)>
+		SHA-256: b29126d6f3c474050aca82391cc81491bd2062ea755f149b720c708fbb3ee67d
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.crypto.SecretKey
+		Statement: $r7 = virtualinvoke $r5.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r6)
+		Method: <other.de.stanetz.jpencconverter.JavaPasswordbasedCryption: javax.crypto.SecretKey createKeyFromPassword(char[],byte[])>
+		SHA-256: cb1f0e73b178f92469548a127c3a0f68361b821b91ba3c9dbb35f7bb3b4b99cf
+		Secure: false
+	Object:
+		Variable: $i1
+		Type: int
+		Statement: specialinvoke $r10.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r1, $r2, $i0, $i1)
+		Method: <other.de.stanetz.jpencconverter.JavaPasswordbasedCryption: javax.crypto.SecretKey createKeyFromPassword(char[],byte[])>
+		SHA-256: 88c346d8b2268814a05c293cecc8f6a6b30b985f389f609f7263dc5dbde81a75
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer6391)
+		Method: <other.de.stanetz.jpencconverter.PasswordStore: char[] loadKey(java.lang.String)>
+		SHA-256: 36e5ae44cf144a96d1c4e6e0666f06394e8d79c9611fc8b6906fedf1f83284e0
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.KeyStore
+		Statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer9045)
+		Method: <other.de.stanetz.jpencconverter.PasswordStore: javax.crypto.SecretKey getSecretKey(java.lang.String)>
+		SHA-256: c54f2bf5632a238916bf4687f0cec9c43caf71f63db3010fdc2b73fea4048b0e
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: javax.crypto.SecretKeyFactory
+		Statement: $r5 = staticinvoke <javax.crypto.SecretKeyFactory: javax.crypto.SecretKeyFactory getInstance(java.lang.String)>($r4)
+		Method: <other.de.stanetz.jpencconverter.JavaPasswordbasedCryption: javax.crypto.SecretKey createKeyFromPassword(char[],byte[])>
+		SHA-256: 4644fd180a676193bea7812f45cf640760ea7eb69535e412d557aed68fa90246
+		Secure: false
+	Object:
+		Variable: $r11
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r11.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r4)
+		Method: <other.de.stanetz.jpencconverter.JavaPasswordbasedCryption: javax.crypto.SecretKey createKeyFromPassword(char[],byte[])>
+		SHA-256: 25e6f0b73be3e918552c7b43da2af20e55767fb8bdb3aabd276367c654e2d4bc
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.lang.String
+		Statement: specialinvoke $r11.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r4)
+		Method: <other.de.stanetz.jpencconverter.JavaPasswordbasedCryption: javax.crypto.SecretKey createKeyFromPassword(char[],byte[])>
+		SHA-256: 72fd127cd07cb8e225bdd4ead504e0d17358f0e281518cdccc873903f4d17826
+		Secure: false
+
+Findings in Java Class: other.de.stanetz.jpencconverter.PasswordStore
+
+	 in Method: char[] loadKey(java.lang.String)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #36e5ae44cf144a96d1c4e6e0666f06394e8d79c9611fc8b6906fedf1f83284e0)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r6 = virtualinvoke $r8.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer6385, $r2, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedGCM
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer6385, $r2, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.GCMParameterSpec
+			Second parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.GCMParameterSpec: void <init>(int,byte[])>(varReplacer6395, $r7)
+
+
+	 in Method: javax.crypto.SecretKey getSecretKey(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #c54f2bf5632a238916bf4687f0cec9c43caf71f63db3010fdc2b73fea4048b0e)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r2 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer9045)
+
+		IncompleteOperationError violating CrySL rule for java.security.KeyStore (on Object #c54f2bf5632a238916bf4687f0cec9c43caf71f63db3010fdc2b73fea4048b0e)
+			Operation on object of type java.security.KeyStore object not completed. Expected call to getKey
+			at statement: $r3 = virtualinvoke $r2.<java.security.KeyStore: java.security.KeyStore$Entry getEntry(java.lang.String,java.security.KeyStore$ProtectionParameter)>($r1, varReplacer9042)
+
+
+	 in Method: boolean storeKey(java.lang.String,java.lang.String,other.de.stanetz.jpencconverter.PasswordStore$SecurityMode)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #11ea1f4fab245bb73af7406993c4d6e733816df6070ad095ab0212409dac3deb)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r10 = virtualinvoke $r7.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r10)
+
+
+Findings in Java Class: other.de.stanetz.jpencconverter.JavaPasswordbasedCryption
+
+	 in Method: javax.crypto.SecretKey createKeyFromPassword(char[],byte[])
+		IncompleteOperationError violating CrySL rule for javax.crypto.spec.PBEKeySpec (on Object #e5c34cc2248bef5165fcdadee7fbd1c149dafcba0011b144df02f2773cee07bc)
+			Operation on object of type javax.crypto.spec.PBEKeySpec object not completed. Expected call to clearPassword
+			at statement: specialinvoke $r10.<javax.crypto.spec.PBEKeySpec: void <init>(char[],byte[],int,int)>($r1, $r2, $i0, $i1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.SecretKeyFactory
+			First parameter was not properly generated as speccedKey
+			at statement: $r7 = virtualinvoke $r5.<javax.crypto.SecretKeyFactory: javax.crypto.SecretKey generateSecret(java.security.spec.KeySpec)>($r6)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r11.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, $r4)
+
+
+	 in Method: byte[] decryptBytes(byte[],char[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #8817c5bb1c33c140078c3536f40bcb01a5bb4c7593877d4221ea5a4c28831a80)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r8.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+
+	 in Method: byte[] encryptBytes(byte[],char[])
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #8817c5bb1c33c140078c3536f40bcb01a5bb4c7593877d4221ea5a4c28831a80)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $r1 = virtualinvoke $r7.<javax.crypto.Cipher: byte[] doFinal(byte[])>($r1)
+
+
+	 in Method: javax.crypto.Cipher getCipher(javax.crypto.SecretKey,int,byte[])
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Third parameter was not properly generated as preparedOAEP
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r9)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>($i0, $r1, $r9)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 17
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 4
+	ConstraintError: 1
+	IncompleteOperationError: 2
+	RequiredPredicateError: 7
+=====================================================================

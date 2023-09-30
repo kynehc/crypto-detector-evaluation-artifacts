@@ -1,0 +1,35 @@
+SPEC java.security.AlgorithmParameterGenerator
+
+OBJECTS
+	java.lang.String algorithm;
+	java.security.AlgorithmParameters algParams;
+	java.security.spec.AlgorithmParameterSpec genParamSpec; 
+	java.security.SecureRandom random;
+	int size;
+
+EVENTS
+	g1: getInstance(algorithm);
+	g2: getInstance(algorithm, _);
+	Get := g1 | g2;
+
+	i1: init(size);
+	i2: init(size, random);
+	i3: init(genParamSpec);
+	i4: init(genParamSpec, random);
+	Init := i1 | i2 | i3 | i4;
+    
+	gp1: algParams = generateParameters();
+	GenParam := gp1;
+    
+ORDER
+	Get, Init, GenParam
+	
+CONSTRAINTS
+	algorithm in {"DH", "DiffieHellman", "DSA"};
+	size in {2048, 3072};
+
+REQUIRES
+	randomized[random];
+
+ENSURES
+	preparedAlg[algParams, algorithm] after GenParam;

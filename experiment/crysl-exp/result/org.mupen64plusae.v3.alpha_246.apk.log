@@ -1,0 +1,170 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r2
+		Type: byte[]
+		Statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+		Method: <paulscode.android.mupen64plusae.util.FileUtil: java.lang.String computeMd5(java.io.InputStream)>
+		SHA-256: 2994439de53545b0ff8742989805ffd7faea483f65909f684dbee388601da61a
+		Secure: false
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: c17421c9044aaad49761f9cd19147df7d237b870f86c00a4c3f759ad8875e0fe
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: 671980c38541e5f4635e5df9b14b3f2382c28342263daa27d76a6e21eb43fded
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: java.security.MessageDigest
+		Statement: $r5 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer7817)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: 8e65b023185e11e7774a74b7e0803c188cbbd1738e5a0fd692b061da5142c18d
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4418)
+		Method: <paulscode.android.mupen64plusae.util.FileUtil: java.lang.String computeMd5(java.io.InputStream)>
+		SHA-256: f9f0ae5d92980011445c92aca2146b752fa9a889ec4a1a627402b5735dd3e4da
+		Secure: false
+	Object:
+		Variable: varReplacer7803
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer7803)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: 49ff661233b7211344a037a325f29e503f6757ce0a165a25f2bbd7a404747910
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer7803)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: 992a1afcaecd3080a40eeb5db43cd6ec2f800592ec05b048f782c6526e10a576
+		Secure: false
+	Object:
+		Variable: $r10
+		Type: javax.crypto.CipherInputStream
+		Statement: specialinvoke $r10.<javax.crypto.CipherInputStream: void <init>(java.io.InputStream,javax.crypto.Cipher)>($r11, $r8)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: c45dba96a483e3e9ebfded9c6fc9988af7c1739a549f04c3576d99624449a7d1
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7816)
+		Method: <org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1: javax.crypto.CipherInputStream init()>
+		SHA-256: a9e76e00e10ffc3d48aa6c9afba3a3334c0ed85003e4678bfdede5c873c975d2
+		Secure: false
+
+Findings in Java Class: paulscode.android.mupen64plusae.util.FileUtil
+
+	 in Method: java.lang.String computeMd5(java.io.InputStream)
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #f9f0ae5d92980011445c92aca2146b752fa9a889ec4a1a627402b5735dd3e4da)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r2 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest()>()
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #f9f0ae5d92980011445c92aca2146b752fa9a889ec4a1a627402b5735dd3e4da)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>(varReplacer4418)
+
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #f9f0ae5d92980011445c92aca2146b752fa9a889ec4a1a627402b5735dd3e4da)
+			Third parameter (with value 0)Variable preLenmust be  greater than 0
+			at statement: virtualinvoke $r1.<java.security.MessageDigest: void update(byte[],int,int)>($r2, varReplacer4417, $i2)
+
+
+Findings in Java Class: org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder$1
+
+	 in Method: javax.crypto.CipherInputStream init()
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key,java.security.spec.AlgorithmParameterSpec)>(varReplacer7812, $r7, $r9)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8e65b023185e11e7774a74b7e0803c188cbbd1738e5a0fd692b061da5142c18d)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte[]),java.security.MessageDigest: void update(byte)
+			at statement: $r4 = virtualinvoke $r5.<java.security.MessageDigest: byte[] digest()>()
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, varReplacer7803)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r9.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r2)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #a9e76e00e10ffc3d48aa6c9afba3a3334c0ed85003e4678bfdede5c873c975d2)
+			First parameter (with value "AES/CBC/NoPadding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer7816)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 9
+
+	CryptoAnalysis found the following violations. For details see description above.
+	RequiredPredicateError: 3
+	TypestateError: 2
+	ConstraintError: 3
+=====================================================================

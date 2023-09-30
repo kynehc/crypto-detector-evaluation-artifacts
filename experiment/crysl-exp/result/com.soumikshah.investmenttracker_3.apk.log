@@ -1,0 +1,652 @@
+0    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --- xtext.common.types ---------------------------------------------------
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - ASM library is too old. Falling back to java.lang.reflect API.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - Please note that no information about compile time constants is available.
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - It's recommended to use org.objectweb.asm 9.1.0 or better (Maven group id: org.ow2.asm).
+1    [main] WARN  pes.access.impl.DeclaredTypeFactory  - --------------------------------------------------------------------------
+Ruleset: 
+	java.security.cert.TrustAnchor
+	javax.crypto.spec.GCMParameterSpec
+	javax.xml.crypto.dsig.spec.HMACParameterSpec
+	java.security.KeyPair
+	java.security.DigestOutputStream
+	javax.net.ssl.KeyStoreBuilderParameters
+	javax.crypto.spec.OAEPParameterSpec
+	javax.net.ssl.SSLContext
+	javax.crypto.spec.DHGenParameterSpec
+	javax.crypto.CipherOutputStream
+	java.security.Key
+	javax.crypto.SecretKeyFactory
+	java.security.cert.PKIXBuilderParameters
+	java.security.KeyFactory
+	javax.crypto.spec.PBEKeySpec
+	java.security.spec.DSAGenParameterSpec
+	java.security.KeyPairGenerator
+	javax.crypto.CipherInputStream
+	javax.net.ssl.CertPathTrustManagerParameters
+	java.security.cert.CertificateFactory
+	java.security.SecureRandom
+	java.security.spec.MGF1ParameterSpec
+	javax.net.ssl.SSLEngine
+	javax.crypto.spec.DHParameterSpec
+	java.security.spec.DSAParameterSpec
+	java.security.spec.ECParameterSpec
+	java.security.spec.RSAKeyGenParameterSpec
+	javax.crypto.spec.IvParameterSpec
+	javax.crypto.Cipher
+	javax.crypto.spec.PBEParameterSpec
+	java.security.AlgorithmParameterGenerator
+	java.security.spec.X509EncodedKeySpec
+	javax.net.ssl.TrustManagerFactory
+	java.security.DigestInputStream
+	void
+	javax.net.ssl.KeyManagerFactory
+	java.security.cert.PKIXParameters
+	java.net.PasswordAuthentication
+	java.security.AlgorithmParameters
+	javax.crypto.KeyAgreement
+	javax.crypto.spec.SecretKeySpec
+	javax.net.ssl.SSLParameters
+	java.security.MessageDigest
+	javax.crypto.SecretKey
+	javax.crypto.KeyGenerator
+	java.security.KeyStore
+	javax.crypto.Mac
+	java.security.spec.ECGenParameterSpec
+	java.security.Signature
+
+Analyzed Objects: 
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r8)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfo,javax.crypto.SecretKey,int)>
+		SHA-256: 5e2b13ca67fb38264a779d92b8958e5c114b1162c674741cd3bdd65781d159ad
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: byte[] generateKey(byte[],org.apache.poi.poifs.crypt.HashAlgorithm,byte[],int)>
+		SHA-256: 767f426521be18e72df6a061df02eb3b6a403be6b840214ef23efd7ba34ae53a
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r0)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier)>
+		SHA-256: 50f3d5b70391e3924cde73fce5753922189574c8e9b31d4a0e0bde8ff6780ba9
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: java.security.Key
+		Statement: $r4 = virtualinvoke $r0.<java.security.KeyStore: java.security.Key getKey(java.lang.String,char[])>(varReplacer1207, varReplacer1208)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 80f899529cc642b155f14b7a26009c2bb3d4cbc6dac2eaed95786058789668d2
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.Key
+		Statement: $r5 = interfaceinvoke $r1.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: 89787cca2ff69b187601127b90dc369e3672ab268db2b0f5522338f65ab6b774
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <org.apache.poi.poifs.crypt.standard.StandardDecryptor: byte[] fillAndXor(byte[],byte)>
+		SHA-256: db7953959e9e90d89e1601982a62907976c02e6863098a270daf529b3e5bcbc
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String,java.lang.String)>($r1, varReplacer25800)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: java.security.MessageDigest getMessageDigest(org.apache.poi.poifs.crypt.HashAlgorithm)>
+		SHA-256: 29c3c77baa3349f21746866b8cd2cf6842dfa91594dc3dc810c0ba34d8224002
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r9.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor: boolean verifyPassword(java.lang.String)>
+		SHA-256: 8a7b19c0b5970e3e949d8a2bb60d3b277b2264f32de75d0989bce2aa24744a6a
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier)>
+		SHA-256: 5ae69762cfb76b5a567eb04243fb48d633ad32d0bdf2317f3c423f0a5d8f1707
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r6.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfo,javax.crypto.SecretKey,int)>
+		SHA-256: ecdc658878df476b8adf35dd1b05fb0d6e6d22b873c98312af9bccc9538f4c7b
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r4)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: fe54f3722dfadb02449ab5b749199e7bf880028e325edc51b3e5915ab99c58bd
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r1.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.apache.commons.codec.digest.DigestUtils: byte[] md5(byte[])>
+		SHA-256: d2ba38deb0d2f449dfb6fcbb092e9f603e49b4b43cd2b43b5848853db2e618d6
+		Secure: false
+	Object:
+		Variable: $r14
+		Type: javax.crypto.spec.IvParameterSpec
+		Statement: specialinvoke $r14.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: e131e43310291f91c5e3e21e621fd57ef068b83db2afee175f286e910b36aaa3
+		Secure: false
+	Object:
+		Variable: varReplacer33962
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer33962)
+		Method: <org.apache.poi.poifs.crypt.xor.XOREncryptor: void confirmPassword(java.lang.String)>
+		SHA-256: aa8a097b239ea5b220a774ac1711a6d1aa43f46e29a14444900b50f00da17b6b
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: java.lang.String
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r6)
+		Method: <org.apache.poi.poifs.crypt.Encryptor: org.apache.poi.poifs.crypt.Encryptor clone()>
+		SHA-256: 5210c6eb5f508ad083e8e3f7d9cf9fc5a2279d3cef74a190684064fb9e0fa95f
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.util.Random: void nextBytes(byte[])>($r4)
+		Method: <org.apache.poi.poifs.crypt.standard.StandardEncryptor: void confirmPassword(java.lang.String)>
+		SHA-256: 244c00b27b5ea296a84adf680625c1dfea753bded59b6dd9a8c860a80c0577ba
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.poi.poifs.crypt.standard.StandardEncryptor: void confirmPassword(java.lang.String)>
+		SHA-256: f02b50c7d848cb6c4ccac5266cf07630b85e3715f1d8ab67d5effa2fddcd8e3b
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIEncryptor: void confirmPassword(java.lang.String,byte[],byte[],byte[],byte[],byte[])>
+		SHA-256: fba3b39f8f2fbab420faad6443a3cb777c1be29b4e3cba75b86eef2b445d6347
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIEncryptor: void confirmPassword(java.lang.String,byte[],byte[],byte[],byte[],byte[])>
+		SHA-256: 517b86d26ff0aec827395de49f7be1a7d41e0715e19159e27498a79a32dc85a5
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.util.Random: void nextBytes(byte[])>($r3)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIEncryptor: void confirmPassword(java.lang.String)>
+		SHA-256: 3b73a1a5e0e3f834f3707fd40271ac69034a5ab8df8349c0003afc19a653426c
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.util.Random: void nextBytes(byte[])>($r4)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIEncryptor: void confirmPassword(java.lang.String)>
+		SHA-256: 6cb27ef6616ed291611ccd9ba4d17011884e59b306d3c89251508f3fb70a2239
+		Secure: true
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIEncryptor: void confirmPassword(java.lang.String)>
+		SHA-256: 576bd7bb722fa0b90aa9337900abfd6bf1dfe20e999d12bac1748617df59b51e
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String,java.lang.String)>($r4, varReplacer25804)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: 59cd74c116040214cd6ffb8c554b3c7de9a4677427099e9aa87031d300bb0e25
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r4.<java.security.MessageDigest: int digest(byte[],int,int)>($r3, varReplacer33937, $i1)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: byte[] hashPassword(java.lang.String,org.apache.poi.poifs.crypt.HashAlgorithm,byte[],int,boolean)>
+		SHA-256: 41b60f1dd605a3419319c06417f579bd03a60ea3426576434a9d871b7e7eccfa
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r0)
+		Method: <org.apache.poi.poifs.crypt.standard.StandardDecryptor: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier,int)>
+		SHA-256: 46baf32c6be1917b63255d529ea4f45977e0ecf4c6904a1f5d24f570de7d1ede
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.Cipher
+		Statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer1206)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: b16c26fc1a333939ac791c840a377ce8ccb145496d411d26b46fa45e03835ed2
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.security.KeyStore
+		Statement: $r0 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer1215)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 9f095bf8cbdb8edc2adaedf6f7ccd6c14f37a03e661b77345714c176126d06ea
+		Secure: false
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <org.apache.poi.poifs.crypt.standard.StandardEncryptor: void confirmPassword(java.lang.String,byte[],byte[],byte[],byte[],byte[])>
+		SHA-256: 4b6952bc3dd1f6c94a2309a941dd40421a7f57b134ea73f104b8514ce5509d16
+		Secure: true
+	Object:
+		Variable: $r9
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, $r10)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfo,javax.crypto.SecretKey,int)>
+		SHA-256: 15b029563c0ee2affefc9aef4050dff9383d83cffe77c416f0d9e5ec4592d809
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.SecureRandom
+		Statement: specialinvoke $r2.<java.security.SecureRandom: void <init>()>()
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Encryptor: void confirmPassword(java.lang.String)>
+		SHA-256: 731bde1fb21b79dc32b367d9a24668012e4239347cb329a7511bd19ede0cbe8e
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Encryptor: void confirmPassword(java.lang.String,byte[],byte[],byte[],byte[],byte[])>
+		SHA-256: 4c3721d4a4a79fdbe067f9061a2ab2030c74c4896a85687eb37f0cde046d39f7
+		Secure: true
+	Object:
+		Variable: $r8
+		Type: javax.crypto.Cipher
+		Statement: $r8 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>($r4)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: fe54f3722dfadb02449ab5b749199e7bf880028e325edc51b3e5915ab99c58bd
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier)>
+		SHA-256: ab30760b8cd64fd6aacaca2aeae2d8d311c341cffc48a191d72b4286c865dc01
+		Secure: true
+	Object:
+		Variable: varReplacer33802
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer33802)
+		Method: <org.apache.poi.poifs.crypt.xor.XORDecryptor: boolean verifyPassword(java.lang.String)>
+		SHA-256: aa55c20c447bea7ea856bebdf4464ac63cc4bd2df4c8e93aef112a7c68030dbd
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.util.Random: void nextBytes(byte[])>($r3)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Encryptor: void confirmPassword(java.lang.String)>
+		SHA-256: 8f158f8b5c2d0d1bb2c39090af03fc116e0b2000055e5a3b1913e011eb850a05
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: java.lang.String
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r6)
+		Method: <org.apache.poi.poifs.crypt.Decryptor: org.apache.poi.poifs.crypt.Decryptor clone()>
+		SHA-256: dd8404d492c30004d44da525b2fd896c43d28a45dbf3d522c32169a613433b86
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: byte[]
+		Statement: $r6 = virtualinvoke $r8.<java.security.MessageDigest: byte[] digest(byte[])>($r6)
+		Method: <org.apache.poi.poifs.crypt.standard.StandardDecryptor: boolean verifyPassword(java.lang.String)>
+		SHA-256: 1440f2cb718911b5962e5d32778d9f51c2a368d7345bb6aec17f5aa0dd8207c8
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = interfaceinvoke $r1.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: 8ce26a85430fbf7593f30d59a11bf86e9c5eae41ece68f7cf0283a9455db9a7c
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r6)
+		Method: <org.apache.poi.poifs.crypt.Encryptor: org.apache.poi.poifs.crypt.Encryptor clone()>
+		SHA-256: a5bb64ea48c28322e8c19dca42493ffa2c408ec4fa328ba93a9a40281eb26234
+		Secure: false
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r0)
+		Method: <org.apache.poi.poifs.crypt.standard.StandardDecryptor: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier,int)>
+		SHA-256: df4e95e9859892cb3aca721d2b6368e7de56595d1b93871a7ee2d9581259fe26
+		Secure: false
+	Object:
+		Variable: $r7
+		Type: byte[]
+		Statement: $r7 = virtualinvoke $r9.<java.security.MessageDigest: byte[] digest(byte[])>($r7)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor: boolean verifyPassword(java.lang.String)>
+		SHA-256: d04fc23ca44a820efdbcd46b2a955583d22c501f4e1e9cd6c347c1e9dd6d118e
+		Secure: true
+	Object:
+		Variable: $r6
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer33802)
+		Method: <org.apache.poi.poifs.crypt.xor.XORDecryptor: boolean verifyPassword(java.lang.String)>
+		SHA-256: 7101c6666a3e915d1b1db7ff0ab5966a3cdf6baf72ead114794b74ae7ce30ec6
+		Secure: false
+	Object:
+		Variable: $r8
+		Type: java.lang.String
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r8)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfo,javax.crypto.SecretKey,int)>
+		SHA-256: d2f7ec6115113bac1692b21cb3bb51202dadc0f8870740b41f1ade61bd72048b
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: byte[]
+		Statement: $r0 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <org.apache.poi.poifs.crypt.standard.StandardDecryptor: byte[] fillAndXor(byte[],byte)>
+		SHA-256: 3f6184d15422a69cb36c72de01c11e7efa30abfaf4943f380a2c3deceeeca93c
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.util.Random: void nextBytes(byte[])>($r4)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Encryptor: void confirmPassword(java.lang.String)>
+		SHA-256: 1e4bcaa86f48d48639f636f35a1139278adc9d9ef6ab03a181cd604a4e59a239
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r0)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier)>
+		SHA-256: 22673633e2bd7d6361755870330453f2dc9e77cc194e55cd6a1a6e0af449d931
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest(byte[])>($r5)
+		Method: <org.apache.poi.poifs.crypt.standard.StandardEncryptor: void confirmPassword(java.lang.String,byte[],byte[],byte[],byte[],byte[])>
+		SHA-256: 12c53fd2a166e10148e1a7cce72bf94cd79370bb3fc6619c5776b90334926f90
+		Secure: true
+	Object:
+		Variable: $r10
+		Type: java.lang.String
+		Statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, $r10)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfo,javax.crypto.SecretKey,int)>
+		SHA-256: 7e4d65799bb40c2b8dc7c7c9417f29c3b465fa602ea63c8a23f6e9730c61798d
+		Secure: false
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r4.<java.security.MessageDigest: byte[] digest(byte[])>($r3)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: byte[] hashPassword(java.lang.String,org.apache.poi.poifs.crypt.HashAlgorithm,byte[],int,boolean)>
+		SHA-256: b565f6295ed490a889e5cb0eec798612d5001f3f6eb75814fe307103b799601e
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: byte[]
+		Statement: $r1 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r0)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: byte[] generateKey(byte[],org.apache.poi.poifs.crypt.HashAlgorithm,byte[],int)>
+		SHA-256: 907aa7b7a72ba03feb0eeaabf0ed2b66b2b6e362c40195f20e4a4cdc479702fe
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r6)
+		Method: <org.apache.poi.poifs.crypt.Decryptor: org.apache.poi.poifs.crypt.Decryptor clone()>
+		SHA-256: 84597eb7abe82481663ebb9a3c080bd12074ab17215e50785af6be88f996220c
+		Secure: false
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $i3 = virtualinvoke $r4.<javax.crypto.Cipher: int doFinal(byte[],int,int,byte[])>($r5, varReplacer25786, $i0, $r5)
+		Method: <org.apache.poi.poifs.crypt.ChunkedCipherOutputStream: int invokeCipher(int,boolean)>
+		SHA-256: 508f4f24236831077fb06cb9f678281350087f5a4d40591b59e8bd9dbb5ad3be
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: javax.crypto.KeyGenerator
+		Statement: $r2 = staticinvoke <javax.crypto.KeyGenerator: javax.crypto.KeyGenerator getInstance(java.lang.String,java.lang.String)>(varReplacer1213, varReplacer1214)
+		Method: <androidx.biometric.CryptoObjectUtils: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()>
+		SHA-256: 502d55f2eb3c8e37e030ba7e704b60aea8cef73cb74850ca344d2e3d034185d
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: virtualinvoke $r2.<java.util.Random: void nextBytes(byte[])>($r3)
+		Method: <org.apache.poi.poifs.crypt.standard.StandardEncryptor: void confirmPassword(java.lang.String)>
+		SHA-256: 12c370d8eaa09d3367e93ca8b7ab3584a7015e489452497d162bb38af106507
+		Secure: true
+	Object:
+		Variable: $r4
+		Type: byte[]
+		Statement: $r4 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest(byte[])>($r4)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier)>
+		SHA-256: 38c46bc1c8cf23b2ec865cbb559cf1f05df7e0d203a81d5c1355f490e37be3dc
+		Secure: true
+	Object:
+		Variable: $r3
+		Type: byte[]
+		Statement: $r3 = virtualinvoke $r13.<java.security.MessageDigest: byte[] digest(byte[])>($r1)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Encryptor: void confirmPassword(java.lang.String,byte[],byte[],byte[],byte[],byte[])>
+		SHA-256: a97d077937ed1f3af28cc590cbb49d74a93da969a897808f5ecbd5486b28b8a5
+		Secure: true
+	Object:
+		Variable: $r1
+		Type: java.security.Key
+		Statement: $r5 = interfaceinvoke $r1.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: 89787cca2ff69b187601127b90dc369e3672ab268db2b0f5522338f65ab6b774
+		Secure: true
+	Object:
+		Variable: $r5
+		Type: byte[]
+		Statement: $r5 = interfaceinvoke $r1.<java.security.Key: byte[] getEncoded()>()
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)>
+		SHA-256: 8ce26a85430fbf7593f30d59a11bf86e9c5eae41ece68f7cf0283a9455db9a7c
+		Secure: true
+	Object:
+		Variable: $r0
+		Type: java.lang.String
+		Statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r0)
+		Method: <org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier)>
+		SHA-256: 7fc8ef86535928b1365014bd72fc349dedaa43aa65444ebff7509ec9d474d490
+		Secure: false
+	Object:
+		Variable: $r1
+		Type: java.security.MessageDigest
+		Statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+		Method: <org.apache.commons.codec.digest.DigestUtils: java.security.MessageDigest getDigest(java.lang.String)>
+		SHA-256: e941edb5217c879acd87fed3366e0d56fa56f48ce569721201e5ad4173f69b53
+		Secure: false
+	Object:
+		Variable: $r2
+		Type: java.security.MessageDigest
+		Statement: $r2 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r1)
+		Method: <org.apache.poi.poifs.crypt.CryptoFunctions: java.security.MessageDigest getMessageDigest(org.apache.poi.poifs.crypt.HashAlgorithm)>
+		SHA-256: 8a2704d57dfabba753b6a53112f6e0c757f617ef52d930bb5fa81297432981f5
+		Secure: true
+	Object:
+		Variable: $r7
+		Type: javax.crypto.spec.SecretKeySpec
+		Statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer33962)
+		Method: <org.apache.poi.poifs.crypt.xor.XOREncryptor: void confirmPassword(java.lang.String)>
+		SHA-256: 63300d6e69127343569650713056c7c0a57cdbeb4bfaefed78ae549cbaab9783
+		Secure: false
+	Object:
+		Variable: $r0
+		Type: java.lang.String
+		Statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r0)
+		Method: <org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier)>
+		SHA-256: 30d494da8dde855ddb48de8a31bd7d5326f5dcb5cf457a34e4b3a539c3a7aa38
+		Secure: false
+
+Findings in Java Class: androidx.biometric.CryptoObjectUtils
+
+	 in Method: androidx.biometric.BiometricPrompt$CryptoObject createFakeCryptoObject()
+		ConstraintError violating CrySL rule for java.security.KeyStore (on Object #9f095bf8cbdb8edc2adaedf6f7ccd6c14f37a03e661b77345714c176126d06ea)
+			First parameter (with value "AndroidKeyStore") should be any of {JCEKS, JKS, DKS, PKCS11, PKCS12}
+			at statement: $r0 = staticinvoke <java.security.KeyStore: java.security.KeyStore getInstance(java.lang.String)>(varReplacer1215)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r6.<javax.crypto.Cipher: void init(int,java.security.Key)>(varReplacer1209, $r5)
+
+		ConstraintError violating CrySL rule for javax.crypto.Cipher (on Object #b16c26fc1a333939ac791c840a377ce8ccb145496d411d26b46fa45e03835ed2)
+			First parameter (with value "AES/CBC/PKCS7Padding") should be any of AES/CBC/{PKCS5Padding, ISO10126Padding}
+			at statement: $r6 = staticinvoke <javax.crypto.Cipher: javax.crypto.Cipher getInstance(java.lang.String)>(varReplacer1206)
+
+
+Findings in Java Class: org.apache.commons.codec.digest.DigestUtils
+
+	 in Method: java.security.MessageDigest getDigest(java.lang.String)
+		ConstraintError violating CrySL rule for java.security.MessageDigest (on Object #e941edb5217c879acd87fed3366e0d56fa56f48ce569721201e5ad4173f69b53)
+			First parameter (with value "MD5") should be any of {SHA-256, SHA-384, SHA-512}
+			at statement: $r1 = staticinvoke <java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>($r2)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.binaryrc4.BinaryRC4Decryptor
+
+	 in Method: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r0)
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #29c3c77baa3349f21746866b8cd2cf6842dfa91594dc3dc810c0ba34d8224002)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r5 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+
+		TypestateError violating CrySL rule for java.security.MessageDigest (on Object #8a2704d57dfabba753b6a53112f6e0c757f617ef52d930bb5fa81297432981f5)
+			Unexpected call to method <java.security.MessageDigest: byte[] digest()> on object of type java.security.MessageDigest. Expect a call to one of the following methods java.security.MessageDigest: void update(byte[],int,int),java.security.MessageDigest: void update(java.nio.ByteBuffer),java.security.MessageDigest: byte[] digest(byte[]),java.security.MessageDigest: void update(byte),java.security.MessageDigest: void update(byte[])
+			at statement: $r5 = virtualinvoke $r3.<java.security.MessageDigest: byte[] digest()>()
+
+
+	 in Method: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfo,javax.crypto.SecretKey,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r8)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.ChunkedCipherOutputStream
+
+	 in Method: int invokeCipher(int,boolean)
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #fe54f3722dfadb02449ab5b749199e7bf880028e325edc51b3e5915ab99c58bd)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $i3 = virtualinvoke $r4.<javax.crypto.Cipher: int doFinal(byte[],int,int,byte[])>($r5, varReplacer25786, $i0, $r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #59cd74c116040214cd6ffb8c554b3c7de9a4677427099e9aa87031d300bb0e25)
+			Unexpected call to method doFinal on object of type javax.crypto.Cipher. Expect a call to one of the following methods init,updateAAD
+			at statement: $i3 = virtualinvoke $r4.<javax.crypto.Cipher: int doFinal(byte[],int,int,byte[])>($r5, varReplacer25786, $i0, $r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #fe54f3722dfadb02449ab5b749199e7bf880028e325edc51b3e5915ab99c58bd)
+			Unexpected call to method update on object of type javax.crypto.Cipher. Expect a call to one of the following methods getInstance
+			at statement: $i3 = virtualinvoke $r4.<javax.crypto.Cipher: int update(byte[],int,int,byte[])>($r5, varReplacer25787, $i0, $r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #fe54f3722dfadb02449ab5b749199e7bf880028e325edc51b3e5915ab99c58bd)
+			Unexpected call to method update on object of type javax.crypto.Cipher. Expect a call to one of the following methods getInstance
+			at statement: $i3 = virtualinvoke $r4.<javax.crypto.Cipher: int update(byte[],int,int,byte[])>($r5, varReplacer25787, $i0, $r5)
+
+		TypestateError violating CrySL rule for javax.crypto.Cipher (on Object #59cd74c116040214cd6ffb8c554b3c7de9a4677427099e9aa87031d300bb0e25)
+			Unexpected call to method update on object of type javax.crypto.Cipher. Expect a call to one of the following methods getInstance
+			at statement: $i3 = virtualinvoke $r4.<javax.crypto.Cipher: int update(byte[],int,int,byte[])>($r5, varReplacer25787, $i0, $r5)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.xor.XORDecryptor
+
+	 in Method: boolean verifyPassword(java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #7101c6666a3e915d1b1db7ff0ab5966a3cdf6baf72ead114794b74ae7ce30ec6)
+			Second parameter (with value "XOR") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer33802)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, varReplacer33802)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.xor.XOREncryptor
+
+	 in Method: void confirmPassword(java.lang.String)
+		ConstraintError violating CrySL rule for javax.crypto.spec.SecretKeySpec (on Object #63300d6e69127343569650713056c7c0a57cdbeb4bfaefed78ae549cbaab9783)
+			Second parameter (with value "XOR") should be any of {AES, HmacSHA256, HmacSHA384, HmacSHA512}
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer33962)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r7.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r2, varReplacer33962)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.cryptoapi.CryptoAPIDecryptor
+
+	 in Method: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r5.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r4, $r0)
+
+
+	 in Method: javax.crypto.Cipher initCipherForBlock(javax.crypto.Cipher,int,org.apache.poi.poifs.crypt.EncryptionInfo,javax.crypto.SecretKey,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r9.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r7, $r10)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.CryptoFunctions
+
+	 in Method: javax.crypto.Cipher getCipher(java.security.Key,org.apache.poi.poifs.crypt.CipherAlgorithm,org.apache.poi.poifs.crypt.ChainingMode,byte[],int,java.lang.String)
+		RequiredPredicateError violating CrySL rule for javax.crypto.Cipher
+			Second parameter was not properly generated as generatedKey
+			at statement: virtualinvoke $r8.<javax.crypto.Cipher: void init(int,java.security.Key)>($i0, $r1)
+
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.IvParameterSpec
+			First parameter was not properly generated as randomized
+			at statement: specialinvoke $r14.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r0)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.Decryptor
+
+	 in Method: org.apache.poi.poifs.crypt.Decryptor clone()
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r4.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r6)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.Encryptor
+
+	 in Method: org.apache.poi.poifs.crypt.Encryptor clone()
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r1.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r5, $r6)
+
+
+Findings in Java Class: org.apache.poi.poifs.crypt.standard.StandardDecryptor
+
+	 in Method: javax.crypto.SecretKey generateSecretKey(java.lang.String,org.apache.poi.poifs.crypt.EncryptionVerifier,int)
+		RequiredPredicateError violating CrySL rule for javax.crypto.spec.SecretKeySpec
+			First parameter was not properly generated as preparedKeyMaterial
+			at statement: specialinvoke $r6.<javax.crypto.spec.SecretKeySpec: void <init>(byte[],java.lang.String)>($r3, $r0)
+
+
+======================= CryptoAnalysis Summary ==========================
+	Number of CrySL rules: 49
+	Number of Objects Analyzed: 63
+
+	CryptoAnalysis found the following violations. For details see description above.
+	TypestateError: 7
+	ConstraintError: 5
+	RequiredPredicateError: 12
+=====================================================================
