@@ -1,200 +1,97 @@
 This experiment is to validate the refined CryptoGuard can reduce false positives cause by variable reassignment (Pattern #1).
 
+
+
 ### Preparation
 
-Follow below steps to compile [refined CryptoGuard](./experiment/cryptoguard-exp/cryptoguard-refined) and [original CryptoGuard](./experiment/cryptoguard-exp/cryptoguard-92551ee). We recommend using Ubuntu 20.04.1 or 20.04.6 LTS as the system version, as our evaluations are conducted on these two versions.
+We provider a [Dockerfile](./experiment/cryptoguard-exp/Dockerfile) to build a docker for running our scale-down experiment, to validate the refined CryptoGuard can reduce false positives than the original CryptoGuard.
 
-0. miniconda for python environments
-
+Since we have a large file in the repo, git has to be equipped with [lfs](https://git-lfs.com/). To equip the lfs in your git, use below commands:
 ```
-mkdir -p ~/miniconda3
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm -rf ~/miniconda3/miniconda.sh
-```
+sudo apt-get install git-lfs
 
-activate conda
-
-```
-conda activate
+git lfs install
 ```
 
 
 
-1. Java JDK versions
-
-openjdk-17-jdk for android sdkmanager
-
+After installing lfs into git, then we can clone the repo.
 ```
-sudo apt-get install openjdk-17-jdk
-```
+git clone https://github.com/kynehc/crypto-detector-evaluation-artifacts.git
 
-openjdk-8-jdk 
+cd experiment/cryptoguard-exp
 
-```
-sudo apt-get install openjdk-8-jdk
+docker build -t cg-exp .
 ```
 
-Download Openjdk-7-jdk from https://www.oracle.com/java/technologies/javase/javase7-archive-downloads.html.
-
+After image build successfully, use follow command to run a container and get into the instance.
 ```
-tar -xvf jdk-7u80-linux-x64.tar.gz
-```
-
-```
-sudo mv jdk1.7.0_80 /usr/lib/jvm/
+docker run -it --rm cg-exp
 ```
 
 
-
-2. install sdkman and gradle
-
-```
-curl -s "https://get.sdkman.io" | bash
-```
-
-```
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-```
-
-```
-sdk version
-```
-
-
-
-```
-sdk list gradle
-```
-
+Install the gradle-4.6
 ```
 sdk install gradle 4.6
 ```
 
+
+We respectively compile [cryptoguard-92551ee](./experiment/cryptoguard-exp/cryptoguard-92551ee/) and [refined-cryptoguard](./experiment/cryptoguard-exp/cryptoguard-refined/).
+
+For original cryptoguard:
 ```
-sdk use gradle 4.6
-```
+cd cryptoguard-92551ee
 
-```
-gradle --version
-```
-
-
-
-if you encounter jvm problem, please make sure you are using jdk8. To select jdk-8 as default:
-
-```
-update-java-alternatives --list
-```
-
-```
-update-alternatives --config java
-```
-
-
-
-
-
-2. install Android sdk platforms:
-
-Download android sdk command line tools:
-
-```
-curl https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip --output commandlinetools-linux-10406996_latest.zip
-```
-
-extract the command line tools
-
-```
-unzip commandlinetools-linux-10406996_latest.zip
-```
-
-Choose jdk-17 to use
-
-```
-update-java-alternatives --list
-```
-
-```
-update-alternatives --config java
-```
-
-Install the required sdk versions:
-
-```
-cmdline-tools/bin/sdkmanager "platforms;android-33" "platforms;android-32" "platforms;android-31" "platforms;android-30" "platforms;android-29" "platforms;android-28" "platforms;android-27" "platforms;android-26" "platforms;android-25" "platforms;android-24" "platforms;android-23" "platforms;android-22" "platforms;android-21" --sdk_root="android-sdks"
-```
-
-
-
-2. build refined cryptoguard and original cryptoguard
-
-```sh
-cd experiment/cryptoguard-exp/cryptoguard-refined
-```
-
-Create a file to setup environments for android sdk, jdk8, jdk7.
-
-```
-vim _cryptoguard.source
-```
-
-write the following content including corresponding paths to the file:
-
-```
-export ANDROID_HOME=/home/android-sdks/platforms
-export JAVA7_HOME=/usr/lib/jvm/jdk1.7.0_80
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-```
-
-```
 source _cryptoguard.source
-```
 
-install required python packages
-
-```
-pip install nbformat
-```
-
-build the refiend cryptoguard
-
-```
 make
 ```
 
 
+For refined cryptoguard:
+```
+cd cryptoguard-refined
+
+source _cryptoguard.source
+
+make
+```
+
+
+---
 
 ### Execution
 
 For a scale-down version of the experiment comparing refined cryptoguard and original cryptoguard, we select one batch of verified alarms, #2 in `crypto-detectors-evaluation-artifacts/experiment/cryptoguard-exp/verified_alarms/rule3-analysis.md`, caused by Pattern #1 (in paper).
 
-We choose the apks violated for this #2 in `rule3-analysis.md`. The apks are located at [here](./experiment/cryptoguard-exp/E2-apks/) (Two apps have been excluded from this experiment due to long analysis time with both original and refined cryptoguard, which would time out.) 
+We choose the apks violated for this #2 in [rule3-analysis.md](./experiment/cryptoguard-exp/verified_alarms/rule3-analysis.md). The apks are located at [here](./experiment/cryptoguard-exp/E2-apks/) (Two apps have been excluded from this experiment due to long analysis time with both original and refined cryptoguard, which would time out.) 
 
 After build successfully for refined cryptoguard and original cryptoguard, then we can run them on the same batch of apks.
 
 We provide script to parallel running:
 
 ```sh
-sudo apt install parallel
-```
+cd cryptoguard-refined 
+# or cd cryptoguard-92551ee
 
-```sh
 ./run.sh
 ```
 
-It can also use the below command to run on one App.
 
+These two scale-down experiments need 10 minutes on our machine. After finished running cryptoguard on the apks, use this python script to merge the individual reported alarms into rule-based ones.
 ```
-java -jar -Xmx16g -Xss60m cryptoguard.jar -in apk -s APP_NAME -t -H -m L -st -depth 1 -o ./fd_result/APP_NAME.txt &> ./fd_log/APP_NAME.log
-```
-
-After finished parallel running, use this python script to merge the individual reported alarms into rule-based ones.
-
-```
-python logparse.py fd_result rulebased_result
+python3 logparse.py fd_result rulebased_result
 ```
 
+
+Show the result.
+```
+cat rulebased_result/rule3
+```
+
+
+
+---
 
 ### Results
 
@@ -231,7 +128,9 @@ unique methods 1
 unique apks 1
 ```
 
-original cryptoguard (commit 92551ee)
+
+
+Original cryptoguard (commit 92551ee):
 ```
 Rule: 3 Used constant keys in code
 
