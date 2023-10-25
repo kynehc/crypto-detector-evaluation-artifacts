@@ -29,6 +29,20 @@ After image build successfully, use follow command to run a container and get in
 docker run -it --rm cg-exp
 ```
 
+Set up Java 8 for use
+```
+update-java-alternatives --list
+```
+```
+root@342a437d94e1:/experiment# update-java-alternatives --list
+java-1.17.0-openjdk-amd64      1711       /usr/lib/jvm/java-1.17.0-openjdk-amd64
+java-1.8.0-openjdk-amd64       1081       /usr/lib/jvm/java-1.8.0-openjdk-amd64
+```
+
+Use the name for java-1.8 in the output of previous command, which is `java-1.8.0-openjdk-amd64` in this case.
+```
+update-java-alternatives --set java-1.8.0-openjdk-amd64
+```
 
 Install the gradle-4.6
 ```
