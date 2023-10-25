@@ -19,7 +19,7 @@ After installing lfs into git, then we can clone the repo.
 ```
 git clone https://github.com/kynehc/crypto-detector-evaluation-artifacts.git
 
-cd experiment/cryptoguard-exp
+cd crypto-detector-evaluation-artifacts/experiment/cryptoguard-exp
 
 docker build -t cg-exp .
 ```
