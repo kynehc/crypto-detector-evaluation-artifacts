@@ -6,6 +6,8 @@ setting:
     - max memory limit: 16GB
     - timeout limit: crysl self internal timeout
 
+Please check our [instructions](./RUN.md) to reproduce the experiment.
+
 ---
 
 F-droid datasets: 3489 apks. Apk name list: `fdroid-3489apks-list`
@@ -38,7 +40,7 @@ Minimal working examples: `/MWEs`
 
 ---
 
-All original results are shown as [Original fdroid results](/result). Based on the merged results [Rule-based results](/result_rulebased), we manually verified the top-10 offending methods and some other sample misuses. The overall verification results are shown as the following figure.
+All original results are shown as [Original fdroid results](./result/). Based on the merged results [Rule-based results](./result_rulebased/), we manually verified the top-10 offending methods and some other sample misuses. The overall verification results are shown as the following figure.
 
 <p align="center">
 <img src="assets/crysl_result.png" alt="" width="70%"/>
