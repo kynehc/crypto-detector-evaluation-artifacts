@@ -11,14 +11,24 @@
 
 ## Installation
 
-Step 1: Install Ubuntu 20.04.6 LTS. CryptoREX has some issues that prevent it from working correctly on other Ubuntu versions, such as Ubuntu 22.04.3 LTS.
+Step 1: Install Ubuntu 20.04.1 or 20.04.6 LTS. CryptoREX has some issues that prevent it from working correctly on other Ubuntu versions, such as Ubuntu 22.04.3 LTS.
 
 Step 2: Put IDA Pro 6.4 files in `IDA_Pro_v6.4` directory. Make sure `IDA_Pro_v6.4/idal` exists and works correctly. We cannot provide IDA in this repository as it is proprietary.
 
-Step 3: It is safer to continue the install process in a virtual Python environment. For example:
+Step 3: Install python (>=3.8). 
+```
+apt-get install -y python-is-python3 python3-pip
+```
+
+It is safer to use a virtual Python environment. For example:
 ```
 mkvirtualenv cryptorex
 workon cryptorex
+```
+Or use miniconda. For example:
+```
+conda create --name cryptorex python=3.9
+conda activate cryptorex
 ```
 
 Step 4: Install required Python packages by `pip install -r requirements.txt`
@@ -35,3 +45,5 @@ Violation number of rule-5: 5 (3 unique)
 Violation number of rule-6: 1 (1 unique)
 ...
 ```
+
+To reproduce the entire experiment, please replace the firmwares in `input/` with the complete set of firmwares and run `./batch_test.sh` in like manner.

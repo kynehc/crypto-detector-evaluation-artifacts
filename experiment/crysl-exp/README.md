@@ -6,7 +6,7 @@ setting:
     - max memory limit: 16GB
     - timeout limit: crysl self internal timeout
 
-Please check our [instructions](./RUN.md) to reproduce the experiment.
+Please check our [instructions](./DOCKER-RUN.md) to reproduce the experiment.
 
 ---
 
