@@ -2,6 +2,8 @@
 
 We provide a [Dockerfile](./Dockerfile) to build a docker for running our experiment on CogniCrypt_SAST. 
 
+(The Dockerfile is based on Ubuntu 20.04. In case your apt-get source does not support fetching certain libraries for 20.04, we provide an alternative [Dockerfile](./Dockerfile-22.04) based on Ubuntu 22.04.)
+
 ```
 cd crypto-detector-evaluation-artifacts/experiment/crysl-exp
 

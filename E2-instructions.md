@@ -6,6 +6,8 @@ This experiment is to validate the refined CryptoGuard can reduce false positive
 
 We provider a [Dockerfile](./experiment/cryptoguard-exp/Dockerfile) to build a docker for running our scale-down experiment, to validate the refined CryptoGuard can reduce false positives than the original CryptoGuard.
 
+(The Dockerfile is based on Ubuntu 20.04. In case your apt-get source does not support fetching certain libraries for 20.04, we provide an alternative [Dockerfile](./experiment/cryptoguard-exp/Dockerfile-22.04) based on Ubuntu 22.04.)
+
 Since we have a large file in the repo, git has to be equipped with [lfs](https://git-lfs.com/). To equip the lfs in your git, use below commands:
 ```
 sudo apt-get install git-lfs
