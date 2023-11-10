@@ -5,6 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
 RUN apt update
+RUN apt-get update --fix-missing
 
 WORKDIR /experiment
 
