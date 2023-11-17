@@ -74,7 +74,7 @@ python3 /experiment/logparse.py E2-apks rulebased_result
 
 
 
-The result is in the `rulebased_result`.
+`rulebased_result` contains all misuses that are classified by each rule (targeted classes in Crysl rules). 
 
 ```
 ls rulebased_result
@@ -104,3 +104,31 @@ Apk Num: 1
 net.oschina.app_18.apk                                      => at statement: specialinvoke r3.<javax.crypto.spec.IvParameterSpec: void <init>(byte[])>($r5)
 ```
 
+---
+
+### Reproduction
+
+To reproduce the whole experiment, please download our whole dataset (send email to obtain the download link), and extract the compressed file.
+
+Note: If you only sample some apks to run, please use this command to shuffle 10 apks to `E2-apks`, and `docker cp` this folder to container.
+```
+mkdir -p E2-apks && cp $(shuf -n10 -e apks/*.apk) E2-apks/
+```
+
+Use the below command to copy the `apks` folder in extracted files into Docker container:
+
+```
+docker cp apks CONTAINER-ID:/experiment/CryptoAnalysis/
+```
+
+In docker container, use below command to rename the `apks` folder to `E2-apks`. 
+(Another alternative way is to change the apk_dir and res_dir name in `run.sh` to `apks`)
+```
+cd /experiment/CryptoAnalysis
+
+mv E2-apks/ sampled-apks
+
+mv apks E2-apks/
+```
+
+Please follow the same commands in the Step Execution to run the experiment. The final result will be in the `rulebased_result/` folder, which will contain all rule-based misuses.

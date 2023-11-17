@@ -5,7 +5,6 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
 RUN apt update
-RUN apt-get update --fix-missing
 
 WORKDIR /experiment
 
@@ -15,7 +14,7 @@ USER root
 
 RUN apt install -y parallel
 
-RUN apt-get install -y python3-pip
+RUN apt-get update --fix-missing && apt-get install -y python3-pip
 
 RUN pip install nbformat
 
